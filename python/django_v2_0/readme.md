@@ -53,3 +53,5 @@ python manage.py startapp items
 ###### edit produtos\items\views.py
 python manage.py makemigrations items
 python manage.py migrate
+
+##### criando rotas
