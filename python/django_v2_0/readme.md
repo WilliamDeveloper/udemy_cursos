@@ -64,3 +64,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 STATIC_DIR = os.path.join(BASE_DIR,'static')
 ````
 
+# forms
+###### create   produtos\templates\items\create_produto.html
+###### create   produtos\items\forms.py
+###### edit     produtos\items\views.py
+###### edit     produtos\produtos\urls.py   
+
