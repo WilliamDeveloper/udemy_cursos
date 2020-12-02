@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 def home(request):
     mensagem = 'oi'
-    return render(request,"items.index.html",{mensagem})
+    return render(request,"items/index.html",{mensagem})
 
 
 def produtos(requests):
