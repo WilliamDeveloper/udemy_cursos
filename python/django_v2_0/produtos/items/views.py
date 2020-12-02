@@ -6,7 +6,7 @@ from .models import Produto
 def home(request):
     mensagem = 'oi'
     produtos = Produto.objects.all() # select * from produtos
-    return render(request,"items/index.html",{"mensagem": mensagem})
+    return render(request,"items/index.html",{"mensagem": mensagem, "produtos": produtos})
 
 
 def produtos(requests):
