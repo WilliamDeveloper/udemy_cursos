@@ -25,5 +25,6 @@ def create_produto(request):
     if form.is_valid():
         obj = form.save()
         obj.save() # salva as informaçoes do formulario
+        form = ProdutoForm() # limpar o form
 
     return render(request,"items/create_produto.html",{"form": form})
