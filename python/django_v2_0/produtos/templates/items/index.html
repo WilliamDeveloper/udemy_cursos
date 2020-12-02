@@ -4,6 +4,16 @@
 
 <h1>{{mensagem}}</h1>
 
+{{produtos}}
+
+<ul>
+{% for produto in produtos %}
+    <li>{{produto.nome}}</li>
+    <li>{{produto.preco}} </li>
+    <li>{{produto.descricao}}</li>
+{% endfor %}
+</ul>
+
 {% endblock content %}
 
 
