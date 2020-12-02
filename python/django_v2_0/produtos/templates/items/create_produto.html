@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<form >
+<form method="post"> {% csrf_token %}
     {{form.as_p}} <!-- renderiza como um paragrafo -->
     <input type="submit" value="Enviar">
 </form>
