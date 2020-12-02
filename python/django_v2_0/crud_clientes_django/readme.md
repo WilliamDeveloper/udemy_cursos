@@ -58,3 +58,4 @@ http://127.0.0.1:8000/admin
 
 # bibliotecas
 pip3 install django-crispy-forms
+###### edit crud_clientes_django\crud_clientes_django\settings.py
