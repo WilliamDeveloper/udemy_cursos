@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Produto
 
 # Create your views here.
 def home(request):
     mensagem = 'oi'
+    produtos = Produto.objects.all() # select * from produtos
     return render(request,"items/index.html",{"mensagem": mensagem})
 
 
