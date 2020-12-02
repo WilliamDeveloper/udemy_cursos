@@ -50,5 +50,6 @@ python manage.py startapp items
 ###### edit produtos\produtos\settings.py
 ###### edit produtos\items\models.py
 ###### edit produtos\items\admin.py
+###### edit produtos\items\views.py
 python manage.py makemigrations items
 python manage.py migrate
