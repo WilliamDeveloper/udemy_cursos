@@ -15,7 +15,7 @@ def adicionar_cliente(request):
     form = ClienteForm(request.POST)
 
     if form.is_valid() :
-        obj = form.save
+        obj = form.save()
         obj.save()
     else:
         form = ClienteForm()
