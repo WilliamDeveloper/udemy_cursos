@@ -36,3 +36,4 @@ python manage.py migrate
 
 #####  criar super usuario
 python manage.py createsuperuser 
+user: ekatrs
