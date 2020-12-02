@@ -57,4 +57,4 @@ http://127.0.0.1:8000/admin
 
 
 # bibliotecas
-pip install -upgrade django-crispy-forms
+pip3 install django-crispy-forms
