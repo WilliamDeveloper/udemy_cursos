@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Cliente
 from .forms import ClienteForm
 
@@ -18,6 +18,8 @@ def adicionar_cliente(request):
         obj = form.save()
         obj.save()
         form = ClienteForm()
+        v_to = 'lista_De_clientes'
+        return redirect(v_to)
 
     v_template="clientes/adicionar_cliente.html"
     v_context_parms = {"form":form}
