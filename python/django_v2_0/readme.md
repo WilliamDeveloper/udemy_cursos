@@ -16,11 +16,13 @@ pip install django==2.0
 ##### mostrar todas dependencias do virtualenv
 pip freeze
 
+---
 # criando projeto
 
 ##### criar projeto django chamado produtos
 django-admin startproject produtos
 
+---
 # iniciando aplicacao
 
 ##### rodar aplicacao
@@ -41,3 +43,5 @@ user: ekatrs
 #####  url admin do django
 http://127.0.0.1:8000/admin/login/?next=/admin
 http://127.0.0.1:8000/admin
+
+---
