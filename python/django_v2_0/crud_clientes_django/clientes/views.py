@@ -17,7 +17,6 @@ def adicionar_cliente(request):
     if form.is_valid() :
         obj = form.save()
         obj.save()
-    else:
         form = ClienteForm()
 
     v_template="clientes/adicionar_cliente.html"
