@@ -54,3 +54,7 @@ http://127.0.0.1:8000/admin
 ###### edit crud_clientes_django\clientes\models.py
 ###### python manage.py makemigrations clientes
 ###### python manage.py migrate
+
+
+# bibliotecas
+pip install -upgrade django-crispy-forms
