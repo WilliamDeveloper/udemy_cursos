@@ -29,7 +29,7 @@ def adicionar_cliente(request):
 def editar_cliente(request, id=None):
     cliente = get_object_or_404(Cliente, id=id)
 
-    form = ClienteForm(request.POST or None)
+    form = ClienteForm(request.POST or None, instance=cliente)
     if form.is_valid():
         obj = form.save()
         obj.save()
