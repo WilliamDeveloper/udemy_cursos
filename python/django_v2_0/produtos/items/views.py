@@ -20,5 +20,10 @@ def clientes(request):
 
 
 def create_produto(request):
-    form = ProdutoForm()
+    form = ProdutoForm(request.POST)
+
+    if form.is_valid():
+        obj = form.save()
+        obj.save() # salva as informaçoes do formulario
+
     return render(request,"items/create_produto.html",{"form": form})
