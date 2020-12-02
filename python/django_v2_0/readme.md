@@ -47,3 +47,6 @@ http://127.0.0.1:8000/admin
 ---
 # criando um app(modulo)
 python manage.py startapp items
+###### edit produtos\items\models.py
+###### edit produtos\items\admin.py
+python manage.py makemigrations items
