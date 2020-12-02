@@ -4,11 +4,42 @@
     titulo da lista de clientes
 {% endblock title %}
 
-
-
 {% block content %}
+    <div class="container">
 
-<h1 class="text-success">lista de clientes</h1>
-{{clientes}}
+        <div class="text-center">
+            <h1 class="text-success">lista de clientes</h1>
+        </div>
 
+        <table class="table table-head">
+
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Cpf</th>
+                    <th>Data de Criação</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{cliente.nome}}</td>
+                    <td>{{cliente.email}}</td>
+                    <td>{{cliente.cpf}}</td>
+                    <td>{{cliente.data_criacao}}</td>
+                    <td><a href="#" class="btn btn-warning">Editar</a></td>
+                    <td><a href="#" class="btn btn-danger">Excluir</a></td>
+                </tr>
+                {% endfor%}
+
+            </tbody>
+
+        </table>
+
+
+        {{clientes}}
+    </div>
 {% endblock content %}
