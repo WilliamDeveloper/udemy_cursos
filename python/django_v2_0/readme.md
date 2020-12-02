@@ -18,5 +18,6 @@ pip freeze
 django-admin startproject produtos
 
 
-# rodar aplicacao 
+# rodar aplicacao
+cd D:\_dev_\work\github\udemy_cursos\python\django_v2_0\produtos\produtos 
 python manage.py runserver
