@@ -55,3 +55,4 @@ python manage.py makemigrations items
 python manage.py migrate
 
 ##### criando rotas
+###### edit produtos\produtos\urls.py
