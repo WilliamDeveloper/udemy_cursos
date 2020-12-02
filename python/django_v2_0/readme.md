@@ -45,3 +45,5 @@ http://127.0.0.1:8000/admin/login/?next=/admin
 http://127.0.0.1:8000/admin
 
 ---
+# criando um app(modulo)
+python manage.py startapp items
