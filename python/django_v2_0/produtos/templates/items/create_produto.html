@@ -1,1 +1,13 @@
-{{form}}
+{% extends "items/base.html" %}
+
+{% block content %}
+
+<form >
+    {{form.as_p}} <!-- renderiza como um paragrafo -->
+    <input type="submit" value="Enviar">
+</form>
+
+
+{% endblock content %}
+
+
