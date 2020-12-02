@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static css/style.css %}">
-</head>
-<body>
+{% extends "items/base.html" %}
+
+{% block content %}
+
 <h1>{{mensagem}}</h1>
-</body>
-</html>
+
+{% endblock content %}
+
+
