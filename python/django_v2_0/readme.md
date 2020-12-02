@@ -56,3 +56,11 @@ python manage.py migrate
 
 ##### criando rotas
 ###### edit produtos\produtos\urls.py
+
+##### criando template
+###### edit produtos\produtos\settings.py
+````python
+TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
+STATIC_DIR = os.path.join(BASE_DIR,'static')
+````
+
