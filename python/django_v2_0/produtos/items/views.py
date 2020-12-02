@@ -3,7 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return HttpResponse('<h1>àrea de home</h1>')
+    mensagem = 'oi'
+    return render(request,"items.index.html",{mensagem})
 
 
 def produtos(requests):
