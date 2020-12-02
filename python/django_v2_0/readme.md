@@ -21,3 +21,6 @@ django-admin startproject produtos
 # rodar aplicacao
 cd D:\_dev_\work\github\udemy_cursos\python\django_v2_0\produtos\produtos 
 python manage.py runserver
+
+# url admin do django
+http://127.0.0.1:8000/admin/login/?next=/admin
