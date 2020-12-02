@@ -19,9 +19,7 @@ pip freeze
 # criando projeto
 django-admin startproject crud_clientes_django
 
-# criando app clientes
-django-admin startapp clientes
-###### edit produtos\produtos\settings.py
+
 
 
 ---
@@ -47,4 +45,10 @@ http://127.0.0.1:8000/admin/login/?next=/admin
 http://127.0.0.1:8000/admin
 
 ---
-python manage.py migrate
+
+# criando app clientes
+###### django-admin startapp clientes
+###### edit crud_clientes_django\crud_clientes_django\settings.py
+###### edit crud_clientes_django\clientes\admin.py
+###### edit crud_clientes_django\produtos\models.py
+###### python manage.py makemigrations clientes
