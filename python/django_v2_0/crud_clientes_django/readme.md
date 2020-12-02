@@ -12,6 +12,7 @@ D:\_dev_\work\_config_\venv38\Scripts\activate
 
 ##### instalar django
 pip install django==2.0
+pip install django==2.1.7
 
 ##### mostrar todas dependencias do virtualenv
 pip freeze
