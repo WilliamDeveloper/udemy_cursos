@@ -19,6 +19,9 @@ pip freeze
 # criando projeto
 django-admin startproject crud_clientes_django
 
+# criando app clientes
+django-admin startapp clientes
+
 
 ---
 # iniciando aplicacao
