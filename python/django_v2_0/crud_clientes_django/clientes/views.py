@@ -19,10 +19,11 @@ def adicionar_cliente(request):
         obj = form.save()
         obj.save()
         form = ClienteForm()
+        messages.success(request, 'Cliente adicionado com sucesso')
         v_to = 'lista_de_clientes'
         return redirect(v_to)
 
-    messages.success(request,'Cliente adicionado com sucesso')
+
     v_template="clientes/adicionar_cliente.html"
     v_context_parms = {"form":form}
     return render(request,v_template, v_context_parms)
