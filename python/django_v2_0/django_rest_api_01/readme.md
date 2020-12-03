@@ -13,11 +13,15 @@
 ###### pip install django==2.1.5
 
 ---
-
 # start project
+django-admin startproject my_project
 
+---
+# start app
+django-admin startapp alunos
 
-
-
+---
+# criar estrutura banco de dados
+python manage.py migrate
 
 
