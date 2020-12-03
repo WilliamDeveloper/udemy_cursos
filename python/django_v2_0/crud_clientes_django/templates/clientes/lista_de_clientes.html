@@ -43,7 +43,7 @@
                     <td>{{cliente.nome}}</td>
                     <td>{{cliente.email}}</td>
                     <td>{{cliente.cpf}}</td>
-                    <td>{{cliente.data_criacao | date:"d/m/y" }}</td>
+                    <td>{{cliente.data_criacao | date:"d/m/Y" }}</td>
 
                     {% if user.is_authenticated %}
                     <td><a href="/editar_cliente/{{ cliente.id }}" class="btn btn-warning">Editar</a></td>
