@@ -37,3 +37,9 @@ python manage.py runserver
 # link de acesso
 http:localhost:8000/
 http:localhost:8000/admin
+
+
+---
+# ajuste projeto
+###### python manage.py makemigrations
+###### python manage.py migrate
