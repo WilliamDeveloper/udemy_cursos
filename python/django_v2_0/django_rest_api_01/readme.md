@@ -40,7 +40,9 @@ http:localhost:8000/admin
 
 
 ---
-# ajuste projeto
+# ajuste em model do projeto
+###### edit my_project/my_project/settings.py > add "alunos" in "INSTALLED_APPS"
+###### edit my_project/alunos/models.py
 ###### python manage.py makemigrations
 ###### python manage.py migrate
 ###### python manage.py runserver
