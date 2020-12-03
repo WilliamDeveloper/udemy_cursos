@@ -2,11 +2,23 @@ from django.shortcuts import render, redirect,get_object_or_404
 from .models import Cliente
 from .forms import ClienteForm
 from django.contrib import messages
+from django.db.models import Q
+
 
 
 # Create your views here.
 def lista_de_clientes(request):
     clientes = Cliente.objects.all().order_by('-id')
+
+    querySet = request.GET.get('q')
+
+    if (querySet):
+        clientes = Cliente.objects.filter(
+            Q(nome__icontains=querySet) |
+            Q(email__icontains=querySet) |
+            Q(cpf__icontains=querySet)
+        )
+
     v_template="clientes/lista_de_clientes.html"
     v_context_parms = {"clientes":clientes}
     return render(request,v_template, v_context_parms)
