@@ -43,3 +43,4 @@ http:localhost:8000/admin
 # ajuste projeto
 ###### python manage.py makemigrations
 ###### python manage.py migrate
+###### python manage.py runserver
