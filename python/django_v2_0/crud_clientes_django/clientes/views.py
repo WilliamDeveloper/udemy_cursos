@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect,get_object_or_404
 from .models import Cliente
 from .forms import ClienteForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -21,6 +22,7 @@ def adicionar_cliente(request):
         v_to = 'lista_de_clientes'
         return redirect(v_to)
 
+    messages.success(request,'Cliente adicionado com sucesso')
     v_template="clientes/adicionar_cliente.html"
     v_context_parms = {"form":form}
     return render(request,v_template, v_context_parms)
@@ -35,6 +37,7 @@ def editar_cliente(request, id=None):
         obj.save()
         form = ClienteForm()
         v_to = 'lista_de_clientes'
+        messages.info(request, 'Cliente editado com sucesso')
         return redirect(v_to)
 
     v_template = "clientes/editar_cliente.html"
@@ -47,6 +50,7 @@ def remover_cliente(request, id=None):
 
     if(request.method == 'POST'):
         cliente.delete()
+        messages.warning(request, 'Cliente removido com sucesso')
         v_to = 'lista_de_clientes'
         return redirect(v_to)
 
