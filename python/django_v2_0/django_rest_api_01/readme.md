@@ -29,3 +29,11 @@ python manage.py migrate
 python manage.py createsuperuser
 ekatrs
 
+---
+# RODAR A APLICACAO
+python manage.py runserver
+
+---
+# link de acesso
+http:localhost:8000/
+http:localhost:8000/admin
