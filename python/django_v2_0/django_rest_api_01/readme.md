@@ -10,6 +10,8 @@
 ###### pip install markdown
 ###### pip install django-filter
 
+###### pip install django==2.1.5
+
 
 
 
