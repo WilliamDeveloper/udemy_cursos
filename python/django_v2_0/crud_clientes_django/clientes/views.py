@@ -3,6 +3,7 @@ from .models import Cliente
 from .forms import ClienteForm
 from django.contrib import messages
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 
 
@@ -18,6 +19,11 @@ def lista_de_clientes(request):
             Q(email__icontains=querySet) |
             Q(cpf__icontains=querySet)
         )
+
+    #paginacao
+    paginator = Paginator(clientes, 5) # mostra 5 clientes por pagina
+    page = request.GET.get('page')
+    clientes = paginator.get_page(page)
 
     v_template="clientes/lista_de_clientes.html"
     v_context_parms = {"clientes":clientes}
