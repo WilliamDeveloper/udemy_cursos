@@ -12,6 +12,9 @@
 
 ###### pip install django==2.1.5
 
+---
+
+# start project
 
 
 
