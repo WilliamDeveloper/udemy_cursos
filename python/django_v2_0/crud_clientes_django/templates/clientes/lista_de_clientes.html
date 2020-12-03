@@ -19,7 +19,10 @@
                     <th>Email</th>
                     <th>Cpf</th>
                     <th>Data de Criação</th>
+
+                    {% if user.is_authenticated %}
                     <th>Opções</th>
+                    {% endif%}
                 </tr>
             </thead>
 
