@@ -30,8 +30,12 @@
                     <td>{{cliente.email}}</td>
                     <td>{{cliente.cpf}}</td>
                     <td>{{cliente.data_criacao}}</td>
+
+                    {% if user.is_authenticated %}
                     <td><a href="/editar_cliente/{{ cliente.id }}" class="btn btn-warning">Editar</a></td>
                     <td><a href="/remover_cliente/{{ cliente.id }}" class="btn btn-danger">Excluir</a></td>
+                    {% endif%}
+
                 </tr>
                 {% endfor%}
 
