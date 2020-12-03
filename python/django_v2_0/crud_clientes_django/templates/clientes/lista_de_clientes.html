@@ -14,7 +14,7 @@
         <form method="get">
             <div class="row">
                 <div class="form-group  col-10">
-                    <input type="search" class="form-control" placeholder="informe nome do cliente , cpf ou email" name="q">
+                    <input type="search" class="form-control" placeholder="informe nome do cliente , cpf ou email" name="q" value="{{ request.GET.q }}">
                 </div>
                 <div class="form-group col-2">
                     <button class="form-control btn-success">Pesquisar</button>
