@@ -24,4 +24,8 @@ django-admin startapp alunos
 # criar estrutura banco de dados
 python manage.py migrate
 
+---
+# criar usuario para logar na aplicacao
+python manage.py createsuperuser
+ekatrs
 
