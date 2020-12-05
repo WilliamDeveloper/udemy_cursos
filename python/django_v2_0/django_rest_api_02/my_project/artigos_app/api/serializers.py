@@ -1,5 +1,5 @@
+from artigos_app.models import Autor,Artigo
 from rest_framework import serializers
-from artigos_app.models import Autor, Artigo
 
 class AutorSerializer(serializers.ModelSerializer):
     class Meta:

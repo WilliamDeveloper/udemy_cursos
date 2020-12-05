@@ -10,4 +10,6 @@ class ArtigoAdmin(admin.ModelAdmin):
     class Meta:
         model = Artigo
 
+
+
 admin.site.register(Artigo,ArtigoAdmin)
