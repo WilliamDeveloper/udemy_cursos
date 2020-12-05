@@ -7,5 +7,5 @@ router = routers.DefaultRouter()
 router.register('alunos',AlunoViewSet)
 
 urlpatterns = [
-    path('',router.urls),
+    path('', include(router.urls))
 ]
