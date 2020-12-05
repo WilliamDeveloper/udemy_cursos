@@ -35,8 +35,16 @@
 django-admin startproject my_project
 
 ---
-# start app
-django-admin startapp alunos
+# start app (modulo)
+django-admin startapp artigos_app
+
+---
+# ajuste new app
+###### edit my_project/my_project/settings.py > add "artigos_app" in "INSTALLED_APPS"
+###### edit my_project/alunos/models.py
+###### python manage.py makemigrations
+###### python manage.py migrate
+###### python manage.py runserver
 
 ---
 # criar estrutura banco de dados
