@@ -20,6 +20,7 @@
 ###### pip install djangorestframework
 ###### pip install markdown
 ###### pip install django-filter
+###### pip install django-cors-headers
 
 # gerar um txt com todas dependencias do projeto
 ##### pip freeze > requirements.txt
