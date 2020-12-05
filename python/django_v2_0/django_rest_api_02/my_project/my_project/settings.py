@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'artigos_app',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
