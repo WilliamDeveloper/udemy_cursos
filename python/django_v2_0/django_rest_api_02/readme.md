@@ -55,7 +55,7 @@ django-admin startapp artigos_app
 
 # criar usuario para logar na aplicacao
 ###### python manage.py createsuperuser
-###### ekatrs
+###### admin
 
 ###### python manage.py runserver
 
