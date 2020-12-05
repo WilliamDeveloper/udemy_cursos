@@ -6,3 +6,6 @@ class Autor(models.Model):
     endereco = models.CharField(max_length=255)
     site = models.URLField(blank=True,null=True)
     email = models.EmailField()
+
+    def __str__(self):
+        return self.nome
