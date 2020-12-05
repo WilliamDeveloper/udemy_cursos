@@ -1,8 +1,5 @@
-<!doctype html>
-
-<!--{% load staticfiles %}-->
-{% load static %}
-
+<!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,12 +25,13 @@
                 $.each(autores, function () {
                     $('#autores').append("<li class='list-group-item'>"+this.nome+"</li>")
                     $('#autores').append("<li class='list-group-item'>"+this.endereco+"</li>")
-                    $('#autores').append("<li class='list-group-item'>"+this.site+"</li>")
+                    $('#autores').append("<li class='list-group-item'>"+(this.site === null || this.site == ''?"Não informado":this.site)+"</li>")
                     $('#autores').append("<li class='list-group-item'>"+this.email+"</li>")
                     $('#autores').append("<br/>")
                 })
             }
         })
+
     </script>
 </body>
 </html>
