@@ -14,6 +14,13 @@
 ###### deactivate
 
 ---
+# documentacao
+
+- https://www.django-rest-framework.org/tutorial/quickstart/
+- https://pypi.org/project/django-cors-headers/
+- https://django-filter.readthedocs.io/en/stable/
+- 
+---
 
 # requisitos
 ###### pip install django==2.1.5
