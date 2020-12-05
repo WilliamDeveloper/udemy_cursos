@@ -49,7 +49,7 @@ django-admin startapp artigos_app
 ---
 # ajuste new app
 ###### edit my_project/my_project/settings.py > add "artigos_app" in "INSTALLED_APPS"
-###### edit my_project/alunos/models.py
+###### edit my_project/artigos_app/models.py
 ###### python manage.py makemigrations
 ###### python manage.py migrate
 
