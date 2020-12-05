@@ -1,16 +1,17 @@
-# ambiente
-###### pip install virtualenv
-
+# criando projeto
 ###### mkdir django_rest_api_02
 ###### cd django_rest_api_02
+
+# isolar bibliotecas do projeto
+###### pip install virtualenv
 ###### virtualenv venv
+
+# ativando context venv do projeto
 ###### ./venv/Scripts/activate
 
-###### pip install djangorestframework
-###### pip install markdown
-###### pip install django-filter
+# desativando context venv ativo
+###### deactivate
 
-###### pip install django==2.1.5
 
 # gerar um txt com todas dependencias do projeto
 ##### pip freeze > requirements.txt
@@ -20,3 +21,10 @@
 ##### pip install -r requirements.txt
 ##### python -m pip install -r requirements.txt
 ---
+
+
+###### pip install djangorestframework
+###### pip install markdown
+###### pip install django-filter
+
+###### pip install django==2.1.5
