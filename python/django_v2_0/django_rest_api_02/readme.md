@@ -52,6 +52,11 @@ django-admin startapp artigos_app
 ###### edit my_project/alunos/models.py
 ###### python manage.py makemigrations
 ###### python manage.py migrate
+
+# criar usuario para logar na aplicacao
+###### python manage.py createsuperuser
+###### ekatrs
+
 ###### python manage.py runserver
 
 ---
@@ -59,9 +64,7 @@ django-admin startapp artigos_app
 python manage.py migrate
 
 ---
-# criar usuario para logar na aplicacao
-python manage.py createsuperuser
-ekatrs
+
 
 ---
 # RODAR A APLICACAO
