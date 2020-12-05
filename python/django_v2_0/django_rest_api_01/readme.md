@@ -46,3 +46,8 @@ http:localhost:8000/admin
 ###### python manage.py makemigrations
 ###### python manage.py migrate
 ###### python manage.py runserver
+
+# rest framework
+###### pip3 install djangorestframework
+###### edit my_project/my_project/urls.py
+###### edit my_project/my_project/settings.py
