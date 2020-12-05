@@ -8,6 +8,7 @@
 
 # ativando context venv do projeto
 ###### ./venv/Scripts/activate
+###### D:\_dev_\work\github\udemy_cursos\python\django_v2_0\django_rest_api_02\venv\Scripts\activate.bat
 
 # desativando context venv ativo
 ###### deactivate
