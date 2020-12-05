@@ -13,6 +13,13 @@
 # desativando context venv ativo
 ###### deactivate
 
+---
+
+# requisitos
+###### pip install django==2.1.5
+###### pip install djangorestframework
+###### pip install markdown
+###### pip install django-filter
 
 # gerar um txt com todas dependencias do projeto
 ##### pip freeze > requirements.txt
@@ -24,8 +31,5 @@
 ---
 
 
-###### pip install djangorestframework
-###### pip install markdown
-###### pip install django-filter
 
-###### pip install django==2.1.5
+
