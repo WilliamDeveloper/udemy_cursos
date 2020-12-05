@@ -9,3 +9,6 @@ class Autor(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Artigo(models.Model):
+    autor = models.ForeignKey(Autor,on_delete=models.CASCADE)
