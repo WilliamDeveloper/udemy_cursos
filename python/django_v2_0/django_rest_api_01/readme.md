@@ -55,3 +55,6 @@ http:localhost:8000/admin
 
 # gerar um txt com todas dependencias do projeto
 ##### pip freeze > requirements.txt
+
+# instalar dependencias apartir de um txt
+##### pip install -r requirements.txt
