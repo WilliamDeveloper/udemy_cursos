@@ -12,7 +12,20 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
+    <h3 class="text-info">Construindo api com jquery</h3>
+    <ul clas="list-group" id="autores">
 
-<script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
+    </ul>
+
+    <script src="{% static 'js/jquery-3.5.1.slim.min.js' %}"></script>
+    <script>
+        $.ajax({
+            url:'http://localhost:8000/artigos_app/autor/',
+            dataType:'json',
+            success: function (autores) {
+                console.log(autores);
+            }
+        })
+    </script>
 </body>
 </html>
