@@ -51,3 +51,7 @@ http:localhost:8000/admin
 ###### pip3 install djangorestframework
 ###### edit my_project/my_project/urls.py
 ###### edit my_project/my_project/settings.py
+
+
+# gerar um txt com todas dependencias do projeto
+##### pip freeze > requirements.txt
