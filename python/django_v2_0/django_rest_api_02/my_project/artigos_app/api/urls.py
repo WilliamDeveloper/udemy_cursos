@@ -4,8 +4,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 
-router.site.register('autor',AutorViewSet)
+router.register('autor',AutorViewSet)
 
 urlpatterns =[
-    path('', include(routers.urls))
+    path('', include(router.urls))
 ]
