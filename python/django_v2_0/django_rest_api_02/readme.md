@@ -18,5 +18,5 @@
 
 # instalar dependencias apartir de um txt
 ##### pip install -r requirements.txt
-
+##### python -m pip install -r requirements.txt
 ---
