@@ -13,8 +13,8 @@ class Autor(models.Model):
 class Artigo(models.Model):
     autor = models.ForeignKey(Autor,on_delete=models.CASCADE)
     titulo = models.CharField(max_length=200)
-    publicado_em = models.DateTimeField(auto_now=True)
-    atualizado_em = models.DateTimeField(auto_now_add=True)
+    publicado_em = models.DateField(auto_now=True)
+    atualizado_em = models.DateField(auto_now_add=True)
     texto = models.TextField()
 
     def __str__(self):
