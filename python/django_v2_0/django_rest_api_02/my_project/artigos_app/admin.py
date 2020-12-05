@@ -7,6 +7,7 @@ admin.site.register(Autor)
 
 class ArtigoAdmin(admin.ModelAdmin):
     list_display = ('autor','titulo','publicado_em','atualizado_em','texto')
+    class Meta:
+        model = Artigo
 
-
-admin.site.register(Artigo)
+admin.site.register(Artigo,ArtigoAdmin)
