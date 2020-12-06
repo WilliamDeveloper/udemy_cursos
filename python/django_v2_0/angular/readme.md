@@ -8,4 +8,5 @@ ng new my-app
 
 # rodar aplicacao
 cd my-app
+npm install
 ng serve
