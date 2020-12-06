@@ -3,9 +3,9 @@
 npm install -g @angular/cli
 
 # criando projeto
-ng new my_app
+ng new my-app
 
 
 # rodar aplicacao
-cd my_app
+cd my-app
 ng serve
