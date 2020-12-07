@@ -6,6 +6,8 @@ app_name = 'my_project.courses'
 
 urlpatterns = [
     path('', index, name='index'),
-    path('<int:id>/', details, name='details'),
+
+    # path('<int:id>/', details, name='details'),
+    path('<slug:slug>/', details, name='details'),
 
 ]

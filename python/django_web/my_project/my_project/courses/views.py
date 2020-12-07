@@ -12,9 +12,19 @@ def index(request):
     template_name = 'courses/index.html'
     return render(request,template_name,v_params_contexto)
 
-def details(request,id):
-    # course = Course.objects.get(pk=id)
-    course = get_object_or_404(Course,pk=id)
+# def details(request,id):
+#     # course = Course.objects.get(pk=id)
+#     course = get_object_or_404(Course,pk=id)
+#
+#     v_params_contexto = {
+#         'course' : course
+#     }
+#     template_name = 'courses/details.html'
+#     return render(request,template_name,v_params_contexto)
+
+def details(request,slug):
+# course = Course.objects.get(pk=id)
+    course = get_object_or_404(Course,slug=slug)
 
     v_params_contexto = {
         'course' : course
