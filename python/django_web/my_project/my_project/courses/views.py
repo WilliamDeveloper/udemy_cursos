@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 
 from .models import Course
-
+from .forms import ContactCourse
 # Create your views here.
 def index(request):
     courses = Course.objects.all()
@@ -27,7 +27,8 @@ def details(request,slug):
     course = get_object_or_404(Course,slug=slug)
 
     v_params_contexto = {
-        'course' : course
+        'course' : course,
+        'form' : ContactCourse()
     }
     template_name = 'courses/details.html'
     return render(request,template_name,v_params_contexto)
