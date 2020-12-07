@@ -54,13 +54,15 @@
                 <div class="pure-control-group">
                     {{ field.label_tag }}
                     {{ field }}
+
                     {% if field.errors %}
-                    <ul class="errorlist">
-                        {% for error in field.errors %}
-                        <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
+                        <ul class="errorlist">
+                            {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
                     {% endif %}
+
                 </div>
                 {% endfor %}
                 <div class="pure-controls">
