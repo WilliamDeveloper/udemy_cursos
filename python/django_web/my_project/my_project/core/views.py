@@ -8,3 +8,9 @@ def home(request):
         'usuario': 'William'
     }
     return render(request,'home.html',v_params_context)
+
+def contact(request):
+    v_params_context = {
+        'usuario': 'William'
+    }
+    return render(request,'contact.html',v_params_context)
