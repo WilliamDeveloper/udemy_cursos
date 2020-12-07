@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+#habilitando arquivos media estaticos
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     # path('', include(('my_project.core.urls','my_project.core'),namespace='core')),
@@ -23,3 +27,6 @@ urlpatterns = [
     path('cursos/', include('my_project.courses.urls',namespace='courses')),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+

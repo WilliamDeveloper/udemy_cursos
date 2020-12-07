@@ -122,4 +122,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# habilitando upload de arquivos estaticos
 MEDIA_ROOT= os.path.join(BASE_DIR, 'my_project', 'media' )
+MEDIA_URL='/media/'
