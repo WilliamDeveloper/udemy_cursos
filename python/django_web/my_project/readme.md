@@ -23,7 +23,8 @@ python manage.py migrate
 ---
 # criar usuario para logar na aplicacao
 python manage.py createsuperuser
-ekatrs
+admin
+admin
 
 ---
 # RODAR A APLICACAO
