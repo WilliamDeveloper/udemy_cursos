@@ -18,7 +18,7 @@ class ContactCourse(forms.Form):
             'email': self.cleaned_data['email'],
             'message': self.cleaned_data['message'],
         }
-        message = message.format(v_params_contexto)
+        message = message.format(**v_params_contexto)
         v_from = settings.DEFAULT_FROM_EMAIL
         v_to_lista_send = [settings.CONTACT_EMAIL]
 

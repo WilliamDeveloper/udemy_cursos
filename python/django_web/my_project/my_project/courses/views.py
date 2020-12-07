@@ -33,7 +33,7 @@ def details(request,slug):
         if (form.is_valid()):
             v_params_contexto['is_valid'] = True
             print(form.cleaned_data)
-            form.send_mail()
+            form.send_mail(course)
             form = ContactCourse()
     else:
         form = ContactCourse()
