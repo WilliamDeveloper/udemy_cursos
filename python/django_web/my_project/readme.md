@@ -20,7 +20,7 @@ admin
 admin
 ---
 # start app
-django-admin startapp alunos
+django-admin startapp core
 
 ---
 # RODAR A APLICACAO
