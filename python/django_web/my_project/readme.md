@@ -21,6 +21,7 @@ admin
 ---
 # start app
 django-admin startapp core
+django-admin startapp courses
 
 ---
 # RODAR A APLICACAO
