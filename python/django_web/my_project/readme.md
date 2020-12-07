@@ -4,6 +4,8 @@ D:\_dev_\work\github\udemy_cursos\python\django_web\my_project\venv\Scripts\acti
 
 pip install -r requirements.txt
 
+pip freeze
+
 
 ---
 # start project
