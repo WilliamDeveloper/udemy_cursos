@@ -40,6 +40,10 @@ class Course(models.Model):
     def __str__(self):
         return self.name
 
+
+    def get_absolute_url(self):
+        return f'/cursos/{self.slug}'
+
     class Meta:
         verbose_name='Curso'
         verbose_name_plural='Cursos'
