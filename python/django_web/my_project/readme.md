@@ -17,6 +17,7 @@ django-admin startapp alunos
 
 ---
 # criar estrutura banco de dados
+python manage.py makemigrations
 python manage.py migrate
 
 ---
