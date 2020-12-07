@@ -32,6 +32,7 @@ def details(request,slug):
         form = ContactCourse(request.POST)
         if (form.is_valid()):
             v_params_contexto['is_valid'] = True
+            print(form.cleaned_data)
             form = ContactCourse()
     else:
         form = ContactCourse()
