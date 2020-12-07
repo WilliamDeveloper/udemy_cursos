@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     # path('', include(('my_project.core.urls','my_project.core'),namespace='core')),
     path('', include('my_project.core.urls',namespace='core')),
+    path('conta', include('my_project.accounts.urls',namespace='accounts')),
     path('cursos/', include('my_project.courses.urls',namespace='courses')),
     path('admin/', admin.site.urls),
 ]
