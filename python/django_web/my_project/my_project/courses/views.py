@@ -26,9 +26,14 @@ def details(request,slug):
 # course = Course.objects.get(pk=id)
     course = get_object_or_404(Course,slug=slug)
 
+    if (request.method == 'POST'):
+        form = ContactCourse(request.POST)
+    else:
+        form = ContactCourse()
+
     v_params_contexto = {
         'course' : course,
-        'form' : ContactCourse()
+        'form' : form
     }
     template_name = 'courses/details.html'
     return render(request,template_name,v_params_contexto)
