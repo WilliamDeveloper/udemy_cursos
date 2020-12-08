@@ -143,8 +143,10 @@ CONTACT_EMAIL = 'contato@my_project.com'
 # autentificacao
 # LOGIN_URL='/conta/entrar/'
 LOGIN_URL='accounts:login'
+LOGOUT_URL='accounts:logout'
 
 # LOGIN_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = 'core:home'
+
 
 
