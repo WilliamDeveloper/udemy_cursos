@@ -4,11 +4,13 @@
 <div class="pure-g-r content-ribbon">
 
     {% if messages %}
-    <aside class="pure-u-1">
-        {% for message in messages %}
-        <p>{{message}}</p>
-        {% endfor %}
-    </aside>
+    <div class="pure-g-r content-ribbon">
+        <aside class="pure-u-1">
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+        </aside>
+    </div>
     {% endif%}
 
     <div class="pure-u-1">
