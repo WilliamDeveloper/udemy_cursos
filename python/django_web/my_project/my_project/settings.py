@@ -140,3 +140,8 @@ EMAIL_PORT = 587
 CONTACT_EMAIL = 'contato@my_project.com'
 
 
+# autentificacao
+LOGIN_URL='/conta/entrar/'
+LOGIN_REDIRECT_URL = '/'
+
+
