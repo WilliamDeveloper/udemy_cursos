@@ -8,6 +8,8 @@ from .forms import RegisterForm
 
 # Create your views here.
 
+
+
 @login_required
 def dashboard(request):
     template_name = 'accounts/dashboard.html'
@@ -32,3 +34,9 @@ def register(request):
     }
 
     return render(request,template_name,params_contexto)
+
+
+@login_required
+def edit(request):
+    template_name = 'accounts/edit.html'
+    return render(request, template_name)
