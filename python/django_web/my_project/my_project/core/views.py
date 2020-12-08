@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
 def home(request):
     v_params_context = {
         'usuario': 'William'
