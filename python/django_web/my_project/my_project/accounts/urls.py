@@ -17,5 +17,12 @@ urlpatterns = [
     ),
 
     path('cadastre-se/', register, name='register'  ),
-    path('logout/', register, name='logout'  ),
+
+    path(
+        'sair/',
+         LogoutView.as_view(
+            next_page='core:home',
+         ),
+         name='logout'
+    ),
 ]
