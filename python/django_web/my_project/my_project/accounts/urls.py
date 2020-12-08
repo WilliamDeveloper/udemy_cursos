@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import register
+from .views import register,dashboard
 
 
 
@@ -16,7 +16,7 @@ urlpatterns = [
          name='login'
     ),
 
-    path('cadastre-se/', register, name='register'  ),
+
 
     path(
         'sair/',
@@ -25,4 +25,7 @@ urlpatterns = [
          ),
          name='logout'
     ),
+
+    path('cadastre-se/', register, name='register'  ),
+    path('dashboard/', dashboard, name='dashboard'  ),
 ]
