@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import LoginView, LogoutView
-from .views import register,dashboard
+from .views import register,dashboard,edit,edit_password
 
 
 
@@ -28,6 +28,6 @@ urlpatterns = [
 
     path('cadastre-se/', register, name='register'  ),
     path('', dashboard, name='dashboard'  ),
-    path('editar/', dashboard, name='edit'  ),
-    path('dashboard_edit_password/', dashboard, name='edit_password'  ),
+    path('editar/', edit, name='edit'  ),
+    path('dashboard_edit_password/', edit_password, name='edit_password'  ),
 ]
