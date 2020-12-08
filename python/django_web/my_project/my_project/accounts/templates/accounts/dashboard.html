@@ -17,6 +17,7 @@
 
             <ul>
                 {% my_courses user %}
+                <!--{% load_my_courses user as enrollments %}-->
 
                 <li class="pure-menu-heading">Minha Conta</li>
                 <li><a href="{% url 'accounts:edit' %}">Editar Conta</a></li>
