@@ -28,4 +28,6 @@ urlpatterns = [
 
     path('cadastre-se/', register, name='register'  ),
     path('dashboard/', dashboard, name='dashboard'  ),
+    path('dashboard_edit/', dashboard, name='edit'  ),
+    path('dashboard_edit_password/', dashboard, name='edit_password'  ),
 ]
