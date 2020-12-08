@@ -35,7 +35,13 @@
 
 
             {%for enrollment in enrollments %}
-                <li><a href="#"><i class="icon-book"></i>{{ enrollment.course }} - {{ enrollment.course.start_date |date:'d/m/Y'|default:'Sem data' }}</a></li>
+                <li>
+                    <a href="#"><i class="icon-book"></i>
+                        {{ enrollment.course }}
+                        - {{ enrollment.course.start_date |date:'d/m/Y'|default:'Sem data' }}
+                        - {{enrollment.course.description|linebreaks}}
+                    </a>
+                </li>
             {% empty %}
                 <li>Nenhum curso encontrado</li>
             {%endfor%}
