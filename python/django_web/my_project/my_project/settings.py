@@ -148,5 +148,7 @@ LOGOUT_URL='accounts:logout'
 # LOGIN_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = 'core:home'
 
+AUTH_USER_MODEL = 'accounts.User'
+
 
 
