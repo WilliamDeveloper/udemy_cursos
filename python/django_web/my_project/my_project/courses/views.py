@@ -70,3 +70,7 @@ def announcements(request,slug):
         Enrollment,
         user=request.user, course=course
     )
+
+    if not enrollment.is_approved() :
+        messages.error(request,'A sua inscrição está pendente')
+        return redirect('accounts:dashboard')
