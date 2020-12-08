@@ -61,3 +61,12 @@ def enrollment(request,slug):
 
 
     return  redirect('accounts:dashboard')
+
+
+@login_required
+def announcements(request,slug):
+    course = get_object_or_404(Course,slug=slug)
+    enrollment = get_object_or_404(
+        Enrollment,
+        user=request.user, course=course
+    )
