@@ -17,13 +17,15 @@
 
             <ul>
                  <li class="pure-menu-heading">Bem-vindo, {{user}}</li>
-
+{% block menu_options %}
                 {% my_courses user %}
                 <!--{% load_my_courses user as enrollments %}-->
 
                 <li class="pure-menu-heading">Configuracao de Conta</li>
                 <li><a href="{% url 'accounts:edit' %}"><i class="icon-cog"></i>Editar Conta</a></li>
                 <li><a href="{% url 'accounts:edit_password' %}">Editar Senha</a></li>
+
+{% endblock %}
             </ul>
         </div>
     </div>
