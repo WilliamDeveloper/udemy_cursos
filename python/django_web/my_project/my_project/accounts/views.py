@@ -5,7 +5,10 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
+from my_project.courses.models import Enrollment
+
 from .forms import RegisterForm,EditAccountForm
+
 
 # Create your views here.
 
@@ -14,7 +17,10 @@ from .forms import RegisterForm,EditAccountForm
 @login_required
 def dashboard(request):
     template_name = 'accounts/dashboard.html'
-    return render(request, template_name)
+    context ={}
+    context['enrollments'] = Enrollment.objects.filter(user=request.user)
+
+    return render(request, template_name, context)
 
 def register(request):
     template_name='accounts/register.html'
