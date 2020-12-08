@@ -32,3 +32,5 @@ python manage.py runserver
 # link de acesso
 http:localhost:8000/
 http:localhost:8000/admin
+
+https://docs.djangoproject.com/pt-br/2.1/topics/auth/default/
