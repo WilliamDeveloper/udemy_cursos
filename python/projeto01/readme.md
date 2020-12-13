@@ -8,3 +8,4 @@ pip install -r requirements.txt
 django-admin startproject projeto .
 
 python manage.py runserver
+python manage.py runserver 8888
