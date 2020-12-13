@@ -53,10 +53,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'meusite.urls'
 
+MINHAS_PAGINAS_TEMPLATE = os.path.join(BASE_DIR,'paginas')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [MINHAS_PAGINAS_TEMPLATE],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
