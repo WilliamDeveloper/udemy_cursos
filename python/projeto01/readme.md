@@ -12,4 +12,5 @@ python manage.py runserver 8888
 
 python manage.py startapp blog
 python manage.py startapp produto
+python manage.py startapp sobre
 
