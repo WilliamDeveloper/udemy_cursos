@@ -6,6 +6,7 @@ class ContatoAdmin(admin.ModelAdmin):
     list_display_links = ('id','nome','sobrenome','telefone' ,'email','data_criacao', 'categoria')
     list_filter = ('nome','sobrenome')
     list_per_page = 10
+    search_fields = ('nome','sobrenome','telefone')
 
 # Register your models here.
 admin.site.register(Categoria)
