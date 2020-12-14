@@ -14,6 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
+FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'agenda.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [FOLDER_GLOBAL_TEMPLATES,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS =[
+    FOLDER_GLOBAL_STATIC,
+]
