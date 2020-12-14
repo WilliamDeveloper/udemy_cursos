@@ -1,5 +1,6 @@
 
 -- criando estrutura basica do django do zero
+---
 cd D:\_dev_\work\github\udemy_cursos\python\projeto05
 virtualenv venv
 D:\_dev_\work\github\udemy_cursos\python\projeto05\venv\Scripts\activate.bat
@@ -19,6 +20,14 @@ python manage.py runserver 8888
 ---
 python manage.py makemigrations
 python manage.py migrate
+python manage.py runserver
+
+
+---
+python manage.py createsuperuser
+admin 
+admin
+http:localhost:8000/admin
 python manage.py runserver
 
 
