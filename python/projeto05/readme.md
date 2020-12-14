@@ -1,8 +1,8 @@
-cd D:\_dev_\work\github\udemy_cursos\python\projeto04
+cd D:\_dev_\work\github\udemy_cursos\python\projeto05
 virtualenv venv
-D:\_dev_\work\github\udemy_cursos\python\projeto04\venv\Scripts\activate.bat
+D:\_dev_\work\github\udemy_cursos\python\projeto05\venv\Scripts\activate.bat
 
-cd D:\_dev_\work\github\udemy_cursos\python\projeto04
+cd D:\_dev_\work\github\udemy_cursos\python\projeto05
 pip install -r requirements.txt
 
 django-admin startproject agenda .
