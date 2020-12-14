@@ -9,6 +9,7 @@ django-admin startproject meusite .
 
 python manage.py startapp blog
 python manage.py startapp sobre
+python manage.py startapp home
 
 python manage.py runserver
 python manage.py runserver 8888
