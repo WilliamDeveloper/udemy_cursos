@@ -1,8 +1,8 @@
-cd D:\_dev_\work\github\udemy_cursos\python\projeto02
+cd D:\_dev_\work\github\udemy_cursos\python\projeto03
 virtualenv venv
-D:\_dev_\work\github\udemy_cursos\python\projeto02\venv\Scripts\activate.bat
+D:\_dev_\work\github\udemy_cursos\python\projeto03\venv\Scripts\activate.bat
 
-cd D:\_dev_\work\github\udemy_cursos\python\projeto02
+cd D:\_dev_\work\github\udemy_cursos\python\projeto03
 pip install -r requirements.txt
 
 django-admin startproject meusite .
