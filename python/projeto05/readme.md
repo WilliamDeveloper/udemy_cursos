@@ -19,5 +19,6 @@ python manage.py runserver 8888
 ---
 python manage.py makemigrations
 python manage.py migrate
+python manage.py runserver
 
 
