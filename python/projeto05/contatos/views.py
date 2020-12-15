@@ -6,6 +6,12 @@ from django.core.paginator import Paginator
 # Create your views here.
 def index(request):
     contatos = Contato.objects.all()
+
+    #fazendo a lista de objetos ficar paginada
+    paginator = Paginator(contatos, 1)# itens por pagina
+    page = request.GET.get('page')
+    contatos = paginator.get_page(page)
+
     v_parametros = {
         'contatos':contatos,
     }
