@@ -12,8 +12,8 @@ def index(request):
     contatos = Contato.objects\
         .order_by('-id')\
         .filter(
-        mostrar=True
-    )
+            mostrar=True
+        )
 
     #fazendo a lista de objetos ficar paginada
     paginator = Paginator(contatos, 1)# itens por pagina
