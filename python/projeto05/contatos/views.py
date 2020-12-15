@@ -12,9 +12,9 @@ def index(request):
 
 
 # Create your views here.
-def contato_detalhe(request):
-    contatos = Contato.objects.all()
+def contato_detalhe(request, contato_id):
+    contato = Contato.objects.get(id=contato_id)
     v_parametros = {
-        'contatos':contatos,
+        'contato':contato,
     }
-    return render(request,'contatos/index.html', v_parametros)
+    return render(request,'contatos/contato_detalhe.html', v_parametros)
