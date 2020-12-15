@@ -1,4 +1,4 @@
-
+#https://docs.djangoproject.com/en/2.2/
 -- criando estrutura basica do django do zero
 ---
 cd D:\_dev_\work\github\udemy_cursos\python\projeto05
