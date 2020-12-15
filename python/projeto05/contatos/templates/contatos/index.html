@@ -6,6 +6,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
       <th>Sobrenome</th>
       <th>Telefone</th>
@@ -17,6 +18,7 @@
   {% for contato  in contatos %}
     {% if contato.mostrar %}
     <tr>
+      <td>{{contato.id}}</td>
       <td>
         <!--<a href="{% url 'contato_detalhe' contato_id=contato.id %}"> {{contato.nome}}</a>-->
         <a href="{% url 'contato_detalhe' contato.id %}"> {{contato.nome}}</a>
@@ -39,7 +41,7 @@
       {% if contatos.number == pagina %}
         <li class="page-item active"><a class="page-link" href="?page={{ pagina }}">{{ pagina }}</a></li>
       {% else %}
-        <li class="page-item"><a class="page-link" href="?page={{ pagina }}">{{ pagina }}</a></li>
+        <li class="page-item"> <a class="page-link" href="?page={{ pagina }}">{{ pagina }}</a></li>
       {% endif%}
 
     {% endfor%}
