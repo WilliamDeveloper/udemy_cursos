@@ -1,5 +1,7 @@
 https://docs.djangoproject.com/en/2.2/
 https://docs.djangoproject.com/en/2.2/topics/pagination/
+https://getbootstrap.com/docs/4.0/components/pagination/
+
 
 -- criando estrutura basica do django do zero
 ---
