@@ -1,4 +1,6 @@
-#https://docs.djangoproject.com/en/2.2/
+https://docs.djangoproject.com/en/2.2/
+https://docs.djangoproject.com/en/2.2/topics/pagination/
+
 -- criando estrutura basica do django do zero
 ---
 cd D:\_dev_\work\github\udemy_cursos\python\projeto05
