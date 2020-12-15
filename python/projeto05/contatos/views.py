@@ -6,7 +6,9 @@ from django.core.paginator import Paginator
 
 # Create your views here.
 def index(request):
-    contatos = Contato.objects.all()
+    # contatos = Contato.objects.all()
+    # contatos = Contato.objects.order_by('nome') # ordem crescente
+    contatos = Contato.objects.order_by('-nome') # ordem decrescente
 
     #fazendo a lista de objetos ficar paginada
     paginator = Paginator(contatos, 1)# itens por pagina
