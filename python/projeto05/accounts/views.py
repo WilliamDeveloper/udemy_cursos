@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
+from django.core.validators import validate_email
 
 # Create your views here.
 
@@ -33,8 +34,30 @@ def cadastro(request) :
 
         v_msg= 'Nunhum campo pode estar vazio'
         messages.error(request,v_msg)
+        return render(request, 'accounts/cadastro.html')
+
+    try:
+        validate_email(email)
+    except:
+        v_msg = 'Email invalido'
+        messages.error(request, v_msg)
+        return render(request, 'accounts/cadastro.html')
 
 
+    if(len(usuario) <6):
+        v_msg= 'usuario precisar ter no minimo 6 caracteres'
+        messages.error(request,v_msg)
+        return render(request, 'accounts/cadastro.html')
+
+    if(len(senha) <6):
+        v_msg= 'Senha precisar ter no minimo 6 caracteres'
+        messages.error(request,v_msg)
+        return render(request, 'accounts/cadastro.html')
+
+    if( senha != senha2 ):
+        v_msg= 'Senhas nao conferem'
+        messages.error(request,v_msg)
+        return render(request, 'accounts/cadastro.html')
 
 
 
