@@ -42,3 +42,20 @@ python manage.py runserver
 python manage.py collectstatic
 
 
+---------------------------------------
+# instalando
+sudo apt install python3-pip python3.7-dev python3.7-venv nginx curl
+
+# atualizando pip e demais
+python3.7 -m pip install --upgrade pip setuptools wheel --user
+export PATH="/home/$USER/.local/bin:$PATH"
+python3.7 -m pip install pipenv --user
+
+# criando ambiente virtual
+python3.7 -m venv venv
+source venv/bin/activate
+python3.7 -m pip install django gunicorn pillow
+
+mudar ALLOWED_HOSTS
+(venv) gunicorn --bind 0.0.0.0:80 agenda.wsgi
+
