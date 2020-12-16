@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.validators import validate_email
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -46,12 +47,12 @@ def cadastro(request) :
         return render(request, 'accounts/cadastro.html')
 
 
-    if(len(usuario) <6):
+    if(len(usuario) <5):
         v_msg= 'usuario precisar ter no minimo 6 caracteres'
         messages.error(request,v_msg)
         return render(request, 'accounts/cadastro.html')
 
-    if(len(senha) <6):
+    if(len(senha) <5):
         v_msg= 'Senha precisar ter no minimo 6 caracteres'
         messages.error(request,v_msg)
         return render(request, 'accounts/cadastro.html')
@@ -61,10 +62,31 @@ def cadastro(request) :
         messages.error(request,v_msg)
         return render(request, 'accounts/cadastro.html')
 
+    if User.objects.filter( username=usuario).exists() :
+        v_msg = 'Usuario ja existe'
+        messages.error(request, v_msg)
+        return render(request, 'accounts/cadastro.html')
+
+    if User.objects.filter( email=email).exists() :
+        v_msg = 'Email ja existe'
+        messages.error(request, v_msg)
+        return render(request, 'accounts/cadastro.html')
 
 
 
-    return render(request, 'accounts/cadastro.html')
+
+    user = User.objects.create_user(
+        first_name=nome,
+        last_name=sobrenome,
+        username=usuario,
+        email=email,
+        password=senha,
+    )
+    user.save()
+    v_msg = 'Registrado com Sucesso! faça o login'
+    messages.success(request, v_msg)
+
+    return redirect('login')
 
 def dashboard(request) :
     return render(request, 'accounts/dashboard.html')
