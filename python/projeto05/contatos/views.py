@@ -51,3 +51,21 @@ def contato_detalhe(request, contato_id):
 #         return render(request,'contatos/contato_detalhe.html', v_parametros)
 #     except Contato.DoesNotExist as e:
 #         raise  Http404()
+
+
+def busca(request, contato_id):
+    contatos = Contato.objects \
+        .order_by('-id') \
+        .filter(
+        mostrar=True
+    )
+
+    # fazendo a lista de objetos ficar paginada
+    paginator = Paginator(contatos, 1)  # itens por pagina
+    page = request.GET.get('page')
+    contatos = paginator.get_page(page)
+
+    v_parametros = {
+        'contatos': contatos,
+    }
+    return render(request, 'contatos/busca.html', v_parametros)
