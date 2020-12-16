@@ -1,12 +1,28 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.contrib import messages, auth
 from django.core.validators import validate_email
 from django.contrib.auth.models import User
 
 # Create your views here.
 
 def login(request) :
-    return render(request, 'accounts/login.html')
+    if(request.method != 'POST'):
+        return render(request, 'accounts/login.html')
+
+    usuario = request.POST.get('usuario')
+    senha = request.POST.get('senha')
+
+    user = auth.authenticate(request, username=usuario, password=senha)
+
+    if not user:
+        v_msg = 'Usuario ou senha invalidos'
+        messages.error(request, v_msg)
+        return render(request, 'accounts/login.html')
+    else:
+        auth.login(request, user)
+        v_msg = 'Login efetuado com sucesso'
+        messages.success(request, v_msg)
+        return redirect('dashboard')
 
 def logout(request) :
     return render(request, 'accounts/logout.html')
