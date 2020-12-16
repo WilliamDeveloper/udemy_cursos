@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Contato
 from django.http import Http404
 from django.db.models import Q, Value
@@ -10,8 +10,7 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    v_msg = 'Ocorreu um erro'
-    messages.add_message(request,messages.ERROR, v_msg)
+
 
     # contatos = Contato.objects.all()
     # contatos = Contato.objects.order_by('nome') # ordem crescente
@@ -65,8 +64,17 @@ def busca(request):
     termo = request.GET.get('termo')
     print(termo)
 
+    # if termo is None or not termo :
+    #     raise Http404()
+
     if termo is None or not termo :
-        raise Http404()
+        v_msg = 'Campo termo nao pode ser vazio'
+        messages.add_message(request, messages.ERROR, v_msg)
+        messages.add_message(request, messages.WARNING, v_msg)
+        messages.add_message(request, messages.DEBUG, v_msg)
+        messages.add_message(request, messages.SUCCESS, v_msg)
+        messages.add_message(request, messages.INFO, v_msg)
+        return redirect('index')
 
     campos = Concat('nome',Value(' '), 'sobrenome')
 
