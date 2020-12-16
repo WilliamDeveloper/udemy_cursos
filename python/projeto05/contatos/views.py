@@ -6,8 +6,13 @@ from django.db.models.functions import  Concat
 
 from django.core.paginator import Paginator
 
+from django.contrib import messages
+
 # Create your views here.
 def index(request):
+    v_msg = 'Ocorreu um erro'
+    messages.add_message(request,messages.ERROR, v_msg)
+
     # contatos = Contato.objects.all()
     # contatos = Contato.objects.order_by('nome') # ordem crescente
     # contatos = Contato.objects.order_by('-nome') # ordem decrescente

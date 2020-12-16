@@ -132,6 +132,7 @@ MEDIA_URL="media/"
 #usando messages do bootstrap
 #sobrescrevendo as tag de alert do django para as tag do boostrap
 from django.contrib.messages import constants
+
 MESSAGE_TAGS ={
     constants.ERROR : 'alert-danger',
     constants.WARNING : 'alert-warning',
