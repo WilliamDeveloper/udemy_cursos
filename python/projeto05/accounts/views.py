@@ -125,6 +125,6 @@ def dashboard(request) :
         form = FormContato(request.POST)
 
     form.save()
-    v_msg = f'conta {request.POST.nome} salvo com sucesso'
+    v_msg = f'conta {request.POST.get("nome")} salvo com sucesso'
     messages.success(request, v_msg)
     return redirect('dashboard')
