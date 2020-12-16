@@ -72,6 +72,8 @@ def busca(request):
     #     mostrar=True
     # )
 
+    # AND - nome__icontains=termo, sobrenome__icontains=termo, nome_completo__icontains=termo,
+    # OR  - Q(nome__icontains=termo) | Q(sobrenome__icontains=termo) | Q(nome_completo__icontains=termo),
 
     contatos = Contato.objects.order_by('-id')
     contatos = contatos.annotate(
