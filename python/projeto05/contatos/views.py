@@ -54,11 +54,30 @@ def contato_detalhe(request, contato_id):
 
 
 def busca(request):
-    contatos = Contato.objects \
-        .order_by('-id') \
-        .filter(
+
+    termo = request.GET.get('termo')
+    print(termo)
+
+    # contatos = Contato.objects \
+    #     .order_by('-id') \
+    #     .filter(
+    #
+    #     # nome=termo,
+    #     nome__icontains=termo,
+    #
+    #     mostrar=True
+    # )
+
+    contatos = Contato.objects.order_by('-id')
+    contatos = contatos.filter(
+        nome__icontains=termo,
         mostrar=True
     )
+
+
+    # ver como esta a query do filter ateh o momento
+    print(contatos.query)
+
 
     # fazendo a lista de objetos ficar paginada
     paginator = Paginator(contatos, 1)  # itens por pagina
@@ -68,4 +87,6 @@ def busca(request):
     v_parametros = {
         'contatos': contatos,
     }
+
+
     return render(request, 'contatos/busca.html', v_parametros)
