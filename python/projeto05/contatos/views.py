@@ -53,7 +53,7 @@ def contato_detalhe(request, contato_id):
 #         raise  Http404()
 
 
-def busca(request, contato_id):
+def busca(request):
     contatos = Contato.objects \
         .order_by('-id') \
         .filter(
