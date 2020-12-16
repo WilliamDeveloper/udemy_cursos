@@ -1,6 +1,8 @@
 from django.shortcuts import render,get_object_or_404
 from .models import Contato
 from django.http import Http404
+from django.db.models import Q, Value
+from django.db.models.functions import  Concat
 
 from django.core.paginator import Paginator
 
@@ -58,6 +60,8 @@ def busca(request):
     termo = request.GET.get('termo')
     print(termo)
 
+    campos = Concat('nome',Value(' '), 'sobrenome')
+
     # contatos = Contato.objects \
     #     .order_by('-id') \
     #     .filter(
@@ -68,9 +72,14 @@ def busca(request):
     #     mostrar=True
     # )
 
+
     contatos = Contato.objects.order_by('-id')
+    contatos = contatos.annotate(
+        nome_completo=campos
+    )
     contatos = contatos.filter(
-        nome__icontains=termo,
+    Q(nome__icontains=termo)| Q(sobrenome__icontains=termo) |Q(nome_completo__icontains=termo),
+
         mostrar=True
     )
 
