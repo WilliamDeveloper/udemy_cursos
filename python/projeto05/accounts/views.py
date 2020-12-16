@@ -25,6 +25,8 @@ def cadastro(request) :
     senha = request.POST.get('senha')
     senha2 = request.POST.get('senha2')
 
+    print(nome,sobrenome,email,usuario,senha,senha2)
+
     if not nome \
         or not sobrenome \
         or not email \
