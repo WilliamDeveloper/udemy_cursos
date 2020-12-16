@@ -60,6 +60,9 @@ def busca(request):
     termo = request.GET.get('termo')
     print(termo)
 
+    if termo is None or not termo :
+        raise Http404()
+
     campos = Concat('nome',Value(' '), 'sobrenome')
 
     # contatos = Contato.objects \
@@ -80,7 +83,7 @@ def busca(request):
         nome_completo=campos
     )
     contatos = contatos.filter(
-    Q(nome__icontains=termo)| Q(sobrenome__icontains=termo) |Q(nome_completo__icontains=termo),
+    Q(nome__icontains=termo)| Q(sobrenome__icontains=termo) |Q(nome_completo__icontains=termo) | Q(telefone__icontains=termo),
 
         mostrar=True
     )
