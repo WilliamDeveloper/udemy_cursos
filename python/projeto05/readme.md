@@ -17,6 +17,7 @@ pip install -r requirements.txt
 django-admin startproject agenda .
 
 python manage.py startapp contatos
+python manage.py startapp accounts
 
 python manage.py runserver
 python manage.py runserver 8888
