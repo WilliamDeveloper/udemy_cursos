@@ -26,7 +26,8 @@ def login(request) :
         return redirect('dashboard')
 
 def logout(request) :
-    return render(request, 'accounts/logout.html')
+    auth.logout(request)
+    return redirect('dashboard')
 
 def cadastro(request) :
     print('request: ', request)
