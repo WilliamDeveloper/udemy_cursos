@@ -38,3 +38,7 @@ http:localhost:8000/admin
 python manage.py runserver
 
 
+--COLETAR ARQUIVOS STATICOS PARA PRODUCAO
+python manage.py collectstatic
+
+
