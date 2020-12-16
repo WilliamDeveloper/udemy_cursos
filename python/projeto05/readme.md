@@ -52,6 +52,7 @@ export PATH="/home/$USER/.local/bin:$PATH"
 python3.7 -m pip install pipenv --user
 
 # criando ambiente virtual
+mkdir agenda
 python3.7 -m venv venv
 source venv/bin/activate
 python3.7 -m pip install django gunicorn pillow
