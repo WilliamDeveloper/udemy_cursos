@@ -58,6 +58,10 @@ source venv/bin/activate
 python3.7 -m pip install django gunicorn pillow
 python3.7 -m pip install - r requirements
 
+# sair do ambiente
+deactivate
+exit
+
 mudar ALLOWED_HOSTS
 (venv) gunicorn --bind 0.0.0.0:80 agenda.wsgi
 
