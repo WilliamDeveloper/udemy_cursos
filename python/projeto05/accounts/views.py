@@ -110,8 +110,19 @@ def cadastro(request) :
 @login_required(redirect_field_name='login')
 def dashboard(request) :
 
-    form = FormContato()
-    v_params = {
-        'form' : form,
-    }
-    return render(request, 'accounts/dashboard.html', v_params)
+    if request.method != 'POST':
+        form = FormContato()
+        v_params = {
+            'form' : form,
+        }
+        return render(request, 'accounts/dashboard.html', v_params)
+
+    form = FormContato(request.POST, request.FILES)
+
+    if not form.is_valid():
+        v_msg = 'erro ao enviar formulario'
+        messages.error(request, v_msg)
+        form = FormContato(request.POST)
+
+    form.save()
+    return redirect('dashboard')
