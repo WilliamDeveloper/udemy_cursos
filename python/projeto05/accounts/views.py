@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.core.validators import validate_email
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .models import FormContato
 
 # Create your views here.
 
@@ -108,4 +109,9 @@ def cadastro(request) :
 
 @login_required(redirect_field_name='login')
 def dashboard(request) :
-    return render(request, 'accounts/dashboard.html')
+
+    form = FormContato()
+    v_params = {
+        'form' : form,
+    }
+    return render(request, 'accounts/dashboard.html', v_params)

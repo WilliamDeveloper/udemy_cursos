@@ -9,5 +9,18 @@
         o seu nome de usuario é user {{user}}
     </p>
 
+    <div class="container">
+        <form action="{% url 'dashboard' %}" method="post" enctype="multipart/form-data">
+            <table class="table">
+                {{form}}
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-primary">Ennviar</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
 
 {% endblock %}
