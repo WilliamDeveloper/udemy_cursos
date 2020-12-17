@@ -66,6 +66,7 @@ mudar ALLOWED_HOSTS
 D:\_dev_\work\github\udemy_cursos\python\projeto05\agenda\settings.py
 ###############
 ALLOWED_HOSTS = ['192.168.0.5','curso.seila.com.br']
+DEBUG = False
 
 ####################
 
