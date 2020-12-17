@@ -65,3 +65,23 @@ exit
 mudar ALLOWED_HOSTS
 (venv) gunicorn --bind 0.0.0.0:80 agenda.wsgi
 
+
+---------------------------------------
+#criando arquivo
+
+## fonte
+## https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+
+sudo nano /etc/systemd/system/gunicorn.socket
+###############################################################
+
+# COLAR (SEM EDICAO)
+[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=socket.target
+###############################################################
