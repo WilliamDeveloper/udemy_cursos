@@ -126,3 +126,24 @@ curl --unix-socket /run/gunicorn.sock localhost
 sudo systemctl status gunicorn
 
 ###############################################################
+
+sudo nano /etc/nginx/sites-enabled/sitedjango
+
+###############################################################
+
+# configurando o nginx server block
+
+server {
+    listen 80;
+    server_name localhost;
+    
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/##############USUARIO##################/agenda;
+    }
+    
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock
+    }
+}
