@@ -114,7 +114,7 @@ WantedBy=multi-user.target
 
 # ativando
 sudo systemctl start  gunicorn.socket
-sudo systemctl enable gunicorn.socket     
+sudo systemctl enable gunicorn.socket
 
 ###############################################################
 
@@ -122,4 +122,7 @@ sudo systemctl enable gunicorn.socket
 sudo systemctl status gunicorn.socket
 sudo systemctl status gunicorn         
          
-         
+curl --unix-socket /run/gunicorn.sock localhost
+sudo systemctl status gunicorn
+
+###############################################################
