@@ -85,3 +85,32 @@ ListenStream=/run/gunicorn.sock
 [Install]
 WantedBy=socket.target
 ###############################################################
+
+criar outro arquivo
+sudo nano /etc/systemd/system/gunicorn.service
+###############################################################
+
+# editar e depois colar
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User= #######################USUARIO#######################################
+Group=www-data
+WorkingDirectory=/home/#######USUARIO#######/agenda
+ExecStart=/home/#######USUARIO#######/agenda/venv/bin/gunicorn \
+         --access-logfile - \
+         --workers 3 \
+         --bind unix:/run/gunicorn.sock \
+         agenda.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+         
+         
+         
+         
+         
+         
