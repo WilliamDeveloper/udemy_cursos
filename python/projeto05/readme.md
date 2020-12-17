@@ -110,7 +110,16 @@ ExecStart=/home/#######USUARIO#######/agenda/venv/bin/gunicorn \
 WantedBy=multi-user.target
          
          
-         
-         
+###############################################################
+
+# ativando
+sudo systemctl start  gunicorn.socket
+sudo systemctl enable gunicorn.socket     
+
+###############################################################
+
+# checando
+sudo systemctl status gunicorn.socket
+sudo systemctl status gunicorn         
          
          
