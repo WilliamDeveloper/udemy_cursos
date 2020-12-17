@@ -62,7 +62,7 @@ python3.7 -m pip install - r requirements
 deactivate
 exit
 
-mudar ALLOWED_HOSTS
+# mudar ALLOWED_HOSTS
 D:\_dev_\work\github\udemy_cursos\python\projeto05\agenda\settings.py
 ###############
 ALLOWED_HOSTS = ['192.168.0.5','curso.seila.com.br']
@@ -160,3 +160,16 @@ server {
 sudo rm /etc/nginx/sites-enabled/default
 sudo systemctl restart nginx
 sudo systemctl restart gunicorn
+
+
+###############################################################
+# preparar certificado https
+
+sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+sudo apt-get install certbot
+sudo service nginx stop
+sudo certbot certonly --standalone -d DOMINIO.COM.BR
+sudo service nginx start
+
+# D:\_dev_\work\github\udemy_cursos\python\projeto05\agenda\settings.py
+SECURE_SSL_REDIRECT = True
