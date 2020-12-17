@@ -173,3 +173,5 @@ sudo service nginx start
 
 # D:\_dev_\work\github\udemy_cursos\python\projeto05\agenda\settings.py
 SECURE_SSL_REDIRECT = True
+
+###############################################################
