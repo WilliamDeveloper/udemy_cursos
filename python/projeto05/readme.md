@@ -149,6 +149,10 @@ server {
         root /home/##############USUARIO##################/agenda;
     }
     
+    location /media/ {
+        alias /home/##############USUARIO##################/agenda/media;
+    }
+    
     location / {
         include proxy_params;
         proxy_pass http://unix:/run/gunicorn.sock;
