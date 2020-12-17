@@ -144,6 +144,6 @@ server {
     
     location / {
         include proxy_params;
-        proxy_pass http://unix:/run/gunicorn.sock
+        proxy_pass http://unix:/run/gunicorn.sock;
     }
 }
