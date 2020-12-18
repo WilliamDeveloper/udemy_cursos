@@ -7,11 +7,11 @@ https://getbootstrap.com/docs/4.0/components/alerts/
 
 -- criando estrutura basica do django do zero
 ---
-cd D:\_dev_\work\github\udemy_cursos\python\projeto05
+cd D:\_dev_\work\github\udemy_cursos\python\projeto06
 virtualenv venv
-D:\_dev_\work\github\udemy_cursos\python\projeto05\venv\Scripts\activate.bat
+D:\_dev_\work\github\udemy_cursos\python\projeto06\venv\Scripts\activate.bat
 
-cd D:\_dev_\work\github\udemy_cursos\python\projeto05
+cd D:\_dev_\work\github\udemy_cursos\python\projeto06
 pip install -r requirements.txt
 
 django-admin startproject agenda .
