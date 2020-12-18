@@ -14,7 +14,7 @@ D:\_dev_\work\github\udemy_cursos\python\projeto06\venv\Scripts\activate.bat
 cd D:\_dev_\work\github\udemy_cursos\python\projeto06
 pip install -r requirements.txt
 
-django-admin startproject blogcurso .
+django-admin startproject blog .
 
 python manage.py startapp contatos
 python manage.py startapp accounts
