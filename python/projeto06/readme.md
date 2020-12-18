@@ -16,8 +16,9 @@ pip install -r requirements.txt
 
 django-admin startproject blog .
 
-python manage.py startapp contatos
-python manage.py startapp accounts
+python manage.py startapp categorias
+python manage.py startapp posts
+python manage.py startapp comentarios
 
 python manage.py runserver
 python manage.py runserver 8888
