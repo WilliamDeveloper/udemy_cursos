@@ -14,8 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
-FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -112,14 +111,46 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
+
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.2/howto/static-files/
+STATIC_URL = '/static/'
+
+##########################################################
+# configs custom
+##########################################################
+LANGUAGE_CODE = 'pt-BR'
+TIME_ZONE = 'America/Sao_Paulo'
+
+FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
+FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATICFILES_DIRS =[
+    FOLDER_GLOBAL_STATIC,
+]
+STATIC_ROOT = os.path.join('static')
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL="media/"
+
+
+#usando messages do bootstrap
+#sobrescrevendo as tag de alert do django para as tag do boostrap
+from django.contrib.messages import constants
+
+MESSAGE_TAGS ={
+    constants.ERROR : 'alert-danger',
+    constants.WARNING : 'alert-warning',
+    constants.DEBUG : 'alert-info',
+    constants.SUCCESS : 'alert-success',
+    constants.INFO : 'alert-info',
+}
