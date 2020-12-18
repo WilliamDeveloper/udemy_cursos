@@ -14,6 +14,8 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
+FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,6 +33,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'posts',
+    'categorias',
+    'comentarios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +59,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [FOLDER_GLOBAL_TEMPLATES,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
