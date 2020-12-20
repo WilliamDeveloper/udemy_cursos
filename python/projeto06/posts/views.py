@@ -95,4 +95,4 @@ class PostDetalhes(UpdateView) :
         comentario.save()
         messages.success(self.request, 'Comentário enviado com sucesso!')
 
-        return redirect('post_Detalhes',pk=post.id)
+        return redirect('post_detalhes',pk=post.id)
