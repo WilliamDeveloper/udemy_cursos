@@ -185,6 +185,7 @@ SECURE_SSL_REDIRECT = True
 
 
 # modo prod
+#--------------------------------------------------------------
 - python manage.py collectstatic
 - python manage.py dumpdate --exclude=contenttypes --exclude=auth.Permission > db.json
 
