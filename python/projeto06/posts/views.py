@@ -3,6 +3,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView
 from .models import Post
 from django.db.models import Q, Count, Case, When
+from comentarios.forms import FormComentario
 
 # Create your views here.
 
@@ -77,3 +78,4 @@ class PostCategoria(PostIndex) :
 class PostDetalhes(UpdateView) :
     template_name = 'posts/post_detalhes.html'
     model = Post
+    form_class = FormComentario
