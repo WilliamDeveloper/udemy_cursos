@@ -28,7 +28,7 @@ class PostIndex(ListView) :
 
 
 class PostBusca(PostIndex) :
-    pass
+    template_name = 'posts/post_busca.html'
 
 
 class PostCategoria(PostIndex) :
