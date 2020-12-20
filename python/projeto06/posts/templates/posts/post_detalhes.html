@@ -5,7 +5,7 @@
 {% block conteudo %}
 
 <!-- POST -->
-<div class="container">
+
     <div class="row pt-5">
         <div class="col-xl"></div>
         <div class="col-xl-8 text-center">
@@ -61,26 +61,30 @@
         <div class="col-xl-8">
             <h2 class="my-3">Deixe um comentário</h2>
 
-            <form method="POST" action="#envia_comentario">
+            <form method="POST" action="#envia_comentario"> {% csrf_token %}
 
-                <table class="table">
-                    {% csrf_token %}
-                    {{ form }}
-                    <tr>
-                        <td colspan="2">
-                            {% include 'partials/_messages.html' %}
-                            <input id="envia_comentario" type="submit" class="btn btn-primary"
-                                value="Enviar">
-                        </td>
-                    </tr>
-                </table>
+
+                    {% for hidden_field in form.hidden_fields %}
+                        {{hidden_field}}}
+                    {% endfor %}
+
+                    {% for visible_field in form.visible_fields %}
+                        <div class="form-group">
+                            {{visible_field.label_tag}} <br>
+                            {{visible_field}}
+                        </div>
+                    {% endfor %}
+
+                    {% include 'partials/_messages.html' %}
+                    <input id="envia_comentario" type="submit" class="btn btn-primary" value="Enviar">
+
             </form>
 
 
         </div>
         <div class="col-xl"></div>
     </div>
-</div>
+
 <!-- POST -->
 
 {% endblock %}
