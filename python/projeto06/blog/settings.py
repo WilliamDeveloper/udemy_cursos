@@ -15,8 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -27,7 +25,6 @@ SECRET_KEY = '=sh_=3nw&g4-h^u+t!sb+9!xm%ibgdqox!u*5vq8@=a@!8@l2^'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -126,67 +123,84 @@ STATIC_URL = '/static/'
 
 
 
+try:
+    from .modo_localhost import *
+    print('modo_localhost - sucesso')
+except:
+    print('modo_localhost - erro')
 
 
 
+# try:
+#     from .modo_prod import *
+#     print('modo_prod - sucesso')
+# except:
+#     print('modo_prod - erro')
 
 
-
-
-##########################################################
-# configs custom
-##########################################################
-DEBUG = True
-
-LANGUAGE_CODE = 'pt-BR'
-TIME_ZONE = 'America/Sao_Paulo'
-
-FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
-FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [FOLDER_GLOBAL_TEMPLATES,],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-
-STATICFILES_DIRS =[
-    FOLDER_GLOBAL_STATIC,
-]
-STATIC_ROOT = os.path.join('static')
-
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-MEDIA_URL="media/"
-
-
-#usando messages do bootstrap
-#sobrescrevendo as tag de alert do django para as tag do boostrap
-from django.contrib.messages import constants
-
-MESSAGE_TAGS ={
-    constants.ERROR : 'alert-danger',
-    constants.WARNING : 'alert-warning',
-    constants.DEBUG : 'alert-info',
-    constants.SUCCESS : 'alert-success',
-    constants.INFO : 'alert-info',
-}
-
-# sumernote
-INSTALLED_APPS += ('django_summernote',)
-X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-# humanize
-INSTALLED_APPS += ('django.contrib.humanize',)
+# ##########################################################
+# # configs custom -  MAQUINA_LOCAL
+# ##########################################################
+# DEBUG = True
+#
+# ALLOWED_HOSTS = []
+#
+# LANGUAGE_CODE = 'pt-BR'
+# TIME_ZONE = 'America/Sao_Paulo'
+#
+# FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
+# FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
+#
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [FOLDER_GLOBAL_TEMPLATES,],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
+#
+# # Static files (CSS, JavaScript, Images)
+# # https://docs.djangoproject.com/en/2.2/howto/static-files/
+#
+# STATICFILES_DIRS =[
+#     FOLDER_GLOBAL_STATIC,
+# ]
+# STATIC_ROOT = os.path.join('static')
+#
+# MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+# MEDIA_URL="media/"
+#
+#
+# #usando messages do bootstrap
+# #sobrescrevendo as tag de alert do django para as tag do boostrap
+# from django.contrib.messages import constants
+#
+# MESSAGE_TAGS ={
+#     constants.ERROR : 'alert-danger',
+#     constants.WARNING : 'alert-warning',
+#     constants.DEBUG : 'alert-info',
+#     constants.SUCCESS : 'alert-success',
+#     constants.INFO : 'alert-info',
+# }
+#
+# # sumernote
+# INSTALLED_APPS += ('django_summernote',)
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
+#
+# # humanize
+# INSTALLED_APPS += ('django.contrib.humanize',)
+#
+#
+# # config ssl off
+# SECURE_PROXY_SSL_HEADER = None
+# SECURE_SSL_REDIRECT = False
+# SESSION_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
