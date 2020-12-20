@@ -4,6 +4,8 @@ https://docs.djangoproject.com/en/2.2/topics/pagination/
 https://getbootstrap.com/docs/4.0/components/pagination/
 https://getbootstrap.com/docs/4.0/components/alerts/
 
+https://github.com/summernote/django-summernote
+
 
 -- criando estrutura basica do django do zero
 ---
