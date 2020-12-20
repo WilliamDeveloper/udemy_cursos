@@ -196,5 +196,11 @@ show databases;
 
 CREATE DATABASE blog_django;
 
+flush privileges;
+
+quit
+
+
+
 GRANT ALL PRIVILEGES ON blog_django.* TO 'cursopython'@'%';
 
