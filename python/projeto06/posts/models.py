@@ -39,5 +39,17 @@ class Post(models.Model):
         width, height = img.size
         print(width, height)
 
-        new_height = (new_width * height) / width
-        print(new_width, new_height)
+        new_height = round((new_width * height) / width)
+        print(width, height, new_width, new_height)
+
+        if width <= new_width:
+            img.close()
+            return
+
+        new_img = img.resize( (new_width, new_height), Image.ANTIALIAS )
+        new_img.save(
+            img_path ,
+            optimize=True,
+            quality=60
+        )
+        new_img.close()
