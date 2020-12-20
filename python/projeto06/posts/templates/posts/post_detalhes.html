@@ -66,6 +66,7 @@
             <form method="POST" action="#envia_comentario">
 
                 <table class="table">
+                    {% csrf_token %}
                     {{ form }}
                     <tr>
                         <td colspan="2">
