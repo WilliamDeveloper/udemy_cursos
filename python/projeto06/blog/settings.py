@@ -183,3 +183,6 @@ MESSAGE_TAGS ={
     constants.SUCCESS : 'alert-success',
     constants.INFO : 'alert-info',
 }
+
+# sumernote
+INSTALLED_APPS += ('django_summernote',)
