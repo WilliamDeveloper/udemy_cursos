@@ -1,4 +1,5 @@
 from django.contrib import admin
+from .models import Comentario
 
 # Register your models here.
 class ComentarioAdmin(admin.ModelAdmin):
@@ -18,3 +19,5 @@ class ComentarioAdmin(admin.ModelAdmin):
         'nome_comentario',
         'email_comentario',
     )
+
+admin.site.register(Comentario, ComentarioAdmin)
