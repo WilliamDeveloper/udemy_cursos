@@ -188,3 +188,13 @@ SECURE_SSL_REDIRECT = True
 - python manage.py collectstatic
 - python manage.py dumpdate --exclude=contenttypes --exclude=auth.Permission > db.json
 
+pip install mysqlclient
+
+>> mysql -u root
+
+show databases;
+
+CREATE DATABASE blog_django;
+
+GRANT ALL PRIVILEGES ON blog_django.* TO 'cursopython'@'%';
+
