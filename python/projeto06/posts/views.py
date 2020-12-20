@@ -75,4 +75,5 @@ class PostCategoria(PostIndex) :
 
 
 class PostDetalhes(UpdateView) :
-    pass
+    template_name = 'posts/post_detalhes.html'
+    model = Post
