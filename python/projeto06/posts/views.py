@@ -18,6 +18,7 @@ class PostIndex(ListView) :
 
     def get_queryset(self):
         qs = super().get_queryset()
+        qs = qs.select_related('categoria_post') # para fazer a FK nao dar spam de select
         qs = qs.order_by('-id')
 
         qs = qs.annotate(
