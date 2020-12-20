@@ -8,13 +8,24 @@ from .settings import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blogcursopython.william.com.br',]
 
 LANGUAGE_CODE = 'pt-BR'
 TIME_ZONE = 'America/Sao_Paulo'
 
 FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
 FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blog_django',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'PASSWORD': 'cursopython@111',
+    }
+}
+
 
 TEMPLATES = [
     {
