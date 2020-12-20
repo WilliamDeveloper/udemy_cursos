@@ -12,11 +12,13 @@
 
         <div class="card">
 
+            {% if post.imagem_post %}
             <a href="{% url 'post_detalhes' post.id %}">
                 <img class="card-img-top"
                      src="{{ post.imagem_post.url }}"
                      alt="{{ post.titulo_post }}">
             </a>
+            {% endif %}
 
             <div class="card-body">
                 <h5 class="card-title">
