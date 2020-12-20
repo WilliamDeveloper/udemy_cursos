@@ -3,6 +3,10 @@ from categorias.models import Categoria
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+from PIL import Image
+from django.conf import  settings
+import os
+
 # Create your models here.
 
 class Post(models.Model):
@@ -17,3 +21,23 @@ class Post(models.Model):
 
     def __str__(self):
         return self.titulo_post
+
+    def save(self, *args, **kwargs):
+        print('save')
+
+        super().save( *args, **kwargs)
+        self.resize_image(self.imagem_post.name, 800)
+
+    @staticmethod
+    def resize_image(img_name, new_width):
+        print(f'resize_image {img_name} {new_width}')
+
+        img_path = os.path.join(settings.MEDIA_ROOT, img_name)
+        print(img_path)
+
+        img = Image.open(img_path)
+        width, height = img.size
+        print(width, height)
+
+        new_height = (new_width * height) / width
+        print(new_width, new_height)
