@@ -186,3 +186,4 @@ MESSAGE_TAGS ={
 
 # sumernote
 INSTALLED_APPS += ('django_summernote',)
+X_FRAME_OPTIONS = 'SAMEORIGIN'
