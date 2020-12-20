@@ -1,5 +1,6 @@
 https://docs.djangoproject.com/en/2.2/
 https://docs.djangoproject.com/en/2.2/topics/pagination/
+https://docs.djangoproject.com/en/2.2/ref/class-based-views/
 
 https://getbootstrap.com/docs/4.0/components/pagination/
 https://getbootstrap.com/docs/4.0/components/alerts/
