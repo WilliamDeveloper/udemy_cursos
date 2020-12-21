@@ -5,6 +5,9 @@ https://docs.djangoproject.com/en/2.2/ref/class-based-views/
 https://www.google.com/recaptcha/about/
 https://developers.google.com/recaptcha/docs/v3
 
+# para dar segurando na tela de login e bloquear ip de robo fazendo bruteforce
+https://pypi.org/project/django-axes/
+
 https://getbootstrap.com/docs/4.0/components/pagination/
 https://getbootstrap.com/docs/4.0/components/alerts/
 
