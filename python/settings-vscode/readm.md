@@ -1,3 +1,4 @@
 - todo tree
 - coderuner
 - Django beautifull syntax
+- intellij keybindings
