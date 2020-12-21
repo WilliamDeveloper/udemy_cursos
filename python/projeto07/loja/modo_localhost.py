@@ -62,6 +62,11 @@ MESSAGE_TAGS ={
 INSTALLED_APPS += ('django.contrib.humanize',)
 
 
+# debug_toolbar - colocar sempre por ultimo
+INSTALLED_APPS += ('debug_toolbar',)
+MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+
+
 # config ssl off
 SECURE_PROXY_SSL_HEADER = None
 SECURE_SSL_REDIRECT = False
