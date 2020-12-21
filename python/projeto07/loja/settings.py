@@ -118,3 +118,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+#---------------------------------------------------------
+#---------------------------------------------------------
+MODO_CONFIG_FILE = 'LOCALHOST'
+# MODO_CONFIG_FILE = 'PRODUCAO'
+
+if( MODO_CONFIG_FILE == 'LOCALHOST' ):
+    try:
+        from .modo_localhost import *
+        print('modo_localhost - sucesso')
+    except:
+        print('modo_localhost - erro')
+
+elif (MODO_CONFIG_FILE == 'PRODUCAO'):
+    try:
+        from .modo_prod import *
+        print('modo_prod - sucesso')
+    except:
+        print('modo_prod - erro')
