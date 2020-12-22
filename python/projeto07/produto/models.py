@@ -18,3 +18,6 @@ class Produto(models.Model):
             ('S', 'Simples'),
         )
     )
+
+    def __str__(self):
+        return self.nome
