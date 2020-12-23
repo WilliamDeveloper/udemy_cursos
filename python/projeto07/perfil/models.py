@@ -12,7 +12,7 @@ class Perfil(models.Model):
     complemento = models.CharField(max_length=30)
     bairro = models.CharField(max_length=30)
     cep = models.CharField(max_length=8)
-    cidade = models.CharField()
+    cidade = models.CharField(max_length=30)
     estado = models.CharField(
         max_length=2,
         default='SP',
