@@ -46,3 +46,6 @@ class Perfil(models.Model):
             ('TO', 'Tocantins'),
         )
     )
+
+    def __str__(self):
+        return f'{self.usuario.first_name} {self.usuario.last_name}'
