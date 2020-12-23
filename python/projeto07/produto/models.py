@@ -27,13 +27,15 @@ class Produto(models.Model):
         img_full_path = os.path.join(settings.MEDIA_ROOT, img.name )
         img_pil = Image.open(img_full_path)
         original_width, original_height = img_pil.size
+        print(original_width,original_height)
 
         if (original_width <= new_width):
             print('largura original maior que nova largura')
             img_pil.close()
             return
 
-        new_height = round((new_width / original_height) / original_width)
+        new_height = round((new_width * original_height) / original_width)
+        print(original_width, original_height, new_width, new_height)
 
         new_img = img_pil.resize((new_width,new_height), Image.LANCZOS )
         new_img.save(
