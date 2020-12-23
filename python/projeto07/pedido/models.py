@@ -34,4 +34,8 @@ class ItemPedido(models.Model):
     imagem = models.CharField(max_length=2000)
 
     def __str__(self):
-        return f'Pedido N. {self.pk}'
+        return f'Item do {self.pedido}'
+
+    class Meta:
+        verbose_name = 'Item do pedido'
+        verbose_name_plural='Itens do pedido'
