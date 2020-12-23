@@ -49,3 +49,10 @@ class Perfil(models.Model):
 
     def __str__(self):
         return f'{self.usuario.first_name} {self.usuario.last_name}'
+
+    def clean(self):
+        pass
+
+    class Meta:
+        verbose_name = 'Perfil'
+        verbose_name_plural = 'Perfis'
