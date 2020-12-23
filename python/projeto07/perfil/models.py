@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Perfil(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='Usuário')
     idade = models.PositiveIntegerField()
     data_nascimento = models.DateTimeField()
     cpf = models.CharField(max_length=11)
