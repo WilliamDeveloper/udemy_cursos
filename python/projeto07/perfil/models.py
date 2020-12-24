@@ -55,7 +55,16 @@ class Perfil(models.Model):
         return f'{self.usuario.first_name} {self.usuario.last_name}'
 
     def clean(self):
-        pass
+        error_messages = {}
+
+        if not valida_cpf(self.cpf) :
+            error_messages['cpf'] = 'Digite um CPF válido'
+
+        if re.search(r'[^0-9]',self.cep) or len(self.cep) < 8 :
+            error_messages['cep'] = 'CEP inválido, digite os 8 digitos do cep'
+
+        error_messages['campo'] = 'mensagem'
+
 
     class Meta:
         verbose_name = 'Perfil'
