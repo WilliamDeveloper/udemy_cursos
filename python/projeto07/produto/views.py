@@ -1,5 +1,5 @@
 
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views import View
@@ -46,6 +46,9 @@ class CarrinhoAdicionar(View):
                 self.request,
                 'Produto não existe'
             )
+
+        variacao_id = get_object_or_404(models.Variacao, id=variacao_id)
+
         return redirect(http_referer)
 
 

@@ -77,7 +77,7 @@ CSRF_COOKIE_SECURE = False
 
 
 
-## SESSAO
+## SESSAO - tempo cookie sessao
 # Sessão em dias: 60s * 60m * 24h * 1d
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7
 
