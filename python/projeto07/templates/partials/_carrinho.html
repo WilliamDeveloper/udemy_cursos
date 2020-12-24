@@ -29,16 +29,16 @@
             <td>
                 {{ linha.quantidade }} x
                 {% if linha.preco_unitario_promocional %}
-                {{ linha.preco_unitario_promocional }}
+                    {{ linha.preco_unitario_promocional }}
                 {% else %}
-                {{ linha.preco_unitario }}
+                    {{ linha.preco_unitario }}
                 {% endif %}
             </td>
 
             {% if linha.preco_quantitativo_promocional %}
-            <td>{{ linha.preco_quantitativo_promocional|formata_preco }}</td>
+                <td>{{ linha.preco_quantitativo_promocional|formata_preco }}</td>
             {% else %}
-            <td>{{ linha.preco_quantitativo|formata_preco }}</td>
+                <td>{{ linha.preco_quantitativo|formata_preco }}</td>
             {% endif %}
 
         </tr>
