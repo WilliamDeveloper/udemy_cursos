@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.forms import ValidationError
 
 import re
-# from utils.validacpf import validacpf
+from utils.validacpf import valida_cpf
 
 # Create your models here.
 class Perfil(models.Model):
