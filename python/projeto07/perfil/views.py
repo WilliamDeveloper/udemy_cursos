@@ -6,16 +6,16 @@ from django.http import HttpResponse
 # Create your views here.
 class Criar(View):
     def get(self,*args,**kwargs):
-        return HttpResponse('Pagar')
+        return HttpResponse('Criar')
 
 class Atualizar(View):
     def get(self,*args,**kwargs):
-        return HttpResponse('Pagar')
+        return HttpResponse('Atualizar')
 
 class Login(View):
     def get(self,*args,**kwargs):
-        return HttpResponse('Pagar')
+        return HttpResponse('Login')
 
 class Logout(View):
     def get(self,*args,**kwargs):
-        return HttpResponse('Pagar')
+        return HttpResponse('Logout')
