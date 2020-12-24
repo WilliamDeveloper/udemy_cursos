@@ -9,6 +9,7 @@ class ProdutosLista(ListView):
     model = models.Produto
     template_name = 'produto/lista.html'
     context_object_name = 'produtos'
+    paginate_by = 3
     # def get(self,*args,**kwargs):
     #     return HttpResponse('ProdutosLista')
 
