@@ -137,7 +137,10 @@ class CarrinhoRemover(View):
 
 class Carrinho(View):
     def get(self,*args,**kwargs):
-        return render(self.request, 'produto/carrinho.html')
+        contexto = {
+            'carrinho': self.request.session.get('carrinho',{})
+        }
+        return render(self.request, 'produto/carrinho.html',contexto)
 
 class CarrinhoFinalizar(View):
     def get(self,*args,**kwargs):
