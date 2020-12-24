@@ -1,5 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.forms import ValidationError
+
+import re
+from utils.validacpf import validacpf
 
 # Create your models here.
 class Perfil(models.Model):
