@@ -52,7 +52,7 @@ class Perfil(models.Model):
     )
 
     def __str__(self):
-        return f'{self.usuario.first_name} {self.usuario.last_name}'
+        return f'{self.usuario}'
 
     def clean(self):
         error_messages = {}
