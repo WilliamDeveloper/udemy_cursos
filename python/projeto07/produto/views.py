@@ -120,6 +120,11 @@ class CarrinhoAdicionar(View):
 
         self.request.session.save()
         pprint(carrinho)
+
+        messages.success(
+            self.request,
+            f'Produto {produto_nome} {variacao_nome} adicionado ao seu carrinho {carrinho[variacao_id]["quantidade"]}x'
+        )
         return redirect(http_referer)
 
 
