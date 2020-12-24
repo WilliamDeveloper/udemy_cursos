@@ -37,8 +37,8 @@
                             {% for variacao in produto.variacao_set.all %}
 
                             <option
-                                data-preco="{{variacao.preco}}"
-                                data-preco-promocional="{{variacao.preco_promocional}}"
+                                data-preco="{{variacao.preco |formata_preco}}"
+                                data-preco-promocional="{{variacao.preco_promocional |formata_preco}}"
                                 value="{{variacao.id}}">{{variacao.nome}}</option>
 
                             {%endfor%}
