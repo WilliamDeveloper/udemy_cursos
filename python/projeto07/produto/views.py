@@ -8,6 +8,7 @@ from . import models
 class ProdutosLista(ListView):
     model = models.Produto
     template_name = 'produto/lista.html'
+    context_object_name = 'produto'
     # def get(self,*args,**kwargs):
     #     return HttpResponse('ProdutosLista')
 
