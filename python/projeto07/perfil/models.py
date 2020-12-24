@@ -63,7 +63,8 @@ class Perfil(models.Model):
         if re.search(r'[^0-9]',self.cep) or len(self.cep) < 8 :
             error_messages['cep'] = 'CEP inválido, digite os 8 digitos do cep'
 
-        error_messages['campo'] = 'mensagem'
+        if error_messages:
+            raise ValidationError(error_messages)
 
 
     class Meta:
