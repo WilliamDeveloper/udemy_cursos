@@ -28,6 +28,10 @@ class ProdutoDetalhe(DetailView):
 class CarrinhoAdicionar(View):
     def get(self,*args,**kwargs):
 
+        # if self.request.session.get('carrinho'):
+        #     del self.request.session['carrinho']
+        #     self.request.session.save()
+
         v_msg = 'erro de teste'
         messages.error(
             self.request,
@@ -54,7 +58,6 @@ class CarrinhoAdicionar(View):
         produto_id = produto.id
         produto_nome = produto.nome
         variacao_nome = variacao.nome or ''
-        variacao_id = variacao.id
         preco_unitario = variacao.preco
         preco_unitario_promocional = variacao.preco_promocional
         quantidade = 1
@@ -108,8 +111,8 @@ class CarrinhoAdicionar(View):
                 'variacao_id': variacao_id,
                 'preco_unitario': preco_unitario,
                 'preco_unitario_promocional': preco_unitario_promocional,
-                'preco_quantitativo': preco_quantitativo,
-                'preco_quantitativo_promocional': preco_quantitativo_promocional,
+                'preco_quantitativo': preco_unitario,
+                'preco_quantitativo_promocional': preco_unitario_promocional,
                 'quantidade': 1,
                 'slug': slug,
                 'imagem': imagem,
