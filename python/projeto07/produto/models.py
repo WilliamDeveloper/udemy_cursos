@@ -83,7 +83,11 @@ class Variacao(models.Model):
     estoque = models.PositiveIntegerField(default=1)
 
     def __str__(self):
-        return self.nome or self.produto.nome
+        if len(self.nome) > 0:
+            return self.nome
+        else:
+            return self.produto.nome
+        # return self.nome or self.produto.nome
 
     class Meta:
         verbose_name = 'Variação'

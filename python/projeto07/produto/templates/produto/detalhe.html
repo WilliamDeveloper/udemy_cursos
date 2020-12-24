@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load omfilters %}
 
+{% block titulo %}{{ produto.nome }} | {% endblock %}
+
 {%block conteudo%}
     <div class="row">
         <div class="col-lg">
@@ -18,10 +20,10 @@
                 <p class="lead">{{produto.descricao_curta}}</p>
                 <p class="lead">
                     {%if produto.preco_marketing_promocional%}
-                        <span id="variation-preco" class="lead product-price">
+                        <span id="variation-preco-promocional" class="lead product-price">
                             {{produto.preco_marketing_promocional |formata_preco}}
                         </span>
-                        <span id="variation-preco-promocional" class="lead product-old-price text-muted">
+                        <span id="variation-preco" class="lead product-old-price text-muted">
                             {{produto.preco_marketing |formata_preco}}
                         </span>
                     {%else%}
@@ -36,10 +38,30 @@
                         <select id="select-variacoes" name="vid" class="form-control form-control-lg">
                             {% for variacao in produto.variacao_set.all %}
 
+
+                            {%if variacao.preco_promocional %}
                             <option
                                 data-preco="{{variacao.preco |formata_preco}}"
                                 data-preco-promocional="{{variacao.preco_promocional |formata_preco}}"
-                                value="{{variacao.id}}">{{variacao.nome}}</option>
+                                value="{{variacao.id}}">
+                                {%if variacao.nome%}
+                                    {{variacao.nome}}
+                                {%else%}
+                                    {{variacao}}
+                                {%endif%}
+                            </option>
+                            {%else%}
+                             <option
+                                data-preco="{{variacao.preco |formata_preco}}"
+                                value="{{variacao.id}}">
+                                {%if variacao.nome%}
+                                    {{variacao.nome}}
+                                {%else%}
+                                    {{variacao}}
+                                {%endif%}
+                             </option>
+
+                            {%endif%}
 
                             {%endfor%}
                         </select>
