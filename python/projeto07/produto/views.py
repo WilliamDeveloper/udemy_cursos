@@ -140,13 +140,13 @@ class CarrinhoRemover(View):
         variacao_id = self.request.GET.get('vid')
 
         if not variacao_id:
-           return render(http_referer)
+           return redirect(http_referer)
 
         if not self.request.session.get('carrinho'):
-            return render(http_referer)
+            return redirect(http_referer)
 
         if variacao_id not in self.request.session.get('carrinho'):
-            return render(http_referer)
+            return redirect(http_referer)
 
         carrinho = self.request.session['carrinho'][variacao_id]
 
@@ -159,7 +159,7 @@ class CarrinhoRemover(View):
         del self.request.session['carrinho'][variacao_id]
         self.request.session.save()
 
-        return render(http_referer)
+        return redirect(http_referer)
 
 class Carrinho(View):
     def get(self,*args,**kwargs):
