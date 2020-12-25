@@ -54,9 +54,26 @@ class BasePerfil(View):
 class Criar(BasePerfil):
     def post(self,*args,**kwargs):
         if not self.userForm.is_valid() or not self.perfilForm.is_valid():
-            print('invalido')
             return self.renderizar
-        print('valido')
+
+        username = self.userForm.cleaned_data.get('usermame')
+        password = self.userForm.cleaned_data.get('password')
+        email = self.userForm.cleaned_data.get('email')
+
+
+        if self.request.user.is_authenticated:
+            pass
+        else:
+            usuario = self.userForm.save(commit=False)
+            usuario.set_password(password)
+            usuario.save()
+
+            perfil = self.perfilForm.save(commit=False)
+            perfil.usuario = usuario
+            perfil.save()
+
+
+
         return self.renderizar
 
 class Atualizar(BasePerfil):
