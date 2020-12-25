@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from django.views import View
 from django.http import HttpResponse
-
+from django.contrib.auth.models import User
+import copy
 from . import models
 from . import forms
+
+
 
 # Create your views here.
 class BasePerfil(View):
@@ -12,6 +15,8 @@ class BasePerfil(View):
 
     def setup(self, *args, **kwargs):
         super().setup(*args, **kwargs)
+
+        self.carrinho = copy.deepcopy(self.request.session.get('carrinho', {}))
 
         self.perfil = None
 
@@ -64,7 +69,7 @@ class Criar(BasePerfil):
 
 
         if self.request.user.is_authenticated:
-            usuario = self.request.user
+            usuario = get_object_or_404(User,username=self.request.user.username)
             usuario.username = username
 
             if password:
@@ -86,7 +91,8 @@ class Criar(BasePerfil):
             perfil.save()
 
 
-
+        self.request.session['carrinho'] = self.carrinho
+        self.request.save()
         return self.renderizar
 
 class Atualizar(BasePerfil):
