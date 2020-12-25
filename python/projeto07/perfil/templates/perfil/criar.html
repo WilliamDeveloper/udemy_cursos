@@ -13,7 +13,7 @@
         <h4>Login</h4>
         <p>Se você ja fez cadastro, basta entrar com seu usuario e senha abaixo:</p>
 
-        <form>
+        <form method="post" action="{% url 'perfil:login'%}">{%csrf_token%}
           <div class="form-group">
             <label for="loginUsuario">Usuário:</label>
             <input type="text" name="username" id="loginUsuario" aria-describedby="loginUsuarioHelp"  class="form-control" placeholder="Enter usuário">
@@ -21,7 +21,7 @@
           </div>
           <div class="form-group">
             <label for="loginPassword1">Senha:</label>
-            <input type="password" name="password" id="loginPassword1"  class="form-control"  placeholder="Password">
+            <input type="password" name="password" id="loginPassword1"  class="form-control"  placeholder="digite sua senha">
           </div>
           <button type="submit" class="btn btn-primary btn-block btn-lg">Entrar</button>
         </form>

@@ -4,7 +4,7 @@ from django.views.generic import ListView
 from django.views import View
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 import copy
 from . import models
 from . import forms
@@ -140,9 +140,17 @@ class Atualizar(BasePerfil):
         return HttpResponse('Atualizar')
 
 class Login(View):
-    def get(self,*args,**kwargs):
+    def post(self,*args,**kwargs):
         return HttpResponse('Login')
 
 class Logout(View):
     def get(self,*args,**kwargs):
-        return HttpResponse('Logout')
+        carrinho = copy.deepcopy(self.request.session.get('carrinho'))
+
+        Logout(self.request)
+
+        self.request.session['carrinho'] = carrinho
+        self.request.session.save()
+
+
+        return redirect('produto:lista')
