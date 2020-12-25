@@ -59,10 +59,22 @@ class Criar(BasePerfil):
         username = self.userForm.cleaned_data.get('usermame')
         password = self.userForm.cleaned_data.get('password')
         email = self.userForm.cleaned_data.get('email')
+        first_name = self.userForm.cleaned_data.get('first_name')
+        last_name = self.userForm.cleaned_data.get('last_name')
 
 
         if self.request.user.is_authenticated:
-            pass
+            usuario = self.request.user
+            usuario.username = username
+
+            if password:
+                usuario.set_password(password)
+
+            usuario.email = email
+            usuario.first_name = first_name
+            usuario.last_name = last_name
+
+
         else:
             usuario = self.userForm.save(commit=False)
             usuario.set_password(password)
