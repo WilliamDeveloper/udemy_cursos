@@ -9,6 +9,13 @@ class PerfilForm(forms.ModelForm):
         exclude = ('usuario',)
 
 class UserForm(forms.ModelForm):
+
+    def __init__(self, usuario=None,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+
+        self.usuario = usuario
+
+
     class Meta:
         model = User
         fields = (
