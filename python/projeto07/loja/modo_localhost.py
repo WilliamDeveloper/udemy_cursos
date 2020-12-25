@@ -63,6 +63,7 @@ INSTALLED_APPS += ('django.contrib.humanize',)
 
 # crispy_forms
 INSTALLED_APPS += ('crispy_forms',)
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # debug_toolbar - colocar sempre por ultimo
 INSTALLED_APPS += ('debug_toolbar',)
