@@ -141,13 +141,29 @@ class Atualizar(BasePerfil):
 
 class Login(View):
     def post(self,*args,**kwargs):
-        return HttpResponse('Login')
+        username = self.request.POST.get('username')
+        password = self.request.POST.get('password')
+
+        if not username or not password:
+            messages.error(self.request, 'usuario ou senha invalidos')
+            return redirect('perfil:criar')
+
+        usuario = authenticate(self.request, username=username, password=password)
+
+        if not usuario:
+            messages.error(self.request, 'usuario ou senha invalidos')
+            return redirect('perfil:criar')
+
+        login(self.request, user=usuario)
+        messages.success(self.request, 'Voce fez login no sistema')
+
+        return redirect('produto:carrinho')
 
 class Logout(View):
     def get(self,*args,**kwargs):
         carrinho = copy.deepcopy(self.request.session.get('carrinho'))
 
-        Logout(self.request)
+        logout(self.request)
 
         self.request.session['carrinho'] = carrinho
         self.request.session.save()
