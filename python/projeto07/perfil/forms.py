@@ -10,6 +10,12 @@ class PerfilForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
 
+    password = forms.CharField(
+        required=False,
+        widget=forms.PasswordInput(),
+        label='Senha'
+    )
+
     def __init__(self, usuario=None,*args,**kwargs):
         super().__init__(*args,**kwargs)
 
@@ -29,3 +35,12 @@ class UserForm(forms.ModelForm):
     def clean(self, *args, **kwargs):
         data = self.data
         cleaned = self.cleaned_data
+        validation_error_msgs = {}
+
+        if self.usuario:
+            validation_error_msgs['username'] = 'saa'
+        else:
+            validation_error_msgs['username'] = 'saa'
+
+        if(validation_error_msgs):
+            raise(forms.ValidationError(validation_error_msgs))
