@@ -16,6 +16,12 @@ class UserForm(forms.ModelForm):
         label='Senha'
     )
 
+    password2 = forms.CharField(
+        required=False,
+        widget=forms.PasswordInput(),
+        label='Senha Confirmacao'
+    )
+
     def __init__(self, usuario=None,*args,**kwargs):
         super().__init__(*args,**kwargs)
 
@@ -29,6 +35,7 @@ class UserForm(forms.ModelForm):
             'last_name',
             'username',
             'password',
+            'password2',
             'email',
         )
 
@@ -36,6 +43,11 @@ class UserForm(forms.ModelForm):
         data = self.data
         cleaned = self.cleaned_data
         validation_error_msgs = {}
+
+        usuario_data = data['username']
+        password_data = data['password']
+        email_data = data['email']
+        usuario_db = User.objects.filter(username=usuario_data).first()
 
         if self.usuario:
             validation_error_msgs['username'] = 'saa'
