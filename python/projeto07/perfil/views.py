@@ -71,7 +71,7 @@ class Criar(BasePerfil):
 
         if self.request.user.is_authenticated:
             usuario = get_object_or_404(User,username=self.request.user.username)
-            usuario.username = username
+            # usuario.username = username
 
             if password:
                 usuario.set_password(password)
@@ -104,7 +104,7 @@ class Criar(BasePerfil):
 
 
         self.request.session['carrinho'] = self.carrinho
-        self.request.save()
+        self.request.session.save()
         return self.renderizar
 
 class Atualizar(BasePerfil):
