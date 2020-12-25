@@ -61,10 +61,15 @@ MESSAGE_TAGS ={
 # humanize
 INSTALLED_APPS += ('django.contrib.humanize',)
 
+# crispy_forms
+INSTALLED_APPS += ('crispy_forms',)
 
 # debug_toolbar - colocar sempre por ultimo
 INSTALLED_APPS += ('debug_toolbar',)
 MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+
+
+
 
 
 # config ssl off

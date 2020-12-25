@@ -80,6 +80,9 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 # humanize
 INSTALLED_APPS += ('django.contrib.humanize',)
 
+# crispy_forms
+INSTALLED_APPS += ('crispy_forms',)
+
 
 # config ssl off
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
