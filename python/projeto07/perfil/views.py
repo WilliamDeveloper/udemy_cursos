@@ -51,6 +51,10 @@ class BasePerfil(View):
         self.userForm = self.contexto['userForm']
         self.perfilForm = self.contexto['perfilForm']
 
+        if self.request.user.is_authenticated:
+            self.template_name = 'perfil/atualizar.html'
+
+
         self.renderizar = render(self.request, self.template_name, self.contexto)
 
 
