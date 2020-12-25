@@ -42,6 +42,7 @@ python manage.py runserver
 
 
 ---
+python manage.py changepassword admin
 python manage.py createsuperuser
 admin 
 admin

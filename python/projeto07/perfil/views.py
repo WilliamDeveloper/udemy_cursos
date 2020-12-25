@@ -73,6 +73,7 @@ class Criar(BasePerfil):
             usuario.email = email
             usuario.first_name = first_name
             usuario.last_name = last_name
+            usuario.save()
 
 
         else:
