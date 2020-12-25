@@ -3,6 +3,7 @@ from django.views.generic import ListView
 from django.views import View
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 import copy
 from . import models
 from . import forms
@@ -89,6 +90,17 @@ class Criar(BasePerfil):
             perfil = self.perfilForm.save(commit=False)
             perfil.usuario = usuario
             perfil.save()
+
+
+        if password:
+            autentica = authenticate(
+                self.request,
+                username=usuario,
+                password=password,
+            )
+
+            if autentica:
+                login(self.request,user=usuario)
 
 
         self.request.session['carrinho'] = self.carrinho
