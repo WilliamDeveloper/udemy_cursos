@@ -82,6 +82,15 @@ class Criar(BasePerfil):
             usuario.last_name = last_name
             usuario.save()
 
+            if not self.perfil:
+                self.perfilForm.cleaned_data['usuario'] = usuario
+                perfil = models.Perfil(**self.perfilForm.cleaned_data)
+                perfil.save()
+            else:
+                perfil = self.perfilForm.save(comit=False)
+                perfil.usuario = usuario
+                perfil.save()
+
 
         else:
             usuario = self.userForm.save(commit=False)
