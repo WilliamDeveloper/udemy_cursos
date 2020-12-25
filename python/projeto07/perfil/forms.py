@@ -41,16 +41,44 @@ class UserForm(forms.ModelForm):
 
     def clean(self, *args, **kwargs):
         data = self.data
+        print('data ', data)
+
         cleaned = self.cleaned_data
+        print('cleaned ', cleaned)
+
         validation_error_msgs = {}
 
-        usuario_data = data['username']
-        password_data = data['password']
-        email_data = data['email']
+        usuario_data = cleaned.get('username')
+        email_data = cleaned.get('email')
+        password_data = cleaned.get('password')
+        password2_data = cleaned.get('password2')
+
         usuario_db = User.objects.filter(username=usuario_data).first()
+        email_db = User.objects.filter(email=email_data).first()
+
+        error_msg_user_exists ='Usuário já existe'
+        error_msg_email_exists = 'Email já existe'
+        error_msg_password_match = 'As duas senhas não conferem'
+        error_msg_password_short = 'A senha deve ter no minimo 6 caracteres'
+
+
 
         if self.usuario:
-            validation_error_msgs['username'] = 'saa'
+            if usuario_db:
+                if usuario_data != usuario_db.username:
+                    validation_error_msgs['username'] =  error_msg_user_exists
+
+            if email_db:
+                if email_data != email_db.email:
+                    validation_error_msgs['email']  = error_msg_email_exists
+
+            if password_data:
+                if password_data != password2_data:
+                    validation_error_msgs['password'] = error_msg_password_match
+                    validation_error_msgs['password2'] = error_msg_password_match
+
+                if len(password_data) < 6 :
+                    validation_error_msgs['password'] = error_msg_password_short
         else:
             validation_error_msgs['username'] = 'saa'
 
