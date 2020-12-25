@@ -1,6 +1,8 @@
 import os
-from .settings import *
 # pip install mysqlclient
+from .settings import *
+
+
 
 ##########################################################
 # configs custom -  MAQUINA_PRODUCAO
