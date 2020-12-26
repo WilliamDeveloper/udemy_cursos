@@ -183,6 +183,13 @@ class CarrinhoResumoCompra(View):
             )
             return redirect('perfil:criar')
 
+        if not self.request.session.get('carrinho'):
+            messages.error(
+                self.request,
+                'Seu carrinho esta vazio'
+            )
+            return redirect('perfil:lista')
+
         contexto={
             'usuario': self.request.user,
             'carrinho': self.request.session['carrinho']
