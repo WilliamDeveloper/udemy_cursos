@@ -12,6 +12,10 @@ from .models import Pedido, ItemPedido
 
 # Create your views here.
 class Pagar(View) :
+    def get(self,*args,**kwargs):
+        return HttpResponse('Pagar')
+
+class SalvarPedido(View) :
     template_name = 'pedido/pagar.html'
 
     def get(self,*args,**kwargs):
@@ -114,9 +118,7 @@ class Pagar(View) :
 
 
 
-class SalvarPedido(View) :
-    def get(self,*args,**kwargs):
-        return HttpResponse('FecharPedido')
+
 
 class Detalhe(View) :
     def get(self,*args,**kwargs):
