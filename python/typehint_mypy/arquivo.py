@@ -21,3 +21,4 @@ tupla : Tuple = (1,2,3, 'william')
 pessoa : Dict[str,str] = {'nome': 'william', 'sobrenome':'pacheco'}
 pessoa : Dict[str, Union[str,int]] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18}
 pessoa : Dict[str, Any] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18}
+pessoa : Dict[str, Union[str, int,List[int]]] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18, 'l':[1,2]}
