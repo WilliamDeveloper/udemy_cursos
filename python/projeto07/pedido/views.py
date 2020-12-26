@@ -10,6 +10,21 @@ class Pagar(View) :
     template_name = 'pedido/pagar.html'
 
     def get(self,*args,**kwargs):
+
+        if not self.request.user.is_authenticated:
+            messages.error(
+                self.request,
+                'voce precisa fazer login'
+            )
+            return redirect('perfil:criar')
+
+        if not self.request.session.get('carrinho'):
+            messages.error(
+                self.request,
+                'carrinho vazio'
+            )
+            return redirect('produto:lista')
+
         contexto={
 
         }
