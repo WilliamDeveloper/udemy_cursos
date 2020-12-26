@@ -20,7 +20,8 @@ try:
         os.path.abspath(
             os.path.join(
                 os.path.dirname(__file__),
-                '../src'
+                '../'
+                # '../src'
             )
         )
     )
@@ -29,7 +30,7 @@ except:
 
 import unittest
 from unittest.mock import patch
-from Pessoa import Pessoa
+from src.Pessoa import Pessoa
 
 
 class TestPessoa(unittest.TestCase):
