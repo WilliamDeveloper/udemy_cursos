@@ -1,4 +1,4 @@
-from typing import List, Union, Tuple, Dict, Any, NewType
+from typing import List, Union, Tuple, Dict, Any, NewType, Callable
 
 #primitivos
 numero : int = 10
@@ -30,3 +30,13 @@ pessoa : meu_dict = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18, 'l':[
 #meu outro tipo
 UserId = NewType('UserId', int)
 user_id = UserId(12321312)
+
+def retorna_funcao( funcao : Callable[[],None]) -> Callable:
+    return funcao
+
+
+def fala_oi():
+    print('oi')
+
+
+retorna_funcao(fala_oi)()
