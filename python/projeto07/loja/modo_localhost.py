@@ -1,5 +1,7 @@
 import os
-from .settings import *
+# from . import settings as settings_projeto
+from django.conf import settings
+
 
 ##########################################################
 # configs custom -  MAQUINA_LOCAL
@@ -11,8 +13,12 @@ ALLOWED_HOSTS = []
 LANGUAGE_CODE = 'pt-BR'
 TIME_ZONE = 'America/Sao_Paulo'
 
-FOLDER_GLOBAL_TEMPLATES= os.path.join(BASE_DIR,'templates')
-FOLDER_GLOBAL_STATIC= os.path.join(BASE_DIR,'templates','static')
+FOLDER_GLOBAL_TEMPLATES= os.path.join(settings.BASE_DIR,'templates')
+FOLDER_GLOBAL_STATIC= os.path.join(settings.BASE_DIR,'templates','static')
+
+print('base_dir: ',settings.BASE_DIR)
+print('base_dir: ',settings.BASE_DIR)
+
 
 TEMPLATES = [
     {
@@ -38,7 +44,7 @@ STATICFILES_DIRS =[
 ]
 STATIC_ROOT = os.path.join('static')
 
-MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_ROOT=os.path.join(settings.BASE_DIR,'media')
 MEDIA_URL="media/"
 
 
@@ -59,15 +65,15 @@ MESSAGE_TAGS ={
 # X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # humanize
-INSTALLED_APPS += ('django.contrib.humanize',)
+settings.INSTALLED_APPS += ('django.contrib.humanize',)
 
 # crispy_forms
-INSTALLED_APPS += ('crispy_forms',)
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+settings.INSTALLED_APPS += ('crispy_forms',)
+settings.CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # debug_toolbar - colocar sempre por ultimo
-INSTALLED_APPS += ('debug_toolbar',)
-MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+settings.INSTALLED_APPS += ('debug_toolbar',)
+settings.MIDDLEWARE += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 
 
 
