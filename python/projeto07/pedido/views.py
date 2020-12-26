@@ -33,7 +33,8 @@ class Pagar(View) :
 
         print(carrinho_variacao_ids)
 
-        bd_variacoes = list(Variacao.objects.filter(id__in= carrinho_variacao_ids))
+        bd_variacoes = Variacao.objects.select_related('produto').filter(id__in= carrinho_variacao_ids)
+        bd_variacoes = list(bd_variacoes)
 
         print(bd_variacoes)
 
