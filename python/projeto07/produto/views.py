@@ -5,6 +5,7 @@ from django.views.generic.detail import DetailView
 from django.views import View
 from django.http import HttpResponse
 from django.contrib import messages
+from django.db.models import Q
 
 from perfil.models import Perfil
 from . import models
@@ -19,6 +20,22 @@ class ProdutosLista(ListView):
     ordering = ['-id']
     # def get(self,*args,**kwargs):
     #     return HttpResponse('ProdutosLista')
+
+class Busca(ProdutosLista):
+    def get_queryset(self,*args,**kwargs):
+        termo = self.request.GET.get('termo')
+        qs = super().get_queryset(*args,**kwargs)
+
+        if not termo:
+            return qs
+
+        qs = qs.filter(
+            Q(nome__icontains=termo)|
+            Q(descricao_curta__icontains=termo) |
+            Q(descricao_longa__icontains=termo)
+        )
+        return qs
+
 
 class ProdutoDetalhe(DetailView):
     model = models.Produto
@@ -198,5 +215,3 @@ class CarrinhoResumoCompra(View):
         return render(self.request,'produto/carrinho_resumo_compra.html', contexto)
 
 
-class Busca(View):
-    pass
