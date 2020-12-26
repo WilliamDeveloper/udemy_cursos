@@ -1,4 +1,4 @@
-from typing import List, Union, Tuple, Dict, Any, NewType, Callable, Sequence
+from typing import List, Union, Tuple, Dict, Any, NewType, Callable, Sequence, Iterable
 
 #primitivos
 numero : int = 10
@@ -67,6 +67,11 @@ def iterar(sequencia: Union[Tuple, List]) -> None:
     pass
 
 def iterar(sequencia: Sequence[int]) -> None:
+    return [x*2 for x in sequencia]
+
+print(iterar([4,8,16]))
+#---------------
+def iterar(sequencia: Iterable[int]) -> None:
     return [x*2 for x in sequencia]
 
 print(iterar([4,8,16]))
