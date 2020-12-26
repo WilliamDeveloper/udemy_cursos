@@ -1,4 +1,4 @@
-from typing import List, Union, Tuple, Dict, Any, NewType, Callable
+from typing import List, Union, Tuple, Dict, Any, NewType, Callable, Sequence
 
 #primitivos
 numero : int = 10
@@ -63,3 +63,10 @@ class Pessoa:
         print(f'{self.nome} {self.sobrenome} está falando ... ')
 
 #---------------
+def interar(sequencia: Union[Tuple, List]) -> None:
+    pass
+
+def interar(sequencia: Sequence[int]) -> None:
+    return [x*2 for x in sequencia]
+
+print(interar([4,8,16]))
