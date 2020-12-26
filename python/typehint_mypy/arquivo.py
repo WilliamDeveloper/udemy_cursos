@@ -1,4 +1,4 @@
-from typing import List, Union, Tuple, Dict, Any
+from typing import List, Union, Tuple, Dict, Any, NewType
 
 #primitivos
 numero : int = 10
@@ -26,3 +26,7 @@ pessoa : Dict[str, Union[str, int,List[int]]] = {'nome': 'william', 'sobrenome':
 # alias para tipo complexo
 meu_dict = Dict[str, Union[str, int,List[int]]]
 pessoa : meu_dict = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18, 'l':[1,2]}
+
+#meu outro tipo
+UserId = NewType('UserId', int)
+user_id = UserId(12321312)
