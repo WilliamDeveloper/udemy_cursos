@@ -31,12 +31,35 @@ pessoa : meu_dict = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18, 'l':[
 UserId = NewType('UserId', int)
 user_id = UserId(12321312)
 
+#---------------
 def retorna_funcao( funcao : Callable[[],None]) -> Callable:
     return funcao
-
 
 def fala_oi():
     print('oi')
 
-
 retorna_funcao(fala_oi)()
+
+
+#---------------
+def retorna_funcao( funcao : Callable[[int,int],int]) -> Callable:
+    return funcao
+
+def soma(x:int, y:int) -> int:
+    return x+y
+
+resposta = retorna_funcao(soma)(10,20)
+
+print(resposta)
+#---------------
+
+class Pessoa:
+    def __init__(self, nome : str, sobrenome : str, idade : int) -> None:
+        self.nome : str = nome
+        self.sobrenome : str = sobrenome
+        self.idade : int = idade
+
+    def fala(self) -> None:
+        print(f'{self.nome} {self.sobrenome} está falando ... ')
+
+#---------------
