@@ -63,10 +63,10 @@ class Pessoa:
         print(f'{self.nome} {self.sobrenome} está falando ... ')
 
 #---------------
-def interar(sequencia: Union[Tuple, List]) -> None:
+def iterar(sequencia: Union[Tuple, List]) -> None:
     pass
 
-def interar(sequencia: Sequence[int]) -> None:
+def iterar(sequencia: Sequence[int]) -> None:
     return [x*2 for x in sequencia]
 
-print(interar([4,8,16]))
+print(iterar([4,8,16]))
