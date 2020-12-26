@@ -28,7 +28,7 @@
                     <td>{{ pedido.qtd_total }}</td>
                     <td>{{ pedido.status}} - {{ pedido.get_status_display }}</td>
                     <td>
-                        <a href="#">
+                        <a href="{% url 'pedido:detalhe' pedido.id %}">
                             Ver <i class="fas fa-search-plus ml-2"></i>
                         </a>
                     </td>
