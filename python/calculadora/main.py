@@ -1,1 +1,5 @@
-print('oi')
+from .calculadora import soma
+
+resultado = soma(4,3)
+print('oi:', resultado)
+
