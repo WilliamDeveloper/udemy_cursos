@@ -4,9 +4,9 @@ https://docs.python.org/3/library/unittest.html
 
 -- criando estrutura basica do django do zero
 ---
-cd D:\_dev_\work\github\udemy_cursos\python\calculadora
+cd D:\_dev_\work\github\udemy_cursos\python\calculadora_teste
 virtualenv venv
-D:\_dev_\work\github\udemy_cursos\python\calculadora\venv\Scripts\activate.bat
+D:\_dev_\work\github\udemy_cursos\python\calculadora_teste\venv\Scripts\activate.bat
 
 
 cd D:\_dev_\work\github\udemy_cursos\python\projeto07
