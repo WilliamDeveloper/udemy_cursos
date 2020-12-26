@@ -1,4 +1,4 @@
-from .calculadora import soma
+from calculadora import soma
 
 resultado = soma(4,3)
 print('oi:', resultado)
