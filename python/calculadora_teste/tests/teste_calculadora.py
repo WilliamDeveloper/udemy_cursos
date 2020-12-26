@@ -6,7 +6,8 @@ try:
         os.path.abspath(
             os.path.join(
                 os.path.dirname(__file__),
-                '../src'
+                '../'
+                # '../src'
             )
         )
     )
@@ -14,7 +15,10 @@ except:
     raise
 
 import unittest
-from calculadora import soma
+from src.calculadora import soma
+
+print('a',soma(1,2))
+
 
 
 class TestCalculadora(unittest.TestCase):
