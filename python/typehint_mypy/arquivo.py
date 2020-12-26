@@ -22,3 +22,7 @@ pessoa : Dict[str,str] = {'nome': 'william', 'sobrenome':'pacheco'}
 pessoa : Dict[str, Union[str,int]] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18}
 pessoa : Dict[str, Any] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18}
 pessoa : Dict[str, Union[str, int,List[int]]] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18, 'l':[1,2]}
+
+# alias para tipo complexo
+meu_dict = Dict[str, Union[str, int,List[int]]]
+pessoa : meu_dict = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18, 'l':[1,2]}
