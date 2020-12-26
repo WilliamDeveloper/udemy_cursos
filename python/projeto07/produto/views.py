@@ -196,3 +196,7 @@ class CarrinhoResumoCompra(View):
             'carrinho': self.request.session['carrinho']
         }
         return render(self.request,'produto/carrinho_resumo_compra.html', contexto)
+
+
+class Busca(View):
+    pass
