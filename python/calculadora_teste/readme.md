@@ -10,3 +10,6 @@ D:\_dev_\work\github\udemy_cursos\python\calculadora_teste\venv\Scripts\activate
 cd D:\_dev_\work\github\udemy_cursos\python\projeto07
 pip install -r requirements.txt
 
+
+python -m unittest -v
+
