@@ -143,7 +143,7 @@ class SalvarPedido(View) :
 
 
 
-class Detalhe(DispatchLoginRequiredMixin, ListView) :
+class Detalhe(DispatchLoginRequiredMixin, DetailView) :
     model = Pedido
     context_object_name = 'pedido'
     template_name = 'pedido/detalhe.html'
