@@ -143,11 +143,13 @@ class SalvarPedido(View) :
 
 
 
-class Detalhe(View) :
+class Detalhe(DispatchLoginRequiredMixin, ListView) :
     def get(self,*args,**kwargs):
         return HttpResponse('Detalhe')
 
 
-class Lista(View) :
-    def get(self,*args,**kwargs):
-        return HttpResponse('Lista')
+class Lista(DispatchLoginRequiredMixin, ListView) :
+    model = Pedido
+    context_object_name = 'pedidos'
+    template_name = 'pedido/lista.html'
+    paginate_by = 3
