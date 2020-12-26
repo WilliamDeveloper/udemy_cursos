@@ -5,6 +5,8 @@ from django.http import HttpResponse
 
 from django.contrib import messages
 
+from produto.models import Variacao
+
 # Create your views here.
 class Pagar(View) :
     template_name = 'pedido/pagar.html'
@@ -24,6 +26,16 @@ class Pagar(View) :
                 'carrinho vazio'
             )
             return redirect('produto:lista')
+
+
+        carrinho = self.request.session.get('carrinho')
+        carrinho_variacao_ids = [v for v in carrinho]
+
+        print(carrinho_variacao_ids)
+
+        bd_variacoes = list(Variacao.objects.filter(id__in= carrinho_variacao_ids))
+
+        print(bd_variacoes)
 
         contexto={
 
