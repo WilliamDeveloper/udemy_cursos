@@ -91,8 +91,10 @@ class CarrinhoAdicionar(View):
         preco_quantitativo=''
         preco_quantitativo_promocional = ''
 
+        print('imagem:', imagem)
         if imagem:
             imagem = imagem.name
+            print('imagem:', imagem)
         else:
             imagem = ''
 
@@ -186,9 +188,11 @@ class CarrinhoRemover(View):
 
 class Carrinho(View):
     def get(self,*args,**kwargs):
+        carrinho = self.request.session.get('carrinho',{})
         contexto = {
-            'carrinho': self.request.session.get('carrinho',{})
+            'carrinho': carrinho
         }
+        print('CCCARRINHO ', carrinho )
         return render(self.request, 'produto/carrinho.html',contexto)
 
 class CarrinhoResumoCompra(View):
