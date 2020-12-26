@@ -1,4 +1,4 @@
-from typing import List, Union, Tuple, Dict
+from typing import List, Union, Tuple, Dict, Any
 
 #primitivos
 numero : int = 10
@@ -20,3 +20,4 @@ tupla : Tuple = (1,2,3, 'william')
 # dicionarios
 pessoa : Dict[str,str] = {'nome': 'william', 'sobrenome':'pacheco'}
 pessoa : Dict[str, Union[str,int]] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18}
+pessoa : Dict[str, Any] = {'nome': 'william', 'sobrenome':'pacheco', 'idade':18}
