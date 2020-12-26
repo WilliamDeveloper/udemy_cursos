@@ -6,6 +6,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.contrib import messages
 
+from perfil.models import Perfil
 from . import models
 from pprint import pprint
 
@@ -172,6 +173,14 @@ class CarrinhoResumoCompra(View):
     def get(self,*args,**kwargs):
 
         if not self.request.user.is_authenticated:
+            return redirect('perfil:criar')
+
+        perfil = Perfil.objects.filter(usuario=self.request.user).exists()
+        if not perfil:
+            messages.error(
+                self.request,
+                'Usuário sem perfil'
+            )
             return redirect('perfil:criar')
 
         contexto={
