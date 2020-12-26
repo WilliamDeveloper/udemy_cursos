@@ -11,5 +11,6 @@ cd D:\_dev_\work\github\udemy_cursos\python\projeto07
 pip install -r requirements.txt
 
 
+cd D:\_dev_\work\github\udemy_cursos\python\calculadora_teste
 python -m unittest -v
 
