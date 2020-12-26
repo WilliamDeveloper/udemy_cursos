@@ -66,6 +66,10 @@ class BasePerfil(View):
 class Criar(BasePerfil):
     def post(self,*args,**kwargs):
         if not self.userForm.is_valid() or not self.perfilForm.is_valid():
+            messages.error(
+                self.request,
+                'Revise os campos invalidos do formulario'
+            )
             return self.renderizar
 
         username = self.userForm.cleaned_data.get('usermame')
