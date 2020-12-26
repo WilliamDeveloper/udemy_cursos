@@ -25,6 +25,11 @@ class Pagar(DispatchLoginRequired, DetailView) :
     pk_url_kwarg = 'pk'
     context_object_name = 'pedido'
 
+    def get_queryset(self,*args, **kwargs):
+        qs = super().get_queryset(*args, **kwargs)
+        qs = qs.filter(usuario=self.request.user)
+        return qs
+
     # def get(self,*args,**kwargs):
     #     return HttpResponse('Pagar')
 
