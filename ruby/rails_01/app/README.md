@@ -4,14 +4,14 @@ rails -v
 gem install rails -v 6.1.0
 
 ---
-
-###### criando novo projeto rails
-rails new app
-
----
 # ver ruby gems enviromment
 
 gem env
+
+---
+
+###### criando novo projeto rails
+rails new app
 
 ---
 ###### criar estrutura de banco de dados sqlite
