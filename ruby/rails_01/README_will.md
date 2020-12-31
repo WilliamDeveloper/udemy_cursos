@@ -33,7 +33,7 @@ rails new contact_list
 #criar a aplicacao ja pronta para postgresql
 rails new contact_list -d postgresql
 
-
+s
 --
 D:\_dev_\work\github\udemy_cursos\.idea\vcs.xml
 <?xml version="1.0" encoding="UTF-8"?>
