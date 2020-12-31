@@ -26,3 +26,7 @@ npm install
 ##### rodar aplicacao rails
 rails s
 
+-- 
+rails new contact_list
+rails new contact_list -d postgresql
+
