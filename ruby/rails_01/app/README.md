@@ -1,24 +1,28 @@
-# README
+gem update rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+rails -v
+gem install rails -v 6.1.0
 
-Things you may want to cover:
+---
 
-* Ruby version
+###### criando novo projeto rails
+rails new app
 
-* System dependencies
+---
+# ver ruby gems enviromment
 
-* Configuration
+gem env
 
-* Database creation
+---
+###### criar estrutura de banco de dados sqlite
+bundle exec rails db:migrate
 
-* Database initialization
+---
+####instalar dependencias javascript
+yarn install
+npm install
 
-* How to run the test suite
+---
+##### rodar aplicacao rails
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
