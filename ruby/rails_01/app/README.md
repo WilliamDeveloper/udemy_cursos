@@ -28,5 +28,7 @@ rails s
 
 -- 
 rails new contact_list
+
+#criar a aplicacao ja pronta para postgresql
 rails new contact_list -d postgresql
 
