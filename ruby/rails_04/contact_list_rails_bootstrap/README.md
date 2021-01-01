@@ -27,3 +27,6 @@ rails db:migrate
 
 ###### criar o model
 rails generate model User email:string name:string password_digest:string
+
+###### acesso ao console com todas classes do projeto
+rails console
