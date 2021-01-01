@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   #nome_do_controller + nome_da_action(funcao no controller)
   root to: "static_pages#index"
 
+  get 'sobre', to: "static_pages#sobre"
+
+  get 'contato', to: "static_pages#contato"
+
+
 end

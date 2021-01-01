@@ -13,3 +13,6 @@ yarn install
 
 - subir server rails
 rails server
+
+- ver rotas da aplicacao
+rails routes
