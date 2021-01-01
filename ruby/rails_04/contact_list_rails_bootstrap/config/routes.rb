@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contacts
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   #nome_do_controller + nome_da_action(funcao no controller)
@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   get 'contato', to: "static_pages#contato"
 
+
+  resources :contacts
+  resources :users
 
 end
