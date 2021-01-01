@@ -16,3 +16,6 @@ rails server
 
 - ver rotas da aplicacao
 rails routes
+
+###### criar o crud completo
+rails generate scaffold Contact name:string phone:string
