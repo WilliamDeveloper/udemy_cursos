@@ -32,5 +32,7 @@ rails generate model User email:string name:string password_digest:string
 ###### criar controller (sempre no plural)
 rails generate controller Users
 
+#### instalar gems declaradas
+bundle install
 
 
