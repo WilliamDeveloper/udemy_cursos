@@ -79,3 +79,9 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
 ```
 import 'bootstrap'
 ```
+
+- rename app\assets\stylesheets\application.scss
+```
+mv application.css application.scss
+```
+---
