@@ -88,4 +88,9 @@ rm -rf application.css
 # recriando
 touch application.scss
 ```
+
+- app\assets\stylesheets\application.scss
+``` 
+@import "~bootstrap/scss/bootstrap";
+```
 ---
