@@ -59,7 +59,7 @@ rails generate controller static_pages
 
 ---
 
-
+yarn add bootstrap jquery popper.js
 
 
 
