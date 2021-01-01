@@ -80,8 +80,12 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
 import 'bootstrap'
 ```
 
-- rename app\assets\stylesheets\application.scss
+- app\assets\stylesheets\application.css
 ```
-mv application.css application.scss
+#deletando
+rm -rf application.css
+
+# recriando
+touch application.scss
 ```
 ---
