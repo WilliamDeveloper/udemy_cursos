@@ -91,6 +91,6 @@ touch application.scss
 
 - app\assets\stylesheets\application.scss
 ``` 
-@import "~bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 ```
 ---
