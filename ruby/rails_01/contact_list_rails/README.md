@@ -75,4 +75,7 @@ environment.plugins.append('Provide', new webpack.ProvidePlugin({
 ...
 ```
 
-
+- app\javascript\packs\application.js
+```
+import 'bootstrap'
+```
