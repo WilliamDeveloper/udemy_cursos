@@ -29,7 +29,7 @@ rails generate scaffold Contact name:string phone:string
 ###### criar o model
 rails generate model User email:string name:string password_digest:string
 
-###### criar controller
+###### criar controller (sempre no plural)
 rails generate controller Users
 
 
