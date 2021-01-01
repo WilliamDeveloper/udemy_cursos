@@ -58,9 +58,21 @@ bind "tcp://0.0.0.0:#{ENV['PORT'] || 3000}"
 rails generate controller static_pages
 
 ---
+# adicionando Bootstrap no rails
+- yarn add bootstrap jquery popper.js
 
-yarn add bootstrap jquery popper.js
+- config\webpack\environment.js
+```
+...
 
+const webpack = require('webpack')
+environment.plugins.append('Provide', new webpack.ProvidePlugin({
+  $:'jquery',
+  jQuery:'jquery',
+  Popper: ['poper.js','default']
+}))
 
+...
+```
 
 
