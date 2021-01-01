@@ -12,14 +12,15 @@
 
   <body>
 
-    <!--    _header.html.erb-->
+    <!--    layouts/partials/_header.html.erb-->
     <%= render 'layouts/partials/header' %>
 
     <div class="container">
       <%= yield %>
     </div>
 
-
+    <!--    layouts/partials/_footer.html.erb-->
+    <%= render 'layouts/partials/footer' %>
 
   </body>
 </html>
