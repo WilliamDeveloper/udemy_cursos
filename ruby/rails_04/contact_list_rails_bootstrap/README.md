@@ -20,6 +20,9 @@ rails routes
 ###### acesso ao console com todas classes do projeto
 rails console
 
+###### gerar migracao
+rails generate migration add_user_to_contacts user:references
+
 ###### aplicar migracao no banco de dados
 rails db:migrate
 
