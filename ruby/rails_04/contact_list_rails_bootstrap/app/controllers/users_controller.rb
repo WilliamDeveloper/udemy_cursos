@@ -3,8 +3,12 @@ class UsersController < ApplicationController
   before_action :require_logged_in_user, only: [:show, :edit, :update]
 
   def new
-    redirect_to current_user if user_signed_in?
+
     @user = User.new
+  end
+
+  def show
+    redirect_to root_url
   end
 
   def create
