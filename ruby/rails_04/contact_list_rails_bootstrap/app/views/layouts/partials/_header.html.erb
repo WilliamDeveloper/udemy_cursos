@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <!--  <a class="navbar-brand" href="#">Navbar_home</a>-->
-  <a class="navbar-brand" href="#">Home</a>
+  <a class="navbar-brand" href="/">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,7 +11,8 @@
 <!--        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
 <!--      </li>-->
       <li class="nav-item active">
-        <a class="nav-link" href="#">Nova Conta <span class="sr-only">(current)</span></a>
+<!--        <a class="nav-link" href="#">Nova Conta <span class="sr-only">(current)</span></a>-->
+        <%= link_to 'Nova Conta', new_user_path, class:"nav-link"%>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -39,7 +40,7 @@
     <ul class="navbar-nav navbar-right">
 
       <li class="nav-item active">
-        <%= link_to 'Entrar', "#", class:"nav-link"%>
+        <%= link_to 'Entrar', entrar_path, class:"nav-link"%>
       </li>
 
     </ul>
