@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   #nome_do_controller + nome_da_action(funcao no controller)
@@ -9,6 +8,9 @@ Rails.application.routes.draw do
   get 'sobre', to: "static_pages#sobre"
 
   get 'contato', to: "static_pages#contato"
+
+  get 'entrar', to: "sessions#new"
+  post 'entrar', to: "sessions#create"
 
 
   resources :contacts
