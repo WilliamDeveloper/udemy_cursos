@@ -2,4 +2,6 @@
 
 ````cassandraql
 udemy_cursos
+udemy_cursos
+
 ````
