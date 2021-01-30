@@ -21,5 +21,5 @@ mkdir proj0001
  - subir aplicacao
  ````
  cd proj0001
- node index.js
+ node app.js
  ````
