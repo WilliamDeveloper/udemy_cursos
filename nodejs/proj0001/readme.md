@@ -12,3 +12,9 @@ mkdir proj0001
  ````
  npm install express --save
  ````
+ 
+ - subir aplicacao
+ ````
+ cd proj0001
+ node index.js
+ ````

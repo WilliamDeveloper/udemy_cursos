@@ -7,6 +7,10 @@ app.get('/', (res,req) => {
     return res.send({message: 'Tudo ok com o método GET!'})
 })
 
+app.get('/', (res,req) => {
+    return res.send({message: 'Tudo ok com o método POST!'})
+})
+
 app.listen(porta);
 
 module.exports = app;
