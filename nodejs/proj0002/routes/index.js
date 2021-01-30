@@ -1,4 +1,7 @@
-app.get('/', (req,res) => {
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req,res) => {
     let params = req.query;
     let respostaJson ={
         message: 'Tudo ok com o método GET!',
@@ -7,7 +10,10 @@ app.get('/', (req,res) => {
     return res.send(respostaJson)
 });
 
-app.post('/', (req,res) => {
+router.post('/', (req,res) => {
     let params = req.query;
     return res.send({message: 'Tudo ok com o método POST!'})
 });
+
+module.exports = router;
+
