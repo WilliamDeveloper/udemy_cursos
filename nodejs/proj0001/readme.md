@@ -13,6 +13,11 @@ mkdir proj0001
  npm install express --save
  ````
  
+ - instalar dependencias do projeto
+ ````
+ npm install
+ ````
+ 
  - subir aplicacao
  ````
  cd proj0001
