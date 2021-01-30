@@ -10,3 +10,5 @@ app.get('/', (res,req) => {
 app.listen(porta);
 
 module.exports = app;
+
+// http://localhost:3000/
