@@ -3,11 +3,11 @@ const app = express();
 
 const porta = 3000;
 
-app.get('/', (res,req) => {
+app.get('/', (req,res) => {
     return res.send({message: 'Tudo ok com o método GET!'})
 })
 
-app.get('/', (res,req) => {
+app.get('/', (req,res) => {
     return res.send({message: 'Tudo ok com o método POST!'})
 })
 
