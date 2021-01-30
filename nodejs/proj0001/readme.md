@@ -7,3 +7,8 @@ mkdir proj0001
  ````
  npm init
  ````
+ 
+ - bibliotecas de api
+ ````
+ npm install express --save
+ ````
