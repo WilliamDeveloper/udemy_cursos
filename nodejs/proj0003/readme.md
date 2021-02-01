@@ -11,6 +11,8 @@ mkdir proj0001
  - bibliotecas de api
  ````
  npm install express --save
+ npm install mongoose --save
+ npm install body-parser --save
  ````
  
  - instalar dependencias do projeto
