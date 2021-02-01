@@ -27,6 +27,24 @@ const options = {
     useNewUrlParser: true
 };
 
+mongoose.connect(url,options);
+mongoose.set("useCreateIndex",true);
+
+mongoose.connection.on("error", (error) => {
+    console.log("Erro na conexao com o banco de dados: "+error)
+});
+
+
+mongoose.connection.on("disconnected", () => {
+    console.log("Aplicacao desconectada do banco de dados")
+});
+
+
+
+
+//------------------------------
+// subindo api
+//------------------------------
 app.listen(PORTA);
 
 module.exports = app;
