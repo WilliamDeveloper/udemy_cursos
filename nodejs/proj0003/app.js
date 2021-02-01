@@ -12,6 +12,8 @@ const userRoute = require('./routes/users');
 app.use('/', indexRoute);
 app.use('/users', userRoute);
 
+// string conexao mongo
+// mongodb+srv://usuario_admin:<password>@clusterapi.yh7yq.mongodb.net/<dbname>?retryWrites=true&w=majority
 
 
 app.listen(PORTA);
