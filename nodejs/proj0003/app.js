@@ -39,8 +39,11 @@ mongoose.connection.on("disconnected", () => {
     console.log("Aplicacao desconectada do banco de dados")
 });
 
-
-
+//---------------------------------
+// body-parser
+//---------------------------------
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 //------------------------------
 // subindo api
