@@ -14,6 +14,7 @@ mkdir proj0007
  npm install mongoose --save
  npm install body-parser --save
  npm install bcrypt --save
+ npm install jsonwebtoken --save
  ````
  
  - instalar dependencias do projeto
