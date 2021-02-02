@@ -58,6 +58,7 @@ router.post('/auth', (req,res)=>{
         bcrypt.compare(password,data.password, (err, same)=>{
             if (!same) return res.send({error: 'Error ao autenticar usuario!'});
 
+            data.password = undefined;
             return res.send(data);
         });
 
