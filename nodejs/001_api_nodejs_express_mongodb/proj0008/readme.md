@@ -28,7 +28,10 @@ mkdir proj0008
  node app.js
  ````
  
+ 
  /*
+ STATUS CODE PRINCIPAIS
+ 
  200  ok
  201  created
  202  accepted (aceitei sua requisicao e estou processando isso)
@@ -36,4 +39,14 @@ mkdir proj0008
  400 bad request
  401 unauthorized (autentificacao - carater temporario)
  403 forbidden (autorizacao - carater permanente)
+ 404 not found
+ 
+ 500 internal error (erro na api)
+ 501 not implemented - a api nao suporta essa funcionalidade
+ 503 service unavailable - api excecuta essa operacao mas no momento esta indisponivel
+ 
+ 
+ 
+ 
+ 
  */
