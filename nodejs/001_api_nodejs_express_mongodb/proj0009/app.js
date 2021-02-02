@@ -4,6 +4,8 @@ const app = express();
 const PORTA = 3000;
 
 
+const config = require('./config/config');
+
 
 //---------------------------------
 // body-parser [deve ser antes da chamada do router]
@@ -34,7 +36,7 @@ app.use('/users', userRoute);
 // string conexao mongo
 // mongodb+srv://usuario_admin:<password>@clusterapi.yh7yq.mongodb.net/<dbname>?retryWrites=true&w=majority
 const  mongoose = require('mongoose');
-const url = "mongodb+srv://usuario_admin:senha_admin@clusterapi.yh7yq.mongodb.net/data_base_name?retryWrites=true&w=majority";
+const url = config.bd_string;
 const options = {
     //reconnectTries: Number.MAX_VALUE,
     //reconnectInterval: 500,
