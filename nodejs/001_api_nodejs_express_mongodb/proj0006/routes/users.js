@@ -31,7 +31,29 @@ router.post('/', (req,res) => {
 //     "email": "will@will.com.br",
 //     "password": "123456"
 // }
-router.post('/create', (req,res) => {
+// router.post('/create', (req,res) => {
+//     let obj = req.body;
+//     console.log(obj);
+//
+//     const {email, password} = obj;
+//
+//     if(!email || !password) return res.send({error: 'dados insuficientes'});
+//
+//     Users.findOne({email:email}, (err, data) => {
+//        if (err) return res.send({error: 'erro ao buscar usuario'});
+//        if (data) return res.send({error: 'usuario ja registrado'});
+//
+//        Users.create({email:email, password:password}, (err, data)=>{
+//            if(err) return res.send({error: 'erro ao criar usuario!'});
+//
+//            data.password = undefined;
+//            return res.send(data);
+//
+//        });
+//     });
+// });
+
+router.post('/create', async (req,res) => {
     let obj = req.body;
     console.log(obj);
 
@@ -39,21 +61,42 @@ router.post('/create', (req,res) => {
 
     if(!email || !password) return res.send({error: 'dados insuficientes'});
 
-    Users.findOne({email:email}, (err, data) => {
-       if (err) return res.send({error: 'erro ao buscar usuario'});
-       if (data) return res.send({error: 'usuario ja registrado'});
+    try{
+        if (await Users.findOne({email:email})) return res.send({error: 'usuario ja registrado'});
 
-       Users.create({email:email, password:password}, (err, data)=>{
-           if(err) return res.send({error: 'erro ao criar usuario!'});
+        const user = await Users.create(obj);
+        user.password = undefined;
+        return res.send(user);
 
-           data.password = undefined;
-           return res.send(data);
-
-       });
-    });
+    }catch(err){
+        return res.send({error:'erro ao buscar usuario'});
+    }
 });
 
-router.post('/auth', (req,res)=>{
+// router.post('/auth', (req,res)=>{
+//     let obj = req.body;
+//     console.log(obj);
+//
+//     const {email, password} = obj;
+//
+//     if(!email || !password) return res.send({error: 'dados insuficientes'});
+//
+//
+//     Users.findOne({email:email}, (err, data) => {
+//         if (err) return res.send({error: 'erro ao buscar usuario'});
+//         if (!data) return res.send({error: 'usuario nao registrado'});
+//
+//         bcrypt.compare(password,data.password, (err, same)=>{
+//             if (!same) return res.send({error: 'Error ao autenticar usuario!'});
+//
+//             data.password = undefined;
+//             return res.send(data);
+//         });
+//
+//     }).select('+password');
+// })
+
+router.post('/auth', async (req,res)=>{
     let obj = req.body;
     console.log(obj);
 
@@ -61,21 +104,22 @@ router.post('/auth', (req,res)=>{
 
     if(!email || !password) return res.send({error: 'dados insuficientes'});
 
+    try{
+        const user = await Users.findOne({email:email}).select('+password');
 
-    Users.findOne({email:email}, (err, data) => {
-        if (err) return res.send({error: 'erro ao buscar usuario'});
-        if (!data) return res.send({error: 'usuario nao registrado'});
+        if (!user) return res.send({error: 'usuario nao registrado'});
 
-        bcrypt.compare(password,data.password, (err, same)=>{
-            if (!same) return res.send({error: 'Error ao autenticar usuario!'});
+        const pass_ok = await bcrypt.compare(password,user.password);
 
-            data.password = undefined;
-            return res.send(data);
-        });
+        if(!pass_ok) return res.send({error: 'Error ao autenticar usuario!'});
 
-    }).select('+password');
+        user.password = undefined;
+        return res.send(user);
 
-})
+    }catch(err){
+        return res.send({error:'erro ao buscar usuario'});
+    }
+});
 
 
 module.exports = router;
