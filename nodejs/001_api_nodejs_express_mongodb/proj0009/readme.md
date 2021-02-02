@@ -26,6 +26,15 @@ mkdir proj0009
  ````
  cd proj0009
  node app.js
+ 
+set NODE_ENV=prod
+node app.js
+ 
+set NODE_ENV=dev
+node app.js
+ 
+set NODE_ENV=hml
+node app.js
  ````
  
  
