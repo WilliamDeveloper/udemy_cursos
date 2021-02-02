@@ -14,25 +14,29 @@ router.post('/', (req,res) => {
     return res.send({message: 'Tudo ok com o método POST da rota de usuarios!'})
 });
 
+//localhost:3000/users/create [Content-Type: application/json]
+// {
+//     "email": "will@will.com.br",
+//     "password": "123456"
+// }
 router.post('/create', (req,res) => {
     let obj = req.body;
-    console.log(obj)
-    // const {email, password} = {req.body.email, req.body.password};
-    // const email = req.body.email;
-    // const password = req.body.password;
-    //
-    // if(!email || !password) return res.send({error: 'dados insuficientes'});
-    //
-    // Users.findOne({email:email}, (err, data) => {
-    //    if (err) return res.send({error: 'erro ao buscar usuario'});
-    //    if (data) return res.send({error: 'usuario ja registrado'});
-    //
-    //    Users.create({email:email, password:password}, (err, data)=>{
-    //        if(err) return res.send({error: 'erro ao criar usuario!'});
-    //        return res.send(data);
-    //
-    //    });
-    // });
+    console.log(obj);
+
+    const {email, password} = obj;
+
+    if(!email || !password) return res.send({error: 'dados insuficientes'});
+
+    Users.findOne({email:email}, (err, data) => {
+       if (err) return res.send({error: 'erro ao buscar usuario'});
+       if (data) return res.send({error: 'usuario ja registrado'});
+
+       Users.create({email:email, password:password}, (err, data)=>{
+           if(err) return res.send({error: 'erro ao criar usuario!'});
+           return res.send(data);
+
+       });
+    });
 });
 
 module.exports = router;
