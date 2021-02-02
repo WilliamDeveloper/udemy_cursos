@@ -47,10 +47,10 @@ router.post('/create', async (req,res) => {
 
     const {email, password} = obj;
 
-    if(!email || !password) return res.send({error: 'dados insuficientes'});
+    if(!email || !password) return res.status(400).send({error: 'dados insuficientes'});
 
     try{
-        if (await Users.findOne({email:email})) return res.send({error: 'usuario ja registrado'});
+        if (await Users.findOne({email:email})) return res.status(400).send({error: 'usuario ja registrado'});
 
         const user = await Users.create(obj);
         user.password = undefined;
@@ -68,16 +68,16 @@ router.post('/auth', async (req,res)=>{
 
     const {email, password} = obj;
 
-    if(!email || !password) return res.send({error: 'dados insuficientes'});
+    if(!email || !password) return res.status(400).send({error: 'dados insuficientes'});
 
     try{
         const user = await Users.findOne({email:email}).select('+password');
 
-        if (!user) return res.send({error: 'usuario nao registrado'});
+        if (!user) return res.status(400).send({error: 'usuario nao registrado'});
 
         const pass_ok = await bcrypt.compare(password,user.password);
 
-        if(!pass_ok) return res.send({error: 'Error ao autenticar usuario!'});
+        if(!pass_ok) return res.status(401).send({error: 'Error ao autenticar usuario!'});
 
         user.password = undefined;
         return res.send({ user, token: createUserToken(user.id) });
