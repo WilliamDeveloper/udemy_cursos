@@ -10,6 +10,8 @@ const createUserToken = (userId) =>{
     return jwt.sign( {id:userId }, 'batatafrita2019', { expiresIn: '7d' });
 };
 
+// essa url so vai devolver os dados que o token valido mandado junto na requisicao
+//localhost:3000/users/info_privada
 router.get('/info_privada', auth, (req,res) => {
     try{
         console.log(res.locals.auth_data)
