@@ -9,3 +9,5 @@ const auth = (req, res, next) =>{
         if(err) return res.send({error: 'token invalido'});
     });
 }
+
+module.exports = auth;
