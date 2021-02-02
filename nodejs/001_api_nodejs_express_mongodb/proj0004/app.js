@@ -20,7 +20,6 @@ app.use('/users', userRoute);
 // string conexao mongo
 // mongodb+srv://usuario_admin:<password>@clusterapi.yh7yq.mongodb.net/<dbname>?retryWrites=true&w=majority
 const  mongoose = require('mongoose');
-const bodyParser = require("body-parser");
 const url = "mongodb+srv://usuario_admin:senha_admin@clusterapi.yh7yq.mongodb.net/data_base_name?retryWrites=true&w=majority";
 const options = {
     //reconnectTries: Number.MAX_VALUE,
@@ -49,6 +48,7 @@ mongoose.connection.on("connected", () => {
 //---------------------------------
 // body-parser
 //---------------------------------
+const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 

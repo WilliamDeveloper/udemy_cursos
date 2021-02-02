@@ -16,7 +16,9 @@ router.post('/', (req,res) => {
 
 router.post('/create', (req,res) => {
     let obj = req.body;
-    const {email, password} = obj;
+    // const {email, password} = {req.body.email, req.body.password};
+    const email = req.body.email;
+    const password = req.body.password;
 
     if(!email || !password) return res.send({error: 'dados insuficientes'});
 
