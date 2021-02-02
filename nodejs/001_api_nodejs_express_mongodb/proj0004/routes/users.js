@@ -7,13 +7,6 @@ router.get('/', (req,res) => {
         if (err)  return res.send({error:'Erro na consulta de usuarios!'});
         return res.send(data);
     })
-
-    let params = req.query;
-    let respostaJson ={
-        message: 'Tudo ok com o método GET da rota de usuarios!',
-        params : params
-    };
-    return res.send(respostaJson)
 });
 
 router.post('/', (req,res) => {
@@ -21,13 +14,22 @@ router.post('/', (req,res) => {
     return res.send({message: 'Tudo ok com o método POST da rota de usuarios!'})
 });
 
-router.get('/create', (req,res) => {
-    let params = req.query;
-    let respostaJson ={
-        message: 'Tudo ok com o método GET da rota de usuarios/create!',
-        params : params
-    };
-    return res.send(respostaJson)
+router.post('/create', (req,res) => {
+    let params = req.body;
+    const {email, password} = params;
+
+    if(!email || !password) return res.send({error: 'dados insuficientes'});
+
+    Users.findOne({email:email}, (err, data) => {
+       if (err) return res.send({error: 'erro ao buscar usuario'});
+       if (data) return res.send({error: 'usuario ja registrado'});
+
+       Users.create({email:email, password:password}, (err, data)=>{
+           if(err) return res.send({error: 'erro ao criar usuario!'});
+           return res.send(data);
+
+       });
+    });
 });
 
 module.exports = router;
