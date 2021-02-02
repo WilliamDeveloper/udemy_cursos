@@ -12,6 +12,7 @@ const createUserToken = (userId) =>{
 
 router.get('/info_privada', auth, (req,res) => {
     try{
+        console.log(res.locals.auth_data)
         const users = {nome:'william', idade:18};
         return res.send(users);
     }catch(err){
