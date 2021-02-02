@@ -3,6 +3,20 @@ const app = express();
 
 const PORTA = 3000;
 
+
+
+//---------------------------------
+// body-parser [deve ser antes da chamada do router]
+//---------------------------------
+const bodyParser = require("body-parser");
+
+// create application/x-www-form-urlencoded parser
+app.use(bodyParser.urlencoded({extended:false}));
+
+// create application/json parser
+app.use(bodyParser.json());
+
+
 //---------------------------------------------
 // Routes
 //---------------------------------------------
@@ -45,12 +59,7 @@ mongoose.connection.on("connected", () => {
     console.log("Aplicacao conectada do banco de dados")
 });
 
-//---------------------------------
-// body-parser
-//---------------------------------
-const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(bodyParser.json());
+
 
 //------------------------------
 // subindo api
