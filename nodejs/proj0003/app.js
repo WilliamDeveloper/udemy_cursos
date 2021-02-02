@@ -21,10 +21,11 @@ const  mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const url = "mongodb+srv://usuario_admin:falcom@clusterapi.yh7yq.mongodb.net/data_base_name?retryWrites=true&w=majority";
 const options = {
-    reconnectTries: Number.MAX_VALUE,
-    reconnectInterval: 500,
+    //reconnectTries: Number.MAX_VALUE,
+    //reconnectInterval: 500,
     poolSize: 5,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 };
 
 mongoose.connect(url,options);
