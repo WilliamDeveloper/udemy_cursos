@@ -39,6 +39,10 @@ mongoose.connection.on("disconnected", () => {
     console.log("Aplicacao desconectada do banco de dados")
 });
 
+mongoose.connection.on("connected", () => {
+    console.log("Aplicacao conectada do banco de dados")
+});
+
 //---------------------------------
 // body-parser
 //---------------------------------
