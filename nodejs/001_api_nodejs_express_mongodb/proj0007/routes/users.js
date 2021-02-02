@@ -10,6 +10,16 @@ const createUserToken = (userId) =>{
     return jwt.sign( {id:userId }, 'batatafrita2019', { expiresIn: '7d' });
 };
 
+router.get('/info_privada', auth, async (req,res) => {
+    try{
+        const users = {nome:'william', idade:18};
+        return res.send(data);
+    }catch(err){
+        return res.send({error:'Erro na consulta de usuarios!'});
+    }
+});
+
+
 router.get('/', async (req,res) => {
     try{
         const users = await Users.find({})
