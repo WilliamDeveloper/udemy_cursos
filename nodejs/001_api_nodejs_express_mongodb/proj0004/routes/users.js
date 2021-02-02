@@ -33,6 +33,8 @@ router.post('/create', (req,res) => {
 
        Users.create({email:email, password:password}, (err, data)=>{
            if(err) return res.send({error: 'erro ao criar usuario!'});
+
+           data.password = undefined;
            return res.send(data);
 
        });
