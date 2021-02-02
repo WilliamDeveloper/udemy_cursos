@@ -5,19 +5,22 @@ const config = () =>{
         case 'dev':
         return {
             bd_string: "mongodb+srv://usuario_admin:senha_admin@clusterapi.yh7yq.mongodb.net/data_base_name?retryWrites=true&w=majority",
-            jwt_pass: 'batatafrita2019'
+            jwt_pass: 'batatafrita2019',
+            jwt_expires_in: '7d'
         }
 
         case 'hml':
         return {
             bd_string: "mongodb+srv://usuario_admin:senha_admin@clusterapi.yh7yq.mongodb.net/data_base_name?retryWrites=true&w=majority",
-            jwt_pass: 'batatafrita2019'
+            jwt_pass: 'batatafrita2019',
+            jwt_expires_in: '7d'
         }
 
         case 'prod':
         return {
             bd_string: "mongodb+srv://usuario_admin:senha_admin@clusterapi.yh7yq.mongodb.net/data_base_name?retryWrites=true&w=majority",
-            jwt_pass: 'batatafrita2019'
+            jwt_pass: 'batatafrita2019',
+            jwt_expires_in: '7d'
         }
 
     }

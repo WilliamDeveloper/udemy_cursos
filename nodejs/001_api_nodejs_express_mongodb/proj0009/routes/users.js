@@ -4,10 +4,11 @@ const Users = require('../model/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('../middlewares/auth');
+const config = require('../config/config');
 
 //funcoes auxiliares
 const createUserToken = (userId) =>{
-    return jwt.sign( {id:userId }, 'batatafrita2019', { expiresIn: '7d' });
+    return jwt.sign( {id:userId }, config.jwt_pass, { expiresIn: config.jwt_expires_in });
 };
 
 // essa url so vai devolver os dados que o token valido mandado junto na requisicao
