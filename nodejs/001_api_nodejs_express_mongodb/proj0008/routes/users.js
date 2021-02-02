@@ -18,7 +18,7 @@ router.get('/info_privada', auth, (req,res) => {
         const users = {nome:'william', idade:18};
         return res.send(users);
     }catch(err){
-        return res.send({error:'Erro na consulta de usuarios!'});
+        return res.status(500).send({error:'Erro na consulta de usuarios!'});
     }
 });
 
@@ -28,7 +28,7 @@ router.get('/', async (req,res) => {
         const users = await Users.find({})
         return res.send(data);
     }catch(err){
-        return res.send({error:'Erro na consulta de usuarios!'});
+        return res.status(500).send({error:'Erro na consulta de usuarios!'});
     }
 });
 
@@ -58,7 +58,7 @@ router.post('/create', async (req,res) => {
         return res.status(201).send({ user, token: createUserToken(user.id) });
 
     }catch(err){
-        return res.send({error:'erro ao buscar usuario'});
+        return res.status(500).send({error:'erro ao buscar usuario'});
     }
 });
 
@@ -83,7 +83,7 @@ router.post('/auth', async (req,res)=>{
         return res.send({ user, token: createUserToken(user.id) });
 
     }catch(err){
-        return res.send({error:'erro ao buscar usuario'});
+        return res.status(500).send({error:'erro ao buscar usuario'});
     }
 });
 
