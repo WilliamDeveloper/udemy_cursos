@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const Users = require('../model/user');
 
 router.get('/', (req,res) => {
+    Users.find({},(err, data) => {
+        if (err)  return res.send({error:'Erro na consulta de usuarios!'});
+        return res.send(data);
+    })
+
     let params = req.query;
     let respostaJson ={
         message: 'Tudo ok com o método GET da rota de usuarios!',
