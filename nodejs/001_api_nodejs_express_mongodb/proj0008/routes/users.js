@@ -55,7 +55,7 @@ router.post('/create', async (req,res) => {
         const user = await Users.create(obj);
         user.password = undefined;
 
-        return res.send({ user, token: createUserToken(user.id) });
+        return res.status(201).send({ user, token: createUserToken(user.id) });
 
     }catch(err){
         return res.send({error:'erro ao buscar usuario'});

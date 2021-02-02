@@ -27,3 +27,13 @@ mkdir proj0008
  cd proj0008
  node app.js
  ````
+ 
+ /*
+ 200  ok
+ 201  created
+ 202  accepted (aceitei sua requisicao e estou processando isso)
+ 
+ 400 bad request
+ 401 unauthorized (autentificacao - carater temporario)
+ 403 forbidden (autorizacao - carater permanente)
+ */
