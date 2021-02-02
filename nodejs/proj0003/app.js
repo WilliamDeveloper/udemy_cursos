@@ -15,6 +15,8 @@ app.use('/users', userRoute);
 //---------------------------------
 // mongodb
 //---------------------------------
+// https://cloud.mongodb.com
+// mongo db atlas
 // string conexao mongo
 // mongodb+srv://usuario_admin:<password>@clusterapi.yh7yq.mongodb.net/<dbname>?retryWrites=true&w=majority
 const  mongoose = require('mongoose');
