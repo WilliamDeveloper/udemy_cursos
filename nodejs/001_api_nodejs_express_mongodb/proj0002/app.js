@@ -6,7 +6,7 @@ const PORTA = 3000;
 //---------------------------------------------
 // Routes
 //---------------------------------------------
-const indexRoute = require('./routes/index');
+const indexRoute = require('./routes');
 const userRoute = require('./routes/users');
 
 app.use('/', indexRoute);
