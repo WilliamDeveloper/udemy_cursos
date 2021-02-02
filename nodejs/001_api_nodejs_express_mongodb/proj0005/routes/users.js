@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Users = require('../model/user');
+const bcrypt = require('bcrypt');
 
 router.get('/', (req,res) => {
     Users.find({},(err, data) => {
@@ -40,5 +41,29 @@ router.post('/create', (req,res) => {
        });
     });
 });
+
+router.post('/auth', (req,res)=>{
+    let obj = req.body;
+    console.log(obj);
+
+    const {email, password} = obj;
+
+    if(!email || !password) return res.send({error: 'dados insuficientes'});
+
+
+    Users.findOne({email:email}, (err, data) => {
+        if (err) return res.send({error: 'erro ao buscar usuario'});
+        if (!data) return res.send({error: 'usuario nao registrado'});
+
+        bcrypt.compare(password,data.password, (err, same)=>{
+            if (!same) return res.send({error: 'Error ao autenticar usuario!'});
+
+            return res.send(data);
+        });
+
+    }).select('+password');
+
+})
+
 
 module.exports = router;
