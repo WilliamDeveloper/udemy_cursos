@@ -7,5 +7,5 @@ const auth = (req, res, next) =>{
 
     jwt.verify(token_header, 'batatafrita2019', (err, decoded) =>{
         if(err) return res.send({error: 'token invalido'});
-    })
+    });
 }
