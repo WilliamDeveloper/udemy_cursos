@@ -13,7 +13,7 @@ function  sum (x) {
 async function main() {
 
     try {
-        const resultado = await sum(230);
+        const resultado = await sum('230g');
         console.log(`Resultado com async/await: ${resultado}`);
     }catch (e) {
         console.log(`temos problemas: ${e}`);
