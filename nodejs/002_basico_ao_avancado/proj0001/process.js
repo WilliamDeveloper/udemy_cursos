@@ -1,6 +1,6 @@
 console.log(`Nome do arquivo: `,__filename);
 console.log(`Diretorio do arquivo: `, __dirname);
-console.log(`Diretorio do arquivo em que foi invocado: `, process.cwd());
+console.log(`Diretorio do arquivo em que foi invocado(mostra o diretorio do script q xamou ele): `, process.cwd());
 console.log(`parametros de excecucao: `,process.argv);
 console.log(`ambiente do sevidor: `,process.platform);
 console.log(`variaveis de ambiente: `,process.env);
