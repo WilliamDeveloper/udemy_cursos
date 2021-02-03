@@ -14,3 +14,11 @@ const server  = http.createServer((req,res) =>{
 server.listen(port, hostname, ()=>{
     console.log(`Servidor Rodando em http://${hostname}:${port}`);
 });
+
+
+const open = (
+    process.platform == 'darwin' ? 'open' : process.platform == 'win32'? 'start': 'xdg-open'
+);
+
+const childProcess = require('child_process');
+childProcess.exec(`${open} ${url}`);
