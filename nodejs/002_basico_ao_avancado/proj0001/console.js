@@ -13,3 +13,9 @@ console.count('processo')
 console.countReset('processo')
 
 console.count('processo')
+
+console.time('blau')
+console.timeEnd('blau')
+
+console.assert(true, 'nao faz nada')
+console.assert(false, 'deu erro faz alguma coisa')
