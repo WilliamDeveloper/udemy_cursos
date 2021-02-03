@@ -8,9 +8,9 @@ const server  = http.createServer((req,res) =>{
     res.statusCode = 200;
     // res.setHeader('Content-Type','text/plain'); //padrao
     res.setHeader('Content-Type','text/html');
-    res.end("Olá mundo \n Meu primeiro Script");
+    res.end("<h1>Olá mundo <br/> Meu primeiro Script </h1>");
 });
 
 server.listen(port, hostname, ()=>{
-    console.log(`Server Running at http://${hostname}:${port}`)
+    console.log(`Servidor Rodando em http://${hostname}:${port}`);
 });
