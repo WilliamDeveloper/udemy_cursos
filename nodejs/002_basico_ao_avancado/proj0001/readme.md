@@ -19,3 +19,11 @@ yarn add global bootstrap
 ````
 npm init
 ````
+
+-- comitando com git
+````
+git status
+git add .
+git commit -m "meu commit"
+git push origin master
+````
