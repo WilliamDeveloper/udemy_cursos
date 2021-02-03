@@ -2,6 +2,7 @@ console.log(`Nome do arquivo: `,__filename);
 console.log(`Diretorio do arquivo: `, __dirname);
 console.log(`parametros de excecucao: `,process.argv);
 console.log(`ambiente do sevidor: `,process.platform);
+console.log(`variaveis de ambiente: `,process.env);
 
 let argumento_2 = process.argv[2];
 switch (argumento_2) {
