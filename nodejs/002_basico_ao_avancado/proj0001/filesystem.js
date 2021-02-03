@@ -17,6 +17,12 @@ fs.readFile('file.txt',(err, data)=>{
 });
 
 // bloqueante
-
 const texto = fs.readFileSync('file.txt');
-console.log('texto: ', texto)
+console.log('texto: ', texto);
+
+
+fs.mkdir('projeto', (err) =>{
+    if (err) throw err
+
+    console.log('diretorio criado com sucesso')
+});
