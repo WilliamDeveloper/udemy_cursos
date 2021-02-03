@@ -28,3 +28,8 @@ git add .
 git commit -m "meu commit"
 git push origin master
 ````
+
+-- dependencias basicas
+````
+npm install -g nodemon
+````
