@@ -15,3 +15,5 @@ async function main() {
         console.log(`temos problemas: ${e}`);
     }
 }
+
+main();
