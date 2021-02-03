@@ -31,3 +31,5 @@ function criaArquivo(name, content) {
 }
 
 criaArquivo('arquivo2.txt', 'pimba blau')
+.then( () => console.log('arquivo criado com sucesso'))
+.catch(err => console.log('erro'));
