@@ -31,5 +31,7 @@ git push origin master
 
 -- dependencias basicas
 ````
+#C:\Users\willi\AppData\Roaming\npm
+#D:\_dev_\bin\nodejs
 npm install -g nodemon
 ````
