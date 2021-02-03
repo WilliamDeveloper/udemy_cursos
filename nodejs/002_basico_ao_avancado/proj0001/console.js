@@ -19,3 +19,6 @@ console.timeEnd('blau')
 
 console.assert(true, 'nao faz nada')
 console.assert(false, 'deu erro faz alguma coisa')
+
+//limpar dados do console
+// console.clear()
