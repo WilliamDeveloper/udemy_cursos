@@ -49,6 +49,4 @@ try{
 
 }catch (e) {
     console.log('erro ao ler o arquivo')
-
-
 }
