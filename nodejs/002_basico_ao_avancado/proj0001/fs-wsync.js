@@ -8,6 +8,7 @@ const dados = fs.readFile('file.txt',(err, data)=>{
 
     console.log('lendo arquivo')
 });
+///fs.unlinkSync("arqivo.txt")
 
 console.log('depois da leitura do arquivo');
 console.log( (process.hrtime()[0]/60).toFixed(5) );
