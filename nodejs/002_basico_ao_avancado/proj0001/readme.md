@@ -14,3 +14,8 @@ yarn add bootstrap
 yarn add global bootstrap
 
 ````
+
+-- inicializar projeto nodejs
+````
+npm init
+````
