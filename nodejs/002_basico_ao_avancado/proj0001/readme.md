@@ -20,8 +20,9 @@ yarn add global bootstrap
 npm init
 ````
 
--- comitando com git
+-- inicializar git em uma pasta e comitando com git
 ````
+git init
 git status
 git add .
 git commit -m "meu commit"
