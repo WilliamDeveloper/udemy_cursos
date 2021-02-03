@@ -21,8 +21,23 @@ const texto = fs.readFileSync('file.txt');
 console.log('texto: ', texto);
 
 
-fs.mkdir('projeto', (err) =>{
+fs.mkdir('projeto/assets/images', {recursive:true}, (err) =>{
     if (err) throw err
 
     console.log('diretorio criado com sucesso')
 });
+
+
+const assets = ['css', 'js', 'images', 'fonts', 'lib'];
+
+function make(dirs) {
+    dirs.forEach((dir)=>{
+        fs.mkdir(`projeto/assets/${dir}`, {recursive:true}, (err) =>{
+            if (err) throw err
+
+            console.log('diretorio criado com sucesso')
+        });
+    })
+}
+
+make(assets)
