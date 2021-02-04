@@ -65,6 +65,7 @@ npm update readline-sync
 - apost dar um git clone -> inicializar um projeto npm
 ````
 npm init
+npm init -y
 ````
 
 - DEPRECATED - depreciar um pacote node
