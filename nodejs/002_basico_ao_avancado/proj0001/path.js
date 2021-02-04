@@ -8,3 +8,5 @@ const folder1= path.join('/teste','teste2','teste3','teste4','..')
 console.log(folder1)
 
 console.log(path.resolve('path.js'))
+console.log(path.resolve('child_process.js'))
+console.log(path.resolve('child_process2.js'))
