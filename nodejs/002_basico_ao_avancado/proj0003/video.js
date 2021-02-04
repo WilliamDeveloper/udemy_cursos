@@ -73,3 +73,5 @@ async function processVideo() {
         }
     }
 }
+
+//  node video.js C:/Users/willi/Downloads/ffmpeg 1 1
