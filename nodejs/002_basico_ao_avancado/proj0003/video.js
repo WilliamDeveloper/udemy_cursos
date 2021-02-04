@@ -26,8 +26,16 @@ function  resize(video, quality) {
             '-b:a',
             '128k',
             `${parent}/resultado/${video}-${quality}.mp4`
-
-
         ])
+
+        ffmpeg.stderr.on('data',(data)=>{
+            console.log(`erro: ${data}`)
+        })
+
+        ffmpeg.on('close',(code)=>{
+            console.log(`finalizdo ${code}`)
+            resolve(code);
+        })
     })
+    return p;
 }
