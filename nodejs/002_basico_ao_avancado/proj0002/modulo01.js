@@ -1,5 +1,7 @@
 console.log('excecutando modulo01.js')
 
+// funcao privada usavel somente ao arquivo atual
+// pois nao foi dado "module.exports"
 const oculta = () =>{
     console.log('excecutando funcao oculta')
 }
