@@ -6,12 +6,12 @@ const oculta2 = () =>{
     console.log('excecutando funcao oculta')
 }
 
-const oculta = () =>{
+oculta = () =>{
     console.log('excecutando funcao oculta')
 }
 
 
-const executa = ()=>{
+executa = ()=>{
     console.log('excecutando a executa')
 }
 
