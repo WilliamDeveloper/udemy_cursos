@@ -6,12 +6,13 @@ const oculta2 = () =>{
     console.log('excecutando funcao oculta')
 }
 
-oculta = () =>{
+//se eu nao por const o scope de variavel fica global quando alguem dar require
+const oculta = () =>{
     console.log('excecutando funcao oculta')
 }
 
 
-executa = ()=>{
+const executa = ()=>{
     console.log('excecutando a executa')
 }
 

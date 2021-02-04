@@ -1,4 +1,6 @@
 // require("./modulo01.js")
-require("./modulo01")
+const module01 = require("./modulo01")
 
-executa()
+module01.executa()
+
+module01.oculta()
