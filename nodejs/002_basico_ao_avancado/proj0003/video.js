@@ -1,5 +1,24 @@
 const {spawn} = require('child_process')
 
+const parent = process.argv[2];
+
+let videos = []
+
+if(process.argv[2]){
+    const start = parseInt(process.argv[3])
+    const end = parseInt(process.argv[4])
+
+    for(let i = start; i <= end; i++){
+        videos.push(i);
+    }
+
+    videos.reverse();
+    processVideo()
+}else{
+    console.log('eh necessario criar um diretorio de nivel superior')
+}
+
+
 function  resize(video, quality) {
     const p = new Promise((resolve, reject)=>{
         const binarioFfmpeg = "D:/_dev_/bin/ffmpeg/v4.3.1/bin/ffmpeg"
@@ -38,4 +57,19 @@ function  resize(video, quality) {
         })
     })
     return p;
+}
+
+async function processVideo() {
+    let video = videos.pop();
+    if(video){
+        try{
+            await resize(video, 720)
+            await resize(video, 480)
+            await resize(video, 360)
+            console.log('videos renderizados');
+            processVideo()
+        }catch (e) {
+            console.log('erro',e)
+        }
+    }
 }
