@@ -16,9 +16,6 @@ app.use(CookieParser())
 
 //criando funcao de middleware personalizada
 app.use((req,res,next)=>{
-    res.header('Access-Control-Allow-Origin', req.headers.origin);
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
     console.log('executando midleware a nivel de aplicacao - logando sempre antes de cada rota')
     return next()
 })
