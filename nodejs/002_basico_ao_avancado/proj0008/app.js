@@ -7,6 +7,9 @@ const indexRoutes = require('./routes/index')
 const adminRoutes = require('./routes/admin')
 const usuarioRoutes = require('./routes/usuario')
 
+//pasta de arquivos staticos
+app.use(express.static('public'))
+
 // funcao middleware ".use" , express.json do tipo built-in
 app.use(express.json())
 
