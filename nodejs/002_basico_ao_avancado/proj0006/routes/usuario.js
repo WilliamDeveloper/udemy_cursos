@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router()
 
-router.get('/', (req,res)=>{
+function logReq(req,res,next){
+    console.log('excecutando middleware para a rota usuarios')
+    next()
+}
+
+router.get('/',logReq, (req,res)=>{
     res.statusCode = 200;
     res.send('listando usuarios');
 });
