@@ -27,3 +27,4 @@ db.muitos.insertMany([
  {_id:3, title:'testando documento', date: new Date('2020-01-01')}
 ])
 db.muitos.find()
+db.muitos.find({_id:3})
