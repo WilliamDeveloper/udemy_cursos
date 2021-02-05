@@ -26,9 +26,20 @@ app.use('/',indexRoutes)
 app.use('/admin',adminRoutes)
 app.use('/usuarios',usuarioRoutes)
 
+app.get('/provoca-erro',(req,res,next)=>{
+    setImmediate(()=>{
+        next( new Error('Temos um problema'))
+    })
+})
 
 
+//tramento de erro sempre antes do listener
+app.use((err, req, res, next)=>{
+    console.log(err.stack)
+    res.status(500).json({message: err.message})
+})
 
+//listener para para subir a aplicacao
 app.listen(3000,()=>{
     console.log(`rodando em http://localhost:3000`)
 })
