@@ -21,7 +21,9 @@ app.use((req,res,next)=>{
 })
 
 app.get('/setcookie', (req,res)=>{
-    res.cookie('user','WilliaM', {maxAge: 600, httpOnly: false })
+    // res.cookie('user','WilliaM', {maxAge: 600, httpOnly: false })
+    // res.cookie("user", "william", {maxAge: 600, httpOnly: false } ); // da erro
+    res.cookie("user", "william"); // da erro
     return res.send('cookie gravado com sucesso')
 });
 
@@ -34,12 +36,18 @@ app.get('/getcookie', (req,res)=>{
     // Cookies that have been signed
     console.log('Signed Cookies: ', req.signedCookies)
 
-    let user = req.cookies.user
-    if(user){
-        res.send(user)
-    }else{
-        res.send('a chave do cookie nao exist')
+
+    if(req.cookies.user !== "true") {
+        response = "blau!";
     }
+
+    res.send(response);
+    // let user = req.cookies.user
+    // if(user){
+    //     res.send(user)
+    // }else{
+    //     res.send('a chave do cookie nao exist')
+    // }
 
 });
 
