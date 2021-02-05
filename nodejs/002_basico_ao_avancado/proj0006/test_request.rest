@@ -1,0 +1,3 @@
+### get admin
+GET http://localhost:3000/admin
+###
