@@ -18,6 +18,7 @@ db.testandoArquivos.find()
 # vendo todas collections de um schema
 show collections
 
+------------------------------------------------------------------------------
 
 # inserir muitos dados no schema "test"
 use test
@@ -28,6 +29,7 @@ db.muitos.insertMany([
 ])
 db.muitos.find()
 
+------------------------------------------------------------------------------
 # find personalizada
 db.muitos.find({_id:3})
 db.muitos.find({_id: {$lt: 3}})
@@ -65,6 +67,8 @@ db.muitos.updateOne(
     }
 )
 
+------------------------------------------------------------------------------
+# update many
 db.muitos.updateMany(
     {
         _id: { $lt: 5 } 
