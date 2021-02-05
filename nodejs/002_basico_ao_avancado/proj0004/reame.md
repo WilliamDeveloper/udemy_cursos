@@ -3,4 +3,4 @@ npm init -y
 
 npm install express-generator
 
-npx express-generator hcodeapp
+npx express-generator hcodeapp --view=pub
