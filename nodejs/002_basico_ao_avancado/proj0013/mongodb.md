@@ -27,4 +27,14 @@ db.muitos.insertMany([
  {_id:3, title:'testando documento', date: new Date('2020-01-01')}
 ])
 db.muitos.find()
+
+# find personalizada
 db.muitos.find({_id:3})
+db.muitos.find({_id: {$lt: 3}})
+db.muitos.find({_id: {$gt: 2}})
+db.muitos.find({
+    $or: [
+        {_id: {$lt: 2}},
+        {_id: {$gt: 2}}
+    ]
+})
