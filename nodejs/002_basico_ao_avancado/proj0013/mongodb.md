@@ -57,5 +57,23 @@ db.muitos.find({
 # update one
 db.muitos.updateOne(
     {_id:2}, 
-    {$set: {name:"maven", idade:80} }
+    {
+        $set: {
+            name:"maven", 
+            idade:80
+        } 
+    }
+)
+
+db.muitos.updateMany(
+    {
+        _id: { $lt: 5 } 
+    }, 
+    {
+        $set: {
+            name:"maven", 
+            idade:80
+        },
+        $currentDate: { lastModified: true }
+    }
 )
