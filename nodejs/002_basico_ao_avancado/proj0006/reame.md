@@ -5,6 +5,7 @@ npm install express --save
 
 npm install
 
+nodemon app.js
 node app.js
 
 
