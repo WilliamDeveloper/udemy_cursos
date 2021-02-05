@@ -32,9 +32,17 @@ db.muitos.find()
 db.muitos.find({_id:3})
 db.muitos.find({_id: {$lt: 3}})
 db.muitos.find({_id: {$gt: 2}})
+
 db.muitos.find({
     $or: [
         {_id: {$lt: 2}},
         {_id: {$gt: 2}}
+    ]
+})
+
+db.muitos.find({
+    $or: [
+        {_id: {$eq: 2}},
+        {_id: {$eq: 3}}
     ]
 })
