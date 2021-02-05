@@ -18,6 +18,11 @@ app.get('/admin/:id', (req,res)=>{
     res.send('area administrativa '+ id);
 });
 
+app.post('/admin', (req,res)=>{
+    res.statusCode = 200;
+    res.send('area administrativa via post');
+});
+
 app.listen(3000,()=>{
     console.log(`rodando em http://localhost:3000`)
 })
