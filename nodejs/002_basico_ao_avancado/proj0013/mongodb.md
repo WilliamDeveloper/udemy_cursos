@@ -34,6 +34,13 @@ db.muitos.find({_id: {$lt: 3}})
 db.muitos.find({_id: {$gt: 2}})
 
 db.muitos.find({
+    $and:[
+        {_id: {$gt: 1} },
+        {_id: {$lt: 3} }
+    ] 
+})
+
+db.muitos.find({
     $or: [
         {_id: {$lt: 2}},
         {_id: {$gt: 2}}
