@@ -81,3 +81,14 @@ db.muitos.updateMany(
         $currentDate: { lastModified: true }
     }
 )
+
+------------------------------------------------------------------------------
+# replace one
+db.muitos.replaceOne(
+    {
+        _id: { $eq: 2 } 
+    }, 
+    {
+        nome:"william"        
+    }
+)
