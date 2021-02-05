@@ -10,7 +10,7 @@ app.use(express.json())
 
 //criando funcao de middleware personalizada
 app.use((req,res,next)=>{
-    console.log('logando sempre antes de cada rota')
+    console.log('executando midleware a nivel de aplicacao - logando sempre antes de cada rota')
     return next()
 })
 
