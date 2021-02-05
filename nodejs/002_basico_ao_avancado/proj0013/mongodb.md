@@ -53,3 +53,9 @@ db.muitos.find({
         {_id: {$eq: 3}}
     ]
 })
+
+# update one
+db.muitos.updateOne(
+    {_id:2}, 
+    {$set: {name:"maven", idade:80} }
+)
