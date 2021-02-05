@@ -92,3 +92,7 @@ db.muitos.replaceOne(
         nome:"william"        
     }
 )
+------------------------------------------------------------------------------
+# delete
+db.muitos.deleteMany({_id:3})
+db.muitos.deleteMany({})
