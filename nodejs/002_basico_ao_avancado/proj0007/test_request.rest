@@ -21,4 +21,10 @@ GET http://localhost:3000/usuarios
 ### get usuario com id
 GET http://localhost:3000/usuarios/1
 
+### get cookie
+GET http://localhost:3000/getcookie
+
+### set cookie
+GET http://localhost:3000/setcookie
+
 ###
