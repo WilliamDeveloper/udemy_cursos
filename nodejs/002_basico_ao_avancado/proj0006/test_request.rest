@@ -16,5 +16,4 @@ PATCH http://localhost:3000/admin
 PUT http://localhost:3000/admin/1
 ### acessando via PUT
 DELETE http://localhost:3000/admin/1
-
 ###
