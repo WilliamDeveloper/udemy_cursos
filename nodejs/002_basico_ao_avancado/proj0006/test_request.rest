@@ -2,5 +2,4 @@
 GET http://localhost:3000/admin
 ### get admin com id
 GET http://localhost:3000/admin/35
-
 ###
