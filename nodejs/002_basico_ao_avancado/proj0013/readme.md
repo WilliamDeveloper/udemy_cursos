@@ -3,9 +3,10 @@ npm init -y
 
 - bibliotecas
 npm install express --save
-npm install multer --save
-npm install body-parser --save
-npm install bootstrap --save
+npm install mongoose --save
+npm install dotenv --save
+npm install nodemon --save
+
 
 - instalar tudo que tiver no package.json
 npm install
