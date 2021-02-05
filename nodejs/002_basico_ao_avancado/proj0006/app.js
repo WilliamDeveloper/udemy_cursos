@@ -30,6 +30,20 @@ app.post('/admin', (req,res)=>{
     res.send('area administrativa via post\n'+corpo);
 });
 
+app.patch('/admin', (req,res)=>{
+    res.send('area administrativa via PATCH\n');
+});
+
+app.put('/admin/:id', (req,res)=>{
+    res.send('area administrativa via PUT\n');
+});
+
+
+app.delete('/admin/:id', (req,res)=>{
+    res.send('area administrativa via DELETE\n');
+});
+
+
 app.listen(3000,()=>{
     console.log(`rodando em http://localhost:3000`)
 })

@@ -10,5 +10,11 @@ Content-Type: application/json
   "login": "admin",
   "senha": "123456"
 }
+### acessando via PATCH
+PATCH http://localhost:3000/admin
+### acessando via PUT
+PUT http://localhost:3000/admin/1
+### acessando via PUT
+DELETE http://localhost:3000/admin/1
 
 ###
