@@ -3,7 +3,8 @@ npm init -y
 
 - bibliotecas
 npm install express --save
-npm install cookie-parser --save
+npm install multer --save
+npm install body-parser --save
 
 - instalar tudo que tiver no package.json
 npm install
