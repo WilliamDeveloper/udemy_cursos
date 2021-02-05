@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express()
 
+// funcao middleware ".use"
+app.use(express.json())
+
 app.get('/', (req,res)=>{
     res.statusCode = 200;
     res.send('hello worlds');
@@ -19,8 +22,12 @@ app.get('/admin/:id', (req,res)=>{
 });
 
 app.post('/admin', (req,res)=>{
-    res.statusCode = 200;
-    res.send('area administrativa via post');
+
+    const corpo = `
+        Login: ${req.body.login}\n
+        Senha: ${req.body.senha}
+    `
+    res.send('area administrativa via post\n'+corpo);
 });
 
 app.listen(3000,()=>{
