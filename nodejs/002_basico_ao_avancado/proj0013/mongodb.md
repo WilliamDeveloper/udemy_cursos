@@ -3,7 +3,7 @@ https://www.mongodb.com/try/download/community
 # esquema
 use hcode
 
-# inserir um objeto em uma colecao(tabela)
+# Collection - inserir um objeto em uma colecao(tabela)
 db.clientes.insertOne({nome:"william", idade:18})
 
 # buscar
