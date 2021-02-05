@@ -6,6 +6,6 @@ app.get('/', (req,res)=>{
     res.send('hello worlds');
 });
 
-app.listener(3000,()=>{
+app.listen(3000,()=>{
     console.log(`rodando em http://localhost:3000`)
 })
