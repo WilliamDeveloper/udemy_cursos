@@ -27,3 +27,5 @@ select * from usuario;
 select * from usuario where nome = 'luciane' and (idade=18 or idade=17);
 
 delete from usuario where nome = 'meg';
+
+update usuario set email='pimba@blau.com.br',idade=17 where nome= 'william';
