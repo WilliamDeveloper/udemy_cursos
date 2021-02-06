@@ -8,3 +8,6 @@ npm install express --save
 //http://localhost:4000/ola/Luciane/verbo
 // quando tem "?" significa q o parametro nao eh obrigatorio
 app.get('/ola/:nome?/:empresa?', function (req, res) { }
+
+-- parametros dinamicos na rota
+app.get('/query_params', function (req, res) {
