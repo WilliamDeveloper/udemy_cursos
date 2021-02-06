@@ -6,3 +6,4 @@ console.log(resultado)
 
 let resultado2 = soma(5,7)
 console.log(resultado2)
+
