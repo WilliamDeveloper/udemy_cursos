@@ -11,7 +11,7 @@ router.get('/',async (req,res)=>{
     }
 })
 
-router.get('/:id',(req,res)=>{
+router.get('/:id', getSubscriber,(req,res)=>{
     res.send('rest api ID')
 })
 
@@ -29,12 +29,26 @@ router.post('/',async(req,res)=>{
     }
 })
 
-router.patch('/:id',(req,res)=>{
+router.patch('/:id',getSubscriber,(req,res)=>{
 
 })
 
-router.delete('/:id',(req,res)=>{
+router.delete('/:id',getSubscriber,(req,res)=>{
 
 })
+
+
+async function getSubscriber(req,res, next){
+    try {
+        subscriber = await Subscriber.findById(req.params.id)
+        if(subscriber == null){
+            return res.status(404).json({message:'subscribner not found'})
+        }
+    }catch (e) {
+        return res.status(500).json({message:e.message})
+    }
+    res.subscriber = subscriber
+    next()
+}
 
 module.exports = router
