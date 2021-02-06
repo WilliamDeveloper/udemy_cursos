@@ -24,6 +24,6 @@ insert into usuario(nome, email, idade) values ('fran','b@b.com.br',18);
 insert into usuario(nome, email, idade) values ('meg','b@b.com.br',18);
 
 select * from usuario;
-select * from usuario where nome = 'luciane';
+select * from usuario where nome = 'luciane' and (idade=18 or idade=17);
 
 delete from usuario where nome = 'meg';
