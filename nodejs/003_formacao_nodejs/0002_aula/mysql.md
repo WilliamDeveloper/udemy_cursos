@@ -16,3 +16,13 @@ create table usuario(
 );
 
 describe usuario;
+
+
+insert into usuario(nome, email, idade) values ('william','a@a.com.br',18);
+insert into usuario(nome, email, idade) values ('luciane','b@b.com.br',18);
+insert into usuario(nome, email, idade) values ('fran','b@b.com.br',18);
+insert into usuario(nome, email, idade) values ('meg','b@b.com.br',18);
+
+select * from usuario;
+
+delete from usuario where nome = 'meg';
