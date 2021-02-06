@@ -3,7 +3,7 @@ GET http://localhost:3000/subscribers
 ###
 
 ### subscriber
-GET http://localhost:3000/subscribers/1
+GET http://localhost:3000/subscribers/601de5db9f87f879242df41e
 ###
 
 ### subscriber
