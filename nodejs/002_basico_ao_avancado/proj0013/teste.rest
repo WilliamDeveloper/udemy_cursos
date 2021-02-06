@@ -21,6 +21,12 @@ Content-Type: application/json
 }
 ###
 
+
 ### subscriber
-GET http://localhost:3000/subscribers
+PATCH http://localhost:3000/subscribers/601de987d010015930fb78d4
+Content-Type: application/json
+
+{
+  "userName":"williamPacheco"
+}
 ###
