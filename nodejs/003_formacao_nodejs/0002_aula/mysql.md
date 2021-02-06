@@ -6,3 +6,5 @@ show databases;
 create database sistemaDeCadastro;
 
 use sistemaDeCadastro;
+
+show tables;
