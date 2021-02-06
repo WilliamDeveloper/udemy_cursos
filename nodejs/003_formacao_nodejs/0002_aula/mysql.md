@@ -14,3 +14,5 @@ create table usuario(
  email  varchar(100),
  idade  int 
 );
+
+describe usuario;
