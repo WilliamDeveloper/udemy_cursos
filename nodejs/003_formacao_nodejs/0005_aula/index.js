@@ -8,12 +8,17 @@ app.get("/:nome?/:lang?",(req,res)=>{
     let nome = req.params.nome || "William Pacheco"
     let lang = req.params.lang ||"javascript"
     let exibirMsg = true
+    let produtos =[
+        {nome:'doritos',preco:1.30},
+        {nome:'fandangos',preco:1.80}
+    ]
     let params = {
         nome:nome,
         lang:lang,
         empresa : "guia programador",
         inscritos : 1500,
-        msg : exibirMsg
+        msg : exibirMsg,
+        produtos:produtos,
     }
     res.render('index', params)// extensao nao obrigatoria
 });
