@@ -3,46 +3,26 @@
 <body>
 <%- include('partials/navbar.ejs') %>
 
-    <h2>Guia Perguntas</h2>
-    <h1>Estilo do bootstrap</h1>
-    <hr>
-    <h3>Lista de perguntas</h3>
-
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-
-    <button type="button" class="btn btn-link">Link</button>
-
-    <p>Nome: <%=nome%></p>
-    <p>Linguagem favorita: <%=lang%></p>
-    <p>Empresa: <%=empresa%></p>
-    <p>Inscritos: <%=inscritos%></p>
-    <p>exibirMsg: <%=msg%></p>
-
-    <% if(msg == true){%>
-        <h3>Isso eh uma msg de erro</h3>
-    <% } else { %>
-        <h3>isso eh uma msg normal</h3>
-    <% } %>
-
-    <hr>
-    <%produtos.forEach(function (produto) {%>
-        <%= produto.nome%>
-        <%= produto.preco%>
-        <br>
+    <div class="container">
         <hr>
-    <%})%>
+        <h1> Perguntas </h1>
+        <hr>
+        <a href="/perguntar" class="btn btn-primary">Perguntar</a>
+        <hr>
+        <% perguntas.forEach(pergunta => { %>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <h3><%= pergunta.titulo %></h3>
+                </div>
+                <div class="card-footer">
+                    <a href="/pergunta/<%= pergunta.id %>"</a><button class="btn btn-primary">Responder</button></a>
+                </div>
+            </div>
+        <% }) %>
 
-    <!--arquivos vindos da pasta node_modules-->
-    <script src="/jquery/dist/jquery.min.js"></script>
-    <script src="/popper.js/dist/popper.min.js"></script>
-    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    </div>
+
 </body>
 
 

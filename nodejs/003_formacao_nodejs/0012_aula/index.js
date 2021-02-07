@@ -1,7 +1,19 @@
 const express  = require("express")
 const app = express()
 const bodyParser = require('body-parser')
+
+const connection = require('./database/database')
 const Pergunta = require('./database/Pergunta')
+
+//Database
+connection
+    .authenticate()
+    .then(() => {
+        console.log("Conexão feita com o banco de dados!")
+    })
+    .catch((msgErro) => {
+        console.log(msgErro);
+    })
 
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
@@ -20,10 +32,14 @@ app.use(express.json())
 //rotas
 app.get("/", (req, res)=>{
     console.log('rota raiz')
-    Pergunta.findAll({raw:true}).then( perguntas =>{
-        console.log(perguntas)
+    Pergunta.findAll({ raw: true, order:[
+            ['id','DESC'] // ASC = Crescente || DESC = Decrescente
+        ]}).then(perguntas => {
+        res.render("index",{
+            perguntas: perguntas
+        });
     });
-    res.render("index.ejs")
+
 })
 
 app.get("/perguntar", (req, res)=>{
