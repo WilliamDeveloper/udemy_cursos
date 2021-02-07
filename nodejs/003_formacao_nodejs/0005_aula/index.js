@@ -5,6 +5,8 @@ const app = express()
 
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
+
+// configuracao de reconhecimento de conteudo de arquivos estaticos
 app.use(express.static('node_modules'))
 app.use(express.static('public'))
 
