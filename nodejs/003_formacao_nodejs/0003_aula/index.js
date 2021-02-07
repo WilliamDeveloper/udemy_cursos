@@ -14,6 +14,11 @@ app.get("/home",(req,res)=>{
     res.render('home')// extensao nao obrigatoria
 });
 
+app.get("/perfil",(req,res)=>{
+    // res.render('index.ejs')// extensao nao obrigatoria
+    res.render('principal/perfil')// extensao nao obrigatoria
+});
+
 
 app.listen(8181,()=>{
     console.log("servidor no ar")
