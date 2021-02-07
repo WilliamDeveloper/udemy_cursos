@@ -16,6 +16,10 @@ app.get("/perguntar", (req, res)=>{
 })
 
 app.post('/salvarPergunta',(req,res)=>{
+
+    let titulo = req.params.titulo;
+    let descricao = req.params.descricao;
+
     res.send("formulario recebido");
 })
 

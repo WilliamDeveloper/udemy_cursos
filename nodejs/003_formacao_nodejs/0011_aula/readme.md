@@ -24,3 +24,6 @@ npm install jquery --save
 npm install popper.js --save
 npm install bootstrap --save
 
+- body parser para pegar a conversao em objeto de uma req post no body
+npm install body-parser --save
+
