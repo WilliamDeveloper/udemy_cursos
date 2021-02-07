@@ -29,6 +29,10 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json())
 
 //rotas
+app.get("/", (req, res)=>{
+    res.render("perguntar.ejs")
+})
+
 app.get("/perguntar", (req, res)=>{
     res.render("perguntar.ejs")
 })
@@ -50,35 +54,6 @@ app.post('/salvarPergunta',(req,res)=>{
     res.send(`formulario recebido ${titulo} ${description}`);
 })
 
-
-app.get("/:nome?/:lang?",(req,res)=>{
-    let nome = req.params.nome || "William Pacheco"
-    let lang = req.params.lang ||"javascript"
-    let exibirMsg = true
-    let produtos =[
-        {nome:'doritos',preco:1.30},
-        {nome:'fandangos',preco:1.80}
-    ]
-    let params = {
-        nome:nome,
-        lang:lang,
-        empresa : "guia programador",
-        inscritos : 1500,
-        msg : exibirMsg,
-        produtos:produtos,
-    }
-    res.render('index', params)// extensao nao obrigatoria
-});
-
-app.get("/home",(req,res)=>{
-    // res.render('index.ejs')// extensao nao obrigatoria
-    res.render('home')// extensao nao obrigatoria
-});
-
-app.get("/perfil",(req,res)=>{
-    // res.render('index.ejs')// extensao nao obrigatoria
-    res.render('principal/perfil')// extensao nao obrigatoria
-});
 
 
 app.listen(8181,()=>{
