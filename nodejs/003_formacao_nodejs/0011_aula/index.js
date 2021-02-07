@@ -1,6 +1,6 @@
 const express  = require("express")
 const app = express()
-
+const bodyParser = require('body-parser')
 
 
 // dizer para o express usar o EJS como view engine
@@ -11,16 +11,25 @@ app.use(express.static('node_modules'))
 app.use(express.static('public'))
 
 
+// configuracao do body parser
+app.use(bodyParser.urlencoded({extended:false}))
+
+//permitir receber dados via json
+app.use(express.json())
+
+//rotas
 app.get("/perguntar", (req, res)=>{
     res.render("perguntar.ejs")
 })
 
 app.post('/salvarPergunta',(req,res)=>{
 
-    let titulo = req.params.titulo;
-    let descricao = req.params.descricao;
+    console.log(req.body);
 
-    res.send("formulario recebido");
+    let titulo = req.body.titulo;
+    let descricao = req.body.descricao;
+
+    res.send(`formulario recebido ${titulo} ${descricao}`);
 })
 
 
