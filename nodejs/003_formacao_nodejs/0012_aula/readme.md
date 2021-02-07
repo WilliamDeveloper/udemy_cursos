@@ -14,16 +14,19 @@ npm init -y
  --- ---------------------------------------------------
 
 - para rotas da aplicacao
-npm install express --save
+npm install --save express
 
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install ejs --save
 
 - bootstrap
-npm install jquery --save
-npm install popper.js --save
-npm install bootstrap --save
+npm install --save jquery
+npm install --save popper.js
+npm install --save bootstrap
 
 - body parser para pegar a conversao em objeto de uma req post no body
-npm install body-parser --save
+npm install --save body-parser
+
+-- biblioteca que permise usar abstracao para falar com banco de dados
+npm install --save sequelize
 
