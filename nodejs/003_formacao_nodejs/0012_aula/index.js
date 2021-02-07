@@ -1,7 +1,7 @@
 const express  = require("express")
 const app = express()
 const bodyParser = require('body-parser')
-const {Pergunta} = require('./database/Pergunta')
+const Pergunta = require('./database/Pergunta')
 
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
