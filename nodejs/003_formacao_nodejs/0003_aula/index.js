@@ -1,10 +1,13 @@
 const express  = require("express")
 const app = express()
 
+// dizer para o express usar o EJS como view engine
+app.set('view engine','ejs')
+
 app.get("/",(req,res)=>{
-    console.log(' bem vindo ao site')
+    res.send(' bem vindo ao site')
 });
 
-app.listen(8080,()=>{
+app.listen(8181,()=>{
     console.log("servidor no ar")
 })
