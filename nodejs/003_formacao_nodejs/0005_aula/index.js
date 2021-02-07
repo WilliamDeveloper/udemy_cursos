@@ -7,11 +7,13 @@ app.set('view engine','ejs')
 app.get("/:nome?/:lang?",(req,res)=>{
     let nome = req.params.nome || "William Pacheco"
     let lang = req.params.lang ||"javascript"
+    let exibirMsg = true
     let params = {
         nome:nome,
         lang:lang,
         empresa : "guia programador",
-        inscritos : 1500
+        inscritos : 1500,
+        msg : exibirMsg
     }
     res.render('index', params)// extensao nao obrigatoria
 });
