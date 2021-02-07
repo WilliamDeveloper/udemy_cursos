@@ -5,8 +5,15 @@ const app = express()
 app.set('view engine','ejs')
 
 app.get("/",(req,res)=>{
-    // res.render('index.ejs')// extensao nao obrigatoria
-    res.render('index')// extensao nao obrigatoria
+    let nome = "William Pacheco"
+    let lang = "javascript"
+    let params = {
+        nome:nome,
+        lang:lang,
+        empresa : "guia programador",
+        inscritos : 1500
+    }
+    res.render('index', params)// extensao nao obrigatoria
 });
 
 app.get("/home",(req,res)=>{
