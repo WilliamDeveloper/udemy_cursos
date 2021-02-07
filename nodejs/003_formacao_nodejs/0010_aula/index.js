@@ -15,6 +15,10 @@ app.get("/perguntar", (req, res)=>{
     res.render("perguntar.ejs")
 })
 
+app.post('/salvarPergunta',(req,res)=>{
+    res.send("formulario recebido");
+})
+
 
 app.get("/:nome?/:lang?",(req,res)=>{
     let nome = req.params.nome || "William Pacheco"
