@@ -5,6 +5,6 @@ app.get("/",(req,res)=>{
     console.log(' bem vindo ao site')
 });
 
-ap.listen(8080,()=>{
+app.listen(8080,()=>{
     console.log("servidor no ar")
 })
