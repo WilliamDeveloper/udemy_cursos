@@ -49,16 +49,16 @@ app.post('/salvarPergunta',(req,res)=>{
     console.log(req.body);
 
     let titulo = req.body.titulo;
-    let description = req.body.descricao;
+    let descricao = req.body.descricao;
 
     Pergunta.create({
         titulo:titulo,
-        description: description
+        descricao: descricao
     }).then(()=>{
         res.redirect("/")
     })
 
-    res.send(`formulario recebido ${titulo} ${description}`);
+    // res.send(`formulario recebido ${titulo} ${description}`);
 })
 
 
