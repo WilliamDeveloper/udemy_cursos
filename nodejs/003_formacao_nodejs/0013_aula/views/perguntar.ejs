@@ -5,21 +5,19 @@
     <div class="container">
         <div class="card" id="formulario-pergunta">
             <div class="card-header">
-                <h3>Testando container</h3>
+                <h3>Realizar pergunta</h3>
             </div>
             <div class="card-body">
-                <form action="/salvarPergunta" method="post">
-                    <label >Titulo</label>
-                    <input name="titulo" type="text" placeholder="Titulo" class="form-control">
-                    <br>
-                    <label >Descricao</label>
-                    <textarea name="descricao" placeholder="Descreva sua pergunta aqui"  class="form-control"></textarea>
-                    <br>
-                    <button class="btn btn-success">Perguntar</button>
+                <form method="POST" action="/salvarpergunta">
+                    <label>Título</label>
+                        <input type="text" placeholder="Título" class="form-control" name="titulo">
+                        <br><label>Descrição</label>
+                        <textarea placeholder="Descreva sua pergunta aqui" class="form-control" name="descricao"></textarea>
+                        <br>
+                        <button class="btn btn-primary">Perguntar</button>
                 </form>
             </div>
         </div>
-        <hr>
     </div>
 </body>
 
