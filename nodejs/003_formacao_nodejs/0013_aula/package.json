@@ -17,6 +17,6 @@
     "jquery": "^3.5.1",
     "mysql2": "^2.2.5",
     "popper.js": "^1.16.1",
-    "sequelize": "^6.5.0"
+    "sequelize": "^5.19.1"
   }
 }
