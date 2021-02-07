@@ -1,16 +1,17 @@
-const express  = require("express")
-const app = express()
-const bodyParser = require('body-parser')
-const Pergunta = require('./database/Pergunta')
-
-const connection =  require('./database/database')
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const connection = require("./database/database");
+const Pergunta = require("./database/Pergunta");
+const Resposta = require("./database/Resposta");
+//Database
 connection
     .authenticate()
-    .then(()=>{
-        console.log('conexao feita com o banco de dados')
+    .then(() => {
+        console.log("Conexão feita com o banco de dados!")
     })
-    .catch((msgErro)=>{
-        console.log(msgErro)
+    .catch((msgErro) => {
+        console.log(msgErro);
     })
 
 
@@ -28,7 +29,17 @@ app.use(bodyParser.urlencoded({extended:false}))
 //permitir receber dados via json
 app.use(express.json())
 
-//rotas
+// Rotas
+app.get("/",(req, res) => {
+    Pergunta.findAll({ raw: true, order:[
+            ['id','DESC'] // ASC = Crescente || DESC = Decrescente
+        ]}).then(perguntas => {
+        res.render("index",{
+            perguntas: perguntas
+        });
+    });
+});
+
 app.get("/perguntar", (req, res)=>{
     res.render("perguntar.ejs")
 })
@@ -49,37 +60,6 @@ app.post('/salvarPergunta',(req,res)=>{
 
     res.send(`formulario recebido ${titulo} ${description}`);
 })
-
-
-app.get("/:nome?/:lang?",(req,res)=>{
-    let nome = req.params.nome || "William Pacheco"
-    let lang = req.params.lang ||"javascript"
-    let exibirMsg = true
-    let produtos =[
-        {nome:'doritos',preco:1.30},
-        {nome:'fandangos',preco:1.80}
-    ]
-    let params = {
-        nome:nome,
-        lang:lang,
-        empresa : "guia programador",
-        inscritos : 1500,
-        msg : exibirMsg,
-        produtos:produtos,
-    }
-    res.render('index', params)// extensao nao obrigatoria
-});
-
-app.get("/home",(req,res)=>{
-    // res.render('index.ejs')// extensao nao obrigatoria
-    res.render('home')// extensao nao obrigatoria
-});
-
-app.get("/perfil",(req,res)=>{
-    // res.render('index.ejs')// extensao nao obrigatoria
-    res.render('principal/perfil')// extensao nao obrigatoria
-});
-
 
 app.listen(8181,()=>{
     console.log("servidor no ar")
