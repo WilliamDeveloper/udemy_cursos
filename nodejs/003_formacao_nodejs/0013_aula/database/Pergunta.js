@@ -13,8 +13,16 @@ const Pergunta = connection.define('pergunta',{
 })
 
 // force false faz com que a tabela so seja criada senao existir
-Pergunta.sync({force:false}).then(()=>{
-    console.log('tabela criada')
+connection.sync()
+connection.sync({force:false})
+    .then(()=>{
+    console.log('tabela criada');
+  return
 })
 
-module.exports = Pergunta
+// (async () => {
+//     await Pergunta.sync({force:false})
+//     console.log('tabela criada');
+// })();
+
+module.exports = {Pergunta}
