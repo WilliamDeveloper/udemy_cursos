@@ -29,4 +29,6 @@ npm install --save body-parser
 
 -- biblioteca que permise usar abstracao para falar com banco de dados
 npm install --save sequelize
+npm install --save mysql2
+
 
