@@ -1,23 +1,17 @@
-const Sequelize = require('sequelize')
-const connection = require('./database')
+const Sequelize = require("sequelize");
+const connection = require("./database");
 
-const Pergunta = connection.define('pergunta',{
+const Pergunta = connection.define('perguntas',{
     titulo:{
         type: Sequelize.STRING,
-        allowNull : false
+        allowNull: false
     },
-    description:{
+    descricao:{
         type: Sequelize.TEXT,
-        allowNull : false
+        allowNull: false
     }
-})
+});
 
-// force false faz com que a tabela so seja criada senao existir
 Pergunta.sync({force: false}).then(() => {});
 
 module.exports = Pergunta;
-
-// (async () => {
-//     await Pergunta.sync({force:false})
-//     console.log('tabela criada');
-// })();
