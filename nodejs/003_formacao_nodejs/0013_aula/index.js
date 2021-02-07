@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const connection = require("./database/database");
 const Pergunta = require("./database/Pergunta");
 const Resposta = require("./database/Resposta");
+const ejs = require('ejs')
+
 //Database
 connection
     .authenticate()
@@ -17,6 +19,23 @@ connection
 
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
+
+
+
+let ejsOptions = {
+    // delimiter: '?', Adding this to tell you do NOT use this like I've seen in other docs, does not work for Express 4
+    async: true
+};
+
+// The engine is using a callback method for async rendering
+app.engine('ejs', async (path, data, cb) => {
+    try{
+        let html = await ejs.renderFile(path, data, ejsOptions);
+        cb(null, html);
+    }catch (e){
+        cb(e, '');
+    }
+});
 
 // configuracao de reconhecimento de conteudo de arquivos estaticos
 app.use(express.static('node_modules'))
