@@ -58,7 +58,6 @@ app.post('/salvarPergunta',(req,res)=>{
         res.redirect("/")
     })
 
-    // res.send(`formulario recebido ${titulo} ${description}`);
 })
 
 
