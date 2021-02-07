@@ -5,7 +5,8 @@ const app = express()
 app.set('view engine','ejs')
 
 app.get("/",(req,res)=>{
-    res.render('index.ejs')// extensao nao obrigatoria
+    // res.render('index.ejs')// extensao nao obrigatoria
+    res.render('index')// extensao nao obrigatoria
 });
 
 app.listen(8181,()=>{
