@@ -21,6 +21,6 @@ npm install ejs --save
 
 - bootstrap
 npm install jquery --save
-npm install popper --save
+npm install popper.js --save
 npm install bootstrap --save
 
