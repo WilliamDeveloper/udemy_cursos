@@ -67,6 +67,7 @@ app.get("/pergunta/:id",(req ,res) => {
     Pergunta.findOne({
         where: {id: id}
     }).then(pergunta => {
+        console.log(pergunta)
         if(pergunta != undefined){ // Pergunta encontrada
 
             Resposta.findAll({
