@@ -5,8 +5,8 @@ const app = express()
 
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
-app.use(express.static('public'))
 app.use(express.static('node_modules'))
+app.use(express.static('public'))
 
 
 app.get("/:nome?/:lang?",(req,res)=>{
