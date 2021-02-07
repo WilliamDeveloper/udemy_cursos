@@ -1,7 +1,7 @@
 const express  = require("express")
 const app = express()
 const bodyParser = require('body-parser')
-const perguntaModel = require('./database/Pergunta')
+const Pergunta = require('./database/Pergunta')
 
 const connection =  require('./database/database')
 connection
@@ -38,9 +38,16 @@ app.post('/salvarPergunta',(req,res)=>{
     console.log(req.body);
 
     let titulo = req.body.titulo;
-    let descricao = req.body.descricao;
+    let description = req.body.descricao;
 
-    res.send(`formulario recebido ${titulo} ${descricao}`);
+    Pergunta.create({
+        titulo:titulo,
+        description: description
+    }).then(()=>{
+        res.redirect("/")
+    })
+
+    res.send(`formulario recebido ${titulo} ${description}`);
 })
 
 
