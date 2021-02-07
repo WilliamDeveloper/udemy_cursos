@@ -20,7 +20,7 @@ app.use(express.json())
 //rotas
 app.get("/", (req, res)=>{
     console.log('rota raiz')
-    Pergunta.findAll().then( perguntas =>{
+    Pergunta.findAll({raw:true}).then( perguntas =>{
         console.log(perguntas)
     });
     res.render("index.ejs")
