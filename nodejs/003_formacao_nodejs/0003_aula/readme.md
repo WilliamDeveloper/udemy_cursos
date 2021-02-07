@@ -10,3 +10,4 @@ npm init -y
 npm install express --save
 
 - EJS - embedded javascript templating -  motor de html - template engine
+npm install ejs --save
