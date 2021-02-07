@@ -11,6 +11,11 @@ app.use(express.static('node_modules'))
 app.use(express.static('public'))
 
 
+app.get("/perguntar", (req, res)=>{
+    res.render("perguntar.ejs")
+})
+
+
 app.get("/:nome?/:lang?",(req,res)=>{
     let nome = req.params.nome || "William Pacheco"
     let lang = req.params.lang ||"javascript"
