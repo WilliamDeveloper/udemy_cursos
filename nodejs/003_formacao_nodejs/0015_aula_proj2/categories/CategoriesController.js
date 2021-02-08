@@ -5,7 +5,7 @@ router.get('/categories',(req, res)=>{
     res.send('rota categorias')
 })
 
-route.get('/admin/categories/new',(req,res)=>{
+router.get('/admin/categories/new',(req,res)=>{
     res.send('rota para criar uma nova categoria')
 })
 

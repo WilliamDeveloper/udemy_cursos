@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database")
 
-const categoriesController = require('categories/CategoriesController')
+const categoriesController = require('./categories/CategoriesController')
 
 
 // dizer para o express usar o EJS como view engine
