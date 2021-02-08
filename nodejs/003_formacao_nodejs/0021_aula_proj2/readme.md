@@ -21,6 +21,7 @@ npm install --save express
 -- biblioteca que permise usar abstracao para falar com banco de dados
 npm install --save sequelize
 npm install --save mysql2
+npm install --save sqlite3
 
 - body parser para pegar a conversao em objeto de uma req post no body
 npm install --save body-parser
