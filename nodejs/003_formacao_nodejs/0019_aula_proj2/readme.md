@@ -37,6 +37,9 @@ npm install --save bootstrap
 - slug - converte "Desenv de soft" em "desenv-de-soft"
 npm install --save slugify
 
+- super poderes a um campo de texto
+npm install --save tinymce
+
 
 
 
