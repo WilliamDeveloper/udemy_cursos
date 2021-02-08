@@ -18,6 +18,10 @@ const Article = connection.define('articles',{
 })
 
 //relacionamento entre entidades
+
+//1 categoria tem muitos artigos(hasMany= tem muitos)
+Category.hasMany(Article)
+
 // 1 artigo pertence a 1 categoria (belongsTo=pertence a)
 Article.belongsTo(Category)
 
