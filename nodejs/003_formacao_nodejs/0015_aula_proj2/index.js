@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const connection = require("./database/database")
 
 const categoriesController = require('./categories/CategoriesController')
+const articlesController = require('./articles/ArticlesController')
 
 
 // dizer para o express usar o EJS como view engine
@@ -36,6 +37,7 @@ connection
 
 //rotas
 app.use('/', categoriesController)
+app.use('/',articlesController)
 
 
 app.get("/",(req,res)=>{
