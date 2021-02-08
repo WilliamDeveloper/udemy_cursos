@@ -18,6 +18,10 @@ npm install -g pm2
 - para rotas da aplicacao
 npm install --save express
 
+-- biblioteca que permise usar abstracao para falar com banco de dados
+npm install --save sequelize
+npm install --save mysql2
+
 // "ejs": "^2.7.1",
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install ejs --save
@@ -30,9 +34,6 @@ npm install --save bootstrap
 - body parser para pegar a conversao em objeto de uma req post no body
 npm install --save body-parser
 
--- biblioteca que permise usar abstracao para falar com banco de dados
-npm install --save sequelize
-npm install --save mysql2
 
 
 
