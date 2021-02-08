@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router()
 const Category = require('./Category')
+const slugfy = require('slugify')
 
 router.get('/categories',(req, res)=>{
     res.send('rota categorias')
@@ -15,7 +16,7 @@ router.get("/categories/save",(req,res)=>{
     if(title!=undefined){
         Category.create({
             title:title,
-            slug:''
+            slug: slugfy(title)
         })
     }else{
         res.redirect('/admin/categories/new')
