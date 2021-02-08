@@ -18,7 +18,7 @@ router.post("/categories/save",(req,res)=>{
             title:title,
             slug: slugfy(title)
         }).then(()=>{
-            res.redirect("/")
+            res.redirect("/admin/categories")
         })
     }else{
         res.redirect('/admin/categories/new')
