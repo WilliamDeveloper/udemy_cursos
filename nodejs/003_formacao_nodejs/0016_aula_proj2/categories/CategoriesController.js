@@ -11,12 +11,14 @@ router.get('/admin/categories/new',(req,res)=>{
     res.render('admin/categories/new')
 })
 
-router.get("/categories/save",(req,res)=>{
+router.post("/categories/save",(req,res)=>{
     let title = req.body.title;
     if(title!=undefined){
         Category.create({
             title:title,
             slug: slugfy(title)
+        }).then(()=>{
+            res.redirect("/")
         })
     }else{
         res.redirect('/admin/categories/new')
