@@ -3,6 +3,9 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database")
 
+const categoriesController = require('categories/CategoriesController')
+
+
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
 
@@ -28,6 +31,11 @@ connection
     .catch((msgErro) => {
         console.log(msgErro);
     })
+
+
+
+//rotas
+app.use('/', categoriesController)
 
 
 app.get("/",(req,res)=>{
