@@ -75,7 +75,7 @@ router.get('/admin/categories/edit/:id',(req,res)=>{
 })
 
 
-router.get('/admin/categories/edit/:id',(req,res)=>{
+router.post('/categories/update',(req,res)=>{
     let id = req.body.id;
     let title = req.body.title;
 
