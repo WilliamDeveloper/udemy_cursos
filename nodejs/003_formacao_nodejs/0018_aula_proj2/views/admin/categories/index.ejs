@@ -29,7 +29,7 @@
                     <button class="btn btn-warning">Editar</button>
 
                     <form method="post" action="/categories/delete" style="display: inline" onsubmit="confirmarDelecao(event, this)">
-                        <input type="hidden" name="id" value="<%= category.id %>">
+                        <input type="hidden" name="id" value="<%= category.id %>" >
                         <button class="btn btn-danger">Deletar</button>
                     </form>
 
