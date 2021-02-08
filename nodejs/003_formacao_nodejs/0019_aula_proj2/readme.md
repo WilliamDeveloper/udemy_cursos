@@ -38,6 +38,7 @@ npm install --save bootstrap
 npm install --save slugify
 
 - super poderes a um campo de texto
+-- https://www.tiny.cloud/get-tiny/language-packages/
 npm install --save tinymce
 
 
