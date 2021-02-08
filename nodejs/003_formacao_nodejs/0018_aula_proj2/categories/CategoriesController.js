@@ -72,9 +72,26 @@ router.get('/admin/categories/edit/:id',(req,res)=>{
     }).catch(erro =>{
         res.redirect("/admin/categories")
     })
-    // Category.findAll().then(categories =>{
-    //     res.render('admin/categories/index',{categories:categories})
-    // })
 })
+
+
+router.get('/admin/categories/edit/:id',(req,res)=>{
+    let id = req.body.id;
+    let title = req.body.title;
+
+    Category.update({title:title}, {
+        where:{
+            id:id
+        }
+    }).then(()=>{
+        res.redirect('/admin/categories');
+    })
+
+
+
+
+})
+
+
 
 module.exports = router
