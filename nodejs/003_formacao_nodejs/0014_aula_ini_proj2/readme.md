@@ -27,7 +27,7 @@ npm install --save body-parser
 
 // "ejs": "^2.7.1",
 - EJS - embedded javascript templating -  motor de html - template engine
-npm install ejs --save
+npm install ejs@2.7.1 --save
 
 - bootstrap
 npm install --save jquery
