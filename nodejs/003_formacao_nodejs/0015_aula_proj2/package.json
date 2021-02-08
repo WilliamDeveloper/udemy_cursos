@@ -1,0 +1,22 @@
+{
+  "name": "0014_aula_ini_proj2",
+  "version": "1.0.0",
+  "description": "--- ---------------------------------------------------\r - criado com\r --- ---------------------------------------------------\r npm init -y",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.6.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "mysql2": "^2.2.5",
+    "popper.js": "^1.16.1",
+    "sequelize": "^6.5.0"
+  }
+}
