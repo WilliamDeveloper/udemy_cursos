@@ -13,6 +13,6 @@ const Category = connection.define('categories',{
 })
 
 // forcar para a entidade atualizar no banco de dados
-Category.sync({force:true})
+// Category.sync({force:true})
 
 module.exports = Category
