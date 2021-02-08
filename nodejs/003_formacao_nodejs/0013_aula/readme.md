@@ -8,7 +8,9 @@ npm init -y
 --- ---------------------------------------------------
 - biblioteca para o script de node se auto dar restart quando tiver uma modificacao
  npm install -g nodemon 
- 
+
+-- mp2 rodar aplicacoes node rodar em background
+npm install -g pm2 
  --- ---------------------------------------------------
  - bibliotecas aplicacao
  --- ---------------------------------------------------
@@ -31,5 +33,7 @@ npm install --save body-parser
 -- biblioteca que permise usar abstracao para falar com banco de dados
 npm install --save sequelize
 npm install --save mysql2
+
+
 
 
