@@ -34,6 +34,8 @@ npm install --save jquery
 npm install --save popper.js
 npm install --save bootstrap
 
+- slug - converte "Desenv de soft" em "desenv-de-soft"
+npm install --save slugify
 
 
 

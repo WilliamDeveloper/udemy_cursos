@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router()
+const Category = require('./Category')
 
 router.get('/categories',(req, res)=>{
     res.send('rota categorias')
@@ -7,6 +8,18 @@ router.get('/categories',(req, res)=>{
 
 router.get('/admin/categories/new',(req,res)=>{
     res.render('admin/categories/new')
+})
+
+router.get("/categories/save",(req,res)=>{
+    let title = req.body.title;
+    if(title!=undefined){
+        Category.create({
+            title:title,
+            slug:''
+        })
+    }else{
+        res.redirect('/admin/categories/new')
+    }
 })
 
 module.exports = router
