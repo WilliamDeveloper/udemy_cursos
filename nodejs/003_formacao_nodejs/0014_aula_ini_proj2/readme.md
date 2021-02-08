@@ -22,6 +22,9 @@ npm install --save express
 npm install --save sequelize
 npm install --save mysql2
 
+- body parser para pegar a conversao em objeto de uma req post no body
+npm install --save body-parser
+
 // "ejs": "^2.7.1",
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install ejs --save
@@ -31,8 +34,6 @@ npm install --save jquery
 npm install --save popper.js
 npm install --save bootstrap
 
-- body parser para pegar a conversao em objeto de uma req post no body
-npm install --save body-parser
 
 
 
