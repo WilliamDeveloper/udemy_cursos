@@ -26,4 +26,8 @@ Category.hasMany(Article)
 Article.belongsTo(Category)
 
 
+// forcar para a entidade atualizar no banco de dados
+Article.sync({force:true})
+
+
 module.exports = Article

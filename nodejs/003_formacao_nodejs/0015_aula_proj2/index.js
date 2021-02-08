@@ -6,6 +6,9 @@ const connection = require("./database/database")
 const categoriesController = require('./categories/CategoriesController')
 const articlesController = require('./articles/ArticlesController')
 
+const Article = require('./articles/Article')
+const Category = require('./categories/Category')
+
 
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
@@ -37,7 +40,7 @@ connection
 
 //rotas
 app.use('/', categoriesController)
-app.use('/',articlesController)
+app.use('/', articlesController)
 
 
 app.get("/",(req,res)=>{
