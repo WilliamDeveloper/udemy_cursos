@@ -53,5 +53,5 @@ app.get("/",(req,res)=>{
 
 
 app.listen(8181,()=>{
-    console.log("servidor no ar")
+    console.log("servidor no ar on port 8181")
 })
