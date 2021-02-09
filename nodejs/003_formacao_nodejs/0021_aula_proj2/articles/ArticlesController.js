@@ -111,6 +111,26 @@ router.post('/articles/update',(req,res)=>{
     })
 })
 
+router.get('/articles/page/:num',(req,res)=>{
+    let page = req.params.num;
+    let offset = 0;
+    let limitElementoPorPagina = 2;
+
+    if(isNaN(page) || page == 0){
+       offset = 0
+    }else{
+       offset = parseInt(page)
+    }
+
+    Article.findAndCountAll({
+        limit: limitElementoPorPagina,
+        offset: offset * limitElementoPorPagina
+    }).then(articles =>{
+        res.json(articles)
+
+    })
+})
+
 
 
 module.exports = router
