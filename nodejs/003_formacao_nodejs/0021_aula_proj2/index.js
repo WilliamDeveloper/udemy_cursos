@@ -44,7 +44,11 @@ app.use('/', articlesController)
 
 
 app.get("/",(req,res)=>{
-    Article.findAll().then((articles)=>{
+    Article.findAll({
+        order:[
+            ['id','Desc']
+        ]
+    }).then((articles)=>{
         res.render("index.ejs",{articles:articles})
     })
 });
