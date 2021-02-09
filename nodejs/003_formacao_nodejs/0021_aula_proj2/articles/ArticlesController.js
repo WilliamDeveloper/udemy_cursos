@@ -62,5 +62,27 @@ router.post('/articles/delete',(req,res)=>{
 
 })
 
+router.get('/admin/articles/edit/:id',(req,res)=>{
+    let id = req.params.id;
+
+    if(isNaN(id)){
+        res.redirect("/")
+    }
+
+    Category.findByPk(id).then((article)=>{
+        if(article != undefined){
+
+            Category.findAll().then( (categories)=>{
+                res.render('admin/articles/edit',{article:article, categories: categories})
+            })
+
+        }else{
+            res.redirect("/")
+        }
+    }).catch(erro =>{
+        res.redirect("/")
+    })
+});
+
 
 module.exports = router
