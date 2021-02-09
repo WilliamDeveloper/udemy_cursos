@@ -57,7 +57,7 @@ app.get("/:slug",(req,res)=>{
         }
     }).then((article)=>{
         if(article!= undefined){
-            res.render("")
+            res.render("article",{article:article})
         }else{
             res.redirect("/")
         }
