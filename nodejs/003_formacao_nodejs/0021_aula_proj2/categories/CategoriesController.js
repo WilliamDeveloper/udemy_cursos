@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router()
 const Category = require('./Category')
-const slugfy = require('slugify')
+const slugify = require('slugify')
 
 router.get('/categories',(req, res)=>{
     res.send('rota categorias')
@@ -16,7 +16,7 @@ router.post("/categories/save",(req,res)=>{
     if(title!=undefined){
         Category.create({
             title:title,
-            slug: slugfy(title)
+            slug: slugify(title)
         }).then(()=>{
             res.redirect("/admin/categories")
         })
@@ -82,7 +82,7 @@ router.post('/categories/update',(req,res)=>{
     Category.update(
         {
             title:title,
-            slug : slugfy(title)
+            slug : slugify(title)
         },
         {
         where:{
