@@ -63,13 +63,14 @@ router.post('/articles/delete',(req,res)=>{
 })
 
 router.get('/admin/articles/edit/:id',(req,res)=>{
+    console.log('req.params: ',req.params)
     let id = req.params.id;
 
     if(isNaN(id)){
         res.redirect("/")
     }
 
-    Category.findByPk(id).then((article)=>{
+    Article.findByPk(id).then((article)=>{
         if(article != undefined){
 
             Category.findAll().then( (categories)=>{

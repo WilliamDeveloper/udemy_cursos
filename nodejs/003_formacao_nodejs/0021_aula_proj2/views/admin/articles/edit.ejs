@@ -10,7 +10,8 @@
             <h2>Editar artigo</h2>
         </div>
         <div class="card-body">
-            <form action="/articles/save" method="post">
+            <form action="/articles/update" method="post">
+                <input type="hidden" value="<%= article.id %>" name="id">
                 <input class="form-control" type="text" name="title" placeholder="Defina o titulo do artigo" value="<%= article.title %>">
                 <br>
                 <textarea class="form-control" placeholder="Escreva o artigo aqui" name="body" id="article" ></textarea>
@@ -30,7 +31,7 @@
 
 </div>
 
-<div id="content" style="display: none;">
+<div id="content" style="display: none">
     <%- article.body %>
 </div>
 
@@ -41,6 +42,7 @@
         language: 'pt_BR',
         language_url:'/js/tinymce_languages/langs/pt_BR.js',
         selector:"#article",
+        activeEditor: true,
         plugins:[
             'advlist autolink link image lists print preview hr searchplace wordcount fullscreen insertdatetime media save table paste emoticons'
         ],
