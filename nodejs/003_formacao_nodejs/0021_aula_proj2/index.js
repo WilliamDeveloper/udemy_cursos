@@ -44,7 +44,7 @@ app.use('/', articlesController)
 
 
 app.get("/",(req,res)=>{
-    let limiteElementoPorPagina = 10
+    let limiteElementoPorPagina = 2
     Article.findAll({
         order:[
             ['id','Desc']

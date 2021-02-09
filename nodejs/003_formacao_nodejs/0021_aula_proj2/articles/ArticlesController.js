@@ -123,6 +123,9 @@ router.get('/articles/page/:num',(req,res)=>{
     }
 
     Article.findAndCountAll({
+        order:[
+            ['id','Desc']
+        ],
         limit: limitElementoPorPagina,
         offset: offset
     }).then(articles =>{
