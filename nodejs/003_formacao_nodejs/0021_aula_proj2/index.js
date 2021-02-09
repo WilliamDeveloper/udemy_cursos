@@ -44,10 +44,12 @@ app.use('/', articlesController)
 
 
 app.get("/",(req,res)=>{
+    let limiteElementoPorPagina = 10
     Article.findAll({
         order:[
             ['id','Desc']
-        ]
+        ],
+        limit: limiteElementoPorPagina
     }).then((articles)=>{
         Category.findAll().then( categories =>{
             res.render("index.ejs",{articles:articles, categories:categories})
