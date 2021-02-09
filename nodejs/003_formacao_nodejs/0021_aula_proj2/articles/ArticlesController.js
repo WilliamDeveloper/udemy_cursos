@@ -122,11 +122,26 @@ router.get('/articles/page/:num',(req,res)=>{
        offset = parseInt(page)
     }
 
+    let offsetAtual = offset * limitElementoPorPagina
+
     Article.findAndCountAll({
         limit: limitElementoPorPagina,
-        offset: offset * limitElementoPorPagina
+        offset: offsetAtual
     }).then(articles =>{
-        res.json(articles)
+
+        let next;
+        if( offsetAtual + limitElementoPorPagina  >= articles.count ){
+            next = false;
+        }else{
+            next = true;
+        }
+
+        let result ={
+            next:next,
+            articles:articles,
+        }
+
+        res.json(result)
 
     })
 })
