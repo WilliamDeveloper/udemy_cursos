@@ -47,7 +47,23 @@ app.get("/",(req,res)=>{
     Article.findAll().then((articles)=>{
         res.render("index.ejs",{articles:articles})
     })
+});
 
+app.get("/:slug",(req,res)=>{
+    let slug = req.params.slug;
+    Article.findOne({
+        where:{
+            slug:slug
+        }
+    }).then((article)=>{
+        if(article!= undefined){
+            res.render("")
+        }else{
+            res.redirect("/")
+        }
+    }).catch(error =>{
+        res.redirect("/")
+    })
 });
 
 
