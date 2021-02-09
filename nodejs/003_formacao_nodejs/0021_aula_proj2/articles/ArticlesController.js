@@ -119,18 +119,16 @@ router.get('/articles/page/:num',(req,res)=>{
     if(isNaN(page) || page == 0){
        offset = 0
     }else{
-       offset = parseInt(page)
+       offset = parseInt(page) * limitElementoPorPagina
     }
-
-    let offsetAtual = offset * limitElementoPorPagina
 
     Article.findAndCountAll({
         limit: limitElementoPorPagina,
-        offset: offsetAtual
+        offset: offset
     }).then(articles =>{
 
         let next;
-        if( offsetAtual + limitElementoPorPagina  >= articles.count ){
+        if( offset + limitElementoPorPagina  >= articles.count ){
             next = false;
         }else{
             next = true;
