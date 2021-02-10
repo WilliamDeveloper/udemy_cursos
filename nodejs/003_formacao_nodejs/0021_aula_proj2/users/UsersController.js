@@ -16,17 +16,29 @@ router.post('/users/create', async (req, res)=>{
     let email = req.body.email;
     let password = req.body.password;
 
+    User.findOne({
+        where:{email:email}
+    }).then(async (user) =>{
 
-    let hash = await  bcrypt.hash(password, 10);
+        if(user == undefined){
+            let hash = await  bcrypt.hash(password, 10);
 
-    User.create({
-        email:email,
-        password:hash
-    }).then(()=>{
-        res.redirect("/")
-    }).catch(()=>{
-        res.redirect("/")
+            User.create({
+                email:email,
+                password:hash
+            }).then(()=>{
+                res.redirect("/")
+            }).catch(()=>{
+                res.redirect("/")
+            })
+        }else{
+            res.redirect("/admin/users/create")
+        }
+
     })
+
+
+
     // res.json({email,password})
 })
 
