@@ -19,7 +19,7 @@ app.set('view engine','ejs')
 // configurando session - session fica na ram - se p servidor reiniciar a sessao morre
 app.use(session({
     secret:"qualquer-texto-para-aumentar-seguranca",
-    cookie:{maxAge:30*1000}
+    cookie:{maxAge:3000*1000}
 }))
 
 
