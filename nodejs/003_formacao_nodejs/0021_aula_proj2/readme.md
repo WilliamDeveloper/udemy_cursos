@@ -44,6 +44,6 @@ npm install --save tinymce
 
 
 - biblioteca de gerar hash de senhas, criptografia podem ser desfeitas, mas hash nao
-npm install --save bcryptjs
+npm install --save bcrypt
 
 
