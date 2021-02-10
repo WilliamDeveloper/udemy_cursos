@@ -45,7 +45,7 @@ pegarId().then(function (resp1) {
     })
 })
 console.log('oi2')
-
+// equivalente em async await
 //---------
 let func = async ()=>{
     console.log('oi1')
