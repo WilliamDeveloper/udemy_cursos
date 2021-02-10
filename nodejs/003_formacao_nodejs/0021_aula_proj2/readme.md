@@ -46,4 +46,7 @@ npm install --save tinymce
 - biblioteca de gerar hash de senhas, criptografia podem ser desfeitas, mas hash nao
 npm install --save bcrypt
 
+- biblioteca para trabalhar com sessoes
+npm install --save express-session
+
 
