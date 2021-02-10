@@ -44,4 +44,8 @@ router.post('/users/create', async (req, res)=>{
     // res.json({email,password})
 })
 
+router.get('/login', (req, res)=>{
+    res.render('admin/users/login')
+})
+
 module.exports = router
