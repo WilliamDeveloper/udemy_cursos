@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database")
+const session = require('express-session')
 
 
 const categoriesController = require('./categories/CategoriesController')
@@ -14,6 +15,12 @@ const Category = require('./categories/Category')
 
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
+
+// configurando session
+app.use(session({
+    secret:"qualquer-texto-para-aumentar-seguranca",
+    cookie:{maxAge:30*1000}
+}))
 
 
 // configuracao de reconhecimento de conteudo de arquivos estaticos
