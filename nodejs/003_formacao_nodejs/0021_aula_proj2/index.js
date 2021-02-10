@@ -67,7 +67,10 @@ app.get('/session-write',(req,res)=>{
 })
 
 app.get('/session-read',(req,res)=>{
-    res.json(req.session)
+    res.json({
+        session: req.session,
+        treinamento: req.session.treinamento
+    })
 })
 
 
