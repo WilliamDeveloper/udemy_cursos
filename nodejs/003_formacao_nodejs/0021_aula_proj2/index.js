@@ -53,6 +53,24 @@ app.use('/', articlesController)
 app.use('/', usersController)
 
 
+app.get('/session-write',(req,res)=>{
+    req.session.treinamento = "Formacao nodejs"
+    req.session.ano = 2020
+    req.session.email="will@will.com.br"
+    req.session.vetor=['banana','maçã', 'pera']
+    req.session.objeto={
+        nome:'william',
+        idade:18,
+        maior:true
+    }
+    res.redirect('/admin/categories')
+})
+
+app.get('/session-read',(req,res)=>{
+    res.json(req.session)
+})
+
+
 app.get("/",(req,res)=>{
     let limiteElementoPorPagina = 2
     Article.findAll({
