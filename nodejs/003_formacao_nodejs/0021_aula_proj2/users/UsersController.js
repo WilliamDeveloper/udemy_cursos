@@ -52,7 +52,25 @@ router.post("/authenticate",(req,res)=>{
     let email = req.body.email;
     let password = req.body.password;
 
+    User.findOne({
+        where:{email:email}
+    }).then((user)=>{
+        if(user != undefined){
+            let correct = bcrypt.compare(password, user.password)
 
+            if(correct){
+                req.session.user = {
+                    id:user.id,
+                    email:user.email
+                }
+                res.redirect("/session-read")
+            }else{
+                res.redirect("/login")
+            }
+        }else{
+            res.redirect("/login")
+        }
+    })
 
 
 })
