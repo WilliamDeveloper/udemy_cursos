@@ -1,3 +1,7 @@
+/*
+quando eu tenho parametros com valor default eles se tornam opcionais
+eles devem ser vir por ultimo
+* */
 function soma(a,b=50) {
     return a + b
 }
