@@ -67,3 +67,15 @@ let func = async ()=>{
     console.log('oi2')
 }
 func()
+
+// tratamento de erros
+let func2 = async ()=> {
+    try {
+        var resp1 = await pegarId()
+        console.log(resp1)
+    } catch (erroo) {
+        console.log('ocorreu um erro ', erroo)
+    }
+}
+
+func2()
