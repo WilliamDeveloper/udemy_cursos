@@ -16,7 +16,7 @@ const Category = require('./categories/Category')
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
 
-// configurando session
+// configurando session - session fica na ram - se p servidor reiniciar a sessao morre
 app.use(session({
     secret:"qualquer-texto-para-aumentar-seguranca",
     cookie:{maxAge:30*1000}
