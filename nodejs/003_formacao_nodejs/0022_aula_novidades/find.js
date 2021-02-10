@@ -4,7 +4,7 @@ var users = [
         idade:18
     },
     {
-        nome:'renato',
+        nome:'william',
         idade:12
     },
     {
@@ -13,5 +13,5 @@ var users = [
     }
 ]
 
-var lista = users.find(user => user.nome == 'william')
-console.log(lista)
+var primeiroUsuario = users.find(user => user.nome == 'william')
+console.log(primeiroUsuario)
