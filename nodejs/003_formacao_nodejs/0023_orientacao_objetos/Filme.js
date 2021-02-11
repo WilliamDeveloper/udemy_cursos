@@ -32,3 +32,5 @@ var hulk = new Filme()
 var starWard = new Filme()
 
 hulk.Reproduzir()
+hulk.ano=2020
+console.log(hulk.ano)
