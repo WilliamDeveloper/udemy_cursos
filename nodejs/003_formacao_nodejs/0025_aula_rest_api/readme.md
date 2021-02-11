@@ -13,11 +13,14 @@ npm init -y
  - bibliotecas aplicacao
  --- ---------------------------------------------------
 
-// "ejs": "^2.7.1",
-- EJS - embedded javascript templating -  motor de html - template engine
-npm install --save ejs@2.7.1
 
-npm install --save html-pdf
+- express
+npm install --save express
+
+- body-parser
+npm install --save body-parser
+
+
 
 
 
