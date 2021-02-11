@@ -17,5 +17,7 @@ npm init -y
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install --save ejs@2.7.1
 
+npm install --save html-pdf
+
 
 
