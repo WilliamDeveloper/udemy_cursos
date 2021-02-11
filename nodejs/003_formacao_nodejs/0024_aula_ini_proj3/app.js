@@ -10,6 +10,8 @@ async function main() {
     let dadosProcessados = ProcessorCSV.Process(dados)
     let usuarios = new Table(dadosProcessados)
     console.log("res: ",usuarios)
+    console.log("res: ",usuarios.RowCount)
+    console.log("res: ",usuarios.ColumnCount)
 }
 
 main();
