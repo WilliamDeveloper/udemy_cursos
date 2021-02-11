@@ -8,7 +8,9 @@ let filepath = "./arquivo.csv"
 async function main() {
     let dados = await leitor.Read(filepath)
     let dadosProcessados = ProcessorCSV.Process(dados)
+
     let usuarios = new Table(dadosProcessados)
+
     console.log("res: ",usuarios)
     console.log("res: ",usuarios.RowCount)
     console.log("res: ",usuarios.ColumnCount)
