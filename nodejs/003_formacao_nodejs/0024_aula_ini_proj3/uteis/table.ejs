@@ -15,7 +15,13 @@
             <% })%>
         </thead>
         <tbody>
-
+            <% rows.forEach( row =>{ %>
+                <tr>
+                    <% row.forEach( col =>{ %>
+                        <th><%= col %></th>
+                    <% })%>
+                </tr>
+            <% })%>
         </tbody>
     </table>
 </body>
