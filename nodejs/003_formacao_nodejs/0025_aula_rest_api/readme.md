@@ -24,8 +24,8 @@ npm install --save html-pdf
  --- ---------------------------------------------------
  - verbos http
  --- ---------------------------------------------------
- GET - PEGAR ITEM
- POST - CRIAR ITENS
- PUT - EDITAR COMPLETAMENTE
- PATCH - EDITAR PARCIALMENTE
- DELETE - DELETAR COISAS
+ GET - PEGAR ITEM - /rota/pedido/{id}
+ POST - CRIAR ITENS /rota/pedido
+ PUT - EDITAR COMPLETAMENTE - /rota/pedido/{id}
+ PATCH - EDITAR PARCIALMENTE - /rota/pedido/{id}
+ DELETE - DELETAR COISAS  - /rota/pedido/{id}
