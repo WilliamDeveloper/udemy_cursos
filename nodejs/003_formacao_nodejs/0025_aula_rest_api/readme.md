@@ -29,3 +29,8 @@ npm install --save html-pdf
  PUT - EDITAR COMPLETAMENTE - /rota/pedido/{id}
  PATCH - EDITAR PARCIALMENTE - /rota/pedido/{id}
  DELETE - DELETAR COISAS  - /rota/pedido/{id}
+ 
+  --- ---------------------------------------------------
+  - status code
+  --- ---------------------------------------------------
+  
