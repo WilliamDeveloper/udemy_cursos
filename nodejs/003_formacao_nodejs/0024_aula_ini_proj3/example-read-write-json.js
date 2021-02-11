@@ -15,35 +15,25 @@ fs.readFile(nomeArquivo,readFileOptions, (erro, dados)=>{
     }else{
         objJson = JSON.parse(dados)
         console.log(objJson)
+
+
+        objJson.nome = "WILLIAM PACHECO"
+        objJson.idade = 19
+
+
+
+        //----------------------------------------------------------------------------------
+        // ESCREVENDO
+        //----------------------------------------------------------------------------------
+        let novoConteudoArquivo = JSON.stringify(objJson)
+        fs.writeFile(nomeArquivo,novoConteudoArquivo, (erro, dados)=>{
+            if(erro){
+                console.log('falha ao escrever no arquivo')
+            }else{
+                console.log(dados)
+            }
+        })
+
     }
 })
 
-
-//----------------------------------------------------------------------------------
-// ESCREVENDO
-//----------------------------------------------------------------------------------
-// let novoConteudoArquivo = `
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-//     dsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsaddsadsadsadsadasdasdasdasdsadsad
-// `
-// fs.writeFile(nomeArquivo,novoConteudoArquivo, (erro, dados)=>{
-//     if(erro){
-//         console.log('falha ao escrever no arquivo')
-//     }else{
-//         console.log(dados)
-//     }
-// })
