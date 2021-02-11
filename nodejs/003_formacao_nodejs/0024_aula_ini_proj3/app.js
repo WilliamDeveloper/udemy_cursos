@@ -12,9 +12,13 @@ async function main() {
 
     let usuarios = new Table(dadosProcessados)
 
+    let html = HtmlParser.Parse(usuarios)
+
     console.log("res: ",usuarios)
     console.log("res: ",usuarios.RowCount)
     console.log("res: ",usuarios.ColumnCount)
+    console.log("res: ",html)
+
 }
 
 main();
