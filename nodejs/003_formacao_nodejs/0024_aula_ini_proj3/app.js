@@ -9,7 +9,7 @@ async function main() {
     console.log(resultado)
 
     resultado = ProcessorCSV.Process(resultado)
-    console.log(resultado)
+    console.log("res: ",resultado)
 }
 
 main();

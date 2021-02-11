@@ -25,6 +25,8 @@ class ProcessorCSV{
         })
 
         if(debug) console.log(rows)
+
+        return rows
     }
 }
 
