@@ -21,3 +21,11 @@ npm install --save html-pdf
 
 
 
+ --- ---------------------------------------------------
+ - verbos http
+ --- ---------------------------------------------------
+ GET - PEGAR ITEM
+ POST - CRIAR ITENS
+ PUT - EDITAR COMPLETAMENTE
+ PATCH - EDITAR PARCIALMENTE
+ DELETE - DELETAR COISAS
