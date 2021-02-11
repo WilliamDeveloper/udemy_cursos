@@ -1,6 +1,7 @@
-const Reader = require('./file/Reader')
-const ProcessorCSV = require('./file/ProcessorCSV')
-const Table = require('./file/Table')
+const Reader = require('./uteis/Reader')
+const ProcessorCSV = require('./uteis/ProcessorCSV')
+const Table = require('./uteis/Table')
+const HtmlParser = require('./uteis/HtmlParser')
 
 let leitor = new Reader()
 let filepath = "./arquivo.csv"
