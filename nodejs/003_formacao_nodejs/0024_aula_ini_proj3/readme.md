@@ -15,7 +15,7 @@ npm init -y
 
 // "ejs": "^2.7.1",
 - EJS - embedded javascript templating -  motor de html - template engine
-npm install ejs@2.7.1 --save
+npm install --save ejs@2.7.1 
 
 
 
