@@ -28,7 +28,7 @@
 <input type="text" name="titleEdit" id="titleEdit" placeholder="Titulo">
 <input type="text" name="priceEdit" id="priceEdit" placeholder="Preco">
 <input type="text" name="yearEdit" id="yearEdit" placeholder="Ano">
-<button type="button" onclick="editGame()">Editar</button>
+<button type="button" onclick="updateGame()">Editar</button>
 <hr>
 
 </body>
@@ -69,6 +69,29 @@
             })
     }
 
+    function updateGame(){
+        let idEditInput = document.getElementById('idEdit')
+        let titleEditInput = document.getElementById('titleEdit')
+        let yearEditInput = document.getElementById('yearEdit')
+        let priceEditInput = document.getElementById('priceEdit')
+
+        let game = {
+            title : titleEditInput.value,
+            year : yearEditInput.value,
+            price: priceEditInput.value
+        }
+
+        let id = idEditInput.value
+
+        axios.put(`http://localhost:3000/game/${id}`, game)
+            .then((response)=>{
+                if(response.status == 200){
+                    alert('game editado')
+                }
+            })
+            .catch((error)=>{})
+    }
+
     function loadForm(listItem){
         let id = listItem.getAttribute('data-id')
         let title = listItem.getAttribute('data-title')
@@ -85,13 +108,7 @@
         yearEditInput.value = year
         priceEditInput.value = price
 
-        axios.put(`http://localhost:3000/game/${id}`)
-            .then((response)=>{
-                alert('editado')
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+
     }
 
     axios.get('http://localhost:3000/games')
