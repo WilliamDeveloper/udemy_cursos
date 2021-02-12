@@ -35,7 +35,10 @@ npm install --save popper.js
 npm install --save bootstrap
 
 
-
+--- ---------------------------------------------------
+ - documentacao test requisicao rest file 
+ --- ---------------------------------------------------
+ https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 
 
 
