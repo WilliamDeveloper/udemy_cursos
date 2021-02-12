@@ -41,7 +41,6 @@ app.get('/games/:id',(req,res)=>{
             res.json({msg: msgCodeHttp["404"] })
         }
     }
-
 })
 
 app.listen(3000,()=>{
