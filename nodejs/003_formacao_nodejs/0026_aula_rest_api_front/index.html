@@ -58,6 +58,13 @@
         games.forEach(game =>{
             console.log(game)
             let li = document.createElement('li')
+
+            //nome do atributo deve sempre comecar com "data-"
+            li.setAttribute('data-id', game.id)
+            li.setAttribute('data-title', game.title)
+            li.setAttribute('data-year', game.year)
+            li.setAttribute('data-price', game.price)
+
             li.innerHTML = `${game.title} --  ${game.year} --  ${game.price}`
             list.appendChild(li)
         })
