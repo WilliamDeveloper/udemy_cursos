@@ -5,6 +5,10 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json())
 
+const msgCodeHttp ={
+    400:'400 - requisicao invalida',
+    404:'404 - recurso nao encontrado',
+}
 let DB={
     games:[
         {id:1, nome:'Mario', ano:2010, preco: 215.5},
@@ -24,7 +28,7 @@ app.get('/games/:id',(req,res)=>{
     let id = req.params.id
     if(isNaN(id)){
         res.statusCode=400
-        res.json({msg:'400 - requisicao invalida'})
+        res.json({msg: msgCodeHttp["400"] })
     }else{
         id=parseInt(id)
         let game = DB.games.find(game => game.id == id)
@@ -34,7 +38,7 @@ app.get('/games/:id',(req,res)=>{
             res.json(game)
         }else{
             res.statusCode=404
-            res.json({msg:'404 - recurso nao encontrado'})
+            res.json({msg: msgCodeHttp["404"] })
         }
     }
 
