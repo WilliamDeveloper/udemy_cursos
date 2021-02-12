@@ -25,6 +25,9 @@ npm install --save body-parser
 npm install --save cors
 
 
+- jwt
+npm install --save jsonwebtoken
+
 
  --- ---------------------------------------------------
  - verbos http
