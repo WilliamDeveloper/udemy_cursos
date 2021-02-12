@@ -21,6 +21,8 @@ npm install --save express
 npm install --save body-parser
 
 
+- cors - habilitar a requisicao externa da api
+npm install --save cors
 
 
 
