@@ -85,7 +85,39 @@ app.delete('/game/:id',(req,res)=>{
     }
 })
 
+app.put('/game/:id',(req,res)=>{
+    let id = req.params.id
+    if(isNaN(id)){
+        res.statusCode=400
+        res.json({msg: msgCodeHttp["400"] })
+    }else{
+        id=parseInt(id)
+        let game = DB.games.find(game => game.id == id)
 
+        if(game != undefined){
+            let {title, price, year} = req.body
+
+            if(title != undefined){
+                game.title = title
+            }
+
+            if(price != undefined){
+                game.price = price
+            }
+
+            if(year != undefined){
+                game.year = year
+            }
+
+
+            res.statusCode=200
+            res.json(DB.games)
+        }else{
+            res.statusCode=404
+            res.json({msg: msgCodeHttp["404"] })
+        }
+    }
+})
 
 app.listen(3000,()=>{
     console.log('API RODANDO http://localhost:3000/games')

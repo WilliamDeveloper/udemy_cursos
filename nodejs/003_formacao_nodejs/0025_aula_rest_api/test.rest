@@ -22,3 +22,13 @@ Content-Type: application/json
 ### request body rest api
 DELETE http://localhost:3000/game/5
 ###
+
+
+### request body rest api
+PUT http://localhost:3000/game/5
+Content-Type: application/json
+
+{
+  "title" : "Game of Thrones2"
+}
+###
