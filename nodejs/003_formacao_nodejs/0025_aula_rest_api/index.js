@@ -6,6 +6,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
 const msgCodeHttp ={
+    200:'200 - requisicao efetuada com sucesso',
     400:'400 - requisicao invalida',
     404:'404 - recurso nao encontrado',
 }
@@ -25,7 +26,7 @@ app.get('/games',(req,res)=>{
     res.json(DB.games)
 })
 
-app.get('/games/:id',(req,res)=>{
+app.get('/game/:id',(req,res)=>{
     let id = req.params.id
     if(isNaN(id)){
         res.statusCode=400
@@ -60,9 +61,31 @@ app.post('/game',(req,res)=>{
 
     res.statusCode=200
     res.json(DB.games)
-
-
 })
+
+app.delete('/game/:id',(req,res)=>{
+    console.log("body: ",req.body.title)
+    console.log("body: ",req.body)
+    let id = req.params.id
+    if(isNaN(id)){
+        res.statusCode=400
+        res.json({msg: msgCodeHttp["400"] })
+    }else{
+        id=parseInt(id)
+        let index = DB.games.findIndex(game => game.id == id)
+
+        if(index == -1){
+            res.statusCode=404
+            res.json({msg: msgCodeHttp["404"] })
+        }else{
+            DB.games.splice(index,1)
+            res.statusCode=200
+            res.json(DB.games)
+        }
+    }
+})
+
+
 
 app.listen(3000,()=>{
     console.log('API RODANDO http://localhost:3000/games')
