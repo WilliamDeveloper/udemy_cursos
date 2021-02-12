@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const jwt = require('jsonwebtoken')
+
+const jwtSecret = 'avadakedabra'
 
 app.use(cors())
 
@@ -138,9 +141,30 @@ app.post('/auth',(req, res)=>{
 
         if(user != undefined){
 
+
             if(user.password == password){
-                res.status(200)
-                res.json({token: "token" })
+
+
+                //payload
+                let infoToken ={
+                    id: user.id,
+                    email: user.email
+                }
+                let jwtOptions=-{
+                    expiresIn:'48h'
+                }
+
+                jwt.sign(infoToken,jwtSecret,jwtOptions, (err, token)=>{
+                    if(err){
+                        res.status(400)
+                        res.json({msg: msgCodeHttp["400"] })
+                    }else{
+                        res.status(200)
+                        res.json({token: token})
+                    }
+                })
+
+
             }else{
                 res.status(401)
                 res.json({msg: msgCodeHttp["401"] })
