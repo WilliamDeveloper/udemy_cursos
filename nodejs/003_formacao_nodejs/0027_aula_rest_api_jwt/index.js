@@ -152,7 +152,7 @@ app.post('/auth',(req, res)=>{
         }
 
     }else{
-        res.statusCode=400
+        res.status(400)
         res.json({msg: msgCodeHttp["400"] })
     }
 })
