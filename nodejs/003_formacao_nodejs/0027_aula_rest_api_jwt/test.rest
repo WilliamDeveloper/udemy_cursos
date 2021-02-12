@@ -32,3 +32,13 @@ Content-Type: application/json
   "title" : "Game of Thrones2"
 }
 ###
+
+### request body rest api
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{
+  "email" : "b@a.com.br",
+  "password" : 123456
+}
+###

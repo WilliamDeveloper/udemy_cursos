@@ -12,6 +12,7 @@ const msgCodeHttp ={
     200:'200 - requisicao efetuada com sucesso',
     400:'400 - requisicao invalida',
     404:'404 - recurso nao encontrado',
+    401:'401 - credenciais invalidas'
 }
 
 let DB={
@@ -21,6 +22,13 @@ let DB={
         {id:3, title:'MK3', year:2012, price: 213.5},
         {id:4, title:'Donkey', year:2013, price: 212.5},
         {id:5, title:'Kong', year:2014, price: 211.5},
+    ],
+    users:[
+        {id:1,name:'william1', email:'a@a.com.br',password:'123456'},
+        {id:2,name:'william2', email:'b@a.com.br',password:'123456'},
+        {id:3,name:'william3', email:'c@a.com.br',password:'123456'},
+        {id:4,name:'william4', email:'d@a.com.br',password:'123456'},
+        {id:5,name:'william5', email:'e@a.com.br',password:'123456'},
     ]
 }
 
@@ -119,6 +127,33 @@ app.put('/game/:id',(req,res)=>{
             res.statusCode=404
             res.json({msg: msgCodeHttp["404"] })
         }
+    }
+})
+
+app.post('/auth',(req, res)=>{
+    let {email, password} = req.body
+
+    if(email != undefined){
+        let user = DB.users.find(user=> user.email == email)
+
+        if(user != undefined){
+
+            if(user.password == password){
+                res.statusCode=200
+                res.json({token: "token" })
+            }else{
+                res.statusCode=401
+                res.json({msg: msgCodeHttp["401"] })
+            }
+
+        }else{
+            res.statusCode=404
+            res.json({msg: msgCodeHttp["404"] })
+        }
+
+    }else{
+        res.statusCode=400
+        res.json({msg: msgCodeHttp["400"] })
     }
 })
 
