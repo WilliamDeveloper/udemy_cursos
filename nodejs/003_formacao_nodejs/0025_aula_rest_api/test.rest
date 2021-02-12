@@ -1,0 +1,10 @@
+###
+POST http://localhost:3000/game
+
+Content-Type: application/json
+{
+  "title":'seila',
+  "price":60,
+  "year":1980
+}
+###

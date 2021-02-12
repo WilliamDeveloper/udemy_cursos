@@ -44,6 +44,25 @@ app.get('/games/:id',(req,res)=>{
     }
 })
 
+
+app.post('/game',(req,res)=>{
+    console.log("body: ",req.body)
+    let {title, price, year} = req.body
+    console.log('#=>', title, price, year)
+
+    DB.games.push({
+        id:2323,
+        title,
+        price,
+        year
+    })
+
+    res.statusCode=200
+    res.json(DB.games)
+
+
+})
+
 app.listen(3000,()=>{
     console.log('API RODANDO http://localhost:3000/games')
 })
