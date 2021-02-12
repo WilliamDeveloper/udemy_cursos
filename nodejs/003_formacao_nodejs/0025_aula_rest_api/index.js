@@ -38,8 +38,6 @@ app.get('/games/:id',(req,res)=>{
         }
     }
 
-    res.statusCode=200
-    res.json(DB.games)
 })
 
 app.listen(3000,()=>{
