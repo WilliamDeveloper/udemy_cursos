@@ -3,16 +3,17 @@ POST http://localhost:3000/game
 
 Content-Type: application/json;
 {
-  "title":'seila',
-  "price":60,
-  "year":1980
+  title : 'seila',
+  price : 60,
+  year : 1980
 }
 ###
 
 ###
 POST http://localhost:3000/game
-
-body:{
+Content-Type:
+Content-Type: multipart/form-data
+{
   "title":'seila',
   "price":60,
   "year":1980
