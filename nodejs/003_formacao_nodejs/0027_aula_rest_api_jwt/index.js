@@ -39,7 +39,16 @@ function auth(req, res, next) {
     const authToken = req.headers['authorization']
     console.log(authToken)
     if(authToken != undefined){
-        let token = authToken
+        let tokenArraySplit = authToken.split(" ");
+        let token;
+
+        if( tokenArraySplit.length > 1 ){
+            token = tokenArraySplit[1]
+        }else{
+            token = tokenArraySplit[0]
+        }
+        console.log(token)
+
 
         jwt.verify(token, jwtSecret, (erro, data)=>{
             if(erro){

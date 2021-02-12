@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Mario",
+    "year": 2010,
+    "price": 215.5
+  },
+  {
+    "id": 2,
+    "title": "Yoshi",
+    "year": 2011,
+    "price": 214.5
+  },
+  {
+    "id": 3,
+    "title": "MK3",
+    "year": 2012,
+    "price": 213.5
+  },
+  {
+    "id": 4,
+    "title": "Donkey",
+    "year": 2013,
+    "price": 212.5
+  },
+  {
+    "id": 5,
+    "title": "Kong",
+    "year": 2014,
+    "price": 211.5
+  }
+]
