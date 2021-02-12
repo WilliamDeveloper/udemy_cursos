@@ -20,12 +20,33 @@
 <input type="text" name="title" id="title" placeholder="Titulo">
 <input type="text" name="price" id="price" placeholder="Preco">
 <input type="text" name="year" id="year" placeholder="Ano">
+<button type="button" onclick="createGame()">Criar</button>
 
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     console.log(axios)
+
+    function createGame(){
+        let titleInput = document.getElementById('title')
+        let yearInput = document.getElementById('year')
+        let priceInput = document.getElementById('price')
+
+        let game = {
+            title : titleInput.value,
+            year : yearInput.value,
+            price: priceInput.value
+        }
+
+        axios.post('http://localhost:3000/game', game)
+            .then((response)=>{
+                if(response.status == 200){
+                    alert('game cadastrado')
+                }
+            })
+            .catch((error)=>{})
+    }
 
     axios.get('http://localhost:3000/games')
     .then(response=>{
