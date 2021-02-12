@@ -28,7 +28,7 @@
         games.forEach(game =>{
             console.log(game)
             let li = document.createElement('li')
-            li.innerHTML = game.nome
+            li.innerHTML = `${game.nome} --  ${game.ano} --  ${game.preco}`
             list.appendChild(li)
 
         })
