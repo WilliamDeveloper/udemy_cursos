@@ -48,6 +48,11 @@
             .catch((error)=>{})
     }
 
+    function deleteGame(listItem){
+        let id = listItem.getAttribute('data-id')
+
+    }
+
     axios.get('http://localhost:3000/games')
     .then(response=>{
         console.log('sucesso: ',response)
@@ -67,6 +72,15 @@
             li.setAttribute('data-price', game.price)
 
             li.innerHTML = `${game.title} --  ${game.year} --  ${game.price}`
+
+            let buttonDelete = document.createElement('button')
+            buttonDelete.innerHTML="Deletar"
+            buttonDelete.addEventListener("click", function (){
+                deleteGame(li)
+            })
+
+            li.appendChild(buttonDelete)
+
             list.appendChild(li)
         })
     }).catch(error =>{
