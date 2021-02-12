@@ -16,11 +16,11 @@ const msgCodeHttp ={
 
 let DB={
     games:[
-        {id:1, nome:'Mario', ano:2010, preco: 215.5},
-        {id:2, nome:'Yoshi', ano:2011, preco: 214.5},
-        {id:3, nome:'MK3', ano:2012, preco: 213.5},
-        {id:4, nome:'Donkey', ano:2013, preco: 212.5},
-        {id:5, nome:'Kong', ano:2014, preco: 211.5},
+        {id:1, title:'Mario', year:2010, price: 215.5},
+        {id:2, title:'Yoshi', year:2011, price: 214.5},
+        {id:3, title:'MK3', year:2012, price: 213.5},
+        {id:4, title:'Donkey', year:2013, price: 212.5},
+        {id:5, title:'Kong', year:2014, price: 211.5},
     ]
 }
 
