@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+<hr>
+<h4>Lista de games</h4>
+<ul id="games"> </ul>
 
 </body>
 
@@ -15,9 +18,22 @@
 <script>
     console.log(axios)
 
-    axios.get('http://localhost/games')
+    axios.get('http://localhost:3000/games')
     .then(response=>{
         console.log('sucesso: ',response)
+
+        let games = response.data;
+        let list = document.getElementById('games')
+
+        games.forEach(game =>{
+            console.log(game)
+            let li = document.createElement('li')
+            li.innerHTML = game.nome
+            list.appendChild(li)
+
+        })
+
+
     }).catch(error =>{
         console.log('error: ',error)
     })
