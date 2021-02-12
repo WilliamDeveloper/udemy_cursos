@@ -1,7 +1,9 @@
 ###
+### https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+### request body rest api
 POST http://localhost:3000/game
-
 Content-Type: application/json
+
 {
   "title" : "seila",
   "price" : 60,
@@ -9,13 +11,3 @@ Content-Type: application/json
 }
 ###
 
-###
-POST http://localhost:3000/game
-Content-Type:
-Content-Type: multipart/form-data
-{
-  "title":'seila',
-  "price":60,
-  "year":1980
-}
-###
