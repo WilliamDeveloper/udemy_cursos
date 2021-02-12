@@ -9,6 +9,7 @@ const msgCodeHttp ={
     400:'400 - requisicao invalida',
     404:'404 - recurso nao encontrado',
 }
+
 let DB={
     games:[
         {id:1, nome:'Mario', ano:2010, preco: 215.5},
