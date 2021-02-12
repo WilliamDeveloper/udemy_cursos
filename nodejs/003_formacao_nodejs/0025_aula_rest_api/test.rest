@@ -8,3 +8,13 @@ Content-Type: application/json;
   "year":1980
 }
 ###
+
+###
+POST http://localhost:3000/game
+
+body:{
+  "title":'seila',
+  "price":60,
+  "year":1980
+}
+###
