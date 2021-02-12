@@ -2,6 +2,7 @@
 ### https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 ### request body rest api
 GET http://localhost:3000/games
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJiQGEuY29tLmJyIiwiaWF0IjoxNjEzMTcwMDI4fQ.hfxdz_gin7CR9aBvFeLO2XvZuBdhbO5-lCEYO7yIvwQ
 ###
 
 ### request body rest api
