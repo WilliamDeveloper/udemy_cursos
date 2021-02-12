@@ -14,5 +14,13 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     console.log(axios)
+
+    axios.get('http://localhost/games')
+    .then(response=>{
+        console.log('sucesso: ',response)
+    }).catch(error =>{
+        console.log('error: ',error)
+    })
+
 </script>
 </html>
