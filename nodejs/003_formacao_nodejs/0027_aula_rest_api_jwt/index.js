@@ -33,24 +33,24 @@ let DB={
 }
 
 app.get('/games',(req,res)=>{
-    res.statusCode=200
+    res.status(200)
     res.json(DB.games)
 })
 
 app.get('/game/:id',(req,res)=>{
     let id = req.params.id
     if(isNaN(id)){
-        res.statusCode=400
+        res.status(400)
         res.json({msg: msgCodeHttp["400"] })
     }else{
         id=parseInt(id)
         let game = DB.games.find(game => game.id == id)
 
         if(game != undefined){
-            res.statusCode=200
+            res.status(200)
             res.json(game)
         }else{
-            res.statusCode=404
+            res.status(404)
             res.json({msg: msgCodeHttp["404"] })
         }
     }
@@ -70,7 +70,7 @@ app.post('/game',(req,res)=>{
         year
     })
 
-    res.statusCode=200
+    res.status(200)
     res.json(DB.games)
 })
 
@@ -79,18 +79,18 @@ app.delete('/game/:id',(req,res)=>{
     console.log("body: ",req.body)
     let id = req.params.id
     if(isNaN(id)){
-        res.statusCode=400
+        res.status(400)
         res.json({msg: msgCodeHttp["400"] })
     }else{
         id=parseInt(id)
         let index = DB.games.findIndex(game => game.id == id)
 
         if(index == -1){
-            res.statusCode=404
+            res.status(404)
             res.json({msg: msgCodeHttp["404"] })
         }else{
             DB.games.splice(index,1)
-            res.statusCode=200
+            res.status(200)
             res.json(DB.games)
         }
     }
@@ -99,7 +99,7 @@ app.delete('/game/:id',(req,res)=>{
 app.put('/game/:id',(req,res)=>{
     let id = req.params.id
     if(isNaN(id)){
-        res.statusCode=400
+        res.status(400)
         res.json({msg: msgCodeHttp["400"] })
     }else{
         id=parseInt(id)
@@ -121,10 +121,10 @@ app.put('/game/:id',(req,res)=>{
             }
 
 
-            res.statusCode=200
+            res.status(200)
             res.json(DB.games)
         }else{
-            res.statusCode=404
+            res.status(404)
             res.json({msg: msgCodeHttp["404"] })
         }
     }
@@ -139,15 +139,15 @@ app.post('/auth',(req, res)=>{
         if(user != undefined){
 
             if(user.password == password){
-                res.statusCode=200
+                res.status(200)
                 res.json({token: "token" })
             }else{
-                res.statusCode=401
+                res.status(401)
                 res.json({msg: msgCodeHttp["401"] })
             }
 
         }else{
-            res.statusCode=404
+            res.status(404)
             res.json({msg: msgCodeHttp["404"] })
         }
 
