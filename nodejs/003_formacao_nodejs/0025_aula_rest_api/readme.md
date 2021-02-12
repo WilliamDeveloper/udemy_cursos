@@ -37,3 +37,9 @@ npm install --save body-parser
   - status code
   --- ---------------------------------------------------
   
+  
+  
+  --- ---------------------------------------------------
+   - documentacao test requisicao rest file 
+   --- ---------------------------------------------------
+   https://marketplace.visualstudio.com/items?itemName=humao.rest-client
