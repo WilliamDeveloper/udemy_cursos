@@ -53,7 +53,7 @@ app.post('/game',(req,res)=>{
     console.log('#=>', title, price, year)
 
     DB.games.push({
-        id:2323,
+        id:DB.games.length+1,
         title,
         price,
         year
