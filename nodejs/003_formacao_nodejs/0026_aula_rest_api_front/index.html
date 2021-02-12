@@ -51,6 +51,13 @@
     function deleteGame(listItem){
         let id = listItem.getAttribute('data-id')
 
+        axios.delete(`http://localhost:3000/game/${id}`)
+            .then((response)=>{
+                alert('deletado')
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
     }
 
     axios.get('http://localhost:3000/games')
