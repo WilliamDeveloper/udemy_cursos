@@ -20,6 +20,28 @@ app.get('/games',(req,res)=>{
     res.json(DB.games)
 })
 
+app.get('/games/:id',(req,res)=>{
+    let id = req.params.id
+    if(isNaN(id)){
+        res.statusCode=400
+        res.json({msg:'400 - requisicao invalida'})
+    }else{
+        id=parseInt(id)
+        let game = DB.games.find(game => game.id == id)
+
+        if(game != undefined){
+            res.statusCode=200
+            res.json(game)
+        }else{
+            res.statusCode=404
+            res.json({msg:'404 - recurso nao encontrado'})
+        }
+    }
+
+    res.statusCode=200
+    res.json(DB.games)
+})
+
 app.listen(3000,()=>{
     console.log('API RODANDO http://localhost:3000/games')
 })
