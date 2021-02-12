@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({extended:false}))
-app.use(express.json())
+app.use(bodyParser.json())
 
 const msgCodeHttp ={
     400:'400 - requisicao invalida',
@@ -46,6 +46,7 @@ app.get('/games/:id',(req,res)=>{
 
 
 app.post('/game',(req,res)=>{
+    console.log("body: ",req.body.title)
     console.log("body: ",req.body)
     let {title, price, year} = req.body
     console.log('#=>', title, price, year)
