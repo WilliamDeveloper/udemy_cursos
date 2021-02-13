@@ -74,6 +74,11 @@
                 tokenLogindInput.value = token
 
                 localStorage.setItem('token',tokenLogindInput.value)
+                axiosConfig ={
+                    headers:{
+                        Authorization: localStorage.getItem('token')
+                    }
+                }
 
                 console.log('logado')
                 loadListGames()
