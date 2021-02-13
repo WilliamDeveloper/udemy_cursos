@@ -63,6 +63,15 @@ let dados = {
 //     console.log(err)
 // })
 
+
+let sql = database.raw(" update autorizador.t411pasi set cd_value='pimba2' where cd_key = 'blau'  ")
+console.log(sql.toQuery())
+sql.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
+
 let select5 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
 console.log(select5.toQuery())
 select5.then(data=>{
