@@ -44,3 +44,15 @@ select3.then(data=>{
 
 
 
+let select4 = database
+    .select(['CD_KEY','CD_VALUE'])
+    .from("T411PASI")
+    .whereRaw(" cd_key like 'blau' ")
+console.log(select4.toQuery())
+select4.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
+
+
