@@ -22,8 +22,7 @@ console.log(insert.toQuery())
 
 insert.then(data=>{
     console.log(data)
-})
-.catch(err=>{
+}).catch(err=>{
     console.log(err)
 })
 
@@ -31,9 +30,17 @@ let select2 = database.select('*').from("T411PASI").where({CD_KEY:'blau'})
 console.log(select2.toQuery())
 select2.then(data=>{
     console.log(data)
-})
-.catch(err=>{
+}).catch(err=>{
     console.log(err)
 })
+
+let select3 = database.select(['CD_KEY','CD_VALUE']).from("T411PASI").where({CD_KEY:'blau'})
+console.log(select3.toQuery())
+select3.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
+
 
 
