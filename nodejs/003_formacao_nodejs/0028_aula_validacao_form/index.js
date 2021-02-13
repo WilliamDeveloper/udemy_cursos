@@ -19,9 +19,7 @@ app.use(session({
 app.use(flash())
 
 app.get('/',(req,res)=>{
-    console.log('rodando',req.body)
-
-
+    console.log('rodando')
     res.render('index')
 })
 
