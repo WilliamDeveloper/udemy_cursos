@@ -27,11 +27,23 @@ app.get('/',(req,res)=>{
 
     let messsages = req.flash('messages')
 
+    let email = req.flash('email')
+    let nome = req.flash('nome')
+    let pontos = req.flash('pontos')
 
+    email = (email == undefined || email.length == 0) ? "": email
+    nome = (nome == undefined || nome.length == 0) ? "": nome
+    pontos = (pontos == undefined || pontos.length == 0) ? "": pontos
 
-    console.log(messsages)
+    let form ={
+        email:email,
+        nome:nome,
+        pontos:pontos
+    }
 
-    res.render('index', {messages:messsages})
+    console.log('messages',messsages)
+
+    res.render('index', {messages:messsages, form:form})
 })
 
 app.post('/form',(req,res)=>{
@@ -43,16 +55,19 @@ app.post('/form',(req,res)=>{
         msgValidationForm.email="nao pode ser vazio"
     }else{
         msgValidationForm.email=""
+        req.flash('email', email)
     }
     if(nome == undefined || nome==""){
         msgValidationForm.nome="nao pode ser vazio"
     }else{
         msgValidationForm.nome=""
+        req.flash('nome', nome)
     }
     if(pontos == undefined || pontos==""){
         msgValidationForm.pontos="nao pode ser vazio e deve ser menor q 20"
     }else{
         msgValidationForm.pontos=""
+        req.flash('pontos', pontos)
     }
 
     req.flash('messages', msgValidationForm)
