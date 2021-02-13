@@ -27,9 +27,11 @@ app.get('/',(req,res)=>{
 
     let messsages = req.flash('messages')
 
+
+
     console.log(messsages)
 
-    res.render('index')
+    res.render('index', {messages:messsages})
 })
 
 app.post('/form',(req,res)=>{
@@ -39,12 +41,18 @@ app.post('/form',(req,res)=>{
     let msgErrors =[]
     if(email == undefined || email==""){
         msgErrors.push({email:"nao pode ser vazio"})
+    }else{
+        msgErrors.push({email:""})
     }
     if(nome == undefined || nome==""){
         msgErrors.push({nome:"nao pode ser vazio"})
+    }else{
+        msgErrors.push({nome:""})
     }
     if(pontos == undefined || pontos==""){
         msgErrors.push({pontos:"nao pode ser vazio e deve ser menor q 20"})
+    }else{
+        msgErrors.push({pontos:""})
     }
     if(msgErrors.length>0){
         req.flash('messages', msgErrors)
