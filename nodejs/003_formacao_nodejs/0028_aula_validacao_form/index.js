@@ -20,7 +20,7 @@ app.use(flash())
 
 app.get('/',(req,res)=>{
     console.log('rodando')
-    res.send('rodando')
+    res.render('index')
 })
 
 app.listen(3000,(req,res)=>{
