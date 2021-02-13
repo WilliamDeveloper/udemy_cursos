@@ -37,6 +37,12 @@
 <script>
     console.log(axios)
 
+    let axiosConfig ={
+        headers:{
+            Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJiQGEuY29tLmJyIiwiaWF0IjoxNjEzMTczNzM4fQ.qncYlWRrx1L7hrDX2TPG4HzDYTyhIGMuiWjwKEfM3Q4"
+        }
+    }
+
     function createGame(){
         let titleInput = document.getElementById('title')
         let yearInput = document.getElementById('year')
@@ -111,11 +117,12 @@
 
     }
 
-    axios.get('http://localhost:3000/games')
+    axios.get('http://localhost:3000/games',axiosConfig)
     .then(response=>{
         console.log('sucesso: ',response)
 
-        let games = response.data;
+        let user = response.data.user;
+        let games = response.data.games;
         let list = document.getElementById('games')
 
         games.forEach(game =>{
