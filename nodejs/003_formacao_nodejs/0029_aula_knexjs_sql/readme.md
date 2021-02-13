@@ -50,7 +50,7 @@ npm install --save cookie-parser
     - pouca flexibilidade
     - nem sempre tem performance
     
- - Query builder -> 
+ - Query builder -> http://knexjs.org/
     - banco.select().table("post").where({id:7}).orWhere({id:8}).orderBy('id') 
         -> select * from post where id =7 or id =8 order by id
     - muita flexibilidade para fazer query
