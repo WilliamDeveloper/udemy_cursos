@@ -73,7 +73,10 @@ function auth(req, res, next) {
 
 app.get('/games',auth,(req,res)=>{
     res.status(200)
-    res.json(DB.games)
+    res.json({
+        user: req.loggedUser,
+        games: DB.games
+    })
 })
 
 app.get('/game/:id',(req,res)=>{
