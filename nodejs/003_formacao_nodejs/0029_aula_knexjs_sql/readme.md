@@ -20,6 +20,9 @@ npm init -y
 -- knex - http://knexjs.org/
 npm install --save knex
 
+-- oracle
+npm install oracledb
+
 
 -- dependencias possiveis knex
 # Then add one of the following (adding a --save) flag:

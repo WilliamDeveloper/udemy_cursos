@@ -1,0 +1,16 @@
+{
+  "name": "0029_aula_knexjs_sql",
+  "version": "1.0.0",
+  "description": "--- ---------------------------------------------------\r - criado com\r --- ---------------------------------------------------\r npm init -y",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^0.21.17",
+    "oracledb": "^5.1.0"
+  }
+}
