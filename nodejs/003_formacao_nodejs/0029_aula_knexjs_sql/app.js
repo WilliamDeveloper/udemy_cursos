@@ -7,7 +7,7 @@ let dados = {
     cd_value : 'pimba'
 }
 
-let select = database.select('*').table('t411pasi')
+let select = database.select('*').table("t411pasi")
 console.log(select.toQuery())
 select.then(data=>{
     console.log(data)

@@ -9,7 +9,7 @@ const knex = require('knex')({
         host: '10.0.0.30',
         user: 'autorizador',
         password: 'holdback',
-        database: 'hmg',
+        database: 'homologa',
     },
     fetchAsString: [ 'number', 'clob' ]
 });
