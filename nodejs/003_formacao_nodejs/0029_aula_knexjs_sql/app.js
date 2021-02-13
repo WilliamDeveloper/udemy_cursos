@@ -64,3 +64,18 @@ select5.then(data=>{
 })
 
 
+let vDelete = database.raw(" delete from autorizador.t411pasi where cd_key = 'blau' ")
+console.log(vDelete.toQuery())
+vDelete.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
+
+let select6 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
+console.log(select6.toQuery())
+select6.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
