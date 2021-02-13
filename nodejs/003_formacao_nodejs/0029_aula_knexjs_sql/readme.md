@@ -38,3 +38,10 @@ npm install --save cookie-parser
 
 
 --https://www.npmjs.com/package/validator
+
+
+ --- ---------------------------------------------------
+ - formas de manipular sql
+ --- ---------------------------------------------------
+ - RAW(CRUA) - "select * from post" //mysql2
+ - ORM - Models -> Artigos.create({"title":"dsadsadsa"}) //sequelize
