@@ -21,7 +21,7 @@ npm init -y
 npm install --save knex
 
 
--- dependencias possiveis
+-- dependencias possiveis knex
 # Then add one of the following (adding a --save) flag:
 $ npm install pg
 $ npm install sqlite3
