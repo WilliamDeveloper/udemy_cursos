@@ -47,4 +47,4 @@ npm install --save cookie-parser
  - ORM - Models -> Artigos.create({"title":"dsadsadsa"}) //sequelize 
     - pouca flexibilidade
     - nem sempre tem performance
- -
+ - Query builder -> banco.select().table("post") -> select * from post
