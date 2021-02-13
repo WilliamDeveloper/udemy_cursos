@@ -44,11 +44,12 @@
 
     console.log(axios)
 
-    let axiosConfig ={
-        headers:{
-            Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJiQGEuY29tLmJyIiwiaWF0IjoxNjEzMTczNzM4fQ.qncYlWRrx1L7hrDX2TPG4HzDYTyhIGMuiWjwKEfM3Q4"
-        }
-    }
+    // let axiosConfig ={
+    //     headers:{
+    //         Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJiQGEuY29tLmJyIiwiaWF0IjoxNjEzMTczNzM4fQ.qncYlWRrx1L7hrDX2TPG4HzDYTyhIGMuiWjwKEfM3Q4"
+    //     }
+    // }
+    let axiosConfig ={}
 
     function logar(){
         let emailLoginInput = document.getElementById('emailLogin')
@@ -67,7 +68,15 @@
                 console.log('res')
                 let token = res.data.token
                 tokenLogindInput.value = token
-                alert('logado')
+
+                axiosConfig ={
+                    headers:{
+                        Authorization: tokenLogindInput.value
+                    }
+                }
+
+                console.log('logado')
+                loadListGames()
             })
             .catch((err)=>{
                 console.log('err')
@@ -91,7 +100,7 @@
         axios.post('http://localhost:3000/game', game)
             .then((response)=>{
                 if(response.status == 200){
-                    alert('game cadastrado')
+                    console.log('game cadastrado')
                 }
             })
             .catch((error)=>{})
@@ -102,7 +111,10 @@
 
         axios.delete(`http://localhost:3000/game/${id}`)
             .then((response)=>{
-                alert('deletado')
+                console.log('deletado')
+                location.reload()
+
+
             })
             .catch((error)=>{
                 console.log(error)
@@ -126,7 +138,9 @@
         axios.put(`http://localhost:3000/game/${id}`, game)
             .then((response)=>{
                 if(response.status == 200){
-                    alert('game editado')
+                    console.log('game editado')
+                    location.reload()
+
                 }
             })
             .catch((error)=>{})
@@ -151,47 +165,55 @@
 
     }
 
-    axios.get('http://localhost:3000/games',axiosConfig)
-    .then(response=>{
-        console.log('sucesso: ',response)
+    function loadListGames(){
 
-        let user = response.data.user;
-        let games = response.data.games;
-        let list = document.getElementById('games')
+        axios.get('http://localhost:3000/games',axiosConfig)
+            .then(response=>{
+                console.log('sucesso: ',response)
 
-        games.forEach(game =>{
-            console.log(game)
-            let li = document.createElement('li')
+                let user = response.data.user;
+                let games = response.data.games;
+                let list = document.getElementById('games')
 
-            //atributos customizado em uma tag
-            //nome do atributo deve sempre comecar com "data-"
-            li.setAttribute('data-id', game.id)
-            li.setAttribute('data-title', game.title)
-            li.setAttribute('data-year', game.year)
-            li.setAttribute('data-price', game.price)
+                games.forEach(game =>{
+                    console.log(game)
+                    let li = document.createElement('li')
 
-            li.innerHTML = `${game.title} --  ${game.year} --  ${game.price}`
+                    //atributos customizado em uma tag
+                    //nome do atributo deve sempre comecar com "data-"
+                    li.setAttribute('data-id', game.id)
+                    li.setAttribute('data-title', game.title)
+                    li.setAttribute('data-year', game.year)
+                    li.setAttribute('data-price', game.price)
 
-            let buttonDelete = document.createElement('button')
-            buttonDelete.innerHTML="Deletar"
-            buttonDelete.addEventListener("click", function (){
-                deleteGame(li)
-            })
+                    li.innerHTML = `${game.title} --  ${game.year} --  ${game.price}`
 
-            let buttonEdit = document.createElement('button')
-            buttonEdit.innerHTML="Editar"
-            buttonEdit.addEventListener("click", function (){
-                loadForm(li)
-            })
+                    let buttonDelete = document.createElement('button')
+                    buttonDelete.innerHTML="Deletar"
+                    buttonDelete.addEventListener("click", function (){
+                        deleteGame(li)
+                    })
 
-            li.appendChild(buttonDelete)
-            li.appendChild(buttonEdit)
+                    let buttonEdit = document.createElement('button')
+                    buttonEdit.innerHTML="Editar"
+                    buttonEdit.addEventListener("click", function (){
+                        loadForm(li)
+                    })
 
-            list.appendChild(li)
+                    li.appendChild(buttonDelete)
+                    li.appendChild(buttonEdit)
+
+                    list.appendChild(li)
+                })
+            }).catch(error =>{
+            console.log('error: ',error)
         })
-    }).catch(error =>{
-        console.log('error: ',error)
-    })
+    }
+
+    logar()
+
+
+
 
 </script>
 </html>
