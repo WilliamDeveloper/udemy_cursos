@@ -16,6 +16,12 @@
 
 
 <hr>
+<h4>Login</h4>
+<input type="text" name="emailLogin" id="emailLogin" value="b@a.com.br">
+<input type="text" name="passwordLogin" id="passwordLogin" value="123456">
+<input type="text" name="tokenLogin" id="tokenLogin" value="">
+<button type="button" onclick="logar()">Logar</button>
+<hr>
 <h4>Novo Game</h4>
 <input type="text" name="title" id="title" placeholder="Titulo">
 <input type="text" name="price" id="price" placeholder="Preco">
@@ -35,12 +41,40 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+
     console.log(axios)
 
     let axiosConfig ={
         headers:{
             Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJiQGEuY29tLmJyIiwiaWF0IjoxNjEzMTczNzM4fQ.qncYlWRrx1L7hrDX2TPG4HzDYTyhIGMuiWjwKEfM3Q4"
         }
+    }
+
+    function logar(){
+        let emailLoginInput = document.getElementById('emailLogin')
+        let passworLogindInput = document.getElementById('passwordLogin')
+        let tokenLogindInput = document.getElementById('tokenLogin')
+
+        let email = emailLoginInput.value
+        let password = passworLogindInput.value
+
+        let login = {
+            email:email,
+            password: password
+        }
+        axios.post('http://localhost:3000/auth', login)
+            .then((res)=>{
+                console.log('res')
+                let token = res.data.token
+                tokenLogindInput.value = token
+                alert('logado')
+            })
+            .catch((err)=>{
+                console.log('err')
+                alert('login invalido')
+            })
+
+
     }
 
     function createGame(){
