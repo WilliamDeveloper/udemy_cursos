@@ -48,3 +48,8 @@ npm install --save jsonwebtoken
    - documentacao test requisicao rest file 
    --- ---------------------------------------------------
    https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+   
+--- ---------------------------------------------------
+- exemplo documentacao 
+--- ---------------------------------------------------
+   https://raw.githubusercontent.com/techtuxbr/api-de-games-docs/master/README.md
