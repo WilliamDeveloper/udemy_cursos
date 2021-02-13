@@ -55,4 +55,12 @@ select4.then(data=>{
     console.log(err)
 })
 
+let select5 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
+console.log(select5.toQuery())
+select5.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
+
 
