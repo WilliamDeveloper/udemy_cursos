@@ -27,7 +27,18 @@ app.post('/form',(req,res)=>{
     console.log('rodando',req.body)
     const {email, nome, pontos} = req.body
 
-    res.json('index')
+    let msgErrors =[]
+    if(email == undefined || email==""){
+        msgErrors.push({email:"email nao pode ser vazio"})
+    }
+    if(nome == undefined || nome==""){
+        msgErrors.push({nome:"nome nao pode ser vazio"})
+    }
+    if(pontos == undefined || pontos==""){
+        msgErrors.push({pontos:"pontos nao pode ser vazio e deve ser menor q 20"})
+    }
+
+    res.json({formMsgError:msgErrors})
 })
 
 app.listen(3000,(req,res)=>{
