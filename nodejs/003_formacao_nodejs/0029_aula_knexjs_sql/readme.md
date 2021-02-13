@@ -41,10 +41,17 @@ npm install --save cookie-parser
 
 
  --- ---------------------------------------------------
- - formas de manipular sql
+ - formas principais de manipular sql no nodejs
  --- ---------------------------------------------------
  - RAW(CRUA) - "select * from post" //mysql2
+    - torna o codigo uma bagunça
+    
  - ORM - Models -> Artigos.create({"title":"dsadsadsa"}) //sequelize 
     - pouca flexibilidade
     - nem sempre tem performance
- - Query builder -> banco.select().table("post") -> select * from post
+    
+ - Query builder -> 
+    - banco.select().table("post").where({id:7}).orWhere({id:8}).orderBy('id') 
+        -> select * from post where id =7 or id =8 order by id
+    - muita flexibilidade para fazer query
+    -  montar banco de dados na mao
