@@ -9,10 +9,12 @@ npm init -y
 - biblioteca para o script de node se auto dar restart quando tiver uma modificacao
  npm install -g nodemon 
 
+
+
+
  --- ---------------------------------------------------
  - bibliotecas aplicacao
  --- ---------------------------------------------------
-
 
 - express
 npm install --save express
@@ -20,31 +22,9 @@ npm install --save express
 - body-parser
 npm install --save body-parser
 
+- express-session
+npm install --save express-session
 
-- cors - habilitar a requisicao externa da api
-npm install --save cors
-
-
-- jwt
-npm install --save jsonwebtoken
-
-
- --- ---------------------------------------------------
- - verbos http
- --- ---------------------------------------------------
- GET - PEGAR ITEM - /rota/pedido/{id}
- POST - CRIAR ITENS /rota/pedido
- PUT - EDITAR COMPLETAMENTE - /rota/pedido/{id}
- PATCH - EDITAR PARCIALMENTE - /rota/pedido/{id}
- DELETE - DELETAR COISAS  - /rota/pedido/{id}
- 
-  --- ---------------------------------------------------
-  - status code
-  --- ---------------------------------------------------
-  
-  
-  
-  --- ---------------------------------------------------
-   - documentacao test requisicao rest file 
-   --- ---------------------------------------------------
-   https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+// "ejs": "^2.7.1",
+- EJS - embedded javascript templating -  motor de html - template engine
+npm install --save ejs@2.7.1
