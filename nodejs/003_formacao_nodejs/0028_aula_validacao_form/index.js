@@ -38,26 +38,24 @@ app.post('/form',(req,res)=>{
     console.log('rodando',req.body)
     const {email, nome, pontos} = req.body
 
-    let msgErrors =[]
+    let msgValidationForm ={}
     if(email == undefined || email==""){
-        msgErrors.push({email:"nao pode ser vazio"})
+        msgValidationForm.email="nao pode ser vazio"
     }else{
-        msgErrors.push({email:""})
+        msgValidationForm.email=""
     }
     if(nome == undefined || nome==""){
-        msgErrors.push({nome:"nao pode ser vazio"})
+        msgValidationForm.nome="nao pode ser vazio"
     }else{
-        msgErrors.push({nome:""})
+        msgValidationForm.nome=""
     }
     if(pontos == undefined || pontos==""){
-        msgErrors.push({pontos:"nao pode ser vazio e deve ser menor q 20"})
+        msgValidationForm.pontos="nao pode ser vazio e deve ser menor q 20"
     }else{
-        msgErrors.push({pontos:""})
-    }
-    if(msgErrors.length>0){
-        req.flash('messages', msgErrors)
+        msgValidationForm.pontos=""
     }
 
+    req.flash('messages', msgValidationForm)
 
     // res.json({formMsgError:msgErrors})
     res.redirect("/")
