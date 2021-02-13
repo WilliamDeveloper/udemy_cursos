@@ -5,6 +5,7 @@ process.env['PATH'] =`${process.env['ORACLE_HOME']};${process.env['PATH']}`
 
 const oracle_conexao = {
     homologa: { host : '10.0.0.30', user:'system', password:'holdback', database: 'hmg' },
+    homologa_autorizador: { host : '10.0.0.30', user:'autorizador', password:'holdback', database: 'hmg' },
     fimmes: { host : '10.0.0.30', user:'system', password:'holdback', database: 'fimmes' },
     vdb01: { host : '10.0.1.30', user:'system', password:'holdback', database: 'vdb01' },
     vdb02: { host : '10.0.1.30', user:'system', password:'holdback', database: 'vdb02' },
@@ -15,7 +16,7 @@ const oracle_conexao = {
 }
 const knex = require('knex')({
     client: 'oracledb',
-    connection: oracle_conexao.homologa,
+    connection: oracle_conexao.homologa_autorizador,
     fetchAsString: [ 'number', 'clob' ]
 });
 

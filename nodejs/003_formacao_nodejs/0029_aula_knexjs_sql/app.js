@@ -64,13 +64,13 @@ let dados = {
 // })
 
 
-let sql = database.raw(" update autorizador.t411pasi set cd_value='pimba2' where cd_key = 'blau'  ")
-console.log(sql.toQuery())
-sql.then(data=>{
-    console.log(data)
-}).catch(err=>{
-    console.log(err)
-})
+// let sql = database.raw(" update autorizador.t411pasi set cd_value='pimba2' where cd_key = 'blau'  ")
+// console.log(sql.toQuery())
+// sql.then(data=>{
+//     console.log(data)
+// }).catch(err=>{
+//     console.log(err)
+// })
 
 let select5 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
 console.log(select5.toQuery())
@@ -95,3 +95,21 @@ select5.then(data=>{
 // }).catch(err=>{
 //     console.log(err)
 // })
+
+
+let sql2 = database.where({CD_KEY:'blau'}).update({CD_VALUE: 'BLAU3'}).table("T411PASI")
+console.log(sql2.toQuery())
+sql2.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
+
+
+let select6 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
+console.log(select5.toQuery())
+select5.then(data=>{
+    console.log(data)
+}).catch(err=>{
+    console.log(err)
+})
