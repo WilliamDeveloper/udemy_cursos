@@ -28,3 +28,6 @@ npm install --save express-session
 // "ejs": "^2.7.1",
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install --save ejs@2.7.1
+
+- express-session
+npm install --save express-flash
