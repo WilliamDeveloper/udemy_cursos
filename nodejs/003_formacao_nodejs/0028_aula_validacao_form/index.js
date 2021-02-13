@@ -19,7 +19,9 @@ app.use(session({
 app.use(flash())
 
 app.get('/',(req,res)=>{
-    console.log('rodando')
+    console.log('rodando',req.body)
+    const {email, nome, pontos} = req.body
+
     res.render('index')
 })
 
