@@ -6,10 +6,10 @@ process.env['PATH'] =`${process.env['ORACLE_HOME']};${process.env['PATH']}`
 const knex = require('knex')({
     client: 'oracledb',
     connection: {
-        host: '10.0.0.30',
+        host: '10.0.1.30',
         user: 'autorizador',
         password: 'holdback',
-        database: 'homologa',
+        database: 'VDB01',
     },
     fetchAsString: [ 'number', 'clob' ]
 });
