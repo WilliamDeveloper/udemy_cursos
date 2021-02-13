@@ -44,4 +44,7 @@ npm install --save cookie-parser
  - formas de manipular sql
  --- ---------------------------------------------------
  - RAW(CRUA) - "select * from post" //mysql2
- - ORM - Models -> Artigos.create({"title":"dsadsadsa"}) //sequelize
+ - ORM - Models -> Artigos.create({"title":"dsadsadsa"}) //sequelize 
+    - pouca flexibilidade
+    - nem sempre tem performance
+ -
