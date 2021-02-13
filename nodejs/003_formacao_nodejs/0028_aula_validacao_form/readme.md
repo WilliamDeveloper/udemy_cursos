@@ -29,7 +29,7 @@ npm install --save express-session
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install --save ejs@2.7.1
 
-- express-session
+- express-session - messagem que eh apagada assim q eh recuperada pela rota
 npm install --save express-flash
 
 

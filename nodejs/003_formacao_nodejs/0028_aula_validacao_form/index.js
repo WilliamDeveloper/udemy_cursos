@@ -3,23 +3,32 @@ const app = express()
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const flash = require('express-flash')
+const cookieParser = require('cookie-parser')
 
 app.set('view engine','ejs')
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json())
 
+app.use(cookieParser('senhaParaGerarCookie'))
+
 app.use(session({
     secret:'keyboard cat',
     resave:false,
     saveUninitialized:true,
-    cookie:{secure:true}
+    // cookie:{secure:true}
+    cookie:{maxAge:60*1000}//60minutos
 }))
 
 app.use(flash())
 
 app.get('/',(req,res)=>{
     console.log('rodando')
+
+    let messsages = req.flash('messages')
+
+    console.log(messsages)
+
     res.render('index')
 })
 
@@ -37,8 +46,13 @@ app.post('/form',(req,res)=>{
     if(pontos == undefined || pontos==""){
         msgErrors.push({pontos:"nao pode ser vazio e deve ser menor q 20"})
     }
+    if(msgErrors.length>0){
+        req.flash('messages', msgErrors)
+    }
 
-    res.json({formMsgError:msgErrors})
+
+    // res.json({formMsgError:msgErrors})
+    res.redirect("/")
 })
 
 app.listen(3000,(req,res)=>{
