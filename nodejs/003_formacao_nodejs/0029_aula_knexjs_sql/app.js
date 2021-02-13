@@ -1,6 +1,28 @@
 let database = require('./database')
 
+async function testeTransaction(){
 
+    try{
+        await database.transaction( async trans=>{
+
+            await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau', 'pimba') ")
+            await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau2', 'pimba') ")
+            await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau3', 'pimba') ")
+            await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau4', 'pimba') ")
+            await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau5', 'pimba') ")
+
+        })
+
+
+
+
+    }catch (e) {
+        console.log(e)
+    }
+
+}
+
+testeTransaction()
 
 // let dados = {
 //     CD_KEY : 'blau',
