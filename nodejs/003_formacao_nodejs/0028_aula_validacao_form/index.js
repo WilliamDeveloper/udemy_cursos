@@ -29,13 +29,13 @@ app.post('/form',(req,res)=>{
 
     let msgErrors =[]
     if(email == undefined || email==""){
-        msgErrors.push({email:"email nao pode ser vazio"})
+        msgErrors.push({email:"nao pode ser vazio"})
     }
     if(nome == undefined || nome==""){
-        msgErrors.push({nome:"nome nao pode ser vazio"})
+        msgErrors.push({nome:"nao pode ser vazio"})
     }
     if(pontos == undefined || pontos==""){
-        msgErrors.push({pontos:"pontos nao pode ser vazio e deve ser menor q 20"})
+        msgErrors.push({pontos:"nao pode ser vazio e deve ser menor q 20"})
     }
 
     res.json({formMsgError:msgErrors})
