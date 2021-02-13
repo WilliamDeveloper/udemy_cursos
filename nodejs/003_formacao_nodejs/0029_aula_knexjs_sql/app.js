@@ -2,10 +2,10 @@ let database = require('./database')
 
 
 
-let dados = {
-    CD_KEY : 'blau',
-    CD_VALUE : 'pimba'
-}
+// let dados = {
+//     CD_KEY : 'blau',
+//     CD_VALUE : 'pimba'
+// }
 
 // let select = database.select('*').from("T411PASI")
 // console.log(select.toQuery())
@@ -72,13 +72,13 @@ let dados = {
 //     console.log(err)
 // })
 
-let select5 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
-console.log(select5.toQuery())
-select5.then(data=>{
-    console.log(data)
-}).catch(err=>{
-    console.log(err)
-})
+// let select5 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
+// console.log(select5.toQuery())
+// select5.then(data=>{
+//     console.log(data)
+// }).catch(err=>{
+//     console.log(err)
+// })
 
 // let vDelete = database.raw(" delete from autorizador.t411pasi where cd_key = 'blau' ")
 // console.log(vDelete.toQuery())
@@ -97,19 +97,19 @@ select5.then(data=>{
 // })
 
 
-let sql2 = database.where({CD_KEY:'blau'}).update({CD_VALUE: 'BLAU3'}).table("T411PASI")
-console.log(sql2.toQuery())
-sql2.then(data=>{
-    console.log(data)
-}).catch(err=>{
-    console.log(err)
-})
+// let sql2 = database.where({CD_KEY:'blau'}).update({CD_VALUE: 'BLAU3'}).table("T411PASI")
+// console.log(sql2.toQuery())
+// sql2.then(data=>{
+//     console.log(data)
+// }).catch(err=>{
+//     console.log(err)
+// })
 
 
-let select6 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
-console.log(select5.toQuery())
-select5.then(data=>{
-    console.log(data)
-}).catch(err=>{
-    console.log(err)
-})
+// let select6 = database.raw(" select * from autorizador.t411pasi where cd_key = 'blau' ")
+// console.log(select5.toQuery())
+// select5.then(data=>{
+//     console.log(data)
+// }).catch(err=>{
+//     console.log(err)
+// })
