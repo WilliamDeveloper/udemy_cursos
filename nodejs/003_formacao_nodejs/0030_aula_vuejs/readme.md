@@ -21,6 +21,7 @@ vue create guiaclientes
  - rodar projeto
  --- ---------------------------------------------------
  cd guiaclientes
+ npm install
  npm run serve
 
  --- ---------------------------------------------------
