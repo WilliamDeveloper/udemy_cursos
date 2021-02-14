@@ -21,6 +21,7 @@
 
         {{ 2 + 2 * 2 }}
         {{ 'valor interporlado - interpolacao' }}
+        <button>Muda cor!</button>
         <!--<hr>-->
     </div>
 
