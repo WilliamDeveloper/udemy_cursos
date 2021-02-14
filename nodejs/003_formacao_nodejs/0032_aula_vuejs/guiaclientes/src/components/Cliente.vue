@@ -13,6 +13,8 @@
         <p>Nome2: {{nome2}}</p>
         <p>Email: {{email}}</p>
         <p>Idade: {{idade}}</p>
+        <p v-if="showIdade">Idade: {{idade}}</p>
+        <p v-if="showIdade == true">Idade: {{idade}}</p>
 
 
         {{ 2 + 2 * 2 }}
@@ -36,7 +38,8 @@ export default {
         nome: String,
         email: String,
         idade: Number,
-        cliente : Object
+        cliente : Object,
+        showIdade:Boolean
     }
 }
 </script>
