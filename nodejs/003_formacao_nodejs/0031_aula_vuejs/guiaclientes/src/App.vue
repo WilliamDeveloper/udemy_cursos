@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <h1>Guia clientes</h1>
-    <Cliente nome="William" email="a@b.com.br" idade="18"/>
+    <input type="text" v-model="nomeDoWilliam">
+    <Cliente :nome="nomeDoWilliam" email="a@b.com.br" idade="18"/>
     <Cliente nome="Luciane" email="a@b.com.br" idade="19"/>
     <Cliente nome="Mariluci" email="a@b.com.br" idade="20"/>
     <Produto></Produto>
@@ -18,6 +19,11 @@ export default {
   components:{
     Cliente:Cliente,
     Produto:Produto
+  },
+  data(){
+    return {
+      nomeDoWilliam:'William Goulart Pacheco',
+    }
   }
 }
 </script>
