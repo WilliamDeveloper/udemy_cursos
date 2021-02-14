@@ -1,5 +1,5 @@
 <template>
-    <div id="cliente">
+    <div :class="{'cliente' : !isPremium , 'cliente-premium': isPremium}">
         <!--<h2>Cliente aqui- festa de rodeio!!</h2>-->
         <h3>Descricao do cliente: bla blaa bla</h3>
 
@@ -33,6 +33,8 @@ export default {
         return {
            nome2:"William2",
            numero:"",
+           isPremium:false,
+
 
         }
     },
@@ -47,9 +49,18 @@ export default {
 </script>
 
 <style scoped>
-    #cliente{
-        color:blue;
+    .cliente{
         background-color: #00b0ff;
+        color:blue;
+        max-width: 600px;
+        height: auto;
+        margin: 2vh;
+        padding: 2vh;
+    }
+
+    .cliente-premium{
+        background-color: black;
+        color:white;
         max-width: 600px;
         height: auto;
         margin: 2vh;
