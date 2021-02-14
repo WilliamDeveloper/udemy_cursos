@@ -30,3 +30,4 @@ vue create guiaclientes
  
 
 
+# um componente so pode ter uma tag raiz

@@ -2,6 +2,10 @@
   <div id="app">
     <h1>Guia clientes</h1>
     <Cliente/>
+    <Cliente/>
+    <Cliente/>
+    <Cliente/>
+    <Cliente/>
   </div>
 </template>
 
