@@ -21,7 +21,7 @@
 
         {{ 2 + 2 * 2 }}
         {{ 'valor interporlado - interpolacao' }}
-        <button @click="mudarCor" >Muda cor!</button>
+        <button @click="mudarCor($event)" >Muda cor!</button>
         <!--<hr>-->
     </div>
 
@@ -47,8 +47,8 @@ export default {
         showIdade:Boolean
     },
     methods:{
-      mudarCor:function () {
-          console.log('chamando evento')
+      mudarCor:function ($event) {
+          console.log('chamando evento ',$event)
           this.isPremium = !this.isPremium
       }  
     },
