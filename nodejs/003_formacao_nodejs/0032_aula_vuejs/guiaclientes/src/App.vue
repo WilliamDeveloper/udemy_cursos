@@ -78,7 +78,12 @@ export default {
   methods:{
     cadastrar: function ($event) {
       console.log($event)
-
+      this.clientes.push({
+          id: Date.now(),
+          nome:this.nomeField,
+          email:this.emailField,
+          idade:this.idadeField
+      })
     }
   }
 }
