@@ -21,7 +21,7 @@
 
         {{ 2 + 2 * 2 }}
         {{ 'valor interporlado - interpolacao' }}
-        <button>Muda cor!</button>
+        <button @click="mudarCor" >Muda cor!</button>
         <!--<hr>-->
     </div>
 
@@ -45,7 +45,12 @@ export default {
         idade: Number,
         cliente : Object,
         showIdade:Boolean
-    }
+    },
+    methods:{
+      mudarCor:function () {
+          console.log('chamando evento')
+      }  
+    },
 }
 </script>
 

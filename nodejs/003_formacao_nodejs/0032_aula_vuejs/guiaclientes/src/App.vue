@@ -12,9 +12,9 @@
     </div>
 
     <input type="text" v-model="nomeDoWilliam" size="50" >
-    <Cliente :nome="nomeDoWilliam" email="a@b.com.br" idade="18" :showIdade="true"/>
-    <Cliente nome="Luciane" email="a@b.com.br" idade="19"/>
-    <Cliente nome="Mariluci" email="a@b.com.br" idade="20"/>
+    <Cliente :nome="nomeDoWilliam" email="a@b.com.br" :idade="28" :showIdade="true"/>
+    <Cliente nome="Luciane" email="a@b.com.br" :idade="29"/>
+    <Cliente nome="Mariluci" email="a@b.com.br" :idade="30"/>
     <Cliente :cliente="clienteWilliamDeveloper"/>
 
 
@@ -40,26 +40,26 @@ export default {
       clienteWilliamDeveloper:{
         nome:'William Developer',
         email:'a@b.com.br',
-        idade:'19',
+        idade:19,
       },
       clientes : [
         {
           id:1,
           nome:'William Developer1',
           email:'a@b.com.br',
-          idade:'19',
+          idade:19,
         },
         {
           id:2,
           nome:'William Developer3',
           email:'a@b.com.br',
-          idade:'19',
+          idade:19,
         },
         {
           id:3,
           nome:'William Developer3',
           email:'a@b.com.br',
-          idade:'19',
+          idade:19,
         },
       ]
     }
