@@ -2,7 +2,7 @@
     <div id="cliente">
         <h2>Cliente aqui- festa de rodeio!!</h2>
         <h3>blau</h3>
-        <hr>
+        <!--<hr>-->
     </div>
 
 </template>
@@ -17,5 +17,7 @@ export default {
     #cliente{
         color:blue;
         background-color: #00b0ff;
+        max-width: 600px;
+        height: 120px;
     }
 </style>

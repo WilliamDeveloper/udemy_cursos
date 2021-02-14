@@ -31,3 +31,20 @@ vue create guiaclientes
 
 
 # um componente so pode ter uma tag raiz
+
+-- template basico de um "arquivo.vue"
+<template>
+    <div>
+        
+    </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style>
+    
+</style>
