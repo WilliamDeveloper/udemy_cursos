@@ -4,7 +4,7 @@ async function testeTransaction(){
 
     try{
         await database.transaction( async trans=>{
-
+            await database.raw(" delete from autorizador.t411pasi where cd_key = 'blau' ")
             await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau', 'pimba') ")
             await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau2', 'pimba') ")
             await database.raw(" insert into autorizador.t411pasi (CD_KEY, CD_VALUE) values ('blau3', 'pimba') ")
