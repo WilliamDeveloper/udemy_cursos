@@ -109,6 +109,7 @@ export default {
     },
     meDeleteElementoPai: function () {
       console.log('pai: ')
+
     }
   }
 }
