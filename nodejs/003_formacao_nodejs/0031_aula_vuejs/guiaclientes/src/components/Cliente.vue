@@ -4,7 +4,7 @@
         <h3>Descricao do cliente: bla blaa bla</h3>
 
         <!--databind one way - leitura-->
-        <input type="text" name="nome" :value="nome">
+        <input type="text" name="nome" :value="nome" size="50" >
         <p>Nome: {{nome}}</p>
 
         <!--two way databases-->

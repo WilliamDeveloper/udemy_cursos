@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Guia clientes</h1>
-    <input type="text" v-model="nomeDoWilliam">
+    <input type="text" v-model="nomeDoWilliam" size="50" >
     <Cliente :nome="nomeDoWilliam" email="a@b.com.br" idade="18"/>
     <Cliente nome="Luciane" email="a@b.com.br" idade="19"/>
     <Cliente nome="Mariluci" email="a@b.com.br" idade="20"/>
@@ -22,7 +22,7 @@ export default {
   },
   data(){
     return {
-      nomeDoWilliam:'William Goulart Pacheco',
+      nomeDoWilliam:'databind entre componentes',
     }
   }
 }
