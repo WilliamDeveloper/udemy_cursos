@@ -2,8 +2,9 @@
   <div id="app">
     <h1>Guia clientes</h1>
 
-    <div v-for="cliente in clientes" :key="cliente.id">
-      <p>testando v-for</p>
+    <!--<div v-for="cliente in clientes" :key="cliente.id">-->
+    <div v-for="(cliente, index) in clientes" :key="cliente.id">
+      <p>testando v-for{{index+1}}</p>
       <Cliente :nome="cliente.nome" :email="cliente.email" :idade="cliente.idade"/>
     </div>
 
