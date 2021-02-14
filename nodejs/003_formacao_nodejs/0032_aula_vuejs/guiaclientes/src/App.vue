@@ -3,13 +3,13 @@
     <h1>Guia clientes</h1>
 
     <h3>Cadastro:</h3>
-    <small id="nomeErro" v-show="deuErroNome">O Nome é inválido, tente novamente!</small> <br>
+    <small class="msg-error-validate" v-show="deuErroNome">O Nome é inválido, tente novamente!</small> <br>
     <input type="text" placeholder="nome" v-model="nomeField"><br>
 
-    <small id="emailErro" v-show="deuErroEmail">O Email é inválido, tente novamente!</small> <br>
+    <small class="msg-error-validate" v-show="deuErroEmail">O Email é inválido, tente novamente!</small> <br>
     <input type="email" placeholder="email" v-model="emailField"><br>
 
-    <small id="idadeErro" v-show="deuErroIdade">A idade é inválida, tente novamente!</small> <br>
+    <small class="msg-error-validate" v-show="deuErroIdade">A idade é inválida, tente novamente!</small> <br>
     <input type="number" placeholder="idade" v-model="idadeField"><br>
     <button @click="cadastrar($event)">Cadastrar</button>
 
@@ -88,11 +88,11 @@ export default {
       console.log($event)
 
       this.deuErroNome = (this.nomeField.length < 3) ? true:false
-      this.deuErroEmail = (this.deuErroEmail.length < 3) ? true:false
-      this.deuErroIdade = (this.deuErroIdade.length < 1) ? true:false
+      this.deuErroEmail = (this.emailField.length < 3) ? true:false
+      this.deuErroIdade = (this.idadeField.length < 1) ? true:false
 
 
-      if(!this.deuErroNome && !this.deuErroEmail && !this.deuErroidade){
+      if(!this.deuErroNome && !this.deuErroEmail && !this.deuErroIdade){
         this.clientes.push({
           id: Date.now(),
           nome:this.nomeField,
@@ -112,7 +112,7 @@ export default {
 </script>
 
 <style>
-  #nomeErro{
+  .msg-error-validate{
     color:red;
   }
 </style>
