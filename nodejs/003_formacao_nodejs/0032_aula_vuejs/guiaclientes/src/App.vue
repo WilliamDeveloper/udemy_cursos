@@ -2,6 +2,14 @@
   <div id="app">
     <h1>Guia clientes</h1>
 
+    <h3>Cadastro:</h3>
+    <input type="text" placeholder="nome" v-model="nomeField"><br>
+    <input type="email" placeholder="email" v-model="emailField"><br>
+    <input type="number" placeholder="idade" v-model="idadeField"><br>
+    <button @click="cadastrar($event)">Cadastrar</button>
+
+
+    <hr>
     <!--<div v-for="cliente in clientes" :key="cliente.id">-->
     <div v-for="(cliente, index) in clientes" :key="cliente.id">
       <p>testando v-for{{index+1}}</p>
@@ -36,6 +44,9 @@ export default {
   },
   data(){
     return {
+      nomeField:"",
+      emailField:"",
+      idadeField:0,
       nomeDoWilliam:'databind entre componentes',
       clienteWilliamDeveloper:{
         nome:'William Developer',
@@ -62,6 +73,12 @@ export default {
           idade:19,
         },
       ]
+    }
+  },
+  methods:{
+    cadastrar: function ($event) {
+      console.log($event)
+
     }
   }
 }
