@@ -49,6 +49,7 @@ export default {
     methods:{
       mudarCor:function () {
           console.log('chamando evento')
+          this.isPremium = !this.isPremium
       }  
     },
 }
