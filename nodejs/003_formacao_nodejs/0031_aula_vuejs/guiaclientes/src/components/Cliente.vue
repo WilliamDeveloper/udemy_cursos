@@ -5,13 +5,14 @@
 
         <!--databind one way - leitura-->
         <input type="text" name="nome" :value="nome">
-
+        <p>Nome: {{nome}}</p>
 
         <!--two way databases-->
-        <input type="text" name="nome2" v-model="nome2">
-
-        <p>Nome: {{nome}}</p>
+        <input type="text" name="nome2" v-model="nome2"><br>
         <p>Nome2: {{nome2}}</p>
+        <p>Email: {{email}}</p>
+
+
         {{ 2 + 2 * 2 }}
         {{ 'valor interporlado - interpolacao' }}
         <!--<hr>-->
@@ -24,12 +25,14 @@ export default {
 
     data(){
         return {
-           nome:"William",
-            nome2:"William2",
+           nome2:"William2",
            numero:"",
-           email:"",
            idade:0
         }
+    },
+    props:{
+        nome: String,
+        email: String,
     }
 }
 </script>
