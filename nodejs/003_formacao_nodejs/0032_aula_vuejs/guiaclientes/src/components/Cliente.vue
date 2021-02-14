@@ -22,6 +22,7 @@
         {{ 2 + 2 * 2 }}
         {{ 'valor interporlado - interpolacao' }}
         <button @click="mudarCor($event)" >Muda cor!</button>
+        <button @click="emitirEventoDelete($event)" >Delete</button>
         <!--<hr>-->
     </div>
 
@@ -50,7 +51,11 @@ export default {
       mudarCor:function ($event) {
           console.log('chamando evento ',$event)
           this.isPremium = !this.isPremium
-      }  
+      },
+      emitirEventoDelete:function ($event) {
+          console.log('Emitindo do filho! ',$event)
+          this.$emit('meDeleteElementoPai')
+      }
     },
 }
 </script>
