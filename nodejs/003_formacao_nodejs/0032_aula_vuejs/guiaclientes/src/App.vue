@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <h1>Guia clientes</h1>
+
     <div v-for="cliente in clientes" :key="cliente.id">
       <p>testando v-for</p>
       <Cliente :nome="cliente.nome" :email="cliente.email" :idade="cliente.idade"/>
     </div>
+
     <input type="text" v-model="nomeDoWilliam" size="50" >
     <Cliente :nome="nomeDoWilliam" email="a@b.com.br" idade="18" :showIdade="true"/>
     <Cliente nome="Luciane" email="a@b.com.br" idade="19"/>
