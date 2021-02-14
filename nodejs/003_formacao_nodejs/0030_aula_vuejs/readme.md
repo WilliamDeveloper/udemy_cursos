@@ -12,6 +12,10 @@ npm init -y
  -- vue clie
  npm install -g @vue/cli
  
+ --- ---------------------------------------------------
+ - criando projeto vue
+ --- ---------------------------------------------------
+vue create guiaclientes
 
  --- ---------------------------------------------------
  - bibliotecas aplicacao
