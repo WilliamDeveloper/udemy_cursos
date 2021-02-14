@@ -15,6 +15,8 @@
         <p>Idade: {{idade}}</p>
         <p v-if="showIdade">Idade: {{idade}}</p>
         <p v-if="showIdade == true">Idade: {{idade}}</p>
+        <p v-else>o usuario ocultou a idade</p>
+        <p v-show="showIdade">elemento esta exibindo</p>
 
 
         {{ 2 + 2 * 2 }}
