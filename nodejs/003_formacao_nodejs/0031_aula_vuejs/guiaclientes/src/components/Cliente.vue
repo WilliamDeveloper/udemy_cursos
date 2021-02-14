@@ -1,7 +1,19 @@
 <template>
     <div id="cliente">
-        <h2>Cliente aqui- festa de rodeio!!</h2>
-        <h3>blau</h3>
+        <!--<h2>Cliente aqui- festa de rodeio!!</h2>-->
+        <h3>Descricao do cliente: bla blaa bla</h3>
+
+        <!--databind one way - leitura-->
+        <input type="text" name="nome" :value="nome">
+
+
+        <!--two way databases-->
+        <input type="text" name="nome2" v-model="nome2">
+
+        <p>Nome: {{nome}}</p>
+        <p>Nome2: {{nome2}}</p>
+        {{ 2 + 2 * 2 }}
+        {{ 'valor interporlado - interpolacao' }}
         <!--<hr>-->
     </div>
 
@@ -10,6 +22,15 @@
 <script>
 export default {
 
+    data(){
+        return {
+           nome:"William",
+            nome2:"William2",
+           numero:"",
+           email:"",
+           idade:0
+        }
+    }
 }
 </script>
 
@@ -18,6 +39,6 @@ export default {
         color:blue;
         background-color: #00b0ff;
         max-width: 600px;
-        height: 120px;
+        height: 180px;
     }
 </style>
