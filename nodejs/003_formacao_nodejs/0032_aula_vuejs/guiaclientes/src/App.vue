@@ -82,7 +82,7 @@ export default {
           id: Date.now(),
           nome:this.nomeField,
           email:this.emailField,
-          idade:this.idadeField
+          idade:parseInt(this.idadeField)
       })
     }
   }
