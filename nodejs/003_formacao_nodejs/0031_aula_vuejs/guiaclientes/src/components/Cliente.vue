@@ -11,6 +11,7 @@
         <input type="text" name="nome2" v-model="nome2"><br>
         <p>Nome2: {{nome2}}</p>
         <p>Email: {{email}}</p>
+        <p>Idade: {{idade}}</p>
 
 
         {{ 2 + 2 * 2 }}
@@ -27,12 +28,13 @@ export default {
         return {
            nome2:"William2",
            numero:"",
-           idade:0
+
         }
     },
     props:{
         nome: String,
         email: String,
+        idade: Number,
     }
 }
 </script>
