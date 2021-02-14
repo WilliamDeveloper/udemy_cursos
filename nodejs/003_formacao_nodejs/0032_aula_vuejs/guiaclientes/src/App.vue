@@ -3,8 +3,13 @@
     <h1>Guia clientes</h1>
 
     <h3>Cadastro:</h3>
+    <small id="nomeErro" v-show="deuErroNome">O Nome é inválido, tente novamente!</small> <br>
     <input type="text" placeholder="nome" v-model="nomeField"><br>
+
+    <small id="emailErro" v-show="deuErroEmail">O Email é inválido, tente novamente!</small> <br>
     <input type="email" placeholder="email" v-model="emailField"><br>
+
+    <small id="idadeErro" v-show="deuErroIdade">A idade é inválida, tente novamente!</small> <br>
     <input type="number" placeholder="idade" v-model="idadeField"><br>
     <button @click="cadastrar($event)">Cadastrar</button>
 
@@ -44,6 +49,9 @@ export default {
   },
   data(){
     return {
+      deuErroNome:false,
+      deuErroEmail:false,
+      deuErroIdade:false,
       nomeField:"",
       emailField:"",
       idadeField:0,
@@ -78,20 +86,33 @@ export default {
   methods:{
     cadastrar: function ($event) {
       console.log($event)
-      this.clientes.push({
+
+      this.deuErroNome = (this.nomeField.length < 3) ? true:false
+      this.deuErroEmail = (this.deuErroEmail.length < 3) ? true:false
+      this.deuErroIdade = (this.deuErroIdade.length < 1) ? true:false
+
+
+      if(!this.deuErroNome && !this.deuErroEmail && !this.deuErroidade){
+        this.clientes.push({
           id: Date.now(),
           nome:this.nomeField,
           email:this.emailField,
           idade:parseInt(this.idadeField)
-      })
-      this.nomeField=""
-      this.emailField=""
-      this.idadeField=""
+        })
+        this.nomeField=""
+        this.emailField=""
+        this.idadeField=""
+      }
+
+
+
     }
   }
 }
 </script>
 
 <style>
-
+  #nomeErro{
+    color:red;
+  }
 </style>
