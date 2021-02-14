@@ -5,6 +5,7 @@
 
         <!--databind one way - leitura-->
         <input type="text" name="nome" :value="nome" size="50" >
+        <!--<p>Nome: {{cliente.nome}}</p>-->
         <p>Nome: {{nome}}</p>
 
         <!--two way databases-->
@@ -35,6 +36,7 @@ export default {
         nome: String,
         email: String,
         idade: Number,
+        cliente : Object
     }
 }
 </script>
