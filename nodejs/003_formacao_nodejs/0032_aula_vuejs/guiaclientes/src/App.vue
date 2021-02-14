@@ -84,6 +84,9 @@ export default {
           email:this.emailField,
           idade:parseInt(this.idadeField)
       })
+      this.nomeField=""
+      this.emailField=""
+      this.idadeField=""
     }
   }
 }
