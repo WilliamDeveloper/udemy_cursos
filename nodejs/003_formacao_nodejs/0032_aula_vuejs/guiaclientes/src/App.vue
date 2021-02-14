@@ -18,7 +18,7 @@
     <!--<div v-for="cliente in clientes" :key="cliente.id">-->
     <div v-for="(cliente, index) in clientes" :key="cliente.id">
       <p>testando v-for{{index+1}}</p>
-      <Cliente :nome="cliente.nome" :email="cliente.email" :idade="cliente.idade" @meDeleteElementoPai="meDeleteElementoPai"/>
+      <Cliente :nome="cliente.nome" :email="cliente.email" :idade="cliente.idade" @meDeleteElementoPai="meDeleteElementoPai($event)"/>
       <h4>Edicao:</h4>
       <input type="text" v-model="cliente.nome">
       <input type="text" v-model="cliente.email">
@@ -107,8 +107,8 @@ export default {
 
 
     },
-    meDeleteElementoPai: function () {
-      console.log('pai: ')
+    meDeleteElementoPai: function ($event) {
+      console.log('pai: ',$event)
 
     }
   }
