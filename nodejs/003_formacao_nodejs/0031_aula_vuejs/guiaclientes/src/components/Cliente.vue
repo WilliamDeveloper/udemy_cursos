@@ -39,6 +39,8 @@ export default {
         color:blue;
         background-color: #00b0ff;
         max-width: 600px;
-        height: 180px;
+        height: auto;
+        margin: 2vh;
+        padding: 2vh;
     }
 </style>
