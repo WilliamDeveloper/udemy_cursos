@@ -2,6 +2,25 @@
     <div>
         <h1>{{num}} {{name | upper}}</h1>
         <small>{{url}}</small>
+        
+        <div class="card">
+            <div class="card-imag">
+                <figure class="image is-4by3">
+                    <img src="#" alt="">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4"></p>
+                        <p class="subtitle is-6"></p>
+                    </div>
+                    <div class="content">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
 </template>
