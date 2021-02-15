@@ -11,7 +11,7 @@
         <!--two way databases-->
         <input type="text" name="nome2" v-model="nome2"><br>
         <p>Nome2: {{nome2}}</p>
-        <p>Email: {{email}}</p>
+        <p>Email: {{email | processarEmail}}</p>
         <p>Idade: {{idade}}</p>
         <p v-if="showIdade">Idade: {{idade}}</p>
         <p v-if="showIdade == true">Idade: {{idade}}</p>
@@ -60,6 +60,13 @@ export default {
         alert('testando metodo que ta no componente filho!')
       }
     },
+    filters:{
+        processarEmail: function (value) {
+            if(value)
+                return value.toUpperCase()
+            return ''
+        }
+    }
 }
 </script>
 
