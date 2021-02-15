@@ -119,6 +119,8 @@ export default {
 
     }
   },
+  // da pra usar essa funcao como se fosse variavel
+  // nesse casso estamos usando a lista ja ordenada com ajuda do lodash
   computed:{
     orderClientes: function () {
       return _.orderBy(this.clientes, ['nome'], ['asc'])
