@@ -24,6 +24,15 @@ cd pokedex
 npm install
 npm run serve
 
+
+ --- ---------------------------------------------------
+ - build
+ --- ---------------------------------------------------
+- build de producao - vai gerar build na "pokedex/dist"
+npm run build
+
+
+
  --- ---------------------------------------------------
  - bibliotecas aplicacao
  --- ---------------------------------------------------
