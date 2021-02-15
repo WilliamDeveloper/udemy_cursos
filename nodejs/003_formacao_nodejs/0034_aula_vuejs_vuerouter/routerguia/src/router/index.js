@@ -1,9 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+// import About from '../views/About.vue'
+import Pai from '../views/Pai.vue'
+import Filha from '../views/Filha.vue'
 import Cadastro from '../views/Cadastro.vue'
 
+
 Vue.use(VueRouter)
+
+console.log(Pai,Filha)
 
 const routes = [
   {
@@ -35,6 +41,18 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: Cadastro
   },
+
+
+  {
+    path: '/pai',
+    name: 'pai',
+    component: Pai,
+    // children:{
+    //   path:'filho',
+    //   name:'filho',
+    //   component: About
+    // }
+  }
 ]
 
 const router = new VueRouter({

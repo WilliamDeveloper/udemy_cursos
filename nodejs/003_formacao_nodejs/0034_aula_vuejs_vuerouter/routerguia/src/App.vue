@@ -6,7 +6,8 @@
       <router-link to="/cadastro">Cadastro</router-link> |
 
       <!--<router-link to="/cadastro/detail/1">Cadastro1</router-link>-->
-      <router-link :to="{name:'cadastro/detail', params:{id:'1'}}">Cadastro1</router-link>
+      <router-link :to="{name:'cadastro/detail', params:{id:'1'}}">Cadastro1</router-link> |
+      <router-link :to="{name:'pai', params:{id:'1'}}">Pai</router-link>
     </div>
     <p>inicio rota</p>
     <router-view/>
