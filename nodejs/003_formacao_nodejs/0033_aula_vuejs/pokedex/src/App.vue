@@ -3,6 +3,8 @@
     <img src="./assets/logo.png" alt="">
 
     <div class="column is-half is-offset-one-quarter">
+      <input type="text" class="input is-rounded" nome="" id="" placeholder="buscar pokemons pelo nome" v-model="busca">
+      <button class="button is-fullwidth is-success" id="buscaBtn">Buscar</button>
       <div v-for="(pokemon, index) in pokemons" :key="index">
         <!--<h1>{{index}} {{pokemon.name}}</h1>-->
         <Pokemon :num="index" :name="pokemon.name" :url="pokemon.url"></Pokemon>
@@ -22,6 +24,7 @@ export default {
   name: 'App',
   data: function(){
     return {
+      busca:'',
       pokemons:[]
     }
   },
@@ -58,5 +61,8 @@ export default {
   margin-top: 60px;
 }
 
+  #buscaBtn{
+    margin-top:2vh;
+  }
 
 </style>
