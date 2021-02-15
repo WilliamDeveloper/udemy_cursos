@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <img src="./assets/logo.png" alt="">
 
     <div class="column is-half is-offset-one-quarter">
       <div v-for="(pokemon, index) in pokemons" :key="index">
