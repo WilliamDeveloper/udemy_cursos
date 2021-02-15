@@ -6,14 +6,18 @@
 
 <script>
 
-// import axios from 'axios'
+  import axios from 'axios'
 // let url = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
 
 export default {
   name: 'App',
   components: {
 
+  },
+  created: function () {
+
   }
+
 }
 
 </script>
