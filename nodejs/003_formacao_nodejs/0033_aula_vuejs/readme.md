@@ -36,6 +36,7 @@ vue create guiaclientes
  - biblioteca layout similar ao bootstrap - https://bulma.io/documentation/elements/button/ 
   npm install --save bulma
  
+ - poke api  https://pokeapi.co/
  
 
 
