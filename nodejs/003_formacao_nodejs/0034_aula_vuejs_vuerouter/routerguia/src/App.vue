@@ -3,7 +3,10 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>  |
-      <router-link to="/cadastro">Cadastro</router-link>
+      <router-link to="/cadastro">Cadastro</router-link> |
+
+      <!--<router-link to="/cadastro/detail/1">Cadastro1</router-link>-->
+      <router-link :to="{name:'cadastro/detail', params:{id:'1'}}">Cadastro1</router-link>
     </div>
     <p>inicio rota</p>
     <router-view/>
