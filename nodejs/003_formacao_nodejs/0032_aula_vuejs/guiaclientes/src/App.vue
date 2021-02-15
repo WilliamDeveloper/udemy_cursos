@@ -112,6 +112,9 @@ export default {
       $event.component.isPremium = true
       $event.component.testar();
 
+      let id = $event.clienteId
+      this.clientes = this.clientes.filter( cliente => cliente.id != id )
+
     }
   }
 }
