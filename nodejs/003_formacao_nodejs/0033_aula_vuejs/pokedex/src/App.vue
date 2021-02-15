@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div v-for="(pokemon, index) in pokemons" :key="index">
-      <h1>{{index}}</h1>
+      <h1>{{index}} {{pokemon.name}}</h1>
     </div>
   </div>
 </template>
