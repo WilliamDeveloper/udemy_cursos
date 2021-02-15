@@ -32,6 +32,8 @@ npm run serve
 - biblioteca layout similar ao bootstrap - https://bulma.io/documentation/elements/button/ 
 npm install --save bulma
  
+- fazer requisicao para api
+npm install --save axios
  
  
 
