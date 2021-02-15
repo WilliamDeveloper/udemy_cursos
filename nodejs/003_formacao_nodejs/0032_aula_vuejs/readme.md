@@ -30,6 +30,11 @@ vue create guiaclientes
  - biblioteca de ordenacao de array
  npm install --save lodash
  
+ - caso usar bootstrap vue
+ npm install --save bootstrap-vue
+ 
+ - biblioteca layout similar ao bootstrap
+  npm install --save bulma
  
  
 
