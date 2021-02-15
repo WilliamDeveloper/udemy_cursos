@@ -109,6 +109,7 @@ export default {
     },
     meDeleteElementoPai: function ($event) {
       console.log('pai: ',$event)
+      $event.component.isPremium = true
 
     }
   }
