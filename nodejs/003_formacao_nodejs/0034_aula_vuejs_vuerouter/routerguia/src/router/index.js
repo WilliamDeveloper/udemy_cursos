@@ -47,11 +47,13 @@ const routes = [
     path: '/pai',
     name: 'pai',
     component: Pai,
-    // children:{
-    //   path:'filho',
-    //   name:'filho',
-    //   component: About
-    // }
+    children:[
+      {
+        path:'filha',
+        name:'filha',
+        component: Filha
+      }
+   ]
   }
 ]
 
