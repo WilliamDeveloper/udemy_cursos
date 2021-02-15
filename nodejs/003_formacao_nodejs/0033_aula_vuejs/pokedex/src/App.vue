@@ -8,11 +8,11 @@
 
 
       <!--busca por botao-->
-      <!--<div v-for="(pokemon, index) in filteredPokemons" :key="index">-->
+      <div v-for="(pokemon, index) in filteredPokemons" :key="index">
       <!--<div v-for="(pokemon, index) in pokemons" :key="index">-->
 
       <!--busca dinamica-->
-      <div v-for="(pokemon, index) in resultadoBusca" :key="index">
+      <!--<div v-for="(pokemon, index) in resultadoBusca" :key="index">-->
         <!--<h1>{{index}} {{pokemon.name}}</h1>-->
         <Pokemon :num="index+1" :name="pokemon.name" :url="pokemon.url"></Pokemon>
       </div>
@@ -69,7 +69,10 @@ export default {
       if(this.busca == '' || this.busca == ' '){
         this.filteredPokemons = this.pokemons
       }else{
-        this.filteredPokemons = this.pokemons.filter(pokemon => pokemon.name == this.busca)
+        console.log('busca: ', this.busca)
+        this.filteredPokemons = this.pokemons.filter(pokemon => pokemon.name === this.busca)
+        console.log('filtered', this.filteredPokemons)
+        // tem um bug aqui q some quando busca um objeto q nao existe e depois procura o certo
       }
     }
   }
