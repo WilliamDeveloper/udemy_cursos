@@ -1,5 +1,6 @@
 <template>
     <div id="pokemon">
+        <!--<img src="../assets/logo.png" alt="">-->
         <div class="card">
             <div class="card-imag">
                 <figure >
