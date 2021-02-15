@@ -72,8 +72,8 @@ export default {
       }else{
         console.log('busca: ', this.busca)
         this.filteredPokemons = this.pokemons.filter(pokemon => pokemon.name === this.busca)
-        console.log('filtered', this.filteredPokemons)
-        // tem um bug aqui q some quando busca um objeto q nao existe e depois procura o certo
+
+
       }
     }
   }
