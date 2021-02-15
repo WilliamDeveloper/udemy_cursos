@@ -16,7 +16,8 @@
 
     <hr>
     <!--<div v-for="cliente in clientes" :key="cliente.id">-->
-    <div v-for="(cliente, index) in clientes" :key="cliente.id">
+    <!--<div v-for="(cliente, index) in clientes" :key="cliente.id">-->
+    <div v-for="(cliente, index) in orderClientes" :key="cliente.id">
       <p>testando v-for{{index+1}}</p>
       <Cliente :nome="cliente.nome" :email="cliente.email" :idade="cliente.idade" @meDeleteElementoPai="meDeleteElementoPai($event)"/>
       <h4>Edicao:</h4>
@@ -38,6 +39,7 @@
 
 <script>
 
+  import _ from 'lodash'
   import Cliente from './components/Cliente'
   import Produto from './components/Produto'
 
@@ -64,19 +66,19 @@ export default {
       clientes : [
         {
           id:1,
-          nome:'William Developer1',
+          nome:'BWilliam Developer1',
           email:'a@b.com.br',
           idade:19,
         },
         {
           id:2,
-          nome:'William Developer3',
+          nome:'CWilliam Developer3',
           email:'a@b.com.br',
           idade:19,
         },
         {
           id:3,
-          nome:'William Developer3',
+          nome:'AWilliam Developer3',
           email:'a@b.com.br',
           idade:19,
         },
@@ -115,6 +117,11 @@ export default {
       let id = $event.clienteId
       this.clientes = this.clientes.filter( cliente => cliente.id != id )
 
+    }
+  },
+  computed:{
+    orderClientes: function () {
+      return _.orderBy(this.clientes, ['nome'], ['asc'])
     }
   }
 }
