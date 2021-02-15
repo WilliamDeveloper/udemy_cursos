@@ -1,19 +1,16 @@
 <template>
-    <div>
-        <h1>{{num}} {{name | upper}}</h1>
-        <small>{{url}}</small>
-        
+    <div id="pokemon">
         <div class="card">
             <div class="card-imag">
-                <figure class="image is-4by3">
-                    <img src="#" alt="">
+                <figure >
+                    <img :src="pokemon.front" alt="">
                 </figure>
             </div>
             <div class="card-content">
                 <div class="media">
                     <div class="media-content">
-                        <p class="title is-4"></p>
-                        <p class="subtitle is-6"></p>
+                        <p class="title is-4">{{num}} {{name | upper}}</p>
+                        <p class="subtitle is-6">{{pokemon.type}}</p>
                     </div>
                     <div class="content">
                         
@@ -44,7 +41,11 @@
         },
         data: function(){
             return {
-                pokemon:{}
+                pokemon:{
+                    type:'',
+                    front:'',
+                    back:''
+                }
             }
         },
         props:{
@@ -62,5 +63,7 @@
 </script>
 
 <style scoped>
-
+#pokemon{
+    margin: 2vh;
+}
 </style>
