@@ -17,6 +17,7 @@
         <p v-if="showIdade == true">Idade: {{idade}}</p>
         <p v-else>o usuario ocultou a idade</p>
         <p v-show="showIdade">elemento esta exibindo</p>
+        <h4>IdSpecial: {{idSpecial}}</h4>
 
 
         {{ 2 + 2 * 2 }}
@@ -65,6 +66,18 @@ export default {
             if(value)
                 return value.toUpperCase()
             return ''
+        }
+    },
+    //computed property
+    computed:{
+        idSpecial : function () {
+
+            let email = this.email || ''
+            let nome = this.nome || ''
+            let id = this.id || ''
+            let computedPropertie = (email+nome+id).toUpperCase()
+            return computedPropertie
+            
         }
     }
 }
