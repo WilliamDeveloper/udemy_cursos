@@ -4,16 +4,17 @@
 
     <div class="column is-half is-offset-one-quarter">
       <input type="text" class="input is-rounded" nome="" id="" placeholder="buscar pokemons pelo nome" v-model="busca">
-      <button class="button is-fullwidth is-success" id="buscaBtn">Buscar</button>
+      <button class="button is-fullwidth is-success" id="buscaBtn" @click="buscar($event)">Buscar</button>
 
 
       <!--busca por botao-->
-      <div v-for="(pokemon, index) in pokemons" :key="index">
+      <div v-for="(pokemon, index) in filteredPokemons" :key="index">
+      <!--<div v-for="(pokemon, index) in pokemons" :key="index">-->
 
       <!--busca dinamica-->
       <!--<div v-for="(pokemon, index) in resultadoBusca" :key="index">-->
         <!--<h1>{{index}} {{pokemon.name}}</h1>-->
-        <Pokemon :num="index" :name="pokemon.name" :url="pokemon.url"></Pokemon>
+        <Pokemon :num="index+1" :name="pokemon.name" :url="pokemon.url"></Pokemon>
       </div>
     </div>
 
@@ -31,7 +32,8 @@ export default {
   data: function(){
     return {
       busca:'',
-      pokemons:[]
+      pokemons:[],
+      filteredPokemons: []
     }
   },
   created: function () {
@@ -42,6 +44,7 @@ export default {
     axios.get(url).then((res)=>{
       console.log(res)
       this.pokemons = res.data.results
+      this.filteredPokemons = res.data.results
       console.log(this.pokemons)
     }).catch( error =>{
       console.log(error)
@@ -56,6 +59,17 @@ export default {
         return this.pokemons
       }else{
         return this.pokemons.filter(pokemon => pokemon.name == this.busca)
+      }
+    }
+  },
+  methods:{
+    buscar: function () {
+      this.filteredPokemons = this.pokemons
+
+      if(this.busca == '' || this.busca == ' '){
+        this.filteredPokemons = this.pokemons
+      }else{
+        this.filteredPokemons = this.pokemons.filter(pokemon => pokemon.name == this.busca)
       }
     }
   }
