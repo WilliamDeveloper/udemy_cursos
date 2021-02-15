@@ -12,9 +12,9 @@
                         <p class="title is-4">{{num}} {{name | upper}}</p>
                         <p class="subtitle is-6">{{pokemon.type}}</p>
                     </div>
-                    <div class="content">
-                        <button class="button is-medium is-fullwidth" @click="mudarSprite($event)">Mudar Sprite</button>
-                    </div>
+                </div>
+                <div class="content">
+                    <button class="button is-medium is-fullwidth" @click="mudarSprite($event)">Mudar Sprite</button>
                 </div>
             </div>
         </div>
