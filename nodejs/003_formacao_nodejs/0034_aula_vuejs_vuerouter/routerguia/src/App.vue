@@ -4,7 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    <p>inicio rota</p>
     <router-view/>
+    <p>fim rota</p>
   </div>
 </template>
 
