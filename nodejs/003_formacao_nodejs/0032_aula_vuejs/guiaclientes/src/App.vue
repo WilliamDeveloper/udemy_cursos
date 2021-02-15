@@ -13,6 +13,18 @@
     <input type="number" placeholder="idade" v-model="idadeField"><br>
     <button @click="cadastrar($event)">Cadastrar</button>
 
+    <div class="buttons">
+      <button class="button is-primary">Primary</button>
+      <button class="button is-link">Link</button>
+    </div>
+
+    <div class="buttons">
+      <button class="button is-info">Info</button>
+      <button class="button is-success">Success</button>
+      <button class="button is-warning">Warning</button>
+      <button class="button is-danger">Danger</button>
+    </div>
+
 
     <hr>
     <!--<div v-for="cliente in clientes" :key="cliente.id">-->
