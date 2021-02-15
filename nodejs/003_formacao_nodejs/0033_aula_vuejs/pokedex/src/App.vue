@@ -8,11 +8,11 @@
 
 
       <!--busca por botao-->
-      <div v-for="(pokemon, index) in filteredPokemons" :key="index">
+      <!--<div v-for="(pokemon, index) in filteredPokemons" :key="index">-->
       <!--<div v-for="(pokemon, index) in pokemons" :key="index">-->
 
       <!--busca dinamica-->
-      <!--<div v-for="(pokemon, index) in resultadoBusca" :key="index">-->
+      <div v-for="(pokemon, index) in resultadoBusca" :key="index">
         <!--<h1>{{index}} {{pokemon.name}}</h1>-->
         <Pokemon :num="index+1" :name="pokemon.name" :url="pokemon.url"></Pokemon>
       </div>
