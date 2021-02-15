@@ -8,6 +8,7 @@
 
 
       <!--busca por botao-->
+      <!--se a key nao for unica para cada elemento o componente pode  nao mudar os dados no html-->
       <div v-for="(pokemon, index) in filteredPokemons" :key="pokemon.url">
       <!--<div v-for="(pokemon, index) in pokemons" :key="index">-->
 
