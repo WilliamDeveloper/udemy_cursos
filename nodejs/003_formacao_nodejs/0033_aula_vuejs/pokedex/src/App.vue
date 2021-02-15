@@ -2,6 +2,7 @@
   <div id="app">
     <div v-for="(pokemon, index) in pokemons" :key="index">
       <h1>{{index}} {{pokemon.name}}</h1>
+      <Pokemon :num="index" :nome="pokemon.nome" :url="pokemon.url"></Pokemon>
     </div>
   </div>
 </template>
@@ -33,7 +34,7 @@ export default {
     })
   },
   components:{
-    // Pokemon : Pokemon,
+     Pokemon : Pokemon,
   }
 
 }
