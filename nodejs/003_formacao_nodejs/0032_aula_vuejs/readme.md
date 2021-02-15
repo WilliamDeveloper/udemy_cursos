@@ -27,6 +27,9 @@ vue create guiaclientes
  --- ---------------------------------------------------
  - bibliotecas aplicacao
  --- ---------------------------------------------------
+ npm install --save lodash
+ 
+ 
  
 
 
