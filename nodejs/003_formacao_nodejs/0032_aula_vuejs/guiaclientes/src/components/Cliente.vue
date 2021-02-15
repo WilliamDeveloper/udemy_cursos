@@ -55,6 +55,9 @@ export default {
       emitirEventoDelete:function ($event) {
           console.log('Emitindo do filho! ',$event)
           this.$emit('meDeleteElementoPai', {clienteId: 1, curso:'nodejs', component:this})
+      },
+      testar:function () {
+        alert('testando metodo que ta no componente filho!')
       }
     },
 }
