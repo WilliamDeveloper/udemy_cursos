@@ -108,7 +108,7 @@ export default {
 
     },
     meDeleteElementoPai: function ($event) {
-      console.log('pai: ',$event)
+      console.log('pai: ',$event, $event.clienteId)
       $event.component.isPremium = true
 
     }
