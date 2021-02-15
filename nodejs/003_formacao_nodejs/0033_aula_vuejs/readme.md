@@ -20,23 +20,19 @@ vue create pokedex
  --- ---------------------------------------------------
  - rodar projeto
  --- ---------------------------------------------------
- cd guiaclientes
- npm install
- npm run serve
+cd pokedex
+npm install
+npm run serve
 
  --- ---------------------------------------------------
  - bibliotecas aplicacao
  --- ---------------------------------------------------
- - biblioteca de ordenacao de array
- npm install --save lodash
+
+- poke api  https://pokeapi.co/
+- biblioteca layout similar ao bootstrap - https://bulma.io/documentation/elements/button/ 
+npm install --save bulma
  
- - caso usar bootstrap vue
- npm install --save bootstrap-vue
  
- - biblioteca layout similar ao bootstrap - https://bulma.io/documentation/elements/button/ 
-  npm install --save bulma
- 
- - poke api  https://pokeapi.co/
  
 
 
