@@ -35,6 +35,9 @@ npm install --save bulma
 - fazer requisicao para api
 npm install --save axios
  
+- se der erro no tipo number
+ npm install --save core-js
+
  
 
 
