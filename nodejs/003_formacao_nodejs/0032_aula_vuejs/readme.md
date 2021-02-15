@@ -27,6 +27,7 @@ vue create guiaclientes
  --- ---------------------------------------------------
  - bibliotecas aplicacao
  --- ---------------------------------------------------
+ - biblioteca de ordenacao de array
  npm install --save lodash
  
  
