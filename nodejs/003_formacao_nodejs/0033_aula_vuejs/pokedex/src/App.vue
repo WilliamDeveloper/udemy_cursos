@@ -11,12 +11,22 @@
 
 export default {
   name: 'App',
-  components: {
-
+  data: function(){
+    return {
+      pokemons:[]
+    }
   },
   created: function () {
     console.log('created')
     console.log(axios)
+    let url = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
+
+    axios.get(url).then((data)=>{
+      console.log(data)
+      this.pokemons = data.results
+    }).catch( error =>{
+      console.log(error)
+    })
   }
 
 }
