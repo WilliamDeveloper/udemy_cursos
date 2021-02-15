@@ -1,4 +1,4 @@
-import const_ from '../constantes/constantes'
+const const_ = require ('../constantes/constantes')
 
 class UserController{
 
@@ -7,7 +7,10 @@ class UserController{
     }
 
     async create(req, res){
-        let {email, nome, password} = req.body
+        let email = (req.body.email)?req.body.email:''
+        let nome = (req.body.nome)?req.body.nome:''
+        let password = (req.body.password)?req.body.password:''
+        // let {email, nome, password} = req.body
 
         if(email == undefined){
             res.status('400')
