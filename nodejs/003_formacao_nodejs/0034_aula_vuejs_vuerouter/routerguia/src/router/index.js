@@ -47,6 +47,7 @@ const routes = [
     path: '/pai',
     name: 'pai',
     component: Pai,
+    //array de criancas
     children:[
       {
         path:'filha',
