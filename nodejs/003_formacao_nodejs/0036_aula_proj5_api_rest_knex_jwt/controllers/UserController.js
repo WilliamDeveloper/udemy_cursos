@@ -8,17 +8,17 @@ class UserController{
 
     async create(req, res){
         let email = (req.body.email)?req.body.email:''
-        let nome = (req.body.nome)?req.body.nome:''
+        let name = (req.body.name)?req.body.name:''
         let password = (req.body.password)?req.body.password:''
         // let {email, nome, password} = req.body
 
-        if(email == undefined){
-            res.status('400')
-            res.json({msg: const_.msgCodeHttp['400'] })
-        }
+        // if(email == undefined){
+        //     res.status('400')
+        //     res.json({msg: const_.msgCodeHttp['400'] })
+        // }
 
-
-        res.send("APP EXPRESS! - corpo resquisicao",email);
+        res.status('200')
+        res.send(`APP EXPRESS! - corpo resquisicao ${email} ${name} ${password}`);
     }
 
 }
