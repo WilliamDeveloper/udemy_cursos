@@ -23,9 +23,10 @@ export default {
     console.log(axios)
     let url = 'https://pokeapi.co/api/v2/pokemon?limit=151&offset=0'
 
-    axios.get(url).then((data)=>{
-      console.log(data)
-      this.pokemons = data.results
+    axios.get(url).then((res)=>{
+      console.log(res)
+      this.pokemons = res.data.results
+      console.log(this.pokemons)
     }).catch( error =>{
       console.log(error)
     })
