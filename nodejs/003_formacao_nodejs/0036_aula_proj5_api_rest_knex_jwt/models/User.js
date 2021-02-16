@@ -6,9 +6,12 @@ class User{
     async new(email, password,name ){
 
         try{
+
+            let hash =  await bcrypt.hash(password, 10);
+
             let dadosToInsert = {
                 email,
-                password,
+                password: hash,
                 name,
                 role:0
             }

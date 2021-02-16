@@ -20,6 +20,7 @@ class UserController{
             return
         }
 
+
         await User.new(email,password,name)
 
         let httpStatusCode = const_.msg.httpStatusCode.code_200
