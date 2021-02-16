@@ -1,4 +1,4 @@
-const httpStatusCode = require('httpStatusCode')
+const httpStatusCode = require('./httpStatusCode')
 
 const msg ={
     httpStatusCode

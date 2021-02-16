@@ -7,10 +7,10 @@ class UserController{
     }
 
     async create(req, res){
-        let email = (req.body.email)?req.body.email:''
-        let name = (req.body.name)?req.body.name:''
-        let password = (req.body.password)?req.body.password:''
-        // let {email, nome, password} = req.body
+        // let email = (req.body.email)?req.body.email:''
+        // let name = (req.body.name)?req.body.name:''
+        // let password = (req.body.password)?req.body.password:''
+        let {email, name, password} = req.body
 
         if(email == undefined || email.length <= 0){
             res.status('400')
