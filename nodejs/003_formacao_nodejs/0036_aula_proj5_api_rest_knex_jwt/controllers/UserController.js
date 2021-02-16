@@ -13,8 +13,9 @@ class UserController{
         let {email, name, password} = req.body
 
         if(email == undefined || email.length <= 0){
-            res.status('403')
-            res.json({msg: const_.msg.httpStatusCode.code_403 })
+            let httpStatusCode = const_.msg.httpStatusCode.code_403
+            res.status(httpStatusCode.code)
+            res.json({msg: httpStatusCode.desc })
         }
 
         res.status('200')
