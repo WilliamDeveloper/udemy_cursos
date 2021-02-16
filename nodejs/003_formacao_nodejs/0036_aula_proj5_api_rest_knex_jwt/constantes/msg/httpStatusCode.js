@@ -62,6 +62,10 @@ const httpStatusCode ={
     code_431:'431 - request reader fields too large',
     code_451:'451 - unavailable for legal reasons',
 
+    //5xx - erro de cliente
+    code_500:'500 - internal server error',
+
+
 }
 
 module.exports = httpStatusCode
