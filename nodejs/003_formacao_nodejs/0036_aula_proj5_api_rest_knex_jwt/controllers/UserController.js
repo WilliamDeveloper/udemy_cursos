@@ -14,7 +14,7 @@ class UserController{
 
         if(email == undefined || email.length <= 0){
             res.status('403')
-            res.json({msg: const_.msg.httpStatusCode['403'] })
+            res.json({msg: const_.msg.httpStatusCode.code_403 })
         }
 
         res.status('200')
