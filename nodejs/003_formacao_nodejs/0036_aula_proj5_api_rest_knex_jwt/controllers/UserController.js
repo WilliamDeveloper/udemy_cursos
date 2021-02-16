@@ -1,4 +1,5 @@
 const const_ = require ('../constantes/constantes')
+const User = require('../models/User')
 
 class UserController{
 
@@ -18,6 +19,8 @@ class UserController{
             res.json({status: httpStatusCode.desc })
             return
         }
+
+        await User.new(email,password,name)
 
         let httpStatusCode = const_.msg.httpStatusCode.code_200
         res.status( httpStatusCode.code )

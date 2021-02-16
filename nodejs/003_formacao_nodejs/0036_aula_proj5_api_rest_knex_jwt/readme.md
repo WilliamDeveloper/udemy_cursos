@@ -8,21 +8,8 @@ npm init -y
 --- ---------------------------------------------------
 - biblioteca para o script de node se auto dar restart quando tiver uma modificacao
  npm install -g nodemon 
-  
- -- vue clie
- npm install -g @vue/cli
  
- --- ---------------------------------------------------
- - criando projeto vue
- --- ---------------------------------------------------
-vue create routerguia
 
- --- ---------------------------------------------------
- - rodar projeto
- --- ---------------------------------------------------
-cd routerguia
-npm install
-npm run serve
 
 
  --- ---------------------------------------------------
@@ -37,34 +24,19 @@ npm run build
  - bibliotecas aplicacao
  --- ---------------------------------------------------
 
-- poke api  https://pokeapi.co/
-- biblioteca layout similar ao bootstrap - https://bulma.io/documentation/elements/button/ 
-npm install --save bulma
+
+- para rotas da aplicacao
+npm install --save express
+
+- body parser para pegar a conversao em objeto de uma req post no body
+npm install --save body-parser
+
+-- mysql
+npm install --save mysql2
+
+-- knex - http://knexjs.org/
+npm install --save knex
+
+- biblioteca de gerar hash de senhas, criptografia podem ser desfeitas, mas hash nao
+npm install --save bcrypt
  
-- fazer requisicao para api
-npm install --save axios
- 
-- se der erro no tipo number
- npm install --save core-js
-
- 
-
-
-# um componente so pode ter uma tag raiz
-
--- template basico de um "arquivo.vue"
-<template>
-    <div>
-        
-    </div>
-</template>
-
-<script>
-    export default {
-        
-    }
-</script>
-
-<style>
-    
-</style>

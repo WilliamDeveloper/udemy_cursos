@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 
 class User{
 
-    async new(name, email, password ){
+    async new(email, password,name ){
 
         try{
             let dadosToInsert = {
