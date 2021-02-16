@@ -1,0 +1,8 @@
+{
+  "msg": "200 - OK - requisicao efetuada com sucesso",
+  "params": {
+    "email": "a@a.com.br",
+    "name": "william",
+    "password": "123456"
+  }
+}

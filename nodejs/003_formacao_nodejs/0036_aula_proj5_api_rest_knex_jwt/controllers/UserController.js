@@ -14,12 +14,15 @@ class UserController{
 
         if(email == undefined || email.length <= 0){
             let httpStatusCode = const_.msg.httpStatusCode.code_403
-            res.status(httpStatusCode.code)
+            res.status( httpStatusCode.code )
             res.json({msg: httpStatusCode.desc })
+            return
         }
 
-        res.status('200')
-        res.send(`APP EXPRESS! - corpo resquisicao ${email} ${name} ${password}`);
+        let httpStatusCode = const_.msg.httpStatusCode.code_200
+        res.status( httpStatusCode.code )
+        res.json({msg: httpStatusCode.desc , params:{email,name,password}})
+
     }
 
 }
