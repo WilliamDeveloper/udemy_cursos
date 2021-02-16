@@ -5,4 +5,8 @@ const httpStatusCode ={
     401:'401 - credenciais invalidas',
 }
 
-module.exports = {httpStatusCode}
+const msg ={
+    httpStatusCode
+}
+
+module.exports = {msg}
