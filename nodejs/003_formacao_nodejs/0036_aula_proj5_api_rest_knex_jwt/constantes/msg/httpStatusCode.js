@@ -16,8 +16,6 @@ const httpStatusCode ={
     307:'307 - redirecionamento temporario',
     308:'308 - redirecionamento permanente',
 
-
-
     //4xx - erro de cliente
     400:'400 - requisicao invalida',
     401:'401 - credenciais invalidas - nao autorizado',
