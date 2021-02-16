@@ -64,6 +64,16 @@ const httpStatusCode ={
 
     //5xx - erro de cliente
     code_500:'500 - internal server error',
+    code_501:'501 - not implemented',
+    code_502:'502 - bad gateway',
+    code_503:'503 - service unavailable',
+    code_504:'504 - gateway timeout',
+    code_505:'505 - http version not supported',
+    code_506:'506 - variant also negotiates',
+    code_507:'507 - insufiente storage',
+    code_508:'508 - loop detected (webdav)',
+    code_510:'510 - not extended',
+    code_511:'511 - network authentication required',
 
 
 }
