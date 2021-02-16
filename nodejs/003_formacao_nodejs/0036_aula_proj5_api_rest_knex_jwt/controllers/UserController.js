@@ -12,7 +12,7 @@ class UserController{
         let password = (req.body.password)?req.body.password:''
         // let {email, nome, password} = req.body
 
-        if(email == undefined){
+        if(email == undefined || email.length <= 0){
             res.status('400')
             res.json({msg: const_.msgCodeHttp['400'] })
         }

@@ -12,3 +12,14 @@ Content-Type: application/json
   "password" : "123456"
 }
 ####
+
+####
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "email": "",
+  "name" : "william",
+  "password" : "123456"
+}
+####
