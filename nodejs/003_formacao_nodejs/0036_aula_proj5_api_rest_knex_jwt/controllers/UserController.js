@@ -3,10 +3,13 @@ const User = require('../models/User')
 
 class UserController{
 
+    //---------------------------------------------------------------------
     async index(req, res){
         res.send("APP EXPRESS! - user controller");
     }
+    //---------------------------------------------------------------------
 
+    //---------------------------------------------------------------------
     async create(req, res){
         // let email = (req.body.email)?req.body.email:''
         // let name = (req.body.name)?req.body.name:''
@@ -35,10 +38,8 @@ class UserController{
             res.json({status: httpStatusCode.desc , params:{email,name,password}})
             return
         }
-
-
-
     }
+    //---------------------------------------------------------------------
 
 }
 
