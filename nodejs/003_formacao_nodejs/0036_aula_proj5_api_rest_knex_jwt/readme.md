@@ -40,3 +40,10 @@ npm install --save knex
 - biblioteca de gerar hash de senhas, criptografia podem ser desfeitas, mas hash nao
 npm install --save bcrypt
  
+ 
+  --- ---------------------------------------------------
+  - grant mysql
+  --- ---------------------------------------------------
+ mysql -u root -h 192.168.8.14 -p 
+ CREATE USER 'root'@'%' IDENTIFIED BY '123456';
+ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
