@@ -25,21 +25,23 @@ class UserController{
         try{
             let id = req.params.id
             let user = await User.findById(id)
-            console.log(id)
-            console.log(user)
+
             if(user == undefined){
                 res.status(const_.msg.httpStatusCode.code_404.code)
                 res.json({status : const_.msg.httpStatusCode.code_404.desc})
+                return;
             }else{
-                res.status(const_.msg.httpStatusCode.code_200)
-                res.json({user : user[0]})
+                res.status(const_.msg.httpStatusCode.code_200.code)
+                res.json({user: user})
+                return;
             }
 
         }catch (e) {
+            console.log(e)
             let httpStatusCode = const_.msg.httpStatusCode.code_406
             res.status( httpStatusCode.code )
             res.json({status: httpStatusCode.desc })
-            return
+            return;
         }
 
     }

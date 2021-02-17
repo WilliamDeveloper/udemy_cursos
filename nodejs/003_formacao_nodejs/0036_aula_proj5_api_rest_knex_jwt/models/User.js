@@ -40,11 +40,19 @@ class User{
                 ])
                 .where({id:id})
                 .table('users')
-            console.log(result)
-            return result
+
+            console.log(id)
+            console.log(result[0])
+            if(result.length > 0 ){
+                return result[0]
+
+            }else{
+                return undefined
+            }
+
         }catch (e) {
             console.log(e)
-            return []
+            return undefined
         }
 
     }
