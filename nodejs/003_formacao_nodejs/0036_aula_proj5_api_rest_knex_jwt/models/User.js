@@ -4,7 +4,22 @@ const bcrypt = require('bcrypt')
 class User{
 
     async findAll(){
-        await knex.select('*').table('users')
+        try{
+            let result = await knex
+                // .select('*')
+                .select([
+                    'id',
+                    'name',
+                    'email',
+                    'role'
+                ])
+                .table('users')
+            return result
+        }catch (e) {
+            console.log(e)
+            return []
+        }
+
     }
 
     async new(email, password,name ){

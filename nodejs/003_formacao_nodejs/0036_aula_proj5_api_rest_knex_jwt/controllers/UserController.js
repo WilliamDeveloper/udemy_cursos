@@ -5,7 +5,16 @@ class UserController{
 
     //---------------------------------------------------------------------
     async index(req, res){
-        res.send("APP EXPRESS! - user controller");
+        try{
+            let users = await User.findAll()
+            res.json(users)
+        }catch (e) {
+            let httpStatusCode = const_.msg.httpStatusCode.code_406
+            res.status( httpStatusCode.code )
+            res.json({status: httpStatusCode.desc , params:{email,name,password}})
+            return
+        }
+
     }
     //---------------------------------------------------------------------
 
