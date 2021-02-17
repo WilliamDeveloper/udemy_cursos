@@ -26,18 +26,21 @@ class UserController{
         let isUserCadastrado = await User.findEmail(email)
 
         if(!isUserCadastrado){
-            await User.new(email,password,name)
+            let hasInserted = await User.new(email,password,name)
 
-            let httpStatusCode = const_.msg.httpStatusCode.code_200
-            res.status( httpStatusCode.code )
-            res.json({status: httpStatusCode.desc , params:{email,name,password}})
-            return
-        }else {
-            let httpStatusCode = const_.msg.httpStatusCode.code_406
-            res.status( httpStatusCode.code )
-            res.json({status: httpStatusCode.desc , params:{email,name,password}})
-            return
+            if(hasInserted){
+                let httpStatusCode = const_.msg.httpStatusCode.code_200
+                res.status( httpStatusCode.code )
+                res.json({status: httpStatusCode.desc , params:{email,name,password}})
+                return
+            }
         }
+
+        let httpStatusCode = const_.msg.httpStatusCode.code_406
+        res.status( httpStatusCode.code )
+        res.json({status: httpStatusCode.desc , params:{email,name,password}})
+        return
+
     }
     //---------------------------------------------------------------------
 

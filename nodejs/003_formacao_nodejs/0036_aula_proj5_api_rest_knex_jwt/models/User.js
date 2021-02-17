@@ -20,8 +20,10 @@ class User{
                 role:0
             }
             await knex.insert(dadosToInsert).table('users')
+            return true;
         }catch (error) {
             console.log(error)
+            return false;
         }
     }
 
