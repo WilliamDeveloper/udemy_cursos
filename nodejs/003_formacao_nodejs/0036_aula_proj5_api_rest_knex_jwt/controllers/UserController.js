@@ -7,11 +7,38 @@ class UserController{
     async index(req, res){
         try{
             let users = await User.findAll()
+            // let users = await User.findById(10)
             res.json(users)
         }catch (e) {
             let httpStatusCode = const_.msg.httpStatusCode.code_406
             res.status( httpStatusCode.code )
             res.json({status: httpStatusCode.desc , params:{email,name,password}})
+            return
+        }
+
+    }
+    //---------------------------------------------------------------------
+
+
+    //---------------------------------------------------------------------
+    async findUser(req, res){
+        try{
+            let id = req.params.id
+            let user = await User.findById(id)
+            console.log(id)
+            console.log(user)
+            if(user == undefined){
+                res.status(const_.msg.httpStatusCode.code_404.code)
+                res.json({status : const_.msg.httpStatusCode.code_404.desc})
+            }else{
+                res.status(const_.msg.httpStatusCode.code_200)
+                res.json({user : user[0]})
+            }
+
+        }catch (e) {
+            let httpStatusCode = const_.msg.httpStatusCode.code_406
+            res.status( httpStatusCode.code )
+            res.json({status: httpStatusCode.desc })
             return
         }
 

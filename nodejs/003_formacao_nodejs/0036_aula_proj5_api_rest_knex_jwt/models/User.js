@@ -14,6 +14,33 @@ class User{
                     'role'
                 ])
                 .table('users')
+            if(result.length > 0){
+                return result
+                console.log(result)
+            }else{
+                return undefined
+            }
+
+        }catch (e) {
+            console.log(e)
+            return undefined
+        }
+
+    }
+
+    async findById(id){
+        try{
+            let result = await knex
+            // .select('*')
+                .select([
+                    'id',
+                    'name',
+                    'email',
+                    'role'
+                ])
+                .where({id:id})
+                .table('users')
+            console.log(result)
             return result
         }catch (e) {
             console.log(e)
