@@ -61,6 +61,26 @@ class PasswordToken{
         }
 
     }
+
+    async setUsed(token){
+
+
+        try{
+            let result = await knex
+                .update({
+                    used:1
+                })
+                .from('passwordtokens')
+                .where({
+                    token: token
+                })
+            return {success:true}
+        }catch (e) {
+            console.log(e)
+            return {success:false, error:e}
+        }
+
+    }
 }
 
 module.exports = new PasswordToken()

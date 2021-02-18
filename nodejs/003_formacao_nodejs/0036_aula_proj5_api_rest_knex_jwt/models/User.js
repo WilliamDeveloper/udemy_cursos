@@ -1,5 +1,6 @@
 const knex = require('../database/connection')
 const bcrypt = require('bcrypt')
+const PasswordToken = require('./PasswordToken')
 
 class User{
 
@@ -211,6 +212,8 @@ class User{
                 })
                 .from('users')
                 .where({id:user_id})
+
+            await PasswordToken.setUsed(token)
 
             return {success:true}
         }catch (e) {
