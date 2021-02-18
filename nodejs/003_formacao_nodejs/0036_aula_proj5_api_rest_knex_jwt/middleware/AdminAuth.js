@@ -1,8 +1,9 @@
 const const_ = require('../constantes/const_')
+const utils_ = require('../utils/utils_')
 const jwt = require('jsonwebtoken')
 
 
-function auth(req, res, next){
+async function auth(req, res, next){
 
     const authToken = req.headers['authorization']
     console.log('token: ',authToken)
@@ -19,20 +20,17 @@ function auth(req, res, next){
 
         console.log('token->', token)
 
-        jwt.verify(token, const_.credentials.jwt_secret , (erro, data)=>{
-            if(erro){
-                res.status(const_.msg.httpStatusCode.code_401.code)
-                res.json({success:false, status: const_.msg.httpStatusCode.code_401.desc })
-            }else{
-                console.log(data)
-                req.token = token
-                req.loggedUser = {
-                    id: data.id,
-                    email:data.email
-                }
-                next()
-            }
-        })
+
+        let result = await utils_.jwt.authenticate('token')
+        console.log('result-authenticate: ',result)
+
+        if(result.success){
+            res.status(const_.msg.httpStatusCode.code_401.code)
+            res.json({success:false, status: const_.msg.httpStatusCode.code_401.desc })
+        }else{
+            req.token = token
+            next()
+        }
 
     }else{
         res.status(const_.msg.httpStatusCode.code_401.code)
