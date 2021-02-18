@@ -1,20 +1,26 @@
 const jwt = require('jsonwebtoken')
+const const_ = require('../../constantes/const_')
+
 
 async function authenticate(token) {
 
-    let resp = await jwt.verify(token, const_.credentials.jwt_secret , (error, data)=>{
+    try{
+        await jwt.verify(token, const_.credentials.jwt_secret , (error, data)=>{
 
-        if(error){
-            console.log(error)
-            return {success: false, error:'falhar ao autenticar : '+error}
-        }else{
-            console.log(data)
-            return {success: true, data: data}
-        }
+            if(error){
+                console.log(error)
+                return {success: false, error:'falhar ao autenticar : '+error}
+            }else{
+                console.log(data)
+                return {success: true, data: data}
+            }
 
-    })
-    console.log('resp->',resp)
-    return resp
+        })
+    }catch (e) {
+        return {success: false, error:'falhar jwt.verify : '+e}
+    }
+
+
 
 }
 
