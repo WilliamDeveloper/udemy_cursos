@@ -119,5 +119,5 @@ Content-Type: application/json
 
 ####
 GET http://localhost:3000/autenticado
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20uYnIiLCJyb2xlIjowLCJpYXQiOjE2MTM2NjkwNTB9.LkG-7plVwsGbDF5b_GuX7dcNuppSJQtNMgHQsbL5Ogs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20uYnIiLCJyb2xlIjowLCJpYXQiOjE2MTM2NjkyMDV9.wAz75EJGJjHGr96HByG5Eo_2E-p3w6hUjhmdAIYXdbU
 ####
