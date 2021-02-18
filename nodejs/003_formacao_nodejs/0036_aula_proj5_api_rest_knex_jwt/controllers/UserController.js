@@ -156,6 +156,29 @@ class UserController {
 
     //---------------------------------------------------------------------
 
+
+    //---------------------------------------------------------------------
+    async changePassword(req,res){
+        let {token, password} = req.body
+
+        let result = await PasswordToken.validate(token)
+        if(result.success){
+
+            User.changePassword(password,result.token.user_id,result.token.token)
+
+            res.status(const_.msg.httpStatusCode.code_200.code)
+            res.json({status: const_.msg.httpStatusCode.code_200.desc})
+            return
+        }else{
+            res.status(const_.msg.httpStatusCode.code_406.code)
+            res.json({status: const_.msg.httpStatusCode.code_406.desc, error:result.error})
+            return
+        }
+
+    }
+
+    //---------------------------------------------------------------------
+
 }
 
 module.exports = new UserController();

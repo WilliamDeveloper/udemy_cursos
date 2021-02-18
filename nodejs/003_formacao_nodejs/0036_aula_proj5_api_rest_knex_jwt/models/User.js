@@ -200,6 +200,27 @@ class User{
     }
 
 
+    async changePassword(newPassword, user_id, token){
+
+        try{
+            let hash =  await bcrypt.hash(newPassword, 10);
+
+            let result = await knex
+                .update({
+                    password: hash
+                })
+                .from('users')
+                .where({id:user_id})
+
+            return {success:true}
+        }catch (e) {
+            return {success:false, error:e}
+        }
+
+
+    }
+
+
 
 
 }

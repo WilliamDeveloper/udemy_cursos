@@ -29,6 +29,37 @@ class PasswordToken{
         }
 
     }
+
+    async validate(token){
+
+
+
+        try{
+            let result = knex
+                .select()
+                .from('passwordtokens')
+                .where({token:token})
+
+            if(result.length >0){
+                let resultToken = result[0]
+
+                if(resultToken.used){
+                    return {success:false, error:'token ja foi usado'}
+                }else{
+                    return {success:true, token:resultToken}
+                }
+
+            }else{
+                return {success:false, error:'token invalido'}
+            }
+
+
+        }catch (e) {
+            console.log(e)
+            return {success:false, error:e}
+        }
+
+    }
 }
 
 module.exports = new PasswordToken()
