@@ -42,3 +42,13 @@ Content-Type: application/json
   "password" : "123456"
 }
 ####
+
+####
+PUT http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "id": 10,
+  "name": "william2-10"
+}
+####
