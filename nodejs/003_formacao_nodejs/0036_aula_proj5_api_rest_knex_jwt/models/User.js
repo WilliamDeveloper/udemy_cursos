@@ -152,6 +152,26 @@ class User{
 
     }
 
+    async delete(id){
+        let user = await this.findById(id)
+
+        if(user != undefined){
+            try{
+                await knex
+                    .delete()
+                    .from('users')
+                    // .table('users')
+                    .where({id:id})
+
+                return {status:true}
+            }catch (e) {
+                return {status:false, error:e}
+            }
+        }else{
+          return {status:false,error:"o usuario nao existe"}
+        }
+    }
+
 
 
 
