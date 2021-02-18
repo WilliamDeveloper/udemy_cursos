@@ -191,9 +191,20 @@ class UserController {
 
         if(user != undefined){
             let isValidPassword = await bcrypt.compare(password, user.password)
-            res.status(const_.msg.httpStatusCode.code_200.code)
-            res.json({success:true, status: const_.msg.httpStatusCode.code_200.desc,isValidPassword})
-            return
+
+            if(isValidPassword){
+                let dados = { email:user.email, role:user.role}
+                let token = jwt.sign(dados,jwt_secret)
+
+                res.status(const_.msg.httpStatusCode.code_200.code)
+                res.json({success:true, status: const_.msg.httpStatusCode.code_200.desc,isValidPassword, token})
+                return
+            }else{
+                res.status(const_.msg.httpStatusCode.code_406.code)
+                res.json({success:false, status: const_.msg.httpStatusCode.code_406.desc, error: 'dados incorretos'})
+                return
+            }
+
         }else{
             res.status(const_.msg.httpStatusCode.code_406.code)
             res.json({success:false, status: const_.msg.httpStatusCode.code_406.desc, error: 'usuario nao encontrado'})
