@@ -1,4 +1,5 @@
 const const_ = require('../constantes/constantes')
+const jwt = require('jwt')
 
 
 function auth(req, res, next){
@@ -18,7 +19,7 @@ function auth(req, res, next){
         console.log(token)
 
 
-        jwt.verify(token, jwtSecret, (erro, data)=>{
+        jwt.verify(token, const_.credentials.jwt_secret , (erro, data)=>{
             if(erro){
                 res.status(const_.msg.httpStatusCode.code_401.code)
                 res.json({success:false, status: const_.msg.httpStatusCode.code_401.desc })

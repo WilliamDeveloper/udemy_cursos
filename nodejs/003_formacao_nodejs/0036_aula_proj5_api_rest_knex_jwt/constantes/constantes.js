@@ -3,7 +3,11 @@ const credentials = require('./authenticate/credentials')
 
 const msg ={
     httpStatusCode,
+}
+
+const objModulo = {
+    msg,
     credentials
 }
 
-module.exports = {msg}
+module.exports = objModulo
