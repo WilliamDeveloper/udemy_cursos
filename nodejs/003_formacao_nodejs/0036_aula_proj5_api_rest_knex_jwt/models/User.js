@@ -2,6 +2,7 @@ const knex = require('../database/connection')
 const bcrypt = require('bcrypt')
 const PasswordToken = require('./PasswordToken')
 
+
 class User{
 
     async findAll(){
@@ -65,6 +66,7 @@ class User{
                 .select([
                     'id',
                     'name',
+                    'password',
                     'email',
                     'role'
                 ])

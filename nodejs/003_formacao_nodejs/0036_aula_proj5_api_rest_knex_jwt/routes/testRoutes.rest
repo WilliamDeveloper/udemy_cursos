@@ -90,3 +90,14 @@ Content-Type: application/json
   "password": "1234568"
 }
 ####
+
+
+####
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "a@a.com.br",
+  "password": "1234568"
+}
+####

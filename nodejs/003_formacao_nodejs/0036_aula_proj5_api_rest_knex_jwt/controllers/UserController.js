@@ -1,6 +1,10 @@
 const const_ = require ('../constantes/constantes')
 const User = require('../models/User')
 const PasswordToken = require('../models/PasswordToken')
+const jwt = require('jsonwebtoken')
+const jwt_secret="senha_secreta"
+const bcrypt = require('bcrypt')
+
 
 class UserController {
 
@@ -178,6 +182,25 @@ class UserController {
 
     }
 
+    //---------------------------------------------------------------------
+
+    //---------------------------------------------------------------------
+    async login(req,res){
+        let {email, password} = req.body
+        let user = await User.findByEmail(email)
+
+        if(user != undefined){
+            let isValidPassword = await bcrypt.compare(password, user.password)
+            res.status(const_.msg.httpStatusCode.code_200.code)
+            res.json({success:true, status: const_.msg.httpStatusCode.code_200.desc,isValidPassword})
+            return
+        }else{
+            res.status(const_.msg.httpStatusCode.code_406.code)
+            res.json({success:false, status: const_.msg.httpStatusCode.code_406.desc, error: 'usuario nao encontrado'})
+            return
+        }
+
+    }
     //---------------------------------------------------------------------
 
 }
