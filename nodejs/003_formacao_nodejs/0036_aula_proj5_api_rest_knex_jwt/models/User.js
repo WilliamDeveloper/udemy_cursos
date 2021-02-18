@@ -57,6 +57,35 @@ class User{
 
     }
 
+    async findByEmail(email){
+        try{
+            let result = await knex
+            // .select('*')
+                .select([
+                    'id',
+                    'name',
+                    'email',
+                    'role'
+                ])
+                .where({email:email})
+                .table('users')
+
+            console.log(id)
+            console.log(result[0])
+            if(result.length > 0 ){
+                return result[0]
+
+            }else{
+                return undefined
+            }
+
+        }catch (e) {
+            console.log(e)
+            return undefined
+        }
+
+    }
+
     async new(email, password,name ){
 
         try{

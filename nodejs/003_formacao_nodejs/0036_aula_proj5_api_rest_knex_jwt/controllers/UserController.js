@@ -1,5 +1,6 @@
 const const_ = require ('../constantes/constantes')
 const User = require('../models/User')
+const PasswordToken = require('../models/PasswordToken')
 
 class UserController {
 
@@ -133,6 +134,27 @@ class UserController {
     }
     //---------------------------------------------------------------------
 
+
+
+    //---------------------------------------------------------------------
+    async recoverPassword(req,res){
+        let {email} = req.body
+
+        let resultado = await PasswordToken.create(email)
+        if(resultado.success){
+            let token = resultado.token
+            res.status(const_.msg.httpStatusCode.code_200.code)
+            res.json({status: const_.msg.httpStatusCode.code_200.desc, token:token})
+            return
+        }else{
+            res.status(const_.msg.httpStatusCode.code_406.code)
+            res.json({status: const_.msg.httpStatusCode.code_406.desc, error:resultado.error})
+            return
+        }
+
+    }
+
+    //---------------------------------------------------------------------
 
 }
 
