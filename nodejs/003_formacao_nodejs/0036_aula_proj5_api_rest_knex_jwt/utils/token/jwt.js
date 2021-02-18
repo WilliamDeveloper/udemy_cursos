@@ -18,6 +18,10 @@ async function authenticate(token) {
 
 }
 
+const objModulo = {
+    authenticate,
 
+}
 
-module.exports = credentials
+module.exports = objModulo
+
