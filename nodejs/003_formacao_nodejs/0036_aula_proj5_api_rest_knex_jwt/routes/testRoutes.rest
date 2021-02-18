@@ -115,3 +115,9 @@ Content-Type: application/json
   "password": "1234568"
 }
 ####
+
+
+####
+GET http://localhost:3000/autenticado
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20uYnIiLCJyb2xlIjowLCJpYXQiOjE2MTM2NjkwNTB9.LkG-7plVwsGbDF5b_GuX7dcNuppSJQtNMgHQsbL5Ogs
+####
