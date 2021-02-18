@@ -1,4 +1,4 @@
-const const_ = require ('../constantes/constantes')
+const const_ = require ('../constantes/const_')
 const User = require('../models/User')
 const PasswordToken = require('../models/PasswordToken')
 const jwt = require('jsonwebtoken')
