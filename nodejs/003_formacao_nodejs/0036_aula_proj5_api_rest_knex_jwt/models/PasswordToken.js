@@ -3,15 +3,16 @@ const User = require('./User')
 
 class PasswordToken{
     async create(email){
-       let user = await User.findEmail(email)
+       let user = await User.findByEmail(email)
 
         if(user != undefined){
+            console.log(user)
 
             try{
                 let token = Date.now()
                 await knex
                     .insert({
-                        user_id:user.id,
+                        user_id: user.id,
                         used:0,
                         token: token // da pra usar UUID ou GUID
                     })

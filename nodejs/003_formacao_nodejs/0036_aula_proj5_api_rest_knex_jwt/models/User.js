@@ -70,7 +70,6 @@ class User{
                 .where({email:email})
                 .table('users')
 
-            console.log(id)
             console.log(result[0])
             if(result.length > 0 ){
                 return result[0]
