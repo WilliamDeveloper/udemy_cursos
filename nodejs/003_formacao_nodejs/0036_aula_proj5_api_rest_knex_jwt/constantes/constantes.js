@@ -1,7 +1,9 @@
 const httpStatusCode = require('./msg/httpStatusCode')
+const credentials = require('./authenticate/credentials')
 
 const msg ={
-    httpStatusCode
+    httpStatusCode,
+    credentials
 }
 
 module.exports = {msg}
