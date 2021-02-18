@@ -32,14 +32,15 @@ class PasswordToken{
 
     async validate(token){
 
-
+        console.log(token)
 
         try{
-            let result = knex
+            let result = await knex
                 .select()
                 .from('passwordtokens')
                 .where({token:token})
 
+            console.log('result-validate ', result)
             if(result.length >0){
                 let resultToken = result[0]
 

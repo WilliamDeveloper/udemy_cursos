@@ -162,9 +162,10 @@ class UserController {
         let {token, password} = req.body
 
         let result = await PasswordToken.validate(token)
+        console.log('result-change-password ',result)
         if(result.success){
 
-            let result = await User.changePassword(password,result.token.user_id,result.token.token)
+            let resultChange = await User.changePassword(password,result.token.user_id,result.token.token)
 
             res.status(const_.msg.httpStatusCode.code_200.code)
             res.json({status: const_.msg.httpStatusCode.code_200.desc})
