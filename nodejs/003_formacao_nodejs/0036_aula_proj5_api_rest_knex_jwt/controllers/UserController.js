@@ -2,7 +2,6 @@ const const_ = require ('../constantes/constantes')
 const User = require('../models/User')
 const PasswordToken = require('../models/PasswordToken')
 const jwt = require('jsonwebtoken')
-const jwt_secret="senha_secreta"
 const bcrypt = require('bcrypt')
 
 
@@ -194,7 +193,7 @@ class UserController {
 
             if(isValidPassword){
                 let dados = { email:user.email, role:user.role}
-                let token = jwt.sign(dados,jwt_secret)
+                let token = jwt.sign(dados,const_.credentials.jwt_secret)
 
                 res.status(const_.msg.httpStatusCode.code_200.code)
                 res.json({success:true, status: const_.msg.httpStatusCode.code_200.desc,isValidPassword, token})

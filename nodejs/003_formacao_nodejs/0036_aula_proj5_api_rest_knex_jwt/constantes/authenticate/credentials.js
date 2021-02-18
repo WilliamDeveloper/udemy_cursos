@@ -1,7 +1,7 @@
 const credentials ={
 
     //senha secreta para gerar token no jwt
-    jwt_secret :'123456',
+    jwt_secret :'senha_secreta',
 
     // banco dados mysql local
 

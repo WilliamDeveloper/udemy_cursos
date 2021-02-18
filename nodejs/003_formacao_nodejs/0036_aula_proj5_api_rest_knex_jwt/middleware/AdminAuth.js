@@ -17,7 +17,7 @@ function auth(req, res, next){
             token = tokenArraySplit[0]
         }
 
-
+        console.log('token->', token)
 
         jwt.verify(token, const_.credentials.jwt_secret , (erro, data)=>{
             if(erro){
