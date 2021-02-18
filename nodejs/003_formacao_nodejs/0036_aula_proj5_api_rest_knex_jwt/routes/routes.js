@@ -6,7 +6,7 @@ var UserController = require("../controllers/UserController");
 var AdminAuth = require('../middleware/AdminAuth')
 
 
-router.get('/autenticado',AdminAuth, HomeController.index);
+router.get('/autenticado',AdminAuth, HomeController.authenticado);
 
 router.get('/', HomeController.index);
 
