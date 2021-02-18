@@ -79,3 +79,14 @@ Content-Type: application/json
   "email": "a@a.com.br"
 }
 ####
+
+
+####
+POST http://localhost:3000/changepassword
+Content-Type: application/json
+
+{
+  "token": "1613654480229",
+  "password": "1234568"
+}
+####
