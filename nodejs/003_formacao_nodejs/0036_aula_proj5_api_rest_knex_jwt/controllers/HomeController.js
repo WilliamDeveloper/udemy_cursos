@@ -7,6 +7,7 @@ class HomeController{
     }
 
     async authenticado(req, res){
+
         res.send("APP EXPRESS! - Guia do programador");
     }
 
