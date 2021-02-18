@@ -160,7 +160,6 @@ class User{
                 await knex
                     .delete()
                     .from('users')
-                    // .table('users')
                     .where({id:id})
 
                 return {status:true}
