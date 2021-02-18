@@ -39,6 +39,10 @@ npm install --save knex
 
 - biblioteca de gerar hash de senhas, criptografia podem ser desfeitas, mas hash nao
 npm install --save bcrypt
+
+
+- jwt
+npm install --save jsonwebtoken
  
  
   --- ---------------------------------------------------
