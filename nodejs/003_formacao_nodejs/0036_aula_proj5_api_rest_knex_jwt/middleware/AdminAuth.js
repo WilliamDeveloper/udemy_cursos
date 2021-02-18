@@ -1,11 +1,11 @@
 const const_ = require('../constantes/constantes')
-const jwt = require('jwt')
+const jwt = require('jsonwebtoken')
 
 
 function auth(req, res, next){
 
     const authToken = req.headers['authorization']
-    console.log(authToken)
+    console.log('token: ',authToken)
 
     if(authToken != undefined){
         let tokenArraySplit = authToken.split(" ");
@@ -16,7 +16,7 @@ function auth(req, res, next){
         }else{
             token = tokenArraySplit[0]
         }
-        console.log(token)
+
 
 
         jwt.verify(token, const_.credentials.jwt_secret , (erro, data)=>{
@@ -33,6 +33,7 @@ function auth(req, res, next){
                 next()
             }
         })
+
     }else{
         res.status(const_.msg.httpStatusCode.code_401.code)
         res.json({success:false, status: const_.msg.httpStatusCode.code_401.desc })

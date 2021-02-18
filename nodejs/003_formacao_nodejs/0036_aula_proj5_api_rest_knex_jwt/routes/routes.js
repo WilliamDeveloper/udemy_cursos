@@ -3,6 +3,10 @@ var app = express();
 var router = express.Router();
 var HomeController = require("../controllers/HomeController");
 var UserController = require("../controllers/UserController");
+var AdminAuth = require('../middleware/AdminAuth')
+
+
+router.get('/autenticado',AdminAuth, HomeController.index);
 
 router.get('/', HomeController.index);
 
