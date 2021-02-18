@@ -3,26 +3,21 @@ const const_ = require('../../constantes/const_')
 
 
 async function authenticate(token) {
-
     try{
-        await jwt.verify(token, const_.credentials.jwt_secret , (error, data)=>{
-
-            if(error){
-                console.log(error)
-                return {success: false, error:'falhar ao autenticar : '+error}
-            }else{
-                console.log(data)
-                return {success: true, data: data}
-            }
-
-        })
+        let resultVerify = await jwt.verify(token, const_.credentials.jwt_secret)
+        return {success: true, resultVerify}
     }catch (e) {
-        return {success: false, error:'falhar jwt.verify : '+e}
+        return {success: false, error:'falhar ao autenticar : '+e}
     }
-
-
-
 }
+
+
+
+
+
+
+
+//------------------------------------------
 
 const objModulo = {
     authenticate,
