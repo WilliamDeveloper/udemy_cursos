@@ -82,6 +82,33 @@ class UserController{
     }
     //---------------------------------------------------------------------
 
+
+    //---------------------------------------------------------------------
+    async edit(req, res){
+
+        let {id, name, role, email} = req.body
+
+        let result = await User.update(id,email,name,role)
+
+        if(result != undefined){
+            if(result.status){
+                res.status( const_.msg.httpStatusCode.code_200.code )
+                res.json({status: const_.msg.httpStatusCode.code_200.desc })
+                return
+            }else {
+                res.status( const_.msg.httpStatusCode.code_406.code )
+                res.json({status: const_.msg.httpStatusCode.code_406.desc })
+                return
+            }
+        }
+
+        res.status( const_.msg.httpStatusCode.code_406.code )
+        res.json({status: const_.msg.httpStatusCode.code_406.desc })
+        return
+
+    }
+    //---------------------------------------------------------------------
+
 }
 
 module.exports = new UserController();
