@@ -21,7 +21,7 @@ async function auth(req, res, next){
         console.log('token->', token)
 
 
-        let result = await utils_.jwt.isValidToken(token)
+        let result = await utils_.token.isValidToken(token)
         // console.log('result-authenticate: ',result)
 
         if(result.success){
