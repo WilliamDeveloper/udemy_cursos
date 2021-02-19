@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const const_ = require('../../constantes/const_')
 
 
-async function isAuthenticated(token) {
+async function isValidToken(token) {
     try{
         let resultVerify = await jwt.verify(token, const_.credentials.jwt_secret)
         return {success: true, resultVerify}
@@ -12,6 +12,17 @@ async function isAuthenticated(token) {
 }
 
 
+async function generateToken(dadosParaGuardarNoToken) {
+    let dados = dadosParaGuardarNoToken
+    try{
+        let token = await jwt.sign(dados,const_.credentials.jwt_secret)
+        return { success:true, token:token }
+    }catch (e) {
+        console.log(e)
+        return {success:false, error:'falha ao gerar token '+e}
+    }
+
+}
 
 
 
@@ -20,8 +31,8 @@ async function isAuthenticated(token) {
 //------------------------------------------
 
 const objModulo = {
-    isAuthenticated,
-
+    isValidToken,
+    generateToken,
 }
 
 module.exports = objModulo
