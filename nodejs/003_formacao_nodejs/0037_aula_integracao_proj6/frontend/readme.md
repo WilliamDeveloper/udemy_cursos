@@ -11,6 +11,8 @@
  - criando projeto vue
  --- ---------------------------------------------------
 vue create users
+    - manual > router
+    history mode : Y
 
  --- ---------------------------------------------------
  - rodar projeto
