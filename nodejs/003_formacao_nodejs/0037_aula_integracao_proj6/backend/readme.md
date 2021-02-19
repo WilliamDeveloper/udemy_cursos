@@ -48,6 +48,10 @@ npm install --save bcrypt
 
 - jwt
 npm install --save jsonwebtoken
+
+
+- cors - habilitar a requisicao externa da api
+npm install --save cors
  
  
   --- ---------------------------------------------------
