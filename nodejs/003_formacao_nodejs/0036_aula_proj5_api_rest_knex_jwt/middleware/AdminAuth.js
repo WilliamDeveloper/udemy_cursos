@@ -21,20 +21,24 @@ async function auth(req, res, next){
         console.log('token->', token)
 
 
-        let result = await utils_.jwt.authenticate('token')
+        let result = await utils_.jwt.isValidToken(token)
         console.log('result-authenticate: ',result)
 
         if(result.success){
+            req.token = token
+            req.userLoggedInfo=result
+            next()
+            return
+        }else{
             res.status(const_.msg.httpStatusCode.code_401.code)
             res.json({success:false, status: const_.msg.httpStatusCode.code_401.desc })
-        }else{
-            req.token = token
-            next()
+            return
         }
 
     }else{
         res.status(const_.msg.httpStatusCode.code_401.code)
         res.json({success:false, status: const_.msg.httpStatusCode.code_401.desc })
+        return
     }
 }
 

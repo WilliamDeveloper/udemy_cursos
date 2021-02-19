@@ -7,7 +7,7 @@ class HomeController{
     }
 
     async authenticado(req, res){
-        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20uYnIiLCJyb2xlIjowLCJpYXQiOjE2MTM2NjkyMDV9.wAz75EJGJjHGr96HByG5Eo_2E-p3w6hUjhmdAIYXdbU'
+        let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20uYnIiLCJyb2xlIjowLCJpYXQiOjE2MTM2OTkxNDl9.XAwrM6IPuClNLtBlnCU30AyD2zsPCVBI0xfo7FTNaps'
 
         let result = await utils_.jwt.isValidToken(token)
         console.log('result-authenticate: ',result)
