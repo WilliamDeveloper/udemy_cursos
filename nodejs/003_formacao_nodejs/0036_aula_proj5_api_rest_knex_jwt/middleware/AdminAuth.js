@@ -1,6 +1,7 @@
 const const_ = require('../constantes/const_')
 const utils_ = require('../utils/utils_')
 const jwt = require('jsonwebtoken')
+const admin = 1
 
 
 async function auth(req, res, next){
@@ -25,7 +26,7 @@ async function auth(req, res, next){
         // console.log('result-authenticate: ',result)
 
         if(result.success){
-            if(result.userLoggedInfo.role == 1){
+            if(result.userLoggedInfo.role == admin){
                 req.token = token
                 req.userLoggedInfo=result.userLoggedInfo
                 next()
