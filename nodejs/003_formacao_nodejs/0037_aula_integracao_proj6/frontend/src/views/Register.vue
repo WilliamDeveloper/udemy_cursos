@@ -12,7 +12,7 @@
                 <p>Senha</p>
                 <input type="password" placeholder="******" class="input" v-model="password">
                 <hr>
-                <button class="button is-success">Cadastrar</button>
+                <button class="button is-success" @click="register($event)">Cadastrar</button>
             </div>
         </div>
 
@@ -27,7 +27,15 @@
                 email: '',
                 password: '',
             }
-        }
+        },
+        methods:{
+            register(){
+                console.log(this.name)
+                console.log(this.email)
+                console.log(this.password)
+            },
+        },
+
     }
 </script>
 

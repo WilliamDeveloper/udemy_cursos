@@ -10,7 +10,12 @@
             return {
 
             }
-        }
+        },
+        methods:{
+            ola(){
+                console.log('ola')
+            }
+        },
     }
 </script>
 
