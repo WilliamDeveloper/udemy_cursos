@@ -6,11 +6,11 @@
         <div class="columns is-centered">
             <div class="column is-half">
                 <p>Nome</p>
-                <input type="text" placeholder="Nome do usuario" class="input">
+                <input type="text" placeholder="Nome do usuario" class="input" v-model="name">
                 <p>Email</p>
-                <input type="text" placeholder="email@email.com" class="input">
+                <input type="text" placeholder="email@email.com" class="input" v-model="email">
                 <p>Senha</p>
-                <input type="password" placeholder="******" class="input">
+                <input type="password" placeholder="******" class="input" v-model="password">
                 <hr>
                 <button class="button is-success">Cadastrar</button>
             </div>
@@ -23,7 +23,9 @@
     export default {
         data(){
             return {
-
+                name: '',
+                email: '',
+                password: '',
             }
         }
     }
