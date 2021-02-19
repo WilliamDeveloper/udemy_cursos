@@ -40,19 +40,19 @@
                 console.log(this.email)
                 console.log(this.password)
 
-                // let params = {
-                //     email:this.email,
-                //     password:this.password
-                // }
-                // axios.post('http://localhost:3000/user', params).then( resp =>{
-                //     console.log('resposta: ',resp)
-                //     this.error =''
-                //     this.$router.push({name:'Home'})
-                // }).catch( error => {
-                //     let msgError = error.response.data.status
-                //     this.error = msgError
-                //     console.log( msgError)
-                // })
+                let params = {
+                    email:this.email,
+                    password:this.password
+                }
+                axios.post('http://localhost:3000/login', params).then( resp =>{
+                    console.log('resposta: ',resp)
+                    this.error =''
+                    // this.$router.push({name:'Home'})
+                }).catch( error => {
+                    let msgError = error.response.data.status
+                    this.error = msgError
+                    console.log( msgError)
+                })
             },
         },
 
