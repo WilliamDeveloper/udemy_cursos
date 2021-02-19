@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken')
 async function auth(req, res, next){
 
     const authToken = req.headers['authorization']
-    console.log('token: ',authToken)
+    // console.log('token: ',authToken)
 
     if(authToken != undefined){
         let tokenArraySplit = authToken.split(" ");
@@ -22,7 +22,7 @@ async function auth(req, res, next){
 
 
         let result = await utils_.jwt.isValidToken(token)
-        console.log('result-authenticate: ',result)
+        // console.log('result-authenticate: ',result)
 
         if(result.success){
             req.token = token
