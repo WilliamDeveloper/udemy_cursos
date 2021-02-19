@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Registro de Usuario</h2>
+        <h2>Edicao de Usuario</h2>
         <hr>
 
         <div class="columns is-centered">
@@ -16,8 +16,6 @@
                 <input type="text" placeholder="Nome do usuario" class="input" v-model="name">
                 <p>Email</p>
                 <input type="text" placeholder="email@email.com" class="input" v-model="email">
-                <p>Senha</p>
-                <input type="password" placeholder="******" class="input" v-model="password">
                 <hr>
                 <button class="button is-success" @click="register($event)">Cadastrar</button>
             </div>
@@ -30,11 +28,28 @@
     import axios from 'axios'
 
     export default {
+        created(){
+
+            let config ={
+                headers:{
+                    Authorization: 'Bearer '+localStorage.getItem('token')
+                }
+            }
+
+            let vUrl= `${this.url}/user/${this.$route.params.id}`
+            axios.get(vUrl,config).then(res=>{
+                console.log(res)
+            }).catch(error=>{
+                console.log(error)
+                this.$router.push({name:'Home'})
+            })
+
+        },
         data(){
             return {
+                url: 'http://localhost:3000',
                 name: '',
                 email: '',
-                password: '',
                 error: undefined,
             }
         },
@@ -42,12 +57,10 @@
             register(){
                 console.log(this.name)
                 console.log(this.email)
-                console.log(this.password)
 
                 let params = {
                     name:this.name,
                     email:this.email,
-                    password:this.password
                 }
                 axios.post('http://localhost:3000/user', params).then( resp =>{
                     console.log('resposta: ',resp)
