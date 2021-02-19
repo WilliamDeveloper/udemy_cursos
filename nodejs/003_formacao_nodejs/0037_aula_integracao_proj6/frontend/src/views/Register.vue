@@ -20,6 +20,8 @@
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
         data(){
             return {
@@ -33,6 +35,10 @@
                 console.log(this.name)
                 console.log(this.email)
                 console.log(this.password)
+
+                axios.get('http://localhost:3000/', (resp)=>{
+                    console.log('resposta: ',resp)
+                })
             },
         },
 
