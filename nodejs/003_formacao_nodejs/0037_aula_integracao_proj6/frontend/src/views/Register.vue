@@ -36,10 +36,16 @@
                 console.log(this.email)
                 console.log(this.password)
 
-                axios.get('http://localhost:3000/').then( resp =>{
+                let params = {
+                    name:this.name,
+                    email:this.email,
+                    password:this.password
+                }
+                axios.post('http://localhost:3000/user', params).then( resp =>{
                     console.log('resposta: ',resp)
                 }).catch( error => {
-                    console.log(error)
+                    let msgError = error.response.data.status
+                    console.log( msgError)
                 })
             },
         },
