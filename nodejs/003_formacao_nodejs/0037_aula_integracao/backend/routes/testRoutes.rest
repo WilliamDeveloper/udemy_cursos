@@ -1,0 +1,123 @@
+####
+GET http://localhost:3000
+####
+
+####
+GET http://localhost:3000/autenticado
+####
+
+####
+GET http://localhost:3000/user
+####
+
+####
+GET http://localhost:3000/user/10
+####
+
+####
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "email": "a7@a.com.br",
+  "name" : "william2",
+  "password" : "123456"
+}
+####
+
+####
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "email": "",
+  "name" : "william",
+  "password" : "123456"
+}
+####
+
+####
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "email": "a@a.com.br",
+  "name" : "a",
+  "password" : "123456"
+}
+####
+
+####
+PUT http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "id": 10,
+  "name": "william2-10"
+}
+####
+
+####
+GET http://localhost:3000/user/10
+####
+
+####
+DELETE http://localhost:3000/user/10
+####
+
+####
+GET http://localhost:3000/user/10
+####
+
+
+
+####
+GET http://localhost:3000/user/1
+####
+
+####
+POST http://localhost:3000/recoverpassword
+Content-Type: application/json
+
+{
+  "email": "a@a.com.br"
+}
+####
+
+
+####
+POST http://localhost:3000/changepassword
+Content-Type: application/json
+
+{
+  "token": "1613654480229",
+  "password": "1234568"
+}
+####
+
+
+####
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "a@a.com.br",
+  "password": "1234568r"
+}
+####
+
+####
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "a@a.com.br",
+  "password": "1234568"
+}
+####
+
+
+####
+GET http://localhost:3000/autenticado
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20uYnIiLCJyb2xlIjoxLCJpYXQiOjE2MTM3MzMyNTF9.WAGuyPK1LjW5UhOvJ5D8VCozZrCWVF9jWL-M0mOzDrU
+####
