@@ -44,12 +44,15 @@
                     email:this.email,
                     password:this.password
                 }
-                axios.post('http://localhost:3000/login', params).then( resp =>{
-                    console.log('resposta: ',resp)
+                axios.post('http://localhost:3000/login', params).then( res =>{
+                    console.log('resposta: ',res)
                     this.error =''
-                    // this.$router.push({name:'Home'})
+
+                    let token = res.data.token
+                    localStorage.setItem('token',token)
+                    this.$router.push({name:'Home'})
                 }).catch( error => {
-                    let msgError = error.response.data.status
+                    let msgError = error.response.data
                     this.error = msgError
                     console.log( msgError)
                 })
