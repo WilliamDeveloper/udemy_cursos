@@ -52,6 +52,7 @@
                 axios.post('http://localhost:3000/user', params).then( resp =>{
                     console.log('resposta: ',resp)
                     this.error =''
+                    this.$router.push({name:'Home'})
                 }).catch( error => {
                     let msgError = error.response.data.status
                     this.error = msgError
