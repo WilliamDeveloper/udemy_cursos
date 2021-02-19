@@ -1,3 +1,4 @@
+//npm install --save bcrypt
 const bcrypt = require('bcrypt')
 
 async function generateHash(valueToGenerateHash){

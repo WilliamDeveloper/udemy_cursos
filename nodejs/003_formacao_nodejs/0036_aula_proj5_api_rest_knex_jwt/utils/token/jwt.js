@@ -1,3 +1,4 @@
+//npm install --save jsonwebtoken
 const jwt = require('jsonwebtoken')
 const const_ = require('../../constantes/const_')
 
