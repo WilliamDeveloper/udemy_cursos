@@ -20,7 +20,7 @@ async function isAuthenticated(token) {
 //------------------------------------------
 
 const objModulo = {
-    authenticate,
+    isAuthenticated,
 
 }
 
