@@ -2,6 +2,10 @@ var bodyParser = require('body-parser')
 var express = require("express")
 var app = express()
 var router = require("./routes/routes")
+var cors = require('cors')
+
+//habilitar requisicao de outras aplicacoes para esta api
+app.use(cors())
  
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
