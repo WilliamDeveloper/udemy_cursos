@@ -47,7 +47,7 @@
                     </div>
                     <footer class="card-footer">
                         <a href="#" class="card-footer-item" @click="doHideModal()">Cancelar</a>
-                        <a href="#" class="card-footer-item">Sim, quero deletar!</a>
+                        <a href="#" class="card-footer-item" @click="deleteUser()">Sim, quero deletar!</a>
                     </footer>
                 </div>
 
@@ -83,7 +83,8 @@
         data(){
             return {
                 users: [],
-                showModal:true,
+                showModal:false,
+                deleteUserId:-1
             }
         },
         methods:{
@@ -91,9 +92,31 @@
                 this.showModal = false
             },
             doShowModal(id){
-                console.log(id)
+                this.deleteUserId = id
                 this.showModal = true
+
+
             },
+            deleteUser(){
+
+                let config ={
+                    headers:{
+                        Authorization: 'Bearer '+localStorage.getItem('token')
+                    }
+                }
+
+
+                let url = `http://localhost:3000/user/${this.deleteUserId}`
+                console.log(url)
+
+                axios.delete(url, config).then(res=>{
+                    console.log('sucesso, ', res)
+                    this.users = this.users.filter(user=> user.id != this.deleteUserId)
+                    this.showModal = false
+                }).catch(error=>{
+                    console.log('error, ', error)
+                })
+            }
         },
         filters:{
             processRole: function (value) {
