@@ -26,7 +26,7 @@ async function auth(req, res, next){
 
         if(result.success){
             req.token = token
-            req.userLoggedInfo=result
+            req.userLoggedInfo=result.userLoggedInfo
             next()
             return
         }else{

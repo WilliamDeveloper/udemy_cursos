@@ -5,7 +5,7 @@ const const_ = require('../../constantes/const_')
 async function isValidToken(token) {
     try{
         let resultVerify = await jwt.verify(token, const_.credentials.jwt_secret)
-        return {success: true, resultVerify}
+        return {success: true, userLoggedInfo: resultVerify}
     }catch (e) {
         return {success: false, error:'falhar ao autenticar : '+e}
     }
