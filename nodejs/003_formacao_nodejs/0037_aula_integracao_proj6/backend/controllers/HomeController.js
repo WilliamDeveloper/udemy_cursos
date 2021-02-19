@@ -19,6 +19,10 @@ class HomeController{
         res.send("APP EXPRESS! - Guia do programador");
     }
 
+    async validate(req, res){
+
+    }
+
 }
 
 module.exports = new HomeController();

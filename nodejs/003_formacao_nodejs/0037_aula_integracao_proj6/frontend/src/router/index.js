@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Users from '../views/Users.vue'
+import axios from 'axios'
 
 
 Vue.use(VueRouter)
@@ -36,7 +37,21 @@ const routes = [
   {
     path: '/admin/users',
     name: 'users',
-    component: Users
+    component: Users,
+
+    // guards
+    beforeEnter: (to, from, next)=>{
+      if(localStorage.getItem('token') != undefined){
+        axios.post('http://localhost/validade').then( res=> {
+
+        }).catch(e =>{
+          console.log(e)
+        })
+        next()
+      }else{
+        next('/login')
+      }
+    }
   },
 ]
 
