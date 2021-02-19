@@ -1,9 +1,9 @@
 const bcrypt = require('bcrypt')
 
-async function generateHash(password){
+async function generateHash(valueToGenerateHash){
     try{
         let salt = 10
-        let hash =  await bcrypt.hash(password, salt);
+        let hash =  await bcrypt.hash(valueToGenerateHash, salt);
         return {success:true, hash: hash}
     }catch (e) {
         console.log(e)
@@ -13,11 +13,11 @@ async function generateHash(password){
 
 
 
-async function compareValueWithHash(passwordSemHash, passwordComHash){
+async function compareValueWithHash(valueWithoutHash, valueWithmHash){
 
     try{
-        let isValidPassword = await bcrypt.compare(passwordSemHash, passwordComHash)
-        if(isValidPassword){
+        let isValidHash = await bcrypt.compare(valueWithoutHash, valueWithmHash)
+        if(isValidHash){
             return {success:true}
         }else{
             return {success:false, error:'dado invalido'}

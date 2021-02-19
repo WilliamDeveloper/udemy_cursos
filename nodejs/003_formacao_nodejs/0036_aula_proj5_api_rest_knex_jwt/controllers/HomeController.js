@@ -9,6 +9,7 @@ class HomeController{
     async authenticado(req, res){
         let token = req.token
         let userLoggedInfo = req.userLoggedInfo
+        let valor = await utils_.hash.generateHash()
         // console.log(token,userLoggedInfo)
         // let result = await utils_.jwt.isValidToken(token)
        // console.log('result-authenticate: ',result)
