@@ -7,6 +7,10 @@ import Users from '../views/Users.vue'
 
 import adminAuthGuard from  '../guard/adminAuthGuard'
 
+import Edit from  '../views/Edit.vue'
+
+
+
 Vue.use(VueRouter)
 
 const routes = [
