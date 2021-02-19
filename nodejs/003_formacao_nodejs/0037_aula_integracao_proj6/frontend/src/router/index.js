@@ -4,8 +4,8 @@ import Home from '../views/Home.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import Users from '../views/Users.vue'
-import axios from 'axios'
 
+import adminAuthGuard from  '../guard/adminAuthGuard'
 
 Vue.use(VueRouter)
 
@@ -40,31 +40,8 @@ const routes = [
     component: Users,
 
     // guards
-    beforeEnter: (to, from, next)=>{
+    beforeEnter: adminAuthGuard
 
-      let data={}
-      let config ={
-        headers:{
-          Authorization: 'Bearer '+localStorage.getItem('token')
-        }
-      }
-
-      console.log(config)
-
-      if(localStorage.getItem('token') != undefined){
-        axios.post('http://localhost:3000/validate',data,config).then( res=> {
-          console.log('validate-then',res)
-          next()
-
-        }).catch(e =>{
-          console.log(e)
-          next('/login')
-        })
-
-      }else{
-        next('/login')
-      }
-    }
   },
 ]
 
