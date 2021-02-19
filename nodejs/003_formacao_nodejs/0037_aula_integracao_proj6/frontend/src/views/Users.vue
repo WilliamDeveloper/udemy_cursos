@@ -19,6 +19,7 @@
 
             axios.get('http://localhost:3000/user', config).then(res=>{
                 console.log(res)
+                this.users = res.data
             }).catch(e=>{
                 console.log(e)
             })
@@ -26,7 +27,7 @@
         },
         data(){
             return {
-
+                users: []
             }
         },
         methods:{
