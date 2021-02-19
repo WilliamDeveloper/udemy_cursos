@@ -61,14 +61,24 @@
         },
         methods:{
             update(){
+                console.log('update')
                 console.log(this.name)
+                console.log(this.id)
                 console.log(this.email)
+                console.log('update')
+
+                let config ={
+                    headers:{
+                        Authorization: 'Bearer '+localStorage.getItem('token')
+                    }
+                }
 
                 let params = {
                     name:this.name,
                     email:this.email,
+                    id: this.id,
                 }
-                axios.post('http://localhost:3000/user', params).then( resp =>{
+                axios.put('http://localhost:3000/user', params,config).then( resp =>{
                     console.log('resposta: ',resp)
                     this.error =''
                     this.$router.push({name:'Home'})

@@ -104,7 +104,7 @@ class UserController {
                 return
             } else {
                 res.status(const_.msg.httpStatusCode.code_406.code)
-                res.json({status: const_.msg.httpStatusCode.code_406.desc})
+                res.json({status: result.error})
                 return
             }
         }

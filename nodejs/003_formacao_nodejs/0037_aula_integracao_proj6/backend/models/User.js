@@ -137,7 +137,7 @@ class User{
 
             let editUser ={}
 
-            if(email !=undefined){
+            if(email !=undefined && email != user.email){
                 let result = await this.findEmail(email)
                 if(result == false){
                     editUser.email = email
