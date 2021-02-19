@@ -1,6 +1,10 @@
 <template>
     <div>
         <h1>Painel Adm!</h1>
+        <div v-for="user in users" :key="user.id">
+
+            {{user.id}} {{user.name}} {{user.email}} {{user.role}}
+        </div>
     </div>
 </template>
 
