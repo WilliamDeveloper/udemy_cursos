@@ -25,9 +25,15 @@ async function auth(req, res, next){
         // console.log('result-authenticate: ',result)
 
         if(result.success){
-            req.token = token
-            req.userLoggedInfo=result.userLoggedInfo
-            next()
+            if(result.userLoggedInfo.role == 1){
+                req.token = token
+                req.userLoggedInfo=result.userLoggedInfo
+                next()
+            }else{
+                res.status(const_.msg.httpStatusCode.code_403.code)
+                res.json({success:false, status: const_.msg.httpStatusCode.code_403.desc })
+            }
+
             return
         }else{
             res.status(const_.msg.httpStatusCode.code_401.code)
