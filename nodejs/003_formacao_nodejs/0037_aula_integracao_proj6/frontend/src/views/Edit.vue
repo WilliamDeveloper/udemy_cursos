@@ -17,7 +17,7 @@
                 <p>Email</p>
                 <input type="text" placeholder="email@email.com" class="input" v-model="email">
                 <hr>
-                <button class="button is-success" @click="register($event)">Cadastrar</button>
+                <button class="button is-success" @click="update($event)">Editar</button>
             </div>
         </div>
 
@@ -39,6 +39,11 @@
             let vUrl= `${this.url}/user/${this.$route.params.id}`
             axios.get(vUrl,config).then(res=>{
                 console.log(res)
+
+                this.name = res.data.user.name;
+                this.email = res.data.user.email;
+                this.id = res.data.user.id;
+
             }).catch(error=>{
                 console.log(error)
                 this.$router.push({name:'Home'})
@@ -48,13 +53,14 @@
         data(){
             return {
                 url: 'http://localhost:3000',
+                id:-1,
                 name: '',
                 email: '',
                 error: undefined,
             }
         },
         methods:{
-            register(){
+            update(){
                 console.log(this.name)
                 console.log(this.email)
 
