@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const const_ = require('../../constantes/const_')
 
 
-async function authenticate(token) {
+async function isAuthenticated(token) {
     try{
         let resultVerify = await jwt.verify(token, const_.credentials.jwt_secret)
         return {success: true, resultVerify}
