@@ -20,6 +20,7 @@ class HomeController{
     }
 
     async validate(req, res){
+        console.log('validate')
         res.send('okay')
     }
 

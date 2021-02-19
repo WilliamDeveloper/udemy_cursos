@@ -1,0 +1,6 @@
+{
+  "success": true,
+  "status": "200 - OK - requisicao efetuada com sucesso",
+  "isValidPassword": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20uYnIiLCJyb2xlIjoxLCJpYXQiOjE2MTM3NTI5Njl9.961k4Xv5z0jAtdilbVQFQCAI6jlySigMZLkDO6Ln4Y4"
+}
