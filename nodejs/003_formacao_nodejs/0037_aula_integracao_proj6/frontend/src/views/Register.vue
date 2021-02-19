@@ -5,6 +5,13 @@
 
         <div class="columns is-centered">
             <div class="column is-half">
+
+                <div v-if="error != undefined">
+                    <div class="notification is-danger">
+                        <p>{{error}}</p>
+                    </div>
+                </div>
+
                 <p>Nome</p>
                 <input type="text" placeholder="Nome do usuario" class="input" v-model="name">
                 <p>Email</p>
@@ -28,6 +35,7 @@
                 name: '',
                 email: '',
                 password: '',
+                error: undefined,
             }
         },
         methods:{
@@ -43,8 +51,10 @@
                 }
                 axios.post('http://localhost:3000/user', params).then( resp =>{
                     console.log('resposta: ',resp)
+                    this.error =''
                 }).catch( error => {
                     let msgError = error.response.data.status
+                    this.error = msgError
                     console.log( msgError)
                 })
             },
