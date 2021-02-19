@@ -42,11 +42,18 @@ const routes = [
     path: '/admin/users',
     name: 'users',
     component: Users,
-
     // guards
     beforeEnter: adminAuthGuard
-
   },
+  {
+    path: '/admin/users/edit/:id',
+    name: 'UsersEdit',
+    component: Edit,
+    // guards
+    beforeEnter: adminAuthGuard
+  },
+
+
 ]
 
 const router = new VueRouter({
