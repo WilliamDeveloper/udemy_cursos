@@ -36,8 +36,10 @@
                 console.log(this.email)
                 console.log(this.password)
 
-                axios.get('http://localhost:3000/', (resp)=>{
+                axios.get('http://localhost:3000/').then( resp =>{
                     console.log('resposta: ',resp)
+                }).catch( error => {
+                    console.log(error)
                 })
             },
         },
