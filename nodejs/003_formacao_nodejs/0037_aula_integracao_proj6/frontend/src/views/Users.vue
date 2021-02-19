@@ -17,7 +17,11 @@
                        <td>{{user.id}}</td>
                        <td>{{user.name}}</td>
                        <td>{{user.email}}</td>
-                       <td>{{user.role}}</td>
+                       <td>{{user.role | processRole}}</td>
+                       <td>
+                           <button class="button is-success">Editar</button> | |
+                           <button class="button is-danger">Deletar</button>
+                       </td>
                    </tr>
             </tbody>
         </table>
@@ -55,6 +59,17 @@
                 console.log('ola')
             }
         },
+        filters:{
+            processRole: function (value) {
+                if( value == 0){
+                    return 'Usuario comum'
+                }else if(value == 1){
+                    return 'Admin'
+                }else{
+                    return value
+                }
+            }
+        }
     }
 </script>
 
