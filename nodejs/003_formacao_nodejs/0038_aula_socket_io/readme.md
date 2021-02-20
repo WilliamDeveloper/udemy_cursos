@@ -10,9 +10,13 @@
 --- ---------------------------------------------------
 npm init -y
 
- --- ---------------------------------------------------
- - bibliotecas aplicacao
- --- ---------------------------------------------------
+--- ---------------------------------------------------
+- bibliotecas aplicacao
+--- ---------------------------------------------------
 
 - para rotas da aplicacao
 npm install --save express
+
+// "ejs": "^2.7.1",
+- EJS - embedded javascript templating -  motor de html - template engine
+npm install --save ejs@2.7.1
