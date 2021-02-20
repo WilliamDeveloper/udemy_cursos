@@ -19,4 +19,7 @@ npm install --save express
 
 // "ejs": "^2.7.1",
 - EJS - embedded javascript templating -  motor de html - template engine
-npm install --save ejs@2.7.1
+npm install --save ejs
+
+-- para trabalhar com websocket
+npm install --save socket.io
