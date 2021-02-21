@@ -9,3 +9,9 @@ db
 
 -- criar banco de dados
 use novobancodedados
+
+-- ver collections
+show collections
+
+-- ver dados da colection articles
+db.articles.find()
