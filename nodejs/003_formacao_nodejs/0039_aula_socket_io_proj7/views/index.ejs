@@ -30,6 +30,19 @@
         console.log('disconectando')
     })
 
+    socket.on('showmsg',(data)=>{
+        console.log(data)
+
+        let chatField = document.getElementById('chat')
+
+        let p = document.createElement('p')
+        p.innerHTML = data.username+': '+data.msg
+
+        chatField.append(p)
+
+
+    })
+
     function enviar() {
         let msgField = document.getElementById('msg')
         let userNameField = document.getElementById('username')
