@@ -8,6 +8,10 @@ io.on("connection",(socket)=>{
     console.log("socket ",socket)
     console.log("socket ",socket.id)
 
+    socket.on('disconnect', ()=>{
+        console.log('X desconectou '+socket.id)
+    })
+
     socket.on('boasvindas',(data)=>{
         console.log('excecutando evento de boasvindas')
         console.log(data)
