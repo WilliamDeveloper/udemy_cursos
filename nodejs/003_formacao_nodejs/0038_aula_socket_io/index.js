@@ -9,9 +9,6 @@ io.on("connection",(socket)=>{
     console.log("socket ",socket.id)
 })
 
-
-
-
 app.set("view engine","ejs")
 
 app.get("/",(req,res)=>{

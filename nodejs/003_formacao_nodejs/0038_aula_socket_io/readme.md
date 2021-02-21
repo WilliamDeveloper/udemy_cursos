@@ -17,7 +17,7 @@ npm init -y
 - para rotas da aplicacao
 npm install --save express
 
-// "ejs": "^2.7.1",
+// "ejs": "^3.1.5",
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install --save ejs@3.1.5
 
