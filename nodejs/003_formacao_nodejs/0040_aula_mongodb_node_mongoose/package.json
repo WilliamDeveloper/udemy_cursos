@@ -1,0 +1,15 @@
+{
+  "name": "0040_aula_mongodb_node_mongoose",
+  "version": "1.0.0",
+  "description": "--- ---------------------------------------------------\r - bibliotecas global de sistema\r --- ---------------------------------------------------\r - biblioteca para o script de node se auto dar restart quando tiver uma modificacao\r  npm install -g nodemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.11.17"
+  }
+}
