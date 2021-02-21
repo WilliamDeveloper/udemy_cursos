@@ -12,6 +12,11 @@ io.on("connection",(socket)=>{
         console.log('excecutando evento de boasvindas')
         console.log(data)
     })
+
+    socket.on('palavra',(data)=>{
+        console.log(data)
+        socket.emit("resultado", data + " Guia do william")
+    })
 })
 
 app.set("view engine","ejs")
