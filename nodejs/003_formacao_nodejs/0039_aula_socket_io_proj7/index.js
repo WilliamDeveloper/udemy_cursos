@@ -19,10 +19,10 @@ io.on("connection",(socket)=>{
         // socket.emit('showmsg',data)
 
         // emitir globalmente para todos conectados no servidor
-        // io.emit('showmsg',data)
+        io.emit('showmsg',data)
 
         // emitir para todos conectados menos para quem mandou
-        socket.broadcast.emit('showmsg',data)
+        // socket.broadcast.emit('showmsg',data)
 
     })
 
