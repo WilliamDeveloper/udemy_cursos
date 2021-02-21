@@ -28,6 +28,10 @@ io.on("connection",(socket)=>{
 
 })
 
+// configuracao de reconhecimento de conteudo de arquivos estaticos
+app.use(express.static('node_modules'))
+app.use(express.static('public'))
+
 app.set("view engine","ejs")
 
 app.get("/",(req,res)=>{
