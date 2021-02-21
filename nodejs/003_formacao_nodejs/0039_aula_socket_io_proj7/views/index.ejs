@@ -30,6 +30,18 @@
         console.log('disconectando')
     })
 
+    function enviar() {
+        let msgField = document.getElementById('msg')
+        let userNameField = document.getElementById('username')
+
+        let msg = msgField.value;
+        let username = userNameField.value;
+
+        socket.emit('msg', {msg:msg, username: username})
+
+
+    }
+
 
 </script>
 
