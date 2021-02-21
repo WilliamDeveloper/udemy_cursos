@@ -14,7 +14,16 @@ io.on("connection",(socket)=>{
 
     socket.on('msg',(data)=>{
         console.log(data)
-        socket.emit('showmsg',data)
+
+        //emitir para o cliente que mando a msg
+        // socket.emit('showmsg',data)
+
+        // emitir globalmente para todos conectados no servidor
+        // io.emit('showmsg',data)
+
+        // emitir para todos conectados menos para quem mandou
+        socket.broadcast.emit('showmsg',data)
+
     })
 
 })
