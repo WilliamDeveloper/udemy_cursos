@@ -7,6 +7,11 @@ const io = require("socket.io")(http)
 io.on("connection",(socket)=>{
     console.log("socket ",socket)
     console.log("socket ",socket.id)
+
+    socket.on('boasvindas',(data)=>{
+        console.log('excecutando evento de boasvindas')
+        console.log(data)
+    })
 })
 
 app.set("view engine","ejs")

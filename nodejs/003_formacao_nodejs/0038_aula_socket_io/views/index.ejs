@@ -16,6 +16,11 @@
 
 <script>
     var socket = io("http://localhost:3000")
+    let nomeDoEvento='boasvindas'
+    let dadosDoEvento={
+        nome:'william pacheco'
+    }
+    socket.emit(nomeDoEvento,dadosDoEvento)
 </script>
 
 </html>
