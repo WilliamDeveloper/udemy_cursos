@@ -12,6 +12,11 @@ io.on("connection",(socket)=>{
         console.log('X desconectou '+socket.id)
     })
 
+    socket.on('msg',(data)=>{
+        console.log(data)
+        socket.emit('showmsg',data)
+    })
+
 })
 
 app.set("view engine","ejs")
