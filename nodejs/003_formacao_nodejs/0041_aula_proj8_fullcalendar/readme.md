@@ -32,3 +32,8 @@ npm install --save mongoose
 -- full calendar
 npm install --save @fullcalendar/core @fullcalendar/daygrid
 
+- bootstrap
+npm install --save jquery
+npm install --save popper.js
+npm install --save bootstrap
+
