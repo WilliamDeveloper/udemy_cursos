@@ -78,3 +78,23 @@ Article.findByIdAndDelete('6033d235b8dcec543052f12c').then((data)=>{
 }).catch(error=>{
     console.log(error)
 })
+
+// update
+let id = '6033cf2e9264bb22dc77c361'
+Article.findByIdAndUpdate(id,{
+    title:'monte python2',
+    author: 'william pacheco',
+    body: 'conteudo223',
+    special:true,
+    date: Date.now()
+}).then( data =>{
+    console.log('update ', data)
+}).catch(error =>{
+    console.log('update-error ', error)
+})
+
+Article.findById(id).then(article =>{
+    console.log('article ', article)
+}).catch(error =>{
+    console.log(error)
+})
