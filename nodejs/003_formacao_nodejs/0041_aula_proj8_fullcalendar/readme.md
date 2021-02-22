@@ -29,3 +29,6 @@ npm install --save body-parser
 -- mongoose
 npm install --save mongoose
 
+-- full calendar
+npm install --save @fullcalendar/core @fullcalendar/daygrid
+
