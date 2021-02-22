@@ -29,7 +29,7 @@ app.get('/', (req, res)=>{
 
 
 app.get('/cadastro', (req, res)=>{
-    res.send('create')
+    res.render('create')
 })
 
 app.listen(3000,()=>{
