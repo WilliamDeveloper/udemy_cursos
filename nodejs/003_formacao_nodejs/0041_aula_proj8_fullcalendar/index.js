@@ -27,6 +27,11 @@ app.get('/', (req, res)=>{
     res.send('oi')
 })
 
+
+app.get('/cadastro', (req, res)=>{
+    res.send('create')
+})
+
 app.listen(3000,()=>{
     console.log('servidor rodando')
 })
