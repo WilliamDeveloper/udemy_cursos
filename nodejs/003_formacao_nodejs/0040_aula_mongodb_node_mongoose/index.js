@@ -72,3 +72,9 @@ Article.findOne({
 }).catch(error =>{
     console.log(error)
 })
+
+Article.findByIdAndDelete('6033d235b8dcec543052f12c').then((data)=>{
+    console.log('dados removido',data)
+}).catch(error=>{
+    console.log(error)
+})
