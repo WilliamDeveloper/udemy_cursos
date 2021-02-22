@@ -24,7 +24,7 @@ npm install --save ejs@3.1.5
 
 
 - body parser para pegar a conversao em objeto de uma req post no body
-npm install body-parser --save
+npm install --save body-parser
 
 
 
