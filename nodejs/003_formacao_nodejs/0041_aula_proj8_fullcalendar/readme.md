@@ -18,3 +18,8 @@ npm init -y
 npm install --save express
 
 
+// "ejs": "^3.1.5",
+- EJS - embedded javascript templating -  motor de html - template engine
+npm install --save ejs@3.1.5
+
+
