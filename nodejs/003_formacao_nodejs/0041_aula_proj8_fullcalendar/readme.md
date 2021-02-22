@@ -10,10 +10,11 @@
 --- ---------------------------------------------------
 npm init -y
 
+
 --- ---------------------------------------------------
 - bibliotecas aplicacao
 --- ---------------------------------------------------
--- mongoose
-npm install --save mongoose
+- para rotas da aplicacao
+npm install --save express
 
 
