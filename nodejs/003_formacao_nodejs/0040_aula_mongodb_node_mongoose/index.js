@@ -6,4 +6,7 @@ mongoose.connect('mongodb://localhost:27017/aprendendoMongo',{useNewUrlParser:tr
 const Article = mongoose.model("Article", articleModel)
 
 const artigo = new Article({title:'monti python', author:'william',  body: 'conteudo'})
-artigo.save()
+
+artigo.save().then(()=>{
+    console.log('artigo salvo!')
+})
