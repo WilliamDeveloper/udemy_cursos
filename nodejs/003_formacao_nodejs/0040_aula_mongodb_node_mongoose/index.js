@@ -22,3 +22,53 @@ Article.find({}).then(articles =>{
 }).catch(error =>{
     console.log(error)
 })
+
+
+
+Article.find({  _id: '6033cf2e9264bb22dc77c361' }).then(article =>{
+    console.log('article ', article)
+}).catch(error =>{
+    console.log(error)
+})
+
+
+Article.find({
+    _id: '6033cf2e9264bb22dc77c361',
+    body:'conteudo'
+}).then(article =>{
+    console.log('article ', article)
+}).catch(error =>{
+    console.log(error)
+})
+
+Article.findOne({
+    _id: '6033cf2e9264bb22dc77c361',
+    body:'conteudo'
+}).then(article =>{
+    console.log('article ', article)
+}).catch(error =>{
+    console.log(error)
+})
+
+
+//senao axar find retorna []
+Article.find({
+    _id: '6033cf2e9264bb22dc77c361',
+    body:'conteudo',
+    pimba:2
+}).then(article =>{
+    console.log('article ', article)
+}).catch(error =>{
+    console.log(error)
+})
+
+//senao axar findOne retorna null
+Article.findOne({
+    _id: '6033cf2e9264bb22dc77c361',
+    body:'conteudo',
+    pimba:2
+}).then(article =>{
+    console.log('article ', article)
+}).catch(error =>{
+    console.log(error)
+})
