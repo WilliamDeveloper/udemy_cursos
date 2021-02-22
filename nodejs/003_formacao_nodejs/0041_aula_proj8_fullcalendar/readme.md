@@ -37,3 +37,6 @@ npm install --save jquery
 npm install --save popper.js
 npm install --save bootstrap
 
+-- plugin de mascara do jquery
+npm install --save jquery-mask-plugin
+
