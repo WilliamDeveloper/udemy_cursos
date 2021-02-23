@@ -7,7 +7,11 @@
 <h4>Email: <%= consulta.email %></h4>
 <h4>CPF: <%= consulta.cpf %></h4>
 <hr>
-<button class="btn btn-success">Finalizar</button>
+
+<% if(consulta.finished){ %>
+    <button class="btn btn-success">Finalizar</button>
+<% } %>
+
 
 
 
