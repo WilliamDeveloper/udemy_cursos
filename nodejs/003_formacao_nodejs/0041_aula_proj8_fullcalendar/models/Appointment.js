@@ -9,7 +9,8 @@ const appointment = new mongose.Schema({
     cpf:String,
     date:Date,
     time:String,
-    finished: Boolean
+    finished: Boolean,
+    notified: Boolean
 
 })
 
