@@ -1,13 +1,13 @@
 <%- include('partials/header.ejs') %>
 <!-- =======================================-->
 
-<h1>consulta:</h1>
+<h1>consulta: <%= consulta.description %></h1>
 <hr>
-<h4>Paciente:</h4>
-<h4>Email:</h4>
-<h4>CPF:</h4>
+<h4>Paciente: <%= consulta.name %></h4>
+<h4>Email: <%= consulta.email %></h4>
+<h4>CPF: <%= consulta.cpf %></h4>
 <hr>
-<button>Finalizar</button>
+<button class="btn btn-success">Finalizar</button>
 
 
 
