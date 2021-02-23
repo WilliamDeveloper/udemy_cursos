@@ -40,3 +40,7 @@ npm install --save bootstrap
 -- plugin de mascara do jquery
 npm install --save jquery-mask-plugin
 
+
+use agendamento
+
+db.appointments.remove({})
