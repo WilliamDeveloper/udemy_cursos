@@ -22,6 +22,7 @@ app.set('view engine','ejs')
 // conectando na colecao do banco
 let configMongose = {useNewUrlParser:true, useUnifiedTopology:true}
 mongoose.connect('mongodb://localhost:27017/agendamento', configMongose)
+mongoose.set('useFindAndModify', false);
 
 
 
