@@ -97,6 +97,10 @@ app.get('/cadastro/list/search', async (req, res)=>{
     res.render('list',{consultas})
 })
 
+// setInterval(()=>{
+//     console.log('a cada 3 segundos')
+// }, 3*1000)
+
 app.listen(3000,()=>{
     console.log('servidor rodando')
 })
