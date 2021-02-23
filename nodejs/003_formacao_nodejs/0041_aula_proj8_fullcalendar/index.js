@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const ejs = require('ejs')
 const mongoose = require('mongoose')
 
+const appointmentService = require('./services/AppointmentService')
+
 // create application/x-www-form-urlencoded parser
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -30,6 +32,20 @@ app.get('/', (req, res)=>{
 
 app.get('/cadastro', (req, res)=>{
     res.render('create')
+})
+
+
+app.post('/cadastro/create', async (req, res)=>{
+
+    let result = await appointmentService.Create(req.body)
+    console.log(result)
+
+    if(result.success){
+        res.redirect('/')
+    }else{
+        res.send('ocorreu uma falha')
+    }
+
 })
 
 app.listen(3000,()=>{
