@@ -48,6 +48,14 @@ app.post('/cadastro/create', async (req, res)=>{
 
 })
 
+app.get('/calendar', async (req, res)=>{
+
+    let consultas = await  appointmentService.GetAll({showFinished: false})
+
+    res.json(consultas)
+})
+
+
 app.listen(3000,()=>{
     console.log('servidor rodando')
 })
