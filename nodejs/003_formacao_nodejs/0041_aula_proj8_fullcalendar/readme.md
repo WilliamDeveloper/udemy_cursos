@@ -30,7 +30,6 @@ npm install --save body-parser
 npm install --save mongoose
 
 -- full calendar
-npm install --save @fullcalendar/core @fullcalendar/daygrid
 npm install --save fullcalendar
 
 - bootstrap
