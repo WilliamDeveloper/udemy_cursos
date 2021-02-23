@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/agendamento', configMongose)
 
 
 app.get('/', (req, res)=>{
-    res.send('oi')
+    res.render('index')
 })
 
 

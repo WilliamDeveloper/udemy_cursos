@@ -1,0 +1,25 @@
+<%- include('partials/header.ejs') %>
+<!-- =======================================-->
+
+<div id="calendar"> </div>
+
+teste
+
+
+
+<!-- =======================================-->
+<%- include('partials/footer.ejs') %>
+
+<script>
+   let elemento =  document.getElementById("calendar")
+    let calendar = new FullCalendar.Calendar(elemento, {
+        initialView:'dayGridMonth',
+        locale:'pt-br'
+    })
+
+    calendar.render();
+</script>
+
+
+
+
