@@ -31,7 +31,9 @@ class AppointmentService{
             appointmentsRaw.forEach(appointment =>{
                 appointments.push( AppointmentFactory.Build(appointment) )
             })
+            return appointments
         }
+
 
     }
 }
