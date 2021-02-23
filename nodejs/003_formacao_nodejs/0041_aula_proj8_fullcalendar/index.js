@@ -72,6 +72,8 @@ app.post('/cadastro/finish', async (req, res)=>{
 
     let {id} = req.body
 
+    console.log('id: ', id)
+
     let result = await appointmentService.Finish({id})
 
     res.redirect('/')
