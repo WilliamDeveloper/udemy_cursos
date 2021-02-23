@@ -29,7 +29,9 @@ class AppointmentService{
 
             let appointments = []
             appointmentsRaw.forEach(appointment =>{
-                appointments.push( AppointmentFactory.Build({simpleAppointment: appointment}) )
+                if(appointment.date != undefined){
+                    appointments.push( AppointmentFactory.Build({simpleAppointment: appointment}) )
+                }
             })
             return appointments
         }
