@@ -38,6 +38,17 @@ class AppointmentService{
 
 
     }
+
+    async GetById({id}){
+
+        try{
+            let result = await Appointment.findOne({_id:id})
+            return result
+        }catch (e) {
+            console.log(e)
+        }
+
+    }
 }
 
 module.exports = new AppointmentService()

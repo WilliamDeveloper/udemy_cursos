@@ -57,9 +57,10 @@ app.get('/getcalendar', async (req, res)=>{
 
 app.get('/event/:id', async (req, res)=>{
     let {id}  = req.params
-
+    let consulta = await appointmentService.GetById({id:id})
     let response = {
-        id
+        id,
+        consulta,
     }
     res.json(response)
 })
