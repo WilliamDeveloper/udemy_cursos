@@ -40,6 +40,9 @@ npm install --save bootstrap
 -- plugin de mascara do jquery
 npm install --save jquery-mask-plugin
 
+-- lib de enviar email
+npm install --save nodemailer
+
 
 use agendamento
 
