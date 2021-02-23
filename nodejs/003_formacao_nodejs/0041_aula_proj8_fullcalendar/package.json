@@ -1,0 +1,23 @@
+{
+  "name": "0041_aula_proj8_fullcalendar",
+  "version": "1.0.0",
+  "description": "--- ---------------------------------------------------\r - bibliotecas global de sistema\r --- ---------------------------------------------------\r - biblioteca para o script de node se auto dar restart quando tiver uma modificacao\r  npm install -g nodemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.6.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "fullcalendar": "^5.5.1",
+    "jquery": "^3.5.1",
+    "jquery-mask-plugin": "^1.14.16",
+    "mongoose": "^5.11.17",
+    "popper.js": "^1.12.9"
+  }
+}

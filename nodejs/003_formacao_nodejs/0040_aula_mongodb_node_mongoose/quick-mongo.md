@@ -15,3 +15,5 @@ show collections
 
 -- ver dados da colection articles
 db.articles.find()
+
+-- nomes de collections sempre ficam no plural com mongoose
