@@ -81,6 +81,11 @@ app.post('/cadastro/finish', async (req, res)=>{
 
 })
 
+app.get('/cadastro/list', async (req, res)=>{
+    let consultas = await  appointmentService.GetAll({showFinished: true})
+    res.render('list',{consultas})
+})
+
 
 
 app.listen(3000,()=>{

@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+<!-- =======================================-->
+
+
+
+<h3>Consultas</h3>
+<hr>
+<% consultas.forEach(consulta=>{%>
+
+    <h1>consulta: <%= consulta.description %></h1>
+    <hr>
+    <h4>Paciente: <%= consulta.name %></h4>
+    <h4>Email: <%= consulta.email %></h4>
+    <h4>CPF: <%= consulta.cpf %></h4>
+    <hr>
+
+<% })%>
+
+
+
+
+<!-- =======================================-->
+<%- include('partials/footer.ejs') %>
