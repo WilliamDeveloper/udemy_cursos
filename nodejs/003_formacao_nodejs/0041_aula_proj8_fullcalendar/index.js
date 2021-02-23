@@ -55,6 +55,16 @@ app.get('/getcalendar', async (req, res)=>{
     res.json(consultas)
 })
 
+app.get('/event/:id', async (req, res)=>{
+    let {id}  = req.params
+
+    let response = {
+        id
+    }
+    res.json(response)
+})
+
+
 
 app.listen(3000,()=>{
     console.log('servidor rodando')

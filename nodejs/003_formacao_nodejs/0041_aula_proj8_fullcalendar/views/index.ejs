@@ -15,7 +15,14 @@ teste
     let calendar = new FullCalendar.Calendar(elemento, {
         initialView:'dayGridMonth',
         locale:'pt-br',
-        events: 'getcalendar'
+        events: 'getcalendar',
+        eventClick:function (info) {
+            console.log('ola mundo ', info.event)
+            console.log('ola mundo ', info.event.id)
+            console.log('ola mundo ', info.event.title)
+            let id = info.event.id
+            window.location.href='/event/'+id
+        }
     })
 
     calendar.render();
