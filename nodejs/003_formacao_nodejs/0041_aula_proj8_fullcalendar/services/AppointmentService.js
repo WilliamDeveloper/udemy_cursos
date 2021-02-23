@@ -77,6 +77,11 @@ class AppointmentService{
 
     }
 
+    async SendNotification(){
+        let consultas = await this.GetAll({showFinished:false})
+        console.log(consultas)
+    }
+
 }
 
 module.exports = new AppointmentService()
