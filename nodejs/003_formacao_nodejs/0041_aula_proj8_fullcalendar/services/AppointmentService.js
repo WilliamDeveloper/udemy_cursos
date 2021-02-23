@@ -8,7 +8,7 @@ const AppointmentFactory = require('../factories/AppointmentFactory')
 class AppointmentService{
     async Create({ name, email, description, cpf, date, time }){
         var newAppointment = new Appointment({
-            name, email, description, cpf, date, time, finished:false
+            name, email, description, cpf, date, time, finished:false, notified:false
         })
 
         try {
