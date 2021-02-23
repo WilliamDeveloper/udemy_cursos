@@ -68,6 +68,16 @@ app.get('/event/:id', async (req, res)=>{
 
 })
 
+app.post('/cadastro/finish', async (req, res)=>{
+
+    let {id} = req.body
+
+    let result = await appointmentService.Finish({id})
+
+    res.redirect('/')
+
+})
+
 
 
 app.listen(3000,()=>{
