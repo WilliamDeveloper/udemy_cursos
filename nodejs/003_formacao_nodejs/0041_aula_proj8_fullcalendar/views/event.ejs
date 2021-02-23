@@ -10,7 +10,7 @@
 
 <% if(!consulta.finished){ %>
     <form action="/cadastro/finish" method="post">
-        <input type="hidden" value="<%= consulta._id %>">
+        <input type="hidden" name="id" value="<%= consulta._id %>">
         <button class="btn btn-success">Finalizar</button>
     </form>
 
