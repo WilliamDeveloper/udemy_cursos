@@ -49,6 +49,11 @@ class AppointmentService{
         }
 
     }
+
+    async Finish({id}){
+
+    }
+
 }
 
 module.exports = new AppointmentService()
