@@ -51,7 +51,15 @@ class AppointmentService{
     }
 
     async Finish({id}){
+        let dadosUpdate = {
+            finished:true
+        }
 
+        try {
+            await Appointment.findByIdAndUpdate(id,dadosUpdate)
+        }catch (e) {
+            console.log(e)
+        }
     }
 
 }
