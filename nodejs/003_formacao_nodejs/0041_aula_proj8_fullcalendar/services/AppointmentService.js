@@ -80,6 +80,15 @@ class AppointmentService{
     async SendNotification(){
         let consultas = await this.GetAll({showFinished:false})
         console.log(consultas)
+        consultas.forEach(consulta =>{
+            let date = consulta.start.getTime()
+            let oneHourInMilis = 1000 * 60 * 60
+            let gap = date - Date.now()
+            if(gap <= oneHourInMilis){
+                console.log('->', consulta.title)
+                console.log('-> mande a notificcacao ', date, consulta.start)
+            }
+        })
     }
 
 }
