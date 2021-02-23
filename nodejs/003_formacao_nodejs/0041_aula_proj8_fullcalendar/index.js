@@ -81,7 +81,14 @@ app.post('/cadastro/finish', async (req, res)=>{
 
 })
 
+app.post('/cadastro/list', async (req, res)=>{
+    let {search} = req.body
+    let listaConsultas = await  appointmentService.Search({termoBuscaQuery:search})
+    res.json({listaConsultas})
+})
+
 app.get('/cadastro/list', async (req, res)=>{
+    let listaConsultas = await  appointmentService.Search({email:'dsadsadsa@dsadsads'})
     let consultas = await  appointmentService.GetAll({showFinished: true})
     res.render('list',{consultas})
 })

@@ -62,6 +62,20 @@ class AppointmentService{
         }
     }
 
+    async Search({termoBuscaQuery}){
+        try {
+            let listaConsultas = await Appointment
+                .find().or([
+                    {email:termoBuscaQuery},
+                    {cpf:termoBuscaQuery},
+                ])
+            return listaConsultas
+        }catch (e) {
+            console.log(e)
+        }
+
+    }
+
 }
 
 module.exports = new AppointmentService()
