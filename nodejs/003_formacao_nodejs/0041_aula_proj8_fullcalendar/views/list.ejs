@@ -5,6 +5,11 @@
 
 <h3>Consultas</h3>
 <hr>
+<form action="" method="post">
+    <input type="search" name="search" id="search" placeholder="digite email ou cpf do cliente">
+    <button>Pesquisar</button>
+</form>
+
 <% consultas.forEach(consulta=>{%>
 
     <h1>consulta: <%= consulta.description %></h1>
