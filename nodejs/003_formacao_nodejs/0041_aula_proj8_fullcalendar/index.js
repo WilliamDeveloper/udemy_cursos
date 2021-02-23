@@ -81,8 +81,8 @@ app.post('/cadastro/finish', async (req, res)=>{
 
 })
 
-app.post('/cadastro/list', async (req, res)=>{
-    let {search} = req.body
+app.get('/cadastro/list/search', async (req, res)=>{
+    let {search} = req.query
     let listaConsultas = await  appointmentService.Search({termoBuscaQuery:search})
     res.json({listaConsultas})
 })

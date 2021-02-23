@@ -72,6 +72,7 @@ class AppointmentService{
             return listaConsultas
         }catch (e) {
             console.log(e)
+            return []
         }
 
     }
