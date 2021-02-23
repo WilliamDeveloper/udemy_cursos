@@ -8,7 +8,9 @@ const appointment = new mongose.Schema({
     description:String,
     cpf:String,
     date:Date,
-    time:String
+    time:String,
+    finished: Boolean
+
 })
 
 module.exports = appointment
