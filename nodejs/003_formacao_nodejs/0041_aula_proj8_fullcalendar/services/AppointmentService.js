@@ -29,7 +29,7 @@ class AppointmentService{
 
             let appointments = []
             appointmentsRaw.forEach(appointment =>{
-                appointments.push( AppointmentFactory.Build(appointment) )
+                appointments.push( AppointmentFactory.Build({simpleAppointment: appointment}) )
             })
             return appointments
         }
