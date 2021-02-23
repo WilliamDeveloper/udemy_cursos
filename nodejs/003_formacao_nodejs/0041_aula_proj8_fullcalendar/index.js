@@ -48,7 +48,7 @@ app.post('/cadastro/create', async (req, res)=>{
 
 })
 
-app.get('/calendar', async (req, res)=>{
+app.get('/getcalendar', async (req, res)=>{
 
     let consultas = await  appointmentService.GetAll({showFinished: false})
 

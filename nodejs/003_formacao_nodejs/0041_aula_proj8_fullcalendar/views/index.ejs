@@ -14,7 +14,8 @@ teste
    let elemento =  document.getElementById("calendar")
     let calendar = new FullCalendar.Calendar(elemento, {
         initialView:'dayGridMonth',
-        locale:'pt-br'
+        locale:'pt-br',
+        events: 'getcalendar'
     })
 
     calendar.render();
