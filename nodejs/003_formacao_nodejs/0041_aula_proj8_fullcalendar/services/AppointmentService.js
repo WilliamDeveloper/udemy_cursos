@@ -26,9 +26,9 @@ class AppointmentService{
             return await Appointment.find()
         }else{
             let appointmentsRaw =  await Appointment.find({'finished' : false})
+
             let appointments = []
             appointmentsRaw.forEach(appointment =>{
-
                 appointments.push( AppointmentFactory.Build(appointment) )
             })
         }
