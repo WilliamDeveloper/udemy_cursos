@@ -8,5 +8,8 @@ test("deve responder na porta 3131",()=>{
 })
 
 test("deve retornar vermelho como cor favorita do william",()=>{
-    return request.get('/cor/william').then(res => expect(res.body.cor).toEqual('vermelho'))
+    return request.get('/cor/william').then(res => {
+        expect(res.statusCode).toEqual(200)
+        expect(res.body.cor).toEqual('vermelho')
+    })
 })
