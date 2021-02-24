@@ -6,6 +6,3 @@ app.get('/',(req,res)=>{
 
 })
 
-app.listen(3131,()=>{
-    console.log('rodando app na porta 3131')
-})
