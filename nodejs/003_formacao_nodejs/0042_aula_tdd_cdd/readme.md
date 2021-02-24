@@ -24,6 +24,9 @@ npm install --save jest
 --definicao de tipos do jest
 npm install --save @types/jest
 
+-- ferramenta auxiliar de teste
+npm install --save supertest
+
 
 --- ---------------------------------------------------
 - teste
