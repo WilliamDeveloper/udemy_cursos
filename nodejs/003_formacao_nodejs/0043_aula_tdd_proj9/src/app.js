@@ -9,12 +9,12 @@ app.use(express.json())
 
 //ir no cmd -> "mongo" -> "use guiapics"
 mongoose.connect('mongodb://localhost:27017/guiapics', {useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
-
-const User = mongoose.model('User', user)
-
+// colocar nada aqui
 }).catch(error=>{
     console.log(error)
 })
+
+const User = mongoose.model('User', user)
 
 app.get('/',(req,res)=>{
     res.json({success:true,name:'william'})
