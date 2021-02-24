@@ -1,4 +1,4 @@
-const calculadora = require("../calculadora")
+const calculadora = require("../src/calculadora")
 
 describe("operacoes basicas",()=>{
 
