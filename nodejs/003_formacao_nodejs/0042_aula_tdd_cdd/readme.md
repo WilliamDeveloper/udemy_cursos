@@ -15,6 +15,9 @@ npm init -y
 - bibliotecas aplicacao
 --- ---------------------------------------------------
 
+--nodemon para o projeto ficar rodando 
+npm install --save nodemon
+
 - framework de testes
 npm install --save jest
 
