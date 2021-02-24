@@ -21,6 +21,9 @@ npm install --save nodemon
 - framework de testes
 npm install --save jest
 
+--definicao de tipos do jest
+npm install --save @types/jest
+
 - para rotas da aplicacao
 npm install --save express
 
