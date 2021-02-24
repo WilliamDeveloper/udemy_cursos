@@ -24,35 +24,22 @@ npm install --save jest
 --definicao de tipos do jest
 npm install --save @types/jest
 
-- para rotas da aplicacao
-npm install --save express
 
-// "ejs": "^3.1.5",
-- EJS - embedded javascript templating -  motor de html - template engine
-npm install --save ejs@3.1.5
+--- ---------------------------------------------------
+- teste
+--- ---------------------------------------------------
+test("deve fazer algo quando receber y",()=>{
 
+})
 
-- body parser para pegar a conversao em objeto de uma req post no body
-npm install --save body-parser
+test("deve cadastrar um usuario quando receber um e-mail x",()=>{
 
--- mongoose
-npm install --save mongoose
+})
 
--- full calendar
-npm install --save fullcalendar
+test("deve recusar o cadastro de usuario quando receber um email ja cadastrado",()=>{
 
-- bootstrap
-npm install --save jquery
-npm install --save popper.js
-npm install --save bootstrap
+})
 
--- plugin de mascara do jquery
-npm install --save jquery-mask-plugin
+it("should do something",()=>{
 
--- lib de enviar email
-npm install --save nodemailer
-
-
-use agendamento
-
-db.appointments.remove({})
+})
