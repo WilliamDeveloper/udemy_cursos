@@ -15,6 +15,9 @@ npm init -y
 - bibliotecas aplicacao
 --- ---------------------------------------------------
 
+- framework de testes
+npm install --save jest
+
 - para rotas da aplicacao
 npm install --save express
 
