@@ -3,9 +3,10 @@ const supertest = require('supertest')
 const request = supertest(app)
 
 
-describe("",()=>{
+describe("Cadastro de usuario",()=>{
 
-    test("deve responder na porta 3131",()=>{
+    test("Deve cadastrar um usuario com sucesso",()=>{
+
     })
 
 })
