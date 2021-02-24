@@ -9,6 +9,8 @@ test("deve responder na porta 3131",()=>{
         const status =res.statusCode
         expect(status).toEqual(200)
         expect(res.body.cor).toEqual('vermelho')
+    }).catch(error=>{
+        fail(error)
     })
 
 })
