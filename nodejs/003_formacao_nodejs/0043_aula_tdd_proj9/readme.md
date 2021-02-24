@@ -24,11 +24,18 @@ npm install --save jest
 --definicao de tipos do jest
 npm install --save @types/jest
 
+- para rotas da aplicacao
+npm install --save express
+
+- jwt
+npm install --save jsonwebtoken
+
+-- mongoose
+npm install --save mongoose
+
 -- ferramenta auxiliar de teste de requisicao
 npm install --save supertest
 
-- para rotas da aplicacao
-npm install --save express
 
 
 --- ---------------------------------------------------
