@@ -8,7 +8,6 @@ test("deve responder na porta 3131",()=>{
     return request.get('/').then(res => {
         const status =res.statusCode
         expect(status).toEqual(200)
-        expect(res.body.cor).toEqual('vermelho')
     }).catch(error=>{
         fail(error)
     })
