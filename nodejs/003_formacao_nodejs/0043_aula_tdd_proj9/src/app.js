@@ -21,6 +21,11 @@ app.get('/',(req,res)=>{
     res.json({success:true,name:'william'})
 })
 
+app.delete('/user/:email',async (req,res)=>{
+    await User.deleteOne({email:req.params.email})
+    res.sendStatus(200)
+})
+
 app.post('/user',async (req,res)=>{
 
     if(req.body.name == "" || req.body.email == "" || req.body.password == ""){

@@ -2,15 +2,25 @@ const app = require('../src/app')
 const supertest = require('supertest')
 const request = supertest(app)
 
+let userN = {name:'William', email: "a@a.com.br", password: '123456'}
+
 beforeAll(()=>{
     console.log("william pacheco")
     // inserir usuario - roda uma unica vez
+    return request.post('/user')
+        .send(userN)
+        .then((res)=>{})
+        .catch((error)=>{console.log(error)})
 })
 
 
 afterAll(()=>{
     console.log("william pacheco")
     //remover usuario  - roda uma unica vez
+    return request.delete('/user/'+userN.email)
+        .send(userN)
+        .then((res)=>{})
+        .catch((error)=>{console.log(error)})
 })
 
 beforeEach(()=>{
