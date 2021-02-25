@@ -2,6 +2,9 @@ const app = require('../src/app')
 const supertest = require('supertest')
 const request = supertest(app)
 
+beforeAll(()=>{
+    console.log("william pacheco")
+})
 
 describe("Cadastro de usuario",()=>{
 
