@@ -21,6 +21,11 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/user',async (req,res)=>{
+
+    if(req.body.name == "" || req.body.email == "" || req.body.password == ""){
+        res.sendStatus(400)
+        return
+    }
     try{
         let {name, email, password} = req.body
         let newUser = new User({name:name, email:email, password:password})
