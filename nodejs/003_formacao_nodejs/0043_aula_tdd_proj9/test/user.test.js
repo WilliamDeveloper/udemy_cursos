@@ -4,13 +4,23 @@ const request = supertest(app)
 
 beforeAll(()=>{
     console.log("william pacheco")
-    // inserir usuario
+    // inserir usuario - roda uma unica vez
 })
 
 
 afterAll(()=>{
     console.log("william pacheco")
-    //remover usuario
+    //remover usuario  - roda uma unica vez
+})
+
+beforeEach(()=>{
+    console.log("william pacheco")
+    // roda sempre antes de cada teste
+})
+
+beforeEach(()=>{
+    console.log("william pacheco")
+    // roda sempre apos cada teste
 })
 
 describe("Cadastro de usuario",()=>{
