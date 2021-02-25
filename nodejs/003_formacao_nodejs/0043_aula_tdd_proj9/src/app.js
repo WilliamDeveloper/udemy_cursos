@@ -26,14 +26,29 @@ app.post('/user',async (req,res)=>{
         res.sendStatus(400)
         return
     }
+
+    let {name,email,password} = req.body
+
+
+
     try{
-        let {name, email, password} = req.body
+        let user = await User.findOne({email})
+        console.log(user)
+
+        if(user != undefined){
+            res.status(400)
+            res.json({error:'email ja cadastrado'})
+            return
+        }
+
+
         let newUser = new User({name:name, email:email, password:password})
         await newUser.save()
         res.json({success:true,newUser, email:newUser.email})
     }catch (e) {
         console.log(e)
-        res.sendStatus(500)
+        res.status(500)
+        res.json({success:false,error:e})
     }
 })
 

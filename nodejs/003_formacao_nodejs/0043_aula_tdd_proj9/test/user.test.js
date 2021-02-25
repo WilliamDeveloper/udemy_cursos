@@ -46,10 +46,10 @@ describe("Cadastro de usuario",()=>{
                 expect(res.body.email).toEqual(email)
 
                 return request
-                    .post("/user").send(user).then(res=>{
-                    let status = res.statusCode
+                    .post("/user").send(user).then(res2=>{
+                    let status = res2.statusCode
                     expect(status).toEqual(400)
-                    expect(res.body.error).toEqual('email ja cadastrado')
+                    expect(res2.body.error).toEqual('email ja cadastrado')
                 }).catch(error=>{
                     fail(error)
                 })
