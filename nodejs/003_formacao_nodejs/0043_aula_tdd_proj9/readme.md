@@ -36,6 +36,9 @@ npm install --save mongoose
 -- ferramenta auxiliar de teste de requisicao
 npm install --save supertest
 
+- biblioteca de gerar hash de senhas, criptografia podem ser desfeitas, mas hash nao
+npm install --save bcrypt
+
 
 
 --- ---------------------------------------------------
