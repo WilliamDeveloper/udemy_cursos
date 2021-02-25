@@ -42,8 +42,13 @@ app.post('/user',async (req,res)=>{
             return
         }
 
+        let salt = await bcrypt.genSalt(10)
+        let hash = await bcrypt.hash(password,salt)
 
-        let newUser = new User({name:name, email:email, password:password})
+
+
+
+        let newUser = new User({name:name, email:email, password:hash})
         await newUser.save()
         res.json({success:true,newUser, email:newUser.email})
     }catch (e) {
