@@ -6,6 +6,11 @@ beforeAll(()=>{
     console.log("william pacheco")
 })
 
+
+afterAll(()=>{
+    console.log("william pacheco")
+})
+
 describe("Cadastro de usuario",()=>{
 
     test("Deve cadastrar um usuario com sucesso",()=>{
