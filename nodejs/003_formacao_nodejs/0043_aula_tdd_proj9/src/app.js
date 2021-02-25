@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const user = require('./models/User')
+const bcrypt = require('bcrypt')
 
 //bodyparser
 app.use(express.urlencoded({extended:false}))
