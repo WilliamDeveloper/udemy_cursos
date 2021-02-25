@@ -20,4 +20,17 @@ describe("Cadastro de usuario",()=>{
             })
     })
 
+    test("Deve impedir que um usuario se cadastre com dados vazios",()=>{
+
+        let user = {name:'', email: '', password: ''}
+
+        return request
+            .post("/user").send(user).then(res=>{
+                let status = res.statusCode
+                expect(status).toEqual(400)//bad request dados invalidos
+            }).catch(error=>{
+                fail(error)
+            })
+    })
+
 })
