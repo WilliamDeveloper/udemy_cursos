@@ -4,11 +4,13 @@ const request = supertest(app)
 
 beforeAll(()=>{
     console.log("william pacheco")
+    // inserir usuario
 })
 
 
 afterAll(()=>{
     console.log("william pacheco")
+    //remover usuario
 })
 
 describe("Cadastro de usuario",()=>{
