@@ -33,4 +33,31 @@ describe("Cadastro de usuario",()=>{
             })
     })
 
+    test("Deve impedir que um usuario se cadastre com um email repetido",()=>{
+
+        let time = Date.now()
+        let email = `${time}@gmail.com`
+        let user = {name:'William', email: email, password: '123456'}
+
+        return request
+            .post("/user").send(user).then(res=>{
+                let status = res.statusCode
+                expect(status).toEqual(200)
+                expect(res.body.email).toEqual(email)
+
+                return request
+                    .post("/user").send(user).then(res=>{
+                    let status = res.statusCode
+                    expect(status).toEqual(400)
+                    expect(res.body.error).toEqual('email ja cadastrado')
+                }).catch(error=>{
+                    fail(error)
+                })
+
+            }).catch(error=>{
+                fail(error)
+            })
+    })
+
+
 })
