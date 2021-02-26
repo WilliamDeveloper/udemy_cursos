@@ -106,4 +106,28 @@ describe("Autenticacao",()=>{
             })
     })
 
+    test("Deve impedir q um usuario nao cadastrado se logue",()=>{
+        return request.post("/auth")
+            .send({email:'a@a.com.br99', password:'jdhdjhdjfh'})
+            .then(res =>{
+                expect(res.statusCode).toEqual(403)
+                expect(res.body.errors.email).toEqual("email nao cadastrado")
+            })
+            .catch(error =>{
+                fail(error)
+            })
+    })
+
+    test("Deve impedir q um usuario se logue com uma senha errada",()=>{
+        return request.post("/auth")
+            .send({email:userN.email, password:'jdhdjhdjfh'})
+            .then(res =>{
+                expect(res.statusCode).toEqual(403)
+                expect(res.body.errors.password).toEqual("senha incorreta")
+            })
+            .catch(error =>{
+                fail(error)
+            })
+    })
+
 })
