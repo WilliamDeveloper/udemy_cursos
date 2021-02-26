@@ -5,10 +5,10 @@ const app = express()
 const mp_access_token = process.env['MP_ACCESS_TOKEN']
 const mp_public_key = process.env['MP_PUBLIC_KEY']
 
-// MercadoPago.configure({
-//     sandbox:true,
-//     acces_token: mp_access_token
-// })
+MercadoPago.configure({
+    sandbox:true,
+    access_token: mp_access_token
+})
 
 app.listen(3000, (req,res)=>{
     console.log('rodando servidor')
