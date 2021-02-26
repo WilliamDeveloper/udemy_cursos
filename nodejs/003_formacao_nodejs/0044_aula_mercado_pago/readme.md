@@ -24,4 +24,7 @@ npm install --save express
 - biblioteca mercadopago
 npm install --save mercadopago
 
+--mercado pago
+https://www.mercadopago.com.br/developers/pt/reference
+https://www.mercadopago.com.br/developers/pt/guides
 
