@@ -95,7 +95,7 @@ describe("Cadastro de usuario",()=>{
 describe("Autenticacao",()=>{
 
     test("Deve me retornar um token quando logar",()=>{
-        return resquest.post("/auth")
+        return request.post("/auth")
             .send({email:userN.email, password:userN.password})
             .then(res =>{
                 expect(res.statusCode).toEqual(200)
