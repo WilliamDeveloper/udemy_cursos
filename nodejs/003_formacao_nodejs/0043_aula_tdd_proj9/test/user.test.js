@@ -91,3 +91,19 @@ describe("Cadastro de usuario",()=>{
 
 
 })
+
+describe("Autenticacao",()=>{
+
+    test("Deve me retornar um token quando logar",()=>{
+        resquest.post("/auth",userN)
+            .send({email:userN.email, password:userN.password})
+            .then(res =>{
+                expect(res.statusCode).toEqual(200)
+                expect(res.body.token).toBeDefined()
+            })
+            .catch(error =>{
+               fail(error)
+            })
+    })
+
+})

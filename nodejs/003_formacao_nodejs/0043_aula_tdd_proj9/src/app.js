@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 const user = require('./models/User')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 //bodyparser
 app.use(express.urlencoded({extended:false}))
