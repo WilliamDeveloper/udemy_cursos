@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const user = require('./models/User')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const jwtSecrete = "senhasecreta"
 
 //bodyparser
 app.use(express.urlencoded({extended:false}))
@@ -62,6 +63,15 @@ app.post('/user',async (req,res)=>{
         res.status(500)
         res.json({success:false,error:e})
     }
+})
+
+app.post("/auth",async (req,res)=>{
+    const {email, password} = req.body
+    jwt.sign({email},jwtSecrete,{expiresIn:'48h'},(error,token)=>{
+        if(error){
+            console.log(error)
+        }
+    })
 })
 
 
