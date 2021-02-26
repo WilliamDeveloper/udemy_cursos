@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
     res.send('ola mundo')
 })
 
-app.get('/pagar',(req,res)=>{
+app.get('/pagar', async (req,res)=>{
 
 
     //pagamentos
@@ -41,7 +41,20 @@ app.get('/pagar',(req,res)=>{
 
     }
 
-    res.send({dados})
+
+
+    try{
+        let pagamento = await MercadoPago.preferences.create(dados)
+        console.log({pagamento, dados})
+        return res.redirect(pagamento.body.init_point)
+    }catch (e) {
+        console.log(e)
+    }
+
+
+
+
+
 
 })
 
