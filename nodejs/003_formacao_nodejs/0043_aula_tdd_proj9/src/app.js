@@ -67,6 +67,23 @@ app.post('/user',async (req,res)=>{
 
 app.post("/auth",async (req,res)=>{
     const {email, password} = req.body
+
+    let user = await User.findOne({email})
+
+    if(user == undefined){
+        res.statusCode = 403
+        res.json({errors:{email:"email nao cadastrado"}})
+        return
+    }
+
+    let isPasswordRight = await bcrypt.compare(password,user.password)
+
+    if(!isPasswordRight){
+        res.statusCode = 403
+        res.json({errors:{password:"senha incorreta"}})
+        return
+    }
+
     jwt.sign({email},jwtSecrete,{expiresIn:'48h'},(error,token)=>{
         if(error){
             console.log(error)
