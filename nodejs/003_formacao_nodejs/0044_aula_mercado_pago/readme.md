@@ -27,4 +27,6 @@ npm install --save mercadopago
 --mercado pago
 https://www.mercadopago.com.br/developers/pt/reference
 https://www.mercadopago.com.br/developers/pt/guides
+https://www.mercadopago.com.br/mlb/account/credentials
+https://www.mercadopago.com.br/developers/panel/credentials
 
