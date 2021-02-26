@@ -70,7 +70,10 @@ app.post("/auth",async (req,res)=>{
     jwt.sign({email},jwtSecrete,{expiresIn:'48h'},(error,token)=>{
         if(error){
             console.log(error)
-        }
+            res.sendStatus(500)
+        }else[
+            res.json({token})
+        ]
     })
 })
 
