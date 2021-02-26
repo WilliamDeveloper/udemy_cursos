@@ -28,7 +28,7 @@ app.get('/pagar', async (req,res)=>{
         items:[
             //uuid e data
             {   id: id,
-                description: '1x notebook acer',
+                title: '1x notebook acer',
                 quantity: 1,
                 currency_id:'BRL',
                 unit_price: parseFloat(8400)
@@ -46,6 +46,7 @@ app.get('/pagar', async (req,res)=>{
     try{
         let pagamento = await MercadoPago.preferences.create(dados)
         console.log({pagamento, dados})
+        //salvar dados do pagamento pendente para o banco
         return res.redirect(pagamento.body.init_point)
     }catch (e) {
         console.log(e)
