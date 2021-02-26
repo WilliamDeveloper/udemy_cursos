@@ -10,6 +10,10 @@ MercadoPago.configure({
     access_token: mp_access_token
 })
 
+app.get('/',(req,res)=>{
+    res.send('ola mundo')
+})
+
 app.listen(3000, (req,res)=>{
     console.log('rodando servidor')
     console.log('mp_access_token ', mp_access_token)
