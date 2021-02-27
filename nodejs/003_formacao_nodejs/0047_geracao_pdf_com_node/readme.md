@@ -21,6 +21,10 @@ npm install --save nodemon
 --biblioteca de gerar pdf -> html-pdf
 npm install --save html-pdf
 
+// "ejs": "^3.1.5",
+- EJS - embedded javascript templating -  motor de html - template engine
+npm install --save ejs
+
 --- sobre bibliotecas de pdf
 https://blog.rocketseat.com.br/estrategias-pdf-em-nodejs/
 
