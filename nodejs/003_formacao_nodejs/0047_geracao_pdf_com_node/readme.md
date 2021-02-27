@@ -18,8 +18,8 @@ npm init -y
 --nodemon para o projeto ficar rodando 
 npm install --save nodemon
 
---biblioteca de gerar pdf
-npm install --save node
+--biblioteca de gerar pdf -> html-pdf
+npm install --save html-pdf
 
 --- sobre bibliotecas de pdf
 https://blog.rocketseat.com.br/estrategias-pdf-em-nodejs/
