@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 
+//configurar icone da aplicacao (senao aparecer de primeira, aperte CONTROL + F5 para forcar limpar cache)
+app.use('/favicon.ico', express.static('images/favicon.ico'))
+
 // dizer para o express usar o EJS como view engine
 app.set('view engine','ejs')
 
