@@ -14,12 +14,16 @@ console.log(credenciaisEmail)
 const transporter = nodemailer.createTransport(credenciaisEmail)
 
 const dadosEmail = {
-    from: "William Pacheco <blau@gmail.com>",
-    to: "dg@gmail.com",
+    from: "William Pacheco <blau2@gmail.com>",
+    to: "dg2@gmail.com",
     subject: "Oi, este eh um email de teste",
     text: "ola sou teobaldo",
     html: 'ola sou teobando2'
 
 }
 
-transporter.sendMail(dadosEmail)
+transporter.sendMail(dadosEmail).then(message=>{
+    console.log(message)
+}).catch(error=>{
+    console.log(error)
+})
