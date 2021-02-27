@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer')
 
-const dadosEmail = {
+const credenciaisEmail = {
     host: process.env['MAIL_MAILTRAP_HOST'],
     port: process.env['MAIL_MAILTRAP_PORT'],
     auth: {
@@ -9,15 +9,17 @@ const dadosEmail = {
     }
 }
 
-console.log(dadosEmail)
+console.log(credenciaisEmail)
 
-const transporter = nodemailer.createTransport(dadosEmail)
+const transporter = nodemailer.createTransport(credenciaisEmail)
 
-
-transporter.sendMail({
+const dadosEmail = {
     from: "William Pacheco <blau@gmail.com>",
     to: "dg@gmail.com",
     subject: "Oi, este eh um email de teste",
-    text: "ola sou teobaldo"
+    text: "ola sou teobaldo",
+    html: 'ola sou teobando2'
 
-})
+}
+
+transporter.sendMail(dadosEmail)
