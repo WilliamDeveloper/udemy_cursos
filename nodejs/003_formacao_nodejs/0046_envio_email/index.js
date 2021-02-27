@@ -1,10 +1,23 @@
 const nodemailer = require('nodemailer')
 
-const transporter = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: 2525,
+const dadosEmail = {
+    host: process.env['MAIL_MAILTRAP_HOST'],
+    port: process.env['MAIL_MAILTRAP_PORT'],
     auth: {
-        user: "c1d3946939b749",
-        pass: "984e0538e850e1"
+        user: process.env['MAIL_MAILTRAP_USER'],
+        pass: process.env['MAIL_MAILTRAP_PASS']
     }
+}
+
+console.log(dadosEmail)
+
+const transporter = nodemailer.createTransport(dadosEmail)
+
+
+transporter.sendMail({
+    from: "William Pacheco <blau@gmail.com>",
+    to: "dg@gmail.com",
+    subject: "Oi, este eh um email de teste",
+    text: "ola sou teobaldo"
+
 })
