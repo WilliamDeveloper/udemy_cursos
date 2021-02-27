@@ -9,8 +9,8 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 
 app.locals={
-    nome: 'William',
-    idade:18
+    NOME: 'William',
+    IDADE:18
 }
 
 app.get('/',(req,res)=>{
