@@ -14,6 +14,7 @@ app.get("/",(req,res)=>{
 
 app.post("/upload",upload.single("file"),(req,res)=>{
     console.log('arquivo recebido')
+    res.send('ok')
 })
 
 app.listen(3000,()=>{
