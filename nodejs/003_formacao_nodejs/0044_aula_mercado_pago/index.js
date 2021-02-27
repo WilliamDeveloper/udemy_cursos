@@ -83,11 +83,19 @@ app.post('/not',(req,res)=>{
             qs:filtro
         }).then(data=>{
             console.log(data)
+            let pagamento = data.body.results[0]
+
+            if(pagamento != undefined){
+                console.log(pagamento)
+            }else{
+                console.log('pagamento nao existe')
+            }
+
         }).catch(error=>{
             console.log(error)
         })
 
-    })
+    }, 20*1000)
 
 
     res.send('OK')
