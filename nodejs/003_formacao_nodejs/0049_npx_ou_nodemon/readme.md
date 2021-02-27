@@ -3,7 +3,8 @@
 --- ---------------------------------------------------
 - biblioteca para o script de node se auto dar restart quando tiver uma modificacao
  npm install -g nodemon 
-  
+ 
+   
   
 --- ---------------------------------------------------
 - criado com
@@ -17,6 +18,8 @@ npm init -y
 
 --nodemon para o projeto ficar rodando 
 npm install --save nodemon
+npm install --save npx
+npx nodemon index.js
 
 - para rotas da aplicacao
 npm install --save express
