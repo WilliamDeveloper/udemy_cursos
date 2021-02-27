@@ -17,6 +17,12 @@ app.get('/',(req,res)=>{
     res.render('index')
 })
 
+app.get('/nome/:nome',(req,res)=>{
+    let nome = req.params.nome
+    app.locals.NOME = nome
+    res.render('index')
+})
+
 app.listen(3000,(req,res)=>{
     console.log('servidor rodando')
 })
