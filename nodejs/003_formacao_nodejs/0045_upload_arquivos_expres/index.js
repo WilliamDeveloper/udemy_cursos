@@ -4,8 +4,20 @@ const multer = require('multer')
 
 app.set("view engine","ejs")
 
+
+const storage = multer.diskStorage({
+    destination:function (req,file,cb) {
+        cb(null,"uploads/")
+    },
+    filename:function (req,file,cb) {
+        cb(null,file.originalname)
+    }
+})
+
+
 //configuracao do middleware - multer
-const upload = multer({ dest: "uploads/"})
+//const upload = multer({ dest: "uploads/"})
+const upload = multer({storage})
 
 
 app.get("/",(req,res)=>{
