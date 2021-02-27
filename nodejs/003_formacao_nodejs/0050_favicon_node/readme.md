@@ -34,5 +34,8 @@ npm install --save express
 npm install --save ejs
 
 
+// criar icone
+https://www.favicon-generator.org
+
 
 
