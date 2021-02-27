@@ -11,7 +11,7 @@ app.locals={
 }
 
 app.get('/',(req,res)=>{
-    res.render('')
+    res.render('index')
 })
 
 app.listen(3000,(req,res)=>{
