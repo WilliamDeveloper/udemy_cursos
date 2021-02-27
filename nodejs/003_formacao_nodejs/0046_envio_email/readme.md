@@ -18,17 +18,5 @@ npm init -y
 --nodemon para o projeto ficar rodando 
 npm install --save nodemon
 
-- para rotas da aplicacao
-npm install --save express
-
-// "ejs": "^3.1.5",
-- EJS - embedded javascript templating -  motor de html - template engine
-npm install --save ejs
-
-// habilitar middleware - o multiformpart de formularios binarios
-npm install --save multer
-
---- ---------------------------------------------------
-- rodando testes 
---- ---------------------------------------------------
-npm run test
+--biblioteca de enviar email 
+npm install --save nodemailer
