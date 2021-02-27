@@ -12,6 +12,10 @@ app.get("/",(req,res)=>{
     res.render('index')
 })
 
+app.post("/upload",(req,res)=>{
+    console.log('arquivo recebido')
+})
+
 app.listen(3000,()=>{
     console.log('rodando o servidor')
 })
