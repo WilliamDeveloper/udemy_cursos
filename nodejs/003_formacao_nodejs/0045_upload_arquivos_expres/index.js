@@ -4,6 +4,9 @@ const multer = require('multer')
 
 app.set("view engine","ejs")
 
+//configuracao do multer
+const upload = multer({ dest: "uploads/"})
+
 
 app.get("/",(req,res)=>{
     res.render('index')
