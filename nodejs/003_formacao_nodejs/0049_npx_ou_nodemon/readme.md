@@ -6,6 +6,7 @@
  
  - bliblioteca necessaria para nao precisar mais instalar bibliotecas globais no sistema, instalando somente no projeto
 // e depois so chamar normal usando npx na frente "npx nodemon index.js"
+  npm install --save nodemon 
   npm install --save npx
 
    
