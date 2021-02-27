@@ -24,20 +24,21 @@ pdf
 
 
 
-const htmlConteudo = `
-    <h1 style="color:red"> Agora sim heim!</h1>
-    <hr>  
-    <p>Esse pdf tem muito conteudo heim!</p>
-    <p>${nome}</p>
-    <img src="${imagem}" alt="">
-`
+ejs.renderFile('./minhapagina.ejs',{nome, imagem},(error, html)=>{
+    if(error){
+        console.log(error)
+    }else{
+        console.log(html)
 
-pdf
-    .create(htmlConteudo,{})
-    .toFile("./meupdflindao2.pdf",(error, res)=>{
-        if(error){
-            console.log('error: ', error)
-        }else{
-            console.log('res: ', res)
-        }
-    })
+        pdf
+            .create(html,{})
+            .toFile("./meupdflindao2.pdf",(error, res)=>{
+                if(error){
+                    console.log('error: ', error)
+                }else{
+                    console.log('res: ', res)
+                }
+            })
+    }
+})
+
