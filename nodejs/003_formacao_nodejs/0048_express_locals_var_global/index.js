@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-//bodyparser
+//bodyparser -> que agora ta dentro do express
 app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 
