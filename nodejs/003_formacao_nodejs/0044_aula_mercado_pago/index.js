@@ -70,6 +70,26 @@ app.get('/not',(req,res)=>{
 app.post('/not',(req,res)=>{
     let dados = {query:req.query}
     console.log(dados)
+
+    let id = req.query.id
+
+    setTimeout(()=>{
+
+        let filtro ={
+            "order.id": id
+        }
+
+        MercadoPago.payment.search({
+            qs:filtro
+        }).then(data=>{
+            console.log(data)
+        }).catch(error=>{
+            console.log(error)
+        })
+
+    })
+
+
     res.send('OK')
 })
 
