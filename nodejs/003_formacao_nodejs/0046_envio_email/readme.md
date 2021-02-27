@@ -20,3 +20,7 @@ npm install --save nodemon
 
 --biblioteca de enviar email 
 npm install --save nodemailer
+
+
+-- mail trap io ferramenta de email fake
+https://mailtrap.io
