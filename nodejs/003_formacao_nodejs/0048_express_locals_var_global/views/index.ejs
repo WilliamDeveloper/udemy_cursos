@@ -4,3 +4,10 @@
 <p>EXIBINDO VARIAVEIS GLOBAIS DEFINIDAS EM "app.locals" no index.js</p>
 <p>Nome: <%= NOME %></p>
 <p>Idade: <%= IDADE %></p>
+
+
+<%  MENU.forEach(item =>{  %>
+    <li class="nav-item">
+        <a href="/" class="nav-link"><%= item %></a>
+    </li>
+<%  }) %>

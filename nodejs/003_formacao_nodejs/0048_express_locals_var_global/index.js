@@ -10,7 +10,8 @@ app.use(express.json());
 
 app.locals={
     NOME: 'William',
-    IDADE:18
+    IDADE:18,
+    MENU: ["Home", "Planos", "Loja", "Perfil", "Sair"]
 }
 
 app.get('/',(req,res)=>{
