@@ -4,6 +4,10 @@
 - biblioteca para o script de node se auto dar restart quando tiver uma modificacao
  npm install -g nodemon 
  
+ - bliblioteca necessaria para nao precisar mais instalar bibliotecas globais no sistema, instalando somente no projeto
+// e depois so chamar normal usando npx na frente "npx nodemon index.js"
+  npm install --save npx
+
    
   
 --- ---------------------------------------------------
