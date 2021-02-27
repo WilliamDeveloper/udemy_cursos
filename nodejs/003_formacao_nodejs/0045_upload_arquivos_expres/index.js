@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const multer = require('multer')
 
 app.set("view engine","ejs")
 

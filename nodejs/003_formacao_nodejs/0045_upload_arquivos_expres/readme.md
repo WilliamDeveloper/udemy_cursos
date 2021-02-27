@@ -25,7 +25,7 @@ npm install --save express
 - EJS - embedded javascript templating -  motor de html - template engine
 npm install --save ejs
 
-// habilitar o multiformpart de formularios binarios
+// habilitar middleware - o multiformpart de formularios binarios
 npm install --save multer
 
 --- ---------------------------------------------------
