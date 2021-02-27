@@ -50,6 +50,7 @@ app.get('/pagar', async (req,res)=>{
         return res.redirect(pagamento.body.init_point)
     }catch (e) {
         console.log(e)
+        return res.send({error:e})
     }
 
 
@@ -57,6 +58,19 @@ app.get('/pagar', async (req,res)=>{
 
 
 
+})
+
+app.get('/not',(req,res)=>{
+    let dados = {query:req.query}
+    console.log(dados)
+    res.send(dados)
+})
+
+
+app.post('/not',(req,res)=>{
+    let dados = {query:req.query}
+    console.log(dados)
+    res.send('OK')
 })
 
 
