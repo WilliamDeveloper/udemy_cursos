@@ -87,6 +87,13 @@ app.post('/not',(req,res)=>{
 
             if(pagamento != undefined){
                 console.log(pagamento)
+                console.log(pagamento.external_reference)
+                console.log(pagamento.status)
+
+                // if(status == 'aproved'){
+                //     salvar no banco de dados
+                // }
+
             }else{
                 console.log('pagamento nao existe')
             }
