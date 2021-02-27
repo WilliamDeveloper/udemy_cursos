@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const multer = require('multer')
+const path = require("path")
 
 app.set("view engine","ejs")
 
@@ -10,7 +11,7 @@ const storage = multer.diskStorage({
         cb(null,"uploads/")
     },
     filename:function (req,file,cb) {
-        cb(null,file.originalname)
+        cb(null,file.originalname+Date.now()+path.extname(file.originalname))
     }
 })
 
@@ -26,7 +27,7 @@ app.get("/",(req,res)=>{
 
 app.post("/upload",upload.single("file"),(req,res)=>{
     console.log('arquivo recebido')
-    res.send('ok')
+    res.send({})
 })
 
 app.listen(3000,()=>{
