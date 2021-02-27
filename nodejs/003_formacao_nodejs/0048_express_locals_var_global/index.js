@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 
+// dizer para o express usar o EJS como view engine
+app.set('view engine','ejs')
+
 //bodyparser -> que agora ta dentro do express
 app.use(express.urlencoded({extended:false}))
 app.use(express.json());
