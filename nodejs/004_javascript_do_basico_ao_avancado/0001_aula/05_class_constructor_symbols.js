@@ -5,6 +5,7 @@ class Cachorro {
         this.raca = raca
         this.patas = patas
         this.cor = cor
+
     }
 
     uivar() {
@@ -20,12 +21,11 @@ let patas = Symbol()
 
 //criando symbol
 Cachorro.prototype[patas] = 4
-Cachorro.prototype["patass"] = 45
+
 
 const dog = new Cachorro("pitbul",4, "verde")
 
+
 // acessando symbol
 console.log(Cachorro.prototype[patas])
-console.log(Cachorro.prototype["patass"])
 console.log(dog[patas])
-console.log(dog["patass"])
