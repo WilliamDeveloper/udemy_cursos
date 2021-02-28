@@ -1,9 +1,17 @@
-//e3s6 - versao 2015
-class Cachorro {
+//es6 - versao 2015
+
+class Animal {
+    constructor(){
+        this.patas =4
+    }
+}
+
+class Cachorro extends Animal{
 
     constructor(raca, patas, cor){
+        super()
         this.raca = raca
-        this.patas = patas
+        super.patas = patas
         this.cor = cor
 
     }
@@ -35,3 +43,4 @@ dog.setRaca = "viralata"
 console.log(dog)
 console.log(dog.raca)
 console.log(dog)
+console.log(dog.patas)
