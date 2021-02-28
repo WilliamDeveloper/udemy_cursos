@@ -1,3 +1,5 @@
+
+//prototype - como se fosse classe
 const pessoa ={
     nome: '',
     setNome: function (nome) {
@@ -17,7 +19,7 @@ console.log(pessoa)
 
 
 // herda atributos e metodos mas nao eh considerado o dono
-const newPessoa = Object.create(pessoa)
+const newPessoa = Object.create(pessoa) // criando objeto apartir de um "prototype"
 console.log(Object.getPrototypeOf(newPessoa))
 console.log(Object.getPrototypeOf(newPessoa) === Object.prototype)
 console.log(newPessoa.hasOwnProperty('nome'))
