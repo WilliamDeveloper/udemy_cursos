@@ -1,3 +1,4 @@
+//e3s6 - versao 2015
 class Cachorro {
 
     constructor(raca, patas, cor){
