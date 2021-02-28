@@ -14,7 +14,7 @@ console.log(opa)
 function funcao() {
     "use strict"
 
-    let blau = "festa"
+    blau = "festa"
 
     console.log(blau)
 }
