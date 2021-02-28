@@ -4,7 +4,6 @@ function criaCachorro(raca, patas, cor) {
     cachorro.patas = patas
     cachorro.cor = cor
     return cachorro
-    
 }
 
 const dog = criaCachorro("pitbul",4, "verde")
