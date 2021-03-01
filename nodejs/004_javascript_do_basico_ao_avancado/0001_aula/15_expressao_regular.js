@@ -67,7 +67,7 @@ sentenca = /\S/
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsaasdasdsa"))
 
-// caracter coringa
+// .  caracter coringa
 sentenca = /./
 sentenca = new RegExp(".")
 console.log("POSSUI QUALQUER COISA ESCRITA ? ",sentenca.test("wwwdsadsa asdasdsa"))
@@ -86,7 +86,7 @@ console.log('palavra tem no minimo 3 letras ? ', sentenca.test('19'))
 
 
 //--------------------------------
-// negacao
+// ^  - negacao
 //--------------------------------
 sentenca =/[^abc]/
 
@@ -97,7 +97,7 @@ console.log('contem abc ?', sentenca.test('ddddd'))
 
 
 //--------------------------------
-// repeticao - plus
+// +(plus) - repeticao
 //--------------------------------
 
 sentenca =/\d+/
@@ -106,7 +106,7 @@ console.log('tem digito ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdja
 console.log('tem digito ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdjas1121'))
 
 //--------------------------------
-// opcional - ?
+// ? - opcional
 //--------------------------------
 sentenca =/Prova\s?\d?/
 
