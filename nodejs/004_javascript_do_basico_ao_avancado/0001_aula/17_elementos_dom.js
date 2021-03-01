@@ -35,3 +35,6 @@ console.log(h1.offsetWidth)
 //nao considera as bordas
 console.log(h1.clientHeight)
 console.log(h1.clientWidth)
+
+// da informacoes sobbre um elemento
+console.log(h1.getBoundingClientRect())
