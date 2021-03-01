@@ -72,3 +72,13 @@ sentenca = /./
 sentenca = new RegExp(".")
 console.log("POSSUI QUALQUER COISA ESCRITA ? ",sentenca.test("wwwdsadsa asdasdsa"))
 
+
+sentenca=/\d\d\d\d/
+console.log('ano possui 4 digitos ? ', sentenca.test('2019'))
+console.log('ano possui 4 digitos ? ', sentenca.test('19'))
+
+
+sentenca=/\w\w\w/
+console.log('palavra tem no minimo 3 letras ? ', sentenca.test('2019'))
+console.log('palavra tem no minimo 3 letras ? ', sentenca.test('201'))
+console.log('palavra tem no minimo 3 letras ? ', sentenca.test('19'))
