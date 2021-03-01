@@ -12,3 +12,6 @@ let sentenca
 
 sentenca = new RegExp("[12345]")
 console.log(sentenca.test("jhdsjahdjah12345jjhdhadhag"))
+
+sentenca = new RegExp("[0-9]")
+console.log(sentenca.test("jhdsjahdjah12345jjhdhadhag"))
