@@ -40,9 +40,9 @@ console.log('contem digitos ? ',sentenca.test("123asd"))
 
 sentenca = /\D/
 sentenca = new RegExp("\\D")
-console.log('nao possui numero ? ',sentenca.test("jhdsjahdjahjjhdhadhag"))
-console.log('nao possui numero ? ',sentenca.test("11111111"))
-console.log('nao possui numero ? ',sentenca.test("11111111dsadsadsa"))
+console.log('nao formado apenas por digito ? ',sentenca.test("jhdsjahdjahjjhdhadhag"))
+console.log('nao formado apenas por digito ? ',sentenca.test("11111111"))
+console.log('nao formado apenas por digito ? ',sentenca.test("11111111dsadsadsa"))
 
 
 sentenca = /\w/
