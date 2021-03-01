@@ -71,3 +71,8 @@ input.addEventListener("focus",function () {
 input.addEventListener("blur",function () {
     console.log("perdeu o foco")
 })
+
+window.addEventListener("beforeunload", function (event) {
+    console.log('esta saindo ou fechando da pagina')
+
+})
