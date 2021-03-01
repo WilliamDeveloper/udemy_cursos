@@ -63,7 +63,7 @@ window.addEventListener("scroll", function (event) {
     }
 })
 
-
+//..........
 input.addEventListener("focus",function () {
     console.log("foco no input")
 })
