@@ -85,10 +85,13 @@ window.addEventListener("beforeunload", function (event) {
 
 })
 
+
+let timeout;
+
 window.addEventListener("mousemove", function (event) {
 
     clearTimeout(timeout)
-    timeout =  setTimeout( ()=> console.log('Debounce') , 500)
+    timeout =  setTimeout( ()=> console.log('Debounce-atrasa um pouco o evento') , 500)
 
 })
 
