@@ -48,3 +48,17 @@ window.addEventListener("keyup", function (event) {
     }
 
 })
+
+window.addEventListener("mousemove", function (event) {
+    console.log(event.x)
+    console.log(event.y)
+})
+
+
+window.addEventListener("scroll", function (event) {
+    console.log('event.key ',event.key)
+
+    if(window.pageYOffset > 100){
+        console.log('xegou na posicao')
+    }
+})
