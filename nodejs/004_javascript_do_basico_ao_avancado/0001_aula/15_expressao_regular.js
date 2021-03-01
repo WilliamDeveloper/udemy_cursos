@@ -58,3 +58,7 @@ console.log("possui algum espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa
 sentenca = new RegExp("\S")
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsaasdasdsa"))
+
+sentenca = new RegExp(".")
+console.log("POSSUI QUALQUER COISA ESCRITA ? ",sentenca.test("wwwdsadsa asdasdsa"))
+
