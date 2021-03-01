@@ -97,7 +97,7 @@ console.log('contem abc ?', sentenca.test('ddddd'))
 
 
 //--------------------------------
-// repeticao
+// repeticao - plus
 //--------------------------------
 
 sentenca =/\d+/
