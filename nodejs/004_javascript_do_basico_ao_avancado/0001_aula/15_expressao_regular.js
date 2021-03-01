@@ -143,3 +143,14 @@ console.log('operador OR(ou) ?', sentenca.test('12 banana'))
 console.log('operador OR(ou) ?', sentenca.test('maca'))
 
 
+
+sentenca = /[0-9]{2}[/][0-9]{2}[/][0-9]{4}/
+console.log('data ?', sentenca.test('banana'))
+console.log('data ?', sentenca.test('12 banana'))
+console.log('data ?', sentenca.test('maca'))
+console.log('data ?', sentenca.test('20'))
+console.log('data ?', sentenca.test('202'))
+console.log('data ?', sentenca.test('2021'))
+console.log('data ?', sentenca.test('01/02/202'))
+console.log('data ?', sentenca.test('01/02/2021'))
+
