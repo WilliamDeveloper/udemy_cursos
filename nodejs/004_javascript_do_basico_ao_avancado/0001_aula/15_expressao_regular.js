@@ -74,8 +74,9 @@ console.log("POSSUI QUALQUER COISA ESCRITA ? ",sentenca.test("wwwdsadsa asdasdsa
 
 
 sentenca=/\d\d\d\d/
-console.log('ano possui 4 digitos ? ', sentenca.test('2019'))
-console.log('ano possui 4 digitos ? ', sentenca.test('19'))
+console.log('ano possui 4 digitos  no minimo ? ', sentenca.test('20199'))
+console.log('ano possui 4 digitos  no minimo ? ', sentenca.test('2019'))
+console.log('ano possui 4 digitos  no minimo ? ', sentenca.test('19'))
 
 
 sentenca=/\w\w\w/
