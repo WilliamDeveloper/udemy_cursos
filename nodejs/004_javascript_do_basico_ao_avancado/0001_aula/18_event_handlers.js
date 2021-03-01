@@ -30,3 +30,12 @@ btn.addEventListener("click",function (event) {
     e.preventDefault()
 
 })
+
+window.addEventListener("keydown", function (event) {
+    console.log('event.key ',event.key)
+
+    if(event.key == 'q'){
+        console.log('apertou letra q')
+    }
+
+})
