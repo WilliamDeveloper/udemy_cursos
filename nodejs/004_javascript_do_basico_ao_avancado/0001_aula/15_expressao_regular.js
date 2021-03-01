@@ -121,9 +121,12 @@ console.log('prova ?', sentenca.test('Provvmmm'))
 //--------------------------------
 sentenca = /\d{3]/
 
+console.log('ocorrencia ?', sentenca.test('12'))
 console.log('ocorrencia ?', sentenca.test('123'))
-console.log('ocorrencia ?', sentenca.exec('123'))
+console.log('ocorrencia ?', sentenca.exec('1234'))
 console.log('ocorrencia ?', sentenca.test('Prova 4444'))
 console.log('ocorrencia ?', sentenca.test('Prova mmm'))
 console.log('ocorrencia ?', sentenca.test('Provammm'))
 console.log('ocorrencia ?', sentenca.test('Provvmmm'))
+
+console.log('1111111'.match(/\d+/))
