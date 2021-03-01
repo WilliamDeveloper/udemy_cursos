@@ -53,3 +53,8 @@ console.log('nao possui letra ? ',sentenca.test("43434344"))
 //possui algum espaco em branco ?
 sentenca = new RegExp("\s")
 console.log("possui algum espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
+
+//possui algum espaco em branco ?
+sentenca = new RegExp("\S")
+console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
+console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsaasdasdsa"))
