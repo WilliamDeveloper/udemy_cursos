@@ -129,4 +129,8 @@ console.log('ocorrencia ?', sentenca.test('Prova mmm'))
 console.log('ocorrencia ?', sentenca.test('Provammm'))
 console.log('ocorrencia ?', sentenca.test('Provvmmm'))
 
+
+//--------------------------------
+// match - dentro de uma string
+//--------------------------------
 console.log('1111111'.match(/\d+/))
