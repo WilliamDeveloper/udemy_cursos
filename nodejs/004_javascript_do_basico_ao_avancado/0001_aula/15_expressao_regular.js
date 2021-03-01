@@ -104,3 +104,14 @@ sentenca =/\d+/
 
 console.log('tem digito ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdjas'))
 console.log('tem digito ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdjas1121'))
+
+//--------------------------------
+// opcional - ?
+//--------------------------------
+sentenca =/Prova\s?\d?/
+
+console.log('prova ?', sentenca.test('Prova'))
+console.log('prova ?', sentenca.test('Prova 4444'))
+console.log('prova ?', sentenca.test('Prova mmm'))
+console.log('prova ?', sentenca.test('Provammm'))
+console.log('prova ?', sentenca.test('Provvmmm'))
