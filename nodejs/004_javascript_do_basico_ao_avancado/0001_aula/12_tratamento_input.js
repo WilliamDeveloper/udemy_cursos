@@ -14,3 +14,7 @@ console.log(result)
 
 result = checarNumero("huhudhsuahduash")
 console.log(result)
+
+
+result = prompt("digite um numero")
+console.log(result)
