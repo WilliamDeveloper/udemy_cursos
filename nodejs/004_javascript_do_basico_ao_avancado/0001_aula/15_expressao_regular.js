@@ -29,36 +29,46 @@ console.log(sentenca.test("jhdsjahdjah12345jjhdhadhag"))
 // caracteres especiais
 //-------------------------------
 
-
-sentenca = new RegExp("\d")
+sentenca = /\d/
+sentenca = new RegExp("\\d")
 console.log('contem digitos ? ',sentenca.test("jhdsjahdjah12345jjhdhadhag"))
+console.log('contem digitos ? ',sentenca.test("asd"))
+console.log('contem digitos ? ',sentenca.test(" "))
+console.log('contem digitos ? ',sentenca.test("123"))
+console.log('contem digitos ? ',sentenca.test("123asd"))
 
 
-sentenca = new RegExp("\D")
+sentenca = /\D/
+sentenca = new RegExp("\\D")
 console.log('nao possui numero ? ',sentenca.test("jhdsjahdjahjjhdhadhag"))
 console.log('nao possui numero ? ',sentenca.test("11111111"))
 console.log('nao possui numero ? ',sentenca.test("11111111dsadsadsa"))
 
 
+sentenca = /\w/
+sentenca = new RegExp("\\w")
+console.log('contem letra ou numero ? ',sentenca.test("wwwdsadsa"))
+console.log('contem letra ou numero ? ',sentenca.test("wwwdsadsa21312"))
+console.log('contem letra ou numero ? ',sentenca.test("wwwdsadsa sdadsa"))
+console.log('contem letra ou numero ? ',sentenca.test("dwwwdsadsa21312"))
 
-sentenca = new RegExp("\w")
-console.log('contem so letra ? ',sentenca.test("wwwdsadsa"))
-
-
-sentenca = new RegExp("\W")
+sentenca = /\W/
+sentenca = new RegExp("\\W")
 console.log('nao possui letra ? ',sentenca.test("wwwdsadsa4"))
 console.log('nao possui letra ? ',sentenca.test("dadadsadsadsa"))
 console.log('nao possui letra ? ',sentenca.test("43434344"))
 
-
-sentenca = new RegExp("\s")
+sentenca = /\s/
+sentenca = new RegExp("\\s")
 console.log("possui algum espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
 
-
-sentenca = new RegExp("\S")
+sentenca = /\S/
+sentenca = new RegExp("\\S")
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsaasdasdsa"))
 
+// caracter coringa
+sentenca = /./
 sentenca = new RegExp(".")
 console.log("POSSUI QUALQUER COISA ESCRITA ? ",sentenca.test("wwwdsadsa asdasdsa"))
 
