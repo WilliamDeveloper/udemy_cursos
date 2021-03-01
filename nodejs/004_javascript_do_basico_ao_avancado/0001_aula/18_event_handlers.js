@@ -39,3 +39,12 @@ window.addEventListener("keydown", function (event) {
     }
 
 })
+
+window.addEventListener("keyup", function (event) {
+    console.log('event.key ',event.key)
+
+    if(event.key == 'q'){
+        console.log('soltou letra q')
+    }
+
+})
