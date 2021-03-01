@@ -115,3 +115,14 @@ console.log('prova ?', sentenca.test('Prova 4444'))
 console.log('prova ?', sentenca.test('Prova mmm'))
 console.log('prova ?', sentenca.test('Provammm'))
 console.log('prova ?', sentenca.test('Provvmmm'))
+
+//--------------------------------
+// {} - ocorrencia
+//--------------------------------
+sentenca = /\d{3]/
+
+console.log('ocorrencia ?', sentenca.test('123'))
+console.log('ocorrencia ?', sentenca.test('Prova 4444'))
+console.log('ocorrencia ?', sentenca.test('Prova mmm'))
+console.log('ocorrencia ?', sentenca.test('Provammm'))
+console.log('ocorrencia ?', sentenca.test('Provvmmm'))
