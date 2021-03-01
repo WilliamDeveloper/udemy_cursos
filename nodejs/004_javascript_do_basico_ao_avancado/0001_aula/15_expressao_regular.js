@@ -33,6 +33,11 @@ console.log(sentenca.test("jhdsjahdjah12345jjhdhadhag"))
 sentenca = new RegExp("\d")
 console.log('contem digitos ? ',sentenca.test("jhdsjahdjah12345jjhdhadhag"))
 
+// nao possui numero ?
+sentenca = new RegExp("\D")
+console.log('nao possui numero ? ',sentenca.test("jhdsjahdjah12345jjhdhadhag"))
+
+
 //contem so letra ?
 sentenca = new RegExp("\w")
 console.log('contem so letra ? ',sentenca.test("wwwdsadsa"))
