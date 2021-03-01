@@ -26,3 +26,12 @@ console.log(a.getAttribute("href"))
 let url = 'https://www.horadecodar.com.br'
 a.setAttribute("href", url)
 console.log(a.getAttribute("href"))
+
+let h1 = document.getElementById("h1")
+//considera as bordas
+console.log(h1.offsetHeight)
+console.log(h1.offsetWidth)
+
+//nao considera as bordas
+console.log(h1.clientHeight)
+console.log(h1.clientWidth)
