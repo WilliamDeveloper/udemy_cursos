@@ -31,7 +31,7 @@ npm install --save express
 
 
 - usando sqlite
-npm install sqlite3@5.0.0
+npm install --save sqlite3@5.0.0
 
 // "ejs": "^3.1.5",
 - EJS - embedded javascript templating -  motor de html - template engine
