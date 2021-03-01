@@ -81,5 +81,6 @@ window.addEventListener("load", function (event) {
 
 window.addEventListener("beforeunload", function (event) {
     console.log('esta saindo ou fechando da pagina')
+    event.returnValue = null
 
 })
