@@ -83,3 +83,14 @@ sentenca=/\w\w\w/
 console.log('palavra tem no minimo 3 letras ? ', sentenca.test('2019'))
 console.log('palavra tem no minimo 3 letras ? ', sentenca.test('201'))
 console.log('palavra tem no minimo 3 letras ? ', sentenca.test('19'))
+
+
+//--------------------------------
+// negacao
+//--------------------------------
+sentenca =/[^abc]/
+
+console.log('contem abc ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdjas'))
+console.log('contem abc ?', sentenca.test('djuhsjdhasjdhsajhdjaggas'))
+console.log('contem abc ?', sentenca.test('djuhsjdhasjdhsajhdjasad'))
+console.log('contem abc ?', sentenca.test('ddddd'))
