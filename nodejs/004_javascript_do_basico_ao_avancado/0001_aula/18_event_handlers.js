@@ -24,3 +24,9 @@ btn.addEventListener("click",function (event) {
     e.stopPropagation()
 
 })
+
+btn.addEventListener("click",function (event) {
+    // previnir uma acao default de um submit por exemplo
+    e.preventDefault()
+
+})
