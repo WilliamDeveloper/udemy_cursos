@@ -62,3 +62,12 @@ window.addEventListener("scroll", function (event) {
         console.log('xegou na posicao')
     }
 })
+
+
+input.addEventListener("focus",function () {
+    console.log("foco no input")
+})
+
+input.addEventListener("blur",function () {
+    console.log("perdeu o foco")
+})
