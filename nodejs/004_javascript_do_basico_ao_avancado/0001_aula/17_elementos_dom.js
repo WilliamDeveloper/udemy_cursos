@@ -19,3 +19,10 @@ elemento.appendChild(texto)
 
 let h1 = document.getElementById("h1")
 let paiDoH1 = document.getElementById("h1").parentNode
+
+let a = document.querySelector("a")
+console.log(a.getAttribute("href"))
+
+let url = 'https://www.horadecodar.com.br'
+a.setAttribute("href", url)
+console.log(a.getAttribute("href"))
