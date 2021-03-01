@@ -72,6 +72,13 @@ input.addEventListener("blur",function () {
     console.log("perdeu o foco")
 })
 
+
+window.addEventListener("load", function (event) {
+    console.log('acabou de ser carregada')
+
+})
+
+
 window.addEventListener("beforeunload", function (event) {
     console.log('esta saindo ou fechando da pagina')
 
