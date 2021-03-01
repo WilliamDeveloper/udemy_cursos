@@ -62,8 +62,8 @@ sentenca = /\s/
 sentenca = new RegExp("\\s")
 console.log("possui algum espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
 
-sentenca = /\S/
 sentenca = new RegExp("\\S")
+sentenca = /\S/
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsa asdasdsa"))
 console.log("NAO POSSUI espaco em branco ? ",sentenca.test("wwwdsadsaasdasdsa"))
 
