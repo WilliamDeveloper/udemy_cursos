@@ -15,3 +15,7 @@ console.log(document.querySelector(".classe"))
 let elemento = document.createElement('p')
 let texto = document.createTextNode("algum text")
 elemento.appendChild(texto)
+
+
+let h1 = document.getElementById("h1")
+let paiDoH1 = document.getElementById("h1").parentNode
