@@ -94,3 +94,13 @@ console.log('contem abc ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdja
 console.log('contem abc ?', sentenca.test('djuhsjdhasjdhsajhdjaggas'))
 console.log('contem abc ?', sentenca.test('djuhsjdhasjdhsajhdjasad'))
 console.log('contem abc ?', sentenca.test('ddddd'))
+
+
+//--------------------------------
+// repeticao
+//--------------------------------
+
+sentenca =/\d+/
+
+console.log('tem digito ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdjas'))
+console.log('tem digito ?', sentenca.test('djuhsjdhasjdhsajhdjasabchdsjudsjahdjas1121'))
