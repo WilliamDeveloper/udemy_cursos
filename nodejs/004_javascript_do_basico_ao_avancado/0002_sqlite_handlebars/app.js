@@ -5,6 +5,9 @@ const path = require('path')
 
 const expressHandleBars = require('express-handlebars')
 
+//bodyparser -> que agora ta dentro do express
+app.use(express.urlencoded({extended:false}))
+app.use(express.json());
 
 const db = require('./db/connection')
 const Job = require('./models/Job')
@@ -17,9 +20,7 @@ app.engine("handlebars",expressHandleBars({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
 
-//bodyparser -> que agora ta dentro do express
-app.use(express.urlencoded({extended:false}))
-app.use(express.json());
+
 
 // configuracao de reconhecimento de conteudo de arquivos estaticos
 app.use(express.static('node_modules'))
@@ -37,7 +38,7 @@ db.authenticate().then(()=>{
 //routes
 app.get('/',(req,res)=>{
 
-    let search = req.body.job
+    let search = req.query.job
     let query = '%'+search+'%'
 
     console.log(search, query)
