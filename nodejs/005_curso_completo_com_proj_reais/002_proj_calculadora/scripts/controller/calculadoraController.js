@@ -1,6 +1,6 @@
 console.log('sasa')
-class CalculadoraController{
 
+class CalculadoraController{
     constructor(){
         this._displayCalculadora = 0
         this._dataAtual = ''
