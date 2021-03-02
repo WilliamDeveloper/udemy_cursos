@@ -41,3 +41,17 @@ Content-Type: application/json
   "description": "hdusahdusah3"
 }
 ####
+
+####
+POST http://localhost:3000/job/add
+Content-Type: application/json
+
+{
+  "title": "pimba4",
+  "salary" : "400",
+  "company" : "blau4",
+  "email": "a4@a.com.br",
+  "new_job" : 0,
+  "description": "hdusahdusah4"
+}
+####
