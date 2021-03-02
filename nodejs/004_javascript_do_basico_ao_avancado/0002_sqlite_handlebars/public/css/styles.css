@@ -239,7 +239,7 @@
 }
 
 /*responsivo*/
-@media (max-width: 481px) {
+@media (max-width : 481px) {
 
     #navbarNav{
         text-align: center;
@@ -285,4 +285,34 @@
     .new-job .new-job-label{
         display: none;
     }
+
+    /*detail*/
+    .back-link{
+        margin-left: 30px;
+    }
+
+    #job-view-container p{
+        font-size: 1.3rem;
+    }
+
+    .job-desc{
+        width: 80% ;
+    }
+
+    /*add*/
+    #form-box{
+        padding:25px
+    }
+
+    #form-box h2{
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #form-box button{
+        width: 100%;
+
+    }
+
+
 }
