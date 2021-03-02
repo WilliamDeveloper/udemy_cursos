@@ -3,6 +3,11 @@ const router = express.Router()
 const Job = require("../models/Job")
 
 //
+
+router.get('/',(req,res)=>{
+    res.send('ok')
+})
+
 router.post('/add',(req,res)=>{
     let {title,salary,company,description,email,new_job} = req.body
 
@@ -18,3 +23,5 @@ router.post('/add',(req,res)=>{
 
 
 })
+
+module.exports = router
