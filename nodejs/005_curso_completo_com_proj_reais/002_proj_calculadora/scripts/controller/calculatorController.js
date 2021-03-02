@@ -1,6 +1,7 @@
 console.log('CalculatorController')
 
 class CalculatorController{
+
     constructor(){
         this._displayCalculator = 0
         this._currenteDate = ''
@@ -22,4 +23,5 @@ class CalculatorController{
     set currenteDate(value){
         this._currenteDate = value
     }
+
 }
