@@ -6,7 +6,13 @@ let celular = function () {
     //atributo da classe
     this.cor = "prata"
 
+    //metodo
+    this.ligar = function() {
+
+    }
+
 }
 
 let objeto = new celular()
 console.log(objeto)
+console.log(objeto.cor)
