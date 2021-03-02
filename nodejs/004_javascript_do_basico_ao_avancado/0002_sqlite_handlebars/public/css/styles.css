@@ -21,7 +21,7 @@
     font-weight: bold;
 }
 
-.navbar .navbar-item .btn{
+.navbar .nav-item .btn{
     color: #FFF;
     background-color:#F03E3E;
     border:1px solid transparent;
@@ -40,7 +40,7 @@
     background-color:#f7f9fc;
     border-bottom:4px solid #013068;
     margin-bottom: 30px;
-    background-image: url("../img/txt.txt");
+    background-image: url("../img/banner2.jpg");
     background-position: 0 100px;
     background-size: cover;
     color: #fff;
