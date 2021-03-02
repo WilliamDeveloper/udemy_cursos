@@ -3,11 +3,41 @@ POST http://localhost:3000/job/add
 Content-Type: application/json
 
 {
-  "title": "pimba",
-  "salary" : "500",
-  "company" : "blau",
-  "email": "a@a.com.br",
+  "title": "pimba1",
+  "salary" : "100",
+  "company" : "blau1",
+  "email": "a1@a.com.br",
   "new_job" : 1,
-  "description": "hdusahdusah"
+  "description": "hdusahdusah1"
+}
+####
+
+
+####
+POST http://localhost:3000/job/add
+Content-Type: application/json
+
+{
+  "title": "pimba2",
+  "salary" : "200",
+  "company" : "blau2",
+  "email": "a2@a.com.br",
+  "new_job" : 1,
+  "description": "hdusahdusah2"
+}
+####
+
+
+####
+POST http://localhost:3000/job/add
+Content-Type: application/json
+
+{
+  "title": "pimba3",
+  "salary" : "300",
+  "company" : "blau3",
+  "email": "a3@a.com.br",
+  "new_job" : 1,
+  "description": "hdusahdusah3"
 }
 ####
