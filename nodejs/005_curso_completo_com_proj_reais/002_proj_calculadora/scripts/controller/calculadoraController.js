@@ -1,3 +1,15 @@
 class CalculadoraController{
 
+    constructor(){
+        this._displayCalculadora = 0
+        this._dataAtual = ''
+    }
+
+    get displayCalculadora(){
+        return this._displayCalculadora
+    }
+
+    set displayCalculadora(value){
+        this._displayCalculadora = value
+    }
 }
