@@ -8,12 +8,12 @@ router.get('/',(req,res)=>{
     res.send('ok')
 })
 
-router.post('/add',(req,res)=>{
+router.post('/add',async (req,res)=>{
     let {title,salary,company,description,email,new_job} = req.body
 
-    Job.create({
+    return Job.create({
         title,salary,company,description,email,new_job
-    }).then(res=>{
+    }).then(resp=>{
         console.log('criado')
         res.send('ok')
     }).catch(error=>{
