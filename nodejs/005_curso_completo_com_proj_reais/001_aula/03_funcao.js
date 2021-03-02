@@ -1,3 +1,9 @@
+//arrow function
+let calculadora = (x1,operator, x2)=> {
+    return eval(`${x1} ${operator} ${x2}`)
+}
+
+//function normal
 function calc(x1,operator, x2) {
     return eval(`${x1} ${operator} ${x2}`)
 }
