@@ -3,11 +3,13 @@ console.log('agoraInTimeStamp desde 01/01/1970',agoraInTimeStampInTimeMiles, ' i
 
 let dataAtual = new Date()
 console.log(dataAtual)
-console.log(dataAtual.getDate())
-console.log(dataAtual.getFullYear())
-console.log(dataAtual.getMonth())
+console.log('dia: ',dataAtual.getDate())
+console.log('mes: ',dataAtual.getMonth())
+console.log('ano: ',dataAtual.getFullYear())
 
-console.log(dataAtual.getHours())
-console.log(dataAtual.getMinutes())
-console.log(dataAtual.getSeconds())
-console.log(dataAtual.getMilliseconds())
+
+console.log('horas: ',dataAtual.getHours())
+console.log('minutos: ',dataAtual.getMinutes())
+console.log('segundos: ',dataAtual.getSeconds())
+console.log('milisegundos: ',dataAtual.getMilliseconds())
+
