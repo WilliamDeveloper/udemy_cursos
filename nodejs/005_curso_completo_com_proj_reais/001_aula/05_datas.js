@@ -13,3 +13,6 @@ console.log('minutos: ',dataAtual.getMinutes())
 console.log('segundos: ',dataAtual.getSeconds())
 console.log('milisegundos: ',dataAtual.getMilliseconds())
 
+console.log('padrao brasileiro: ',dataAtual.toLocaleDateString('pt-br'))
+console.log('padrao brasileiro: ',dataAtual.toLocaleDateString('pt-BR'))
+
