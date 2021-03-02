@@ -8,6 +8,13 @@ router.post('/add',(req,res)=>{
 
     Job.create({
         title,salary,company,description,email,new_job
-    }).then(res=>{console.log('criado')})
-     .catch(error=>{ console.log('error',error)})
+    }).then(res=>{
+        console.log('criado')
+        res.send('ok')
+    }).catch(error=>{
+         console.log('error',error)
+         res.send('nok')
+     })
+
+
 })
