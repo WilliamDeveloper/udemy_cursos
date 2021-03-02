@@ -5,6 +5,11 @@ class CalculatorController{
     constructor(){
         this._displayCalculator = 0
         this._currenteDate = ''
+        this.initialize()
+    }
+
+    initialize(){
+
     }
 
     get displayCalculator(){
