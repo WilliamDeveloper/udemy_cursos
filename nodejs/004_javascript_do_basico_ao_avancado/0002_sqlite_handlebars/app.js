@@ -5,7 +5,9 @@ const path = require('path')
 
 const expressHandleBars = require('express-handlebars')
 
+
 const db = require('./db/connection')
+const Job = require('./models/Job')
 
 // handlebars - configurarando pasta views
 app.set('views', path.join(__dirname, 'views'))
@@ -32,7 +34,16 @@ db.authenticate().then(()=>{
 
 //routes
 app.get('/',(req,res)=>{
-    res.render('index')
+    Job.findAll({
+        order:[
+            ['createdAt','DESC']
+        ]
+    }).then(jobs =>{
+        res.render('index',{jobs})
+    }).catch(error=>{
+        res.json({error})
+    })
+
 })
 
 app.use('/job', jobRoute)
