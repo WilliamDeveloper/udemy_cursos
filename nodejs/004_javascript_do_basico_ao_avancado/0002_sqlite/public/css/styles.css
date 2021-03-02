@@ -28,7 +28,7 @@
     border-radius:0;
 }
 
-.nav-link.btn.btn-primary:hover{
+.nav-link.btn.btn-primary:hover, #search-form button:hover{
     background-color:#fff;
     color:#f03e3e;
     border-color:#F03e3e;
@@ -45,3 +45,39 @@
     background-size: cover;
     color: #fff;
 }
+
+#main-title{
+    padding: 30px 0;
+    font-size: 3rem;
+}
+
+#main-subtitle{
+    font-size: 1rem;
+    padding:80px;
+}
+
+/* formm*/
+#search-form{
+    padding:30px 100px;
+}
+
+#search-form .col-md-10, #search-form .col-md-2{
+    padding:0;
+}
+
+#search-form input, #search-form button{
+    width: 100%;
+    border-radius: 0 ;
+    height: 50px;
+    font-size: 18px;
+}
+
+#search-form button{
+    color: #fff;
+    background-color:#f03e3e;
+    border: 1px solid transparent;
+}
+
+
+
+
