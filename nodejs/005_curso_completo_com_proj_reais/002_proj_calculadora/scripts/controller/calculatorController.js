@@ -14,6 +14,8 @@ class CalculatorController{
         let timeEl = document.querySelector("#hora")
 
         displayCalculatorEl.innerHTML = '4567'
+        dateEl.innerHTML = '4567'
+        timeEl.innerHTML = '4567'
     }
 
     get displayCalculator(){
