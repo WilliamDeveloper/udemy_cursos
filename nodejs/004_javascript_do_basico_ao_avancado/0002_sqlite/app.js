@@ -8,6 +8,10 @@ const db = require('./db/connection')
 app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 
+// configuracao de reconhecimento de conteudo de arquivos estaticos
+app.use(express.static('node_modules'))
+app.use(express.static('public'))
+
 //db connection
 db.authenticate().then(()=>{
     console.log('conectou ao banco com sucesso')
