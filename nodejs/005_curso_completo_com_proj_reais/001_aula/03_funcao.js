@@ -11,7 +11,10 @@ console.log('resultado ',calc(4,'/',2))
 let result = calc(4,'+',2)
 console.log(result)
 
+let valor;
 //funcao anonima
 (function () {
-    console.log('sou uma funcao anonima')
+    valor = 'sou uma funcao anonima'
 })()
+
+console.log(valor)
