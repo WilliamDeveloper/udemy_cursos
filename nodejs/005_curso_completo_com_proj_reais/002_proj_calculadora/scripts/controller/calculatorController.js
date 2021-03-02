@@ -3,15 +3,18 @@ console.log('CalculatorController')
 class CalculatorController{
 
     constructor(){
+
+        this.displayCalculatorEl = document.querySelector("#display")
+        this.dateEl = document.querySelector("#data")
+        this.timeEl = document.querySelector("#hora")
+
         this._displayCalculator = 0
         this._currenteDate = ''
         this.initialize()
     }
 
     initialize(){
-        let displayCalculatorEl = document.querySelector("#display")
-        let dateEl = document.querySelector("#data")
-        let timeEl = document.querySelector("#hora")
+
 
         displayCalculatorEl.innerHTML = '4567'
         dateEl.innerHTML = '01/05/2020'
