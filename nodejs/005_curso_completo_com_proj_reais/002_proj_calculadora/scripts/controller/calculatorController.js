@@ -9,7 +9,11 @@ class CalculatorController{
     }
 
     initialize(){
+        let displayCalculatorEl = document.querySelector("#display")
+        let dateEl = document.querySelector("#data")
+        let timeEl = document.querySelector("#hora")
 
+        displayCalculatorEl.innerHTML = '4567'
     }
 
     get displayCalculator(){
@@ -30,3 +34,5 @@ class CalculatorController{
     }
 
 }
+
+let calculadora = new CalculatorController()
