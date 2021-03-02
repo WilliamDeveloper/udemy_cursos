@@ -23,7 +23,7 @@ db.authenticate().then(()=>{
 
 //routes
 app.get('/',(req,res)=>{
-    res.send('OK')
+    res.render('index')
 })
 
 app.use('/job', jobRoute)
