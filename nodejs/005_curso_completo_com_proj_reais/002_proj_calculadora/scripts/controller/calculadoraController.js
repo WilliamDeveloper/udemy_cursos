@@ -13,4 +13,13 @@ class CalculadoraController{
     set displayCalculadora(value){
         this._displayCalculadora = value
     }
+
+
+    get dataAtual(){
+        return this._dataAtual
+    }
+
+    set dataAtual(value){
+        this._dataAtual = value
+    }
 }
