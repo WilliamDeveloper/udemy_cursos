@@ -8,6 +8,8 @@ const expressHandleBars = require('express-handlebars')
 
 const db = require('./db/connection')
 const Job = require('./models/Job')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 // handlebars - configurarando pasta views
 app.set('views', path.join(__dirname, 'views'))
@@ -34,15 +36,38 @@ db.authenticate().then(()=>{
 
 //routes
 app.get('/',(req,res)=>{
-    Job.findAll({
-        order:[
-            ['createdAt','DESC']
-        ]
-    }).then(jobs =>{
-        res.render('index',{jobs})
-    }).catch(error=>{
-        res.json({error})
-    })
+
+    let search = req.body.job
+    let query = '%'+search+'%'
+
+    console.log(search, query)
+
+    if(!search){
+        Job.findAll({
+            order:[
+                ['createdAt','DESC']
+            ]
+        }).then(jobs =>{
+            res.render('index',{jobs})
+        }).catch(error=>{
+            res.json({error})
+        })
+    }else{
+        Job.findAll({
+            where: {
+                title: {[Sequelize.Op.like] : query}
+            },
+            order:[
+                ['createdAt','DESC']
+            ]
+        }).then(jobs =>{
+            res.render('index',{jobs,search})
+        }).catch(error=>{
+            res.json({error})
+        })
+    }
+
+
 
 })
 
