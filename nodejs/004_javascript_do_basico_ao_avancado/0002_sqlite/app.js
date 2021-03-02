@@ -1,8 +1,15 @@
 const express = require('express')
 const app = express()
 const jobRoute = require('./routes/jobRoutes')
+const path = require('path')
+
+const hbs = require('express-handlebars')
 
 const db = require('./db/connection')
+
+// handlebars - configurarando pasta views
+app.set('views', path.join(__dirname, 'views'))
+
 
 //bodyparser -> que agora ta dentro do express
 app.use(express.urlencoded({extended:false}))
