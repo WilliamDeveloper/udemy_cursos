@@ -1,0 +1,13 @@
+####
+POST http://localhost:3000/job/add
+Content-Type: application/json
+
+{
+  "title": "pimba",
+  "salary" : "500",
+  "company" : "blau",
+  "email": "a@a.com.br",
+  "new_job" : 1,
+  "description": "hdusahdusah"
+}
+####
