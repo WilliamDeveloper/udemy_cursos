@@ -9,10 +9,10 @@ router.get('/',(req,res)=>{
 })
 
 
-router.get('/datail/:id',(req,res)=>{
+router.get('/detail/:id',(req,res)=>{
     let id = req.params.id
 
-    return Job.findOne({
+    Job.findOne({
         where:{
             id: id
         }
