@@ -6,8 +6,8 @@ Content-Type: application/json
   "title": "pimba",
   "salary" : "500",
   "company" : "blau",
-  "description": "hdusahdusah",
   "email": "a@a.com.br",
-  "new_job" : 1
+  "new_job" : 1,
+  "description": "hdusahdusah"
 }
 ####

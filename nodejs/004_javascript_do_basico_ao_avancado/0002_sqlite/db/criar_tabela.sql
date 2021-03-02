@@ -7,9 +7,7 @@ CREATE TABLE jobs(
   salary text,
   company text,
   email text,
-  new integer,
+  new_job integer,
   createdAt text,
   updatedAt text
-
-
 )
