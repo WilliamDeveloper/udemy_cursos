@@ -44,6 +44,11 @@ npm install --save sequelize
 npm install --save sqlite3@5.0.0
 
 
+- bootstrap
+npm install --save jquery
+npm install --save popper.js
+npm install --save bootstrap
+
 
 
 
