@@ -8,6 +8,25 @@ router.get('/',(req,res)=>{
     res.send('ok')
 })
 
+
+router.get('/datail/:id',(req,res)=>{
+    let id = req.params.id
+
+    return Job.findOne({
+        where:{
+            id: id
+        }
+    }).then(job=>{
+        console.log('criado')
+        res.render('detail',{job})
+    }).catch(error=>{
+        console.log('error',error)
+        res.send('nok')
+    })
+
+
+})
+
 router.get('/add',(req,res)=>{
     res.render('add')
 })
