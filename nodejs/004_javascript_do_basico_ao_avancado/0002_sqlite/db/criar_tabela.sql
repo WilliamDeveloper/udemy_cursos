@@ -1,7 +1,6 @@
 drop table jobs;
 
 CREATE TABLE jobs(
-
   id integer primary key autoincrement,
   title text,
   salary text,
@@ -11,4 +10,4 @@ CREATE TABLE jobs(
   description text,
   createdAt text,
   updatedAt text
-)
+);
