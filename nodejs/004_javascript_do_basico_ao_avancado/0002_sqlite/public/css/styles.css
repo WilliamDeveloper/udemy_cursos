@@ -78,6 +78,10 @@
     border: 1px solid transparent;
 }
 
-
+/*lista*/
+#job-list .list-group-item{
+    margin-bottom: 8px;
+    border:1px solid #ccc;
+}
 
 
