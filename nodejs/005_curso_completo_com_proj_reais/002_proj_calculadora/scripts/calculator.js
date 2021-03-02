@@ -1,5 +1,5 @@
 console.log('calculadora.js')
-// let calculadora = new CalculadoraController()
-//
-// calculadora.displayCalculadora=56
-// console.log('sas'.calculadora.displayCalculadora)
+let calculator = new CalculatorController()
+
+calculator.displayCalculator=56
+console.log('sas'.calculadora.displayCalculator)

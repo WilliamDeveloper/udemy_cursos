@@ -37,4 +37,3 @@ class CalculatorController{
 
 }
 
-let calculadora = new CalculatorController()
