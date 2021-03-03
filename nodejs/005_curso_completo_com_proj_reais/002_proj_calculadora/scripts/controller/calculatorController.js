@@ -53,11 +53,13 @@ class CalculatorController{
 
             if(this.isOperator(value)){
                 this._operation[this._operation.length -1] = value
+            }else if(window.isNaN(value)){
+
             }else{
                console.log(value)
-
+               this._operation.push(value)
             }
-            // this._operation.push(value)
+
         }else{
             let newValue = lastOperation.toString()+value
             this._operation.push(newValue)
