@@ -31,10 +31,12 @@ class CalculatorController{
 
     clearAll(){
         this._operation = []
+        console.log(this._operation)
     }
 
     clearEntry(){
         this._operation.pop()
+        console.log(this._operation)
     }
 
     getLastOperation(){
@@ -47,6 +49,36 @@ class CalculatorController{
 
     isOperator(value){
        return ['+','-','*','/','%'].indexOf(value) > -1
+    }
+
+    calculate(){
+        let last = this._operation.pop()
+
+        let result = eval(this._operation.join(""))
+
+        this._operation= [result, last]
+
+        this.setLastNumberToDisplay()
+    }
+
+    setLastNumberToDisplay(){
+        let lastNumber;
+
+        for (let i = this._operation.length - 1; i >=0 ; i--) {
+            if(!this.isOperator(this._operation[i])){
+                lastNumber = this._operation[i]
+                break
+            }
+        }
+        this.displayCalculator = lastNumber
+    }
+
+    pushOperation(value){
+        this._operation.push(value)
+
+        if(this._operation.length > 3){
+            this.calculate()
+        }
     }
 
     addOperation(value){
@@ -62,24 +94,21 @@ class CalculatorController{
                 console.log(value)
             }else{
                console.log(value)
-               this._operation.push(value)
+               this.pushOperation(value)
+                this.setLastNumberToDisplay()
             }
 
         }else{
 
             if(this.isOperator(value)){
-                this._operation.push(value)
+                this.pushOperation(value)
             }else{
                 let newValue = lastOperation.toString()+value
                 this.setLastOperation(parseInt(newValue))
+                this.setLastNumberToDisplay()
             }
 
-
         }
-
-
-
-
 
         console.log(this._operation)
     }
@@ -137,6 +166,7 @@ class CalculatorController{
         }
 
     }
+
 
 
     initButtonsEvents(){
