@@ -18,7 +18,7 @@ class CalculatorController{
            this.setDisplayDateTime()
         }, 0 * 1000)
 
-        this.displayCalculatorEl.innerHTML = '0'
+        this.setLastNumberToDisplay()
 
         this.initButtonsEvents()
     }
