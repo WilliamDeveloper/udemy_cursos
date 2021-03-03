@@ -36,7 +36,11 @@ class CalculatorController{
 
 
     clearEntry(){
+        this._operation.pop()
+    }
 
+    addOperation(value){
+        this._operation.push(value)
     }
 
     setError(){
