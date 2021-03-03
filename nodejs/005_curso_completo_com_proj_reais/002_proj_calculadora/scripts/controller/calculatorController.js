@@ -71,11 +71,11 @@ class CalculatorController{
 
     initKeyboard(){
 
-        this.playAudio()
 
         document.addEventListener('keyup', event =>{
             console.log(event.key, event)
 
+            this.playAudio()
 
 
             switch (event.key) {
