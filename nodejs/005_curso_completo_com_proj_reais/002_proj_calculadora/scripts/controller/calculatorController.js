@@ -3,7 +3,7 @@ console.log('CalculatorController')
 class CalculatorController{
 
     constructor(){
-
+        this._locale = 'pt-BR'
         this.displayCalculatorEl = document.querySelector("#display")
         this.timeEl = document.querySelector("#hora")
         this.dateEl = document.querySelector("#data")
@@ -14,11 +14,15 @@ class CalculatorController{
     initialize(){
 
         setInterval(()=>{
-            this.displayTime = this.currenteDate.toLocaleTimeString("pt-BR")
+            this.displayTime = this.currenteDate.toLocaleTimeString(this._locale)
         }, 1 * 1000)
 
-        this.displayCalculatorEl.innerHTML = '4567'
-        this.dateEl.innerHTML = '01/05/2020'
+        setInterval(()=>{
+            this.displayDate = this.currenteDate.toLocaleDateString(this._locale)
+        }, 1 * 1000)
+
+        this.displayCalculatorEl.innerHTML = '0'
+
 
     }
 
@@ -31,11 +35,11 @@ class CalculatorController{
     }
 
     get displayDate(){
-        return this.timeEl.innerHTML
+        return this.dateEl.innerHTML
     }
 
     set displayDate(value){
-        return this.timeEl.innerHTML = value
+        this.dateEl.innerHTML = value
     }
 
 
