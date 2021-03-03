@@ -52,8 +52,9 @@ class CalculatorController{
         if(window.isNaN(lastOperation)){
 
             if(this.isOperator(value)){
-
+                this._operation[this._operation.length -1] = value
             }else{
+               console.log(value)
 
             }
             // this._operation.push(value)
@@ -82,25 +83,25 @@ class CalculatorController{
                 this.clearEntry()
                 break;
             case 'soma':
-
+                this.addOperation("+")
                 break;
             case 'subtracao':
-
+                this.addOperation("-")
                 break;
             case 'divisao':
-
+                this.addOperation("/")
                 break;
             case 'multiplicacao':
-
+                this.addOperation("*")
                 break;
             case 'porcento':
-
+                this.addOperation("%")
                 break;
             case 'igual':
-
+                this.addOperation("=")
                 break;
             case 'ponto':
-
+                this.addOperation(".")
                 break;
 
             case "0":
