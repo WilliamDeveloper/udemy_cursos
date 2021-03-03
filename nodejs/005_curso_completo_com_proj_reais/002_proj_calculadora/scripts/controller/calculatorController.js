@@ -28,6 +28,15 @@ class CalculatorController{
         input.remove()
     }
 
+    pasteFromClipboard(){
+        document.addEventListener("paste",event=>{
+            let text = event.clipboardData.getData('Text')
+            console.log(text)
+
+            this.displayCalculator = parseFloat(text)
+        })
+    }
+
     initialize(){
 
         setInterval(()=>{
@@ -35,6 +44,7 @@ class CalculatorController{
         }, 0 * 1000)
 
         this.setLastNumberToDisplay()
+        this.pasteFromClipboard()
 
 
     }
@@ -86,6 +96,8 @@ class CalculatorController{
                         this.copyToClipboard()
                     }
                     break
+
+
 
             }
 
