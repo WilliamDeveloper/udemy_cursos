@@ -3,6 +3,10 @@ console.log('CalculatorController')
 class CalculatorController{
 
     constructor(){
+
+        this._lastOperator = ''
+        this._lastNumber = ''
+
         this._operation=[]
         this._locale = 'pt-BR'
         this.displayCalculatorEl = document.querySelector("#display")
@@ -55,13 +59,20 @@ class CalculatorController{
        return ['+','-','*','/','%'].indexOf(value) > -1
     }
 
+    getResult(){
+        return eval(this._operation.join(""))
+    }
+
     calculate(){
         let last = '';
         if(this._operation.length > 3){
             last = this._operation.pop()
+
+            this._lastOperator = this.getLastItem(true)
+            this._lastNumber = this.getResult()
         }
 
-        let result = eval(this._operation.join(""))
+        let result = this.getResult()
 
         if(last == '%'){
 
@@ -81,15 +92,22 @@ class CalculatorController{
         this.setLastNumberToDisplay()
     }
 
-    setLastNumberToDisplay(){
-        let lastNumber;
+    getLastItem(isOperator = true){
+        let lastItem;
 
         for (let i = this._operation.length - 1; i >=0 ; i--) {
-            if(!this.isOperator(this._operation[i])){
-                lastNumber = this._operation[i]
+            if(this.isOperator(this._operation[i]) == isOperator){
+                lastItem = this._operation[i]
                 break
             }
         }
+
+        return lastItem
+
+    }
+
+    setLastNumberToDisplay(){
+        let lastNumber = this.getLastItem(false);
 
         if(!lastNumber){
             lastNumber = 0
