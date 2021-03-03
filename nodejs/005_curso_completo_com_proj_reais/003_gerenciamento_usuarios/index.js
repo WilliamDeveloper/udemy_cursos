@@ -16,11 +16,11 @@ let fields = document.querySelectorAll("#form-user-create [name]")
 
 fields.forEach(field=>{
 
-    if(field.name == "gender" && field.checked){
-        // console.log('gender ',field)
-        user[field.name] = field.value
+    if(field.name == "gender"){
+        if(field.checked){
+            user[field.name] = field.value
+        }
     }else{
-        // console.log(field)
         user[field.name] = field.value
     }
 
