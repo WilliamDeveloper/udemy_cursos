@@ -14,6 +14,8 @@ class CalculatorController{
         this.dateEl = document.querySelector("#data")
         this._currenteDate
         this.initialize()
+        this.initButtonsEvents()
+        this.initKeyBoard()
     }
 
     initialize(){
@@ -24,7 +26,11 @@ class CalculatorController{
 
         this.setLastNumberToDisplay()
 
-        this.initButtonsEvents()
+
+    }
+
+    initKeyBoard(){
+
     }
 
     addEventListenerAll(element, events, fn){
