@@ -25,8 +25,12 @@ class CalculatorController{
     }
 
     setDisplayDateTime(){
+        this.displayDate = this.currenteDate.toLocaleDateString(this._locale,{
+            day:'2-digit',
+            month:'long', // month:'short',
+            year:'numeric' // year:'2-digit'
+        })
         this.displayTime = this.currenteDate.toLocaleTimeString(this._locale)
-        this.displayDate = this.currenteDate.toLocaleDateString(this._locale)
     }
 
     get displayTime(){
