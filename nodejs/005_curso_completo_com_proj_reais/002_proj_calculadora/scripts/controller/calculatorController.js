@@ -22,16 +22,26 @@ class CalculatorController{
         this.initButtonsEvents()
     }
 
+    addEventListenerAll(element, events, fn){
+        events.split(" ").forEach(event =>{
+            element.addEventListener(event, fn, false)//false para nao dar propagation
+        })
+    }
+
 
     initButtonsEvents(){
         let buttons = document.querySelectorAll("#buttons > g, #parts > g")
         console.log(buttons)
 
         buttons.forEach( (btn, index) => {
-            btn.addEventListener("click", event=>{
+            this.addEventListenerAll(btn,"click drag", event=>{
                 let nameKey = btn.className.baseVal.replace("btn-","")
                 console.log(nameKey)
             })
+
+            this.addEventListenerAll(btn, "mouseover mouseup mousedown",event=>{
+                btn.style.cursor = "pointer"
+            } )
         })
     }
 
