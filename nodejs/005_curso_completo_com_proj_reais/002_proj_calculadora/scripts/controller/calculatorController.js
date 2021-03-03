@@ -26,6 +26,13 @@ class CalculatorController{
     initButtonsEvents(){
         let buttons = document.querySelectorAll("#buttons > g, #parts > g")
         console.log(buttons)
+
+        buttons.forEach( (btn, index) => {
+            btn.addEventListener("click", event=>{
+                let nameKey = btn.className.baseVal.replace("btn-","")
+                console.log(nameKey)
+            })
+        })
     }
 
     setDisplayDateTime(){
