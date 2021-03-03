@@ -15,7 +15,7 @@ class CalculatorController{
         this._currenteDate
         this.initialize()
         this.initButtonsEvents()
-        this.initKeyBoard()
+        this.initKeyboard()
     }
 
     initialize(){
@@ -29,7 +29,7 @@ class CalculatorController{
 
     }
 
-    initKeyBoard(){
+    initKeyboard(){
 
     }
 
