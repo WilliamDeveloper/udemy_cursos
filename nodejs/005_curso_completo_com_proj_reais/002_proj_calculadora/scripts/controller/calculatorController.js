@@ -165,7 +165,12 @@ class CalculatorController{
 
     getResult(){
         console.log('getResult ', this._operation)
-        return eval(this._operation.join(""))
+        try{
+            return eval(this._operation.join(""))
+        }catch (error) {
+            console.log(error)
+        }
+
     }
 
     calculate(){
