@@ -15,3 +15,6 @@ window
 
 // tudo que for possivel fazer na pagina fica em document
 document
+
+new Date().toLocaleDataString('pt-BR',{month:'short'})
+new Date().toLocaleDataString('pt-BR',{month:'long'})
