@@ -72,7 +72,7 @@ class CalculatorController{
         if(this._operation.length < 3){
             console.log('<3 ', this._lastNumber, this._lastOperator)
             let firstItem = this._operation[0]
-            this._lastOperator = [firstItem, this._lastOperator, this._lastNumber]
+            this._operation = [firstItem, this._lastOperator, this._lastNumber]
         }
 
         if(this._operation.length > 3){
