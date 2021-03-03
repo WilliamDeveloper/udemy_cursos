@@ -15,7 +15,7 @@ class CalculatorController{
 
         let intervalId1 = setInterval(()=>{
            this.setDisplayDateTime()
-        }, 1 * 1000)
+        }, 0 * 1000)
 
         // setTimeout(()=>{ clearInterval(intervalId1)}, 10*1000)
 
