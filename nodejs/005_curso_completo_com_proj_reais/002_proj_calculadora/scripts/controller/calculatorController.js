@@ -18,6 +18,15 @@ class CalculatorController{
         this.initKeyboard()
     }
 
+    copyToClipboard(){
+        let input = document.createElement("input")
+
+        input.value = this.displayCalculator
+        document.body.appendChild(input)
+        input.select()
+        document.execCommand("Copy")
+    }
+
     initialize(){
 
         setInterval(()=>{
@@ -32,7 +41,7 @@ class CalculatorController{
     initKeyboard(){
 
         document.addEventListener('keyup', event =>{
-            console.log(event.key)
+            console.log(event.key, event)
 
 
 
@@ -71,6 +80,11 @@ class CalculatorController{
                 case '9':
                     this.addOperation(parseInt(event.key))
                     break;
+                case 'c':
+                    if(event.ctrlKey){
+                        this.copyToClipboard()
+                    }
+                    break
 
             }
 
