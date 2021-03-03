@@ -163,7 +163,7 @@ class CalculatorController{
                 this.pushOperation(value)
             }else{
                 let newValue = lastOperation.toString()+value
-                this.setLastOperation(parseFloat(newValue))
+                this.setLastOperation(newValue)
                 this.setLastNumberToDisplay()
             }
 
@@ -178,6 +178,8 @@ class CalculatorController{
 
     addDot(){
         let lastOperation = this.getLastOperation()
+
+        if(typeof lastOperation === 'string' && lastOperation.split("").indexOf(".") > -1) return
 
         if(this.isOperator(lastOperation) || !lastOperation){
             this.pushOperation("0.")
