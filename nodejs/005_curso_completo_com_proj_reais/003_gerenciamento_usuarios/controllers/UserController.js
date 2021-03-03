@@ -25,8 +25,11 @@ class UserController {
         //descobrir no console os atributos do objeto
         // dir(document.getElementsByTagName('div')[0])
         console.log(this.formEl)
+        console.log(this.formEl.elements)
+        console.log(this.formEl.elements.forEach)
 
-        this.formEl.elements.forEach( field =>{
+
+        Array.prototype.forEach.call(this.formEl.elements , (field) => {
 
             if(field.name == "gender"){
                 if(field.checked){
@@ -37,6 +40,19 @@ class UserController {
             }
 
         })
+
+
+        // this.formEl.elements.forEach( function (field, index) {
+        //
+        //     if(field.name == "gender"){
+        //         if(field.checked){
+        //             user[field.name] = field.value
+        //         }
+        //     }else{
+        //         user[field.name] = field.value
+        //     }
+        //
+        // })
 
         return new User(
             user.name,
