@@ -25,6 +25,7 @@ class CalculatorController{
         document.body.appendChild(input)
         input.select()
         document.execCommand("Copy")
+        input.remove()
     }
 
     initialize(){
