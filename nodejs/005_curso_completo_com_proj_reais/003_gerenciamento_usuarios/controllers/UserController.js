@@ -42,6 +42,7 @@ class UserController {
         })
 
 
+        // deu erro no foreach usar a sintaxe acima
         // this.formEl.elements.forEach( function (field, index) {
         //
         //     if(field.name == "gender"){
