@@ -14,9 +14,11 @@ let fields = document.querySelectorAll("#form-user-create [name]")
 
 fields.forEach(field=>{
 
-    if(field == "gender" && field.checked){
+    if(field.name == "gender" && field.checked){
         console.log('gender ',field)
+    }else{
+        console.log(field)
     }
 
-    console.log(field)
+
 })
