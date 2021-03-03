@@ -4,6 +4,7 @@ class CalculatorController{
 
     constructor(){
 
+        this._audioOnOff = false
         this._lastOperator = ''
         this._lastNumber = ''
 
@@ -46,8 +47,19 @@ class CalculatorController{
         this.setLastNumberToDisplay()
         this.pasteFromClipboard()
 
+        document.querySelectorAll(".btn-ac").forEach(btn=>{
+          btn.addEventListener('dblclick',()=>{
+              this.toggleAudio();
+
+          })
+        })
 
     }
+
+    toggleAudio(){
+        this._audioOnOff = !this._audioOnOff
+    }
+
 
     initKeyboard(){
 
