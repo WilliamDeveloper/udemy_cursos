@@ -50,6 +50,7 @@ class CalculatorController{
     }
 
     addOperation(value){
+        console.log(value)
 
         let lastOperation = this.getLastOperation()
 
@@ -65,8 +66,15 @@ class CalculatorController{
             }
 
         }else{
-            let newValue = lastOperation.toString()+value
-            this.setLastOperation(parseInt(newValue))
+
+            if(this.isOperator(value)){
+                this._operation.push(value)
+            }else{
+                let newValue = lastOperation.toString()+value
+                this.setLastOperation(parseInt(newValue))
+            }
+
+
         }
 
 
