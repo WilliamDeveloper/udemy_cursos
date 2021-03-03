@@ -57,7 +57,7 @@ class CalculatorController{
         if(window.isNaN(lastOperation)){
 
             if(this.isOperator(value)){
-                this.setLastOperation( parseInt(value))
+                this.setLastOperation( value)
             }else if(window.isNaN(value)){
                 console.log(value)
             }else{
