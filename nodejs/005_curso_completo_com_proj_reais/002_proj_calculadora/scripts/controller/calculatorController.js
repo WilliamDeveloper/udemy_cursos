@@ -12,9 +12,14 @@ class CalculatorController{
     }
 
     initialize(){
+
+        setInterval(()=>{
+            this.displayTime = this.currenteDate.toLocaleTimeString("pt-BR")
+        }, 1 * 1000)
+
         this.displayCalculatorEl.innerHTML = '4567'
         this.dateEl.innerHTML = '01/05/2020'
-        this.timeEl.innerHTML = '20:30'
+
     }
 
     get displayTime(){
