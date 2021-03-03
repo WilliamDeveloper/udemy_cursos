@@ -1,7 +1,8 @@
 class UserController {
 
-    constructor (formId){
+    constructor (formId, tableId){
         this.formEl = document.getElementById(formId)
+        this.tableEl = document.getElementById(tableId)
     }
 
     onSubmit(){
@@ -13,7 +14,8 @@ class UserController {
 
             console.log('vou submeter')
 
-            this.getValues()
+            let user = this.getValues()
+            this.addLine(user)
 
         })
     }
@@ -22,7 +24,9 @@ class UserController {
         let user = {}
         //descobrir no console os atributos do objeto
         // dir(document.getElementsByTagName('div')[0])
-        this.formEl.elements.forEach( element =>{
+        console.log(this.formEl)
+
+        this.formEl.elements.forEach( field =>{
 
             if(field.name == "gender"){
                 if(field.checked){
@@ -46,9 +50,9 @@ class UserController {
         )
     }
 
-    addLine(dataUser, tableId){
+    addLine(dataUser){
 
-        document.getElementById(tableId).innerHTML = `
+        this.tableEl.innerHTML = `
             <tr>
                 <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
                 <td>${dataUser.name}</td>
