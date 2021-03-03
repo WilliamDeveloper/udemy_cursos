@@ -148,8 +148,6 @@ class CalculatorController{
 
             if(this.isOperator(value)){
                 this.setLastOperation( value)
-            }else if(window.isNaN(value)){
-                console.log(value)
             }else{
                console.log(value)
                this.pushOperation(value)
@@ -162,7 +160,7 @@ class CalculatorController{
                 this.pushOperation(value)
             }else{
                 let newValue = lastOperation.toString()+value
-                this.setLastOperation(parseInt(newValue))
+                this.setLastOperation(parseFloat(newValue))
                 this.setLastNumberToDisplay()
             }
 
@@ -173,6 +171,10 @@ class CalculatorController{
 
     setError(){
         this.displayCalculator = "Error"
+    }
+
+    addDot(){
+
     }
 
     execBtn(value){
@@ -202,7 +204,7 @@ class CalculatorController{
                 this.calculate()
                 break;
             case 'ponto':
-                this.addOperation(".")
+                this.addDot()
                 break;
 
             case "0":
