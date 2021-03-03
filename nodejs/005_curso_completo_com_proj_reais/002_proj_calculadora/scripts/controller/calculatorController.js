@@ -395,6 +395,10 @@ class CalculatorController{
     }
 
     set displayCalculator(value){
+        if(value.toString().length > 10){
+            this.setError()
+            return false
+        }
         this.displayCalculatorEl.innerHTML = value
     }
 
