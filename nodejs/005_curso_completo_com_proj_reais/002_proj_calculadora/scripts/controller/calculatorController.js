@@ -35,6 +35,9 @@ class CalculatorController{
 
     clearAll(){
         this._operation = []
+        this._lastOperator = ''
+        this._lastNumber = ''
+
         console.log(this._operation)
 
         this.setLastNumberToDisplay()
@@ -174,7 +177,16 @@ class CalculatorController{
     }
 
     addDot(){
+        let lastOperation = this.getLastOperation()
 
+        if(this.isOperator(lastOperation) || !lastOperation){
+            this.pushOperation("0.")
+        }else{
+            this.setLastOperation(lastOperation.toString() +'.')
+        }
+
+        this.setLastNumberToDisplay()
+        console.log(lastOperation)
     }
 
     execBtn(value){
