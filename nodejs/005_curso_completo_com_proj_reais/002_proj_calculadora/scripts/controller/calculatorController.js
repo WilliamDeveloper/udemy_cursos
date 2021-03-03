@@ -3,6 +3,7 @@ console.log('CalculatorController')
 class CalculatorController{
 
     constructor(){
+        this._operation=[]
         this._locale = 'pt-BR'
         this.displayCalculatorEl = document.querySelector("#display")
         this.timeEl = document.querySelector("#hora")
@@ -28,6 +29,53 @@ class CalculatorController{
         })
     }
 
+    clearAll(){
+
+    }
+
+
+
+    clearEntry(){
+
+    }
+
+    setError(){
+        this.displayCalculator = "Error"
+    }
+
+    execBtn(value){
+        switch (value) {
+            case 'ac':
+                this.clearAll()
+                break;
+            case 'ce':
+                this.clearEntry()
+                break;
+            case 'soma':
+                this.clearEntry()
+                break;
+            case 'subtracao':
+                this.clearEntry()
+                break;
+            case 'divisao':
+                this.clearEntry()
+                break;
+            case 'multiplicacao':
+                this.clearEntry()
+                break;
+            case 'porcento':
+                this.clearEntry()
+                break;
+            case 'igual':
+                this.clearEntry()
+                break;
+            default:
+                this.setError()
+                break
+        }
+
+    }
+
 
     initButtonsEvents(){
         let buttons = document.querySelectorAll("#buttons > g, #parts > g")
@@ -35,8 +83,9 @@ class CalculatorController{
 
         buttons.forEach( (btn, index) => {
             this.addEventListenerAll(btn,"click drag", event=>{
-                let nameKey = btn.className.baseVal.replace("btn-","")
-                console.log(nameKey)
+                let textBtn = btn.className.baseVal.replace("btn-","")
+                console.log(textBtn)
+                this.execBtn(textBtn)
             })
 
             this.addEventListenerAll(btn, "mouseover mouseup mousedown",event=>{
