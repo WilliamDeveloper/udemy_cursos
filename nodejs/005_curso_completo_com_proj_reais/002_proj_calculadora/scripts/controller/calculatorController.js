@@ -18,6 +18,14 @@ class CalculatorController{
         }, 0 * 1000)
 
         this.displayCalculatorEl.innerHTML = '0'
+
+        this.initButtonsEvents()
+    }
+
+
+    initButtonsEvents(){
+        let buttons = document.querySelectorAll("#buttons > g, #parts > g")
+        console.log(buttons)
     }
 
     setDisplayDateTime(){
