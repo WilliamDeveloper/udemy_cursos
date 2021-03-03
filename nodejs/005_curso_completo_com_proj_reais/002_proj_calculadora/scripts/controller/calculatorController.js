@@ -5,11 +5,9 @@ class CalculatorController{
     constructor(){
 
         this.displayCalculatorEl = document.querySelector("#display")
-        this.dateEl = document.querySelector("#data")
         this.timeEl = document.querySelector("#hora")
-
-
-        this._currenteDate = ''
+        this.dateEl = document.querySelector("#data")
+        this._currenteDate
         this.initialize()
     }
 
@@ -19,6 +17,23 @@ class CalculatorController{
         this.timeEl.innerHTML = '20:30'
     }
 
+    get displayTime(){
+        return this.timeEl.innerHTML
+    }
+
+    set displayTime(value){
+        this.timeEl.innerHTML = value
+    }
+
+    get displayDate(){
+        return this.timeEl.innerHTML
+    }
+
+    set displayDate(value){
+        return this.timeEl.innerHTML = value
+    }
+
+
     get displayCalculator(){
         return this.displayCalculatorEl.innerHTML
     }
@@ -27,14 +42,15 @@ class CalculatorController{
         this.displayCalculatorEl.innerHTML = value
     }
 
-
     get currenteDate(){
-        return this._currenteDate
+        return new Date()
     }
 
-    set currenteDate(value){
-        this._currenteDate = value
-    }
+
+
+
+
+
 
 }
 
