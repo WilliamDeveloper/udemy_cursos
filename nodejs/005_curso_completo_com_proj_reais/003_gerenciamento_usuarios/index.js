@@ -14,8 +14,7 @@ let user = {}
 function addLine(dataUser){
     console.log(dataUser)
 
-    let tr = document.createElement('tr')
-    tr.innerHTML = `
+    document.getElementById("table-users").innerHTML = `
             <tr>
                 <td><img src="dist/img/user1-128x128.jpg" alt="User Image" class="img-circle img-sm"></td>
                 <td>${dataUser.name}</td>
@@ -28,7 +27,6 @@ function addLine(dataUser){
                 </td>
             </tr>
     `
-    document.getElementById("table-users").appendChild(tr)
 
 }
 
