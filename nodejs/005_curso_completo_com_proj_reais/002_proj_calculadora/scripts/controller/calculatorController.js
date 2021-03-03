@@ -30,10 +30,8 @@ class CalculatorController{
     }
 
     clearAll(){
-
+        this._operation = []
     }
-
-
 
     clearEntry(){
         this._operation.pop()
