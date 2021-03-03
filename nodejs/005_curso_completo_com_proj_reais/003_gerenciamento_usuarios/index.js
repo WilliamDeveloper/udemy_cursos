@@ -14,23 +14,30 @@ let user = {}
 
 let fields = document.querySelectorAll("#form-user-create [name]")
 
-fields.forEach(field=>{
 
-    if(field.name == "gender"){
-        if(field.checked){
+
+// document.querySelectorAll("button").forEach((button)=>{
+//     button.addEventListener("click",()=>{
+//         console.log('clicou em mim')
+//     })
+// })
+
+document.getElementById("form-user-create").addEventListener("submit",(event)=>{
+    event.preventDefault()
+    console.log('vou submeter')
+
+    fields.forEach(field=>{
+
+        if(field.name == "gender"){
+            if(field.checked){
+                user[field.name] = field.value
+            }
+        }else{
             user[field.name] = field.value
         }
-    }else{
-        user[field.name] = field.value
-    }
 
 
-})
-
-console.log(user)
-
-document.querySelectorAll("button").forEach((button)=>{
-    button.addEventListener("click",()=>{
-        console.log('clicou em mim')
     })
+
+    console.log(user)
 })
