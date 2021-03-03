@@ -4,6 +4,7 @@ class CalculatorController{
 
     constructor(){
 
+        this._audio = new Audio("click.mp3")
         this._audioOnOff = false
         this._lastOperator = ''
         this._lastNumber = ''
@@ -60,8 +61,16 @@ class CalculatorController{
         this._audioOnOff = !this._audioOnOff
     }
 
+    playAudio(){
+        if(this._audioOnOff){
+            this._audio.play()
+        }
+    }
+
 
     initKeyboard(){
+
+        this.playAudio()
 
         document.addEventListener('keyup', event =>{
             console.log(event.key, event)
@@ -283,6 +292,9 @@ class CalculatorController{
     }
 
     execBtn(value){
+
+        this.playAudio()
+
         switch (value) {
             case 'ac':
                 this.clearAll()
