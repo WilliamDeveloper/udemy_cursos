@@ -41,12 +41,22 @@ class CalculatorController{
         return this._operation[this._operation.length -1]
     }
 
+    isOperator(value){
+       return ['+','-','*','/','%'].indexOf(value) > -1
+    }
+
     addOperation(value){
 
         let lastOperation = this.getLastOperation()
 
         if(window.isNaN(lastOperation)){
-            this._operation.push(value)
+
+            if(this.isOperator(value)){
+
+            }else{
+
+            }
+            // this._operation.push(value)
         }else{
             let newValue = lastOperation.toString()+value
             this._operation.push(newValue)
