@@ -13,13 +13,17 @@ class CalculatorController{
 
     initialize(){
 
-        setInterval(()=>{
+        let intervalId1 = setInterval(()=>{
             this.displayTime = this.currenteDate.toLocaleTimeString(this._locale)
         }, 1 * 1000)
 
-        setInterval(()=>{
+        setTimeout(()=>{ clearInterval(intervalId1)}, 10*1000)
+
+        let intervalId2 = setInterval(()=>{
             this.displayDate = this.currenteDate.toLocaleDateString(this._locale)
         }, 1 * 1000)
+
+        setTimeout(()=>{ clearInterval(intervalId2)}, 10*1000)
 
         this.displayCalculatorEl.innerHTML = '0'
 
