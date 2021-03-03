@@ -37,8 +37,26 @@ class CalculatorController{
         this._operation.pop()
     }
 
+    getLastOperation(){
+        return this._operation[this._operation.length -1]
+    }
+
     addOperation(value){
-        this._operation.push(value)
+
+        let lastOperation = this.getLastOperation()
+
+        if(window.isNaN(lastOperation)){
+            this._operation.push(value)
+        }else{
+            let newValue = lastOperation.toString()+value
+            this._operation.push(newValue)
+        }
+
+
+
+
+
+        console.log(this._operation)
     }
 
     setError(){
@@ -71,18 +89,21 @@ class CalculatorController{
             case 'igual':
 
                 break;
+            case 'ponto':
 
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
+                break;
 
+            case "0":
+            case '1':
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+                this.addOperation(parseInt(value))
                 break;
 
             default:
