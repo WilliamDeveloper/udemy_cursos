@@ -26,3 +26,11 @@ fields.forEach(field=>{
 
 
 })
+
+console.log(user)
+
+document.querySelectorAll("button").forEach((button)=>{
+    button.addEventListener("click",()=>{
+        console.log('clicou em mim')
+    })
+})
