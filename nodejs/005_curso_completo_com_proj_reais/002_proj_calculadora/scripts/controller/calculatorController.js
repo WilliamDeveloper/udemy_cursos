@@ -13,15 +13,11 @@ class CalculatorController{
 
     initialize(){
 
-        let intervalId1 = setInterval(()=>{
+        setInterval(()=>{
            this.setDisplayDateTime()
         }, 0 * 1000)
 
-        // setTimeout(()=>{ clearInterval(intervalId1)}, 10*1000)
-
         this.displayCalculatorEl.innerHTML = '0'
-
-
     }
 
     setDisplayDateTime(){

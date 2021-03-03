@@ -18,3 +18,10 @@ document
 
 new Date().toLocaleDataString('pt-BR',{month:'short'})
 new Date().toLocaleDataString('pt-BR',{month:'long'})
+
+
+let intervalId1 = setInterval(()=>{
+   this.setDisplayDateTime()
+}, 0 * 1000)
+
+// setTimeout(()=>{ clearInterval(intervalId1)}, 10*1000)
