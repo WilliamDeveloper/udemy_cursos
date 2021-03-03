@@ -98,7 +98,7 @@ class CalculatorController{
                 this.addOperation("%")
                 break;
             case 'igual':
-                this.addOperation("=")
+
                 break;
             case 'ponto':
                 this.addOperation(".")
