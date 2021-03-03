@@ -32,11 +32,15 @@ class CalculatorController{
     clearAll(){
         this._operation = []
         console.log(this._operation)
+
+        this.setLastNumberToDisplay()
     }
 
     clearEntry(){
         this._operation.pop()
         console.log(this._operation)
+
+        this.setLastNumberToDisplay()
     }
 
     getLastOperation(){
@@ -53,10 +57,18 @@ class CalculatorController{
 
     calculate(){
         let last = this._operation.pop()
-
         let result = eval(this._operation.join(""))
 
-        this._operation= [result, last]
+        if(last == '%'){
+
+            result = result / 100
+            this._operation= [result]
+
+        }else{
+            this._operation= [result, last]
+        }
+
+
 
         this.setLastNumberToDisplay()
     }
@@ -69,6 +81,10 @@ class CalculatorController{
                 lastNumber = this._operation[i]
                 break
             }
+        }
+
+        if(!lastNumber){
+            lastNumber = 0
         }
         this.displayCalculator = lastNumber
     }
