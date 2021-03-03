@@ -9,15 +9,19 @@ let admin = document.querySelector('#exampleInputAdmin')
 
 exampleInputName.value = 'William'
 
+let user = {}
+
 
 let fields = document.querySelectorAll("#form-user-create [name]")
 
 fields.forEach(field=>{
 
     if(field.name == "gender" && field.checked){
-        console.log('gender ',field)
+        // console.log('gender ',field)
+        user[field.name] = field.value
     }else{
-        console.log(field)
+        // console.log(field)
+        user[field.name] = field.value
     }
 
 
