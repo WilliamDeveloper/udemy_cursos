@@ -1,11 +1,10 @@
 let name = document.querySelector('#exampleInputName')
 let gender = document.querySelectorAll('#form-user-create [name=gender]:checked')
-
-let exampleInputBirth = document.querySelector('#exampleInputBirth')
-let exampleInputCountry = document.querySelector('#exampleInputCountry')
-let exampleInputEmail1 = document.querySelector('#exampleInputEmail1')
-let exampleInputPassword1 = document.querySelector('#exampleInputPassword1')
-let exampleInputFile = document.querySelector('#exampleInputFile')
-let exampleInputNameEl = document.querySelector('#exampleInputName')
+let birth = document.querySelector('#exampleInputBirth')
+let country = document.querySelector('#exampleInputCountry')
+let email = document.querySelector('#exampleInputEmail1')
+let password = document.querySelector('#exampleInputPassword1')
+let photo = document.querySelector('#exampleInputFile')
+let admin = document.querySelector('#exampleInputAdmin')
 
 exampleInputName.value = 'William'
