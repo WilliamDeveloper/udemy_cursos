@@ -184,6 +184,21 @@ class UserController {
     `
         this.tableEl.appendChild(tr)
 
+        this.updateCount()
+
+    }
+
+    updateCount(){
+        console.dir(this.tableEl)
+
+        let numberUsers = 0
+        let numberAdmin = 0
+
+        Array.prototype.forEach.call(this.formEl.elements , (tr) => {
+            console.log('tr=>', tr)
+            numberUsers ++
+
+        })
     }
 
 
