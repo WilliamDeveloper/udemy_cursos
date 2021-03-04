@@ -16,6 +16,9 @@ class UserController {
 
             console.log('vou submeter')
 
+            let btn = this.formEl.querySelector("[type=submit]")
+            btn.disabled = true
+
             let user = this.getValues()
 
             console.log('user ',user)
@@ -32,6 +35,7 @@ class UserController {
             (content)=>{
                 user.photo = content
                 this.addLine(user)
+                btn.disabled = false
             },
             (error)=>{
                     console.log(error)
