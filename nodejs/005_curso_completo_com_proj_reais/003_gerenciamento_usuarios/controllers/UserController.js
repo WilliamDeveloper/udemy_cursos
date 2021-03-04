@@ -206,7 +206,7 @@ class UserController {
                 //des-serializando um objeto
                 let user = JSON.parse(tr.dataset.user)
                 console.log(tr.dataset.user)
-                if(user.admin){
+                if(user._admin){
                     numberAdmin++
                 }
             }
