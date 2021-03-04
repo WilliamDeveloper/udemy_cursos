@@ -1,5 +1,5 @@
 class Utils{
-    dateFormate(date){
+    static dateFormate(date){
         let value = ''
             + date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear()
             + ' '
