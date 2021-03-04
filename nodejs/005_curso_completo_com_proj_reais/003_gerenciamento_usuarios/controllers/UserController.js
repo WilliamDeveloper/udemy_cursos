@@ -169,6 +169,9 @@ class UserController {
 
         let tr = document.createElement('tr')
 
+        //serializando objeto
+        tr.dataset.user = JSON.stringify(dataUser)
+
         tr.innerHTML = `
             <tr>
                 <td><img src="${dataUser.photo}" alt="User Image" class="img-circle img-sm"></td>
@@ -194,9 +197,11 @@ class UserController {
         let numberUsers = 0
         let numberAdmin = 0
 
-        Array.prototype.forEach.call(this.formEl.elements , (tr) => {
+        Array.prototype.forEach.call(this.tableEl.children , (tr) => {
             console.log('tr=>', tr)
             numberUsers ++
+
+            console.log(tr.dataset.user)
 
         })
     }
