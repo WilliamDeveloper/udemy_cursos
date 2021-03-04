@@ -35,6 +35,8 @@ class UserController {
             (content)=>{
                 user.photo = content
                 this.addLine(user)
+
+                this.formEl.reset()
                 btn.disabled = false
             },
             (error)=>{
