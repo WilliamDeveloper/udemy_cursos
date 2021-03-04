@@ -17,10 +17,36 @@ class UserController {
             console.log('vou submeter')
 
             let user = this.getValues()
+            user.photo = ""
             console.log('user ',user)
+
+            this.getPhoto()
             this.addLine(user)
 
         })
+    }
+
+    getPhoto(){
+        let fileReader = new FileReader()
+
+        let elements = Array.prototype.filter.call(this.formEl.elements , (item) => {
+
+            if(item.name === "photo"){
+               return item
+            }
+
+        })
+
+        console.log('elements ',elements)
+        console.log('elements ',elements[0])
+        console.log('elements.files ',elements[0].files[0])
+
+        fileReader.onload = () =>{
+
+        }
+
+        fileReader.readAsDataURL()
+
     }
 
     getValues(){
