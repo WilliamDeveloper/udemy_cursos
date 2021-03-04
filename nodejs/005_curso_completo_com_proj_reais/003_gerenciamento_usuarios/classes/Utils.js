@@ -1,0 +1,10 @@
+class Utils{
+    dateFormate(date){
+        let value = ''
+            + date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear()
+            + ' '
+            + date.getHours() + ":" + (date.getMinutes()+1) + ":" + date.getSeconds()
+
+        return value
+    }
+}
