@@ -17,7 +17,7 @@ class UserController {
             console.log('vou submeter')
 
             let btn = this.formEl.querySelector("[type=submit]")
-            btn.disabled = true
+
 
             let user = this.getValues()
 
@@ -30,20 +30,23 @@ class UserController {
             //     console.log(error)
             // })
 
+            if(user){
+                btn.disabled = true
+                // then com 2 parametros equivalente ao then-catch
+                this.getPhoto().then(
+                    (content)=>{
 
-            // then com 2 parametros equivalente ao then-catch
-            this.getPhoto().then(
-            (content)=>{
+                        user.photo = content
+                        this.addLine(user)
 
-                user.photo = content
-                this.addLine(user)
+                        this.formEl.reset()
+                        btn.disabled = false
+                    },
+                    (error)=>{
+                        console.log(error)
+                    })
+            }
 
-                this.formEl.reset()
-                btn.disabled = false
-            },
-            (error)=>{
-                    console.log(error)
-            })
 
 
         })
