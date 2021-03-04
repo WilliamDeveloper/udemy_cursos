@@ -5,6 +5,13 @@ class UserController {
         this.tableEl = document.getElementById(tableId)
 
         this.onSubmit()
+        this.onEditCancel()
+    }
+
+    onEditCancel(){
+        document.querySelector("#box-user-update .btn-cancel").addEventListener("click", (event)=>{
+            this.showPanelCreate()
+        })
     }
 
     onSubmit(){
@@ -189,14 +196,23 @@ class UserController {
         tr.querySelector(".btn-edit").addEventListener("click", e=>{
             console.log(tr)
             let user = JSON.parse(tr.dataset.user)
-            document.querySelector("#box-user-create").style.display= "none";
-            document.querySelector("#box-user-update").style.display= "block";
+            this.showPanelUpdate()
         })
 
         this.tableEl.appendChild(tr)
 
         this.updateCount()
 
+    }
+
+    showPanelCreate(){
+        document.querySelector("#box-user-create").style.display= "block";
+        document.querySelector("#box-user-update").style.display= "none";
+    }
+
+    showPanelUpdate(){
+        document.querySelector("#box-user-create").style.display= "none";
+        document.querySelector("#box-user-update").style.display= "block";
     }
 
     updateCount(){
