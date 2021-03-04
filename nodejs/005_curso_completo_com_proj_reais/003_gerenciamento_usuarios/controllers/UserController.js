@@ -31,6 +31,19 @@ class UserController {
         console.log(this.formEl.elements)
         console.log(this.formEl.elements.forEach)
 
+        //para tranformar o objeto html em array com spread operator
+        // [...this.formEl.elements].forEach( function (field, index) {
+        //
+        //     if(field.name == "gender"){
+        //         if(field.checked){
+        //             user[field.name] = field.value
+        //         }
+        //     }else{
+        //         user[field.name] = field.value
+        //     }
+        //
+        // })
+
 
         Array.prototype.forEach.call(this.formEl.elements , (field) => {
 
