@@ -72,7 +72,7 @@ class UserController {
             if(file){
                 fileReader.readAsDataURL(file)
             }else{
-                reject()
+                resolve('dist/img/boxed-bg.jpg')
             }
 
         })
