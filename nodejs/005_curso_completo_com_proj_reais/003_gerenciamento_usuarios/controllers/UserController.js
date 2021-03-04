@@ -189,6 +189,8 @@ class UserController {
         tr.querySelector(".btn-edit").addEventListener("click", e=>{
             console.log(tr)
             let user = JSON.parse(tr.dataset.user)
+            document.querySelector("#box-user-create").style.display= "none";
+            document.querySelector("#box-user-update").style.display= "block";
         })
 
         this.tableEl.appendChild(tr)
