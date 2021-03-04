@@ -15,6 +15,7 @@ class UserController {
             console.log('vou submeter')
 
             let user = this.getValues()
+            console.log('user ',user)
             this.addLine(user)
 
         })
