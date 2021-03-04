@@ -20,11 +20,20 @@ class UserController {
 
             console.log('user ',user)
 
-            this.getPhoto().then((content)=>{
+            // this.getPhoto().then((content)=>{
+            //     user.photo = content
+            //     this.addLine(user)
+            // }).catch((error)=>{
+            //     console.log(error)
+            // })
+
+            this.getPhoto().then(
+            (content)=>{
                 user.photo = content
                 this.addLine(user)
-            }).catch((error)=>{
-                console.log(error)
+            },
+            (error)=>{
+                    console.log(error)
             })
 
 
