@@ -27,6 +27,7 @@ class UserController {
             //     console.log(error)
             // })
 
+            // then com 2 parametros equivalente ao then-catch
             this.getPhoto().then(
             (content)=>{
                 user.photo = content
