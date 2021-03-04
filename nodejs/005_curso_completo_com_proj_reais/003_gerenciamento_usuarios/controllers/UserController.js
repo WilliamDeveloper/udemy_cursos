@@ -201,9 +201,13 @@ class UserController {
             console.log('tr=>', tr)
             numberUsers ++
 
-            //des-serializando um objeto
-            let user = JSON.parse(tr.dataset.user)
-            console.log(tr.dataset.user)
+
+            if(tr.dataset.user){
+                //des-serializando um objeto
+                let user = JSON.parse(tr.dataset.user)
+                console.log(tr.dataset.user)
+            }
+
 
         })
     }
