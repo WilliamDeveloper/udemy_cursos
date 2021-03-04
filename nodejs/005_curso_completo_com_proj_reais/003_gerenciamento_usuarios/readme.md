@@ -34,3 +34,6 @@ new Date("2018-01-01")
 
 // senao informar as horas o dia q aparece depende do locale
 new Date("2018-01-01 00:00:00")
+
+
+https://momentjs.com
