@@ -180,11 +180,17 @@ class UserController {
                 <td>${(dataUser.admin) ? "Sim" : "Não"}</td>
                 <td>${Utils.dateFormate(dataUser.register)}</td>
                 <td>
-                <button type="button" class="btn btn-primary btn-xs btn-flat">Editar</button>
+                <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
                 <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
                 </td>
             </tr>
     `
+
+        tr.querySelector(".btn-edit").addEventListener("click", e=>{
+            console.log(tr)
+            let user = JSON.parse(tr.dataset.user)
+        })
+
         this.tableEl.appendChild(tr)
 
         this.updateCount()
