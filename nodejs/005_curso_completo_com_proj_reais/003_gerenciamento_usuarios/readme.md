@@ -40,3 +40,7 @@ https://momentjs.com
 
 //serializando objeto
 tr.dataset.user = JSON.stringify(dataUser)
+
+//des-serializando um objeto
+let user = JSON.parse(tr.dataset.user)
+console.log(tr.dataset.user)
