@@ -21,3 +21,16 @@ new Promise((resolve, reject)=>{ reject()})
 .catch(e=>{console.log(e);return 6})
 .then(a=>{console.log(a);return 7})
 ```
+
+
+// 31/12/2018 (o numero do mes começa em zero)
+new Date(2018, 11, 31)
+
+// 31/12/2018 (o numero do mes começa em 1)
+new Date([2018, 12, 31])
+
+// senao informar as horas o dia q aparece depende do locale
+new Date("2018-01-01")
+
+// senao informar as horas o dia q aparece depende do locale
+new Date("2018-01-01 00:00:00")
