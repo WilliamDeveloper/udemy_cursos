@@ -3,6 +3,8 @@ class UserController {
     constructor (formId, tableId){
         this.formEl = document.getElementById(formId)
         this.tableEl = document.getElementById(tableId)
+
+        this.onSubmit()
     }
 
     onSubmit(){

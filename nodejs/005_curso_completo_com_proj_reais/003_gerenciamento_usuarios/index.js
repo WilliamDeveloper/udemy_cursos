@@ -8,4 +8,3 @@
 // let admin = document.querySelector('#exampleInputAdmin')
 
 let userController = new UserController("form-user-create", "table-users")
-userController.onSubmit()
