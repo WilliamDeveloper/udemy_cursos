@@ -169,7 +169,7 @@ class UserController {
 
         let tr = document.createElement('tr')
 
-        //serializando objeto
+        //serializando um objeto
         tr.dataset.user = JSON.stringify(dataUser)
 
         tr.innerHTML = `
@@ -201,6 +201,8 @@ class UserController {
             console.log('tr=>', tr)
             numberUsers ++
 
+            //des-serializando um objeto
+            let user = JSON.parse(tr.dataset.user)
             console.log(tr.dataset.user)
 
         })
