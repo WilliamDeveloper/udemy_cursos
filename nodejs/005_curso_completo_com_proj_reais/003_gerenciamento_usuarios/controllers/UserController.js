@@ -20,37 +20,48 @@ class UserController {
 
             console.log('user ',user)
 
-            this.getPhoto((content)=>{
+            this.getPhoto().then((content)=>{
                 user.photo = content
                 this.addLine(user)
+            }).catch((error)=>{
+                console.log(error)
             })
 
 
         })
     }
 
-    getPhoto(callback){
-        let fileReader = new FileReader()
+    getPhoto(){
 
-        let elements = Array.prototype.filter.call(this.formEl.elements , (item) => {
+        return new Promise(function (resolve,reject) {
 
-            if(item.name === "photo"){
-               return item
+            let fileReader = new FileReader()
+
+            let elements = Array.prototype.filter.call(this.formEl.elements , (item) => {
+
+                if(item.name === "photo"){
+                    return item
+                }
+
+            })
+
+            console.log('elements ',elements)
+            console.log('elements ',elements[0])
+            console.log('elements.files ',elements[0].files[0])
+
+            let file = elements[0].files[0]
+
+            fileReader.onload = () =>{
+                resolve(fileReader.result)
             }
 
+            fileReader.onerror =(e)=>{
+                reject(e)
+            }
+
+            fileReader.readAsDataURL(file)
+
         })
-
-        console.log('elements ',elements)
-        console.log('elements ',elements[0])
-        console.log('elements.files ',elements[0].files[0])
-
-        let file = elements[0].files[0]
-
-        fileReader.onload = () =>{
-            callback(fileReader.result)
-        }
-
-        fileReader.readAsDataURL(file)
 
     }
 
