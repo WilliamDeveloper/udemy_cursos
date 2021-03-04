@@ -30,9 +30,11 @@ class UserController {
             //     console.log(error)
             // })
 
+
             // then com 2 parametros equivalente ao then-catch
             this.getPhoto().then(
             (content)=>{
+
                 user.photo = content
                 this.addLine(user)
 
@@ -87,6 +89,7 @@ class UserController {
 
     getValues(){
         let user = {}
+        let isValid = true
         //descobrir no console os atributos do objeto
         // dir(document.getElementsByTagName('div')[0])
         console.log(this.formEl)
@@ -108,6 +111,14 @@ class UserController {
 
 
         Array.prototype.forEach.call(this.formEl.elements , (field) => {
+
+            console.log('array ',field.name, (['name','email','password'].indexOf(field.name) > -1 && !field.value))
+
+            if( ['name','email','password'].indexOf(field.name) > -1 && !field.value ){
+                // console.dir(field)
+                field.parentElement.classList.add('has-error')
+                isValid =  false
+            }
 
             if(field.name == "gender"){
                 if(field.checked){
@@ -134,6 +145,10 @@ class UserController {
         //     }
         //
         // })
+
+        if(!isValid){
+            return false
+        }
 
         return new User(
             user.name,
