@@ -46,6 +46,7 @@ class UserController {
 
                     let user = new User()
                     user.loadFromJSON(result)
+                    user.save()
 
                     tr = this.getTr(user,tr)
 
@@ -95,7 +96,7 @@ class UserController {
 
                         user.photo = content
 
-                        this.insert(user)
+                        user.save()
 
                         this.addLine(user)
 
@@ -238,16 +239,6 @@ class UserController {
         })
     }
 
-    insert(data){
-
-        let users = this.getUsersStorage()
-
-        users.push(data)
-
-        // sessionStorage.setItem("users", JSON.stringify(users))
-        localStorage.setItem("users", JSON.stringify(users))
-
-    }
 
     addLine(dataUser){
 

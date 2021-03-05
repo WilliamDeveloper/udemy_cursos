@@ -86,10 +86,20 @@ class User {
 
         if(this.id > 0){
             let user = users.filter( user => { return user.id == this.id })
+
+            let newUser = Object.assign({},user, this)
+
+            users.map( user=>{
+                if(user._id = this.id){
+                    user = this
+                }
+                return user
+            })
         }else{
             this.id = this.getNewId()
+            users.push(this)
         }
-        users.push(data)
+
 
         // sessionStorage.setItem("users", JSON.stringify(users))
         localStorage.setItem("users", JSON.stringify(users))
