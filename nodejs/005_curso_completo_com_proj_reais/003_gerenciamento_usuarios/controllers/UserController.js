@@ -31,33 +31,48 @@ class UserController {
 
             let result = Object.assign({}, userOld, dataUser)
 
-            if(!dataUser.photo){
-                result._photo = userOld._photo
-            }
-
-            tr.dataset.user = JSON.stringify(result)
-            tr.innerHTML = `
-            <tr>
-                <td><img src="${result._photo}" alt="User Image" class="img-circle img-sm"></td>
-                <td>${result._name}</td>
-                <td>${result._email}</td>
-                <td>${(result._admin) ? "Sim" : "Não"}</td>
-                <td>${Utils.dateFormate(result._register)}</td>
-                <td>
-                <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
-                <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
-                </td>
-            </tr>
-            `
-
-            this.addEventsTr(tr)
-
-            this.updateCount()
-
-            btn.disabled = false;
-
-            this.formUpdateEl.reset()
             this.showPanelCreate()
+
+            // then com 2 parametros equivalente ao then-catch
+            this.getPhoto(this.formUpdateEl).then(
+                (content)=>{
+
+                    if(!dataUser.photo){
+                        result._photo = userOld._photo
+                    }else{
+                        result._photo = content
+                    }
+
+                    tr.dataset.user = JSON.stringify(result)
+
+                    tr.innerHTML = `
+                    <tr>
+                        <td><img src="${result._photo}" alt="User Image" class="img-circle img-sm"></td>
+                        <td>${result._name}</td>
+                        <td>${result._email}</td>
+                        <td>${(result._admin) ? "Sim" : "Não"}</td>
+                        <td>${Utils.dateFormate(result._register)}</td>
+                        <td>
+                        <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
+                        <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                        </td>
+                    </tr>
+                    `
+
+                    this.addEventsTr(tr)
+
+                    this.updateCount()
+
+                    this.formUpdateEl.reset()
+                    btn.disabled = false
+                },
+                (error)=>{
+                    console.log(error)
+                })
+
+
+
+
         })
     }
 
@@ -87,7 +102,7 @@ class UserController {
             if(user){
                 btn.disabled = true
                 // then com 2 parametros equivalente ao then-catch
-                this.getPhoto().then(
+                this.getPhoto(this.formEl).then(
                     (content)=>{
 
                         user.photo = content
@@ -106,13 +121,13 @@ class UserController {
         })
     }
 
-    getPhoto(){
+    getPhoto(formEl){
 
         return new Promise( (resolve,reject)=> {
 
             let fileReader = new FileReader()
 
-            let elements = Array.prototype.filter.call(this.formEl.elements , (item) => {
+            let elements = Array.prototype.filter.call(formEl.elements , (item) => {
 
                 if(item.name === "photo"){
                     return item
