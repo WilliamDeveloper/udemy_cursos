@@ -1,5 +1,7 @@
-const chromeNavigator = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-const chromeDriver = "D:/_dev_/bin/webdriver/chrome/chromedriver.exe"
+const chromeNavigatorBin = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+const chromeNavigatorFolder = "C:/Program Files (x86)/Google/Chrome/Application/"
+const chromeDriverBin = "D:/_dev_/bin/webdriver/chrome/chromedriver.exe"
+const chromeDriverFolder = "D:/_dev_/bin/webdriver/chrome/"
 
 const firefoNavigatorBin="D:/_dev_/_ide_/browsers/firefox-36.0/FirefoxPortable.exe"
 const firefoNavigatorFolder="D:/_dev_/_ide_/browsers/firefox-36.0/"
@@ -7,8 +9,8 @@ const firefoxDriverBin = "D:/_dev_/bin/webdriver/firefox/geckodriver.exe"
 const firefoxDriverFolder = "D:/_dev_/bin/webdriver/firefox/"
 
 
-process.env['PATH'] =`${firefoNavigatorFolder};${process.env['PATH']}`
-process.env['PATH'] =`${firefoxDriverFolder};${process.env['PATH']}`
+process.env['PATH'] =`${chromeDriverFolder};${process.env['PATH']}`
+process.env['PATH'] =`${chromeNavigatorFolder};${process.env['PATH']}`
 
 // process.env['PATH'] =`${chromeNavigator};${process.env['PATH']}`
 // process.env['PATH'] =`${chromeDriver};${process.env['PATH']}`
@@ -26,12 +28,12 @@ const By = webdriver.By
 // options.setProfile(profile)
 
 const driver = new webdriver.Builder()
-    .forBrowser('firefox')
+    .forBrowser('chrome')
     // .setFirefoxOptions(options)
     .build()
 
 const url ='http://www.google.com.br'
-driver.manage().window().maximize()
+// driver.manage().window().maximize()
 driver.get(url)
 
 // let email = 'a1@gmail.com'
