@@ -242,9 +242,12 @@ class UserController {
     getUsersStorage(){
         let users = []
 
-        if(sessionStorage.getItem("users")){
-            users = JSON.parse(sessionStorage.getItem("users"))
+        // if(sessionStorage.getItem("users")){
+        //     users = JSON.parse(sessionStorage.getItem("users"))
+        // }
 
+        if(localStorage.getItem("users")){
+            users = JSON.parse(localStorage.getItem("users"))
         }
 
         return users
