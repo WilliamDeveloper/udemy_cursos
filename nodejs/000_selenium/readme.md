@@ -29,5 +29,7 @@ npx nodemon index.js
 -- selenium
 npm install --save selenium-webdriver
 
+https://chromedriver.chromium.org/downloads
+
 
 
