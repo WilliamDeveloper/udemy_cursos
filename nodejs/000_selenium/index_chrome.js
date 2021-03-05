@@ -1,5 +1,5 @@
-const chromeNavigatorBin = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
-const chromeNavigatorFolder = "C:/Program Files (x86)/Google/Chrome/Application/"
+const chromeNavigatorBin = "C:/Program Files/Google/Chrome/Application/chrome.exe"
+const chromeNavigatorFolder = "C:/Program Files/Google/Chrome/Application/"
 const chromeDriverBin = "D:/_dev_/bin/webdriver/chrome/chromedriver.exe"
 const chromeDriverFolder = "D:/_dev_/bin/webdriver/chrome/"
 
