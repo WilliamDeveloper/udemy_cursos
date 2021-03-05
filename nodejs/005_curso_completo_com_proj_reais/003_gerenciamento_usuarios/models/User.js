@@ -90,7 +90,8 @@ class User {
             let newUser = Object.assign({},user, this)
 
             users.map( user=>{
-                if(user._id = this.id){
+                if(user._id == this.id){
+                    Object.assign(user,this)
                     user = this
                 }
                 return user
