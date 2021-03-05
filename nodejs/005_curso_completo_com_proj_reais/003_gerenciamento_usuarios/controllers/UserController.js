@@ -265,7 +265,9 @@ class UserController {
     addEventsTr(tr){
 
         tr.querySelector(".btn-delete").addEventListener("click", e=>{
-
+            if(confirm("desaja excluir mesmo ?")){
+                tr.remove()
+            }
         })
 
         tr.querySelector(".btn-edit").addEventListener("click", e=>{
