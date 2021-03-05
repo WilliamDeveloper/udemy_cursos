@@ -6,12 +6,20 @@ let server = http.createServer((req,res)=>{
 
     switch (req.url) {
         case '/':
-
             res.statusCode = 200
             res.setHeader("Content-Type", 'text/html')
             res.end('<h1> ola</h1>')
+        break;
 
-            break;
+        case '/users/json':
+            res.statusCode = 200
+            res.setHeader("Content-Type", 'application/json')
+            res.end(JSON.stringify({
+                nome:'william',
+                idade:18,
+                admin:true
+            }))
+        break;
 
     }
 
