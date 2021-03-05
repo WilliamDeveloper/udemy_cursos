@@ -279,6 +279,11 @@ class UserController {
 
         tr.querySelector(".btn-delete").addEventListener("click", e=>{
             if(confirm("desaja excluir mesmo ?")){
+
+                let user = new User()
+                user.loadFromJSON(JSON.stringify(tr.dataset.user))
+                user.remove();
+
                 tr.remove()
                 this.updateCount()
             }
