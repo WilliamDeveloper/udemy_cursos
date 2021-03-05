@@ -2,7 +2,7 @@ const chromeNavigator = "C:/Program Files (x86)/Google/Chrome/Application/chrome
 const chromeDriver = "D:/_dev_/bin/webdriver/chrome/chromedriver.exe"
 
 const firefoNavigatorBin="D:/_dev_/_ide_/browsers/firefox-36.0/FirefoxPortable.exe"
-const firefoNavigatorFolder="D:/_dev_/_ide_/browsers/firefox-36.0/FirefoxPortable.exe"
+const firefoNavigatorFolder="D:/_dev_/_ide_/browsers/firefox-36.0/"
 const firefoxDriverBin = "D:/_dev_/bin/webdriver/firefox/geckodriver.exe"
 const firefoxDriverFolder = "D:/_dev_/bin/webdriver/firefox/"
 
