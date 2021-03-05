@@ -30,24 +30,6 @@ npx nodemon index.js
 npm install --save express
 
 
-- template engine handlebars
-npm install --save express-handlebars
-
-
-- body parser para pegar a conversao em objeto de uma req post no body
-npm install --save body-parser
-
--- biblioteca que permise usar abstracao para falar com banco de dados
-npm install --save sequelize
-
-- usando sqlite
-npm install --save sqlite3@5.0.0
-
-
-- bootstrap
-npm install --save jquery
-npm install --save popper.js
-npm install --save bootstrap
 
 
 
