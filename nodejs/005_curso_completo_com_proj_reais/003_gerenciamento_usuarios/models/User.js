@@ -79,7 +79,7 @@ class User {
 
         let usersID = parseInt(localStorage.getItem("usersID"))
 
-        if ( usersID > 0 ) usersID =0
+        if ( !usersID ) usersID =0
 
         usersID++
         localStorage.setItem("usersID", usersID)
