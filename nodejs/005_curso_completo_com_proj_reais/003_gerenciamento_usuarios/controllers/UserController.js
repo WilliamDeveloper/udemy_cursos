@@ -17,6 +17,12 @@ class UserController {
         this.formUpdateEl.addEventListener("submit", event =>{
             event.preventDefault()
 
+            let btn = this.formUpdateEl.querySelector("[type=submit]")
+            btn.disabled = true;
+
+            let user = this.getValues(this.formUpdateEl)
+            console.log(user)
+
         })
     }
 
@@ -32,7 +38,7 @@ class UserController {
             let btn = this.formEl.querySelector("[type=submit]")
 
 
-            let user = this.getValues()
+            let user = this.getValues(this.formEl)
 
             console.log('user ',user)
 
@@ -103,14 +109,14 @@ class UserController {
 
     }
 
-    getValues(){
+    getValues(formEl){
         let user = {}
         let isValid = true
         //descobrir no console os atributos do objeto
         // dir(document.getElementsByTagName('div')[0])
-        console.log(this.formEl)
-        console.log(this.formEl.elements)
-        console.log(this.formEl.elements.forEach)
+        console.log(formEl)
+        console.log(formEl.elements)
+        console.log(formEl.elements.forEach)
 
         //para tranformar o objeto html em array com spread operator
         // [...this.formEl.elements].forEach( function (field, index) {
@@ -126,7 +132,7 @@ class UserController {
         // })
 
 
-        Array.prototype.forEach.call(this.formEl.elements , (field) => {
+        Array.prototype.forEach.call(formEl.elements , (field) => {
 
             console.log('array ',field.name, (['name','email','password'].indexOf(field.name) > -1 && !field.value))
 
