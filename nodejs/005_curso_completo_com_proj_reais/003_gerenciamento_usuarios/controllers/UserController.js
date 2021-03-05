@@ -27,14 +27,22 @@ class UserController {
 
             let tr = this.tableEl.rows[index]
 
-            tr.dataset.user = JSON.stringify(dataUser)
+            let userOld = JSON.parse(tr.dataset.user)
+
+            let result = Object.assign({}, userOld, dataUser)
+
+            if(!dataUser.photo){
+                result._photo = userOld._photo
+            }
+
+            tr.dataset.user = JSON.stringify(result)
             tr.innerHTML = `
             <tr>
-                <td><img src="${dataUser.photo}" alt="User Image" class="img-circle img-sm"></td>
-                <td>${dataUser.name}</td>
-                <td>${dataUser.email}</td>
-                <td>${(dataUser.admin) ? "Sim" : "Não"}</td>
-                <td>${Utils.dateFormate(dataUser.register)}</td>
+                <td><img src="${result._photo}" alt="User Image" class="img-circle img-sm"></td>
+                <td>${result._name}</td>
+                <td>${result._email}</td>
+                <td>${(result._admin) ? "Sim" : "Não"}</td>
+                <td>${Utils.dateFormate(result._register)}</td>
                 <td>
                 <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
                 <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
@@ -46,6 +54,9 @@ class UserController {
 
             this.updateCount()
 
+            btn.disabled = false;
+
+            this.showPanelCreate()
         })
     }
 
