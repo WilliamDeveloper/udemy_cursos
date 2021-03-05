@@ -1,0 +1,16 @@
+{
+  "name": "004_nodejs_backend",
+  "version": "1.0.0",
+  "description": "--- ---------------------------------------------------\r - bibliotecas global de sistema\r --- ---------------------------------------------------\r - biblioteca para o script de node se auto dar restart quando tiver uma modificacao\r  npm install -g nodemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "npx": "^10.2.2"
+  }
+}
