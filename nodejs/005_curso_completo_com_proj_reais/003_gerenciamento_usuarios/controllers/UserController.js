@@ -267,7 +267,9 @@ class UserController {
         let users = this.getUsersStorage()
 
         users.push(data)
-        sessionStorage.setItem("users", JSON.stringify(users))
+
+        // sessionStorage.setItem("users", JSON.stringify(users))
+        localStorage.setItem("users", JSON.stringify(users))
 
     }
 
