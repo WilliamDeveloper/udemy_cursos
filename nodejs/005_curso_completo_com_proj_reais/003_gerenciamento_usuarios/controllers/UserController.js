@@ -250,7 +250,7 @@ class UserController {
                 <td>${Utils.dateFormate(dataUser.register)}</td>
                 <td>
                 <button type="button" class="btn btn-primary btn-edit btn-xs btn-flat">Editar</button>
-                <button type="button" class="btn btn-danger btn-xs btn-flat">Excluir</button>
+                <button type="button" class="btn btn-danger btn-delete btn-xs btn-flat">Excluir</button>
                 </td>
             </tr>
     `
@@ -263,6 +263,11 @@ class UserController {
     }
 
     addEventsTr(tr){
+
+        tr.querySelector(".btn-delete").addEventListener("click", e=>{
+
+        })
+
         tr.querySelector(".btn-edit").addEventListener("click", e=>{
             console.log(tr)
 
