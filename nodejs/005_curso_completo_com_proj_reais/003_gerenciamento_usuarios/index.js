@@ -7,5 +7,5 @@
 // let photo = document.querySelector('#exampleInputFile')
 // let admin = document.querySelector('#exampleInputAdmin')
 
-let userController = new UserController("form-user-create", "table-users")
+let userController = new UserController("form-user-create", "form-user-update","table-users")
 

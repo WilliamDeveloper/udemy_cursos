@@ -1,7 +1,8 @@
 class UserController {
 
-    constructor (formId, tableId){
-        this.formEl = document.getElementById(formId)
+    constructor (formIdCreate,formIdUpdate, tableId){
+        this.formEl = document.getElementById(formIdCreate)
+        this.formUpdateEl = document.getElementById(formIdUpdate)
         this.tableEl = document.getElementById(tableId)
 
         this.onSubmit()
@@ -11,6 +12,11 @@ class UserController {
     onEditCancel(){
         document.querySelector("#box-user-update .btn-cancel").addEventListener("click", (event)=>{
             this.showPanelCreate()
+        })
+
+        this.formUpdateEl.addEventListener("submit", event =>{
+            event.preventDefault()
+
         })
     }
 
