@@ -18,9 +18,10 @@ app.get("/user/json",(req,res)=>{
         idade:18,
         admin:true
     }
-    res.end(JSON.stringify(user))
+    // res.end(JSON.stringify(user))
+    res.json(user)
 })
 
-server.listen(3000,'127.0.0.1',()=>{
+app.listen(3000,'127.0.0.1',()=>{
     console.log('servidor rodando')
 })
