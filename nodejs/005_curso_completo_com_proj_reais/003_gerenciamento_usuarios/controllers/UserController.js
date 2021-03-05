@@ -281,7 +281,7 @@ class UserController {
             if(confirm("desaja excluir mesmo ?")){
 
                 let user = new User()
-                user.loadFromJSON(JSON.stringify(tr.dataset.user))
+                user.loadFromJSON(JSON.parse(tr.dataset.user))
                 user.remove();
 
                 tr.remove()

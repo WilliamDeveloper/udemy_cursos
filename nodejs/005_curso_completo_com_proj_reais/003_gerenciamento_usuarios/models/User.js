@@ -117,6 +117,7 @@ class User {
         let users = User.getUsersStorage()
 
         users.forEach( (userData, index)=>{
+            console.log('this._id == userData._id ', JSON.stringify(this), this.id, this._id , userData._id)
             if(this._id == userData._id){
                users.splice(index,1)
             }
