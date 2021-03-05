@@ -228,7 +228,7 @@ class UserController {
 
 
     selectAll(){
-        let users = this.getUsersStorage()
+        let users = User.getUsersStorage()
 
         users.forEach( dataUser =>{
 
