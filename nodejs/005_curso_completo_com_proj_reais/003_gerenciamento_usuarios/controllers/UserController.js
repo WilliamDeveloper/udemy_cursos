@@ -56,6 +56,7 @@ class UserController {
 
             btn.disabled = false;
 
+            this.formUpdateEl.reset()
             this.showPanelCreate()
         })
     }
