@@ -11,14 +11,15 @@ let server = http.createServer((req,res)=>{
             res.end('<h1> ola</h1>')
         break;
 
-        case '/users/json':
+        case '/user/json':
             res.statusCode = 200
             res.setHeader("Content-Type", 'application/json')
-            res.end(JSON.stringify({
+            let user = {
                 nome:'william',
                 idade:18,
                 admin:true
-            }))
+            }
+            res.end(JSON.stringify(user))
         break;
 
     }
