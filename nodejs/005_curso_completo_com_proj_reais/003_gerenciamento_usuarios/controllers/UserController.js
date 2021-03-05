@@ -44,8 +44,8 @@ class UserController {
                         result._photo = content
                     }
 
-                    let user = User()
-                    use.loadFromJSON(result)
+                    let user = new User()
+                    user.loadFromJSON(result)
 
                     tr = this.getTr(user,tr)
 
