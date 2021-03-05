@@ -44,3 +44,7 @@ tr.dataset.user = JSON.stringify(dataUser)
 //des-serializando um objeto
 let user = JSON.parse(tr.dataset.user)
 console.log(tr.dataset.user)
+
+//gabarito original
+Você pode acessar o código final deste projeto no GitHub da Hcode: 
+https://github.com/hcodebr/curso-javascript-projeto-usuarios-final
