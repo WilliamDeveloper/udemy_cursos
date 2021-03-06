@@ -53,6 +53,7 @@ module.exports = (app)=>{
 
     app.put('/users/:id',(req,res)=>{
 
+        //filter/dadosToUpdate/calbackerror
         db.update({_id: req.params.id}, req.body, (error)=>{
             if(error){
                 //auto importado pela config do consign
