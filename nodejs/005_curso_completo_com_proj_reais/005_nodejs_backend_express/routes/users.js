@@ -51,6 +51,19 @@ module.exports = (app)=>{
 
     })
 
+    app.put('/users/:id',(req,res)=>{
+
+        db.update({_id: req.params.id}, req.body, (error)=>{
+            if(error){
+                //auto importado pela config do consign
+                app.utils.error.send(error, req,res)
+            }else{
+                res.status(200).json({body: req.body})
+            }
+        })
+
+    })
+
 
     app.get("/users/json",(req,res)=>{
         res.statusCode = 200

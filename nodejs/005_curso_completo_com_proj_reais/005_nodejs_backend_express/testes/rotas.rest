@@ -13,6 +13,18 @@ GET http://localhost:3000/users/JIsK9DH3fALBSpkp
 ####
 
 ####
+PUT http://localhost:3000/users/JIsK9DH3fALBSpkp
+Content-Type: application/json
+
+{
+  "name" : "william33333",
+  "email": "a3333@a.com.br",
+  "password" : "M123456"
+}
+####
+
+
+####
 POST http://localhost:3000/users
 Content-Type: application/json
 
