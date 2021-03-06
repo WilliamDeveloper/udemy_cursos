@@ -6,7 +6,9 @@ const db = new NeDB({
 
 module.exports = (app)=>{
 
-    app.get("/users",(req,res)=>{
+    let route = app.route('/users')
+
+    route.get("/",(req,res)=>{
 
         db.find({}).sort({name:1}).exec( (error,users)=>{
             if(error){
@@ -20,7 +22,7 @@ module.exports = (app)=>{
     })
 
 
-    app.post("/users",(req,res)=>{
+    route.post("/",(req,res)=>{
 
         console.log(req.body)
         db.insert(req.body,(error, user)=>{
@@ -36,7 +38,7 @@ module.exports = (app)=>{
     })
 
 
-    app.get("/users/json",(req,res)=>{
+    route.get("/json",(req,res)=>{
         res.statusCode = 200
         res.setHeader("Content-Type", 'application/json')
         let user = {
@@ -48,7 +50,7 @@ module.exports = (app)=>{
         res.json(user)
     })
 
-    app.get("/users/admin",(req,res)=>{
+    route.get("/admin",(req,res)=>{
         res.statusCode = 200
         res.setHeader("Content-Type", 'application/json')
 
