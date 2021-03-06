@@ -30,16 +30,7 @@ module.exports = (app)=>{
 
         console.log(req.body)
 
-        req.assert('name','o nome e obrigatorio').notEmpty()
-        req.assert('email','o email e obrigatorio').notEmpty().isEmail()
-
-        let errors = req.validationErrors()
-
-        if(errors) {
-            //auto importado pela config do consign
-            app.utils.error.send(errors, req, res)
-            return res.json({msg:'NOK'})
-        }
+        if(!app.utils.validator.user(app,req,res)) return false
 
         db.insert(req.body,(error, user)=>{
             if(error){
@@ -67,6 +58,8 @@ module.exports = (app)=>{
     })
 
     app.put('/users/:id',(req,res)=>{
+
+        if(!app.utils.validator.user(app,req,res)) return false
 
         //filter/dadosToUpdate/calbackerror
         db.update({_id: req.params.id}, req.body, (error)=>{
