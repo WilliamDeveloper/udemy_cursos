@@ -9,6 +9,10 @@ GET http://localhost:3000/users
 
 
 ####
+GET http://localhost:3000/users/JIsK9DH3fALBSpkp
+####
+
+####
 POST http://localhost:3000/users
 Content-Type: application/json
 

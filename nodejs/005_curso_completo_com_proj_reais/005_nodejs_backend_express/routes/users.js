@@ -45,7 +45,7 @@ module.exports = (app)=>{
                 //auto importado pela config do consign
                 app.utils.error.send(error, req,res)
             }else{
-                res.status(200).json({users})
+                res.status(200).json({user})
             }
         })
 
