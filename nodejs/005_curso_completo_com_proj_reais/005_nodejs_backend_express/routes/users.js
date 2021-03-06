@@ -68,6 +68,23 @@ module.exports = (app)=>{
 
     })
 
+    app.delete('/users/:id',(req,res)=>{
+
+        //filter/dadosToUpdate/calbackerror
+        db.update({_id: req.params.id}, req.body, (error)=>{
+            if(error){
+                //auto importado pela config do consign
+                app.utils.error.send(error, req,res)
+            }else{
+                //fazendo merge dos objetos
+                let resposta = Object.assign(req.params, req.body)
+                res.status(200).json(resposta)
+                // res.status(200).json({body: req.body, params: req.params})
+            }
+        })
+
+    })
+
 
     app.get("/users/json",(req,res)=>{
         res.statusCode = 200
