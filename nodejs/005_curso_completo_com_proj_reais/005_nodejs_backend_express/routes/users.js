@@ -58,7 +58,9 @@ module.exports = (app)=>{
                 //auto importado pela config do consign
                 app.utils.error.send(error, req,res)
             }else{
-                res.status(200).json({body: req.body, params: req.params})
+                let resposta = Object.assign(req.params, req.body)
+                res.status(200).json(resposta)
+                // res.status(200).json({body: req.body, params: req.params})
             }
         })
 
