@@ -38,6 +38,9 @@ npm install --save body-parser
 -- banco de dados nedb - com sintaxe de objeto javascript
 npm install --save nedb
 
+-- validacao do express
+npm install --save express-validator
+
 
 
 
