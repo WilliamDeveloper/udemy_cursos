@@ -12,6 +12,9 @@ app.use('/',indexRouter)
 app.use('/users',usersRouter)
 */
 
+//bodyparser -> que agora ta dentro do express
+app.use(express.urlencoded({extended:false}))
+app.use(express.json());
 
 
 app.listen(3000,'127.0.0.1',()=>{

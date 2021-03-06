@@ -32,7 +32,8 @@ npm install --save express
 - auto loading rotas da aplicacao
 npm install --save consign
 
-
+- body parser para pegar a conversao em objeto de uma req post no body
+npm install --save body-parser
 
 
 
