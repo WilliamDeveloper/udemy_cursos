@@ -11,3 +11,5 @@ express --ejs frontend_express_ejs
   npm install --save nodemon 
   npm install --save npx
 
+- restfy-clients
+npm install --save restify-clients
