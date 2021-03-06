@@ -1,9 +1,14 @@
 const express = require('express')
 const app = express()
+const expressValidator = require("express-validator")
 
 //bodyparser -> que agora ta dentro do express
 app.use(express.urlencoded({extended:false}))
 app.use(express.json());
+
+//adiciona validacao por assert na requisicao
+app.use(expressValidator())
+
 
 const consign = require('consign')
 

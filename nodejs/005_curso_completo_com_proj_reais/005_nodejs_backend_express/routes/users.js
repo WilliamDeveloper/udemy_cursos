@@ -26,6 +26,10 @@ module.exports = (app)=>{
     route.post((req,res)=>{
 
         console.log(req.body)
+
+        req.assert('name','o nome e obrigatorio').notEmpty()
+        req.assert('email','o email e obrigatorio').notEmpty()
+
         db.insert(req.body,(error, user)=>{
             if(error){
                 //auto importado pela config do consign
