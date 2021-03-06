@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 
-router.get("/users/json",(req,res)=>{
+router.get("/json",(req,res)=>{
     res.statusCode = 200
     res.setHeader("Content-Type", 'application/json')
     let user = {
@@ -13,7 +13,7 @@ router.get("/users/json",(req,res)=>{
     res.json(user)
 })
 
-router.get("/users/admin",(req,res)=>{
+router.get("/admin",(req,res)=>{
     res.statusCode = 200
     res.setHeader("Content-Type", 'application/json')
 
