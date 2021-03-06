@@ -10,7 +10,8 @@ module.exports = (app)=>{
 
         db.find({}).sort({name:1}).exec( (error,users)=>{
             if(error){
-                app.utils.error.send()
+                //auto importado pela config do consign
+                app.utils.error.send(error, req,res)
             }else{
                 res.status(200).json({users})
             }
@@ -24,10 +25,8 @@ module.exports = (app)=>{
         console.log(req.body)
         db.insert(req.body,(error, user)=>{
             if(error){
-                console.log(error)
-                res.status(400).json({
-                    error:error
-                })
+                //auto importado pela config do consign
+                app.utils.error.send(error, req,res)
             }else{
                 res.status(200).json(user)
             }
