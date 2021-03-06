@@ -4,6 +4,9 @@ const db = new NeDB({
     autoload:true
 })
 
+//habilita validacao expresss
+const {check, expressValidator, body, validationResult} = require("express-validator")
+
 module.exports = (app)=>{
 
     let route = app.route('/users')
@@ -27,8 +30,16 @@ module.exports = (app)=>{
 
         console.log(req.body)
 
-        req.assert('name','o nome e obrigatorio').notEmpty()
-        req.assert('email','o email e obrigatorio').notEmpty()
+         req.assert('name','o nome e obrigatorio').notEmpty()
+         req.assert('email','o email e obrigatorio').notEmpty().isEmail()
+
+        // let errors = validationResult(req)
+        //
+        // if(errors) {
+        //     //auto importado pela config do consign
+        //     app.utils.error.send(errors, req, res)
+        //     return res.json({msg:'NOK'})
+        // }
 
         db.insert(req.body,(error, user)=>{
             if(error){

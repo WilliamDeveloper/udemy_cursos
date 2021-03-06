@@ -39,7 +39,7 @@ npm install --save body-parser
 npm install --save nedb
 
 -- validacao do express
-npm install --save express-validator
+npm install --save express-validator@
 
 
 
