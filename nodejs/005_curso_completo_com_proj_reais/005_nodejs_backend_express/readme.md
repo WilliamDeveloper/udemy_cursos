@@ -29,7 +29,8 @@ npx nodemon index.js
 - para rotas da aplicacao
 npm install --save express
 
-
+- auto loading rotas da aplicacao
+npm install --save consign
 
 
 
