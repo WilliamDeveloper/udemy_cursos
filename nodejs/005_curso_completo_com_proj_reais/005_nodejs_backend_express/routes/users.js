@@ -13,7 +13,7 @@ module.exports = (app)=>{
                 console.log(error)
                 res.status(400).json({ error:error })
             }else{
-                res.status(200).json(users)
+                res.status(200).json({users})
             }
         })
 
