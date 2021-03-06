@@ -10,8 +10,7 @@ module.exports = (app)=>{
 
         db.find({}).sort({name:1}).exec( (error,users)=>{
             if(error){
-                console.log(error)
-                res.status(400).json({ error:error })
+                app.utils.error.send()
             }else{
                 res.status(200).json({users})
             }

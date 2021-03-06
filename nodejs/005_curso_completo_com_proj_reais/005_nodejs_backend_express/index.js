@@ -6,7 +6,11 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 
 const consign = require('consign')
-consign().include('routes').into(app)
+
+consign()
+    .include('routes')
+    .include('utils')
+    .into(app)
 
 /*
 const indexRouter = require("./routes/index")
