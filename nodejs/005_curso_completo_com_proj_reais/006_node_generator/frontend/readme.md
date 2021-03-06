@@ -1,3 +1,9 @@
+
+npm install -g bower
+bower install
+
+####################################
+
 https://github.com/hcodebr/curso-javascript-projeto-usuarios
 
 window
