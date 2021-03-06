@@ -13,3 +13,5 @@ express --ejs frontend_express_ejs
 
 - restify-clients
 npm install --save restify-clients
+
+npm start
