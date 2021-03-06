@@ -35,6 +35,8 @@ npm install --save consign
 - body parser para pegar a conversao em objeto de uma req post no body
 npm install --save body-parser
 
+-- banco de dados nedb
+npm install --save nedb
 
 
 
