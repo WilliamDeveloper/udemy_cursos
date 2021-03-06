@@ -2,6 +2,11 @@
 npm install -g bower
 bower install
 
+
+npm install -g express-generator
+
+
+
 ####################################
 
 https://github.com/hcodebr/curso-javascript-projeto-usuarios
