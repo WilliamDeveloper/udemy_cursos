@@ -10,6 +10,7 @@ module.exports = (app)=>{
 
     route.get((req,res)=>{
 
+        //sort 1 crescente sort -1 descrescente
         db.find({}).sort({name:1}).exec( (error,users)=>{
             if(error){
                 //auto importado pela config do consign
@@ -33,6 +34,19 @@ module.exports = (app)=>{
                 res.status(200).json(user)
             }
 
+        })
+
+    })
+
+    app.get('/users/:id',(req,res)=>{
+
+        db.findOne({_id: req.params.id}).exec( (error,user)=>{
+            if(error){
+                //auto importado pela config do consign
+                app.utils.error.send(error, req,res)
+            }else{
+                res.status(200).json({users})
+            }
         })
 
     })
