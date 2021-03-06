@@ -13,4 +13,11 @@ router.get("/users/json",(req,res)=>{
     res.json(user)
 })
 
+router.get("/users/admin",(req,res)=>{
+    res.statusCode = 200
+    res.setHeader("Content-Type", 'application/json')
+
+    res.json({msg:'user/admin'})
+})
+
 module.exports = router

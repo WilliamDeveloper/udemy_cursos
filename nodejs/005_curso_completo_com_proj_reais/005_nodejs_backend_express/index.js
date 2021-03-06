@@ -4,6 +4,9 @@ const app = express()
 const indexRouter = require("./routes/index")
 const usersRouter = require("./routes/users")
 
+app.use(indexRouter)
+app.use(usersRouter)
+
 
 
 
