@@ -7,15 +7,16 @@ const db = new NeDB({
 module.exports = (app)=>{
 
     app.get("/users",(req,res)=>{
-        res.statusCode = 200
-        res.setHeader("Content-Type", 'application/json')
-        let user = {
-            nome:'william',
-            idade:18,
-            admin:true
-        }
-        // res.end(JSON.stringify(user))
-        res.json(user)
+
+        db.find({}).sort({name:1}).exec( (error,users)=>{
+            if(error){
+                console.log(error)
+                res.status(400).json({ error:error })
+            }else{
+                res.status(200).json(users)
+            }
+        })
+
     })
 
 
