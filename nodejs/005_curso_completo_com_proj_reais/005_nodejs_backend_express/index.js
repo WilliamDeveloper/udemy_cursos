@@ -1,6 +1,10 @@
 const express = require('express')
 const app = express()
 
+//bodyparser -> que agora ta dentro do express
+app.use(express.urlencoded({extended:false}))
+app.use(express.json());
+
 const consign = require('consign')
 consign().include('routes').into(app)
 
@@ -12,9 +16,7 @@ app.use('/',indexRouter)
 app.use('/users',usersRouter)
 */
 
-//bodyparser -> que agora ta dentro do express
-app.use(express.urlencoded({extended:false}))
-app.use(express.json());
+
 
 
 app.listen(3000,'127.0.0.1',()=>{

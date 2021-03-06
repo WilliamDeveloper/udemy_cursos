@@ -21,6 +21,7 @@ module.exports = (app)=>{
 
     app.post("/users",(req,res)=>{
 
+        console.log(req.body)
         db.insert(req.body,(error, user)=>{
             if(error){
                 console.log(error)
