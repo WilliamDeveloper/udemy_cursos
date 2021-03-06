@@ -7,6 +7,16 @@ GET http://localhost:3000/
 GET http://localhost:3000/users
 ####
 
+####
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name" : "william1",
+  "email": "a7@a.com.br",
+  "password" : "123456"
+}
+####
 
 ####
 GET http://localhost:3000/users/JIsK9DH3fALBSpkp
@@ -23,14 +33,6 @@ Content-Type: application/json
 }
 ####
 
-
 ####
-POST http://localhost:3000/users
-Content-Type: application/json
-
-{
-  "name" : "william1",
-  "email": "a7@a.com.br",
-  "password" : "123456"
-}
+DELETE http://localhost:3000/users/JIsK9DH3fALBSpkp
 ####
