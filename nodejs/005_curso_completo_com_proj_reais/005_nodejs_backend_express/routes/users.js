@@ -21,14 +21,14 @@ module.exports = (app)=>{
 
     app.post("/users",(req,res)=>{
 
-        let request = req.body
-
-        db.insert(request,(error, user)=>{
+        db.insert(req.body,(error, user)=>{
             if(error){
                 console.log(error)
-                res.status(400).json({error:error})
+                res.status(400).json({
+                    error:error
+                })
             }else{
-                res.status(200).json({user})
+                res.status(200).json(user)
             }
 
         })
