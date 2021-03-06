@@ -1,0 +1,16 @@
+{
+  "error": [
+    {
+      "location": "body",
+      "param": "name",
+      "msg": "o nome e obrigatorio",
+      "value": ""
+    },
+    {
+      "location": "body",
+      "param": "email",
+      "msg": "o email e obrigatorio",
+      "value": "dsadsadsa"
+    }
+  ]
+}

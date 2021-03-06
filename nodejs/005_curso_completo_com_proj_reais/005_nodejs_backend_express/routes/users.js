@@ -30,16 +30,16 @@ module.exports = (app)=>{
 
         console.log(req.body)
 
-         req.assert('name','o nome e obrigatorio').notEmpty()
-         req.assert('email','o email e obrigatorio').notEmpty().isEmail()
+        req.assert('name','o nome e obrigatorio').notEmpty()
+        req.assert('email','o email e obrigatorio').notEmpty().isEmail()
 
-        // let errors = validationResult(req)
-        //
-        // if(errors) {
-        //     //auto importado pela config do consign
-        //     app.utils.error.send(errors, req, res)
-        //     return res.json({msg:'NOK'})
-        // }
+        let errors = req.validationErrors()
+
+        if(errors) {
+            //auto importado pela config do consign
+            app.utils.error.send(errors, req, res)
+            return res.json({msg:'NOK'})
+        }
 
         db.insert(req.body,(error, user)=>{
             if(error){
