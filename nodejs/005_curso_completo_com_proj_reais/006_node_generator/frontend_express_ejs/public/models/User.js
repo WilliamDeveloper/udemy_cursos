@@ -44,6 +44,7 @@ class User {
     set admin(value){ this._admin = value}
 
     loadFromJSON(json){
+        console.log('loadFromJSON ',json)
         for (let name in json){
 
             switch (name) {
