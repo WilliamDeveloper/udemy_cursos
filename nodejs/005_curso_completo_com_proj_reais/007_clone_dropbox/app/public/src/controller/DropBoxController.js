@@ -15,7 +15,9 @@ class DropBoxController{
     connectFireBase(){
 
         console.log(firebaseConfig)
-        firebase.initializeApp(firebaseConfig)
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // firebase.analytics();
     }
 
     initEvents(){
@@ -26,13 +28,32 @@ class DropBoxController{
         this.inputFilesEl.addEventListener('change', event =>{
             console.log('event ', event.target.files )
 
-            this.uploadTask( event.target.files)
+            this.uploadTask( event.target.files).then( responses=>{
+                responses.forEach(resp => {
+                    console.log('=> ',resp)
+                    console.log('=> ',resp.files['input-file'])
+
+                    let obj = resp.files['input-file']
+                    this.getFirebaseRef().push().set(obj)
+
+                })
+
+                this.modalShow(false)
+
+            })
 
             this.modalShow()
             this.inputFilesEl.value = ''
 
 
         })
+    }
+
+    getFirebaseRef(){
+        console.log('getFirebaseRef', firebase)
+        console.log('getFirebaseRef', firebase.database)
+        console.log('getFirebaseRef', firebase.database())
+        return firebase.database().ref('files')
     }
 
     modalShow(show = true){
@@ -49,7 +70,7 @@ class DropBoxController{
                 let ajax = new XMLHttpRequest()
                 ajax.open('POST', '/upload')
                 ajax.onload = event =>{
-                    this.modalShow(false)
+
                     try{
                         resolve(JSON.parse(ajax.responseText))
                     }catch (e) {
@@ -57,7 +78,7 @@ class DropBoxController{
                     }
                 }
                 ajax.onerror = event =>{
-                    this.modalShow(false)
+
                     reject(event)
                 }
 
