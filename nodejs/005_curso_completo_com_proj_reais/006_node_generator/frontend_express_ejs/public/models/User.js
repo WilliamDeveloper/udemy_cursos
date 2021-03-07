@@ -88,29 +88,34 @@ class User {
         return usersID
     }
 
+    toJSON(){
+        let json ={}
+        Object.keys(this).forEach(key=>{
+            if(this[key] !== undefined) json[key] = this[key]
+        })
+        return json
+    }
+
     save(){
-        let users = User.getUsersStorage()
 
-        if(this.id > 0){
-            let user = users.filter( user => { return user.id == this.id })
+        return new Promise((resolve, reject)=>{
+            let promise
 
-            let newUser = Object.assign({},user, this)
+            if(this.id){
+                promise = HttpRequest.put(`/users/${this.id}`, this.toJSON())
+            }else{
+                promise = HttpRequest.put(`/users`, this.toJSON())
+            }
 
-            users.map( user=>{
-                if(user._id == this.id){
-                    Object.assign(user,this)
-                    user = this
-                }
-                return user
+            promise.then(data =>{
+                this.loadFromJSON(data)
+                resolve(this)
+            }).catch(e=>{
+                console.log(e)
+                reject(e)
             })
-        }else{
-            this.id = this.getNewId()
-            users.push(this)
-        }
+        })
 
-
-        // sessionStorage.setItem("users", JSON.stringify(users))
-        localStorage.setItem("users", JSON.stringify(users))
     }
 
     remove(){

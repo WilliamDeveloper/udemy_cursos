@@ -46,14 +46,16 @@ class UserController {
 
                     let user = new User()
                     user.loadFromJSON(result)
-                    user.save()
+                    user.save().then(usu=>{
+                        tr = this.getTr(usu,tr)
 
-                    tr = this.getTr(user,tr)
+                        this.updateCount()
 
-                    this.updateCount()
+                        this.formUpdateEl.reset()
+                        btn.disabled = false
+                    })
 
-                    this.formUpdateEl.reset()
-                    btn.disabled = false
+
                 },
                 (error)=>{
                     console.log(error)
@@ -96,12 +98,14 @@ class UserController {
 
                         user.photo = content
 
-                        user.save()
+                        user.save().then( usu =>{
+                            this.addLine(usu)
 
-                        this.addLine(user)
+                            this.formEl.reset()
+                            btn.disabled = false
+                        })
 
-                        this.formEl.reset()
-                        btn.disabled = false
+
                     },
                     (error)=>{
                         console.log(error)
