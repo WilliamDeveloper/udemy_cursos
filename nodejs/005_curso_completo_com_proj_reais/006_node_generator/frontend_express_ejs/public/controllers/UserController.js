@@ -251,6 +251,8 @@ class UserController {
 
         }
 
+        ajax.send()
+
     }
 
 
