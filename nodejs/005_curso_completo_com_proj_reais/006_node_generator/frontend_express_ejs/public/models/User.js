@@ -104,7 +104,7 @@ class User {
             if(this.id){
                 promise = HttpRequest.put(`/users/${this.id}`, this.toJSON())
             }else{
-                promise = HttpRequest.put(`/users`, this.toJSON())
+                promise = HttpRequest.post(`/users`, this.toJSON())
             }
 
             promise.then(data =>{
