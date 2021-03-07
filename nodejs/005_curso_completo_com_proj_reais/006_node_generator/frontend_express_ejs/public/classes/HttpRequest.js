@@ -17,7 +17,7 @@ class HttpRequest{
     }
 
     static request(method, url, params ={}){
-        // console.log('request')
+        console.log('request-> ',method, url, params)
 
         return new Promise((resolve, reject)=>{
 
@@ -26,6 +26,7 @@ class HttpRequest{
             ajax.open(method.toUpperCase(),url)
 
             ajax.onerror = event =>{
+                console.log('ajax-error-> ',event)
                 reject(event)
             }
 
@@ -39,6 +40,8 @@ class HttpRequest{
                     console.log(e)
                     reject(e)
                 }
+
+                console.log('ajax-onload-> ',event, obj)
 
                 resolve(obj)
 
