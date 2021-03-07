@@ -20,7 +20,9 @@ class HttpRequest{
         // console.log('request')
 
         return new Promise((resolve, reject)=>{
+
             let ajax = new XMLHttpRequest()
+
             ajax.open(method.toUpperCase(),url)
 
             ajax.onerror = event =>{
