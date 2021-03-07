@@ -27,7 +27,26 @@ class DropBoxController{
         let promises = []
 
         Array.prototype.forEach.call(files , (file) => {
+            promises.push( new Promise((resolve, reject)=>{
+                let ajax = new XMLHttpRequest()
+                ajax.open('POST', '/upload')
+                ajax.onload = event =>{
+                    try{
+                        resolve(JSON.parse(ajax.responseText))
+                    }catch (e) {
+                        reject(e)
+                    }
+                }
+                ajax.onerror = event =>{
+                    reject(event)
+                }
 
+                let formData = new FormData()
+                formData.append('input-file',file)
+
+                ajax.send(formData)
+
+            }))
 
         })
 
