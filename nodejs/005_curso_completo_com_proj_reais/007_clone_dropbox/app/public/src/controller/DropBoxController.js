@@ -49,6 +49,10 @@ class DropBoxController{
         })
     }
 
+    uploadComplete(){
+
+    }
+
     getFirebaseRef(){
         console.log('getFirebaseRef', firebase)
         console.log('getFirebaseRef', firebase.database)
