@@ -1,1 +1,7 @@
-https://github.com/hcodebr/curso-javascript-projeto-usuarios
+npm install -g bower
+bower install
+
+npm install
+
+npm install express-generator
+express --ejs app
