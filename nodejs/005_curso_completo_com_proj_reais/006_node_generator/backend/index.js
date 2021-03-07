@@ -2,8 +2,9 @@ const express = require('express')
 const app = express()
 
 //bodyparser -> que agora ta dentro do express
-app.use(express.urlencoded({extended:false}))
-app.use(express.json());
+//limite de dados de um requisicao post/json
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: false, limit: '50mb' }));
 
 //versao 5.3.1
 const  expressValidator  = require('express-validator');
