@@ -12,7 +12,7 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "_name" : "william2",
+  "_name" : "william2888",
   "_email": "a7@a.com.br",
   "_password" : "123456"
 }
@@ -27,14 +27,14 @@ PUT http://localhost:3000/users/Cithx2MN1v4MQjHP
 Content-Type: application/json
 
 {
-  "_name" : "william33333",
+  "_name" : "william3333355",
   "_email": "a3333@a.com.br",
   "_password" : "M123456"
 }
 ####
 
 ####
-DELETE http://localhost:3000/users/NDtk7pjuZNRQLYfy
+DELETE http://localhost:3000/users/Cithx2MN1v4MQjHP
 ####
 
 
