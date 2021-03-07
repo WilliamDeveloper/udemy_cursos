@@ -358,7 +358,7 @@ class UserController {
         let numberAdmin = 0
 
         Array.prototype.forEach.call(this.tableEl.children , (tr) => {
-            console.log('tr=>', tr)
+            // console.log('tr=>', tr)
             numberUsers ++
 
 
