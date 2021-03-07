@@ -62,7 +62,8 @@ class User {
 
     // static getUsersStorage(){
     static selectAll(){
-        return HttpRequest.get('/users')
+        // return HttpRequest.get('/users')
+        return Fetch.get('/users')
     }
 
     toJSON(){
@@ -79,9 +80,11 @@ class User {
             let promise
 
             if(this.id){
-                promise = HttpRequest.put(`/users/${this.id}`, this.toJSON())
+                // promise = HttpRequest.put(`/users/${this.id}`, this.toJSON())
+                promise = Fetch.put(`/users/${this.id}`, this.toJSON())
             }else{
-                promise = HttpRequest.post(`/users`, this.toJSON())
+                // promise = HttpRequest.post(`/users`, this.toJSON())
+                promise = Fetch.post(`/users`, this.toJSON())
             }
 
             promise.then(data =>{
@@ -97,7 +100,8 @@ class User {
 
     remove(){
 
-        return HttpRequest.delete(`/users/${this.id}`)
+        // return HttpRequest.delete(`/users/${this.id}`)
+        return Fetch.delete(`/users/${this.id}`)
 
     }
 
