@@ -60,24 +60,9 @@ class User {
         }
     }
 
-
-
     // static getUsersStorage(){
     static selectAll(){
         return HttpRequest.get('/users')
-    }
-
-    getNewId(){
-
-        let usersID = parseInt(localStorage.getItem("usersID"))
-
-        if ( !usersID ) usersID =0
-
-        usersID++
-        localStorage.setItem("usersID", usersID)
-
-
-        return usersID
     }
 
     toJSON(){
