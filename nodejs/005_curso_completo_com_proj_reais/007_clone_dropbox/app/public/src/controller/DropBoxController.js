@@ -22,6 +22,7 @@ class DropBoxController{
         })
     }
 
+
     uploadTask(files){
 
         let promises = []
@@ -41,6 +42,11 @@ class DropBoxController{
                     reject(event)
                 }
 
+                ajax.upload.onprogress = event =>{
+                    console.log('onprogress',event)
+                    this.uploadProgress(event,file)
+                }
+
                 let formData = new FormData()
                 formData.append('input-file',file)
 
@@ -52,5 +58,14 @@ class DropBoxController{
 
         return Promise.all(promises)
 
+    }
+
+
+    uploadProgress(event,file){
+        console.log(event, file)
+        let loaded = event.loaded
+        let total = event.total
+
+        let porcent = parseInt((loaded/total) * 100)
     }
 }
