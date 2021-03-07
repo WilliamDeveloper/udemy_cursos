@@ -14,7 +14,7 @@ class DropBoxController{
 
     connectFireBase(){
 
-
+        console.log(firebaseConfig)
         firebase.initializeApp(firebaseConfig)
     }
 
