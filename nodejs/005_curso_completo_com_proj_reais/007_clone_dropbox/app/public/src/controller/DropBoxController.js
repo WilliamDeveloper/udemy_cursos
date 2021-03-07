@@ -13,14 +13,9 @@ class DropBoxController{
     }
 
     connectFireBase(){
-        var config ={
-            apiKey: '',
-            authDomain : '',
-            projectId : '',
-            storageBucket: '',
-            messagingSenderId: ''
-        }
-        firebase.initializeApp(config)
+
+
+        firebase.initializeApp(firebaseConfig)
     }
 
     initEvents(){
