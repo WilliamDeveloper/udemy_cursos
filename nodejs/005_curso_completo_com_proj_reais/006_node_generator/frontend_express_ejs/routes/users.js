@@ -11,6 +11,7 @@ var client = restify.createJSONClient({
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  console.log('router.get')
 
   client.get("/users", function (err, request, response, obj) {
     assert.ifError(err)
@@ -23,7 +24,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/:id', function(req, res, next) {
-
+  console.log('router.get.id')
   client.get(`/users/${req.params.id}`, function (err, request, response, obj) {
     assert.ifError(err)
     console.log(JSON.stringify(obj,null,2))
@@ -34,7 +35,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.put('/:id', function(req, res, next) {
-
+  console.log('router.put')
   client.put(`/users/${req.params.id}`, req.body,function (err, request, response, obj) {
     assert.ifError(err)
     console.log(JSON.stringify(obj,null,2))
@@ -47,7 +48,7 @@ router.put('/:id', function(req, res, next) {
 
 
 router.delete('/:id', function(req, res, next) {
-
+  console.log('router.delete')
   client.del(`/users/${req.params.id}`, function (err, request, response, obj) {
     assert.ifError(err)
     console.log(JSON.stringify(obj,null,2))
@@ -59,6 +60,7 @@ router.delete('/:id', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
+  console.log('router.post')
   console.log(req.body)
 
   client.post(`/users`,  req.body,function (err, request, response, obj) {
