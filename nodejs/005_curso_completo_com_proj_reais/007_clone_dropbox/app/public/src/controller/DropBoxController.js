@@ -8,7 +8,19 @@ class DropBoxController{
         this.nameFileEl = this.snackModalEl.querySelector('.filename')
         this.timeleftEl = this.snackModalEl.querySelector('.timeleft')
 
+        this.connectFireBase()
         this.initEvents()
+    }
+
+    connectFireBase(){
+        var config ={
+            apiKey: '',
+            authDomain : '',
+            projectId : '',
+            storageBucket: '',
+            messagingSenderId: ''
+        }
+        firebase.initializeApp(config)
     }
 
     initEvents(){
