@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 router.post('/upload', (req,res)=>{
 
   res.json(req.body)
+
 } )
 
 module.exports = router;
