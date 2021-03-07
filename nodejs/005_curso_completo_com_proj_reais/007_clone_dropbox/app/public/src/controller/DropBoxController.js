@@ -15,6 +15,9 @@ class DropBoxController{
 
         this.inputFilesEl.addEventListener('change', event =>{
             console.log('event ', event.target.files )
+
+            this.uploadTask( event.target.files)
+
             this.snackModalEl.style.display = 'block'
         })
     }
@@ -22,6 +25,13 @@ class DropBoxController{
     uploadTask(files){
 
         let promises = []
+
+        Array.prototype.forEach.call(files , (file) => {
+
+
+        })
+
+        return Promise.all(promises)
 
     }
 }
