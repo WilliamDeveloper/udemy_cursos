@@ -37,6 +37,10 @@ class DropBoxController{
 
     initEvents(){
 
+        this.btnRename.addEventListener('click', e=>{
+
+        })
+
         this.listFilesEl.addEventListener('selectionchange', e=>{
             console.log('selectionchange ', e)
             
