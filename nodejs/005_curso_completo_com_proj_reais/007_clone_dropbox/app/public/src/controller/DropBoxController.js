@@ -78,8 +78,6 @@ class DropBoxController{
                     path: this.currentFolder.join('/')
                 })
             }
-
-
         })
 
         this.btnDelete.addEventListener('click', e=>{
