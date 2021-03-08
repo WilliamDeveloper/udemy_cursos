@@ -20,21 +20,20 @@ router.delete('/file', function(req, res, next) {
     let path = "./"+fields.path
     console.log("delete-path ",path)
     if(fs.existsSync(path)){
+
       fs.unlink(path, error=>{
 
         if(error){
           console.log('error: ', error)
           res.status(400).json({error})
-        }else{
-          console.log(fields)
-          res.json({fields:'ok'})
         }
 
       })
     }
+
   })
 
-
+  res.json({fields: fields})
 
 });
 

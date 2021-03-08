@@ -37,9 +37,12 @@ class DropBoxController{
 
     removeTask(){
         let promises = []
+
         this.getSelection().forEach(li =>{
             let file = JSON.parse(li.dataset.file)
             let key = li.dataset.key
+            console.log('file] ', file)
+            console.log('key] ', key)
 
             let formData = new FormData()
             formData.append('path', file.path)
@@ -63,7 +66,7 @@ class DropBoxController{
 
         this.btnDelete.addEventListener('click', e=>{
             this.removeTask().then( responses =>{
-                console.log(responses)
+                console.log('btnDelete-delete-responses-then',responses)
 
                 responses.forEach(response=>{
                     console.log('response: ',response)
