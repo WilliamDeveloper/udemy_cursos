@@ -31,10 +31,30 @@ class DropBoxController{
         // firebase.analytics();
     }
 
+    getSelection(){
+        return this.listFilesEl.querySelectorAll('.selected')
+    }
+
     initEvents(){
 
         this.listFilesEl.addEventListener('selectionchange', e=>{
             console.log('selectionchange ', e)
+            
+            switch (this.getSelection().length) {
+                case 0:
+                    this.btnDelete.style.display = 'none'
+                    this.btnRename.style.display = 'none'
+                    break;
+
+                case 1:
+                    this.btnDelete.style.display = 'block'
+                    this.btnRename.style.display = 'block'
+                    break;
+
+                default:
+                    this.btnDelete.style.display = 'block'
+                    this.btnRename.style.display = 'none'
+            }
         })
 
         this.btnSendFileEl.addEventListener('click', event => {
