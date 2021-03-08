@@ -66,6 +66,7 @@ class DropBoxController{
                 console.log(responses)
 
                 responses.forEach(response=>{
+                    console.log('response: ',response)
                     if(response.fields.key){
                         this.getFirebaseRef().child(response.fields.key).remove()
                     }
