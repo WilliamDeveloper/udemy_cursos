@@ -503,6 +503,7 @@ class DropBoxController{
     initEventsLi(li){
 
         li.addEventListener('dblclick', e=>{
+            console.log('initEventsLi-dblclick')
             let file = JSON.parse(li.dataset.file)
             switch (file.type) {
                 case 'folder':
@@ -517,6 +518,7 @@ class DropBoxController{
 
         li.addEventListener('click', e=>{
 
+            console.log('initEventsLi-click')
             if(e.shiftKey){
                 let firstLi = this.listFilesEl.querySelector('.selected')
                 if(firstLi){
