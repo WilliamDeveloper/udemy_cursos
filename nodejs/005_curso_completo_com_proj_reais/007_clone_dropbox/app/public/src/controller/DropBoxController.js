@@ -39,10 +39,11 @@ class DropBoxController{
         let promises = []
         this.getSelection().forEach(li =>{
             let file = JSON.parse(li.dataset.file)
+            let key = li.dataset.key
 
             let formData = new FormData()
             formData.append('path', file.path)
-            formData.append('key', file.key)
+            formData.append('key', key)
 
             let promise =  this.ajax(
                 '/file',
@@ -63,6 +64,13 @@ class DropBoxController{
         this.btnDelete.addEventListener('click', e=>{
             this.removeTask().then( responses =>{
                 console.log(responses)
+
+                responses.forEach(response=>{
+                    if(response.fields.key){
+                        this.getFirebaseRef().child(response.fields.key).remove()
+                    }
+                })
+
             }).catch(error=>{
                 console.log(error)
             })

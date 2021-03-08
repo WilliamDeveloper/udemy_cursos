@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var formidable = require('formidable')
+var fs = require('fs')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,6 +9,32 @@ router.get('/', function(req, res, next) {
 });
 
 router.delete('/file', function(req, res, next) {
+
+  let form = new formidable.IncomingForm({
+    uploadDir: './upload',
+    keepExtensions:true
+  })
+
+  form.parse(req,(error, fields, files)=>{
+
+    let path = "./"+fields.path
+    if(fs.existsSync(path)){
+      fs.unlink(path, error=>{
+
+        if(error){
+          console.log('error: ', error)
+          res.status(400).json({error})
+        }else{
+          res.json({fields})
+        }
+
+      })
+    }
+
+    res.json({
+      files : files
+    })
+  })
 
 
 
