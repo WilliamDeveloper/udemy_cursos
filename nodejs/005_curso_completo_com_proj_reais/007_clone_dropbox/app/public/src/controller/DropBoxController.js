@@ -76,7 +76,7 @@ class DropBoxController{
                 })
             }
 
-            this.currentFolder.add
+
         })
 
         this.btnDelete.addEventListener('click', e=>{
