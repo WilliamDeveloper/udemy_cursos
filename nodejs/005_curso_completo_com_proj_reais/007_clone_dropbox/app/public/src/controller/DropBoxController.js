@@ -399,7 +399,7 @@ class DropBoxController{
 
 
 
-            this.listFilesEl.dispatchEvent(this.onselectionchange)
+
 
             if(e.shiftKey){
                 let firstLi = this.listFilesEl.querySelector('.selected')
@@ -418,6 +418,9 @@ class DropBoxController{
                             el.classList.add('selected')
                         }
                     })
+
+                    this.listFilesEl.dispatchEvent(this.onselectionchange)
+
                     return true;
                 }
 
@@ -430,6 +433,7 @@ class DropBoxController{
             }
 
             li.classList.toggle('selected')
+            this.listFilesEl.dispatchEvent(this.onselectionchange)
         })
     }
 }
