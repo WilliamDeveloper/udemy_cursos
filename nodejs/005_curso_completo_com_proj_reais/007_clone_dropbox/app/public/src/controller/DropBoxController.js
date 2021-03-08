@@ -10,6 +10,7 @@ class DropBoxController{
 
         this.connectFireBase()
         this.initEvents()
+        this.readFiles()
     }
 
     connectFireBase(){
@@ -128,6 +129,8 @@ class DropBoxController{
         console.log(timespent, timeleft, porcent)
 
     }
+
+
 
     formatTimeHuman(duration){
         let seconds = parseInt((duration / (1000)) % 60  )
@@ -331,5 +334,16 @@ class DropBoxController{
                 <div class="name text-center">${file.name}</div>
             </li>
         `
+    }
+
+    readFiles(){
+        this.getFirebaseRef().on('value', snapshot =>{
+            snapshot.forEach( snapshotItem =>{
+                console.log(snapshotItem)
+                let key = snapshotItem.key
+                let data = snapshotItem.val()
+                console.log(key, data)
+            })
+        })
     }
 }
