@@ -488,7 +488,10 @@ class DropBoxController{
                 let data = snapshotItem.val()
                 console.log(key, data)
 
-                this.listFilesEl.appendChild(this.getFileView(data, key))
+                if(data.type){
+                    this.listFilesEl.appendChild(this.getFileView(data, key))
+                }
+
             })
         })
     }
