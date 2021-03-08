@@ -39,9 +39,25 @@ class DropBoxController{
         let promises = []
         this.getSelection().forEach(li =>{
             let file = JSON.parse(li.dataset.file)
-            promises.push(new Promise((resolve, reject)=>{
 
-            }))
+            let formData = new FormData()
+            formData.append('path', file.path)
+            formData.append('key', file.key)
+
+            let promise =  this.ajax(
+                '/file',
+                "DELETE",
+                formData,
+                onprogress=(event)=>{
+                    this.uploadProgress(event,file)
+                },
+                onloadstart=()=>{
+                    this.startUploadTime = Date.now()
+                }
+            )
+
+            promises.push( promise )
+
         })
 
         return Promise.all(promises)
