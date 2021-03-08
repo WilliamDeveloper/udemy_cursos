@@ -47,13 +47,7 @@ class DropBoxController{
             let promise =  this.ajax(
                 '/file',
                 "DELETE",
-                formData,
-                onprogress=(event)=>{
-                    this.uploadProgress(event,file)
-                },
-                onloadstart=()=>{
-                    this.startUploadTime = Date.now()
-                }
+                formData
             )
 
             promises.push( promise )

@@ -7,6 +7,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.delete('/file', function(req, res, next) {
+
+
+
+});
+
 router.post('/upload', function(req, res, next) {
   console.log(req.body);
 
