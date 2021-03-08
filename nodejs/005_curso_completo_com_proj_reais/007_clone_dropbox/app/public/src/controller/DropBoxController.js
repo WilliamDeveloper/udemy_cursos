@@ -21,7 +21,10 @@ class DropBoxController{
 
         this.connectFireBase()
         this.initEvents()
-        this.readFiles()
+
+        this.openFolder()
+
+
     }
 
     connectFireBase(){
@@ -165,11 +168,14 @@ class DropBoxController{
         this.inputFilesEl.disabled = false
     }
 
-    getFirebaseRef(){
+    getFirebaseRef(path){
+
+        if(!path) path = this.currentFolder.join('/')
+
         console.log('getFirebaseRef', firebase)
         console.log('getFirebaseRef', firebase.database)
         console.log('getFirebaseRef', firebase.database())
-        return firebase.database().ref('files')
+        return firebase.database().ref(path)
     }
 
     modalShow(show = true){
@@ -472,6 +478,8 @@ class DropBoxController{
 
     readFiles(){
 
+        this.lastFolder = this.currentFolder.join('/')
+
         this.getFirebaseRef().on('value', snapshot =>{
 
             this.listFilesEl.innerHTML = ''
@@ -487,12 +495,29 @@ class DropBoxController{
         })
     }
 
+    openFolder(){
+
+        if(this.lastFolder) this.getFirebaseRef(this.lastFolder).off('value')
+
+        this.readFiles()
+    }
+
     initEventsLi(li){
+
+        li.addEventListener('dblclick', e=>{
+            let file = JSON.parse(li.dataset.file)
+            switch (file.type) {
+                case 'folder':
+                       this.currentFolder.push(file.name)
+                       this.openFolder()
+                    break;
+
+                default:
+                   window.open('/file?path='+file.path)
+            }
+        })
+
         li.addEventListener('click', e=>{
-
-
-
-
 
             if(e.shiftKey){
                 let firstLi = this.listFilesEl.querySelector('.selected')
