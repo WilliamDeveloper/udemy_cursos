@@ -17,6 +17,8 @@ router.delete('/file', function(req, res, next) {
 
   form.parse(req,(error, fields, files)=>{
 
+    console.log('fields ', fields, 'files ', files)
+
     let path = "./"+fields.path
     console.log("delete-path ",path)
     if(fs.existsSync(path)){
@@ -26,14 +28,18 @@ router.delete('/file', function(req, res, next) {
         if(error){
           console.log('error: ', error)
           res.status(400).json({error})
+        }else{
+          console.log('oi')
         }
 
       })
     }
 
+    res.json({fields: fields})
+
   })
 
-  res.json({fields: fields})
+
 
 });
 
