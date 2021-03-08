@@ -363,6 +363,10 @@ class DropBoxController{
     initEventsLi(li){
         li.addEventListener('click', e=>{
 
+            this.onselectionchange = new Event('selectionChange')
+
+            this.listFilesEl.dispatchEvent(this.onselectionchange)
+
             if(e.shiftKey){
                 let firstLi = this.listFilesEl.querySelector('.selected')
                 if(firstLi){
