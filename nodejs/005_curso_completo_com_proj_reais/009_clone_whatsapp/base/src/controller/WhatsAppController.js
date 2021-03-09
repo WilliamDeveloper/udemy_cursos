@@ -160,7 +160,23 @@ class WhatsAppController{
             this.el.btnSendMicrophone.hide()
         })
 
+        this.el.btnCancelMicrophone.on('click', e=>{
+            console.log('btnCanceldMicrophone')
+            this.closeRecordMicrophone()
+        })
 
+        this.el.btnFinishMicrophone.on('click', e=>{
+            console.log('btnFinishMicrophone')
+            this.closeRecordMicrophone()
+        })
+
+
+    }
+
+    closeRecordMicrophone(){
+        this.el.recordMicrophone.hide()
+        this.el.btnSendMicrophone.hide()
+        this.el.btnSendMicrophone.show()
     }
 
     closeAllMainPanel(){
