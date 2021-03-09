@@ -544,23 +544,10 @@ class DropBoxController{
                 e.preventDefault()
 
                 this.currentFolder = a.dataset.path.split('/')
+                this.openFolder()
             })
         })
 
-        /*
-
-        <span class="breadcrumb-segment__wrapper">
-            <span class="ue-effect-container uee-BreadCrumbSegment-link-0">
-                <a href="https://www.dropbox.com/work" class="breadcrumb-segment">HCODE</a>
-            </span>
-            <svg width="24" height="24" viewBox="0 0 24 24" class="mc-icon-template-stateless" style="top: 4px; position: relative;">
-                <title>arrow-right</title>
-                <path d="M10.414 7.05l4.95 4.95-4.95 4.95L9 15.534 12.536 12 9 8.464z" fill="#637282" fill-rule="evenodd"></path>
-            </svg>
-        </span>
-
-
-        * */
     }
 
     initEventsLi(li){
