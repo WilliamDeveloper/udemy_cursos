@@ -42,7 +42,9 @@ class DropBoxController{
     }
 
     removeFolderTask(ref, name){
+
         return new Promise((resolve, reject)=>{
+
             let folderRef = this.getFirebaseRef(ref+'/'+name)
 
             folderRef.on('value', snapshot=>{
@@ -62,17 +64,27 @@ class DropBoxController{
                             reject(error)
                         })
                    }else if(data.type){
-                        this.removeFile(ref+'/'+name, data.name)
+                        this.removeFile(ref+'/'+name, data.name).then(()=>{
+                            resolve({
+                                fields:{
+                                    key: key
+                                }
+                            })
+                        }).catch(error=>{
+                            reject(error)
+                        })
                    }
-                })
+
+                })// fim foreach
 
                 folderRef.remove()
                 folderRef.off('value')
 
 
-            })
+            })// fim folderref.on
 
         })
+
     }
 
     removeTask(){
@@ -104,15 +116,15 @@ class DropBoxController{
                     })
 
                 }else if(file.type){
+
                     this.removeFile(ref,name).then(()=>{
                         resolve({
                             fields:{
                                 key: key
                             }
                         })
-                    }).catch(error=>{
-                        reject(error)
                     })
+
                 }
 
 
