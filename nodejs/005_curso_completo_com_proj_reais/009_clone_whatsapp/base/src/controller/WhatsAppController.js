@@ -72,6 +72,15 @@ class WhatsAppController{
 
         })
 
+        this.el.contactsMessagesList.querySelectorAll('.cONTAct-item').forEach(item=>{
+            item.on('click', e=>{
+                this.el.home.hide()
+                this.el.main.css({
+                    display: 'flex'
+                })
+            })
+        })
+
     }
 
     closeAllLeftPanel(){
