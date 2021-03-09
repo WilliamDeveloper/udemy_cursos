@@ -47,6 +47,21 @@ class WhatsAppController{
             }
         }
 
+        Element.prototype.addClass = function (name) {
+           this.classList.add(name)
+        }
+
+        Element.prototype.removeClass = function (name) {
+            this.classList.remove(name)
+        }
+
+        Element.prototype.toggleClass = function (name) {
+            this.classList.toggle(name)
+        }
+
+        Element.prototype.hasClass = function (name) {
+            return this.classList.contains(name)
+        }
 
     }
 }
