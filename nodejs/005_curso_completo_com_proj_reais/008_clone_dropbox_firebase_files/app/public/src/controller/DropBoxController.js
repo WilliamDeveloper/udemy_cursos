@@ -48,6 +48,7 @@ class DropBoxController{
             let folderRef = this.getFirebaseRef(ref+'/'+name)
 
             folderRef.on('value', snapshot=>{
+                folderRef.off('value')
 
                 snapshot.forEach(item=>{
                    let data = item.val()
@@ -78,7 +79,7 @@ class DropBoxController{
                 })// fim foreach
 
                 folderRef.remove()
-                folderRef.off('value')
+
 
 
             })// fim folderref.on
