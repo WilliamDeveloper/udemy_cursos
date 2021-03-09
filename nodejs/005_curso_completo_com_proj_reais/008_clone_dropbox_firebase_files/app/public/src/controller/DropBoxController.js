@@ -141,12 +141,19 @@ class DropBoxController{
             this.inputFilesEl.disabled = true
 
             this.uploadTask( event.target.files).then( responses=>{
-                responses.forEach(resp => {
-                    console.log('=> ',resp)
-                    console.log('=> ',resp.files['input-file'])
+                console.log('=> ',responses)
 
-                    let obj = resp.files['input-file']
-                    this.getFirebaseRef().push().set(obj)
+                responses.forEach(resp=>{
+                    resp.ref.getDownloadURL().then(data=>{
+                        console.log('data ',data)
+                        this.getFirebaseRef().push().set({
+                            name: resp.name,
+                            type: resp.contentType,
+                            path: data,
+                            size: resp.size
+
+                        })
+                    })
 
                 })
 
@@ -238,7 +245,13 @@ class DropBoxController{
                     },
                     (resolveSnapshot)=>{
                         console.log(resolveSnapshot)
-                        resolve()
+
+                        fileRef.getMetadata().then(metadata =>{
+                            resolve(metadata)
+                        }).catch(error=>{
+                            reject(error)
+                        })
+
                     }
 
                 )
