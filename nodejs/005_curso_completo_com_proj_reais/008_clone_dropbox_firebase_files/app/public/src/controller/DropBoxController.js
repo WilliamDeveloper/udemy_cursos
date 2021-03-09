@@ -236,8 +236,12 @@ class DropBoxController{
                 // durante o andamento de salvar
                 task.on(
                     'state_changed',
-                    (progressSnapshop)=>{
-                        console.log(progressSnapshop)
+                    (progressSnapshot)=>{
+                        console.log(progressSnapshot)
+                        this.uploadProgress({
+                            loaded:progressSnapshot.bytesTransferred,
+                            total: progressSnapshot.totalBytes
+                        },file)
                     },
                     (error)=>{
                         console.log(error)
