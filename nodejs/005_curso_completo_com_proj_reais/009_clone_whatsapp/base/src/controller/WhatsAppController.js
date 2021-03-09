@@ -83,7 +83,9 @@ class WhatsAppController{
         })
 
         this.el.btnAttach.on('click',e=>{
+            e.stopPropagation()
             this.el.menuAttach.addClass('open')
+            document.addEventListener('click',this.closeMenuAttach.bind(this))
         })
 
 
@@ -103,6 +105,12 @@ class WhatsAppController{
             console.log('Contact')
         })
 
+    }
+
+    closeMenuAttach(event){
+        document.removeEventListener('click',this.closeMenuAttach)
+        this.el.menuAttach.removeClass('open')
+        console.log('remove')
     }
 
     closeAllLeftPanel(){
