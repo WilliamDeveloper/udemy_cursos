@@ -62,6 +62,19 @@ function elementsPrototype()
         return json
     }
 
+    // Object.prototype.toArray = function(){
+    //     let list = []
+    //     Array.prototype.forEach().call(this, (item) => {
+    //         list.push(item)
+    //     })
+    //
+    //     return list
+    // }
+
+
+
+
+
 }
 
 elementsPrototype()
