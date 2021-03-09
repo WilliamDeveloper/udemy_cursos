@@ -59,6 +59,7 @@ function elementsPrototype()
             json[key]= value
         })
 
+        return json
     }
 
 }
