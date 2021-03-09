@@ -50,6 +50,10 @@ class WhatsAppController{
             this.el.panelAddContact.removeClass('open')
         })
 
+        this.el.photoContainerEditProfile.on('click', e=>{
+            this.el.inputProfilePhoto.click()
+        })
+
     }
 
     closeAllLeftPanel(){
