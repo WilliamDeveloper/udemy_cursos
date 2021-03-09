@@ -27,7 +27,9 @@ class WhatsAppController{
             this.closeAllLeftPanel()
 
             this.el.panelEditProfile.show()
-            this.el.panelEditProfile.addClass('open')
+
+            setTimeout(()=>{ this.el.panelEditProfile.addClass('open') }, 300)
+
         })
 
         this.el.btnClosePanelEditProfile.on('click', e=>{
@@ -39,7 +41,9 @@ class WhatsAppController{
             this.closeAllLeftPanel()
 
             this.el.panelAddContact.show()
-            this.el.panelAddContact.addClass('open')
+
+            setTimeout(()=>{ this.el.panelAddContact.addClass('open') }, 300)
+
         })
 
         this.el.btnClosePanelAddContact.on('click', e=>{
