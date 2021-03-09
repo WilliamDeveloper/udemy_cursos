@@ -146,6 +146,7 @@ class WhatsAppController{
 
         this.el.btnAttachContact.on('click',e=>{
             console.log('Contact')
+            this.el.modalContacts.show()
         })
 
     }
