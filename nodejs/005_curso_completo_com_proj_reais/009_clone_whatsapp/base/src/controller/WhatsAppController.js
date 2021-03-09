@@ -109,6 +109,11 @@ class WhatsAppController{
 
         this.el.btnAttachCamera.on('click',e=>{
             console.log('camera')
+            this.el.panelMessagesContainer.hide()
+            this.el.panelCamera.addClass('open')
+            this.el.panelCamera.css({
+                "height":"calc(100% - 120px)",
+            })
         })
 
         this.el.btnAttachDocument.on('click',e=>{
