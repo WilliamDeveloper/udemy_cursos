@@ -116,6 +116,11 @@ class WhatsAppController{
             })
         })
 
+        this.el.btnClosePanelCamera.on('click', e=>{
+            this.el.panelMessagesContainer.show()
+            this.el.panelCamera.removeClass('open')
+        })
+
         this.el.btnAttachDocument.on('click',e=>{
             console.log('Document')
         })
