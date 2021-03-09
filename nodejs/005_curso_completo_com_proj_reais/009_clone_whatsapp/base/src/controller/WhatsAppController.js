@@ -149,6 +149,12 @@ class WhatsAppController{
             this.el.modalContacts.show()
         })
 
+        this.el.btnCloseModalContacts.on('click',e=>{
+            console.log('btnCloseModalContacts')
+            this.el.modalContacts.hide()
+        })
+
+
     }
 
     closeAllMainPanel(){
