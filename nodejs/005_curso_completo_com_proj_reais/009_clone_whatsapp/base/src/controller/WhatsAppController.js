@@ -2,7 +2,7 @@ class WhatsAppController{
     constructor(){
         console.log('class WhatsAppController ok')
 
-        elementsPrototype()
+        // elementsPrototype()
         this.loadElements()
         this.initEvents()
     }
