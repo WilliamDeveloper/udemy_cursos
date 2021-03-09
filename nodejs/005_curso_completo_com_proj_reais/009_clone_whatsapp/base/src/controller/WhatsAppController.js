@@ -65,6 +65,12 @@ class WhatsAppController{
             console.log(this.el.inputNamePanelEditProfile.innerHTML)
         })
 
+        this.el.formPanelAddContact.on('submit', e=>{
+            e.preventDefault()
+
+            let formData = new FormData(this.el.formPanelAddContact)
+
+        })
 
     }
 
