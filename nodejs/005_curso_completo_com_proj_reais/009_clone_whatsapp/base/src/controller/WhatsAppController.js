@@ -140,6 +140,10 @@ class WhatsAppController{
 
         })
 
+        this.el.btnSendDocument.on('click', e=>{
+            console.log('btnSendDocument')
+        })
+
         this.el.btnAttachContact.on('click',e=>{
             console.log('Contact')
         })
