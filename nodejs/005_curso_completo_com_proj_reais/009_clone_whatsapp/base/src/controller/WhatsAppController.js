@@ -158,6 +158,7 @@ class WhatsAppController{
             console.log('btnSendMicrophone')
             this.el.recordMicrophone.show()
             this.el.btnSendMicrophone.hide()
+            this.startRecordMicrophoneTime()
         })
 
         this.el.btnCancelMicrophone.on('click', e=>{
@@ -171,12 +172,23 @@ class WhatsAppController{
         })
 
 
+
+    }
+
+    startRecordMicrophoneTime(){
+        let start = Date.now()
+        this._recordMicrophoneInterval = setInterval(()=>{
+
+            this.el.recordMicrophoneTimer.innerHTML = (Date.now() - start)
+        },100)
     }
 
     closeRecordMicrophone(){
         this.el.recordMicrophone.hide()
         this.el.btnSendMicrophone.hide()
         this.el.btnSendMicrophone.show()
+        console.log('this._recordMicrophoneInterval ', this._recordMicrophoneInterval)
+        clearInterval(this._recordMicrophoneInterval)
     }
 
     closeAllMainPanel(){
