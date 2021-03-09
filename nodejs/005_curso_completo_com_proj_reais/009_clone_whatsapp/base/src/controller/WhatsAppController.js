@@ -121,6 +121,10 @@ class WhatsAppController{
             this.el.panelCamera.removeClass('open')
         })
 
+        this.el.btnTakePicture.on('click', e=>{
+            console.log('btnTakePictore')
+        })
+
         this.el.btnAttachDocument.on('click',e=>{
             console.log('Document')
         })
