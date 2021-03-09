@@ -50,4 +50,4 @@ function elementsPrototype()
 
 }
 
-elementsPrototype()
+// elementsPrototype()
