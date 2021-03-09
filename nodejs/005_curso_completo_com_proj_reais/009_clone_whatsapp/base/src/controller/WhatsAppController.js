@@ -83,7 +83,7 @@ class WhatsAppController{
         })
 
         this.el.btnAttach.on('click',e=>{
-            this.el.menuAtttach.addClass('open')
+            this.el.menuAttach.addClass('open')
         })
 
     }
