@@ -8,8 +8,13 @@ class WhatsAppController{
     loadElements(){
         this.el = {}
 
+        let sizeFields = document.querySelectorAll('[id]').length
+        console.log('quantidade de campos na tela: ', sizeFields)
+
         document.querySelectorAll('[id]').forEach(element=>{
-            this.el[Format.getCamelCase(element.id)]
+            let name = Format.getCamelCase(element.id)
+            console.log('linha-suprema: ', name, element.id)
+            this.el[name]
         })
     }
 }
