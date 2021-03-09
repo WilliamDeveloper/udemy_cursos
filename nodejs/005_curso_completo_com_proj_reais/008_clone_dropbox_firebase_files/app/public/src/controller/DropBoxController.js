@@ -58,7 +58,7 @@ class DropBoxController{
                         this.removeFolderTask(ref+'/'+name, data.name).then(()=>{
                             resolve({
                                 fields:{
-                                    key: key
+                                    key: data.key
                                 }
                             })
                         }).catch(error=>{
@@ -68,7 +68,7 @@ class DropBoxController{
                         this.removeFile(ref+'/'+name, data.name).then(()=>{
                             resolve({
                                 fields:{
-                                    key: key
+                                    key: data.key
                                 }
                             })
                         }).catch(error=>{
