@@ -154,6 +154,12 @@ class WhatsAppController{
             this.el.modalContacts.hide()
         })
 
+        this.el.btnSendMicrophone.on('click', e=>{
+            console.log('btnSendMicrophone')
+            this.el.recordMicrophone.show()
+            this.el.btnSendMicrophone.hide()
+        })
+
 
     }
 
