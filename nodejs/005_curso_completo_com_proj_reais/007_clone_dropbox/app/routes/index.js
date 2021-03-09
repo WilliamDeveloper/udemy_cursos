@@ -8,6 +8,18 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/file', function(req, res, next) {
+
+  let path = './'+req.query.path
+
+  if (fs.existsSync(path)){
+
+  }else{
+    res.status(404).json({error:'file not found'})
+  }
+
+})
+
 router.delete('/file', function(req, res, next) {
 
   let form = new formidable.IncomingForm({
@@ -33,6 +45,9 @@ router.delete('/file', function(req, res, next) {
         }
 
       })
+    }else{
+      //se der erro aki comente
+      // res.status(404).json({error:'file not found'})
     }
 
     res.json({fields: fields})
