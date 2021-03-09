@@ -179,7 +179,10 @@ class WhatsAppController{
         let start = Date.now()
         this._recordMicrophoneInterval = setInterval(()=>{
 
-            this.el.recordMicrophoneTimer.innerHTML = (Date.now() - start)
+            let duration = (Date.now() - start)
+            console.log('duration',duration)
+            console.dir(Format)
+            this.el.recordMicrophoneTimer.innerHTML = Format.toTime('600')
         },100)
     }
 
