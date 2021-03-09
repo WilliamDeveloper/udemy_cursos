@@ -100,7 +100,6 @@ class WhatsAppController{
 
             console.log(this.el.inputPhoto.files.toArray())
 
-            // EX_A - alternativa EX_B abstraida na classe prototype
             this.el.inputPhoto.files.toArray().forEach( file=>{
                 console.log('file ', file)
             })
