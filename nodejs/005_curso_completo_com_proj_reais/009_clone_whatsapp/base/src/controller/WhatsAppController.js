@@ -2,8 +2,11 @@ class WhatsAppController{
     constructor(){
         console.log('class WhatsAppController ok')
 
+        this.elementsPrototype()
         this.loadElements()
     }
+
+
 
     loadElements(){
         this.el = {}
@@ -14,7 +17,29 @@ class WhatsAppController{
         document.querySelectorAll('[id]').forEach(element=>{
             let name = Format.getCamelCase(element.id)
             console.log('linha-suprema: ', name, element.id)
-            this.el[name]
+            this.el[name]= element
         })
+    }
+
+    elementsPrototype(){
+        
+        Element.prototype.hide = function () {
+            this.style.display = 'none'
+        }
+
+        Element.prototype.show = function () {
+            this.style.display = 'block'
+        }
+
+        Element.prototype.toggle = function () {
+            this.style.display = (this.style.display === 'none') ? 'block' :'none'
+        }
+
+        Element.prototype.on = function (events, fn) {
+            events.split(' ').forEach(event =>{
+                this.addEventListener(event, fn)
+            })
+        }
+
     }
 }
