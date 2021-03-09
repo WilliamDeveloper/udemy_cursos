@@ -109,7 +109,7 @@ class WhatsAppController{
 
         this.el.btnAttachCamera.on('click',e=>{
             console.log('camera')
-            this.el.panelMessagesContainer.hide()
+            this.closeAllMainPanel()
             this.el.panelCamera.addClass('open')
             this.el.panelCamera.css({
                 "height":"calc(100% - 120px)",
@@ -127,12 +127,23 @@ class WhatsAppController{
 
         this.el.btnAttachDocument.on('click',e=>{
             console.log('Document')
+            this.closeAllMainPanel()
+            this.el.panelDocumentPreview.addClass('open')
+            this.el.panelDocumentPreview.css({
+                "height":"calc(100% - 120px)",
+            })
         })
 
         this.el.btnAttachContact.on('click',e=>{
             console.log('Contact')
         })
 
+    }
+
+    closeAllMainPanel(){
+        this.el.panelMessagesContainer.hide()
+        this.el.panelDocumentPreview.removeClass('open')
+        this.el.panelCamera.removeClass('open')
     }
 
     closeMenuAttach(event){
