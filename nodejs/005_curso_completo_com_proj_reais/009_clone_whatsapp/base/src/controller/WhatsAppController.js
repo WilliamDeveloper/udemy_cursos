@@ -86,6 +86,23 @@ class WhatsAppController{
             this.el.menuAttach.addClass('open')
         })
 
+
+        this.el.btnAttachPhoto.on('click',e=>{
+            console.log('photo')
+        })
+
+        this.el.btnAttachCamera.on('click',e=>{
+            console.log('camera')
+        })
+
+        this.el.btnAttachDocument.on('click',e=>{
+            console.log('Document')
+        })
+
+        this.el.btnAttachContact.on('click',e=>{
+            console.log('Contact')
+        })
+
     }
 
     closeAllLeftPanel(){
