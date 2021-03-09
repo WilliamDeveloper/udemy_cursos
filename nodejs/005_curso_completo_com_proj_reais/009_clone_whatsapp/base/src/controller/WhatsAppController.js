@@ -91,6 +91,7 @@ class WhatsAppController{
 
         this.el.btnAttachPhoto.on('click',e=>{
             console.log('photo')
+            this.el.inputPhoto.click()
         })
 
         this.el.btnAttachCamera.on('click',e=>{
