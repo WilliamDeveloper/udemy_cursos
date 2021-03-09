@@ -54,6 +54,18 @@ class WhatsAppController{
             this.el.inputProfilePhoto.click()
         })
 
+        this.el.inputNamePanelEditProfile.on('keypress', e=>{
+            if(e.key === 'Enter'){
+                e.preventDefault()
+                this.el.btnSavePanelEditProfile.click()
+            }
+        })
+
+        this.el.btnSavePanelEditProfile.on('click', e=>{
+            console.log(this.el.inputNamePanelEditProfile.innerHTML)
+        })
+
+
     }
 
     closeAllLeftPanel(){
