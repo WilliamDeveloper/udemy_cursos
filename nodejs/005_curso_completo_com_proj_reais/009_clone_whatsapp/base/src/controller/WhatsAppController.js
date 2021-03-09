@@ -98,11 +98,16 @@ class WhatsAppController{
             console.log(this.el.inputPhoto.files)
             console.dir(this.el.inputPhoto.files)
 
-            let list = []
-             Array.prototype.forEach.call(this.el.inputPhoto.files, (item) => {
-                list.push(item)
+            console.log(this.el.inputPhoto.files.toArray())
+            this.el.inputPhoto.files.toArray().forEach( file=>{
+                console.log('file ', file)
             })
-             console.log(list)
+
+            // let list = []
+            //  Array.prototype.forEach.call(this.el.inputPhoto.files, (item) => {
+            //     list.push(item)
+            // })
+            //  console.log(list)
         })
 
         this.el.btnAttachCamera.on('click',e=>{
