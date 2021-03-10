@@ -1,6 +1,6 @@
 import Format from './../util/extendsHtmlByWill'
 import Format from './../util/Format'
-import Format from './../controller/CameraController'
+import CameraController from './../controller/CameraController'
 
 class WhatsAppController{
     constructor(){
