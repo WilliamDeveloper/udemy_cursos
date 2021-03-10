@@ -216,6 +216,7 @@ class WhatsAppController{
                 // this.el.inputText.append(img)
                 let cursor = window.getSelection()
 
+                // provocar um evento real
                 this.el.inputText.dispatchEvent(new Event('keyup'))
             })
         })
