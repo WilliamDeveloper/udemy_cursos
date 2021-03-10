@@ -13,7 +13,10 @@ export class DocumentPreviewController{
                 case    'image/gif' :
                     let reader = new FileReader()
                     reader.onload = e =>{
-                        resolve(reader.result)
+                        resolve({
+                            src : reader.result,
+                            info: this._file.name
+                        })
                     }
                     reader.onerror= e=>{
                         reject(e)

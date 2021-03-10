@@ -177,7 +177,9 @@ export default class WhatsAppController{
                 this._documentPreviewController = new DocumentPreviewController(file)
                 this._documentPreviewController.getPreviewData().then(data=>{
                     console.log('ok', data)
-                    this.el.imgPanelDocumentPreview.src = data
+                    this.el.imgPanelDocumentPreview.src = data.src
+                    this.el.infoPanelDocumentPreview.innerHTML = data.info
+
                     this.el.imagePanelDocumentPreview.show()
                     this.el.filePanelDocumentPreview.hide()
                 }).catch(error=>{
