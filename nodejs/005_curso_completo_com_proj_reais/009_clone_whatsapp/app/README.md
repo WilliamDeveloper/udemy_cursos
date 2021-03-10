@@ -26,6 +26,30 @@ npm init -y
 npm install --save webpack@3.1.0
 npm install --save webpack-dev-server@2.5.1
 
+- biblioteca de pdf
+npm install --save pdfjs-dist
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --nodemon para o projeto ficar rodando 
 npm install --save npx
 npm install --save nodemon
