@@ -183,6 +183,10 @@ class WhatsAppController{
             }
         })
 
+        this.el.btnSend.on('click', e=>{
+            console.log('btnSend')
+        })
+
 
 
     }
