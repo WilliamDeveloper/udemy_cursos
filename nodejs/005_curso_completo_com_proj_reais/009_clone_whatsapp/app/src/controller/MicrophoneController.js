@@ -1,4 +1,5 @@
 import {ClassEvent} from "../util/ClassEvent";
+import {Format} from "../util/Format";
 
 export class MicrophoneController extends ClassEvent{
 
@@ -73,6 +74,7 @@ export class MicrophoneController extends ClassEvent{
             })
 
             this._mediaRecorder.start()
+            this.startTimer()
         }
     }
 
@@ -80,7 +82,24 @@ export class MicrophoneController extends ClassEvent{
         if ( this.isAvailable()){
             this._mediaRecorder.stop()
             this.stop()
+            this.stopTimer()
         }
+    }
+
+    startTimer(){
+        let start = Date.now()
+        this._recordMicrophoneInterval = setInterval(()=>{
+
+            let duration = (Date.now() - start)
+            // console.log('duration',duration)
+            // console.dir(Format)
+            this.trigger('recordtimer', duration)
+
+        },100)
+    }
+
+    stopTimer(){
+        clearInterval(this._recordMicrophoneInterval)
     }
 
 }
