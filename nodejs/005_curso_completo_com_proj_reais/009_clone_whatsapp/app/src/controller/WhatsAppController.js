@@ -149,6 +149,11 @@ export default class WhatsAppController{
             this.el.containerSendPicture.hide()
         })
 
+        this.el.btnSendPicture.on('click', e=>{
+            console.log('btnSendPicture')
+            console.log('this.el.pictureCamera ', this.el.pictureCamera.src)
+        })
+
 
 
 
