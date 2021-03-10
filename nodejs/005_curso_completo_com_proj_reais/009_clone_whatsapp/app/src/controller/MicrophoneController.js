@@ -59,13 +59,16 @@ export class MicrophoneController extends ClassEvent{
                     lastModified: Date.now()
                 })
 
+                console.log('file ', file)
+
             })
         }
     }
 
     stoptRecorder(){
         if ( this.isAvailable()){
-
+            this._mediaRecorder.stop()
+            this.stop()
         }
     }
 
