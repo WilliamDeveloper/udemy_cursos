@@ -171,6 +171,14 @@ class WhatsAppController{
             this.closeRecordMicrophone()
         })
 
+        this.el.inputText.on('keypress', e=>{
+            if(e.key === "Enter" && !e.ctrlKey){
+                e.preventDefault()
+                this.el.btnSend.click()
+
+            }
+        })
+
         this.el.inputText.on('keyup', e=>{
             if( this.el.inputText.innerHTML.length ){
                 this.el.inputPlaceholder.hide()
