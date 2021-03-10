@@ -1,3 +1,7 @@
+/*
+require(nodejs)(padrao antigo) => usa module.exports
+import(es6)(padrao moderno)
+*/
 
 --- ---------------------------------------------------
 - bibliotecas global de sistema
@@ -10,8 +14,7 @@
   npm install --save nodemon 
   npm install --save npx
 
-   
-  
+     
 --- ---------------------------------------------------
 - criado com
 --- ---------------------------------------------------
@@ -38,39 +41,9 @@ npm install --save pdfjs-dist@2.0.489
 
 
 
-
-
-
-
-
-
-/*
-require(nodejs)(padrao antigo) => usa module.exports
-import(es6)(padrao moderno)
-*/
-
-
-
---nodemon para o projeto ficar rodando 
-npm install --save npx
-npm install --save nodemon
-npx nodemon index.js
-
-- para rotas da aplicacao
-npm install --save express
-
-- auto loading rotas da aplicacao
-npm install --save consign
-
-- body parser para pegar a conversao em objeto de uma req post no body
-npm install --save body-parser
-
--- banco de dados nedb - com sintaxe de objeto javascript
-npm install --save nedb
-
--- validacao do express "express-validator": "^5.3.1",
-npm install --save express-validator@5.3.1
-
-
-
-
+--- ---------------------------------------------------
+- rodar aplicacao
+--- ---------------------------------------------------
+cd 010_clone_whatsapp/app/
+npm install
+npm run start
