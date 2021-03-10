@@ -245,6 +245,9 @@ export default class WhatsAppController{
             this.startRecordMicrophoneTime()
 
             this._microphoneController = new MicrophoneController()
+            this._microphoneController.on('play', (audio)=>{
+                console.log('on-play ', audio)
+            })
         })
 
         this.el.btnCancelMicrophone.on('click', e=>{

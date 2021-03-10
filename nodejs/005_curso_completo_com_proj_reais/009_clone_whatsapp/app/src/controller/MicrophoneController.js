@@ -17,6 +17,8 @@ export class MicrophoneController extends ClassEvent{
 
             audio.play()
 
+            this.trigger('play', audio)
+
         }).catch( error =>{
             console.log(error)
         })
