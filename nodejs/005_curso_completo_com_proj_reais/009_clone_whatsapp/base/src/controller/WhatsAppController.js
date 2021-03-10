@@ -216,8 +216,8 @@ class WhatsAppController{
                 // this.el.inputText.append(img)
                 let cursor = window.getSelection()
 
-                if(!cursor.focusNode.id == 'input-text'){
-
+                if(!cursor.focusNode || !cursor.focusNode.id == 'input-text'){
+                    this.el.inputText.focus()
                 }
 
                 // provocar um evento real
