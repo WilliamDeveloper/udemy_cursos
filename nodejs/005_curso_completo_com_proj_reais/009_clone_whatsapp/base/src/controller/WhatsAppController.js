@@ -197,7 +197,7 @@ class WhatsAppController{
 
         this.el.btnEmojis.on('click', e=>{
             console.log('btnEmojis')
-            this.el.panelEmojis.addClass('open')
+            this.el.panelEmojis.toggleClass('open')
         })
 
 
