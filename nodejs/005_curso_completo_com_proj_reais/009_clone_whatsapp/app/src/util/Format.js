@@ -12,7 +12,7 @@ export class Format{
         let minutes = parseInt((duration / (1000 * 60)) % 60  )
         let hours = parseInt((duration / (1000 * 60 * 60)) % 24  )
 
-        console.log(duration, hours, minutes,seconds)
+        // console.log(duration, hours, minutes,seconds)
 
         // return '0'
         let result
@@ -21,7 +21,7 @@ export class Format{
         }else{
             result= `${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`
         }
-        console.log(result)
+        // console.log(result)
         return result
     }
 }
