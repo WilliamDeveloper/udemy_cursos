@@ -27,7 +27,7 @@ npm install --save webpack@3.1.0
 npm install --save webpack-dev-server@2.5.1
 
 - biblioteca de pdf
-npm install --save pdfjs-dist
+npm install --save pdfjs-dist@2.0.489
 
 
 
