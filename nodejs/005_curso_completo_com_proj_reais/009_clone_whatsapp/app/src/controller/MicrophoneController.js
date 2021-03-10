@@ -17,11 +17,7 @@ export class MicrophoneController extends ClassEvent{
             this._available = true
             this._stream = stream
 
-            let audio = new Audio()
-            audio.srcObject = stream
-            audio.play()
-
-            this.trigger('play', audio)
+            this.trigger('ready', this._stream)
 
         }).catch( error =>{
             console.log(error)

@@ -245,8 +245,10 @@ export default class WhatsAppController{
             this.startRecordMicrophoneTime()
 
             this._microphoneController = new MicrophoneController()
-            this._microphoneController.on('play', (audio)=>{
-                console.log('on-play ', audio)
+
+            this._microphoneController.on('ready', (audio)=>{
+                console.log('on-ready ', audio)
+                this._microphoneController.startRecorder()
             })
         })
 
