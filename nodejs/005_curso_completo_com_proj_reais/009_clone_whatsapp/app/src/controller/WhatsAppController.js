@@ -2,6 +2,7 @@ import ExtendsHtmlFunctions from './../util/ExtendsHtmlFunctions'
 import {Format} from './../util/Format'
 import {CameraController} from './../controller/CameraController'
 import {DocumentPreviewController} from './../controller/DocumentPreviewController'
+import {MicrophoneController} from './../controller/MicrophoneController'
 
 export default class WhatsAppController{
     constructor(){
@@ -242,15 +243,19 @@ export default class WhatsAppController{
             this.el.recordMicrophone.show()
             this.el.btnSendMicrophone.hide()
             this.startRecordMicrophoneTime()
+
+            this._microphoneController = new MicrophoneController()
         })
 
         this.el.btnCancelMicrophone.on('click', e=>{
             console.log('btnCanceldMicrophone')
+            this._microphoneController.stop()
             this.closeRecordMicrophone()
         })
 
         this.el.btnFinishMicrophone.on('click', e=>{
             console.log('btnFinishMicrophone')
+            this._microphoneController.stop()
             this.closeRecordMicrophone()
         })
 
