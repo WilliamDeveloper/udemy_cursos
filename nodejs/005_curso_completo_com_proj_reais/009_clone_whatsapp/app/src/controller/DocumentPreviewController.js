@@ -36,6 +36,31 @@ export class DocumentPreviewController{
                     reader.onload = e =>{
                         pdfjsLib.getDocument( new Uint8Array(reader.result)).promise.then(pdf=>{
                             console.log('pdf ', pdf)
+                            let pageResult = pdf.getPage(1).then(page=>{
+                                console.log('page=]> ', page)
+                                let viewport = page.getViewport(1)
+
+                                let canvas = document.createElement('canvas')
+                                let context = canvas.getContext('2d')
+
+                                canvas.width = viewport.width
+                                canvas.height = viewport.height
+                                page.render({
+                                    canvasContext : context,
+                                    viewport: viewport
+                                }).then(()=>{
+                                    let _s = (pdf.numPages > 1)? 's':''
+                                    resolve({
+                                        src : canvas.toDataURL('image/png'),
+                                        info: `${pdf.numPages} pagina${_s}`
+                                    })
+                                }).catch(error =>{
+                                    reject(error)
+                                })
+
+                            }).catch(error =>{
+                                reject(error)
+                            })
                         }).catch(error =>{
                             reject(error)
                         })
