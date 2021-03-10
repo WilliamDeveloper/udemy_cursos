@@ -254,13 +254,13 @@ export default class WhatsAppController{
 
         this.el.btnCancelMicrophone.on('click', e=>{
             console.log('btnCanceldMicrophone')
-            this._microphoneController.stop()
+            this._microphoneController.stoptRecorder()
             this.closeRecordMicrophone()
         })
 
         this.el.btnFinishMicrophone.on('click', e=>{
             console.log('btnFinishMicrophone')
-            this._microphoneController.stop()
+            this._microphoneController.stoptRecorder()
             this.closeRecordMicrophone()
         })
 

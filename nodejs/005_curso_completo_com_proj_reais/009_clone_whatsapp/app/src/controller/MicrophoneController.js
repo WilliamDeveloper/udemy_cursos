@@ -37,8 +37,12 @@ export class MicrophoneController extends ClassEvent{
 
     startRecorder(){
         if ( this.isAvailable()){
-            this._mediaRecorder = new MediaRecorder(this._stream, this._mimeType )
             this._recordedChunks = []
+
+            this._mediaRecorder = new MediaRecorder(this._stream, {
+                mimeType: this._mimeType
+            } )
+
             this._mediaRecorder.addEventListener('dataavailable', e=>{
                 if(e.data.size > 0){
                     this._recordedChunks.push(e.data)
@@ -57,7 +61,18 @@ export class MicrophoneController extends ClassEvent{
 
                 console.log('file ', file)
 
+                let reader = new FileReader()
+                reader.onload = e =>{
+                    console.log('reader file ', file)
+                    let audio = new Audio(reader.result)
+                    audio.play()
+                }
+
+                reader.readAsDataURL(file)
+
             })
+
+            this._mediaRecorder.start()
         }
     }
 
