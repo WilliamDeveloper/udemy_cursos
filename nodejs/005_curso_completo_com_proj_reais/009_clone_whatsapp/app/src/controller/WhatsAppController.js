@@ -135,6 +135,9 @@ export default class WhatsAppController{
             this.el.pictureCamera.src = dataUrl
             this.el.pictureCamera.show()
             this.el.videoCamera.hide()
+            this.el.btnReshootPanelCamera.show()
+            this.el.btnTakePicture.hide()
+            this.el.containerSendPicture.show()
         })
 
         this.el.btnAttachDocument.on('click',e=>{
