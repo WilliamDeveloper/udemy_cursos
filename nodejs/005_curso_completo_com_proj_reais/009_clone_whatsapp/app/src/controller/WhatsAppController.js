@@ -2,7 +2,7 @@ import ExtendsHtmlFunctions from './../util/ExtendsHtmlFunctions'
 import {Format} from './../util/Format'
 import {CameraController} from './../controller/CameraController'
 
-export class WhatsAppController{
+export default class WhatsAppController{
     constructor(){
         console.log('class WhatsAppController ok')
 
