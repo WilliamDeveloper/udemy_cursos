@@ -1,6 +1,10 @@
-export class MicrophoneController {
+import {ClassEvent} from "../util/ClassEvent";
+
+export class MicrophoneController extends ClassEvent{
 
     constructor(videoEl){
+        super()
+
         this._videoEl = videoEl
 
         navigator.mediaDevices.getUserMedia({
