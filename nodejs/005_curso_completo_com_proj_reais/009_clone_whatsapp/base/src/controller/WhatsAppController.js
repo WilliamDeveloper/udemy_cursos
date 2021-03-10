@@ -195,8 +195,9 @@ class WhatsAppController{
             console.log('btnSend')
         })
 
-        this.btnEmojis.on('click', e=>{
+        this.el.btnEmojis.on('click', e=>{
             console.log('btnEmojis')
+            this.el.panelEmojis.addClass('open')
         })
 
 
