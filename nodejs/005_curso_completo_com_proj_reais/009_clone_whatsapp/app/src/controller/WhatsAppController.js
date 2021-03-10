@@ -1,3 +1,7 @@
+import Format from './../util/extendsHtmlByWill'
+import Format from './../util/Format'
+import Format from './../controller/CameraController'
+
 class WhatsAppController{
     constructor(){
         console.log('class WhatsAppController ok')
