@@ -184,6 +184,13 @@ export default class WhatsAppController{
                     this.el.filePanelDocumentPreview.hide()
                 }).catch(error=>{
                     console.log('nok', error)
+                    switch (file.type) {
+                        default:
+                            console.log('default')
+                            this.el.iconPanelDocumentPreview.className = 'jcxhw icon-doc-generic'
+                    }
+                    this.el.imagePanelDocumentPreview.hide()
+                    this.el.filePanelDocumentPreview.show()
                 })
             }
         })

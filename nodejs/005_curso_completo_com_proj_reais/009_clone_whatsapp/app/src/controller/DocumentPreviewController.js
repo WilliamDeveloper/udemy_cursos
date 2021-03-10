@@ -30,6 +30,7 @@ export class DocumentPreviewController{
                 break
 
                 default:
+
                     reject()
 
 
