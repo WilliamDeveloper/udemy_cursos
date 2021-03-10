@@ -44,9 +44,10 @@ npm install --save pdfjs-dist
 
 
 
-
-
-
+/*
+require(nodejs)(padrao antigo) => usa module.exports
+import(es6)(padrao moderno)
+*/
 
 
 

@@ -1,3 +1,6 @@
+const pdfjsLib = require('pdfjs-dist')
+pdfjsLib.GlobalWorkerOptions.workerSrc
+
 export class DocumentPreviewController{
     constructor(file){
         this._file = file
