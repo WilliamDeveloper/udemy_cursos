@@ -216,7 +216,7 @@ class WhatsAppController{
                 // this.el.inputText.append(img)
                 let cursor = window.getSelection()
 
-                if(cursor.focusNode.id == 'input-text'){
+                if(!cursor.focusNode.id == 'input-text'){
 
                 }
 
