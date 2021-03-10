@@ -203,8 +203,22 @@ class WhatsAppController{
         this.el.panelEmojis.querySelectorAll('.emojik').forEach( emoji=>{
             emoji.on('click', e=>{
                console.log('e ', emoji.dataset.unicode)
+               let img =  this.el.imgEmojiDefault.cloneNode()
+                img.style.cssText = emoji.dataset.cssText
+                img.style.unicode = emoji.dataset.unicode
+                img.alt = emoji.dataset.unicode
+
+                emoji.classList.forEach( name=>{
+                    img.classList.add(name)
+                })
+
+                this.el.inputText.append(img)
+
+                this.el.inputText.dispatchEvent(new Event('keyup'))
             })
         })
+
+
 
 
 
