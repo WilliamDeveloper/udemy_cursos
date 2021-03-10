@@ -46,7 +46,7 @@ npm init -y
 --- ---------------------------------------------------
 
 - webpack empacotador de aplicacao web
-npm install webpack@3.10
+npm install --save webpack@3.10
 
 --nodemon para o projeto ficar rodando 
 npm install --save npx
