@@ -212,7 +212,8 @@ class WhatsAppController{
                     img.classList.add(name)
                 })
 
-                this.el.inputText.append(img)
+                // this.el.inputText.append(img)
+                let cursor = window.getSelection()
 
                 this.el.inputText.dispatchEvent(new Event('keyup'))
             })
