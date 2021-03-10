@@ -193,6 +193,11 @@ export default class WhatsAppController{
                         "height":"calc(100% - 120px)",
                     })
 
+                    this.el.imagePanelDocumentPreview.css({
+                        "height":"80%",
+                        "width":"75%"
+                    })
+
                 }).catch(error=>{
 
                     this.el.panelDocumentPreview.css({
