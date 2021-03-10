@@ -49,6 +49,7 @@ export class DocumentPreviewController{
                                     canvasContext : context,
                                     viewport: viewport
                                 }).promise.then(()=>{
+                                    console.log('canvas ', canvas, canvas.toDataURL('image/png'))
                                     let _s = (pdf.numPages > 1)? 's':''
                                     resolve({
                                         src : canvas.toDataURL('image/png'),

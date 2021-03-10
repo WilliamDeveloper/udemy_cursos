@@ -170,6 +170,7 @@ export default class WhatsAppController{
         })
 
         this.el.inputDocument.on('change',e=>{
+            console.log('inputDocument-change->')
             if(this.el.inputDocument.files.length){
 
                 this.el.panelDocumentPreview.css({
