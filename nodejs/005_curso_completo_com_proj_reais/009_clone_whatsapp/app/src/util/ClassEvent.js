@@ -13,6 +13,8 @@ export class ClassEvent{
         let args = [...arguments]
         let eventName = args.shift()
 
+        console.log('args ',args, ' eventName ', eventName)
+
         args.push(new Event(eventName))
 
         if(this._events[eventName] instanceof  Array){
