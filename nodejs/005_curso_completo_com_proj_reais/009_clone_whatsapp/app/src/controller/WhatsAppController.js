@@ -164,6 +164,15 @@ export default class WhatsAppController{
             this.el.panelDocumentPreview.css({
                 "height":"calc(100% - 120px)",
             })
+
+            this.el.inputDocument.click()
+        })
+
+        this.el.inputDocument.on('change',e=>{
+            if(this.el.inputDocument.files.length){
+                let file = this.el.inputDocument.files[0]
+                console.log(file)
+            }
         })
 
         this.el.btnClosePanelDocumentPreview.on('click', e=>{
