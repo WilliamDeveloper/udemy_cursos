@@ -33,7 +33,8 @@ npm install --save webpack-dev-server@2.5.1
 npm install --save pdfjs-dist@2.0.489
 
 
-
+- firebase
+npm install --save firebase@4.13.1
 
 
 
