@@ -1,6 +1,7 @@
 import ExtendsHtmlFunctions from './../util/ExtendsHtmlFunctions'
 import {Format} from './../util/Format'
 import {CameraController} from './../controller/CameraController'
+import {DocumentPreviewController} from './../controller/DocumentPreviewController'
 
 export default class WhatsAppController{
     constructor(){
@@ -172,6 +173,13 @@ export default class WhatsAppController{
             if(this.el.inputDocument.files.length){
                 let file = this.el.inputDocument.files[0]
                 console.log(file)
+
+                this._documentPreviewController = new DocumentPreviewController(file)
+                this._documentPreviewController.getPreviewData().then(data=>{
+                    console.log('ok', data)
+                }).catch(error=>{
+                    console.log('nok', error)
+                })
             }
         })
 
