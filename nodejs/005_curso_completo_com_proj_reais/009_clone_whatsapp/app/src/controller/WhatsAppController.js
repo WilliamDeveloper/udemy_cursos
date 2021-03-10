@@ -137,7 +137,7 @@ export default class WhatsAppController{
             this.el.pictureCamera.show()
             this.el.videoCamera.hide()
             this.el.btnReshootPanelCamera.show()
-            this.el.btnTakePicture.hide()
+            this.el.containerTakePicture.hide()
             this.el.containerSendPicture.show()
         })
 
@@ -145,7 +145,7 @@ export default class WhatsAppController{
             this.el.pictureCamera.hide()
             this.el.videoCamera.show()
             this.el.btnReshootPanelCamera.hide()
-            this.el.btnTakePicture.show()
+            this.el.containerTakePicture.show()
             this.el.containerSendPicture.hide()
         })
 
