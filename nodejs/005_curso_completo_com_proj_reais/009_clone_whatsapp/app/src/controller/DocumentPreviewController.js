@@ -10,13 +10,13 @@ export class DocumentPreviewController{
 
     getPreviewData(){
         return new Promise((resolve, reject)=>{
-
+            let reader
             switch (this._file.type) {
                 case    'image/png' :
                 case    'image/jpeg' :
                 case    'image/jpg' :
                 case    'image/gif' :
-                    let reader = new FileReader()
+                    reader = new FileReader()
                     reader.onload = e =>{
                         resolve({
                             src : reader.result,
@@ -32,6 +32,15 @@ export class DocumentPreviewController{
 
                 case    'application/pdf' :
 
+                    reader = new FileReader()
+                    reader.onload = e =>{
+                        pdfjsLib.getDocument( new Uint8Array(reader.result)).promise.then(pdf=>{
+                            console.log('pdf ', pdf)
+                        }).catch(error =>{
+                            reject(error)
+                        })
+                    }
+                    reader.readAsArrayBuffer(this._file)
                 break
 
                 default:
