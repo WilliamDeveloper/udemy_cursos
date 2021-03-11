@@ -17,6 +17,8 @@ export class Message extends Model{
 
     getViewElement(me=true){
 
+        console.log('getViewElement ', me)
+
 
         let div = document.createElement('div')
         div.className = 'message'
