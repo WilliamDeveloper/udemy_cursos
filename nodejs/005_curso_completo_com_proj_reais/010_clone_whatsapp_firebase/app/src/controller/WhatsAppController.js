@@ -165,6 +165,8 @@ export default class WhatsAppController{
     setActiveChat(contact){
         console.log('chatid ', contact.chatId)
 
+        this._contactAtive = contact
+
         this.el.activeName.innerHTML = contact.name
         this.el.activeStatus.innerHTML = contact.status
 
