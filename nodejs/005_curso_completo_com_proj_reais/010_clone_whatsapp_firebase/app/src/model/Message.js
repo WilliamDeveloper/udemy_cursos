@@ -7,6 +7,9 @@ export class Message extends Model{
         super()
     }
 
+    get id(){ return this._data.id }
+    set id(value){ this._data.id = value }
+
     get content(){ return this._data.content }
     set content(value){ this._data.content = value }
 
