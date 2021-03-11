@@ -24,4 +24,8 @@ export class Format{
         // console.log(result)
         return result
     }
+
+    static timeStampToTime(timeStamp){
+
+    }
 }
