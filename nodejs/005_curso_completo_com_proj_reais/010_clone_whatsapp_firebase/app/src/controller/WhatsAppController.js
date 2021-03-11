@@ -130,6 +130,10 @@ export default class WhatsAppController{
 
         this.el.btnSavePanelEditProfile.on('click', e=>{
             console.log(this.el.inputNamePanelEditProfile.innerHTML)
+
+            this._user.name = this.el.inputNamePanelEditProfile.innerHTML
+            this._user.save()
+
         })
 
         this.el.formPanelAddContact.on('submit', e=>{
