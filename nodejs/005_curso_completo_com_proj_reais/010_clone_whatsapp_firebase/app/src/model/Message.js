@@ -14,4 +14,29 @@ export class Message extends Model{
 
     get status(){ return this._data.status }
     set status(value){ this._data.status = value }
+
+    getViewElement(){
+        switch (this.type) {
+
+            case 'contact':
+
+            break
+
+            case 'image':
+
+            break
+
+            case 'document':
+
+            break
+
+            case 'audio':
+
+            break
+
+            default:
+
+            break
+        }
+    }
 }
