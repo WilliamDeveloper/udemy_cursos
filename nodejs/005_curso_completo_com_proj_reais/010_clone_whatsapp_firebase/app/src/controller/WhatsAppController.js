@@ -19,56 +19,56 @@ export default class WhatsAppController{
 
     initAut(){
         this._firebase.initAuth().then(response=>{
-            console.log(response)
+            console.log('_firebase.initAuth ',response)
 
-            if(response.token){
-                this._user = new User()
+            this._user = new User()
 
-                this._user.on('datachange', data=>{
-                    document.querySelector('title').innerHTML = data.name + ' - WhatsApp Clone'
+            this._user.on('datachange', data=>{
+                console.log('user-datachange')
+                document.querySelector('title').innerHTML = data.name + ' - WhatsApp Clone'
 
-                    this.el.inputNamePanelEditProfile.innerHTML = data.name
+                this.el.inputNamePanelEditProfile.innerHTML = data.name
 
-                    if(data.photo){
-                        let photo = this.el.imgPanelEditProfile
-                        photo.src =  data.photo
-                        photo.show()
-                        this.el.imgDefaultPanelEditProfile.hide()
+                if(data.photo){
+                    let photo = this.el.imgPanelEditProfile
+                    photo.src =  data.photo
+                    photo.show()
+                    this.el.imgDefaultPanelEditProfile.hide()
 
-                        let photo2 = this.el.myPhoto.querySelector('img')
-                        photo2.src =  data.photo
-                        photo2.show()
-                    }
+                    let photo2 = this.el.myPhoto.querySelector('img')
+                    photo2.src =  data.photo
+                    photo2.show()
+                }
+            })
+
+            this._user.name = response.user.displayName
+            this._user.email = response.user.email
+            this._user.photo = response.user.photoURL
+
+            this._user.save().then(()=>{
+                this.el.appContent.css({
+                    display:'flex'
                 })
-
-                this._user.name = response.user.displayName
-                this._user.email = response.user.email
-                this._user.photo = response.user.photoURL
-
-                this._user.save().then(()=>{
-                    this.el.appContent.css({
-                        display:'flex'
-                    })
-                })
+            })
 
 
 
-                // let userRef = User.findByEmail(response.user.email)
-                //
-                // userRef.set({
-                //     name: response.user.displayName,
-                //     email: response.user.email,
-                //     photo: response.user.photoURL
-                // }).then(()=>{
-                //
-                // }).catch(error=>{
-                //     console.log(error)
-                // })
-                //
-                // this._token = response.token
+            // let userRef = User.findByEmail(response.user.email)
+            //
+            // userRef.set({
+            //     name: response.user.displayName,
+            //     email: response.user.email,
+            //     photo: response.user.photoURL
+            // }).then(()=>{
+            //
+            // }).catch(error=>{
+            //     console.log(error)
+            // })
+            //
+            // this._token = response.token
 
 
-            }
+
 
         }).catch(error=>{
             console.log(error)
