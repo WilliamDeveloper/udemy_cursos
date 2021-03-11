@@ -244,10 +244,21 @@ export default class WhatsAppController{
 
             contact.on('datachange', data =>{
                 if(data.name){
-                    this._user.addContact(contact).then(()=>{
-                        console.log('contato adicionado')
-                        this.el.btnClosePanelAddContact.click()
+
+                    Chat.createIfNotExists().then(chat =>{
+
+                        contact.chatIt = chat.id
+                        this._user.chatIt =  chat.id
+                        contact.addContact(this._user)
+
+                        this._user.addContact(contact).then(()=>{
+                            console.log('contato adicionado')
+                            this.el.btnClosePanelAddContact.click()
+                        })
+
                     })
+
+
                 }else{
                     console.log('error usuario nao encontrado')
                 }
