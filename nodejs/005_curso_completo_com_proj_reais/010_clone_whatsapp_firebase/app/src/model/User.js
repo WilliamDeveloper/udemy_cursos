@@ -1,5 +1,5 @@
 import Firebase from './../util/Firebase'
-import Firebase from './../util/ClassEvent'
+import ClassEvent from './../util/ClassEvent'
 
 export class User extends ClassEvent{
 
