@@ -15,7 +15,7 @@ export class Message extends Model{
     get status(){ return this._data.status }
     set status(value){ this._data.status = value }
 
-    getViewElement(){
+    getViewElement(me=true){
 
 
         let div = document.createElement('div')
@@ -286,6 +286,8 @@ export class Message extends Model{
             break
         }
 
+        let className = (me)? 'message-out' : 'message-in'
+        div.firstElementChild.classList.add(className)
         return div
 
     }
