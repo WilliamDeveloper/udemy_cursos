@@ -7,7 +7,9 @@ export class User extends Model{
     constructor(id){
         super()
 
-        if(id) this.getById()
+        this._data = {}
+
+        if(id) this.getById(id)
 
 
     }
