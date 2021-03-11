@@ -13,9 +13,11 @@ export class User extends Model{
     }
 
     getById(id){
+        console.log('getById ', id)
         return new Promise((resolve, reject)=>{
 
             User.findByEmail(id).onSnapshot((doc)=>{
+                console.log('getById-snap ', id, doc)
                 this.fromJSON(doc.data())
                 resolve(doc)
             })
