@@ -36,11 +36,32 @@ export class Chat extends Model{
     }
 
     static find(email, contactEmail){
-
+        return Chat.getRef()
+            .where(btoa(email), '==', true)
+            .where(btoa(contactEmail), '==', true)
+            .get()
     }
 
     static create(email, contactEmail){
+        return new Promise((resolve, reject)=>{
 
+            let users = { }
+            users[btoa(email)] = true
+            users[btoa(contactEmail)] = true
+
+            Chat.getRef().add({
+                users,
+                timeStamp: new Date()
+            }).then(doc=>{
+                Chat.getRef().doc(doc.id).get().then(chat =>{
+                    resolve(chat)
+                }).catch(error=>{
+                    reject(error)
+                })
+            }).catch(error=>{
+                reject(error)
+            })
+        })
     }
 
 
