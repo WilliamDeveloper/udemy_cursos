@@ -1,4 +1,6 @@
 const firebase = require ('firebase')
+
+// vai ficar no logar no realtime database
 require ('firebase/firestore')
 
 import firebaseConfig from '../../config/firebaseconfig'
@@ -15,6 +17,20 @@ export class Firebase{
     }
 
     init(){
-        firebase.initializeApp(this._config);
+        if(!this._initialized){
+            firebase.initializeApp(this._config);
+            firebase.firestore().settings({
+                timestampsInSnapshots: true
+            })
+            this._initialized=true
+        }
+    }
+
+    static db(){
+        return firebase.firestore()
+    }
+
+    static hd(){
+        return firebase.storage();
     }
 }
