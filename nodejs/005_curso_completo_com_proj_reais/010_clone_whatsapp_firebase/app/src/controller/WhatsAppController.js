@@ -150,21 +150,7 @@ export default class WhatsAppController{
 
                 div.on('click', e=>{
 
-                    console.log('chatid ', contact.chatId)
-
-                    this.el.activeName.innerHTML = contact.name
-                    this.el.activeStatus.innerHTML = contact.status
-
-                    if(contact.photo){
-                        let img = this.el.activePhoto
-                        img.src = contact.photo
-                        img.show()
-                    }
-
-                    this.el.home.hide()
-                    this.el.main.css({
-                        display: 'flex'
-                    })
+                    setActiveChat(contact)
                 })
 
                 this.el.contactsMessagesList.appendChild(div)
@@ -174,6 +160,24 @@ export default class WhatsAppController{
 
         })
         this._user.getContacts()
+    }
+
+    setActiveChat(contact){
+        console.log('chatid ', contact.chatId)
+
+        this.el.activeName.innerHTML = contact.name
+        this.el.activeStatus.innerHTML = contact.status
+
+        if(contact.photo){
+            let img = this.el.activePhoto
+            img.src = contact.photo
+            img.show()
+        }
+
+        this.el.home.hide()
+        this.el.main.css({
+            display: 'flex'
+        })
     }
 
     loadElements(){
