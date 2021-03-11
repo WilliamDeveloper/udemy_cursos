@@ -6,6 +6,7 @@ import {MicrophoneController} from './../controller/MicrophoneController'
 import {Firebase} from './../util/Firebase'
 import {User} from './../model/User'
 import {Chat} from "../model/Chat";
+import {Message} from "../model/Message";
 
 export default class WhatsAppController{
     constructor(){
@@ -150,7 +151,7 @@ export default class WhatsAppController{
 
                 div.on('click', e=>{
 
-                    setActiveChat(contact)
+                    this.setActiveChat(contact)
                 })
 
                 this.el.contactsMessagesList.appendChild(div)
@@ -497,7 +498,13 @@ export default class WhatsAppController{
 
 
 
-            Message.send(this._contactAtive.chatId, this.el.inputText.innerHTML)
+            Message.send(
+                this._contactAtive.chatId,
+                this._user.email,
+                'text',
+                this.el.inputText.innerHTML
+            )
+
             this.el.inputText.innerHTML=''
             this.el.panelEmojis.removeClass('open')
 
