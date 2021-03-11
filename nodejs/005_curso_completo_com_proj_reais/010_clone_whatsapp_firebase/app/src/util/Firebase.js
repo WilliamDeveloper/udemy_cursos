@@ -1,4 +1,7 @@
-const firebase = require ('firebase/app')
+// const firebase = require ('firebase/app')
+// Firebase App (the core Firebase SDK) is always required and
+// must be listed before other Firebase SDKs
+import firebase from "firebase";
 
 // vai ficar no logar no realtime database
 require ('firebase/firestore')
