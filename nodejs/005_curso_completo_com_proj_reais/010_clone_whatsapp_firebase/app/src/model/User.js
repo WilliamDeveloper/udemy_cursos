@@ -18,8 +18,6 @@ export class User extends Model{
             User.findByEmail(id).onSnapshot((doc)=>{
                 this.fromJSON(doc.data())
                 resolve(doc)
-            }).catch(error=>{
-                reject(error)
             })
 
             // User.findByEmail(id).get().then((doc)=>{
