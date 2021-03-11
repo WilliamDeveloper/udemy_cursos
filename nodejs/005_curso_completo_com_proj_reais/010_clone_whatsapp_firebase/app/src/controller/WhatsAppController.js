@@ -494,6 +494,13 @@ export default class WhatsAppController{
 
         this.el.btnSend.on('click', e=>{
             console.log('btnSend')
+
+
+
+            Message.send(this._contactAtive.chatId, this.el.inputText.innerHTML)
+            this.el.inputText.innerHTML=''
+            this.el.panelEmojis.removeClass('open')
+
         })
 
         this.el.btnEmojis.on('click', e=>{

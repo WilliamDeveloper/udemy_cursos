@@ -1,3 +1,6 @@
+import {Firebase} from "../util/Firebase";
+
+
 export class Message extends Model{
     constructor(){
         super()
@@ -292,5 +295,20 @@ export class Message extends Model{
         div.firstElementChild.classList.add(className)
         return div
 
+    }
+
+    static send(chatId, content){
+        return Message.getRef(chatId).add({
+            content,
+            timeStamp : new Date(),
+            status: 'wait'
+        })
+    }
+
+    static getRef(chatId){
+        return Firebase.db()
+            .collection('chats')
+            .doc(chatId)
+            .collection('messages')
     }
 }
