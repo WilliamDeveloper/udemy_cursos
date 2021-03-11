@@ -166,6 +166,10 @@ export default class WhatsAppController{
     setActiveChat(contact){
         console.log('chatid ', contact.chatId)
 
+        if (this._contactAtive){
+            Message.getRef(this._contactAtive.chatId).onSnapshot(()=>{})
+        }
+
         this._contactAtive = contact
 
         this.el.activeName.innerHTML = contact.name
@@ -180,6 +184,19 @@ export default class WhatsAppController{
         this.el.home.hide()
         this.el.main.css({
             display: 'flex'
+        })
+
+        Message.getRef(this._contactAtive.chatId).orderBy('timeStamp').onSnapshot(docs=>{
+
+            this.el.panelMessagesContainer.innerHTML = ''
+            docs.forEach(doc =>{
+                let data = doc.data()
+                let message = new Message()
+                message.fromJSON(data)
+                let me = (data.from === this._user.email)
+                let view = message.getViewElement(me)
+                this.el.panelMessagesContainer.appendChild(view)
+            })
         })
     }
 
