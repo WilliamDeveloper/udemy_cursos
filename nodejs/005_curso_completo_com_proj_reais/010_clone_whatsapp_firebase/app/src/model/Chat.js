@@ -17,6 +17,13 @@ export class Chat extends Model{
         return Firebase.db().connection('/chats')
     }
 
+    static find(meEmail, contactEmail){
+        return Chat.getRef()
+            .where(btoa(meEmail), '==', true)
+            .where(btoa(contactEmail), '==', true)
+            .get()
+    }
+
     static createIfNotExists(meEmail, contactEmail){
 
         return new Promise((resolve, reject)=>{
@@ -41,12 +48,6 @@ export class Chat extends Model{
 
     }
 
-    static find(meEmail, contactEmail){
-        return Chat.getRef()
-            .where(btoa(meEmail), '==', true)
-            .where(btoa(contactEmail), '==', true)
-            .get()
-    }
 
     static create(meEmail, contactEmail){
         return new Promise((resolve, reject)=>{
