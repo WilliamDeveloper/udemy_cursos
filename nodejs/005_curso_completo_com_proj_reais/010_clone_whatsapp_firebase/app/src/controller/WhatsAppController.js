@@ -149,7 +149,7 @@ export default class WhatsAppController{
 
                 div.on('click', e=>{
                     this.el.activeName.innerHTML = contact.name
-                    this.el.activeStatus = contact.status
+                    this.el.activeStatus.innerHTML = contact.status
 
                     if(contact.photo){
                         let img = this.el.activePhoto
