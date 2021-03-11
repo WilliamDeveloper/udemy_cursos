@@ -17,11 +17,13 @@ export class Chat extends Model{
         return Firebase.db().connection('/chats')
     }
 
-    static createIfNotExists(email, contactEmail){
+    static createIfNotExists(meEmail, contactEmail){
+
         return new Promise((resolve, reject)=>{
-            Chat.find(email, contactEmail).then( chats =>{
+
+            Chat.find(meEmail, contactEmail).then( chats =>{
                 if(chats.empty){
-                    Chat.create(email, contactEmail).then(chat =>{
+                    Chat.create(meEmail, contactEmail).then(chat =>{
                         resolve(chat)
                     })
                 }else{
@@ -30,9 +32,11 @@ export class Chat extends Model{
                     })
                 }
             })
+
         }).catch(error=>{
             reject(error)
         })
+
     }
 
     static find(email, contactEmail){
