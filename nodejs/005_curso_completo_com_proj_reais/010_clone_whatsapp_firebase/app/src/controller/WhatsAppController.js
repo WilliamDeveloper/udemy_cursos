@@ -251,7 +251,7 @@ export default class WhatsAppController{
 
                 if(data.name){
 
-                    Chat.createIfNotExists().then(chat =>{
+                    Chat.createIfNotExists(this._user.email, contact.email).then(chat =>{
 
                         console.log('createIfNotExists-then ', chat)
 
