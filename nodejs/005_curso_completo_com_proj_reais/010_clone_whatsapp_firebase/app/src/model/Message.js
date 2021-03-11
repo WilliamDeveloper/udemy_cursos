@@ -1,5 +1,6 @@
 import {Firebase} from "../util/Firebase";
 import {Model} from "./Model";
+import {Format} from "../util/Format";
 
 
 export class Message extends Model{
