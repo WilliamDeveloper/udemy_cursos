@@ -9,12 +9,20 @@ export default class WhatsAppController{
     constructor(){
         console.log('class WhatsAppController ok')
 
+        this.initAut()
         // elementsPrototype()
         this.loadElements()
         this.initEvents()
         this._firebase = new Firebase()
     }
 
+    initAut(){
+        this._firebase.initAuth().then(response=>{
+
+        }).catch(error=>{
+
+        })
+    }
 
 
     loadElements(){
