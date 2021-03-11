@@ -302,7 +302,8 @@ export class Message extends Model{
         return Message.getRef(chatId).add({
             content,
             timeStamp : new Date(),
-            status: 'wait'
+            status: 'wait',
+            type: 'text'
         })
     }
 
