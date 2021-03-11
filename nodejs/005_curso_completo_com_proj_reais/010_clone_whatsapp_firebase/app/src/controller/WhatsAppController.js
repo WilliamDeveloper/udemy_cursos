@@ -191,6 +191,7 @@ export default class WhatsAppController{
             this.el.panelMessagesContainer.innerHTML = ''
             docs.forEach(doc =>{
                 let data = doc.data()
+                data.id = doc.id
                 let message = new Message()
                 message.fromJSON(data)
                 let me = (data.from === this._user.email)
