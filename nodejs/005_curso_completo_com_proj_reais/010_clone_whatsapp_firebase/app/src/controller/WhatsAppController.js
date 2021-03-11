@@ -5,6 +5,7 @@ import {DocumentPreviewController} from './../controller/DocumentPreviewControll
 import {MicrophoneController} from './../controller/MicrophoneController'
 import {Firebase} from './../util/Firebase'
 import {User} from './../model/User'
+import {Chat} from "../model/Chat";
 
 export default class WhatsAppController{
     constructor(){
