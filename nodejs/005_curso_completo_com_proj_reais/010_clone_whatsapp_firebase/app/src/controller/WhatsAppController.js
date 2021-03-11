@@ -25,6 +25,7 @@ export default class WhatsAppController{
                 this._user = new User()
 
                 let userRef = User.findByEmail(response.user.email)
+
                 userRef.set({
                     name: response.user.displayName,
                     email: response.user.email,
