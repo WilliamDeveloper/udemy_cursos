@@ -80,9 +80,18 @@ export default class WhatsAppController{
     }
 
     initContacts(){
-        let div = document.createElement('div')
-        div.className = 'contact-item'
-        div.innerHTML = `                
+
+
+        this._user.on('contactschange', docs=>{
+            console.log('user-on-contactschange ', docs)
+            this.el.contactsMessagesList.innerHTML = ''
+
+            docs.forEach(doc =>{
+
+                let contact = doc.data()
+                let div = document.createElement('div')
+                div.className = 'contact-item'
+                div.innerHTML = `                
                     <div class="dIyEr">
                         <div class="_1WliW" style="height: 49px; width: 49px;">
                             <img src="#" class="Qgzj8 gqwaM photo" style="display:none;">
@@ -101,10 +110,10 @@ export default class WhatsAppController{
                     <div class="_3j7s9">
                         <div class="_2FBdJ">
                             <div class="_25Ooe">
-                                <span dir="auto" title="Nome do Contato" class="_1wjpf">Nome do Contato</span>
+                                <span dir="auto" title="${contact.name}" class="_1wjpf">${contact.name}</span>
                             </div>
                             <div class="_3Bxar">
-                                <span class="_3T2VG">18:03</span>
+                                <span class="_3T2VG">${contact.lastMessageTime}</span>
                             </div>
                         </div>
                         <div class="_1AwDx">
@@ -119,7 +128,7 @@ export default class WhatsAppController{
                                             </svg>
                                         </span>
                                     </div>
-                                    <span dir="ltr" class="_1wjpf _3NFp9">Ok</span>
+                                    <span dir="ltr" class="_1wjpf _3NFp9">${contact.lastMessage}</span>
                                     <div class="_3Bxar">
                                         <span>
                                             <div class="_15G96">
@@ -130,7 +139,23 @@ export default class WhatsAppController{
                             </div>
                         </div>
                     </div>                
-        `
+                `
+
+                if(contact.photo){
+                    let img = div.querySelector('.photo')
+                    img.src = contact.photo
+                    img.show()
+                }
+
+
+
+                this.el.contactsMessagesList.appendChild(div)
+
+            })
+
+
+        })
+        this._user.getContacts()
     }
 
     loadElements(){
