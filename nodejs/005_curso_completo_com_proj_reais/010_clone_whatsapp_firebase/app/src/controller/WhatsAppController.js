@@ -192,11 +192,20 @@ export default class WhatsAppController{
             docs.forEach(doc =>{
                 let data = doc.data()
                 data.id = doc.id
-                let message = new Message()
-                message.fromJSON(data)
-                let me = (data.from === this._user.email)
-                let view = message.getViewElement(me)
-                this.el.panelMessagesContainer.appendChild(view)
+
+
+                if(!this.el.panelMessagesContainer.querySelector('#_'+data.id)){
+                    let message = new Message()
+                    message.fromJSON(data)
+
+                    let me = (data.from === this._user.email)
+
+                    let view = message.getViewElement(me)
+
+                    this.el.panelMessagesContainer.appendChild(view)
+                }
+
+
             })
         })
     }
