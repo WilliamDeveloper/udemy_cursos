@@ -298,12 +298,13 @@ export class Message extends Model{
 
     }
 
-    static send(chatId, content){
+    static send(chatId, from, type, content){
         return Message.getRef(chatId).add({
             content,
             timeStamp : new Date(),
             status: 'wait',
-            type: 'text'
+            type,
+            from
         })
     }
 
