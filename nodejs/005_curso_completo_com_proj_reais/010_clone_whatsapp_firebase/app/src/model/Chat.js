@@ -25,32 +25,34 @@ export class Chat extends Model{
                 if(chats.empty){
                     Chat.create(meEmail, contactEmail).then(chat =>{
                         resolve(chat)
+                    }).catch(error=>{
+                        reject(error)
                     })
                 }else{
                     chats.forEach(chat=>{
                         resolve(chat)
                     })
                 }
+            }).catch(error=>{
+                reject(error)
             })
 
-        }).catch(error=>{
-            reject(error)
         })
 
     }
 
-    static find(email, contactEmail){
+    static find(meEmail, contactEmail){
         return Chat.getRef()
-            .where(btoa(email), '==', true)
+            .where(btoa(meEmail), '==', true)
             .where(btoa(contactEmail), '==', true)
             .get()
     }
 
-    static create(email, contactEmail){
+    static create(meEmail, contactEmail){
         return new Promise((resolve, reject)=>{
 
             let users = { }
-            users[btoa(email)] = true
+            users[btoa(meEmail)] = true
             users[btoa(contactEmail)] = true
 
             Chat.getRef().add({
