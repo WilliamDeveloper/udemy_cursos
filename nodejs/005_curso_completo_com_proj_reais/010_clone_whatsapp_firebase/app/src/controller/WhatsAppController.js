@@ -247,12 +247,17 @@ export default class WhatsAppController{
             let contact = new User(formData.get('email'))
 
             contact.on('datachange', data =>{
+                console.log('formPanelAddContact-datachange ', data)
+
                 if(data.name){
 
                     Chat.createIfNotExists().then(chat =>{
 
-                        contact.chatIt = chat.id
-                        this._user.chatIt =  chat.id
+                        console.log('createIfNotExists-then ', chat)
+
+                        contact.chatId = chat.id
+
+                        this._user.chatId =  chat.id
                         contact.addContact(this._user)
 
                         this._user.addContact(contact).then(()=>{
