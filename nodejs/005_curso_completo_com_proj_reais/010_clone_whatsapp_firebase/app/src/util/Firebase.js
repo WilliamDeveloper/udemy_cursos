@@ -47,7 +47,7 @@ export class Firebase{
                 let token = result.credential.accessToken
                 let user = result.user
                 console.log(token, user)
-                resolve (user, token)
+                resolve ({user, token})
             }).catch(error=>{
                 reject(error)
             })
