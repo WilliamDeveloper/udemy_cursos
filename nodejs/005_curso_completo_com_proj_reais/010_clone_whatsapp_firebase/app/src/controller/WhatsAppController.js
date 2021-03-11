@@ -82,8 +82,7 @@ export default class WhatsAppController{
     initContacts(){
         let div = document.createElement('div')
         div.className = 'contact-item'
-        div.innerHTML = `
-                
+        div.innerHTML = `                
                     <div class="dIyEr">
                         <div class="_1WliW" style="height: 49px; width: 49px;">
                             <img src="#" class="Qgzj8 gqwaM photo" style="display:none;">
