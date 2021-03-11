@@ -1,4 +1,4 @@
-const firebase = require ('firebase')
+const firebase = require ('firebase/app')
 
 // vai ficar no logar no realtime database
 require ('firebase/firestore')
@@ -12,6 +12,8 @@ export class Firebase{
         }else{
             this._config = config
         }
+
+        console.log(this._config)
 
         this.init()
     }

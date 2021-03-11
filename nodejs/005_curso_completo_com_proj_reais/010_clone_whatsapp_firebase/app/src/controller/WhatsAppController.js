@@ -12,6 +12,7 @@ export default class WhatsAppController{
         // elementsPrototype()
         this.loadElements()
         this.initEvents()
+        this._firebase = new Firebase()
     }
 
 
