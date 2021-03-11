@@ -3,6 +3,7 @@
 // must be listed before other Firebase SDKs
 import firebase from "firebase";
 
+// import 'firebase/auth'
 // vai ficar no logar no realtime database
 require ('firebase/firestore')
 
