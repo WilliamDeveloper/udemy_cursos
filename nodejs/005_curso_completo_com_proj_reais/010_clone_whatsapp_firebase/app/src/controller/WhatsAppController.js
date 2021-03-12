@@ -195,6 +195,11 @@ export default class WhatsAppController{
 
 
                 if(!this.el.panelMessagesContainer.querySelector('#_'+data.id)){
+
+                    let scrollTop = this.el.panelMessagesContainer.scrollTop
+                    let scrollTopMax = (this.el.panelMessagesContainer.scrollHeight - this.el.panelMessagesContainer.offsetHeight)
+                    console.log(scrollTop, scrollTopMax)
+
                     let message = new Message()
                     message.fromJSON(data)
 
