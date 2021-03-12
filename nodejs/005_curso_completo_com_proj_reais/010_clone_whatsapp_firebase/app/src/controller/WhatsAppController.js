@@ -249,6 +249,8 @@ export default class WhatsAppController{
             }else{
                 this.el.inputSearchContactsPlaceholder.show()
             }
+
+            this._user.getContacts(this.el.inputSearchContacts.value)
         })
 
         this.el.myPhoto.on('click', e=>{
