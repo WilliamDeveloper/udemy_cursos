@@ -48,3 +48,7 @@ npm install --save firebase@4.13.1
 cd 010_clone_whatsapp/app/
 npm install
 npm run start
+
+
+
+ "start": "webpack-dev-server --host 0.0.0.0 --port 8989"
