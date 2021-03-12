@@ -1,3 +1,5 @@
+import {Message} from "../model/Message";
+
 export class Base64 {
 
     static getMimeType(urlBase64){
@@ -5,6 +7,19 @@ export class Base64 {
         let result =  urlBase64.match(regex)
         // console.log('result ',result)
         return result[1]
+    }
+
+    static toFile(urlBase64){
+        let mimeType = Base64.getMimeType(urlBase64)
+        let ext = mimeType.split('/')[1]
+        let filename = `file${Date.now()}.${ext}`
+
+
+        return fetch(urlBase64)
+            .then( res=>{ return res.arrayBuffer() })
+            .then(buffer=>{ return new File([buffer], filename, {type:mimeType})})
+
+
     }
 
 }

@@ -2,6 +2,8 @@ import {Firebase} from "../util/Firebase";
 import {Model} from "./Model";
 import {Format} from "../util/Format";
 
+import {Base64} from "../util/Base64";
+
 
 export class Message extends Model{
     constructor(){
@@ -374,7 +376,7 @@ export class Message extends Model{
         return div
     }
 
-    static sendImage(chatId,from, file){
+    static upload(file){
 
         return new Promise((resolve, reject)=>{
             let uploadTask = Firebase.hd().ref(from).child(Date.now()+'_'+file.name).put(file)
@@ -388,22 +390,61 @@ export class Message extends Model{
                 },
                 ()=>{
                     console.log('state_change  sucess')
-
                     uploadTask.snapshot.ref.getDownloadURL().then( downloadURL =>{
-                        Message.send(
-                            chatId,
-                            from,
-                            'image',
-                            downloadURL
-                        ).then(()=>{
-                            resolve()
-                        })
+                        resolve(downloadURL)
                     })
-
 
 
                 }
             )
+        })
+
+    }
+
+    static sendDocument(chatId, from, file, preview){
+
+        Message.send(chatId,from,'document','').then( msgRef =>{
+            Base64.toFile(preview).then(filePreview =>{
+
+                Message.upload(file).then((downloadFileURL)=>{
+
+                    Message.upload(filePreview).then((downloadFilePreviewURL)=>{
+
+                        msgRef.set({
+                            content: downloadFileURL,
+                            preview: downloadFilePreviewURL,
+                            filename : file.name,
+                            size: file.size,
+                            fileType: file.type,
+                            status: 'sent'
+                        }, {
+                            merge: true
+                        })
+
+                    })
+
+                })
+
+            })
+        })
+
+    }
+
+    static sendImage(chatId,from, file){
+
+        return new Promise((resolve, reject)=>{
+
+            Message.upload(file).then((downloadURL)=>{
+                Message.send(
+                    chatId,
+                    from,
+                    'image',
+                    downloadURL
+                ).then(()=>{
+                    resolve()
+                })
+            })
+
         })
 
     }
