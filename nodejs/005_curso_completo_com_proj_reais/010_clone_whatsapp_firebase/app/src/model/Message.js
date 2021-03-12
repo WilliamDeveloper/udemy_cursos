@@ -263,7 +263,7 @@ export class Message extends Model{
                             </div>
                             <div class="_2f-RV">
                                 <div class="_1DZAH">
-                                    <span class="msg-time">${Format.timeStampToTime(this.timeStamp)}</span>
+                                    <span class="message-time">${Format.timeStampToTime(this.timeStamp)}</span>
                                 </div>
                             </div>
                         </div>
@@ -272,7 +272,16 @@ export class Message extends Model{
             break
         }
 
-        let className = (me)? 'message-out' : 'message-in'
+        let className = 'message-in'
+
+        if(me){
+            className = 'message-out'
+
+            div.querySelector('.message-time').parentElement.appendChild(this.getStatusViewElement())
+
+
+        }
+
         div.firstElementChild.classList.add(className)
         return div
 
@@ -295,7 +304,7 @@ export class Message extends Model{
             .collection('messages')
     }
 
-    getStatusView(){
+    getStatusViewElement(){
        let div = document.createElement('div')
 
         div.className = 'message-status'
