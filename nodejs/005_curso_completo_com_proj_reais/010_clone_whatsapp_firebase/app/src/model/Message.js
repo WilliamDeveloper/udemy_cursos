@@ -292,7 +292,7 @@ export class Message extends Model{
     }
 
     static send(chatId, from, type, content){
-
+        console.log('send ', chatId, from,type,content)
         return new Promise((resolve, reject)=>{
             Message.getRef(chatId).add({
                 content,
@@ -367,11 +367,11 @@ export class Message extends Model{
         return div
     }
 
-    sendImage(chatId,from, file){
+    static sendImage(chatId,from, file){
 
         return new Promise((resolve, reject)=>{
-            let uploadTask = Firebase.hd().ref(from).child(Date.now()+'_'+file.file.name).put(file)
-            uploadTask.on('state_change',
+            let uploadTask = Firebase.hd().ref(from).child(Date.now()+'_'+file.name).put(file)
+            uploadTask.on('state_changed',
                 (e)=>{
                     console.info('state_change ',e)
                 },
@@ -381,14 +381,20 @@ export class Message extends Model{
                 },
                 ()=>{
                     console.log('state_change  sucess')
-                    Message.send(
-                        chatId,
-                        from,
-                        'image',
-                        uploadTask.snapshot.downloadURL
-                    ).then(()=>{
-                        resolve()
+
+                    uploadTask.snapshot.ref.getDownloadURL().then( downloadURL =>{
+                        Message.send(
+                            chatId,
+                            from,
+                            'image',
+                            downloadURL
+                        ).then(()=>{
+                            resolve()
+                        })
                     })
+
+
+
                 }
             )
         })
