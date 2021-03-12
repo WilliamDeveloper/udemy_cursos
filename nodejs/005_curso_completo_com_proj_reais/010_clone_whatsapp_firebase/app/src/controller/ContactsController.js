@@ -64,6 +64,7 @@ export class ContactsController extends ClassEvent{
 
                 div.on('click', e=>{
                     this.trigger('select', contact)
+                    this.close()
                 })
 
                 this._listEl.appendChild(div)
