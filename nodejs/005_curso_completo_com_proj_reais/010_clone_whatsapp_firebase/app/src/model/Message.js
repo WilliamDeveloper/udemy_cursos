@@ -444,7 +444,22 @@ export class Message extends Model{
     }
 
     static sendAudio(chatId, from, file,metadata,photo){
-        return Message.send(chatId,from, 'audio', '')
+        return Message.send(chatId,from, 'audio', '').then(msgRef=>{
+            Message.upload(file,from).then((downloadURLAudio)=>{
+
+                msgRef.set({
+                    content: downloadURLAudio,
+                    size: file.size,
+                    fileType: file.type,
+                    status: 'sent',
+                    photo,
+                    duration: metadata.duration
+                }, {
+                    merge: true
+                })
+
+            })
+        })
     }
 
     static sendDocument(chatId, from, file, filePreview, info){
