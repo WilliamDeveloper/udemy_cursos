@@ -550,6 +550,16 @@ export default class WhatsAppController{
 
         this.el.btnSendDocument.on('click', e=>{
             console.log('btnSendDocument')
+
+            let file = this.el.inputDocument.files[0]
+            let base64 = this.el.imgPanelDocumentPreview.src
+
+            Message.sendDocument(
+                this._contactAtive.chatId,
+                this._user.email,
+                file,
+                base64
+            )
         })
 
         this.el.btnAttachContact.on('click',e=>{
