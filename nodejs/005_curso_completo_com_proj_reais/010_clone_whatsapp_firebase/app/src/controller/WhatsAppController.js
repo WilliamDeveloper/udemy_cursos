@@ -226,7 +226,12 @@ export default class WhatsAppController{
 
                 }else {
                     let view = message.getViewElement(me)
-                    this.el.panelMessagesContainer.querySelector('#_'+data.id).innerHTML = view.innerHTML
+                    //
+                    let parent = this.el.panelMessagesContainer.querySelector('#_'+data.id).parentNode
+
+                    //troca o conteudo sem apagar eventos pre-programados
+                    parent.replaceChild(view, this.el.panelMessagesContainer.querySelector('#_'+data.id) )
+                    // this.el.panelMessagesContainer.querySelector('#_'+data.id).innerHTML = view.innerHTML
                 }
 
                 if(this.el.panelMessagesContainer.querySelector('#_'+data.id) && me){
