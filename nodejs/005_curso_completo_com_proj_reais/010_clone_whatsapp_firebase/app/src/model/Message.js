@@ -2,8 +2,6 @@ import {Firebase} from "../util/Firebase";
 import {Model} from "./Model";
 import {Format} from "../util/Format";
 
-import {Base64} from "../util/Base64";
-
 
 export class Message extends Model{
     constructor(){
@@ -310,9 +308,10 @@ export class Message extends Model{
                 type,
                 from
             }).then( result=>{
-                result.parent.doc(result.id).set({
+                let docRef=result.parent.doc(result.id)
+                docRef.set({
                     status:'sent'
-                },{merge:true}).then(()=>{resolve()})
+                },{merge:true}).then(()=>{resolve(docRef)})
             })
         })
 
@@ -376,7 +375,7 @@ export class Message extends Model{
         return div
     }
 
-    static upload(file){
+    static upload(file, from){
 
         return new Promise((resolve, reject)=>{
             let uploadTask = Firebase.hd().ref(from).child(Date.now()+'_'+file.name).put(file)
@@ -401,14 +400,13 @@ export class Message extends Model{
 
     }
 
-    static sendDocument(chatId, from, file, preview){
+    static sendDocument(chatId, from, file, filePreview){
 
         Message.send(chatId,from,'document','').then( msgRef =>{
-            Base64.toFile(preview).then(filePreview =>{
 
-                Message.upload(file).then((downloadFileURL)=>{
+                Message.upload(file,from).then((downloadFileURL)=>{
 
-                    Message.upload(filePreview).then((downloadFilePreviewURL)=>{
+                    Message.upload(filePreview, from).then((downloadFilePreviewURL)=>{
 
                         msgRef.set({
                             content: downloadFileURL,
@@ -425,8 +423,8 @@ export class Message extends Model{
 
                 })
 
-            })
         })
+
 
     }
 
@@ -434,7 +432,7 @@ export class Message extends Model{
 
         return new Promise((resolve, reject)=>{
 
-            Message.upload(file).then((downloadURL)=>{
+            Message.upload(file, from).then((downloadURL)=>{
                 Message.send(
                     chatId,
                     from,
