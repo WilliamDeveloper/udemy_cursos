@@ -288,13 +288,21 @@ export class Message extends Model{
     }
 
     static send(chatId, from, type, content){
-        return Message.getRef(chatId).add({
-            content,
-            timeStamp : new Date(),
-            status: 'wait',
-            type,
-            from
+
+        return new Promise((resolve, reject)=>{
+            Message.getRef(chatId).add({
+                content,
+                timeStamp : new Date(),
+                status: 'wait',
+                type,
+                from
+            }).then( result=>{
+                result.parent.doc(result.id).set({
+                    status:'sent'
+                },{merge:true}).then(()=>{resolve()})
+            })
         })
+
     }
 
     static getRef(chatId){
