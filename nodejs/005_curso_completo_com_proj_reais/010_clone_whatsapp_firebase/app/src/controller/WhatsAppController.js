@@ -186,9 +186,9 @@ export default class WhatsAppController{
             display: 'flex'
         })
 
-        Message.getRef(this._contactAtive.chatId).orderBy('timeStamp').onSnapshot(docs=>{
+        this.el.panelMessagesContainer.innerHTML = ''
 
-            this.el.panelMessagesContainer.innerHTML = ''
+        Message.getRef(this._contactAtive.chatId).orderBy('timeStamp').onSnapshot(docs=>{
 
             let scrollTop = this.el.panelMessagesContainer.scrollTop
             let scrollTopMax = (this.el.panelMessagesContainer.scrollHeight - this.el.panelMessagesContainer.offsetHeight)
