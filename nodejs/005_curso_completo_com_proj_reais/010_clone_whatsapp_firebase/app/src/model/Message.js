@@ -60,7 +60,7 @@ export class Message extends Model{
                                     </div>
                                     <div class="_3a5-b">
                                         <div class="_1DZAH" role="button">
-                                            <span class="message-time">17:01</span>
+                                            <span class="message-time">${Format.timeStampToTime(this.timeStamp)}</span>
                                             
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@ export class Message extends Model{
                                     </div>
                                     <div class="_2TvOE">
                                         <div class="_1DZAH text-white" role="button">
-                                            <span class="message-time">17:22</span>
+                                            <span class="message-time">${Format.timeStampToTime(this.timeStamp)}</span>
                                            
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@ export class Message extends Model{
                             </div>
                             <div class="_3Lj_s">
                                 <div class="_1DZAH" role="button">
-                                    <span class="message-time">18:56</span>
+                                    <span class="message-time">${Format.timeStampToTime(this.timeStamp)}</span>
                                     
                                 </div>
                             </div>
@@ -234,7 +234,7 @@ export class Message extends Model{
                                     </div>
                                     <div class="_27K_5">
                                         <div class="_1DZAH" role="button">
-                                            <span class="message-time">17:48</span>
+                                            <span class="message-time">${Format.timeStampToTime(this.timeStamp)}</span>
                                             
                                         </div>
                                     </div>
