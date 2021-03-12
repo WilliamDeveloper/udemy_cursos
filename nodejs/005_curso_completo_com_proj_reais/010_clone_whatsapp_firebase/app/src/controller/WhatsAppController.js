@@ -669,6 +669,17 @@ export default class WhatsAppController{
 
         this.el.btnFinishMicrophone.on('click', e=>{
             console.log('btnFinishMicrophone')
+
+            this._microphoneController.on('recorded', (file, metadata)=>{
+                Message.sendAudio(
+                    this._contactAtive.chatId,
+                    this._user.email,
+                    file,
+                    metadata,
+                    this._user.photo
+                )
+            })
+
             this._microphoneController.stoptRecorder()
             this.closeRecordMicrophone()
         })
