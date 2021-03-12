@@ -464,6 +464,16 @@ export default class WhatsAppController{
                     .then(file=>{
                         Message.sendImage(this._contactAtive.chatId, this._user.email, file)
                         this.el.btnSendPicture.disabled = true
+
+                        this.closeAllMainPanel()
+                        this._camera.stop()
+                        this.el.btnReshootPanelCamera.hide()
+                        this.el.pictureCamera.hide()
+                        this.el.videoCamera.show()
+                        this.el.containerSendPicture.hide()
+                        this.el.containerTakePicture.show()
+                        this.el.panelMessagesContainer.show()
+
                     })
             }
 
