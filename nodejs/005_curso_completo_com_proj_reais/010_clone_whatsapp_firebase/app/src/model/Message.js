@@ -309,7 +309,7 @@ export class Message extends Model{
 
         div.className = 'message-status'
 
-        switch (status) {
+        switch (this.status) {
             case 'wait':
                 div.innerHTML = `                
                     <span data-icon="msg-time">
