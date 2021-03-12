@@ -203,19 +203,26 @@ export default class WhatsAppController{
                 let message = new Message()
                 message.fromJSON(data)
 
+                let me = (data.from === this._user.email)
 
                 if(!this.el.panelMessagesContainer.querySelector('#_'+data.id)){
 
                     console.log(scrollTop, scrollTopMax)
 
-                    let me = (data.from === this._user.email)
+                    if(!me){
+                        doc.ref.set({
+                            status: 'read'
+                        },{
+                            merge:true
+                        })
+                    }
 
                     let view = message.getViewElement(me)
 
                     this.el.panelMessagesContainer.appendChild(view)
 
 
-                }else{
+                }else if(me){
                     let msgEl = this.el.panelMessagesContainer.querySelector('#_'+data.id)
                     msgEl.querySelector(".message-status").innerHTML = message.getStatusViewElement().outerHTML
                 }
