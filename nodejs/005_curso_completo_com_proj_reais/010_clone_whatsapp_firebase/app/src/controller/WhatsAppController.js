@@ -433,6 +433,11 @@ export default class WhatsAppController{
         this.el.btnSendPicture.on('click', e=>{
             console.log('btnSendPicture')
             console.log('this.el.pictureCamera ', this.el.pictureCamera.src)
+
+            let regex = /^data:(.+);base64,(.*)$/
+
+            let result =  this.el.pictureCamera.src.match(regex)
+            console.log('result ',result)
         })
 
 
