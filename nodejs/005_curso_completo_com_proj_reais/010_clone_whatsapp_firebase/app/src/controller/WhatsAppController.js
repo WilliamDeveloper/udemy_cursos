@@ -192,7 +192,9 @@ export default class WhatsAppController{
 
             let scrollTop = this.el.panelMessagesContainer.scrollTop
             let scrollTopMax = (this.el.panelMessagesContainer.scrollHeight - this.el.panelMessagesContainer.offsetHeight)
-            let autoScroll = (scrollTop >= scrollTopMax)
+
+            // let autoScroll = (scrollTop >= scrollTopMax)
+            let autoScroll = (scrollTop >= (scrollTopMax - 1))
 
             docs.forEach(doc =>{
                 let data = doc.data()
