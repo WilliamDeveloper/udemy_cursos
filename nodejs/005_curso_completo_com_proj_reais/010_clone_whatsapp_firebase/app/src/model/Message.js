@@ -122,8 +122,15 @@ export class Message extends Model{
                             </div>
                         </div>
                 `
+
                 div.querySelector('.message-photo').on('load', e=>{
                     console.log('message-photo-load-ok')
+                    div.querySelector('.message-photo').show()
+                    div.querySelector('._34Olu').hide()
+                    div.querySelector('._3v3PK').css({
+                        height: 'auto'
+                    })
+
                 })
 
             break
