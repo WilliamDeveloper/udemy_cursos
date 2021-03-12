@@ -443,6 +443,10 @@ export class Message extends Model{
         return Message.send(chatId, from, 'contact', contact)
     }
 
+    static sendAudio(chatId, from, file,metadata,photo){
+        return Message.send(chatId,from, 'audio', '')
+    }
+
     static sendDocument(chatId, from, file, filePreview, info){
 
         Message.send(chatId,from,'document','').then( msgRef =>{
