@@ -96,7 +96,7 @@ export class Message extends Model{
                                                 </div>
                                             </div>
                                         </div>
-                                        <img src="#" class="_1JVSX message-photo" style="width: 100%; display:none">
+                                        <img src="${this.content}" class="_1JVSX message-photo" style="width: 100%; display:none">
                                         <div class="_1i3Za"></div>
                                     </div>
                                     <div class="message-container-legend">
@@ -122,6 +122,10 @@ export class Message extends Model{
                             </div>
                         </div>
                 `
+                div.querySelector('.message-photo').on('load', e=>{
+                    console.log('message-photo-load-ok')
+                })
+
             break
 
             case 'document':
@@ -361,5 +365,33 @@ export class Message extends Model{
         }
         
         return div
+    }
+
+    sendImage(chatId,from, file){
+
+        return new Promise((resolve, reject)=>{
+            let uploadTask = Firebase.hd().ref(from).child(Date.now()+'_'+file.file.name).put(file)
+            uploadTask.on('state_change',
+                (e)=>{
+                    console.info('state_change ',e)
+                },
+                (error)=>{
+                    console.log('state_change error ', error)
+                    reject(error)
+                },
+                ()=>{
+                    console.log('state_change  sucess')
+                    Message.send(
+                        chatId,
+                        from,
+                        'image',
+                        uploadTask.snapshot.downloadURL
+                    ).then(()=>{
+                        resolve()
+                    })
+                }
+            )
+        })
+
     }
 }
