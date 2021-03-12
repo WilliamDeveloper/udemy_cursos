@@ -433,11 +433,23 @@ export default class WhatsAppController{
         this.el.btnSendPicture.on('click', e=>{
             console.log('btnSendPicture')
             console.log('this.el.pictureCamera ', this.el.pictureCamera.src)
+            this.el.btnSendPicture.disabled = true
 
             let regex = /^data:(.+);base64,(.*)$/
 
             let result =  this.el.pictureCamera.src.match(regex)
             console.log('result ',result)
+            let mimeType = result[1]
+            let ext = mimeType.split('/')[1]
+            let filename = `camera${Date.now()}.${ext}`
+
+            fetch(this.el.pictureCamera.src)
+                .then( res=>{ return res.arrayBuffer() })
+                .then(buffer=>{ return new File([buffer], filename, {type:mimeType})})
+                .then(file=>{
+                    Message.sendImage(this._contactAtive.chatId, this._user.email, file)
+                    this.el.btnSendPicture.disabled = true
+                })
         })
 
 
