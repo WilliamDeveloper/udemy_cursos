@@ -421,17 +421,33 @@ export class Message extends Model{
 
     }
 
-    static sendDocument(chatId, from, file, filePreview){
+    static sendDocument(chatId, from, file, filePreview, info){
 
         Message.send(chatId,from,'document','').then( msgRef =>{
 
                 Message.upload(file,from).then((downloadFileURL)=>{
 
-                    Message.upload(filePreview, from).then((downloadFilePreviewURL)=>{
+                    if(filePreview){
+                        Message.upload(filePreview, from).then((downloadFilePreviewURL)=>{
+
+                            msgRef.set({
+                                content: downloadFileURL,
+                                preview: downloadFilePreviewURL,
+                                filename : file.name,
+                                size: file.size,
+                                fileType: file.type,
+                                status: 'sent',
+                                info:info
+                            }, {
+                                merge: true
+                            })
+
+                        })
+                    }else{
+
 
                         msgRef.set({
                             content: downloadFileURL,
-                            preview: downloadFilePreviewURL,
                             filename : file.name,
                             size: file.size,
                             fileType: file.type,
@@ -440,8 +456,8 @@ export class Message extends Model{
                             merge: true
                         })
 
-                    })
 
+                    }
                 })
 
         })
