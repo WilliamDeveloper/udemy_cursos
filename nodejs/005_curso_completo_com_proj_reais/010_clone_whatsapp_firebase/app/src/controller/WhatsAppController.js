@@ -189,16 +189,17 @@ export default class WhatsAppController{
         Message.getRef(this._contactAtive.chatId).orderBy('timeStamp').onSnapshot(docs=>{
 
             this.el.panelMessagesContainer.innerHTML = ''
+
+            let scrollTop = this.el.panelMessagesContainer.scrollTop
+            let scrollTopMax = (this.el.panelMessagesContainer.scrollHeight - this.el.panelMessagesContainer.offsetHeight)
+            let autoScroll = (scrollTop >= scrollTopMax)
+
             docs.forEach(doc =>{
                 let data = doc.data()
                 data.id = doc.id
 
 
                 if(!this.el.panelMessagesContainer.querySelector('#_'+data.id)){
-
-                    let scrollTop = this.el.panelMessagesContainer.scrollTop
-                    let scrollTopMax = (this.el.panelMessagesContainer.scrollHeight - this.el.panelMessagesContainer.offsetHeight)
-                    let autoScroll = (scrollTop >= scrollTopMax)
 
                     console.log(scrollTop, scrollTopMax)
 
@@ -211,13 +212,17 @@ export default class WhatsAppController{
 
                     this.el.panelMessagesContainer.appendChild(view)
 
-                    if(autoScroll){
-                        this.el.panelMessagesContainer.scrollTop = (this.el.panelMessagesContainer.scrollHeight - this.el.panelMessagesContainer.offsetHeight)
-                    }
+
                 }
 
 
             })
+
+            if(autoScroll){
+                this.el.panelMessagesContainer.scrollTop = (this.el.panelMessagesContainer.scrollHeight - this.el.panelMessagesContainer.offsetHeight)
+            }else{
+                this.el.panelMessagesContainer.scrollTop = scrollTop
+            }
         })
     }
 
