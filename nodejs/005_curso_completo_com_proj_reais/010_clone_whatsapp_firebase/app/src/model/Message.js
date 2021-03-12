@@ -195,6 +195,9 @@ export class Message extends Model{
                         </div>
                     </div>
                 `
+                div.on('click', e=>{
+                    window.open(this.content)
+                })
             break
 
             case 'audio':
