@@ -41,6 +41,14 @@ export class Message extends Model{
     get from(){ return this._data.from }
     set from(value){ this._data.from = value }
 
+
+    get photo(){ return this._data.photo }
+    set photo(value){ this._data.photo = value }
+
+
+    get duration(){ return this._data.duration }
+    set duration(value){ this._data.duration = value }
+
     getViewElement(me=true){
 
         console.log('getViewElement ', me)
