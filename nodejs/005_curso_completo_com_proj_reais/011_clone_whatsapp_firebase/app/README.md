@@ -42,8 +42,11 @@ npm install --save firebase-tools@3.18.4
 
 
 
-
-
+npx firebase login 
+-> permitir
+-> Y
+npx firebase init functions
+-> Y
 
 --- ---------------------------------------------------
 - rodar aplicacao
