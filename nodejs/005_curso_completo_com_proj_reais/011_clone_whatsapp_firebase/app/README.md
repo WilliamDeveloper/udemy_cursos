@@ -48,6 +48,9 @@ npm install --save firebase-tools@3.18.4
 npx firebase init functions
 -> Y
 
+
+firebase deploy --only functions
+
 --- ---------------------------------------------------
 - rodar aplicacao
 --- ---------------------------------------------------
