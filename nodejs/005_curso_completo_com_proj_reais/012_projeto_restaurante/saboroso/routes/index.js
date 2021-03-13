@@ -40,7 +40,23 @@ router.get('/menus', function(req, res, next) {
     background : 'images/img_bg_1.jpg',
     h1: 'Saboreie nosso menuuu!!'
   }
-  res.render('menus', params )
+
+  conn.query(
+      `
+    select * from tb_menus order by title
+  `,
+      (error, results)=>{
+        if(error){
+          res.json(error)
+        }else{
+
+          params.title = 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will'
+          params.menus =  results
+
+          res.render('menus', params);
+        }
+      })
+
 })
 
 router.get('/reservations', function(req, res, next) {
