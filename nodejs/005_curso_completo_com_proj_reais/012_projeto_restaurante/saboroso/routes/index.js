@@ -28,7 +28,8 @@ router.get('/contacts', function(req, res, next) {
 
   let params ={
     title: `Contato - Restaurante Saboroso`,
-    background : 'images/img_bg_3.jpg'
+    background : 'images/img_bg_3.jpg',
+    h1: 'Diga um oii'
   }
   res.render('contacts', params)
 })
