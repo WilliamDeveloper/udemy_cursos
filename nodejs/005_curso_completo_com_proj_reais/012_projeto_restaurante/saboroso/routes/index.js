@@ -29,7 +29,7 @@ router.get('/contacts', function(req, res, next) {
   let params ={
     title: `Contato - Restaurante Saboroso`,
     background : 'images/img_bg_3.jpg',
-    h1: 'Diga um oii'
+    h1: 'Diga um oii!'
   }
   res.render('contacts', params)
 })
@@ -37,8 +37,8 @@ router.get('/contacts', function(req, res, next) {
 router.get('/menus', function(req, res, next) {
   let params = {
     title: `Menus - Restaurante Saboroso`,
-    background : 'images/img_bg_3.jpg',
-    h1: 'Diga um oii'
+    background : 'images/img_bg_1.jpg',
+    h1: 'Saboreie nosso menuuu!!'
   }
   res.render('menus', params )
 })
