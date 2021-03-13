@@ -3,6 +3,7 @@
 npm install -g express-generator
 
 express --ejs saboroso
+copy on public template
 
 
 # subir o projeto no windows
