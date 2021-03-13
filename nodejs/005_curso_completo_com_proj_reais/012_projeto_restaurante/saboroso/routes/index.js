@@ -37,7 +37,8 @@ router.get('/contacts', function(req, res, next) {
 router.get('/menus', function(req, res, next) {
   let params = {
     title: `Menus - Restaurante Saboroso`,
-    background : ''
+    background : 'images/img_bg_3.jpg',
+    h1: 'Diga um oii'
   }
   res.render('menus', params )
 })
@@ -45,7 +46,8 @@ router.get('/menus', function(req, res, next) {
 router.get('/reservations', function(req, res, next) {
   let params = {
     title: `Reservas - Restaurante Saboroso`,
-    background : ''
+    background : 'images/img_bg_3.jpg',
+    h1: 'Diga um oii'
   }
   res.render('reservations', params )
 })
@@ -53,7 +55,8 @@ router.get('/reservations', function(req, res, next) {
 router.get('/services', function(req, res, next) {
   let params = {
     title: `Serviços - Restaurante Saboroso`,
-    background : ''
+    background : 'images/img_bg_3.jpg',
+    h1: 'Diga um oii'
   }
   res.render('services', params )
 })
