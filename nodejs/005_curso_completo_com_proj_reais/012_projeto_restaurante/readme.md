@@ -11,5 +11,6 @@ set DEBUG=saboroso:* & npm start
 
 npm install
 
+npm install -g bower  
 cd saboroso/public/admin 
 bower install
