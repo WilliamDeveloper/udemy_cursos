@@ -46,8 +46,8 @@ router.get('/menus', function(req, res, next) {
 router.get('/reservations', function(req, res, next) {
   let params = {
     title: `Reservas - Restaurante Saboroso`,
-    background : 'images/img_bg_3.jpg',
-    h1: 'Diga um oii'
+    background : 'images/img_bg_2.jpg',
+    h1: 'Reserve uma Mesa!'
   }
   res.render('reservations', params )
 })
