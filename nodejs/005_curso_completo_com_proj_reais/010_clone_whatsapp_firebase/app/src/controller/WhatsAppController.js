@@ -343,7 +343,9 @@ export default class WhatsAppController{
 
                 Upload.send(file, this._user.email ).then((downloadURLPhotoProfile)=>{
                     this._user.photo = downloadURLPhotoProfile
-                    this._user.save()
+                    this._user.save().then(()=>{
+                        this.el.btnClosePanelEditProfile.click()
+                    })
 
                 })
 
