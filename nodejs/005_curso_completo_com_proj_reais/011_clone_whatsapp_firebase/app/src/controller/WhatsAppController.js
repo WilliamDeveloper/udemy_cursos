@@ -43,7 +43,8 @@ export default class WhatsAppController{
     }
 
     notification(data){
-        if(Notification.permission !== 'granted'){
+        console.log('notification ',data, Notification.permission)
+        if(Notification.permission === 'granted'){
             let n = new Notification(this._contactAtive.name,{
                 icon:this._contactAtive.photo,
                 body:data.content
@@ -224,6 +225,7 @@ export default class WhatsAppController{
 
         this.el.panelMessagesContainer.innerHTML = ''
 
+        this._messagesReceived = []
         Message.getRef(this._contactAtive.chatId).orderBy('timeStamp').onSnapshot(docs=>{
 
             let scrollTop = this.el.panelMessagesContainer.scrollTop
@@ -232,7 +234,7 @@ export default class WhatsAppController{
             // let autoScroll = (scrollTop >= scrollTopMax)
             let autoScroll = (scrollTop >= (scrollTopMax - 1))
 
-            this._messagesReceived = []
+
 
             docs.forEach(doc =>{
                 let data = doc.data()
@@ -244,8 +246,9 @@ export default class WhatsAppController{
 
                 let me = (data.from === this._user.email)
 
+                console.log('me ',me, this._messagesReceived,data.id, this._messagesReceived.filter( id=> {return (id === data.id)}).length)
 
-                if(!me && this._messagesReceived.filter( id=> {return (id === data.id)}).length === 0){
+                if(!me && this._messagesReceived.filter( id=> {return (id === data.id)}).length == 0){
                     this.notification(data)
                     this._messagesReceived.push(data.id)
                 }
