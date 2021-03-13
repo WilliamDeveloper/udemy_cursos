@@ -51,6 +51,10 @@ export default class WhatsAppController{
                 body:data.content
             })
 
+            let sound = new Audio('./../../audio/alert.mp3')
+            sound.currentTime = 0
+            sound.play()
+
             setTimeout( ()=>{
                 if(n) n.close()
             }, 3*1000)
