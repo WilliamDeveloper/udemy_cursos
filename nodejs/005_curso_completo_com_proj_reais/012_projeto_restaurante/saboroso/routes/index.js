@@ -25,19 +25,20 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/contacts', function(req, res, next) {
-  res.render('contacts')
+
+  res.render('contacts', { title: `Contato - Restaurante Saboroso`})
 })
 
 router.get('/menus', function(req, res, next) {
-  res.render('menus')
+  res.render('menus', { title: `Contato - Restaurante Saboroso`})
 })
 
 router.get('/reservations', function(req, res, next) {
-  res.render('reservations')
+  res.render('reservations', { title: `Contato - Restaurante Saboroso`})
 })
 
 router.get('/services', function(req, res, next) {
-  res.render('services')
+  res.render('services', { title: `Contato - Restaurante Saboroso`})
 })
 
 module.exports = router;
