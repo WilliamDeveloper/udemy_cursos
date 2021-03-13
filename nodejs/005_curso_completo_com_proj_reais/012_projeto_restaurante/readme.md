@@ -15,6 +15,9 @@ npm install -g bower
 cd saboroso/public/admin 
 bower install
 
+-- mysql
+npm install --save mysql2
+
 
 ------------------------------------------
 - acesso mysql - laragon
