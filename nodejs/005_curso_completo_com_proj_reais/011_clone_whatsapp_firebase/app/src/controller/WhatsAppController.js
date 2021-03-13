@@ -232,6 +232,8 @@ export default class WhatsAppController{
             // let autoScroll = (scrollTop >= scrollTopMax)
             let autoScroll = (scrollTop >= (scrollTopMax - 1))
 
+            this._messagesReceived = []
+
             docs.forEach(doc =>{
                 let data = doc.data()
                 data.id = doc.id
@@ -239,7 +241,15 @@ export default class WhatsAppController{
                 let message = new Message()
                 message.fromJSON(data)
 
+
                 let me = (data.from === this._user.email)
+
+
+                if(!me && this._messagesReceived.filter( id=> {return (id === data.id)}).length === 0){
+                    this.notification(data)
+                    this._messagesReceived.push(data.id)
+                }
+
                 let view = message.getViewElement(me)
 
                 if(!this.el.panelMessagesContainer.querySelector('#_'+data.id)){
