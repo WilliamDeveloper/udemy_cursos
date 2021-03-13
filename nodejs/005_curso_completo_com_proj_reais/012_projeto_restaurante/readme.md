@@ -18,6 +18,9 @@ bower install
 -- mysql
 npm install --save mysql2
 
+-- ejs
+https://ejs.co/
+
 
 ------------------------------------------
 - acesso mysql - laragon
