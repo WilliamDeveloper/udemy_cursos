@@ -14,14 +14,14 @@ router.get('/', function(req, res, next) {
     if(error){
       res.json(error)
     }else{
-
+      res.render('index', {
+        title: 'Restaurante Saborosoo!',
+        menus: results
+      });
     }
   })
 
-  res.render('index', {
-    title: 'Restaurante Saborosoo!',
-    menus: results
-  });
+
 });
 
 module.exports = router;
