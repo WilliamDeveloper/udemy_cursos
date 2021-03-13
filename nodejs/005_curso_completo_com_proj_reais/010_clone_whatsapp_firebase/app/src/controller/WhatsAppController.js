@@ -336,6 +336,10 @@ export default class WhatsAppController{
             this.el.inputProfilePhoto.click()
         })
 
+        this.el.inputProfilePhoto.on('change', e=>{
+            
+        })
+
         this.el.inputNamePanelEditProfile.on('keypress', e=>{
             if(e.key === 'Enter'){
                 e.preventDefault()
