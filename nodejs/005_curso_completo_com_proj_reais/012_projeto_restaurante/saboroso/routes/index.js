@@ -55,8 +55,8 @@ router.get('/reservations', function(req, res, next) {
 router.get('/services', function(req, res, next) {
   let params = {
     title: `Serviços - Restaurante Saboroso`,
-    background : 'images/img_bg_3.jpg',
-    h1: 'Diga um oii'
+    background : 'images/img_bg_1.jpg',
+    h1: 'É um prazer poder servir!'
   }
   res.render('services', params )
 })
