@@ -45,7 +45,7 @@ export default class WhatsAppController{
 
     notification(data){
         console.log('notification ',data, Notification.permission)
-        if(Notification.permission === 'granted'){
+        if(Notification.permission === 'granted' && !this._active){
             let n = new Notification(this._contactAtive.name,{
                 icon:this._contactAtive.photo,
                 body:data.content
