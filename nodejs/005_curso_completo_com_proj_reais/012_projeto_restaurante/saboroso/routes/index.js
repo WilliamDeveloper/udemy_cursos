@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
       res.json(error)
     }else{
       res.render('index', {
-        title: 'Restaurante Saborosoo!',
+        title: 'Restaurante Saborosoo! - FALA AI LUCAS!! by Will',
         menus: results
       });
     }
