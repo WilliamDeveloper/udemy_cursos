@@ -15,6 +15,7 @@ export default class WhatsAppController{
     constructor(){
         console.log('class WhatsAppController ok')
 
+        this._active = true
         this._firebase = new Firebase()
         this.initAut()
         // elementsPrototype()
@@ -341,6 +342,16 @@ export default class WhatsAppController{
     }
 
     initEvents(){
+
+        window.addEventListener('focus',e=>{
+            console.log('window-focus-')
+            this._active = true
+        })
+
+        window.addEventListener('blur',e=>{
+            console.log('window-blur-')
+            this._active = false
+        })
 
         this.el.inputSearchContacts.on('keyup',e=>{
             if( this.el.inputSearchContacts.value.length > 0){
