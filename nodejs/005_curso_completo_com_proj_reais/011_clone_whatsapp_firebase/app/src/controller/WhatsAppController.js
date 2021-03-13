@@ -42,6 +42,19 @@ export default class WhatsAppController{
         }
     }
 
+    notification(data){
+        if(Notification.permission !== 'granted'){
+            let n = new Notification(this._contactAtive.name,{
+                icon:this._contactAtive.photo,
+                body:data.content
+            })
+
+            setTimeout( ()=>{
+                if(n) n.close()
+            }, 3*1000)
+        }
+    }
+
     initAut(){
         this._firebase.initAuth().then(response=>{
             console.log('_firebase.initAuth ',response)
