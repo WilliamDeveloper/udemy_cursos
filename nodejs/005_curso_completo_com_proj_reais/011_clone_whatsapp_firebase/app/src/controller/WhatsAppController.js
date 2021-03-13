@@ -20,6 +20,26 @@ export default class WhatsAppController{
         // elementsPrototype()
         this.loadElements()
         this.initEvents()
+        this.checkNotifications()
+    }
+    checkNotifications(){
+        if(typeof Notification === 'function'){
+            if(Notification.permission !== 'granted'){
+                this.el.alertNotificationPermission.show()
+            }else{
+                this.el.alertNotificationPermission.hide()
+            }
+
+            this.el.alertNotificationPermission.on('click',e=>{
+                Notification.requestPermission(permission => {
+                    if(permission === 'granted'){
+                        this.el.alertNotificationPermission.hide()
+                        console.log('notificacao permitida')
+                    }
+                })
+            })
+
+        }
     }
 
     initAut(){
