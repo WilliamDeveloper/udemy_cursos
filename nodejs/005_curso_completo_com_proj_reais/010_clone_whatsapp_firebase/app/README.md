@@ -36,6 +36,9 @@ npm install --save pdfjs-dist@2.0.489
 - firebase
 npm install --save firebase@4.13.1
 
+- firebase - tools
+npm install --save npx
+npm install --save firebase-tools@3.18.4
 
 
 
