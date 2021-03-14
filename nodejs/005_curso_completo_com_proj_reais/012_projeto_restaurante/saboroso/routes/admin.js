@@ -11,4 +11,51 @@ router.get('/', function(req, res, next) {
     res.render('admin/index', params)
 })
 
+
+router.get('/login', function(req, res, next) {
+    let params ={
+
+    }
+    res.render('admin/login', params)
+})
+
+router.get('/contacts', function(req, res, next) {
+    let params ={
+
+    }
+    res.render('admin/contacts', params)
+})
+
+
+router.get('/emails', function(req, res, next) {
+    let params ={
+
+    }
+    res.render('admin/emails', params)
+})
+
+router.get('/menus', function(req, res, next) {
+    let params ={
+
+    }
+    res.render('admin/menus', params)
+})
+
+router.get('/reservations', function(req, res, next) {
+    let params ={
+
+    }
+    res.render('admin/reservations', params)
+})
+
+
+router.get('/users', function(req, res, next) {
+    let params ={
+
+    }
+    res.render('admin/users', params)
+})
+
+
+
 module.exports = router
