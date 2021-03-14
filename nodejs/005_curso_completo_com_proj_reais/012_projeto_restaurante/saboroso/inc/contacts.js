@@ -22,7 +22,7 @@ module.exports ={
             conn.query(
                 `
                 insert 
-                into tb_reservations (name, email, message) 
+                into tb_contacts (name, email, message) 
                 values (?,?,?)
             `,
                 [
