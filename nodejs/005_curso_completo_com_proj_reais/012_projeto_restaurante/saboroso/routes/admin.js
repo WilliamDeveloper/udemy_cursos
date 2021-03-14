@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var conn = require('./../inc/db-mysql')
+var users = require('./../inc/users')
 var menus = require('./../inc/menus')
 
 router.get('/', function(req, res, next) {
@@ -16,20 +17,20 @@ router.get('/login', function(req, res, next) {
 
 
 
-    let params ={
-
-    }
-    res.render('admin/login', params)
+    users.render(req,res)
 })
 
 router.post('/login', function(req, res, next) {
 
-
-
-    let params ={
-
+    if(!req.body.email){ users.render(req,res, "digite um email")}
+    else if(!req.body.password){ users.render(req,res, "digite um password")}
+    else {
+        req.body= {}
+        users.render(req,res)
     }
-    res.render('admin/login', params)
+
+
+
 })
 
 router.get('/login_teste_session', function(req, res, next) {
