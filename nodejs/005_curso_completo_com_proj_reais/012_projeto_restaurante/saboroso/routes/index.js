@@ -7,8 +7,8 @@ var menus = require('./../inc/menus')
 router.get('/', function(req, res, next) {
 
   let params =  {
-    title: 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will',
-    isHome: true
+    isHome: true,
+    title: 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will'
   }
 
   menus.getMenus().then(results=>{
