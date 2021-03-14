@@ -55,7 +55,13 @@ router.post('/reservations', function(req, res, next) {
   else if(!req.body.date){reservations.render(req,res, "digite o nome")}
   else if(!req.body.time) {reservations.render(req,res, "digite o nome")}
   else{
-    res.json(req.body)
+    // res.json(req.body)
+    reservations.save(req.body).then(results=>{
+      res.json(results)
+    }).catch(error=>{
+      res.json(error)
+    })
+
   }
 
 
