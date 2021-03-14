@@ -2,12 +2,13 @@ var conn = require('./db-mysql')
 
 module.exports ={
 
-    render(req,res,error){
+    render(req,res,error, success){
         let params = {
             title: `Reservas - Restaurante Saboroso`,
             background : 'images/img_bg_2.jpg',
             h1: 'Reserve uma Mesa!',
-            error
+            error,
+            success
         }
         res.render('reservations', params )
     },
