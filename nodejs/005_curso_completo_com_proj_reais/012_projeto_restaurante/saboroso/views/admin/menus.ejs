@@ -39,7 +39,7 @@
               <tbody>
 
               <% data.forEach( (row)=>{ %>
-                <tr>
+                <tr data-row="<%= JSON.stringify(row)%>">
                   <td><%= row.id %></td>
                   <td><img src="/<%= row.photo %>" alt="" style="height: 18px;"></td>
                   <td><%= row.title %></td>
