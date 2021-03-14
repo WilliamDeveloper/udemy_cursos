@@ -37,8 +37,11 @@ router.get('/logout', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
     let params ={
-        menus: req.menus
+        // menus: req.menus,
+        // user: req.session.user,
     }
+
+    params =  admin.getParams(req, params)
     res.render('admin/index', params)
 })
 
@@ -91,39 +94,50 @@ router.get('/login_teste_session', function(req, res, next) {
 
 router.get('/contacts', function(req, res, next) {
     let params ={
-        menus: req.menus
+        // menus: req.menus,
+        // user: req.session.user,
     }
+    params =  admin.getParams(req, params)
     res.render('admin/contacts', params)
 })
 
 
 router.get('/emails', function(req, res, next) {
     let params ={
-        menus: req.menus
+        // menus: req.menus,
+        // user: req.session.user,
     }
+
+    params =  admin.getParams(req, params)
     res.render('admin/emails', params)
 })
 
 router.get('/menus', function(req, res, next) {
     let params ={
-        menus: req.menus
+        // menus: req.menus,
+        // user: req.session.user,
     }
+    params =  admin.getParams(req, params)
     res.render('admin/menus', params)
 })
 
 router.get('/reservations', function(req, res, next) {
     let params ={
-        menus: req.menus,
+        // menus: req.menus,
+        // user: req.session.user,
         date : {},
     }
+    params =  admin.getParams(req, params)
     res.render('admin/reservations', params)
 })
 
 
 router.get('/users', function(req, res, next) {
     let params ={
-        menus: req.menus
+        // menus: req.menus,
+        // user: req.session.user,
     }
+    params =  admin.getParams(req, params)
     res.render('admin/users', params)
 })
 

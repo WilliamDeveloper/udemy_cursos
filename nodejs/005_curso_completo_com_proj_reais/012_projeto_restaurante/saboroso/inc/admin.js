@@ -4,6 +4,13 @@ module.exports ={
 
 
 
+    getParams(req, params){
+        return Object.assign({},{
+            menus: req.menus,
+            user: req.session.user
+        }, params)
+    },
+
     render(req,res,error, success){
         let params ={
             body : req.body,
