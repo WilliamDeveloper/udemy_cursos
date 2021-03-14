@@ -10,7 +10,8 @@ var menus = require('./../inc/menus')
 router.use((req,res,next)=>{
     console.log('middleware: ', req.url)
 
-    if(!req.session.user){
+    let isNotRouteExcession = ['/login'].indexOf(req.url) === -1
+    if( isNotRouteExcession && !req.session.user){
         res.redirect('/admin/login')
     }else{
         next()
