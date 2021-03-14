@@ -22,7 +22,7 @@ router.use((req,res,next)=>{
 })
 
 router.use((req,res,next)=>{
-    req.menus = admin.getMenus()
+    req.menus = admin.getMenus(req)
     next()
 })
 

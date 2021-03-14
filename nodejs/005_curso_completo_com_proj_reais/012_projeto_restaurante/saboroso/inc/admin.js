@@ -13,8 +13,8 @@ module.exports ={
         res.render('admin/login', params)
     },
 
-    getMenus(){
-       return [
+    getMenus(req){
+       let menus =  [
            {
                text : 'Tela Inicial',
                href:"/admin",
@@ -52,6 +52,16 @@ module.exports ={
                active: false
            },
        ]
+
+        menus.map(menu=> {
+            console.log('blau',  menu , req.url)
+            if(menu.href == `/admin${req.url}`){
+                console.log('pimba')
+                menu.active = true
+            }
+        })
+
+        return menus
     },
 
 }
