@@ -6,11 +6,13 @@ var menus = require('./../inc/menus')
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
+  let params =  {
+    title: 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will',
+  }
+
   menus.getMenus().then(results=>{
-    res.render('index', {
-      title: 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will',
-      menus: results
-    });
+    params.menus= results
+    res.render('index', params);
   })
 
 });
@@ -33,9 +35,7 @@ router.get('/menus', function(req, res, next) {
   }
 
   menus.getMenus().then(results=>{
-    params.title = 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will'
     params.menus =  results
-
     res.render('menus', params);
   })
 
