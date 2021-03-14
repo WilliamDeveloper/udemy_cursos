@@ -29,7 +29,7 @@ module.exports ={
                     fields.title,
                     fields.description,
                     fields.price,
-                    fields.photo
+                    `ìmages/${files.photo.name}`
                 ],
                 (error, results)=>{
                     if(error){
