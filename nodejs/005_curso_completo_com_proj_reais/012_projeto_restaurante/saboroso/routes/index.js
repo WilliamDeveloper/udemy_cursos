@@ -1,26 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var conn = require('./../inc/db-mysql')
+var menus = require('./../inc/menus')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-
-  conn.query(
-      `
-    select * from tb_menus order by title
-  `,
-  (error, results)=>{
-    if(error){
-      res.json(error)
-    }else{
-      res.render('index', {
-        title: 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will',
-        menus: results
-      });
-    }
+  menus.getMenus().then(results=>{
+    res.render('index', {
+      title: 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will',
+      menus: results
+    });
   })
-
 
 });
 
@@ -41,21 +32,12 @@ router.get('/menus', function(req, res, next) {
     h1: 'Saboreie nosso menuuu!!'
   }
 
-  conn.query(
-      `
-    select * from tb_menus order by title
-  `,
-      (error, results)=>{
-        if(error){
-          res.json(error)
-        }else{
+  menus.getMenus().then(results=>{
+    params.title = 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will'
+    params.menus =  results
 
-          params.title = 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will'
-          params.menus =  results
-
-          res.render('menus', params);
-        }
-      })
+    res.render('menus', params);
+  })
 
 })
 
