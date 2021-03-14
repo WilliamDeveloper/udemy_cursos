@@ -124,8 +124,13 @@ router.get('/menus', function(req, res, next) {
         // menus: req.menus,
         // user: req.session.user,
     }
-    params =  admin.getParams(req, params)
-    res.render('admin/menus', params)
+
+    menus.getMenus().then(data=>{
+        params.data = data
+        params =  admin.getParams(req, params)
+        res.render('admin/menus', params)
+    })
+
 })
 
 router.get('/reservations', function(req, res, next) {
