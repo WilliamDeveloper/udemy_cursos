@@ -51,6 +51,10 @@ router.get('/reservations', function(req, res, next) {
   res.render('reservations', params )
 })
 
+router.post('/reservations', function(req, res, next) {
+  res.json(req.body)
+})
+
 router.get('/services', function(req, res, next) {
   let params = {
     title: `Serviços - Restaurante Saboroso`,
