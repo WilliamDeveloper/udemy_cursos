@@ -45,7 +45,7 @@ https://ejs.co/
 -- express-session
 npm install --save express-session
 
-- express-session + redis
+- express-session + redis(3.2.100)
 - https://github.com/MicrosoftArchive/redis
 npm install --save connect-redis
 
