@@ -42,6 +42,12 @@ npm install --save mysql2
 -- ejs
 https://ejs.co/
 
+-- express-session
+npm install --save express-session
+
+-- express-session + redis
+npm install --save connect-redis
+
 
 
 
