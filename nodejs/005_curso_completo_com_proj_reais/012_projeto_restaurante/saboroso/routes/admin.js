@@ -119,6 +119,17 @@ router.get('/emails', function(req, res, next) {
     res.render('admin/emails', params)
 })
 
+
+router.post('/menus', function(req, res, next) {
+    let params ={
+        // menus: req.menus,
+        // user: req.session.user,
+    }
+
+    res.send(req.body)
+
+})
+
 router.get('/menus', function(req, res, next) {
     let params ={
         // menus: req.menus,
