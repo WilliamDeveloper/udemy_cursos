@@ -16,5 +16,28 @@ module.exports ={
                     }
                 })
         })
+    },
+
+    save(fields, files){
+        return new Promise( (resolve, reject)=>{
+            conn.query(
+                `
+                    insert into tb_menus (title, description, price, photo)
+                    values (?,?,?,?)
+                `,
+                [
+                    fields.title,
+                    fields.description,
+                    fields.price,
+                    fields.photo
+                ],
+                (error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                })
+        })
     }
 }
