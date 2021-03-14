@@ -43,7 +43,7 @@ router.get('/menus', function(req, res, next) {
 
 router.get('/reservations', function(req, res, next) {
     let params ={
-
+        date : {}
     }
     res.render('admin/reservations', params)
 })
