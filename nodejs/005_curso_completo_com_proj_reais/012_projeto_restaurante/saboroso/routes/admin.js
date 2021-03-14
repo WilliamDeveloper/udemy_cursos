@@ -14,11 +14,17 @@ router.get('/', function(req, res, next) {
 
 router.get('/login', function(req, res, next) {
 
-    if(!req.session.views){
-        req.session.views =  0
-    }
 
-    console.log('session ', req.session.views++)
+
+    let params ={
+
+    }
+    res.render('admin/login', params)
+})
+
+router.post('/login', function(req, res, next) {
+
+
 
     let params ={
 
