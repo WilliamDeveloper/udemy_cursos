@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 
   let params =  {
     title: 'Restaurante Saborosoo! - FALA AI Donofrio, Lucas, Fabiano e Joedes da Verde !! by Will',
+    isHome: true
   }
 
   menus.getMenus().then(results=>{
