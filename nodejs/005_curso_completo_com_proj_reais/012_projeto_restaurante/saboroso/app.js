@@ -17,7 +17,6 @@ let redisClient = redis.createClient()
 
 
 
-
 var adminRouter = require('./routes/admin');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

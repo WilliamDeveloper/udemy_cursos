@@ -5,6 +5,21 @@ var conn = require('./../inc/db-mysql')
 var users = require('./../inc/users')
 var menus = require('./../inc/menus')
 
+
+
+router.use((req,res,next)=>{
+    console.log('middleware: ', req.url)
+
+    if(!req.session.user){
+        res.redirect('/admin/login')
+    }else{
+        next()
+    }
+
+
+})
+
+
 router.get('/', function(req, res, next) {
     let params ={
 
