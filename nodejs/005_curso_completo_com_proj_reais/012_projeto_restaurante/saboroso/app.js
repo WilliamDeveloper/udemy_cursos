@@ -4,6 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// configurando session no redis
+var session = require('express-session')
+var RedisStore = require('connect-redis')(session)
+// var session = require('express-session')
+// var connectRedis = require('connect-redis')
+// var RedisStore = connectRedis(session)
+
+
+
+
 var adminRouter = require('./routes/admin');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
