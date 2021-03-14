@@ -28,15 +28,15 @@ router.get('/contacts', function(req, res, next) {
 
 router.post('/contacts', function(req, res, next) {
 
-  if(!req.body.name){reservations.render(req,res, "digite o nome")}
-  else if(!req.body.email){reservations.render(req,res, "digite o nome")}
-  else if(!req.body.message){reservations.render(req,res, "digite o nome")}
+  if(!req.body.name){contacts.render(req,res, "digite o nome")}
+  else if(!req.body.email){contacts.render(req,res, "digite o nome")}
+  else if(!req.body.message){contacts.render(req,res, "digite o nome")}
   else{
     // res.json(req.body)
     contacts.save(req.body).then(results=>{
       console.log('blau')
       req.body = {}
-      reservations.render(req,res,null, 'reserva realizada com sucesso')
+      contacts.render(req,res,null, 'reserva realizada com sucesso')
     }).catch(error=>{
       // reservations.render(req,res.message,error)
     })

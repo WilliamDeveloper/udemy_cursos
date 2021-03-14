@@ -13,7 +13,7 @@ module.exports ={
             body:req.body
         }
 
-        res.render('reservations', params )
+        res.render('contacts', params )
     },
 
     save(fields){
