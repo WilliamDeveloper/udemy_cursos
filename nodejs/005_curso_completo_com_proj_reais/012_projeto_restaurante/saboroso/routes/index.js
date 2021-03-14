@@ -49,11 +49,11 @@ router.get('/reservations', function(req, res, next) {
 })
 
 router.post('/reservations', function(req, res, next) {
-  if(!req.body.name){res.json('digite o nome')}
-  else if(!req.body.email){res.json('digite o nome')}
-  else if(!req.body.people){res.json('digite o nome')}
-  else if(!req.body.date){ res.json('digite o nome')}
-  else if(!req.body.time) {res.json('digite o nome')}
+  if(!req.body.name){reservations.render(req,res, "digite o nome")}
+  else if(!req.body.email){reservations.render(req,res, "digite o nome")}
+  else if(!req.body.people){reservations.render(req,res, "digite o nome")}
+  else if(!req.body.date){reservations.render(req,res, "digite o nome")}
+  else if(!req.body.time) {reservations.render(req,res, "digite o nome")}
   else{
     res.json(req.body)
   }
