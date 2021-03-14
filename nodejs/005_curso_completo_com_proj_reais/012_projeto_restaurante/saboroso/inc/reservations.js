@@ -8,7 +8,8 @@ module.exports ={
             background : 'images/img_bg_2.jpg',
             h1: 'Reserve uma Mesa!',
             error,
-            success
+            success,
+            body:req.body
         }
         res.render('reservations', params )
     },
