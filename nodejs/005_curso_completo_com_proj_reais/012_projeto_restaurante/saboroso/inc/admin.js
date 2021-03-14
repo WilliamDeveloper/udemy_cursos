@@ -17,7 +17,7 @@ module.exports ={
        let menus =  [
            {
                text : 'Tela Inicial',
-               href:"/admin",
+               href:"/admin/",
                icon:'home',
                active: false
            },
