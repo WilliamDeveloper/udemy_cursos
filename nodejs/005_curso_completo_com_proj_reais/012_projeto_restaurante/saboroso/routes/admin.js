@@ -26,6 +26,20 @@ router.get('/login', function(req, res, next) {
     res.render('admin/login', params)
 })
 
+router.get('/login_teste_session', function(req, res, next) {
+
+    if(!req.session.views){
+        req.session.views =  0
+    }
+
+    console.log('session ', req.session.views++)
+
+    let params ={
+
+    }
+    res.render('admin/login', params)
+})
+
 router.get('/contacts', function(req, res, next) {
     let params ={
 
