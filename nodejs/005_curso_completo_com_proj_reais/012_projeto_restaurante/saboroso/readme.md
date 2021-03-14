@@ -52,6 +52,7 @@ npm install --save redis
 npm install --save connect-redis
 
 - habilitar manipulacao de form
+-https://www.npmjs.com/package/formidable
 npm install --save formidable
 
 
