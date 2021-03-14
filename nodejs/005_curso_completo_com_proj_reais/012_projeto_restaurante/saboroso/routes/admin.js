@@ -21,6 +21,14 @@ router.use((req,res,next)=>{
 })
 
 
+router.get('/logout', function(req, res, next) {
+
+    delete req.session.user
+    res.redirect('admin/login')
+})
+
+
+
 router.get('/', function(req, res, next) {
     let params ={
 
