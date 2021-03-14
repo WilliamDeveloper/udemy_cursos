@@ -57,9 +57,10 @@ router.post('/reservations', function(req, res, next) {
   else{
     // res.json(req.body)
     reservations.save(req.body).then(results=>{
+      console.log('blau')
       reservations.render(req,res,null, 'reserva realizada com sucesso')
     }).catch(error=>{
-      reservations.render(req,res,error)
+      // reservations.render(req,res.message,error)
     })
 
   }

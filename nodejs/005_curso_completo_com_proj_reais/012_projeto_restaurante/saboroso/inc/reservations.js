@@ -15,10 +15,14 @@ module.exports ={
 
     save(fields){
         return new Promise((resolve, reject)=>{
+
+            let date = fields.date.split('/')
+            fields.date = `${date[2]}-${date[1]}-${date[0]}`
+
             conn.query(
                 `
                 insert 
-                into tb_reservations (name, email, people, date. time) 
+                into tb_reservations (name, email, people, date, time) 
                 values (?,?,?,?,?)
             `,
                 [
