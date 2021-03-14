@@ -51,6 +51,9 @@ npm install --save express-session
 npm install --save redis
 npm install --save connect-redis
 
+- habilitar manipulacao de form
+npm install --save formidable
+
 
 
 
