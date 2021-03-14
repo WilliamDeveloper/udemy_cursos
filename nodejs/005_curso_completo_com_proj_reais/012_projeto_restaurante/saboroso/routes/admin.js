@@ -4,6 +4,7 @@ var router = express.Router();
 var conn = require('./../inc/db-mysql')
 var users = require('./../inc/users')
 var menus = require('./../inc/menus')
+var admin = require('./../inc/admin')
 
 
 
@@ -20,6 +21,11 @@ router.use((req,res,next)=>{
 
 })
 
+router.use((req,res,next)=>{
+    req.menus = admin.getMenus()
+    next()
+})
+
 
 router.get('/logout', function(req, res, next) {
 
@@ -31,7 +37,7 @@ router.get('/logout', function(req, res, next) {
 
 router.get('/', function(req, res, next) {
     let params ={
-
+        menus: req.menus
     }
     res.render('admin/index', params)
 })
@@ -85,7 +91,7 @@ router.get('/login_teste_session', function(req, res, next) {
 
 router.get('/contacts', function(req, res, next) {
     let params ={
-
+        menus: req.menus
     }
     res.render('admin/contacts', params)
 })
@@ -93,21 +99,22 @@ router.get('/contacts', function(req, res, next) {
 
 router.get('/emails', function(req, res, next) {
     let params ={
-
+        menus: req.menus
     }
     res.render('admin/emails', params)
 })
 
 router.get('/menus', function(req, res, next) {
     let params ={
-
+        menus: req.menus
     }
     res.render('admin/menus', params)
 })
 
 router.get('/reservations', function(req, res, next) {
     let params ={
-        date : {}
+        menus: req.menus,
+        date : {},
     }
     res.render('admin/reservations', params)
 })
@@ -115,7 +122,7 @@ router.get('/reservations', function(req, res, next) {
 
 router.get('/users', function(req, res, next) {
     let params ={
-
+        menus: req.menus
     }
     res.render('admin/users', params)
 })
