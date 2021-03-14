@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // configurando session no redis
-var session = require('express-session')
-var RedisStore = require('connect-redis')(session)
+const redis = require('redis')
+const session = require('express-session')
+let RedisStore = require('connect-redis')(session)
+let redisClient = redis.createClient()
+// var session = require('express-session')
+// var RedisStore = require('connect-redis')(session)
 // var session = require('express-session')
 // var connectRedis = require('connect-redis')
 // var RedisStore = connectRedis(session)
@@ -26,6 +30,7 @@ app.set('view engine', 'ejs');
 
 app.use(session({
   store: new RedisStore({
+    client:redisClient,
     host:'localhost',
     port: 6379
   }),
