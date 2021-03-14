@@ -25,8 +25,20 @@ router.post('/login', function(req, res, next) {
     if(!req.body.email){ users.render(req,res, "digite um email")}
     else if(!req.body.password){ users.render(req,res, "digite um password")}
     else {
-        req.body= {}
-        users.render(req,res)
+
+        users.login(req.body.email, req.body.password).then( user=>{
+
+            req.session.user = user
+
+            req.body= {}
+            res.redirect("/admin")
+
+        }).catch( error=>{
+            users.render(req,res, error)
+        })
+
+
+
     }
 
 
