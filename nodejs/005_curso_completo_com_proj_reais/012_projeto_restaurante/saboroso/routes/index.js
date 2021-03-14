@@ -1,3 +1,5 @@
+var reservations = require("../inc/reservations");
+
 var express = require('express');
 var router = express.Router();
 var conn = require('./../inc/db-mysql')
@@ -43,16 +45,20 @@ router.get('/menus', function(req, res, next) {
 })
 
 router.get('/reservations', function(req, res, next) {
-  let params = {
-    title: `Reservas - Restaurante Saboroso`,
-    background : 'images/img_bg_2.jpg',
-    h1: 'Reserve uma Mesa!'
-  }
-  res.render('reservations', params )
+ reservations.render(req,res)
 })
 
 router.post('/reservations', function(req, res, next) {
-  res.json(req.body)
+  if(!req.body.name){res.json('digite o nome')}
+  else if(!req.body.email){res.json('digite o nome')}
+  else if(!req.body.people){res.json('digite o nome')}
+  else if(!req.body.date){ res.json('digite o nome')}
+  else if(!req.body.time) {res.json('digite o nome')}
+  else{
+    res.json(req.body)
+  }
+
+
 })
 
 router.get('/services', function(req, res, next) {
