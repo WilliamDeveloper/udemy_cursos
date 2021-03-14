@@ -1,0 +1,43 @@
+var conn = require('./db-mysql')
+
+module.exports ={
+
+    render(req,res,error, success){
+
+        let params ={
+            title: `Contato - Restaurante Saboroso`,
+            background : 'images/img_bg_3.jpg',
+            h1: 'Diga um oii!',
+            error,
+            success,
+            body:req.body
+        }
+
+        res.render('reservations', params )
+    },
+
+    save(fields){
+        return new Promise((resolve, reject)=>{
+
+            conn.query(
+                `
+                insert 
+                into tb_reservations (name, email, message) 
+                values (?,?,?)
+            `,
+                [
+                    fields.name,
+                    fields.email,
+                    fields.message,
+                ],(error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                }
+            )
+        })
+    }
+
+}
