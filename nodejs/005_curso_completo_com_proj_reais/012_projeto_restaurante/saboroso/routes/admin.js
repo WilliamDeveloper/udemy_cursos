@@ -126,7 +126,7 @@ router.post('/menus', function(req, res, next) {
         // user: req.session.user,
     }
 
-    res.send(req.body)
+    res.send(req.fields)
 
 })
 
