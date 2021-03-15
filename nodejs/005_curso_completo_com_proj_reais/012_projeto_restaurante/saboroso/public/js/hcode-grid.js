@@ -11,6 +11,7 @@ class HCodeGrid{
                 console.log('afterUpdateClick')
                 $('#modal-update').modal('show')
             },
+
             beforeDeleteClick : function(e){
                 console.log('beforeDeleteClick')
             },
@@ -18,7 +19,33 @@ class HCodeGrid{
                 console.log('afterDeleteClick')
                 window.location.reload()
 
-            }
+            },
+
+            beforeFormCreate : function(e){
+                console.log('beforeFormCreate')
+            },
+            afterFormCreate : function(e){
+                console.log('afterFormCreate')
+                window.location.reload()
+
+            },
+            afterFormCreateError : function(e){
+                console.log('afterFormCreateError')
+
+            },
+
+
+            beforeFormUpdate : function(e){
+                console.log('beforeFormUpdate')
+            },
+            afterFormUpdate : function(e){
+                console.log('afterFormUpdate')
+                window.location.reload()
+            },
+            afterFormUpdateError : function(e){
+                console.log('afterFormUpdateError')
+            },
+
         }
 
         configs.listeners = Object.assign({}, listenerDefault, configs.listeners)
@@ -41,18 +68,20 @@ class HCodeGrid{
 
         this.formCreate.save().then(json=>{
             console.log('json ', json)
-            window.location.reload()
+            this.fireEvent('afterFormCreate')
         }).catch( error =>{
             console.log('error ', error)
+            this.fireEvent('afterFormCreateError')
         })
 
         this.formUpdate = document.querySelector(this.options.formUpdate)
 
         this.formUpdate.save().then(json=>{
             console.log('json ', json)
-            window.location.reload()
+            this.fireEvent('afterFormUpdate')
         }).catch( error =>{
             console.log('error ', error)
+            this.fireEvent('afterFormUpdateError')
         })
     }
 
