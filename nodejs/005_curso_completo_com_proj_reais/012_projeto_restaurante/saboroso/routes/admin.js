@@ -156,13 +156,18 @@ router.get('/menus', function(req, res, next) {
 })
 
 router.get('/reservations', function(req, res, next) {
-    let params ={
-        // menus: req.menus,
-        // user: req.session.user,
-        date : {},
-    }
-    params =  admin.getParams(req, params)
-    res.render('admin/reservations', params)
+
+    reservations.getReservations().then(data=>{
+        let params ={
+            // menus: req.menus,
+            // user: req.session.user,
+            date : {},
+            data : data
+        }
+        params =  admin.getParams(req, params)
+        res.render('admin/reservations', params)
+    })
+
 })
 
 router.post('/reservations', function(req, res, next) {
