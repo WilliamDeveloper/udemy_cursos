@@ -193,10 +193,11 @@ let formUpdate = document.querySelector('#modal-update form')
         console.log('name ', name)
         let input = formUpdate.querySelector(`[name=${name}]`)
         switch (name) {
-          case 'register':
-
-            break
+          // case 'register':
+          //
+          //   break
           case 'photo':
+            formUpdate.querySelector('img').src= '/'+data[name]
             break
           default:
             if(input){
