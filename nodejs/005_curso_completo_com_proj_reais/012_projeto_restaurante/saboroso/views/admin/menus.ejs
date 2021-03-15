@@ -214,6 +214,36 @@
 
 
   })
+  ///---------------
+  Array.prototype.forEach.call( document.querySelectorAll('.btn-delete'), (btn) => {
+    console.log('btn')
+
+    btn.addEventListener('click', e=>{
+
+
+
+      let tr = e.path.find( el => {
+        return (el.tagName.toUpperCase() === 'TR')
+      })
+
+      console.log('tr ',tr)
+
+      let data = JSON.parse(tr.dataset.row)
+      console.log('data', data)
+
+      if(!confirm(` Deseja confirmar a exclusao desse registro?  ${data.title}`)) return false
+
+      fetch(`/admin/menus/${data.id}`,{ method:'DELETE'} ).then(response => response.json()).then(json=>{
+        console.log('json ', json)
+        window.location.reload()
+      }).catch(error =>{
+        console.log('error ', error)
+      })
+
+    })
+
+
+  })
 
 
 
