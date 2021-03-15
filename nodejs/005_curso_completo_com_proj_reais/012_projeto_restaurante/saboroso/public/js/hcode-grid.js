@@ -10,6 +10,14 @@ class HCodeGrid{
             afterUpdateClick : function(e){
                 console.log('afterUpdateClick')
                 $('#modal-update').modal('show')
+            },
+            beforeDeleteClick : function(e){
+                console.log('beforeDeleteClick')
+            },
+            afterDeleteClick : function(e){
+                console.log('afterDeleteClick')
+                window.location.reload()
+
             }
         }
 
@@ -55,6 +63,18 @@ class HCodeGrid{
         }
     }
 
+    getTrData(e){
+        let tr = e.path.find( el => {
+            return (el.tagName.toUpperCase() === 'TR')
+        })
+
+        console.log('tr ',tr)
+
+        let data = JSON.parse(tr.dataset.row)
+        console.log('data', data)
+        return data
+    }
+
     initButtons(){
 
 
@@ -67,14 +87,7 @@ class HCodeGrid{
 
                 this.fireEvent('beforeUpdateClick', [e])
 
-                let tr = e.path.find( el => {
-                    return (el.tagName.toUpperCase() === 'TR')
-                })
-
-                console.log('tr ',tr)
-
-                let data = JSON.parse(tr.dataset.row)
-                console.log('data', data)
+               let data = this.getTrData(e)
 
                 for (let name in data){
                     console.log('name ', name)
@@ -114,16 +127,9 @@ class HCodeGrid{
 
             btn.addEventListener('click', e=>{
 
+                this.fireEvent('beforeDeleteClick', [e])
 
-
-                let tr = e.path.find( el => {
-                    return (el.tagName.toUpperCase() === 'TR')
-                })
-
-                console.log('tr ',tr)
-
-                let data = JSON.parse(tr.dataset.row)
-                console.log('data', data)
+                let data = this.getTrData(e)
 
                 if(!confirm(eval('`'+this.options.deleteMsg+'`'))) return false
 
@@ -131,7 +137,9 @@ class HCodeGrid{
                     .then(response => response.json())
                     .then(json=>{
                     console.log('json ', json)
-                    window.location.reload()
+
+                    this.fireEvent('afterDeleteClick', [e])
+
                 }).catch(error =>{
                     console.log('error ', error)
                 })
