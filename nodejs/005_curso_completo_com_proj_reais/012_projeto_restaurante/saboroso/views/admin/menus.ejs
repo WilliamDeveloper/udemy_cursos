@@ -145,6 +145,14 @@
 
 <%-include("inc/footer")-%>
 
+<script src="/js/hcode-filereader.js"></script>
+
+<script>
+
+  new HcodeFileReader("#modal-create [type=file]","#modal-create img")
+
+</script>
+
 <script>
   let formCreate = document.querySelector("#modal-create form")
 
