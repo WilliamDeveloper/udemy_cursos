@@ -56,7 +56,7 @@ npm install --save connect-redis
 npm install --save formidable
 
 -moment.js - https://momentjs.com/
-npm install --save monent
+npm install --save moment
 
 
 
