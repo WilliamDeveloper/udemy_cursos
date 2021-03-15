@@ -21,8 +21,10 @@ module.exports ={
             let params
 
 
-            let date = fields.date.split('/')
-            fields.date = `${date[2]}-${date[1]}-${date[0]}`
+            if(fields.date.indexOf('/') > -1){
+                let date = fields.date.split('/')
+                fields.date = `${date[2]}-${date[1]}-${date[0]}`
+            }
 
             params =[
                 fields.name,
