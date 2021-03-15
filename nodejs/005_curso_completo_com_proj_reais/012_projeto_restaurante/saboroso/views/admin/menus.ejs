@@ -168,6 +168,18 @@
 
   Array.prototype.forEach.call( document.querySelectorAll('.btn-update'), (btn) => {
     console.log('btn')
+
+    btn.addEventListener('click', e=>{
+      let tr = e.path.find( el => {
+        return (el.tagName.toUpperCase() === 'TR')
+      })
+
+      console.log('tr ',tr)
+
+      let data = JSON.parse(tr.dataset.row)
+      console.log('data', data)
+
+    })
   })
 
 
