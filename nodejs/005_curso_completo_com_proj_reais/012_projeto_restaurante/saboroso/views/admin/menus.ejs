@@ -165,6 +165,7 @@
   })
 
 
+let formUpdate = document.querySelector('#modal-update form')
 
   Array.prototype.forEach.call( document.querySelectorAll('.btn-update'), (btn) => {
     console.log('btn')
@@ -179,7 +180,29 @@
       let data = JSON.parse(tr.dataset.row)
       console.log('data', data)
 
+      for (let name in data){
+        console.log('name ', name)
+        let input = formUpdate.querySelector(`[name=${name}]`)
+        switch (name) {
+          case 'register':
+
+            break
+          case 'photo':
+            break
+          default:
+            if(input){
+              input.value = data[name]
+            }
+
+        }
+
+      }
+
+     $('#modal-update').modal('open')
+
     })
+
+
   })
 
 
