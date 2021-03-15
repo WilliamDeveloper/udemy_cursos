@@ -71,6 +71,22 @@ module.exports ={
 
 
         })
-    }
+    },
+
+    getReservations(){
+        return new Promise( (resolve, reject)=>{
+            conn.query(
+                `
+                    select * from tb_reservations order by date desc
+                `,
+                (error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                })
+        })
+    },
 
 }
