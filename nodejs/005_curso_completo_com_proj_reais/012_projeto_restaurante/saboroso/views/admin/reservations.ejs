@@ -217,10 +217,10 @@
     deleteUrl : '/admin/reservations/${data.id}',
     deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.title}',
     listeners:{
-      beforeUpdateClick : (e)=>{
+      beforeUpdateClick : function(e){
         console.log('beforeUpdateClick')
       },
-      afterUpdateClick : (e)=>{
+      afterUpdateClick : function(e){
         console.log('afterUpdateClick')
       }
     }

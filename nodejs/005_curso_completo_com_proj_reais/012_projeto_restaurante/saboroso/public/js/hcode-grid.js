@@ -37,8 +37,9 @@ class HCodeGrid{
     }
 
     fireEvent(name, args){
-        if(this.options.listeners[name] === 'function'){
-            this.options.listeners[name].apply(args)
+        console.log('fireEvent ', name, args)
+        if(typeof this.options.listeners[name] === 'function'){
+            this.options.listeners[name].apply(this,args)
         }
     }
 
