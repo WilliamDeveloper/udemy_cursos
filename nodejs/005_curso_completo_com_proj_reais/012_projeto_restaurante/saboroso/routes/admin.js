@@ -4,9 +4,14 @@ var users = require('./../inc/users')
 var menus = require('./../inc/menus')
 var admin = require('./../inc/admin')
 var reservations = require('./../inc/reservations')
+var  moment = require('moment')
+
+
+
 var router = express.Router();
 
-
+//idiomma moment.js momentjs
+moment.locale('pt-BR')
 
 router.use((req,res,next)=>{
     console.log('middleware: ', req.url)
@@ -162,7 +167,8 @@ router.get('/reservations', function(req, res, next) {
             // menus: req.menus,
             // user: req.session.user,
             date : {},
-            data : data
+            data : data,
+            moment
         }
         params =  admin.getParams(req, params)
         res.render('admin/reservations', params)
