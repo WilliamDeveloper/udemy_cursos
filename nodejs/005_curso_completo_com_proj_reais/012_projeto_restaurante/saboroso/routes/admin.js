@@ -1,10 +1,10 @@
 var express = require('express');
-var router = express.Router();
 
-var conn = require('./../inc/db-mysql')
 var users = require('./../inc/users')
 var menus = require('./../inc/menus')
 var admin = require('./../inc/admin')
+
+var router = express.Router();
 
 
 
