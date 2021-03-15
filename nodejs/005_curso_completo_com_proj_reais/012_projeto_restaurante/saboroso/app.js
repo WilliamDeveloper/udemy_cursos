@@ -27,7 +27,8 @@ var app = express();
 
 
 app.use((req,res,next)=>{
-  if(req.method === 'POST'){
+  console.log('app.js-post ', req.url, req.method)
+  if(req.method === 'POST' && false ){
     var form = formidable.IncomingForm({
       uploadDir : path.join(__dirname,"/public/images"),
       keepExtensions:true
@@ -37,6 +38,7 @@ app.use((req,res,next)=>{
       req.fields = fields
       req.files = files
 
+      console.log('form-parse')
       next()
     })
   }else{
