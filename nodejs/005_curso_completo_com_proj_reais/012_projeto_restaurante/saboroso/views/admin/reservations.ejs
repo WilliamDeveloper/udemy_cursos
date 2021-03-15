@@ -209,106 +209,12 @@
 
 <script src="/js/moment.min.js"></script>
 <script src="/js/hcode-formsave.js"></script>
-
+<script src="/js/hcode-grid.js"></script>
 
 
 <script>
-  let formCreate = document.querySelector("#modal-create form")
-
-  formCreate.save().then(json=>{
-    console.log('json ', json)
-    window.location.reload()
-  }).catch( error =>{
-    console.log('error ', error)
+  new HCodeGrid({
+    deleteUrl : '/admin/reservations/${data.id}',
+    deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.title}',
   })
-
-
-  let formUpdate = document.querySelector('#modal-update form')
-
-  formUpdate.save().then(json=>{
-    console.log('json ', json)
-    window.location.reload()
-  }).catch( error =>{
-    console.log('error ', error)
-  })
-
-  Array.prototype.forEach.call( document.querySelectorAll('.btn-update'), (btn) => {
-    console.log('btn')
-
-    btn.addEventListener('click', e=>{
-      let tr = e.path.find( el => {
-        return (el.tagName.toUpperCase() === 'TR')
-      })
-
-      console.log('tr ',tr)
-
-      let data = JSON.parse(tr.dataset.row)
-      console.log('data', data)
-
-      for (let name in data){
-        console.log('name ', name)
-        let input = formUpdate.querySelector(`[name=${name}]`)
-        switch (name) {
-                // case 'register':
-                //
-                //   break
-          case 'date':
-            if(input){
-              let valor = moment(data[name]).format('YYYY-MM-DD')
-              console.log(valor)
-              input.value = valor
-            }
-
-            break
-          default:
-            if(input){
-              input.value = data[name]
-            }
-
-        }
-
-      }
-
-      $('#modal-update').modal('show')
-
-    })
-
-
-  })
-  ///---------------
-  Array.prototype.forEach.call( document.querySelectorAll('.btn-delete'), (btn) => {
-    console.log('btn')
-
-    btn.addEventListener('click', e=>{
-
-
-
-      let tr = e.path.find( el => {
-        return (el.tagName.toUpperCase() === 'TR')
-      })
-
-      console.log('tr ',tr)
-
-      let data = JSON.parse(tr.dataset.row)
-      console.log('data', data)
-
-      if(!confirm(` Deseja confirmar a exclusao desse registro?  ${data.title}`)) return false
-
-      fetch(`/admin/reservations/${data.id}`,{ method:'DELETE'} )
-              .then(response => response.json())
-              .then(json=>{
-        console.log('json ', json)
-        window.location.reload()
-      }).catch(error =>{
-        console.log('error ', error)
-      })
-
-    })
-
-
-  })
-
-
-
 </script>
-
