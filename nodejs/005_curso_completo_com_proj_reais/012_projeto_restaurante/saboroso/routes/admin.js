@@ -126,7 +126,13 @@ router.post('/menus', function(req, res, next) {
         // user: req.session.user,
     }
 
-    res.send(req.fields)
+    menus.save(req.fields, req.files).then((results)=>{
+        res.send(results)
+    }).catch(error=>{
+        res.send(error)
+    })
+
+
 
 })
 
