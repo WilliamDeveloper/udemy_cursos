@@ -1,4 +1,5 @@
 let conn =require('./db-mysql')
+let path = require('path')
 
 module.exports ={
 
@@ -20,6 +21,9 @@ module.exports ={
 
     save(fields, files){
         return new Promise( (resolve, reject)=>{
+
+            fields.photo = `images/${path.parse(files.photo.path).base}`
+
             conn.query(
                 `
                     insert into tb_menus (title, description, price, photo)
@@ -29,7 +33,7 @@ module.exports ={
                     fields.title,
                     fields.description,
                     fields.price,
-                    `ìmages/${files.photo.name}`
+                    fields.photo
                 ],
                 (error, results)=>{
                     if(error){
