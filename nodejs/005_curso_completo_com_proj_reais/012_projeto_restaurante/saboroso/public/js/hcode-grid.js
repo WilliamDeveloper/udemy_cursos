@@ -36,13 +36,24 @@ class HCodeGrid{
         })
     }
 
+    fireEvent(name, args){
+        if(this.options.listeners[name] === 'function'){
+            this.options.listeners[name].apply(args)
+        }
+    }
+
     initButtons(){
 
 
         Array.prototype.forEach.call( document.querySelectorAll(this.options.btnUpdate), (btn) => {
             console.log('btn')
 
+
+
             btn.addEventListener('click', e=>{
+
+                this.fireEvent('beforeUpdateClick', [e])
+
                 let tr = e.path.find( el => {
                     return (el.tagName.toUpperCase() === 'TR')
                 })
@@ -71,7 +82,8 @@ class HCodeGrid{
 
                 }
 
-                $('#modal-update').modal('open')
+                $('#modal-update').modal('show')
+                this.fireEvent('afterUpdateClick', [e])
 
             })
 

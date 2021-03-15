@@ -216,5 +216,13 @@
   new HCodeGrid({
     deleteUrl : '/admin/reservations/${data.id}',
     deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.title}',
+    listeners:{
+      beforeUpdateClick : (e)=>{
+        console.log('beforeUpdateClick')
+      },
+      afterUpdateClick : (e)=>{
+        console.log('afterUpdateClick')
+      }
+    }
   })
 </script>
