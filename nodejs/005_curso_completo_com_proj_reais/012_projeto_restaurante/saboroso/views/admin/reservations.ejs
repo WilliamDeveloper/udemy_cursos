@@ -198,3 +198,104 @@
     </div>
 
 <%-include("inc/footer")-%>
+
+
+
+<script src="/js/hcode-formsave.js"></script>
+
+
+
+<script>
+  let formCreate = document.querySelector("#modal-create form")
+
+  formCreate.save().then(json=>{
+    // window.location.reload()
+  }).catch( error =>{
+    console.log('error ', error)
+  })
+
+
+
+
+
+  let formUpdate = document.querySelector('#modal-update form')
+
+  formUpdate.save().then(json=>{
+    // window.location.reload()
+  }).catch( error =>{
+    console.log('error ', error)
+  })
+
+  Array.prototype.forEach.call( document.querySelectorAll('.btn-update'), (btn) => {
+    console.log('btn')
+
+    btn.addEventListener('click', e=>{
+      let tr = e.path.find( el => {
+        return (el.tagName.toUpperCase() === 'TR')
+      })
+
+      console.log('tr ',tr)
+
+      let data = JSON.parse(tr.dataset.row)
+      console.log('data', data)
+
+      for (let name in data){
+        console.log('name ', name)
+        let input = formUpdate.querySelector(`[name=${name}]`)
+        switch (name) {
+                // case 'register':
+                //
+                //   break
+          case 'photo':
+            formUpdate.querySelector('img').src= '/'+data[name]
+            break
+          default:
+            if(input){
+              input.value = data[name]
+            }
+
+        }
+
+      }
+
+      $('#modal-update').modal('open')
+
+    })
+
+
+  })
+  ///---------------
+  Array.prototype.forEach.call( document.querySelectorAll('.btn-delete'), (btn) => {
+    console.log('btn')
+
+    btn.addEventListener('click', e=>{
+
+
+
+      let tr = e.path.find( el => {
+        return (el.tagName.toUpperCase() === 'TR')
+      })
+
+      console.log('tr ',tr)
+
+      let data = JSON.parse(tr.dataset.row)
+      console.log('data', data)
+
+      if(!confirm(` Deseja confirmar a exclusao desse registro?  ${data.title}`)) return false
+
+      fetch(`/admin/menus/${data.id}`,{ method:'DELETE'} ).then(response => response.json()).then(json=>{
+        console.log('json ', json)
+        window.location.reload()
+      }).catch(error =>{
+        console.log('error ', error)
+      })
+
+    })
+
+
+  })
+
+
+
+</script>
+
