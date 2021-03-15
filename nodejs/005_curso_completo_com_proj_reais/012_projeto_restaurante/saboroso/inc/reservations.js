@@ -17,22 +17,48 @@ module.exports ={
     save(fields){
         return new Promise((resolve, reject)=>{
 
+            let query
+            let params
+
+
             let date = fields.date.split('/')
             fields.date = `${date[2]}-${date[1]}-${date[0]}`
 
-            conn.query(
+            params =[
+                fields.name,
+                fields.email,
+                fields.people,
+                fields.date,
+                fields.time,
+            ]
+            
+            if (parseInt(fields.id) > 0){
+                query =`
+                    update tb_reservations
+                    set
+                    name = ?,
+                    email = ?,
+                    people = ?,
+                    date = ?,
+                    time = ?
+                    where id = ?
                 `
-                insert 
-                into tb_reservations (name, email, people, date, time) 
-                values (?,?,?,?,?)
-            `,
-                [
-                    fields.name,
-                    fields.email,
-                    fields.people,
-                    fields.date,
-                    fields.time,
-                ],(error, results)=>{
+                params.push(fields.id)
+            }else{
+                query =`
+                    insert 
+                    into tb_reservations (name, email, people, date, time) 
+                    values (?,?,?,?,?)
+                `
+
+            }
+
+            console.log('query ', query, params)
+
+            conn.query(
+                query,
+                params,
+                (error, results)=>{
                     if(error){
                         reject(error)
                     }else{
@@ -40,6 +66,8 @@ module.exports ={
                     }
                 }
             )
+
+
         })
     }
 
