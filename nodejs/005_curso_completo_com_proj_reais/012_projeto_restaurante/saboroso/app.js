@@ -28,7 +28,7 @@ var app = express();
 
 app.use((req,res,next)=>{
   console.log('app.js-post ', req.url, req.method)
-  if(req.method === 'POST' && false ){
+  if(req.method === 'POST' && req.url !== '/admin/login' ){
     var form = formidable.IncomingForm({
       uploadDir : path.join(__dirname,"/public/images"),
       keepExtensions:true
