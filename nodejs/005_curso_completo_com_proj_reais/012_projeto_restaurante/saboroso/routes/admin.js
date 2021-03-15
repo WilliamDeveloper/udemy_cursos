@@ -131,9 +131,14 @@ router.post('/menus', function(req, res, next) {
     }).catch(error=>{
         res.send(error)
     })
+})
 
-
-
+router.delete('/menus/:id', function(req, res, next) {
+    menus.delete(req.params.id).then(results=>{
+        res.send(results)
+    }).catch(error=>{
+        res.send(error)
+    })
 })
 
 router.get('/menus', function(req, res, next) {
