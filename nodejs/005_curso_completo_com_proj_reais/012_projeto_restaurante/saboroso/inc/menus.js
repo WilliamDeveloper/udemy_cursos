@@ -27,7 +27,7 @@ module.exports ={
 
             let query, params
 
-            if(parseInt(fields.id) < 0){
+            if(parseInt(fields.id) > 0){
                 query = `
                     update tb_menus
                     set title = ?,
