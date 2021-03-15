@@ -157,6 +157,7 @@
       method:'POST',
       body: formCreateData
     }).then( response => response.json()).then(json=>{
+      console.log('json ', json)
       window.location.reload()
     })
 
