@@ -3,6 +3,18 @@ class HCodeGrid{
     constructor(configs){
         console.log('hcode-grid')
 
+        let listenerDefault = {
+            beforeUpdateClick : function(e){
+                console.log('beforeUpdateClick')
+            },
+            afterUpdateClick : function(e){
+                console.log('afterUpdateClick')
+                $('#modal-update').modal('show')
+            }
+        }
+
+        configs.listeners = Object.assign({}, listenerDefault, configs.listeners)
+
         let objectDefault = {
             formCreate : '#modal-create form',
             formUpdate : '#modal-update form',
@@ -83,7 +95,7 @@ class HCodeGrid{
 
                 }
 
-                $('#modal-update').modal('show')
+
                 this.fireEvent('afterUpdateClick', [e])
 
             })
