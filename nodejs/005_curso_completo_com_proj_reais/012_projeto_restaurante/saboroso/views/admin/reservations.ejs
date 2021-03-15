@@ -294,7 +294,9 @@
 
       if(!confirm(` Deseja confirmar a exclusao desse registro?  ${data.title}`)) return false
 
-      fetch(`/admin/menus/${data.id}`,{ method:'DELETE'} ).then(response => response.json()).then(json=>{
+      fetch(`/admin/reservations/${data.id}`,{ method:'DELETE'} )
+              .then(response => response.json())
+              .then(json=>{
         console.log('json ', json)
         window.location.reload()
       }).catch(error =>{
