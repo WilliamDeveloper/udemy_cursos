@@ -27,10 +27,12 @@ var app = express();
 
 
 app.use((req,res,next)=>{
-  console.log('app.js-post ', req.url, req.method)
+  console.log('app.js-post ', req.url, req.method, req.body, req.fields, req.params)
   let listToIgnoreFormidable = [
     '/admin/login',
-    '/contacts'
+    '/contacts',
+    '/reservations',
+    '/subscribe'
   ]
   //if(req.method === 'POST' && req.url !== '/admin/login' ){
   if(req.method === 'POST' && !listToIgnoreFormidable.includes(req.url) ){
