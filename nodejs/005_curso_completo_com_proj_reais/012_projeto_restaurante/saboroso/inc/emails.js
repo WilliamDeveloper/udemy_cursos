@@ -46,7 +46,7 @@ module.exports ={
     },
 
     save(req){
-        console.log('email ',req.body)
+        console.log('email ',req.body, req.fields)
         return new Promise((resolve, reject)=>{
 
             if(!req.fields.email){reject('preencha o email')}
