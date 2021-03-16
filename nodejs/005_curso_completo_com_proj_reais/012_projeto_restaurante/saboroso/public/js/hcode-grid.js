@@ -1,7 +1,7 @@
 class HCodeGrid{
 
     constructor(configs){
-        console.log('hcode-grid')
+        console.log('hcode-grid', configs)
 
         let listenerDefault = {
             beforeUpdateClick : function(e){
@@ -48,7 +48,7 @@ class HCodeGrid{
 
         }
 
-        configs.listeners = Object.assign({}, [listenerDefault, configs.listeners])
+        configs.listeners = Object.assign({}, listenerDefault, configs.listeners)
 
 
         console.log('blua--> ', configs, configs.listeners.afterUpdateClick)

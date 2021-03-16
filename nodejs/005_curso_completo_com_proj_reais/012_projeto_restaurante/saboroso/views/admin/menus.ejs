@@ -164,11 +164,13 @@
   new HCodeGrid({
     deleteUrl : '/admin/menus/${data.id}',
     deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.title}',
-    afterUpdateClick : function(e){
-      console.log('afterUpdateClick2')
-      alert('AU')
-      $('#modal-update').modal('open')
+    listeners:{
+      afterUpdateClick : function(){
+        console.log('afterUpdateClick2')
+        $('#modal-update').modal('open')
+      },
     },
+
     onUpdateLoad : function(form, name, data){
 
         let input = form.querySelector(eval('`'+'[name=${name}]'+'`'))
@@ -190,7 +192,7 @@
 
 
 
-    }
+    },
 
   })
 </script>
