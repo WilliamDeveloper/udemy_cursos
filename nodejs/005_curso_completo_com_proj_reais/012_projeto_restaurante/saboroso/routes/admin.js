@@ -200,13 +200,37 @@ router.delete('/reservations/:id', function(req, res, next) {
 
 
 router.get('/users', function(req, res, next) {
-    let params ={
-        // menus: req.menus,
-        // user: req.session.user,
-    }
-    params =  admin.getParams(req, params)
-    res.render('admin/users', params)
+
+    users.getUsers().then(data=>{
+        let params ={
+            data
+        }
+        params =  admin.getParams(req, params)
+        res.render('admin/users', params)
+    }).catch(error=>{
+        res.send(error)
+    })
+
 })
+
+router.post('/users', function(req, res, next) {
+
+    users.save(req.fields).then(results=>{
+        res.send(results)
+    }).catch(error=>{
+        res.send(error)
+    })
+})
+
+
+router.delete('/users/:id', function(req, res, next) {
+    users.delete(req.params.id).then(results=>{
+        res.send(results)
+    }).catch(error=>{
+        res.send(error)
+    })
+})
+
 
 
 
