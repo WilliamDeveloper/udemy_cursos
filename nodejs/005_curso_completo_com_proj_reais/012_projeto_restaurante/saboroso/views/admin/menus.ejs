@@ -164,7 +164,10 @@
   new HCodeGrid({
     deleteUrl : '/admin/menus/${data.id}',
     deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.title}',
-
+    afterUpdateClick : function(e){
+      console.log('afterUpdateClick2')
+      $('#modal-update').modal('open')
+    },
     onUpdateLoad : (form, name, data)=>{
 
         let input = form.querySelector(`[name=${name}]`)
