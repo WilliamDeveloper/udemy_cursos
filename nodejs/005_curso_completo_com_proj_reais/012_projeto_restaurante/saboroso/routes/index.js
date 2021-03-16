@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 var conn = require('./../inc/db-mysql')
 var menus = require('./../inc/menus')
+var emails = require('./../inc/emails')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -97,6 +98,21 @@ router.get('/services', function(req, res, next) {
     h1: 'É um prazer poder servir!'
   }
   res.render('services', params )
+})
+
+router.post('/subscribe', function(req, res, next) {
+
+  console.log('email ',req.body)
+  console.log('email ',req.fields)
+
+  emails.save(req).then(results=>{
+    console.log('results ',results)
+    res.send(results)
+  }).catch(error=>{
+    console.log('error ',error)
+    res.send(error)
+  })
+
 })
 
 module.exports = router;
