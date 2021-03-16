@@ -284,6 +284,21 @@ router.post('/users/password-change', function(req, res, next) {
     })
 })
 
+// router.post('/subscribe', function(req, res, next) {
+//
+//     console.log('email ',req.body)
+//     console.log('email ',req.fields)
+//
+//     emails.save(req).then(results=>{
+//         console.log('results ',results)
+//         res.send(results)
+//     }).catch(error=>{
+//         console.log('error ',error)
+//         res.send(error)
+//     })
+//
+// })
+
 
 
 
