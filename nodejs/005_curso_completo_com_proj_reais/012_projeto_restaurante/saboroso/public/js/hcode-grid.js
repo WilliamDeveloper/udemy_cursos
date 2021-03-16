@@ -8,7 +8,7 @@ class HCodeGrid{
                 console.log('beforeUpdateClick')
             },
             afterUpdateClick : function(e){
-                console.log('afterUpdateClick')
+                console.log('afterUpdateClick-default')
                 $('#modal-update').modal('show')
             },
 
@@ -48,7 +48,10 @@ class HCodeGrid{
 
         }
 
-        configs.listeners = Object.assign({}, listenerDefault, configs.listeners)
+        configs.listeners = Object.assign({}, [listenerDefault, configs.listeners])
+
+
+        console.log('blua--> ', configs, configs.listeners.afterUpdateClick)
 
         let objectDefault = {
             formCreate : '#modal-create form',
