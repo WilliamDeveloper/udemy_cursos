@@ -28,7 +28,12 @@ var app = express();
 
 app.use((req,res,next)=>{
   console.log('app.js-post ', req.url, req.method)
-  if(req.method === 'POST' && req.url !== '/admin/login' ){
+  let listToIgnoreFormidable = [
+    '/admin/login',
+    '/contacts'
+  ]
+  //if(req.method === 'POST' && req.url !== '/admin/login' ){
+  if(req.method === 'POST' && !listToIgnoreFormidable.includes(req.url) ){
     var form = formidable.IncomingForm({
       uploadDir : path.join(__dirname,"/public/images"),
       keepExtensions:true

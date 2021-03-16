@@ -4,6 +4,7 @@ var users = require('./../inc/users')
 var menus = require('./../inc/menus')
 var admin = require('./../inc/admin')
 var reservations = require('./../inc/reservations')
+var contacts = require('./../inc/contacts')
 var  moment = require('moment')
 
 
@@ -105,12 +106,42 @@ router.get('/login_teste_session', function(req, res, next) {
 })
 
 router.get('/contacts', function(req, res, next) {
-    let params ={
-        // menus: req.menus,
-        // user: req.session.user,
-    }
-    params =  admin.getParams(req, params)
-    res.render('admin/contacts', params)
+    contacts.getContacts().then(data=>{
+
+        let params ={
+            data
+        }
+        params =  admin.getParams(req, params)
+        res.render('admin/contacts', params)
+
+    })
+})
+
+router.post('/contacts', function(req, res, next) {
+
+    contacts.getContacts().then(data=>{
+
+        let params ={
+           data
+        }
+        params =  admin.getParams(req, params)
+        res.render('admin/contacts', params)
+
+    })
+
+
+})
+
+router.delete('/contacts/:id', function(req, res, next) {
+    contacts.getContacts(req.params.id).then(data=>{
+
+        let params ={
+           data
+        }
+        params =  admin.getParams(req, params)
+        res.render('admin/contacts', params)
+    })
+
 })
 
 

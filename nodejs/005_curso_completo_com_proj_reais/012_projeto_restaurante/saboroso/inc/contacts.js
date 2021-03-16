@@ -38,6 +38,48 @@ module.exports ={
                 }
             )
         })
-    }
+    },
+
+    getContacts(){
+        return new Promise( (resolve, reject)=>{
+            conn.query(
+                `
+                    select * from tb_contacts order by register desc
+                `,
+                (error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                })
+        })
+    },
+
+    delete(id){
+        return new Promise((resolve, reject)=>{
+            let query =`
+                delete 
+                from tb_contacts
+                where id = ?
+            `
+            let params = [
+                id
+            ]
+
+
+            conn.query(
+                query,
+                params,
+                (error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                }
+            )
+        })
+    },
 
 }
