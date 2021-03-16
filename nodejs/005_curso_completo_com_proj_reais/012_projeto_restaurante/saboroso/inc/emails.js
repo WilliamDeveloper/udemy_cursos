@@ -44,4 +44,37 @@ module.exports ={
             )
         })
     },
+
+    save(req){
+        console.log('email ',req.body)
+        return new Promise((resolve, reject)=>{
+
+            if(!req.fields.email){reject('preencha o email')}
+            else {
+
+                let query = `
+                  insert into 
+                  tb_emails (email)
+                  values (?)
+              `
+                let params = [
+                    req.fields.email
+                ]
+
+
+                conn.query(
+                    query,
+                    params,
+                    (error, results) => {
+                        if (error) {
+                            reject(error)
+                        } else {
+                            resolve(results)
+                        }
+                    }
+                )
+            }
+
+        })
+    }
 }
