@@ -120,26 +120,7 @@ class HCodeGrid{
 
                 for (let name in data){
                     console.log('name ', name)
-                    let input = this.formUpdate.querySelector(`[name=${name}]`)
-                    switch (name) {
-
-                        case 'date':
-                            if(input){
-                                let valor = moment(data[name]).format('YYYY-MM-DD')
-                                console.log(valor)
-                                input.value = valor
-                            }
-
-                            break
-                        case 'photo':
-                            this.formUpdate.querySelector('img').src= '/'+data[name]
-                            break
-                        default:
-                            if(input){
-                                input.value = data[name]
-                            }
-
-                    }
+                    this.options.onUpdateLoad(this.formUpdate, name, data)
 
                 }
 

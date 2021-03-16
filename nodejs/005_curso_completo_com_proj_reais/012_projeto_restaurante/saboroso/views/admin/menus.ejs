@@ -147,6 +147,7 @@
 
 <script src="/js/hcode-filereader.js"></script>
 <script src="/js/hcode-formsave.js"></script>
+<script src="/js/hcode-grid.js"></script>
 
 <script>
 
@@ -155,52 +156,25 @@
 
 </script>
 
+
+
+
+
 <script>
-  let formCreate = document.querySelector("#modal-create form")
+  new HCodeGrid({
+    deleteUrl : '/admin/menus/${data.id}',
+    deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.title}',
 
-  formCreate.save().then(json=>{
-    console.log('json ', json)
-    window.location.reload()
-  }).catch( error =>{
-    console.log('error ', error)
-  })
+    onUpdateLoad : (form, name, data)=>{
 
+        let input = form.querySelector(`[name=${name}]`)
 
-
-
-
-  let formUpdate = document.querySelector('#modal-update form')
-
-  formUpdate.save().then(json=>{
-    console.log('json ', json)
-    window.location.reload()
-  }).catch( error =>{
-    console.log('error ', error)
-  })
-
-  Array.prototype.forEach.call( document.querySelectorAll('.btn-update'), (btn) => {
-    console.log('btn')
-
-    btn.addEventListener('click', e=>{
-      let tr = e.path.find( el => {
-        return (el.tagName.toUpperCase() === 'TR')
-      })
-
-      console.log('tr ',tr)
-
-      let data = JSON.parse(tr.dataset.row)
-      console.log('data', data)
-
-      for (let name in data){
-        console.log('name ', name)
-        let input = formUpdate.querySelector(`[name=${name}]`)
         switch (name) {
-          // case 'register':
-          //
-          //   break
+
           case 'photo':
-            formUpdate.querySelector('img').src= '/'+data[name]
-            break
+            form.querySelector('img').src= '/'+data[name]
+          break
+
           default:
             if(input){
               input.value = data[name]
@@ -208,45 +182,82 @@
 
         }
 
-      }
-
-     $('#modal-update').modal('open')
-
-    })
-
+    }
 
   })
-  ///---------------
-  Array.prototype.forEach.call( document.querySelectorAll('.btn-delete'), (btn) => {
-    console.log('btn')
-
-    btn.addEventListener('click', e=>{
-
-
-
-      let tr = e.path.find( el => {
-        return (el.tagName.toUpperCase() === 'TR')
-      })
-
-      console.log('tr ',tr)
-
-      let data = JSON.parse(tr.dataset.row)
-      console.log('data', data)
-
-      if(!confirm(` Deseja confirmar a exclusao desse registro?  ${data.title}`)) return false
-
-      fetch(`/admin/menus/${data.id}`,{ method:'DELETE'} ).then(response => response.json()).then(json=>{
-        console.log('json ', json)
-        window.location.reload()
-      }).catch(error =>{
-        console.log('error ', error)
-      })
-
-    })
-
-
-  })
-
-
-
 </script>
+
+
+
+  <!--Array.prototype.forEach.call( document.querySelectorAll('.btn-update'), (btn) => {-->
+    <!--console.log('btn')-->
+
+    <!--btn.addEventListener('click', e=>{-->
+      <!--let tr = e.path.find( el => {-->
+        <!--return (el.tagName.toUpperCase() === 'TR')-->
+      <!--})-->
+
+      <!--console.log('tr ',tr)-->
+
+      <!--let data = JSON.parse(tr.dataset.row)-->
+      <!--console.log('data', data)-->
+
+      <!--for (let name in data){-->
+        <!--console.log('name ', name)-->
+        <!--let input = formUpdate.querySelector(`[name=${name}]`)-->
+        <!--switch (name) {-->
+          <!--// case 'register':-->
+          <!--//-->
+          <!--//   break-->
+          <!--case 'photo':-->
+            <!--formUpdate.querySelector('img').src= '/'+data[name]-->
+            <!--break-->
+          <!--default:-->
+            <!--if(input){-->
+              <!--input.value = data[name]-->
+            <!--}-->
+
+        <!--}-->
+
+      <!--}-->
+
+     <!--$('#modal-update').modal('open')-->
+
+    <!--})-->
+
+
+  <!--})-->
+  <!--///-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+  <!--Array.prototype.forEach.call( document.querySelectorAll('.btn-delete'), (btn) => {-->
+    <!--console.log('btn')-->
+
+    <!--btn.addEventListener('click', e=>{-->
+
+
+
+      <!--let tr = e.path.find( el => {-->
+        <!--return (el.tagName.toUpperCase() === 'TR')-->
+      <!--})-->
+
+      <!--console.log('tr ',tr)-->
+
+      <!--let data = JSON.parse(tr.dataset.row)-->
+      <!--console.log('data', data)-->
+
+      <!--if(!confirm(` Deseja confirmar a exclusao desse registro?  ${data.title}`)) return false-->
+
+      <!--fetch(`/admin/menus/${data.id}`,{ method:'DELETE'} ).then(response => response.json()).then(json=>{-->
+        <!--console.log('json ', json)-->
+        <!--window.location.reload()-->
+      <!--}).catch(error =>{-->
+        <!--console.log('error ', error)-->
+      <!--})-->
+
+    <!--})-->
+
+
+  <!--})-->
+
+
+
+<!--</script>-->

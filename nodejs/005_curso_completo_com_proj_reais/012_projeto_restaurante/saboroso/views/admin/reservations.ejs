@@ -215,7 +215,30 @@
 <script>
   new HCodeGrid({
     deleteUrl : '/admin/reservations/${data.id}',
-    deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.title}',
+    deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.name}',
+
+    onUpdateLoad : (form, name, data)=>{
+
+        let input = form.querySelector(`[name=${name}]`)
+
+        switch (name) {
+
+          case 'date':
+            if(input){
+              let valor = moment(data[name]).format('YYYY-MM-DD')
+              console.log(valor)
+              input.value = valor
+            }
+          break
+
+          default:
+            if(input){
+              input.value = data[name]
+            }
+
+        }
+
+    }
 
   })
 </script>
