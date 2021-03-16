@@ -5,6 +5,7 @@ var menus = require('./../inc/menus')
 var admin = require('./../inc/admin')
 var reservations = require('./../inc/reservations')
 var contacts = require('./../inc/contacts')
+var emails = require('./../inc/emails')
 var  moment = require('moment')
 
 
