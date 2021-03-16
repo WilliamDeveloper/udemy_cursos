@@ -31,6 +31,7 @@ class HCodeGrid{
             },
             afterFormCreateError : function(e){
                 console.log('afterFormCreateError')
+                alert('nao foi possivel criar')
 
             },
 
@@ -44,6 +45,7 @@ class HCodeGrid{
             },
             afterFormUpdateError : function(e){
                 console.log('afterFormUpdateError')
+                alert('nao foi possivel atualizar')
             },
 
         }
