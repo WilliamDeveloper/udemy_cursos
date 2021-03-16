@@ -158,6 +158,17 @@ router.get('/emails', function(req, res, next) {
 })
 
 
+router.delete('/emails/:id', function(req, res, next) {
+
+    emails.delete(req.params.id).then(results=>{
+       res.send(results)
+    }).catch(error=>{
+        res.send(error)
+    })
+
+})
+
+
 router.post('/menus', function(req, res, next) {
     let params ={
         // menus: req.menus,
