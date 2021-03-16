@@ -145,13 +145,16 @@ router.delete('/contacts/:id', function(req, res, next) {
 
 
 router.get('/emails', function(req, res, next) {
-    let params ={
-        // menus: req.menus,
-        // user: req.session.user,
-    }
 
-    params =  admin.getParams(req, params)
-    res.render('admin/emails', params)
+    emails.getEmails().then(data=>{
+        let params ={
+            data
+        }
+
+        params =  admin.getParams(req, params)
+        res.render('admin/emails', params)
+    })
+
 })
 
 
