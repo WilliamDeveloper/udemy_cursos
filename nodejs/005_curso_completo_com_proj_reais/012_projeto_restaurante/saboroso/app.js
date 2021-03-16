@@ -38,6 +38,7 @@ app.use((req,res,next)=>{
   ]
   //if(req.method === 'POST' && req.url !== '/admin/login' ){
   if(req.method === 'POST' && !listToIgnoreFormidable.includes(req.url) ){
+    console.log('PORRRRRRRAAAAAAA')
     var form = formidable.IncomingForm({
       uploadDir : path.join(__dirname,"/public/images"),
       keepExtensions:true
@@ -51,13 +52,13 @@ app.use((req,res,next)=>{
       next()
     })
   }else{
+    console.log('else-')
     next()
   }
 
 
 
 })
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -78,6 +79,19 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));// comentar essa linha para o formidable funcionar
 app.use(cookieParser());
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
