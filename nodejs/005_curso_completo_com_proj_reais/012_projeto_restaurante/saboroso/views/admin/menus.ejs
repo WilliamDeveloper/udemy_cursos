@@ -172,26 +172,17 @@
     },
 
     onUpdateLoad : function(form, name, data){
-
+        console.log('name ', form, name, data)
         let input = form.querySelector(eval('`'+'[name=${name}]'+'`'))
         if(!input) return false
 
-      console.log('input', input, data[name],  form.querySelector('img').src)
-
-
-          console.log('name ', name)
-          if(name == 'photo'){
-            form.querySelector('img').src = '/'+data['photo']
-          }else{
-            console.log('name ', name)
-            if(input){
-              input.value = data[name]
-            }
+        if(name == 'photo'){
+          form.querySelector('img').src = '/'+data['photo']
+        }else{
+          if(input){
+            input.value = data[name]
           }
-
-
-
-
+        }
     },
 
   })
