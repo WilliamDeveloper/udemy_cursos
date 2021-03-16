@@ -44,4 +44,94 @@ module.exports ={
         })
     },
 
+
+    //------
+    getUsers(){
+        return new Promise( (resolve, reject)=>{
+            conn.query(
+                `
+                    select * from tb_users order by name
+                `,
+                (error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                })
+        })
+    },
+
+    save(fields, files){
+        return new Promise( (resolve, reject)=>{
+
+            let query
+            let params
+
+            params = [
+                fields.name,
+                fields.email
+            ]
+
+            if(parseInt(fields.id) > 0){
+                params.push(fields.id)
+
+                query = `
+                    update tb_users
+                    set name = ?,
+                        email = ?                                           
+                    where id = ?
+                `
+
+            }else{
+
+                query = `
+                    insert into tb_users (name, email, password)
+                    values (?,?,?)
+                `
+                params.push(fields.password)
+            }
+
+            console.log('query ', query, params)
+
+            conn.query(
+                query,
+                params,
+                (error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                }
+            )
+        })
+    },
+
+    delete(id){
+        return new Promise((resolve, reject)=>{
+            let query =`
+                delete 
+                from tb_users
+                where id = ?
+            `
+            let params = [
+                id
+            ]
+
+
+            conn.query(
+                query,
+                params,
+                (error, results)=>{
+                    if(error){
+                        reject(error)
+                    }else{
+                        resolve(results)
+                    }
+                }
+            )
+        })
+    }
+
 }
