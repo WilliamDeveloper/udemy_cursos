@@ -58,8 +58,8 @@ class HCodeGrid{
         let objectDefault = {
             formCreate : '#modal-create form',
             formUpdate : '#modal-update form',
-            btnUpdate : '.btn-update',
-            btnDelete : '.btn-delete',
+            btnUpdate : 'btn-update',
+            btnDelete : 'btn-delete',
             onUpdateLoad : (form, name, data)=> {
                 console.log('name ', form, name, data)
                 let input = form.querySelector(`[name=${name}]`)
@@ -71,6 +71,15 @@ class HCodeGrid{
         }
         // vai mergiar os dois objetos e manter as propriedades passadas por ultimo
         this.options = Object.assign({}, objectDefault, configs)
+
+        this.rows = []
+        Array.prototype.forEach.call( document.querySelectorAll('table tbody tr'), (row) => {
+            console.log('row ', row)
+            Array.prototype.forEach.call( row.querySelectorAll('.btn'), (btn) => {
+                console.log('btn ', btn)
+                this.rows.push(btn)
+            })
+        })
 
         this.initForms()
         this.initButtons()
@@ -117,60 +126,56 @@ class HCodeGrid{
         return data
     }
 
+    btnUpdateClick(e){
+        this.fireEvent('beforeUpdateClick', [e])
+
+        let data = this.getTrData(e)
+
+        for (let name in data){
+            console.log('name ', name)
+            this.options.onUpdateLoad(this.formUpdate, name, data)
+
+        }
+
+
+        this.fireEvent('afterUpdateClick', [e])
+    }
+
+    btnDeleteClick(e){
+        this.fireEvent('beforeDeleteClick', [e])
+
+        let data = this.getTrData(e)
+
+        if(!confirm(eval('`'+this.options.deleteMsg+'`'))) return false
+
+        fetch(eval('`'+this.options.deleteUrl+'`'),{ method:'DELETE'} )
+            .then(response => response.json())
+            .then(json=>{
+                console.log('json ', json)
+
+                this.fireEvent('afterDeleteClick', [e])
+
+            }).catch(error =>{
+            console.log('error ', error)
+        })
+    }
+
     initButtons(){
 
-
-        Array.prototype.forEach.call( document.querySelectorAll(this.options.btnUpdate), (btn) => {
-            console.log('btn')
-
-
+        this.rows.forEach(btn=>{
 
             btn.addEventListener('click', e=>{
-
-                this.fireEvent('beforeUpdateClick', [e])
-
-               let data = this.getTrData(e)
-
-                for (let name in data){
-                    console.log('name ', name)
-                    this.options.onUpdateLoad(this.formUpdate, name, data)
-
+                console.log('btn ', btn, e)
+                if(e.target.classList.contains(this.options.btnUpdate)){
+                    this.btnUpdateClick(e)
+                }else if(e.target.classList.contains(this.options.btnDelete)){
+                    this.btnDeleteClick(e)
+                }else{
+                    this.fireEvent('buttonClick', [e.target, this.getTrData(e), e])
                 }
-
-
-                this.fireEvent('afterUpdateClick', [e])
-
             })
-
-
         })
-        ///---------------
-        Array.prototype.forEach.call( document.querySelectorAll(this.options.btnDelete), (btn) => {
-            console.log('btn')
 
-            btn.addEventListener('click', e=>{
-
-                this.fireEvent('beforeDeleteClick', [e])
-
-                let data = this.getTrData(e)
-
-                if(!confirm(eval('`'+this.options.deleteMsg+'`'))) return false
-
-                fetch(eval('`'+this.options.deleteUrl+'`'),{ method:'DELETE'} )
-                    .then(response => response.json())
-                    .then(json=>{
-                    console.log('json ', json)
-
-                    this.fireEvent('afterDeleteClick', [e])
-
-                }).catch(error =>{
-                    console.log('error ', error)
-                })
-
-            })
-
-
-        })
     }
 
 
