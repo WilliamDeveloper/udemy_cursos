@@ -89,11 +89,11 @@ class HCodeGrid{
         this.formCreate = document.querySelector(this.options.formCreate)
 
         this.formCreate.save({
-            success:function (json) {
+            success: (json) =>{
                 console.log('json ', json)
                 this.fireEvent('afterFormCreate')
             },
-            failure: function (error) {
+            failure:  (error) =>{
                 console.log('error ', error)
                 this.fireEvent('afterFormCreateError')
             }
