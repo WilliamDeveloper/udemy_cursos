@@ -88,22 +88,28 @@ class HCodeGrid{
     initForms(){
         this.formCreate = document.querySelector(this.options.formCreate)
 
-        this.formCreate.save().then(json=>{
-            console.log('json ', json)
-            this.fireEvent('afterFormCreate')
-        }).catch( error =>{
-            console.log('error ', error)
-            this.fireEvent('afterFormCreateError')
+        this.formCreate.save({
+            success:function (json) {
+                console.log('json ', json)
+                this.fireEvent('afterFormCreate')
+            },
+            failure: function (error) {
+                console.log('error ', error)
+                this.fireEvent('afterFormCreateError')
+            }
         })
 
         this.formUpdate = document.querySelector(this.options.formUpdate)
 
-        this.formUpdate.save().then(json=>{
-            console.log('json ', json)
-            this.fireEvent('afterFormUpdate')
-        }).catch( error =>{
-            console.log('error ', error)
-            this.fireEvent('afterFormUpdateError')
+        this.formUpdate.save({
+            success:function (json) {
+                console.log('json ', json)
+                this.fireEvent('afterFormUpdate')
+            },
+            failure: function (error) {
+                console.log('error ', error)
+                this.fireEvent('afterFormUpdateError')
+            }
         })
     }
 

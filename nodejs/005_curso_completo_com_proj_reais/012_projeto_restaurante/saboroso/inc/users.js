@@ -132,6 +132,42 @@ module.exports ={
                 }
             )
         })
-    }
+    },
+
+    changePassword(req){
+        return new Promise( (resolve, reject)=>{
+
+            if(!req.fields.password){
+                reject('Preencha a senha')
+            }else if( req.fields.password !== req.fields.passwordConfirm){
+                reject('Confirme a senha corretamente')
+            }else{
+                let query = `
+                    update tb_users
+                    set password = ?
+                    where id = ?
+                `
+                let params=[
+                    req.fields.password,
+                    req.fields.id
+                ]
+
+                console.log('query ', query, params)
+
+                conn.query(
+                    query,
+                    params,
+                    (error, results)=>{
+                        if(error){
+                            reject(error)
+                        }else{
+                            resolve(results)
+                        }
+                    }
+                )
+
+            }
+        })
+    },
 
 }
