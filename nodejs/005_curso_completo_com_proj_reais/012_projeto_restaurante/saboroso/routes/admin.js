@@ -133,13 +133,11 @@ router.post('/contacts', function(req, res, next) {
 })
 
 router.delete('/contacts/:id', function(req, res, next) {
-    contacts.getContacts(req.params.id).then(data=>{
+    contacts.delete(req.params.id).then(results=>{
 
-        let params ={
-           data
-        }
-        params =  admin.getParams(req, params)
-        res.render('admin/contacts', params)
+        res.send(results)
+    }).catch(error=>{
+        res.send(error)
     })
 
 })

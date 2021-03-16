@@ -65,13 +65,6 @@
   new HCodeGrid({
     deleteUrl : '/admin/contacts/${data.id}',
     deleteMsg : 'Deseja confirmar a exclusao desse registro?  ${data.name}',
-    listeners:{
-      buttonClick: (btn, data, e)=>{
-        console.log('buttonClick', btn, data, e )
-        document.querySelector('#modal-update-password form [name=id]').value=data.id
-        $('#modal-update-password').modal('show')
-      }
-    }
   })
 
 </script>
