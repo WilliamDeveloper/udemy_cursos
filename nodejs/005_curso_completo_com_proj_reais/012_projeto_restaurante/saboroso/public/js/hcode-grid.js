@@ -106,11 +106,11 @@ class HCodeGrid{
 
         if(this.formUpdate){
             this.formUpdate.save({
-                success:function (json) {
+                success: (json)=> {
                     console.log('json ', json)
                     this.fireEvent('afterFormUpdate')
                 },
-                failure: function (error) {
+                failure:  (error)=> {
                     console.log('error ', error)
                     this.fireEvent('afterFormUpdateError')
                 }
