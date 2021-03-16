@@ -60,6 +60,14 @@ class HCodeGrid{
             formUpdate : '#modal-update form',
             btnUpdate : '.btn-update',
             btnDelete : '.btn-delete',
+            onUpdateLoad : (form, name, data)=> {
+                console.log('name ', form, name, data)
+                let input = form.querySelector(`[name=${name}]`)
+                if(input){
+                    input.value = data[name]
+                }
+
+            },
         }
         // vai mergiar os dois objetos e manter as propriedades passadas por ultimo
         this.options = Object.assign({}, objectDefault, configs)
