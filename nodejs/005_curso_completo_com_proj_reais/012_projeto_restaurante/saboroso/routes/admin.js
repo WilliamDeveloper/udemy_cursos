@@ -225,6 +225,7 @@ router.get('/reservations', function(req, res, next) {
             links : pag.links
         }
         params =  admin.getParams(req, params)
+        console.log('params-reservations ', params)
         res.render('admin/reservations', params)
     })
 

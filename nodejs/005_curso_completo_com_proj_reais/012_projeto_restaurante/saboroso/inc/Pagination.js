@@ -49,6 +49,7 @@ class Pagination{
     }
 
     getNavigation(params){
+        console.log('getNavigation ', params)
         let limitPagesNav = 5
         let links = []
         let nrstart = 0
@@ -60,29 +61,37 @@ class Pagination{
 
 
         if( (this.getCurrentPage() - parseInt(limitPagesNav/2)) < 1 ){
+            console.log('if-1')
             // se estamos nas primeiras paginas
             nrstart = 1
             nrend = limitPagesNav
 
 
         }else if((this.getCurrentPage() + parseInt(limitPagesNav/2)) > this.getTotalPages() ){
+            console.log('if-2')
             // estamos xegando nas uiltimas paginas
             nrstart = this.getTotalPages() - limitPagesNav
             nrend = this.getTotalPages()
 
         }else{
+            console.log('if-3')
             // estou no meio da navegacao
             nrstart = this.getCurrentPage() - parseInt(limitPagesNav/2)
             nrend = this.getCurrentPage() + parseInt(limitPagesNav/2)
         }
+
+        console.log('start', nrstart, nrend, limitPagesNav)
         
-        for (let x = nrstart; x < nrstart ; x++){
+        for (let x = nrstart; x <= nrend ; x++){
+            console.log('ta passando ', x)
             links.push({
                 text: x,
                 href : '?'+ this.getQueryString(Object.assign({},params,{page: x})),
-                active : (x === this.getCurrentPage())? true: false
+                active : (x === this.getCurrentPage())
             })
         }
+
+        console.log('links', links)
 
         return links
 
