@@ -49,7 +49,7 @@ module.exports ={
         console.log('email ',req.body, req.fields)
         return new Promise((resolve, reject)=>{
 
-            if(!req.fields.email){reject('preencha o email')}
+            if(!req.body.email){reject('preencha o email')}
             else {
 
                 let query = `
@@ -58,7 +58,7 @@ module.exports ={
                   values (?)
               `
                 let params = [
-                    req.fields.email
+                    req.body.email
                 ]
 
 
@@ -77,4 +77,5 @@ module.exports ={
 
         })
     }
+
 }
