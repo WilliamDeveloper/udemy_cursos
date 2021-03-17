@@ -49,7 +49,7 @@ module.exports ={
         console.log('email ',req.body, req.fields)
         return new Promise((resolve, reject)=>{
 
-            if(!req.body.email){reject('preencha o email')}
+            if(!req.body.email){ reject('preencha o email')}
             else {
 
                 let query = `

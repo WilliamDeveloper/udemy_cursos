@@ -107,10 +107,10 @@ router.post('/subscribe', function(req, res, next) {
 
   emails.save(req).then(results=>{
     console.log('results ',results)
-    res.json({results})
+    res.send(results)
   }).catch(error=>{
     console.log('error ',error)
-    res.json({error})
+    res.end(error)
   })
 
 })
