@@ -35,44 +35,44 @@
     let formSubscribe = document.querySelector('#form-subscribe')
     if(formSubscribe){
         formSubscribe.save({
-            success:function () {
+            success: ()=> {
                 alert('success: email cadastrado com sucesso')
                 //window.location.reload()
             },
-            failure: function (error) {
+            failure:  (error) =>{
                 alert('failure: '+error)
             }
         })
 
-        formSubscribe.addEventListener('submit', function (e){
-            e.preventDefault()
-            let email = this.email.value
-            console.log('email', email)
-            alert('oi '+email)
-
-
-                let formData = { email }
-                console.log(formSubscribe, formData, formSubscribe.email.value)
-
-                let  request = new Request('/subscribe',{
-                    method: 'POST',
-                    body: JSON.stringify(formData),
-                    header: new Headers({
-                        'Content-Type' : 'application/json'
-                    })
-                })
-
-                fetch(request).then( response => response.json() ).then(json=>{
-                    console.log('response->', json)
-
-                    alert('success: email cadastrado com sucesso')
-
-                } ).catch((error)=>{
-                    console.log('catch- ', error)
-                    alert('failure: '+error)
-                })
-
-        })
+        // formSubscribe.addEventListener('submit', function (e){
+        //     e.preventDefault()
+        //     let email = this.email.value
+        //     console.log('email', email)
+        //     alert('oi '+email)
+        //
+        //
+        //         let formData = { email }
+        //         console.log(formSubscribe, formData, formSubscribe.email.value)
+        //
+        //         let  request = new Request('/subscribe',{
+        //             method: 'POST',
+        //             body: JSON.stringify(formData),
+        //             header: new Headers({
+        //                 'Content-Type' : 'application/json'
+        //             })
+        //         })
+        //
+        //         fetch(request).then( response => response.json() ).then(json=>{
+        //             console.log('response->', json)
+        //
+        //             alert('success: email cadastrado com sucesso')
+        //
+        //         } ).catch((error)=>{
+        //             console.log('catch- ', error)
+        //             alert('failure: '+error)
+        //         })
+        //
+        // })
 
         // formSubscribe.addEventListener('submit', function (e){
         //
