@@ -207,7 +207,11 @@ router.get('/menus', function(req, res, next) {
 
 router.get('/reservations', function(req, res, next) {
 
-    reservations.getReservations(req.query.page).then(data=>{
+    reservations.getReservations(
+        req.query.page,
+        req.query.start,
+        req.query.end
+    ).then(data=>{
         let params ={
             // menus: req.menus,
             // user: req.session.user,
