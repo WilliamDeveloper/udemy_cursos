@@ -211,10 +211,8 @@ router.get('/reservations', function(req, res, next) {
     let end = (req.query.end) ? req.query.end : moment().format('YYYY-MM-DD')
 
     reservations.getReservations(
-        req.query.page,
-        req.query.start,
-        req.query.end
-    ).then(data=>{
+        req
+    ).then(pag =>{
         let params ={
             // menus: req.menus,
             // user: req.session.user,
@@ -222,8 +220,9 @@ router.get('/reservations', function(req, res, next) {
                 start,
                 end
             },
-            data : data,
-            moment
+            data : pag.data,
+            moment,
+            links : pag.links
         }
         params =  admin.getParams(req, params)
         res.render('admin/reservations', params)

@@ -76,14 +76,19 @@ module.exports ={
         })
     },
 
-    getReservations(page, dtstart, dtend){
-        if(!page) page = 1
+    getReservations(req){
+        return new Promise((resolve, reject)=>{
+            let page = req.query.page
+            let dtstart = req.query.start
+            let dtend = req.query.end
 
-        let params = []
+            if(!page) page = 1
 
-        if (dtstart && dtend) params.push(dtstart,dtend)
+            let params = []
 
-        let query =  `
+            if (dtstart && dtend) params.push(dtstart,dtend)
+
+            let query =  `
                     select 
                     sql_calc_found_rows
                     * 
@@ -94,8 +99,17 @@ module.exports ={
                 `
 
 
-        let pag = new Pagination(query, params)
-        return pag.getPage(page)
+            let pag = new Pagination(query, params)
+            pag.getPage(page).then(data=>{
+                resolve({
+                    data,
+                    links : pag.getNavigation(req.query)
+                })
+            })
+        })
+
+
+
         // return new Promise( (resolve, reject)=>{
         //     conn.query(
         //        query,
