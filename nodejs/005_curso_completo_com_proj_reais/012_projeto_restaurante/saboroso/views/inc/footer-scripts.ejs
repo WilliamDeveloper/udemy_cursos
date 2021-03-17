@@ -34,14 +34,36 @@
 <script>
     let formSubscribe = document.querySelector('#form-subscribe')
     if(formSubscribe){
-        formSubscribe.save({
-            success:function (a) {
-                alert('email cadastrado com sucesso', a)
-                //window.location.reload()
-            },
-            failure: function (error) {
-                alert(error)
-            }
+        // formSubscribe.save({
+        //     success:function (a) {
+        //         alert('success: email cadastrado com sucesso'+ a)
+        //         //window.location.reload()
+        //     },
+        //     failure: function (error) {
+        //         alert('failure: '+error)
+        //     }
+        // })
+
+        formSubscribe.addEventListener('submit', function (e){
+
+            e.preventDefault()
+
+            let formData = { email: formSubscribe.email.value}
+            console.log(formSubscribe, formData, formSubscribe.email.value)
+            fetch(formSubscribe.action,{
+                method: formSubscribe.method,
+                body: formData
+            }).then( response => {
+                console.log('response->', response)
+
+                alert('success: email cadastrado com sucesso')
+
+
+            }).catch((error)=>{
+                console.log('catch- ', error)
+                alert('failure: '+error)
+            })
         })
+
     }
 </script>
