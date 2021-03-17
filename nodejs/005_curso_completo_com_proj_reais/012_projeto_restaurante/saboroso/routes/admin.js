@@ -207,6 +207,9 @@ router.get('/menus', function(req, res, next) {
 
 router.get('/reservations', function(req, res, next) {
 
+    let start = (req.query.start) ? req.query.start : moment().subtract(1,'year').format('YYYY-MM-DD')
+    let end = (req.query.end) ? req.query.end : moment().format('YYYY-MM-DD')
+
     reservations.getReservations(
         req.query.page,
         req.query.start,
@@ -215,7 +218,10 @@ router.get('/reservations', function(req, res, next) {
         let params ={
             // menus: req.menus,
             // user: req.session.user,
-            date : {},
+            date : {
+                start,
+                end
+            },
             data : data,
             moment
         }
