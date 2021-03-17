@@ -88,7 +88,7 @@ module.exports ={
                     sql_calc_found_rows
                     * 
                     from tb_reservations 
-                    ${(dtstart && dtend)? 'where date between ? and ?':''}
+                    ${(dtstart && dtend)? ' where date between ? and ?':''}
                     order by name
                     limit ?,?
                 `
