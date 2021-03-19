@@ -60,6 +60,12 @@ npm install --save moment
 
 
 
+------------------------------------------
+- bibliotecas bower
+------------------------------------------
+cd /saboroso/public
+
+bower install --save chart.js
 
 
 
