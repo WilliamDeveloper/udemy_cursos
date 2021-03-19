@@ -69,6 +69,17 @@ bower install --save chart.js
 -- https://www.chartjs.org/samples/latest/
 
 
+select
+    concat(year(date), '-', month(date)) as date, 
+    count(*) as total,
+    sum(people) / count(*) as avg_people
+    from tb_reservations
+    where
+        date between '2017-09-24' and '2018-09-24'
+    group by year(date) desc, month(date) desc
+    order by year(date) desc, month(date) desc;
+
+
 
 ------------------------------------------
 - acesso mysql - laragon
