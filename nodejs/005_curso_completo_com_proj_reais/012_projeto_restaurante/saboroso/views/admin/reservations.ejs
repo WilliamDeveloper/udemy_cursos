@@ -250,47 +250,47 @@
 
 <script>
   let context = document.querySelector('#chart').getContext('2d')
-  // let optionsChart = {
-  //   type: 'line',
-  //   data:{
-  //     labels: ['Jan', 'Fev', 'Mar', 'Abr','Mai', 'Jun'],
-  //     datasets:[
-  //             {
-  //               data:[3,5,6,2,5,2],
-  //               label: 'Reservas',
-  //               backgroundColor: 'rgba(54, 162, 235)',
-  //               borderColor: 'rgba(54, 162, 235)',
-  //               fill:true,
-  //               pointBackgroundColor:'#fff'
-  //             }
-  //     ],
-  //   },
-  //   options: {
-  //     tooltips:{
-  //       mode: 'index',
-  //       intersect: false
-  //     },
-  //     scales:{
-  //       xAxes:[{
-  //         display:true,
-  //         scaleLabel:{
-  //           display:true,
-  //           labelString: 'Mês'
-  //         }
-  //       }],
-  //       yAxes:[{
-  //         display:true,
-  //         scaleLabel:{
-  //           display:true,
-  //           labelString: 'Reservas'
-  //         }
-  //       }]
-  //     }
-  //   }
-  //
-  // }
+  let optionsChart1 = {
+    type: 'line',
+    data:{
+      labels: ['Jan', 'Fev', 'Mar', 'Abr','Mai', 'Jun'],
+      datasets:[
+              {
+                data:[3,5,6,2,5,2],
+                label: 'Reservas',
+                backgroundColor: 'rgba(54, 162, 235)',
+                borderColor: 'rgba(54, 162, 235)',
+                fill:true,
+                pointBackgroundColor:'#fff'
+              }
+      ],
+    },
+    options: {
+      tooltips:{
+        mode: 'index',
+        intersect: false
+      },
+      scales:{
+        xAxes:[{
+          display:true,
+          scaleLabel:{
+            display:true,
+            labelString: 'Mês'
+          }
+        }],
+        yAxes:[{
+          display:true,
+          scaleLabel:{
+            display:true,
+            labelString: 'Reservas'
+          }
+        }]
+      }
+    }
 
-  let optionsChart = {
+  }
+
+  let optionsChart2 = {
     type: 'doughnut',
     data:{
       labels: ['Jan', 'Fev', 'Mar', 'Abr','Mai', 'Jun'],
@@ -329,5 +329,5 @@
     }
 
   }
-  let chart = new Chart(context, optionsChart)
+  let chart = new Chart(context, optionsChart1)
 </script>
