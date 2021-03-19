@@ -27,7 +27,8 @@ class Pagination{
                         reject(error)
                     }else{
                         this.data = results[0]
-                        this.total = results[1][0].FOUND_ROWS
+                        this.total = results[1][0].found_rows
+                        console.log('this.total-----', this.total, this.itensPerPage, results[0], results[1],results[1][0])
                         this.totalPages =  Math.ceil(this.total / this.itensPerPage)
                         this.currentPage++
                         resolve(this.data)
@@ -81,6 +82,15 @@ class Pagination{
         }
 
         console.log('start', nrstart, nrend, limitPagesNav)
+
+
+        if(this.getCurrentPage() > 1){
+            links.push({
+                text: '<',
+                href : '?'+ this.getQueryString(Object.assign({},params,{page: this.getCurrentPage()-1})),
+                // active : (x === this.getCurrentPage())
+            })
+        }
         
         for (let x = nrstart; x <= nrend ; x++){
             console.log('ta passando ', x)
@@ -91,7 +101,17 @@ class Pagination{
             })
         }
 
-        console.log('links', links)
+        console.log('this.getCurrentPage()', this.getCurrentPage(),this.getTotalPages())
+
+        if(this.getCurrentPage() < this.getTotalPages()){
+            links.push({
+                text: '>',
+                href : '?'+ this.getQueryString(Object.assign({},params,{page: this.getCurrentPage()+1})),
+                // active : (x === this.getCurrentPage())
+            })
+        }
+
+        // console.log('links', links)
 
         return links
 
