@@ -66,6 +66,7 @@ npm install --save moment
 cd /saboroso/public
 
 bower install --save chart.js
+-- https://www.chartjs.org/samples/latest/
 
 
 
