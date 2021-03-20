@@ -44,6 +44,12 @@
     })
     dropzone.addEventListener('drop', e=>{
         console.log('drop-> ')
+        let id = e.dataTransfer.getData('Text')
+        let elemento = document.getElementById(id)
+
+        e.target.appendChild(elemento)
+
+
     })
     caixas.forEach(caixaEl=>{
         caixaEl.addEventListener('dragstart', e=>{
