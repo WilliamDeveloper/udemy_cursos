@@ -14,3 +14,6 @@ style	        Define estilos CSS diretamente no elemento.
 tabindex	    Define a posição do elemento na ordem de tabulação da página.
 title	        Define informações sobre o elemento.
 translate	    Define se o conteúdo do elemento pode ser traduzido ou não.
+
+# dicas autocomplete no intellij ou visualcode
+digitar "html:5" e dar tab
