@@ -36,6 +36,10 @@ http://localhost:3000/
 ------------------------------------------
 - bibliotecas usadas
 ------------------------------------------
+-- express + socket.io
+npm install --save express@4.15.2
+npm install --save socket.io@2.1.1
+
 -- mysql
 npm install --save mysql2
 
