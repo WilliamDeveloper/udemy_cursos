@@ -140,6 +140,7 @@ module.exports = function (io) {
                 data
             }
             params =  admin.getParams(req, params)
+            io.emit('dashboard update')
             res.render('admin/contacts', params)
 
         })
@@ -150,6 +151,7 @@ module.exports = function (io) {
     router.delete('/contacts/:id', function(req, res, next) {
         contacts.delete(req.params.id).then(results=>{
 
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -175,6 +177,7 @@ module.exports = function (io) {
     router.delete('/emails/:id', function(req, res, next) {
 
         emails.delete(req.params.id).then(results=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -190,6 +193,7 @@ module.exports = function (io) {
         }
 
         menus.save(req.fields, req.files).then((results)=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -198,6 +202,7 @@ module.exports = function (io) {
 
     router.delete('/menus/:id', function(req, res, next) {
         menus.delete(req.params.id).then(results=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -262,6 +267,7 @@ module.exports = function (io) {
         }
 
         reservations.save(req.fields, req.files).then((results)=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -270,6 +276,7 @@ module.exports = function (io) {
 
     router.delete('/reservations/:id', function(req, res, next) {
         reservations.delete(req.params.id).then(results=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -295,6 +302,7 @@ module.exports = function (io) {
     router.post('/users', function(req, res, next) {
 
         users.save(req.fields).then(results=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -304,6 +312,7 @@ module.exports = function (io) {
 
     router.delete('/users/:id', function(req, res, next) {
         users.delete(req.params.id).then(results=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send(error)
@@ -313,6 +322,7 @@ module.exports = function (io) {
     router.post('/users/password-change', function(req, res, next) {
 
         users.changePassword(req).then(results=>{
+            io.emit('dashboard update')
             res.send(results)
         }).catch(error=>{
             res.send({error})
