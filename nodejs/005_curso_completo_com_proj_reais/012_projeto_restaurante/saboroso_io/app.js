@@ -22,9 +22,7 @@ let redisClient = redis.createClient()
 
 
 
-var adminRouter = require('./routes/admin');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -47,6 +45,10 @@ io.on('connection', function (socket) {
 
 
 })
+
+var adminRouter = require('./routes/admin')(io);
+var indexRouter = require('./routes/index')(io);
+var usersRouter = require('./routes/users')(io);
 
 
 app.use((req,res,next)=>{
