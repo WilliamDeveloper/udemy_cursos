@@ -36,9 +36,9 @@ io.on('connection', function (socket) {
 
 
   // avisa so o socket conectado
-  socket.emit('reservations update', {
-    date: new Date()
-  })
+  // socket.emit('reservations update', {
+  //   date: new Date()
+  // })
 
   //avisa todos usuarios conectados
   // io.emit('reservations update', {
