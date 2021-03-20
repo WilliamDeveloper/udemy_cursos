@@ -155,14 +155,14 @@ module.exports ={
 
         let query = `
                 select
-                concat(year(date), '-', month(date)) as date,
+                concat(year(date), '-', month(date)) as dateInterval,
                 count(*) as total,
                 sum(people) / count(*) as avg_people
                 from tb_reservations
                 where
                 date between ? and ?
-                group by year(date) desc, month(date) desc
-                order by year(date) desc, month(date) desc 
+                group by dateInterval desc 
+                order by dateInterval desc 
         `;
         let params = [
             req.query.start,
@@ -182,7 +182,7 @@ module.exports ={
                         let values = []
 
                         results.forEach(row=>{
-                            months.push(moment(row.date).format('MMM YYYY'))
+                            months.push(moment(row.dateInterval).format('MMM YYYY'))
                             values.push(row.total)
                         })
 

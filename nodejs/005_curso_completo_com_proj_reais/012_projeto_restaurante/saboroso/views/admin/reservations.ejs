@@ -329,5 +329,71 @@
     }
 
   }
-  let chart = new Chart(context, optionsChart1)
+
+  let optionsChart3 = {
+    type: 'line',
+    data:{
+      labels: [],
+      datasets:[
+        {
+          data: [] ,
+          label: 'Reservas',
+          backgroundColor: 'rgba(54, 162, 235)',
+          borderColor: 'rgba(54, 162, 235)',
+          fill:true,
+          pointBackgroundColor:'#fff'
+        }
+      ],
+    },
+    options: {
+      tooltips:{
+        mode: 'index',
+        intersect: false
+      },
+      scales:{
+        xAxes:[{
+          display:true,
+          scaleLabel:{
+            display:true,
+            labelString: 'Mês'
+          }
+        }],
+        yAxes:[{
+          display:true,
+          scaleLabel:{
+            display:true,
+            labelString: 'Reservas'
+          }
+        }]
+      }
+    }
+
+  }
+
+
+
+  let chart = new Chart(context, optionsChart3)
+
+
+  fetch(`/admin/reservations/chart${window.location.search}`)
+          .then( response=> response.json() )
+          .then( json => {
+
+            chart.data = {
+              labels: json.months,
+              datasets:[
+                {
+                  data: json.values,
+                  label: 'Reservas',
+                  backgroundColor: 'rgba(54, 162, 235)',
+                  borderColor: 'rgba(54, 162, 235)',
+                  fill:true,
+                  pointBackgroundColor:'#fff'
+                }
+              ],
+            }
+
+            chart.update()
+
+          })
 </script>
