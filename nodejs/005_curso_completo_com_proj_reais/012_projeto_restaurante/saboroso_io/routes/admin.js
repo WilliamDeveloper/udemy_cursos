@@ -61,6 +61,20 @@ router.get('/', function(req, res, next) {
 })
 
 
+router.get('/dashboard', function(req, res, next) {
+    let params ={
+        // menus: req.menus,
+        // user: req.session.user,
+    }
+
+    admin.dashboard().then( data =>{
+        res.send(data)
+    })
+
+
+})
+
+
 router.get('/login', function(req, res, next) {
 
 
