@@ -7,6 +7,7 @@ var formidable = require('formidable')
 var path = require('path')
 var http = require('http')
 var socket = require('socket.io')
+var bodyParser = require('body-parser')
 
 // configurando session no redis
 const redis = require('redis')
@@ -32,6 +33,19 @@ var http = http.Server(app)
 var io = socket(http)
 io.on('connection', function (socket) {
   console.log('io-connection')
+
+
+  // avisa so o socket conectado
+  socket.emit('reservations update', {
+    date: new Date()
+  })
+
+  //avisa todos usuarios conectados
+  io.emit('reservations update', {
+    date: new Date()
+  })
+
+
 })
 
 
@@ -85,8 +99,13 @@ app.use(session({
 }))
 
 app.use(logger('dev'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));// comentar essa linha para o formidable funcionar
+
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));// comentar essa linha para o formidable funcionar
+
 app.use(cookieParser());
 
 
