@@ -40,6 +40,7 @@ module.exports  = function (io) {
       contacts.save(req.body).then(results=>{
         console.log('blau')
         req.body = {}
+        io.emit('dashboard update')
         contacts.render(req,res,null, 'reserva realizada com sucesso')
       }).catch(error=>{
         // reservations.render(req,res.message,error)
@@ -84,6 +85,7 @@ module.exports  = function (io) {
       reservations.save(req.body).then(results=>{
         console.log('blau')
         req.body = {}
+        io.emit('dashboard update')
         reservations.render(req,res,null, 'reserva realizada com sucesso')
       }).catch(error=>{
         // reservations.render(req,res.message,error)
@@ -110,6 +112,7 @@ module.exports  = function (io) {
 
     emails.save(req).then(results=>{
       console.log('results ',results)
+      io.emit('dashboard update')
       res.send(results)
     }).catch(error=>{
       console.log('error ',error)
