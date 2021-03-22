@@ -1,0 +1,107 @@
+##################################################################
+# USUARIOS - TESTE DE CRUD (C=CREATE(POST), R=LEITURA(GET), U=UPDATE, D=DELETE
+##################################################################
+
+####
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+  "cpf" : "01862853029",
+  "nome": "Fulano de tal",
+  "email" : "teste@teste.com.br",
+  "senha" : "123456"
+}
+####
+
+####
+GET http://localhost:8080/usuarios
+####
+
+####
+GET http://localhost:8080/usuarios/2
+####
+
+####
+PUT http://localhost:8080/usuarios/2
+Content-Type: application/json
+
+{
+  "cpf" : "01862853029",
+  "nome": "Fulano de tal2",
+  "email" : "teste2@teste2.com.br",
+  "senha" : "9123456"
+}
+####
+
+####
+DELETE http://localhost:8080/usuarios/2
+####
+
+##################################################################
+# ENDERECO - TESTE DE CRUD (C=CREATE(POST), R=LEITURA(GET), U=UPDATE, D=DELETE
+##################################################################
+
+####
+POST http://localhost:8080/usuarios/2/enderecos
+Content-Type: application/json
+
+{
+  "cep" : "91170-590",
+  "logradouro": "Rua do testador",
+  "numero": "123",
+  "complemento" : "Casa",
+  "bairro" : "Rubem Berta",
+  "cidade" : "Porto Alegre",
+  "estado" : "Rio Grande do Sul"
+}
+####
+
+####
+GET http://localhost:8080/usuarios/2/enderecos
+####
+
+####
+GET http://localhost:8080/usuarios/2/enderecos/3
+####
+
+
+####
+PUT http://localhost:8080/usuarios/2/enderecos/3
+Content-Type: application/json
+
+{
+  "cep" : "91170-590",
+  "logradouro": "Rua do testador2",
+  "numero": "123",
+  "complemento" : "Casa",
+  "bairro" : "Rubem Berta",
+  "cidade" : "Porto Alegre",
+  "estado" : "Rio Grande do Sul"
+}
+####
+
+####
+DELETE http://localhost:8080/usuarios/2/enderecos/3
+####
+
+##################################################################
+# pedido - TESTE DE CRUD (C=CREATE(POST), R=LEITURA(GET), U=UPDATE, D=DELETE
+##################################################################
+
+####
+POST http://localhost:8080/pedidos
+Content-Type: application/json
+
+{
+  "estabelecimentoId": "1",
+  "usuarioId": "1",
+  "enderecoId": "1",
+  "listaItems": [
+    { "produtoId": "1", "quantidade" : "3"   },
+    { "produtoId": "2", "quantidade" : "4"   },
+    { "produtoId": "5", "quantidade" : "1"   }
+  ],
+  "formaPagamento" : "A VISTA ?????"
+}
+####
