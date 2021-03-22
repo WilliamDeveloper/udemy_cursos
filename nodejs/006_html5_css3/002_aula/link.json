@@ -1,4 +1,10 @@
-{
-  "nome": "william",
-  "idade" : 18
-}
+[
+  {
+    "src": "image1.jpg",
+    "alt" : "minha foto"
+  },
+  {
+    "src": "image2.jpg",
+    "alt" : "minha foto"
+  }
+]
