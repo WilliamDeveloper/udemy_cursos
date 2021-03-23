@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        /*DEFAULT*/
+        table{
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: gray;
+        }
+        tr{
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+        td{
+            display: table-cell;
+            vertical-align: inherit;
+        }
+        thead{
+            display: table-header-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        tbody{
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        /*CUSTOM*/
+        table{
+            width: 100%;
+            font-family: Arial, Helvetica, Sans-Serif;
+            border-collapse: collapse;
+        }
+        tbody tr:nth-of-type(odd){
+            background-color: #e1e1e1;
+        }
+        td, th{
+            padding: 1em;
+        }
+        td.real{
+            text-align: right;
+        }
+        td.real:before{
+            content: 'R$';
+        }
+        tfoot tr{
+            background-color: #333;
+            color:#fff;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>coluna1</th>
+            <th>coluna2</th>
+            <th>coluna3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+        </tr>
+        <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+        </tr>
+        <tr>
+            <td colspan="2">A2</td>
+            <td>C2</td>
+        </tr>
+        <tr >
+            <td>A2</td>
+            <td>B2</td>
+            <td class="real">45,45</td>
+        </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
