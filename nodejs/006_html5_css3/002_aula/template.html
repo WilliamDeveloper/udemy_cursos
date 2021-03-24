@@ -9,5 +9,25 @@
 </head>
 <body>
 
+<template>
+    <li>{{name}}</li>
+</template>
+
+<ul>
+
+</ul>
+
+<button type="button">Add</button>
+
+<script>
+    const  btn = document.querySelector('button')
+    const  template = document.querySelector('template')
+    const ul = document.querySelector('ul')
+
+    btn.addEventListener('click', e=>{
+        ul.append(template.content.cloneNode(true))
+    })
+</script>
+
 </body>
 </html>
