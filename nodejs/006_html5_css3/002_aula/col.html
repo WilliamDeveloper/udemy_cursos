@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        colgroup{
+            display: table-column-group;
+        }
+
+        col{
+            display: table-column;
+        }
+
+    </style>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+    <table>
+
+        <colgroup>
+
+            <col span="2" style="background-color: darkmagenta">
+            <col style="background-color: dodgerblue">
+
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A1</td>
+                <td>B1</td>
+                <td>C1</td>
+            </tr>
+            <tr>
+                <td>A1</td>
+                <td>B1</td>
+                <td>C1</td>
+            </tr>
+            <tr>
+                <td>A1</td>
+                <td>B1</td>
+                <td>C1</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Footer</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+</body>
+</html>
