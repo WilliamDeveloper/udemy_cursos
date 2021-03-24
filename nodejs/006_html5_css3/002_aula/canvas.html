@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            height: 150px;
+            width: 300px;
+        }
+        /**/
+        body{
+            background-color: deepskyblue;
+        }
+        canvas{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<canvas id="quadro"> </canvas>
+
+
+<script>
+    const quadro = document.querySelector('#quadro')
+    const context = quadro.getContext('2d')
+
+    context.fillStyle = '#FF00FF'
+    context.fillRect(0, 0, 50 , 50)
+
+    context.fillStyle = '#43ff6f'
+    context.fillRect(60, 60, 50 , 50)
+
+</script>
+</body>
+</html>
