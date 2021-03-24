@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onbeforeunload="return debug(event)" >
+
+<script>
+        function debug(e) {
+            console.log('evento ' + e.type)
+            return 'evento ' + e.type
+
+        }
+
+</script>
+</body>
+</html>
