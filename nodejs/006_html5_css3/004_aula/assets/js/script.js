@@ -1,9 +1,14 @@
 console.log('carregado2')
 
-let email = ''
-email = document.querySelector('[name=email]').value
+
+let emailEl = document.querySelector('[name=email]')
+let passwordEl = document.querySelector('#password')
+
+let email = emailEl.value
+let password = passwordEl.value
 
 console.log('email: ', email)
+console.log('password: ', password)
 
 let btnSubmit = document.querySelector("#btn-submit")
 btnSubmit.addEventListener('click', e=>{
