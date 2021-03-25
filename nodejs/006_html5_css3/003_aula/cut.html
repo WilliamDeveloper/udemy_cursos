@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #drag{
+            width: 30vw;
+            height: 30vw;
+            background-color: brown;
+        }
+        #target{
+            width: 30vw;
+            height: 30vw;
+            background-color: coral;
+        }
+
+        body{
+            height: 200vh;
+        }
+    </style>
+</head>
+<body >
+
+<p oncut="debug(event)">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus at consequatur consequuntur dignissimos earum, enim eos et facere inventore iusto omnis perspiciatis praesentium quia repellat saepe suscipit totam ullam, voluptatum.</p>
+
+
+<script >
+
+    function cancel(e) {
+        e.preventDefault()
+    }
+    function debug(e) {
+        e.preventDefault()
+        console.log('evento ' + e.type)
+        alert('evento ' + e.type)
+
+    }
+
+</script>
+</body>
+</html>
+
+<!--https://www.udemy.com/course/web-html5-css3-javascript/learn/lecture/17946700#overview-->
