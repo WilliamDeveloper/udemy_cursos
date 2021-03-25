@@ -23,6 +23,7 @@ function calculaTabuada(){
 calculaTabuada()
 
 
-valorAEl.addEventListener('change', e=>{
+document.querySelector("#valorA").addEventListener('change', e=>{
+    console.log('aa')
     calculaTabuada()
 })
