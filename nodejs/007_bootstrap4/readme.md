@@ -8,7 +8,7 @@ para as camadas restantes
 
 /* 
     5 camadas(breakpoints de media query) do bootstrap
-    xs  < 576
+    xs  < 576 (essa camada xs nao existe mais agora eh so escrever direto sem a sigle "col-6" e nao mais "col-xs-6")
     sm  >= 576
     md  >= 768
     lg  >= 992
