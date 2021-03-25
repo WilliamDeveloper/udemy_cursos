@@ -198,7 +198,7 @@ footer .menu a{
         right: 0;
     }
     .menu.open a{
-        color: #fff;
+        color: #ff0000;
         padding: 20px;
         display: block;
         font-weight: 100;
