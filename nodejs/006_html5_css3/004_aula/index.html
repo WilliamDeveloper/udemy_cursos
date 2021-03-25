@@ -21,17 +21,17 @@
         </a>
     </div>
 
-    <form action="/login" method="post">
+    <form id="form-login" action="/login" method="post">
 
         <div>
-            <input type="email" placeholder="email" required>
+            <input name="email" type="email" placeholder="email" value="gtaskwill@gmail.com" required>
         </div>
         <div>
-            <input type="password" placeholder="senha" required>
+            <input name="password" type="password" placeholder="senha" required>
         </div>
         <div>
             <!--<input type="submit" value="enviar">-->
-            <button>enviar</button>
+            <button id="btn-submit">enviar</button>
         </div>
 
     </form>
