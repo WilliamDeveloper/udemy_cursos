@@ -17,3 +17,7 @@ formLogin.addEventListener('mouseenter', e=>{
 formLogin.addEventListener('mouseleave', e=>{
     console.log('mouse esta fora do formLogin')
 })
+formLogin.addEventListener('submit', e=>{
+    e.preventDefault()
+    console.log('submetendo formLogin')
+})
