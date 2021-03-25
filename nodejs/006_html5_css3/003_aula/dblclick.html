@@ -12,6 +12,7 @@
 <script >
 
     function debug(e) {
+        e.stopPropagation()
         console.log('evento ' + e.type)
         alert('evento ' + e.type)
 
