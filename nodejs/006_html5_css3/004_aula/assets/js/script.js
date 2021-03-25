@@ -26,3 +26,20 @@ formLogin.addEventListener('submit', e=>{
     e.preventDefault()
     console.log('submetendo formLogin')
 })
+
+let json ={
+    email : email
+}
+console.log('json ' ,json)
+
+let json2 ={
+    email,
+    password
+}
+console.log('json2 ' ,json2)
+
+let stringJSON = JSON.stringify(json2)
+console.log(stringJSON)
+
+let jsonFromString = JSON.parse(stringJSON)
+console.log(jsonFromString)
