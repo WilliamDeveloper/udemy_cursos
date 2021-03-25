@@ -41,15 +41,18 @@ function renderTodo(){
         })
 
         li.querySelector('button').addEventListener('click', e=>{
-            let msg= 'posso deletar ?'
+
 
             let button = e.target
             let li = button.parentNode
             let input = li.querySelector('input')
             let id = input.id
             let idArray = id.split('-')
-            let todoId = idArray[1]
 
+            let todoId = idArray[1]
+            let title = li.querySelector('label').innerHTML
+
+            let msg= `posso deletar ? ${title}`
             console.warn(msg)
             if(confirm(msg)){
                 data = data.filter( item => item.id !== parseInt(todoId))
@@ -73,6 +76,7 @@ document.querySelector('#new-task').addEventListener('keyup', e=>{
             id : data.length+1,
             title: valor
         }
+        document.querySelector('#new-task').value = ''
         data.push(obj)
         renderTodo()
     }
