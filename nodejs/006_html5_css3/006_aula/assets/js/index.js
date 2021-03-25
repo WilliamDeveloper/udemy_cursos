@@ -29,7 +29,8 @@ function renderTodo(){
         let li = document.createElement('li')
         li.innerHTML = `   
         <input type="checkbox" id="task-${item.id}">
-        <label for="task-${item.id}">${item.title}</label>           
+        <label for="task-${item.id}">${item.title}</label>     
+        <button type="button">X</button>      
     `
         li.querySelector('input').addEventListener('change',e=>{
             if(e.target.checked){
@@ -37,6 +38,11 @@ function renderTodo(){
             }else{
                 li.classList.remove('complete')
             }
+        })
+
+        li.querySelector('button').addEventListener('click', e=>{
+            let msg= 'posso deletar ?'
+            console.warn(msg)
         })
 
         document.querySelector('.todu').append(li)

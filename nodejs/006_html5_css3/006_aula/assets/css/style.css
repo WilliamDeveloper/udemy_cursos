@@ -134,6 +134,14 @@ footer{
     padding: 0;
 }
 
+.todu button{
+    width: initial;
+    color: #fff;
+    background-color: red;
+    float: right;
+    min-width: 30px;
+}
+
 .todu li{
     padding: 10px;
     border-bottom: #ccc 1px solid;
