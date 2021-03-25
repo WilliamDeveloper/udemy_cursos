@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        div{
-            width: 50vw;
-            height: 50vw;
+        #drag{
+            width: 30vw;
+            height: 30vw;
             background-color: brown;
+        }
+        #target{
+            width: 30vw;
+            height: 30vw;
+            background-color: coral;
         }
     </style>
 </head>
@@ -15,8 +20,8 @@
 
 
 
-<div draggable="true" ondragend="debug(event)">a</div>
-<div  ondragenter="debug(event)">b</div>
+<div id="drag" draggable="true" ondragend="debug(event)" ondrag="debug(event)">a</div>
+<div  id="target" ondragenter="debug(event)">b</div>
 
 
 <script >
