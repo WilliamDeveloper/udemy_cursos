@@ -150,6 +150,10 @@ footer .menu a{
 }
 
 @media(max-width: 450px) {
+    header .header-border{
+        justify-content: space-between;
+    }
+
     .menu ul{
         display: none;
     }
