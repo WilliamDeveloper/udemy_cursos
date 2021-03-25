@@ -60,3 +60,23 @@ body{
 .content-center button:active{
     background-color: #c14e01;
 }
+
+header a{
+    color: #666;
+    /*text-decoration: underline;*/
+    text-decoration: none;
+}
+header a:visited{
+    color: #000;
+}
+header a:hover{
+    text-decoration: underline;
+}
+header a:focus{
+    text-decoration: underline;
+    color:red;
+}
+header a:active{
+    text-decoration: underline;
+    color:yellow;
+}
