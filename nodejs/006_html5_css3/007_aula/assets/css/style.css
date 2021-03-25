@@ -145,9 +145,28 @@ footer .menu a{
     color:#6c757d;
 }
 
+.menu .open-menu{
+    display: none;
+}
+
 @media(max-width: 450px) {
     .menu ul{
         display: none;
+    }
+
+    .menu{
+        width: 60px;
+        flex: initial;
+    }
+
+    .menu .open-menu{
+        display: block;
+        font-size: 2em;
+        padding: .9rem;
+        flex:1;
+        background: none;
+        border: none;
+        color: #fff;
     }
 
     #register{
