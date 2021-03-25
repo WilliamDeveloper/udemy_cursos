@@ -1,0 +1,151 @@
+*{
+    /*padrao*/
+    /*box-sizing: content-box;*/
+
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, Sans-Serif;
+}
+body{
+    background-color: #f2f2f2;
+}
+
+.content-center{
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    /*overflow: hidden;*/
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px ;
+}
+
+.content-center .text-center{
+    text-align: center;
+}
+
+/*descendente =  filho, bisneto, tataraneto etc*/
+.content-center img{
+    width: 100%;
+}
+
+.content-center form{
+    margin:20px;
+}
+
+.content-center input,.content-center button{
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    outline: none;
+}
+
+.content-center input{
+    border-bottom-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    margin-bottom: 10px;
+}
+
+.content-center input:focus{
+    border-bottom-color: #d07335;
+}
+
+.content-center button{
+    background-color: #d07335;
+    color: #fff;
+}
+.content-center button:hover{
+    background-color: #b55b28;
+    cursor: pointer;
+}
+.content-center button:active{
+    background-color: #c14e01;
+}
+
+header a{
+    color: #666;
+    /*text-decoration: underline;*/
+    text-decoration: none;
+}
+header a:visited{
+    color: #000;
+}
+header a:hover{
+    text-decoration: underline;
+}
+header a:focus{
+    text-decoration: underline;
+    color:red;
+}
+header a:active{
+    text-decoration: underline;
+    color:yellow;
+}
+header h1{
+    font-size: 2.5em;
+    text-align: center;
+    margin: 50px auto;
+}
+footer{
+    font-size: 0.8em;
+    text-align: center;
+
+}
+
+.content-tabuada{
+    width: 100%;
+    text-align: center;
+    max-width: 500px;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+}
+
+.content-tabuada table{
+    width : 100%;
+    border-collapse: collapse;
+}
+
+.content-tabuada td{
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.content-tabuada tbody tr:nth-child(odd){
+    background-color: rgba(0,0,0,0.05);
+}
+
+.content-tabuada tbody tr:nth-child(even){
+    background-color: rgba(255,0,0,0.05);
+}
+
+.content-tabuada tbody tr:hover{
+    background-color: rgba(255,124,0,0.05);
+    cursor: pointer;
+}
+
+#valorA{
+    width: 100%;
+    padding: 10px;
+}
+
+.todu{
+    list-style: none;
+    padding: 0;
+}
+
+.todu li{
+    padding: 10px;
+    border-bottom: #ccc 1px solid;
+}
+
+.todu li input{
+    width: initial;
+    margin-right: 10px;
+}
+
+.todu li.complete{
+    text-decoration: line-through;
+    color:#999;
+    cursor: not-allowed;
+}
