@@ -1,3 +1,5 @@
+quando quando tu nao especifica a camada ele trabalha por padrao na largura de 576
+
 /* 
     5 camadas do bootstrap
     xs  < 576
