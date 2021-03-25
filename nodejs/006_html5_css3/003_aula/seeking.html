@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      
+    </style>
+</head>
+<body >
+
+
+
+<video
+        src="https://storage.googleapis.com/hcode-public-storage/videos/AV1_trailer.mp4"
+        height="200"
+        controls
+        onseeking="debug(event)"
+
+>
+
+</video>
+
+<script >
+    
+
+    function cancel(e) {
+        e.preventDefault()
+    }
+    function debug(e) {
+        e.preventDefault()
+        console.log('evento ' + e.type)
+        alert('evento ' + e.type)
+
+    }
+
+</script>
+</body>
+</html>
+
+<!--https://www.udemy.com/course/web-html5-css3-javascript/learn/lecture/17946700#overview-->
