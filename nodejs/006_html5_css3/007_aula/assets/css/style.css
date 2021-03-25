@@ -74,6 +74,8 @@ header #menu a{
     box-shadow: 0 0 2.1875rem rgba(140,152,164,0.125);
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    padding: 20px;
+    color: #333;
 }
 
 #register p{
