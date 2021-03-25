@@ -42,7 +42,22 @@ function renderTodo(){
 
         li.querySelector('button').addEventListener('click', e=>{
             let msg= 'posso deletar ?'
+
+            let button = e.target
+            let li = button.parentNode
+            let input = li.querySelector('input')
+            let id = input.id
+            let idArray = id.split('-')
+            let todoId = idArray[1]
+
             console.warn(msg)
+            if(confirm(msg)){
+                data = data.filter( item => item.id !== parseInt(todoId))
+
+                renderTodo()
+            }
+
+
         })
 
         document.querySelector('.todu').append(li)
