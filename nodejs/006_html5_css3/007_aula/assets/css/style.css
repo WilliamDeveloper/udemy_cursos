@@ -153,6 +153,10 @@ footer .menu a{
     display: none;
 }
 
+.close-menu{
+    display: none;
+}
+
 @media(max-width: 450px) {
 
     .menu .close-menu{
