@@ -43,3 +43,10 @@ console.log(stringJSON)
 
 let jsonFromString = JSON.parse(stringJSON)
 console.log(jsonFromString)
+
+if(!json.email){
+    console.log('o campo deve ser preenchido')
+}else{
+    console.log('o campo foi preenchido')
+    console.error('o campo foi preenchido')
+}
