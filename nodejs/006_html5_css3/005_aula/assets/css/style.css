@@ -101,6 +101,10 @@ footer{
     padding: 20px;
 }
 
+.content-tabuada table{
+    width : 100%;
+}
+
 .content-tabuada td{
     padding: 10px;
 }
