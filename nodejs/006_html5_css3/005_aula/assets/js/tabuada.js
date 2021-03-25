@@ -1,6 +1,7 @@
 let tabuadaEl = document.querySelector("#tabuada tbody")
 let valorA = 5
 
+tabuadaEl.innerHTML = ''
 for(let valorB=0;valorB <= 10;valorB++){
     let template = `       
         <td>${valorA}</td>
