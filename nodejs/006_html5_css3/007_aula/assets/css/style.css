@@ -16,7 +16,18 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
+
+}
+
+header .bg-gradiente{
+    min-height: 300px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+
+}
+header .header-border{
     display: flex;
+    border-bottom: rgba(255,255,255,0.25) 1px solid;
 }
 
 header #logo{
@@ -50,3 +61,4 @@ header #menu a{
     font-weight: bold;
     padding: 20px;
 }
+
