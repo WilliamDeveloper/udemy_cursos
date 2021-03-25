@@ -21,12 +21,16 @@
 
 
 <div id="drag" draggable="true" ondragend="debug(event)" ondrag="debug(event)" ondragstart="debug(event)">a</div>
-<div  id="target" ondragenter="debug(event)"  ondragleave="debug(event)" ondragover="debug(event)" ondrop="debug(event)">b</div>
+<div  id="target" ondragenter="debug(event)"  ondragleave="debug(event)" ondragover="cancel(event)" ondrop="debug(event)">b</div>
 
 
 <script >
 
+    function cancel(e) {
+        e.preventDefault()
+    }
     function debug(e) {
+        e.preventDefault()
         console.log('evento ' + e.type)
         alert('evento ' + e.type)
 
