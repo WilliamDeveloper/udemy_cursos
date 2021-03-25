@@ -45,6 +45,10 @@ body{
     margin-bottom: 10px;
 }
 
+.content-center input:focus{
+    border-bottom-color: #d07335;
+}
+
 .content-center button{
     background-color: #d07335;
     color: #fff;
