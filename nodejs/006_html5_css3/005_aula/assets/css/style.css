@@ -106,5 +106,6 @@ footer{
 }
 
 .content-tabuada td{
-    padding: 10px;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
 }
