@@ -1,7 +1,13 @@
 quando quando tu nao especifica a camada ele trabalha por padrao na largura de 576
+se apenas dizer col-6 e nao col-md-6 
+vai ser aplicado o mesmo css para todas resolucoes de camada
+
+caso so exista 2 classe de camada 
+vai prevalecer a de maior resolucao
+para as camadas restantes
 
 /* 
-    5 camadas do bootstrap
+    5 camadas(breakpoints de media query) do bootstrap
     xs  < 576
     sm  >= 576
     md  >= 768
