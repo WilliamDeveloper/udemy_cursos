@@ -7,3 +7,7 @@ document.querySelector('.close-menu button').addEventListener('click', e=>{
     console.log('blau')
     document.querySelector('header .menu').classList.remove('open')
 })
+document.querySelector('.menu .backdrop').addEventListener('click', e=>{
+    console.log('blau')
+    document.querySelector('header .menu').classList.remove('open')
+})
