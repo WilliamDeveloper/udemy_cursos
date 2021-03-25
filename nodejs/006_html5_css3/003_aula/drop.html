@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #drag{
+            width: 30vw;
+            height: 30vw;
+            background-color: brown;
+        }
+        #target{
+            width: 30vw;
+            height: 30vw;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div id="drag" draggable="true" ondragend="debug(event)" ondrag="debug(event)" ondragstart="debug(event)">a</div>
+<div  id="target" ondragenter="debug(event)"  ondragleave="debug(event)" ondragover="debug(event)" ondrop="debug(event)">b</div>
+
+
+<script >
+
+    function debug(e) {
+        console.log('evento ' + e.type)
+        alert('evento ' + e.type)
+
+    }
+
+</script>
+</body>
+</html>
+
+<!--https://www.udemy.com/course/web-html5-css3-javascript/learn/lecture/17946700#overview-->
