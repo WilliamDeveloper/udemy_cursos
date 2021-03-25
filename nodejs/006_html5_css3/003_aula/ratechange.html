@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      
+    </style>
+</head>
+<body >
+
+<select onchange="setRate(event)">
+    <option>0.25</option>
+    <option>0.5</option>
+    <option>0.75</option>
+    <option selected>1</option>
+    <option>1.25</option>
+    <option>1.5</option>
+    <option>1.75</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>30</option>
+</select>
+
+<video
+        src="https://storage.googleapis.com/hcode-public-storage/videos/AV1_trailer.mp4"
+        height="200"
+        controls
+
+
+>
+
+</video>
+
+<script >
+    
+    function setRate(e) {
+        const videoEl = document.querySelector("video")
+        const value = e.target.value
+        videoEl.playbackRate = parseFloat(value)
+
+    }
+
+
+
+
+
+    function cancel(e) {
+        e.preventDefault()
+    }
+    function debug(e) {
+        e.preventDefault()
+        console.log('evento ' + e.type)
+        alert('evento ' + e.type)
+
+    }
+
+</script>
+</body>
+</html>
+
+<!--https://www.udemy.com/course/web-html5-css3-javascript/learn/lecture/17946700#overview-->
