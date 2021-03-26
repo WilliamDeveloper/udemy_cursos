@@ -33,4 +33,5 @@ e toda row precisa de um dos 2 tipos de container para funcionar
 - nesting (aninhamento de grid system)(o espaco util de cada celula vira uma grid)
 - fill, grow, shrink
 - wrap
+- tipografia
 
