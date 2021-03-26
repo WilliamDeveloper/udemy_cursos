@@ -30,3 +30,5 @@ e toda row precisa de um dos 2 tipos de container para funcionar
 - grid (camadas grid usadas pelo bootstrap)
 - order (ordem que elementos aparece)
 - offset (quando queremos tirar uma coluna nao util mas continuar o layout)
+- nesting (aninhamento de grid system)
+
