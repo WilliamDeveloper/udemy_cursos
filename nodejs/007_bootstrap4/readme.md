@@ -26,3 +26,6 @@ para as camadas restantes
 
 toda col precisa de uma row 
 e toda row precisa de um dos 2 tipos de container para funcionar
+
+- order
+- offset
