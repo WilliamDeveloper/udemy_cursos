@@ -1,12 +1,28 @@
-.container{
+header {
+    background-color: #F37520;
+    min-height: 64px;
+}
+
+header ul {
+    margin: 0;
+}
+
+section nav {
+    background-color: #EDEDED;
     padding: 2rem;
 }
 
-.row > .col,
-.row > [class^=col-],
-.bg{
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    background-color: rgba(243,117,32,0.15);
-    border: rgba(243,117,32,0.20);
+footer {
+    background-color: #454545;
+    padding: 2rem;
+}
+
+@media (min-width: 576px) {
+    main {
+        height: calc(100vh - 300px);
+        overflow: auto;
+    }
+    footer {
+        min-height: 236px;
+    }
 }
