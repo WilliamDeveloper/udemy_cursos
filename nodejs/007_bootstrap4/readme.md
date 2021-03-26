@@ -31,4 +31,6 @@ e toda row precisa de um dos 2 tipos de container para funcionar
 - order (ordem que elementos aparece)
 - offset (quando queremos tirar uma coluna nao util mas continuar o layout)
 - nesting (aninhamento de grid system)(o espaco util de cada celula vira uma grid)
+- fill, grow, shrink
+- wrap
 
