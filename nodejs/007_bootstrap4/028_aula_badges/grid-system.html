@@ -30,10 +30,7 @@
     <h3>hcode treinamentos <span class="badge badge-success">william</span></h3>
     <h6>hcode treinamentos <span class="badge badge-success">william</span></h6>
 
-    <button type="button" id="btn-teste"  class="btn btn-primary">
-        clique aqui
-        <span class="badge badge-success">0</span>
-    </button>
+    <button type="button" id="btn-teste"  class="btn btn-primary">clique <span class="badge badge-success">0</span></button>
 
     <button type="button"  class="btn btn-primary">clique aqui <span class="badge badge-success">999+</span></button>
     <button type="button"  class="btn btn-primary">
@@ -69,7 +66,9 @@
 $(()=>{
     // abstracao - quando a pagina carregar faz alguma coisa
     $('#btn-teste').on('click', e=>{
-        console.log('click')
+        console.log('click', $(e.target))
+        console.log('click', $(e.target).find('.bagde'))
+        console.log('click', $(e.target).find('.bagde').text())
         const valor = parseInt($(e.target).find('.bagde').text())
         console.log(valor)
         $(e.target).find('.bagde').text(valor +1)
