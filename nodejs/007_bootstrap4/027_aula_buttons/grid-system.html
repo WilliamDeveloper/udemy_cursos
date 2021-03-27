@@ -76,7 +76,14 @@
     <!--.row>.col>button.btn.btn-primary.active.btn-block{OK}-->
     <div class="row">
         <div class="col">
-            <button class="btn btn-primary active btn-block">OK</button>
+            <button class="btn btn-primary active btn-block" aria-pressed="true">OK</button>
+        </div>
+    </div>
+
+    .row>.col>button:disabled.btn.btn-primary.btn-block{OK}
+    <div class="row">
+        <div class="col">
+            <button disabled class="btn btn-primary btn-block">OK</button>
         </div>
     </div>
 
