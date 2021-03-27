@@ -22,86 +22,7 @@
 <hr>
 <div class="container">
 
-    <nav>
-        <ul class="pagination justify-content-end">
-            <li class="page-item disabled"> <a href="#" class="page-link">&laquo;</a></li>
-            <li class="page-item active"> <a href="#" class="page-link">1</a></li>
-            <li class="page-item"> <a href="#" class="page-link">2</a></li>
-            <li class="page-item"> <a href="#" class="page-link">3</a></li>
-            <li class="page-item"> <a href="#" class="page-link">4</a></li>
-            <li class="page-item"> <a href="#" class="page-link">5</a></li>
-            <li class="page-item"> <a href="#" class="page-link">&raquo;</a></li>
-        </ul>
-    </nav>
-
-</div>
-
-<hr>
-<div class="container">
-
-    <nav>
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled"> <a href="#" class="page-link">&laquo;</a></li>
-            <li class="page-item active"> <a href="#" class="page-link">1</a></li>
-            <li class="page-item"> <a href="#" class="page-link">2</a></li>
-            <li class="page-item"> <a href="#" class="page-link">3</a></li>
-            <li class="page-item"> <a href="#" class="page-link">4</a></li>
-            <li class="page-item"> <a href="#" class="page-link">5</a></li>
-            <li class="page-item"> <a href="#" class="page-link">&raquo;</a></li>
-        </ul>
-    </nav>
-
-</div>
-
-<hr>
-<div class="container">
-
-    <nav>
-        <ul class="pagination">
-            <li class="page-item disabled"> <a href="#" class="page-link">&laquo;</a></li>
-            <li class="page-item active"> <a href="#" class="page-link">1</a></li>
-            <li class="page-item"> <a href="#" class="page-link">2</a></li>
-            <li class="page-item"> <a href="#" class="page-link">3</a></li>
-            <li class="page-item"> <a href="#" class="page-link">4</a></li>
-            <li class="page-item"> <a href="#" class="page-link">5</a></li>
-            <li class="page-item"> <a href="#" class="page-link">&raquo;</a></li>
-        </ul>
-    </nav>
-
-</div>
-
-<hr>
-<div class="container">
-
-    <nav>
-        <ul class="pagination">
-            <li class="page-item"> <a href="#" class="page-link">&laquo;</a></li>
-            <li class="page-item"> <a href="#" class="page-link">1</a></li>
-            <li class="page-item"> <a href="#" class="page-link">2</a></li>
-            <li class="page-item"> <a href="#" class="page-link">3</a></li>
-            <li class="page-item"> <a href="#" class="page-link">4</a></li>
-            <li class="page-item"> <a href="#" class="page-link">5</a></li>
-            <li class="page-item"> <a href="#" class="page-link">&raquo;</a></li>
-        </ul>
-    </nav>
-
-</div>
-
-
-<hr>
-<div class="container">
-
-    <nav>
-        <ul class="pagination">
-            <li class="page-item"> <a href="#" class="page-link">Anterior</a></li>
-            <li class="page-item"> <a href="#" class="page-link">1</a></li>
-            <li class="page-item"> <a href="#" class="page-link">2</a></li>
-            <li class="page-item"> <a href="#" class="page-link">3</a></li>
-            <li class="page-item"> <a href="#" class="page-link">4</a></li>
-            <li class="page-item"> <a href="#" class="page-link">5</a></li>
-            <li class="page-item"> <a href="#" class="page-link">Próximo</a></li>
-        </ul>
-    </nav>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="popover" data-content="conteudo popover">mostrar popover</button>
 
 </div>
 
@@ -111,7 +32,7 @@
 <script>
 
     $(()=>{
-
+        $('[data-toggle="popover"]').popover()
     })
 
 
