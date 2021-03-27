@@ -20,17 +20,17 @@
 <div class="container">
 
 
-    <form>
+    <form novalidate class="needs-validation" >
 
         <div class="form-row">
             <div class="col form-group">
                 <label for="first">Nome</label>
-                <input type="text" id="first" placeholder="Nome" class="form-control">
+                <input type="text" id="first" placeholder="Nome" class="form-control" required>
             </div>
 
             <div class="col form-group">
                 <label for="last">Sobrenome</label>
-                <input type="text" id="last" placeholder="Sobrenome" class="form-control">
+                <input type="text" id="last" placeholder="Sobrenome" class="form-control" required>
             </div>
         </div>
         <div class="form-row">
@@ -91,6 +91,23 @@
 
 
 </div>
+
+
+<script>
+    $(()=>{
+        // on page ready
+        $('form').on('submit', e=>{
+            const form = e.target
+            if (form.checkValidity() == false){
+                e.preventDefault()
+                e.stopPropagation()
+            }
+
+            $(form).addClass('was-validated')
+
+        })
+    })
+</script>
 
 </body>
 </html>
