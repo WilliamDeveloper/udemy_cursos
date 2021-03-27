@@ -42,3 +42,4 @@ window.addEventListener('load', e=>{
 })
 
 https://adorable.io
+https://picsum.photos/200
