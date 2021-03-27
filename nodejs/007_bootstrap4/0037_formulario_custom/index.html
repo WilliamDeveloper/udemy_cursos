@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WhatsApp</title>
+    <!--<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <!--<link rel="stylesheet" href="assets/css/styles.css">-->
+</head>
+<body>
+
+<div class="container">
+
+
+    <form novalidate class="needs-validation" >
+
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="first">Nome</label>
+                <input type="text" id="first" placeholder="Nome" class="form-control is-valid" required>
+                <div class="valid-tooltip">OK</div>
+                <div class="invalid-tooltip">NOK</div>
+            </div>
+
+            <div class="col form-group">
+                <label for="last">Sobrenome</label>
+                <input type="text" id="last" placeholder="Sobrenome" class="form-control is-invalid" required>
+                <div class="valid-tooltip">OK</div>
+                <div class="invalid-tooltip">NOK</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col form-group">
+                <label for="zipcode">Cep</label>
+                <input type="text" id="zipcode" placeholder="Cep" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-9 form-group">
+                <label for="address">Endereco</label>
+                <input type="text" id="address" placeholder="Endereco" class="form-control">
+            </div>
+
+            <div class="col-sm-3 form-group">
+                <label for="number">Numero</label>
+                <input type="number" id="number" placeholder="Numero" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-6 form-group">
+                <label for="complement">Complemento</label>
+                <input type="text" id="complement" placeholder="Complemento" class="form-control">
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <label for="district">Bairro</label>
+                <input type="text" id="district" placeholder="Bairro" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-sm-4 form-group">
+                <label for="city">Cidade</label>
+                <input type="text" id="city" placeholder="Cidade" class="form-control">
+            </div>
+
+            <div class="col-6 col-sm-4 form-group">
+                <label for="state">Estado</label>
+                <input type="text" id="state" placeholder="Estado" class="form-control">
+            </div>
+
+            <div class="col-6 col-sm-4 form-group">
+                <label for="country">Pais</label>
+                <input type="text" id="country" placeholder="Pais" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+        </div>
+
+    </form>
+
+
+
+
+</div>
+
+
+<script>
+    $(()=>{
+        // on page ready
+        $('form').on('submit', e=>{
+            const form = e.target
+            if (form.checkValidity() == false){
+                e.preventDefault()
+                e.stopPropagation()
+            }
+
+            $(form).addClass('was-validated')
+
+        })
+    })
+</script>
+
+</body>
+</html>
