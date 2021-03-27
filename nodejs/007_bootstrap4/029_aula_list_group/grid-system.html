@@ -24,40 +24,14 @@
 <div class="container">
 
 
-    <!--.row>.col>input:button.btn.btn-primary+a.btn.btn-primary+button.btn.btn-primary-->
-
-    <h1>hcode treinamentos <span class="badge badge-primary">william</span></h1>
-    <h3>hcode treinamentos <span class="badge badge-success">william</span></h3>
-    <h6>hcode treinamentos <span class="badge badge-success">william</span></h6>
-
-    <button type="button" id="btn-teste"  class="btn btn-primary">clique <span class="badge badge-success">0</span></button>
-
-    <button type="button"  class="btn btn-primary">clique aqui <span class="badge badge-success">999+</span></button>
-    <button type="button"  class="btn btn-primary">
-        clique aqui
-        <span class="badge badge-success">999+</span>
-        <span class="sr-only">Há 5 mensagens não lidas</span>
-    </button>
-
-    <!--span.badge.badge-primary{$}*8-->
-
-    <span class="badge badge-primary">1</span>
-    <span class="badge badge-secondary">2</span>
-    <span class="badge badge-success">3</span>
-    <span class="badge badge-danger">4</span>
-    <span class="badge badge-warning">5</span>
-    <span class="badge badge-info">6</span>
-    <span class="badge badge-dark">7</span>
-    <span class="badge badge-light">8</span>
-
-    <hr>
-
-    <span class="badge badge-primary badge-pill">1</span>
-
-    <hr>
-
-    <a href="" class="badge badge-success">verde</a>
-
+    <!--ul.list-group>li.list-group-item-->
+    <ul class="list-group">
+        <li class="list-group-item">1</li>
+        <li class="list-group-item active">2</li>
+        <li class="list-group-item">3</li>
+        <li class="list-group-item">4</li>
+        <li class="list-group-item">5</li>
+    </ul>
 
 </div>
 
@@ -65,14 +39,7 @@
 
 $(()=>{
     // abstracao - quando a pagina carregar faz alguma coisa
-    $('#btn-teste').on('click', e=>{
-        console.log('click', $(e.target))
-        console.log('click', $(e.target).find('.bagde'))
-        console.log('click', $(e.target).find('.bagde').text())
-        const valor = parseInt($(e.target).find('.bagde').text())
-        console.log(valor)
-        $(e.target).find('.bagde').text(valor +1)
-    })
+
 
 });
 
