@@ -110,6 +110,9 @@
         </div>
     </div>
 
+    <!--button.btn.btn-primary#btn-click{ok}-->
+    <button class="btn btn-primary" id="btn-click">ok</button>
+
 
 </div>
 
@@ -117,7 +120,9 @@
 
 $(()=>{
     // abstracao - quando a pagina carregar faz alguma coisa
-
+    $('#btn-click').on('click', e=>{
+        $('#btn-autosave').button('toggle')
+    })
 });
 
 </script>
