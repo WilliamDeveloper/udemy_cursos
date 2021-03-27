@@ -35,3 +35,8 @@ e toda row precisa de um dos 2 tipos de container para funcionar
 - wrap
 - tipografia
 
+
+// pageonready
+window.addEventListener('load', e=>{
+    
+})
