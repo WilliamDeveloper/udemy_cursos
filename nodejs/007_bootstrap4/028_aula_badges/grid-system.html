@@ -23,95 +23,20 @@
 
 <div class="container">
 
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary">ok</button>
-            <button class="btn btn-secondary">ok</button>
-            <button class="btn btn-success">ok</button>
-            <button class="btn btn-danger">ok</button>
-            <button class="btn btn-warning">ok</button>
-            <button class="btn btn-info">ok</button>
-            <button class="btn btn-dark">ok</button>
-            <button class="btn btn-light">ok</button>
-            <button class="btn btn-link">ok</button>
-        </div>
-    </div>
 
     <!--.row>.col>input:button.btn.btn-primary+a.btn.btn-primary+button.btn.btn-primary-->
-    <div class="row">
-        <div class="col">
-            <input type="button" class="btn btn-primary" value="ok">
-            <a href="" class="btn btn-primary">ok</a>
-            <button class="btn btn-primary">ok</button>
-        </div>
-    </div>
 
-    <!--.row>.col>button.btn.btn-outline-primary{OK}-->
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-outline-primary">OK</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-outline-danger">OK</button>
-        </div>
-    </div>
+    <h1>hcode treinamentos <span class="badge badge-primary">william</span></h1>
+    <h3>hcode treinamentos <span class="badge badge-success">william</span></h3>
+    <h6>hcode treinamentos <span class="badge badge-success">william</span></h6>
 
-    <!--.row>.col>button.btn.btn-primary.btn-lg{OK}+button.btn.btn-primary.btn-sm{OK}-->
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary btn-lg">OK</button>
-            <button class="btn btn-primary btn-sm">OK</button>
-        </div>
-    </div>
+    <button type="button"  class="btn btn-primary">clique aqui <span class="badge badge-success">999+</span></button>
+    <button type="button"  class="btn btn-primary">
+        clique aqui
+        <span class="badge badge-success">999+</span>
+        <span class="sr-only">Há 5 mensagens não lidas</span>
+    </button>
 
-    <!--.row>.col>button.btn.btn-primary.btn-block{OK}-->
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary btn-block">OK</button>
-        </div>
-    </div>
-
-    <!--.row>.col>button.btn.btn-primary.active.btn-block{OK}-->
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary active btn-block" aria-pressed="true">OK</button>
-        </div>
-    </div>
-
-    <!--.row>.col>button:disabled.btn.btn-primary.btn-block{OK}-->
-    <div class="row">
-        <div class="col">
-            <button disabled class="btn btn-primary btn-block">OK</button>
-        </div>
-    </div>
-
-    <!--.row>.col>button.btn.btn-success#btn-autosave{OK}-->
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-success" data-toggle="button" id="btn-autosave">OK</button>
-        </div>
-    </div>
-
-
-    <!--.row>.col>.btn-group.btn-group-toggle-->
-    <div class="row">
-        <div class="col">
-
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-
-                <!--label.btn.btn-secondary*3>input:radio#option$-->
-                <label for="option1" class="btn btn-secondary active"><input type="radio" name="options" id="option1" checked>1</label>
-                <label for="option2" class="btn btn-secondary"><input type="radio" name="options" id="option2">2</label>
-                <label for="option3" class="btn btn-secondary"><input type="radio" name="options" id="option3">3</label>
-
-            </div>
-        </div>
-    </div>
-
-    <!--button.btn.btn-primary#btn-click{ok}-->
-    <button class="btn btn-primary" id="btn-click">ok</button>
 
 
 </div>
@@ -120,9 +45,7 @@
 
 $(()=>{
     // abstracao - quando a pagina carregar faz alguma coisa
-    $('#btn-click').on('click', e=>{
-        $('#btn-autosave').button('toggle')
-    })
+
 });
 
 </script>
