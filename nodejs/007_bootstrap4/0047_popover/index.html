@@ -31,6 +31,8 @@
     <button type="button" class="btn btn-primary btn-lg" title="titulo popover" data-toggle="popover" data-content="conteudo popover" data-trigger="focus" data-placement="bottom">mostrar popover</button>
     <button type="button" class="btn btn-primary btn-lg" title="titulo popover" data-toggle="popover" data-content="conteudo popover" data-trigger="hover" data-placement="bottom">mostrar popover</button>
 
+    <button type="button" class="btn btn-danger btn-lg" id="btn-click">mostrar popover</button>
+
 </div>
 
 
@@ -40,6 +42,9 @@
 
     $(()=>{
         $('[data-toggle="popover"]').popover()
+        $('#btn-click').on('click', e=>{
+            $('[data-toggle="popover"]').popover('toggle')
+        })
     })
 
 
