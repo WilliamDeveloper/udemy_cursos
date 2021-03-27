@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="grid-system.css">
+
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+
+    <!--.row>.col>input:button.btn.btn-primary+a.btn.btn-primary+button.btn.btn-primary-->
+
+    <h1>hcode treinamentos <span class="badge badge-primary">william</span></h1>
+    <h3>hcode treinamentos <span class="badge badge-success">william</span></h3>
+    <h6>hcode treinamentos <span class="badge badge-success">william</span></h6>
+
+    <button type="button" id="btn-teste"  class="btn btn-primary">clique <span class="badge badge-success">0</span></button>
+
+    <button type="button"  class="btn btn-primary">clique aqui <span class="badge badge-success">999+</span></button>
+    <button type="button"  class="btn btn-primary">
+        clique aqui
+        <span class="badge badge-success">999+</span>
+        <span class="sr-only">Há 5 mensagens não lidas</span>
+    </button>
+
+    <!--span.badge.badge-primary{$}*8-->
+
+    <span class="badge badge-primary">1</span>
+    <span class="badge badge-secondary">2</span>
+    <span class="badge badge-success">3</span>
+    <span class="badge badge-danger">4</span>
+    <span class="badge badge-warning">5</span>
+    <span class="badge badge-info">6</span>
+    <span class="badge badge-dark">7</span>
+    <span class="badge badge-light">8</span>
+
+    <hr>
+
+    <span class="badge badge-primary badge-pill">1</span>
+
+    <hr>
+
+    <a href="" class="badge badge-success">verde</a>
+
+
+</div>
+
+<script>
+
+$(()=>{
+    // abstracao - quando a pagina carregar faz alguma coisa
+    $('#btn-teste').on('click', e=>{
+        console.log('click', $(e.target))
+        console.log('click', $(e.target).find('.bagde'))
+        console.log('click', $(e.target).find('.bagde').text())
+        const valor = parseInt($(e.target).find('.bagde').text())
+        console.log(valor)
+        $(e.target).find('.bagde').text(valor +1)
+    })
+
+});
+
+</script>
+</body>
+</html>
