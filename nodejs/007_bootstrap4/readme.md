@@ -46,3 +46,4 @@ https://picsum.photos/200
 
 
 https://fontawesome.com/icons?d=gallery&p=1
+https://material.io/resources/icons/?style=baseline
