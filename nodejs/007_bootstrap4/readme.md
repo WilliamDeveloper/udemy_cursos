@@ -43,3 +43,6 @@ window.addEventListener('load', e=>{
 
 https://adorable.io
 https://picsum.photos/200
+
+
+https://fontawesome.com/icons?d=gallery&p=1
