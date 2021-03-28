@@ -109,8 +109,22 @@
 <script>
     $(()=>{
 
+        $('.modal-1').on('show.bs.modal', e=>{
+            console.log('show.bs.modal', e.target)
+        })
+        $('.modal-1').on('shown.bs.modal', e=>{
+            console.log('shown.bs.modal', e.target)
+        })
+        $('.modal-1').on('hide.bs.modal', e=>{
+            console.log('hide.bs.modal', e.target)
+        })
+        $('.modal-1').on('hidden.bs.modal', e=>{
+            console.log('hidden.bs.modal', e.target)
+        })
+
         $('.btn-continuar').on('click', e=>{
             $('.modal-1').modal('hide')
+
         })
     })
 </script>
