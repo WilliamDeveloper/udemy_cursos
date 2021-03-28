@@ -26,7 +26,6 @@
 
 <hr>
 <div class="container">
-
     <div class="toast">
         <div class="toast-header">
             <strong class="mr-auto">  notificacao    </strong>
@@ -37,7 +36,25 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores assumenda at debitis expedita illum, in iure magni maiores maxime molestias perferendis porro quas quo quos repellendus, sed sint vel?
         </div>
     </div>
+</div>
 
+<hr>
+<div class="container">
+
+    <div aria-live="polit" aria-atomic="true" style="position: relative; min-height: 200px;">
+        <div style="position: absolute;top:0; right: 0;">
+            <div class="toast">
+                <div class="toast-header bg-primary text-white">
+                    <strong class="mr-auto">  notificacao    </strong>
+                    <small>Agora</small>
+                    <button type="button" class="btn btn-primary ml-2 mb-1 close" data-dismiss="toast"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="toast-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores assumenda at debitis expedita illum, in iure magni maiores maxime molestias perferendis porro quas quo quos repellendus, sed sint vel?
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -49,7 +66,7 @@
 
         $('.toast').toast({
             delay: 5000,
-            autohide: true,
+            // autohide: true,
             animation: false
 
         }).toast('show')
