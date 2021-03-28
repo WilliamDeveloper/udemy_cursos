@@ -28,7 +28,7 @@
 <hr>
 <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#modal-1">Abrir</button>
 <div class="container">
-    <div class="modal" id="modal-1">
+    <div class="modal modal-1" id="modal-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal" class="btn btn-secondary">cancelar</button>
-                    <button type="button" id="btn-continuar"  class="btn btn-primary">continuar</button>
+                    <button type="button" id="btn-continuar"  class="btn btn-primary btn-continuar">continuar</button>
                 </div>
             </div>
         </div>
@@ -54,8 +54,8 @@
 <script>
     $(()=>{
 
-        $('#btn-continuar').on('click', e=>{
-            $('#modal-1').modal('hide')
+        $('.btn-continuar').on('click', e=>{
+            $('.modal-1').modal('hide')
         })
     })
 </script>
