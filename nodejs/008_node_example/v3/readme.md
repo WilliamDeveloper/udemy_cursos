@@ -39,12 +39,16 @@ bower install --save font-awesome@5.15.3
 - resolvendo dependencias do projeto
 --- ---------------------------------------
 #dependencias frontend
+````
 cd /modularnode/public/
 bower install
+````
 
 #dependencias backend
+````
 cd /modularnode/
 npm install
+````
 
 --- ---------------------------------------
 - Rodando projeto
