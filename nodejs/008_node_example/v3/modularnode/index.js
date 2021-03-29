@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: `./src/config/.production.env` })
 
 var app = require('./src/app');
 
