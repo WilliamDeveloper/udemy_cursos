@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npx nodemon app.js",
+    "start": "npx nodemon ./bin/www",
+    "start_teste": "npx nodemon app.js",
     "start_default": "node ./bin/www"
   },
   "dependencies": {
