@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'..', 'public')));
 
 
-//carregar rotas
+//usar rotas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/hello',routesRouter)
