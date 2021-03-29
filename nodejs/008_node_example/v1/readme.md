@@ -15,6 +15,9 @@ npm install --save npx
 #nodemon
 npm install --save nodemon
 
+# resolver dependencias
+npm install
+
 # run
 npx nodemon app.js
 npm run start
