@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const TestController = require("@root/controllers/index")
+const TestController = require('@root/')
 
 router.get('/', TestController.helloWorld)
 
