@@ -31,10 +31,23 @@ bower init
 
 bower install --save bootstrap@4.6.0
 bower install --save jquery@3.6.0
+bower install --save popper.js@2.9.1
 
-# run
-npx nodemon app.js
+--- ---------------------------------------
+- resolvendo dependencias do projeto
+--- ---------------------------------------
+cd /modularnode/public/
+bower install
+
+cd /modularnode/
+npm install
+
+--- ---------------------------------------
+- Rodando projeto
+--- ---------------------------------------
 npm run start
+npm run start_dev
+npm run start_prod
 
 
 
