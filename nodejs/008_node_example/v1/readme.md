@@ -9,4 +9,14 @@ npm install --save module-alias
 # https://www.npmjs.com/package/module-alias
 npm install --save dotenv
 
+#npx
+npm install --save npx
+
+#nodemon
+npm install --save nodemon
+
+# run
+npx nodemon app.js
+npm run start
+
 
