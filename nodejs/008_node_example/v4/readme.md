@@ -25,6 +25,9 @@ npm install --save nodemon
 # resolver dependencias
 npm install
 
+# hbs view engine
+npm install --save hbs
+
 ````
 
 --- ---------------------------------------
