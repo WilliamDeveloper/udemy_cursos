@@ -26,7 +26,9 @@ app.listen(PORT,()=>{
         file_env: ${caminhoEnv}
         
         on ${HOST_PROTOCOL}://${HOST_IP}:${PORT}
-        hello_world: ${HOST_PROTOCOL}://${HOST_IP}:${PORT}/hello
-        ---------------------------
+        hello_world -->: ${HOST_PROTOCOL}://${HOST_IP}:${PORT}/hello
+        
+        :)
+        
     `)
 })
