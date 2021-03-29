@@ -3,11 +3,8 @@
   <head>
     <title><%= title %></title>
 
-    <!--bootstrap-->
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!--font-awesome-->
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/all.min.css">
+    <%- include('partials/header-scripts.ejs') %>
 
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
@@ -50,11 +47,9 @@
 
 
 
-    <!--para o bootstrap-->
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/popper.js/dist/umd/popper.min.js"></script>-->
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+
+    <%- include('partials/footer-scripts.ejs') %>
 
   </body>
 
