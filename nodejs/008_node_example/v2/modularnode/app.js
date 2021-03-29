@@ -1,4 +1,4 @@
-require('dotenv').config
+// require('dotenv').config
 // const moduleAlias = require('module-alias')
 
 //  Ou vários aliases
@@ -11,8 +11,8 @@ require('dotenv').config
 // global.__base = __dirname + '/';
 
 
-const teste = require('./src/config/index')
-console.log('tste ',teste)
+// const teste = require('./src/config/index')
+// console.log('tste ',teste)
 
 
 var createError = require('http-errors');
@@ -23,7 +23,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var routesRouter = require('./routes/routes');
+// var routesRouter = require('./routes/routes');
 
 var app = express();
 
@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/hello',routesRouter)
+// app.use('/hello',routesRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
