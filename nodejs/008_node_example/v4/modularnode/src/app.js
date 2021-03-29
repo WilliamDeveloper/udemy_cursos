@@ -24,45 +24,10 @@ const folderPartialsLayout = path.join(__dirname, '..', "views", "partials", "la
 hbs.registerPartials(folderPartials);
 
 const PartialsUtil = require('./helpers/hbs/PartialsUtil')
-PartialsUtil.importAllHBSFromDirWithPrefix({partialsDir:folderPartials, prefixoRegister:'partials'})
-PartialsUtil.importAllHBSFromDirWithPrefix({partialsDir:folderPartialsLayout, prefixoRegister:'partials/layout'})
+PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderPartials})
 
 
-// const fs = require('fs')
-// //hbs partials
-// var dir = path.join(__dirname,'..', 'views', 'partials');
-// console.log(dir);
-//
-// const walkSync = (dir, filelist = []) => {
-//   fs.readdirSync(dir).forEach(file => {
-//
-//     filelist = fs.statSync(path.join(dir, file)).isDirectory()
-//         ? walkSync(path.join(dir, file), filelist)
-//         : filelist.concat(path.join(dir, file));
-//
-//   });
-//   return filelist;
-// }
-//
-// var filelist = walkSync(dir);
-// if (filelist.length > 0) {
-//   filelist.forEach(function (filename) {
-//     console.log('filename ', filename)
-//     var matches = /^([^.]+).hbs$/.exec(path.basename(filename));
-//     if (!matches) {
-//       return;
-//     }
-//     var name = matches[1];
-//     var pathPartial = filename.split(dir).join('').split('\\').join('/')
-//     console.log('UUU',name, matches, pathPartial);
-//     pathPartial.replace('/')
-//     console.log('blkau: ' +pathPartial.split(matches[0]) )
-//
-//     var template = fs.readFileSync(filename, 'utf8');
-//     hbs.registerPartial('a'+pathPartial, template);
-//     // hbs.registerPartial(name, template);
-//   });
-// }
+
 
 
 
