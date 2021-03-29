@@ -30,7 +30,7 @@ cd /modularnode/public/
 bower init
 
 bower install --save jquery@3.6.0
-bower install --save popper.js@2.9.1
+bower install --save popper.js@1.12.9
 bower install --save bootstrap@4.6.0
 
 bower install --save font-awesome@5.15.3
