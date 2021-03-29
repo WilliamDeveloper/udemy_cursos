@@ -3,13 +3,7 @@
   <head>
     <title>{{title}} </title>
 
-
-
-
-
-      {{> 'hello' }}
-      {{> 'partials/hello' }}
-      {{> 'partials/layout/helloo' }}
+      {{> 'partials/layout/header-scripts' }}
 
 
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -55,7 +49,8 @@
 
 
 
-    <!--<%- include('partials/footer-scripts.ejs') %>-->
+    {{> 'partials/layout/footer-scripts' }}
+
 
   </body>
 
