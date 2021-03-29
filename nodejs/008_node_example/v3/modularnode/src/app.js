@@ -1,4 +1,4 @@
-require('dotenv').config
+// require('dotenv').config
 // const moduleAlias = require('module-alias')
 
 //  Ou vários aliases
