@@ -36,9 +36,11 @@ bower install --save popper.js@2.9.1
 --- ---------------------------------------
 - resolvendo dependencias do projeto
 --- ---------------------------------------
+#dependencias frontend
 cd /modularnode/public/
 bower install
 
+#dependencias backend
 cd /modularnode/
 npm install
 
