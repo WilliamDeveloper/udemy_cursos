@@ -5,8 +5,8 @@ const router = require('express').Router()
 // global.__base = __dirname + '/';
 // const TestController = require(`${__base}`+'/src/controllers/index')
 // const TestController = require('./../controllers/index')
-const TestController = require('../controllers/index')
+const HelloController = require('../controllers/hello')
 
-router.get('/', TestController.helloWorld)
+router.get('/', HelloController.helloWorld)
 
 module.exports =  router
