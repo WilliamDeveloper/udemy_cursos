@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "npx nodemon index.js",
-    "start_dev": "set NODE_ENV=development && npx nodemon index.js",
-    "start_prod": "set NODE_ENV=production && npx nodemon index.js",
+    "start_dev": "set NODE_ENV=development&& npx nodemon index.js",
+    "start_prod": "set NODE_ENV=production&& npx nodemon index.js",
     "start_teste": "npx nodemon app.js",
     "start_default": "node ./bin/www"
   },
