@@ -26,7 +26,8 @@ npm install
 --- ---------------------------------------
 - bibliotecas bower
 --- ---------------------------------------
-cd /modularnode/public/lib
+cd /modularnode/public/
+bower init
 
 bower install --save 
 
