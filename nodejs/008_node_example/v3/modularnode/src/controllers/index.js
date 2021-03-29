@@ -1,6 +1,7 @@
 const TestController ={
     helloWorld(req, res){
-        res.send('hello world')
+        let msg = process.env.HELLO_WORLD || 'variavel HELLO_WORLD nao definida'
+        res.send(msg)
     }
 }
 
