@@ -6,7 +6,12 @@ require('dotenv').config
 //   '@root' : __dirname
 // } )
 
-const teste = require('@root/src/config/index')
+// const teste = require('@root/src/config/index')
+
+// global.__base = __dirname + '/';
+
+
+const teste = require('./src/config/index')
 console.log('tste ',teste)
 
 
