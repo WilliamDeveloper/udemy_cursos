@@ -29,7 +29,8 @@ npm install
 cd /modularnode/public/
 bower init
 
-bower install --save 
+bower install --save bootstrap@4.6.0
+bower install --save jquery@3.6.0
 
 # run
 npx nodemon app.js
