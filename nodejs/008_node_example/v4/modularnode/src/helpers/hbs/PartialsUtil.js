@@ -23,6 +23,9 @@ const PartialsUtil = {
 
 
     importAllHBSPartialsRecursiveFromFolder({ partialsDir}){
+
+        hbs.registerPartials(partialsDir)
+
         var dir = partialsDir;
 
         const walkSync = (dir, filelist = []) => {
