@@ -24,29 +24,8 @@ const folderPartialsLayout = path.join(__dirname, '..', "views", "partials", "la
 hbs.registerPartials(folderPartials);
 
 const PartialsUtil = require('./helpers/hbs/PartialsUtil')
+PartialsUtil.importAllHBSFromDirWithPrefix({partialsDir:folderPartials, prefixoRegister:'partials'})
 PartialsUtil.importAllHBSFromDirWithPrefix({partialsDir:folderPartialsLayout, prefixoRegister:'partials/layout'})
-// hbs.registerPartial( 'foo', 'views/partials/hello.hbs');
-
-
-
-// var fs = require('fs');
-// var hbs = require('hbs');
-//
-// // Register Partials
-// var partialsDir = path.join(__dirname, '..', "views", "partials");
-// var filenames = fs.readdirSync(partialsDir);
-//
-// filenames.forEach(function (filename) {
-//   var matches = /^([^.]+).hbs$/.exec(filename);
-//   if (!matches) {
-//     return;
-//   }
-//   var name = matches[1];
-//   var template = fs.readFileSync(partialsDir + '/' + filename, 'utf8');
-//   console.log('nome: ', name, template)
-//   hbs.registerPartial('a/'+name, template);
-// });
-
 
 
 // const fs = require('fs')
