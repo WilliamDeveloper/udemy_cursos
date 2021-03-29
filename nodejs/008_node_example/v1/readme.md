@@ -7,6 +7,6 @@ npm install module-alias
 
 #variaveis de ambiente
 # https://www.npmjs.com/package/module-alias
-npm install dotenv
+npm install --save dotenv
 
 
