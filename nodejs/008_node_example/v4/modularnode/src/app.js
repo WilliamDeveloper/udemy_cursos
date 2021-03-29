@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname,'..', 'views'));
 app.set('view engine', 'hbs');
 
 //hbs partials
-// hbs.registerPartials(path.join(path.join(__dirname, "views"),"partials"));
+hbs.registerPartials(path.join(path.join(__dirname,'..', "views"),"partials"));
 
 app.use(logger('dev'));
 app.use(express.json());
