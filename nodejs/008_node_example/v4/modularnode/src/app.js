@@ -16,8 +16,76 @@ var app = express();
 app.set('views', path.join(__dirname,'..', 'views'));
 app.set('view engine', 'hbs');
 
-//hbs partials
-hbs.registerPartials(path.join(path.join(__dirname,'..', "views"),"partials"));
+
+// hbs.registerPartials(path.join(path.join(__dirname,'..', "views"),"partials"));
+const folderViews = path.join(__dirname, '..', "views")
+const folderPartials = path.join(__dirname, '..', "views", "partials")
+const folderPartialsLayout = path.join(__dirname, '..', "views", "partials", "layout")
+hbs.registerPartials(folderPartials);
+
+const PartialsUtil = require('./helpers/hbs/PartialsUtil')
+PartialsUtil.importAllHBSFromDirWithPrefix({partialsDir:folderPartialsLayout, prefixoRegister:'partials/layout'})
+// hbs.registerPartial( 'foo', 'views/partials/hello.hbs');
+
+
+
+// var fs = require('fs');
+// var hbs = require('hbs');
+//
+// // Register Partials
+// var partialsDir = path.join(__dirname, '..', "views", "partials");
+// var filenames = fs.readdirSync(partialsDir);
+//
+// filenames.forEach(function (filename) {
+//   var matches = /^([^.]+).hbs$/.exec(filename);
+//   if (!matches) {
+//     return;
+//   }
+//   var name = matches[1];
+//   var template = fs.readFileSync(partialsDir + '/' + filename, 'utf8');
+//   console.log('nome: ', name, template)
+//   hbs.registerPartial('a/'+name, template);
+// });
+
+
+
+// const fs = require('fs')
+// //hbs partials
+// var dir = path.join(__dirname,'..', 'views', 'partials');
+// console.log(dir);
+//
+// const walkSync = (dir, filelist = []) => {
+//   fs.readdirSync(dir).forEach(file => {
+//
+//     filelist = fs.statSync(path.join(dir, file)).isDirectory()
+//         ? walkSync(path.join(dir, file), filelist)
+//         : filelist.concat(path.join(dir, file));
+//
+//   });
+//   return filelist;
+// }
+//
+// var filelist = walkSync(dir);
+// if (filelist.length > 0) {
+//   filelist.forEach(function (filename) {
+//     console.log('filename ', filename)
+//     var matches = /^([^.]+).hbs$/.exec(path.basename(filename));
+//     if (!matches) {
+//       return;
+//     }
+//     var name = matches[1];
+//     var pathPartial = filename.split(dir).join('').split('\\').join('/')
+//     console.log('UUU',name, matches, pathPartial);
+//     pathPartial.replace('/')
+//     console.log('blkau: ' +pathPartial.split(matches[0]) )
+//
+//     var template = fs.readFileSync(filename, 'utf8');
+//     hbs.registerPartial('a'+pathPartial, template);
+//     // hbs.registerPartial(name, template);
+//   });
+// }
+
+
 
 app.use(logger('dev'));
 app.use(express.json());
