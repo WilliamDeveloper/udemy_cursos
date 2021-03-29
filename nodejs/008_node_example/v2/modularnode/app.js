@@ -1,10 +1,10 @@
 require('dotenv').config
-const moduleAlias = require('module-alias')
+// const moduleAlias = require('module-alias')
 
 //  Ou vários aliases
-moduleAlias.addAliases ( {
-  '@root' : __dirname
-} )
+// moduleAlias.addAliases ( {
+//   '@root' : __dirname
+// } )
 
 const teste = require('@root/src/config/index')
 console.log('tste ',teste)
