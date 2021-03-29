@@ -17,10 +17,16 @@ app.listen(PORT,()=>{
     console.log(`
         [${titulo}]
         rodando app ...        
+        
+        ---------------------------
+        BEM VINDO!!!
+        ---------------------------
         sigla: ${sigla} 
         modo: ${mode.toUpperCase()} 
         file_env: ${caminhoEnv}
+        
         on ${HOST_PROTOCOL}://${HOST_IP}:${PORT}
         hello_world: ${HOST_PROTOCOL}://${HOST_IP}:${PORT}/hello
+        ---------------------------
     `)
 })
