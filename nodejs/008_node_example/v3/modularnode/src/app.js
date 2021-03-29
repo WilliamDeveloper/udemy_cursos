@@ -1,20 +1,3 @@
-// require('dotenv').config
-// const moduleAlias = require('module-alias')
-
-//  Ou vários aliases
-// moduleAlias.addAliases ( {
-//   '@root' : __dirname
-// } )
-
-// const teste = require('@root/src/config/index')
-
-global.__base = __dirname + '/';
-
-
-// const teste = require('./src/config/index')
-// console.log('tste ',teste)
-
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
