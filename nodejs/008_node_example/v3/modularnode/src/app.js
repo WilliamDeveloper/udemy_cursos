@@ -18,11 +18,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+//caminhos staticos
 app.use(express.static(path.join(__dirname,'..', 'public')));
 
+
+//carregar rotas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/hello',routesRouter)
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
