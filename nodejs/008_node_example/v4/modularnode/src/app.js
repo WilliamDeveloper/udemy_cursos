@@ -25,7 +25,7 @@ const folderViewsPartials = path.join(folderViews, "partials")
 
 // registrar todos partials recursivamente apartir da pasta partials
 PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsPartials})
-PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsLayouts})
+// PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsLayouts})
 
 // view engine setup
 app.set('view engine', 'hbs');
