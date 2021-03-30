@@ -2,5 +2,13 @@
     <hr>
     <h1 class="text-center">Select -> {{ifNull nomeTabela ''}} </h1>
     <hr>
+    <form action="/sql/select" method="post">
+
+        {{> 'select-lista-bases' }}
+
+        <input class="col-2 btn btn-danger form-control-plaintext" type="submit" value="Pesquisar">
+        <input class="col-8" type="text" name="sql" id="sql" value=" select cd_key, cd_value, id_sit from autorizador.t411pasi ">
+    </form>
+    <hr>
     {{> 'table' }}
 </div>
