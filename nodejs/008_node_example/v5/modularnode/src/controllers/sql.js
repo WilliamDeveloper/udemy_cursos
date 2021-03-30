@@ -20,7 +20,7 @@ const SqlController ={
         let listaAllSql = sqlQuerys.select.getAllSql()
         console.log('listaAllSql', listaAllSql)
 
-        let nomeTabela = 'T411Pasi'
+        let nomeTabela = ''//'T411Pasi'
 
         let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
         let resultSql = conexao.raw(sql)
