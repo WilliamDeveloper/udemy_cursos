@@ -29,6 +29,11 @@ npm install
 npm install --save hbs
 npm install --save express-hbs
 
+# usando banco oracle
+npm install --save knex
+npm install --save oracledb
+
+
 ````
 
 --- ---------------------------------------
