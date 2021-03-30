@@ -1,4 +1,11 @@
-#loop
+# loop array inside object
+{{#with sqlResult}}
+    {{#each nomeColunas as |coluna|}}
+            <th scope="col">{{this}}</th>
+    {{/each}}
+{{/with}}
+
+#loop objeto
 {{#each row}}
     <!--indexColuna: {{@index}}-->
     <!--<br>-->
