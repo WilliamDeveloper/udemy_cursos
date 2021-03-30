@@ -81,15 +81,12 @@ const SqlController ={
         let endpointForm = '/sql/update'
         let {sql, nomeBaseSelecionado,nomeSqlSelecionado} = req.body
 
-
-
-
         if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
         if(!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
         if(!sql) sql = 'select 1 chave, 2 valor from dual'
 
         if(req.method == 'POST'){
-            sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
+            sql = sqlQuerys.update.getValueFromKey(nomeSqlSelecionado)
         }
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
@@ -104,6 +101,13 @@ const SqlController ={
         console.log(resultSql.toQuery())
 
         resultSql.then(data=>{
+
+            if(req.method == 'POST') {
+                console.log('data=>', data)
+                res.json(data)
+                return
+            }
+
             let nomeColunas=Object.keys(data[0])
             let qtdColunas= nomeColunas.length
             let qtdLinhas= data.length
