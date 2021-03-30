@@ -1,6 +1,6 @@
 const KnexOracleDB = require("../helpers/db/oracle/KnexOracleDB")
 const tnsnamesOracle = require('../config/tnsnamesOracle')
-const sqlQuery = require("../config/sql/sql")
+const sqlQuerys = require("../config/sql/sqlQuerys")
 
 const SqlController ={
 
@@ -11,7 +11,7 @@ const SqlController ={
 
         let {sql, nomeBaseSelecionado} = req.body
 
-        sqlQuery.select.T411PASI_FULL
+        console.log('load=> ', sqlQuerys.select.T411PASI_FULL)
 
         if(!sql) sql = "select 'blau' chave, 'pimba' valor from dual "
         if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
