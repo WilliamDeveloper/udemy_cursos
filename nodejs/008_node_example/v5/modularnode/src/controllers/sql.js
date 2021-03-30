@@ -1,7 +1,31 @@
+const KnexOracleDB = require("../helpers/db/oracle/KnexOracleDB")
+
 const SqlController ={
 
-    select(req, res, next){
-        res.send('respond with a resource');
+    async select(req, res, next){
+
+        let sql = " select * from autorizador.t411pasi  "
+        let nomeBase = 'homologa_autorizador'
+        let conexao = await KnexOracleDB.getConexao(nomeBase)
+        let resultSql = conexao.raw(sql)
+
+        console.log(resultSql.toQuery())
+        resultSql.then(data=>{
+            let qtdColunas= Object.keys(data[0]).length
+            let qtdLinhas= data.length
+            console.log(data,qtdColunas , qtdLinhas)
+            let obj = {
+                qtdColunas,
+                qtdLinhas,
+                rows: data
+            }
+            res.json(obj);
+        }).catch(err=>{
+            console.log(err)
+            res.send('respond with a resource');
+        })
+
+
     },
 
     insert(req, res, next){
