@@ -5,34 +5,24 @@ const SqlController ={
 
     async select(req, res, next){
 
-        // let sql = " select * from autorizador.t411pasi  "
-        // let listaNomesBase = tnsnamesOracle['0']
-        // console.log(listaNomesBase)
-
         console.log('req ', req)
 
         let {sql, nomeBaseSelecionado} = req.body
 
         if(!sql) sql = "select 'blau' chave, 'pimba' valor from dual "
 
-        let nomeBase = 'homologa_autorizador'
-
-        let configBase = tnsnamesOracle.getConfigByNameBase(nomeBase)
-        // console.log(configBase)
-
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
-        // console.log('listaNomesBase',listaNomesBase)
-
 
         let nomeTabela = 'T411Pasi'
 
-        let conexao = await KnexOracleDB.getConexao(nomeBase)
+        let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
         let resultSql = conexao.raw(sql)
 
         console.log(resultSql.toQuery())
+
         resultSql.then(data=>{
             let nomeColunas=Object.keys(data[0])
-            let qtdColunas= Object.keys(data[0]).length
+            let qtdColunas= nomeColunas.length
             let qtdLinhas= data.length
             console.log(data,qtdColunas , qtdLinhas)
             let sqlResult = {
