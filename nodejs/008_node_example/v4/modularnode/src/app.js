@@ -23,6 +23,7 @@ const folderViewsPartials = path.join(folderViews, "partials")
 
 // view engine setup
 app.set('view engine', 'hbs');
+
 // configure the view engine
 app.engine('hbs', hbs.express4({
   defaultView: 'default',
@@ -30,21 +31,12 @@ app.engine('hbs', hbs.express4({
   layoutsDir: folderViewsLayouts,
   partialsDir: folderViewsPartials
 }));
-// app.engine('hbs', hbs.express4({
-//   extname: 'hbs',
-//   defaultView: 'default',
-//   layoutsDir: folderViewsLayouts,
-//   partialsDir: folderViewsPartials
-// }));
-
 
 app.set('views', folderViews );
 
 
 // registrar todos partials recursivamente apartir da pasta partials
 PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsPartials})
-
-
 
 
 
