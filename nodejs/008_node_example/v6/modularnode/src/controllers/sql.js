@@ -16,7 +16,11 @@ const SqlController ={
         if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
         if(!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
         if(!sql) sql = 'select 1 chave, 2 valor from dual'
-        // if(!sql) sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
+
+        if(req.method == 'POST'){
+            sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
+        }
+
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
         let listaAllSql = sqlQuerys.select.getAllSql()
@@ -83,6 +87,10 @@ const SqlController ={
         if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
         if(!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
         if(!sql) sql = 'select 1 chave, 2 valor from dual'
+
+        if(req.method == 'POST'){
+            sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
+        }
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
         let listaAllSql = sqlQuerys.update.getAllSql()
