@@ -12,18 +12,27 @@
         {{nomeColunas}}
             {{#each rows as |row|}}
                 <tr>
-                    {{.}}
-                    {{@index}}
-                    {{@key}}
-                    {{@root}}
-                    {{@first}}
-                    {{@last}}
-                    {{@this}}
-                    {{#eachIndex row}}
-                        {{item}} is {{index}}
-                    {{/eachIndex}}
-                    <br>
-                    <th scope="row">1</th>
+                    <!--{{.}}-->
+                    <!--{{@index}}-->
+                    <!--{{@key}}-->
+                    <!--{{@root}}-->
+                    <!--{{@first}}-->
+                    <!--{{@last}}-->
+                    <!--{{@this}}-->
+
+
+                    {{#each row}}
+                        <!--indexColuna: {{@index}}-->
+                        <!--<br>-->
+                        <!--chave: {{@key}}-->
+                        <!--<br>-->
+                        <!--valor: {{this}}-->
+                        <!--<br>-->
+                        <!--<th scope="row">1</th>-->
+                        <td>{{this}}</td>
+
+                    {{/each}}
+
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>

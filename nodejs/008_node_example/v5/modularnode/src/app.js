@@ -7,7 +7,6 @@ var logger = require('morgan');
 // var hbs = require('hbs')
 var hbs = require('express-hbs')
 
-
 const PartialsUtil = require('./helpers/hbs/PartialsUtil')
 
 //rotas
