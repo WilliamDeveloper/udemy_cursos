@@ -10,7 +10,7 @@
                     {{> 'select-lista-bases' }}
                     <br>
                     <input class="col-2 ml-1 mr-1 btn btn-danger" type="submit" value="Pesquisar">
-                    <input class="col" type="text" name="sql" id="sql" value=" select cd_key, cd_value, id_sit from autorizador.t411pasi ">
+                    <input class="col" type="text" name="sql" id="sql" value=" select cd_key, cd_value, id_sit from autorizador.t411pasi where rownum  <= 5">
                 </div>
 
             </form>

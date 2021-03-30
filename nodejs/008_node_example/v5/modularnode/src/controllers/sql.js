@@ -9,20 +9,23 @@ const SqlController ={
         // let listaNomesBase = tnsnamesOracle['0']
         // console.log(listaNomesBase)
 
+        console.log('req ', req)
+
+        let {sql, nomeBaseSelecionado} = req.body
+
+        if(!sql) sql = 'select cd_key, cd_value, id_sit from autorizador.t411pasi where rownum  <= 5'
+
         let nomeBase = 'homologa_autorizador'
 
         let configBase = tnsnamesOracle.getConfigByNameBase(nomeBase)
-        console.log(configBase)
+        // console.log(configBase)
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
-        console.log('listaNomesBase',listaNomesBase)
-
-
-
+        // console.log('listaNomesBase',listaNomesBase)
 
 
         let nomeTabela = 'T411Pasi'
-        let sql = " select cd_key, cd_value, id_sit from autorizador.t411pasi where rownum <= 2 "
+
         let conexao = await KnexOracleDB.getConexao(nomeBase)
         let resultSql = conexao.raw(sql)
 
