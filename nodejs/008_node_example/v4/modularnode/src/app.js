@@ -42,8 +42,6 @@ app.set('views', folderViews );
 // registrar todos partials recursivamente apartir da pasta partials
 PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsPartials})
 // PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsLayouts})
-PartialsUtil.importAllHBSFromDirWithPrefix({prefixoRegister:'script',partialsDir:folderViewsPartialsScripts})
-
 
 
 app.use(logger('dev'));
