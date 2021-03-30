@@ -13,7 +13,7 @@ const SqlController ={
 
         let {sql, nomeBaseSelecionado} = req.body
 
-        if(!sql) sql = 'select cd_key, cd_value, id_sit from autorizador.t411pasi where rownum  <= 5'
+        if(!sql) sql = "select 'blau' chave, 'pimba' valor from dual "
 
         let nomeBase = 'homologa_autorizador'
 
