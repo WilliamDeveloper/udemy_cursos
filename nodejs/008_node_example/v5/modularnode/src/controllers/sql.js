@@ -12,11 +12,13 @@ const SqlController ={
         let {sql, nomeBaseSelecionado} = req.body
 
         console.log('load=> ', sqlQuerys.select.T411PASI_FULL)
+        console.log('load=> ', sqlQuerys.select.getAllSql())
 
         if(!sql) sql = "select 'blau' chave, 'pimba' valor from dual "
         if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
+        let listaAllSql = sqlQuerys.select.getAllSql()
 
         let nomeTabela = 'T411Pasi'
 
