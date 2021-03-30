@@ -16,8 +16,16 @@ const sql = {
         return lista
     },
 
-    'T411PASI_FULL' : ` 
-        
+    'RUN_JOB_NOW' : ` 
+        begin  
+            dbms_scheduler.create_job(
+                job_name => '{p_job_name}'
+                , job_type => 'PLSQL_BLOCK'
+                , enabled => TRUE
+                , auto_drop => TRUE
+                , job_action => q'[{p_sql}]'
+            );  
+        end;
     `,
 
 

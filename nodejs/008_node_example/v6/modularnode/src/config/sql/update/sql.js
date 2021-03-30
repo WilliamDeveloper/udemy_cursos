@@ -52,15 +52,39 @@ const sql = {
     `,
 
     'SENHA_RESET_01VSYS':`
-        begin   UPDATE t400usua usua    SET id_st = 'A', DE_SNH_USU = '518', nro_ten_ace = 0, dt_vld_snh =  (sysdate+(5*365))  WHERE 1=1; COMMIT;  end;
+        begin  
+            dbms_scheduler.create_job(
+                job_name => 'JOB_SENHA_RESET_01VSYS'
+                , job_type => 'PLSQL_BLOCK'
+                , enabled => TRUE
+                , auto_drop => TRUE
+                , job_action => q'[begin   UPDATE t400usua usua    SET id_st = 'A', DE_SNH_USU = '518', nro_ten_ace = 0, dt_vld_snh =  (sysdate+(5*365))  WHERE 1=1; COMMIT;  end;]'
+            );  
+        end;        
     `,
 
-    'SENHA_RESET_02DIGI':`
-        begin   UPDATE digitaliza.usuario SET SENHA='518' , criptografia = 'ESPECIAL_1', situacao = 'ATIVO'   WHERE 1=1; COMMIT;  end;
+    'SENHA_RESET_02DIGI':`        
+        begin  
+            dbms_scheduler.create_job(
+                job_name => 'JOB_SENHA_RESET_02DIGI'
+                , job_type => 'PLSQL_BLOCK'
+                , enabled => TRUE
+                , auto_drop => TRUE
+                , job_action => q'[begin   UPDATE digitaliza.usuario SET SENHA='518' , criptografia = 'ESPECIAL_1', situacao = 'ATIVO'   WHERE 1=1; COMMIT;  end;]'
+            );  
+        end;
     `,
 
-    'SENHA_RESET_03VCOB':`
-        begin   UPDATE digitaliza.usuario SET SENHA='518' , criptografia = 'ESPECIAL_1', situacao = 'ATIVO'   WHERE 1=1; COMMIT;  end;
+    'SENHA_RESET_03VCOB':`        
+        begin  
+            dbms_scheduler.create_job(
+                job_name => 'JOB_SENHA_RESET_03VCOB'
+                , job_type => 'PLSQL_BLOCK'
+                , enabled => TRUE
+                , auto_drop => TRUE
+                , job_action => q'[begin   UPDATE digitaliza.usuario SET SENHA='518' , criptografia = 'ESPECIAL_1', situacao = 'ATIVO'   WHERE 1=1; COMMIT;  end;]'
+            );  
+        end;
     `,
 
     'DESATIVAR_ACESSO_EXT':`
