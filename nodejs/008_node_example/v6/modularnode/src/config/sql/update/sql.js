@@ -37,7 +37,7 @@ const sql = {
         end;
     `,
 
-    'BIOMETRIA_WSDL':`
+    'BARRAMENTO_HML':`
         begin
             UPDATE autorizador.tbl_config_url_barramento_h SET api_url='http://10.0.0.85:5787/PasswordManager_REST/passwordControl/' where api_number >= 1;
             commit;
