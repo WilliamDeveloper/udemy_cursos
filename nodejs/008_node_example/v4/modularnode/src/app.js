@@ -3,7 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var hbs = require('hbs')
+
+// var hbs = require('hbs')
+var hbs = require('express-hbs')
+
+
 const PartialsUtil = require('./helpers/hbs/PartialsUtil')
 
 //rotas
@@ -13,14 +17,33 @@ var helloRouter = require('./routes/hello');
 
 var app = express();
 
+const folderViews = path.join(__dirname,'..', 'views')
+const folderViewsLayouts = path.join(folderViews, "layouts")
+const folderViewsPartials = path.join(folderViews, "partials")
+
 // view engine setup
-app.set('views', path.join(__dirname,'..', 'views'));
 app.set('view engine', 'hbs');
+// configure the view engine
+app.engine('hbs', hbs.express4({
+  extname: 'hbs',
+  defaultView: 'default',
+  defaultLayout: path.join(folderViewsLayouts,'default.hbs'),
+  layoutsDir: folderViewsLayouts,
+  partialsDir: folderViewsPartials
+}));
+// app.engine('hbs', hbs.express4({
+//   extname: 'hbs',
+//   defaultView: 'default',
+//   layoutsDir: folderViewsLayouts,
+//   partialsDir: folderViewsPartials
+// }));
+
+
+app.set('views', folderViews );
 
 
 // registrar todos partials recursivamente apartir da pasta partials
-const folderPartials = path.join(__dirname, '..', "views", "partials")
-PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderPartials})
+PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsPartials})
 
 
 
