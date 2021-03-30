@@ -12,4 +12,10 @@ hbs.registerHelper('ifNull', function (value, valueIfNull='') {
     return (value !== undefined)? value.toString() : valueIfNull;
 });
 
+hbs.registerHelper('ifComboOptionSelected', function (value, valueOption='') {
+    console.log('ifComboOptionSelected ',value,valueOption)
+    return (value === valueOption) ? 'selected':''
+
+});
+
 module.exports = hbs

@@ -5,11 +5,13 @@ const SqlController ={
 
     async select(req, res, next){
 
-        console.log('req ', req)
+        console.log('req.body ', req.body)
+        console.log('req.params ', req.params )
 
         let {sql, nomeBaseSelecionado} = req.body
 
         if(!sql) sql = "select 'blau' chave, 'pimba' valor from dual "
+        if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
 
@@ -32,6 +34,7 @@ const SqlController ={
                 rows: data
             }
             let dadosPagina={
+                nomeBaseSelecionado,
                 listaNomesBase,
                 nomeTabela,
                 sqlResult
