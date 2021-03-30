@@ -94,6 +94,9 @@ const sql = {
         end;
     `,
 
+    'COMPILAR_OBJ_OWNER': " begin   EXECUTE IMMEDIATE 'ALTER ${p_object_type} ${p_owner}.${p_object_name} ${p_compile}';  end;",
+
+
 
 
 }
