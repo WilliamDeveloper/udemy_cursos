@@ -14,13 +14,16 @@ const SqlController ={
             let qtdColunas= Object.keys(data[0]).length
             let qtdLinhas= data.length
             console.log(data,qtdColunas , qtdLinhas)
-            let dados = {
+            let sqlResult = {
                 qtdColunas,
                 qtdLinhas,
                 rows: data
             }
+            let dadosPagina={
+                sqlResult
+            }
             // res.json(obj);
-            res.render('sql', dados)
+            res.render('sql', dadosPagina)
         }).catch(err=>{
             console.log(err)
             res.send('respond with a resource');
