@@ -1,14 +1,15 @@
-<table class="table">
-    <thead>
+<div class="table-responsive">
+    <table class="table table-sm small table-striped table-bordered table-hover">
+        <thead class="thead-dark">
         <tr>
             {{#with sqlResult}}
                 {{#each nomeColunas as |coluna|}}
-                        <th scope="col">{{this}}</th>
+                    <th scope="col">{{this}}</th>
                 {{/each}}
             {{/with}}
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         {{#with sqlResult}}
             {{#each rows as |row|}}
                 <tr>
@@ -19,5 +20,6 @@
             {{/each}}
         {{/with}}
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

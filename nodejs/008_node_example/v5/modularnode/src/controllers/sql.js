@@ -5,6 +5,7 @@ const SqlController ={
     async select(req, res, next){
 
         // let sql = " select * from autorizador.t411pasi  "
+        let nomeTabela = 'T411Pasi'
         let sql = " select cd_key, cd_value, id_sit from autorizador.t411pasi  "
         let nomeBase = 'homologa_autorizador'
         let conexao = await KnexOracleDB.getConexao(nomeBase)
@@ -23,6 +24,7 @@ const SqlController ={
                 rows: data
             }
             let dadosPagina={
+                nomeTabela,
                 sqlResult
             }
             // res.json(obj);
