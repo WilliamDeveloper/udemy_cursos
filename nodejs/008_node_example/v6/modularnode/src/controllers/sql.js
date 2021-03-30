@@ -19,6 +19,13 @@ const SqlController ={
 
         if(req.method == 'POST'){
             sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
+            if(!sql){
+                sql = sqlQuerys.dba.getValueFromKey(nomeSqlSelecionado)
+                if(!sql){
+                    console.log('sql nao encontrado')
+                    return
+                }
+            }
         }
 
 
@@ -38,6 +45,13 @@ const SqlController ={
         console.log(resultSql.toQuery())
 
         resultSql.then(data=>{
+
+            if(req.method == 'POST' && !data.length) {
+                console.log('data=>', data)
+                res.json(data)
+                return
+            }
+
             let nomeColunas=Object.keys(data[0])
             let qtdColunas= nomeColunas.length
             let qtdLinhas= data.length
