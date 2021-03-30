@@ -23,7 +23,11 @@ const SqlController ={
 
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
+
         let listaAllSql = sqlQuerys.select.getAllSql()
+        let listaAllSqlDba = sqlQuerys.dba.getAllSql()
+        listaAllSql = [].concat(listaAllSql, listaAllSqlDba)
+
         console.log('listaAllSql', listaAllSql)
 
         let nomeTabela = '<- Select ->'//'T411Pasi'
