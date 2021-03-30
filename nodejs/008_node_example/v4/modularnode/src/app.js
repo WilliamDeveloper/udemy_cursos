@@ -25,7 +25,6 @@ const folderViewsPartials = path.join(folderViews, "partials")
 app.set('view engine', 'hbs');
 // configure the view engine
 app.engine('hbs', hbs.express4({
-  extname: 'hbs',
   defaultView: 'default',
   defaultLayout: path.join(folderViewsLayouts,'default.hbs'),
   layoutsDir: folderViewsLayouts,
