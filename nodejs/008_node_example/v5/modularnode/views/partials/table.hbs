@@ -1,35 +1,19 @@
 <table class="table">
     <thead>
         <tr>
-            <!--<th scope="col">#</th>-->
-            <!--<th scope="col">Primeiro</th>-->
-            <!--<th scope="col">Último</th>-->
-            <hr>
             {{#with sqlResult}}
                 {{#each nomeColunas as |coluna|}}
                         <th scope="col">{{this}}</th>
                 {{/each}}
             {{/with}}
-            <hr>
-            blau
-
         </tr>
     </thead>
     <tbody>
         {{#with sqlResult}}
-        {{nomeColunas}}
             {{#each rows as |row|}}
                 <tr>
                     {{#each row}}
-                        <!--indexColuna: {{@index}}-->
-                        <!--<br>-->
-                        <!--chave: {{@key}}-->
-                        <!--<br>-->
-                        <!--valor: {{this}}-->
-                        <!--<br>-->
-                        <!--<th scope="row">1</th>-->
-                        <td>{{this}}</td>
-
+                        <td scope="row">{{this}}</td>
                     {{/each}}
                 </tr>
             {{/each}}
