@@ -9,18 +9,20 @@ const SqlController ={
         console.log('req.body ', req.body)
         console.log('req.params ', req.params )
 
+        let endpointForm = '/sql/select'
         let {sql, nomeBaseSelecionado,nomeSqlSelecionado} = req.body
 
 
         if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
         if(!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
-        if(!sql) sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
+        if(!sql) sql = 'select 1 chave, 2 valor from dual'
+        // if(!sql) sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
         let listaAllSql = sqlQuerys.select.getAllSql()
         console.log('listaAllSql', listaAllSql)
 
-        let nomeTabela = ''//'T411Pasi'
+        let nomeTabela = '<- Select ->'//'T411Pasi'
 
         let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
         let resultSql = conexao.raw(sql)
@@ -41,6 +43,7 @@ const SqlController ={
                 rows: data
             }
             let dadosPagina={
+                endpointForm,
                 nomeBaseSelecionado,
                 nomeSqlSelecionado,
                 listaNomesBase,
@@ -66,8 +69,60 @@ const SqlController ={
         res.send('respond with a resource');
     },
 
-    update(req, res, next){
-        res.send('respond with a resource');
+    async update(req, res, next){
+
+        console.log('req.body ', req.body)
+        console.log('req.params ', req.params )
+
+        let endpointForm = '/sql/update'
+        let {sql, nomeBaseSelecionado,nomeSqlSelecionado} = req.body
+
+
+
+
+        if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
+        if(!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
+        if(!sql) sql = 'select 1 chave, 2 valor from dual'
+
+        let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
+        let listaAllSql = sqlQuerys.update.getAllSql()
+        console.log('listaAllSql', listaAllSql)
+
+        let nomeTabela = '<- Update ->'//'T411Pasi'
+
+        let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
+        let resultSql = conexao.raw(sql)
+
+        console.log(resultSql.toQuery())
+
+        resultSql.then(data=>{
+            let nomeColunas=Object.keys(data[0])
+            let qtdColunas= nomeColunas.length
+            let qtdLinhas= data.length
+
+            console.log(data,qtdColunas , qtdLinhas)
+
+            let sqlResult = {
+                nomeColunas,
+                qtdColunas,
+                qtdLinhas,
+                rows: data
+            }
+            let dadosPagina={
+                endpointForm,
+                nomeBaseSelecionado,
+                nomeSqlSelecionado,
+                listaNomesBase,
+                listaAllSql,
+                nomeTabela,
+                sqlResult
+            }
+            // res.json(obj);
+            res.render('sql', dadosPagina)
+        }).catch(err=>{
+            console.log(err)
+            res.send('respond with a resource');
+        })
     }
 
 }
