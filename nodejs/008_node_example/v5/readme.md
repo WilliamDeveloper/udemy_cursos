@@ -33,6 +33,7 @@ npm install --save express-hbs
 npm install --save knex
 npm install --save oracledb
 
+npm install --save handlebars-helpers
 
 ````
 

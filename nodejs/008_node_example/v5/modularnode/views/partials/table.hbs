@@ -9,8 +9,20 @@
     </thead>
     <tbody>
         {{#with sqlResult}}
-            {{#each rows}}
+        {{nomeColunas}}
+            {{#each rows as |row|}}
                 <tr>
+                    {{.}}
+                    {{@index}}
+                    {{@key}}
+                    {{@root}}
+                    {{@first}}
+                    {{@last}}
+                    {{@this}}
+                    {{#eachIndex row}}
+                        {{item}} is {{index}}
+                    {{/eachIndex}}
+                    <br>
                     <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>

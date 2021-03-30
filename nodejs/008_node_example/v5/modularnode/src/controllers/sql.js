@@ -11,10 +11,12 @@ const SqlController ={
 
         console.log(resultSql.toQuery())
         resultSql.then(data=>{
+            let nomeColunas=Object.keys(data[0])
             let qtdColunas= Object.keys(data[0]).length
             let qtdLinhas= data.length
             console.log(data,qtdColunas , qtdLinhas)
             let sqlResult = {
+                nomeColunas,
                 qtdColunas,
                 qtdLinhas,
                 rows: data
