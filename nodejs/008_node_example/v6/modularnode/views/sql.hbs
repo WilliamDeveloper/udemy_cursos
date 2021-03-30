@@ -1,0 +1,22 @@
+<div class="container">
+    <hr>
+    <h1 class="text-center"><- Select -> {{ifNull nomeTabela ''}} </h1>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <form action="/sql/select" method="post">
+
+                <div class="row m-1 p-2">
+                    {{> 'select-lista-bases' }}
+                    {{> 'select-lista-sql' }}
+                    <br >
+                    <input class="col-12 col-md-2 ml-1 mr-1 btn btn-danger" type="submit" value="Pesquisar">
+                    <input class="col" type="text" name="sql" id="sql" value="">
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <hr>
+    {{> 'table' }}
+</div>
