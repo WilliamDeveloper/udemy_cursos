@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,18 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
 
-    <!--bootstrap-->
-    <!--<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!--font-awesome-->
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/all.min.css">
-
+    {{> header}}
 </head>
-<body>
 
-{{{body}}}
-{{> footer}}
-{{> 'footer'}}
+<body>
+    {{{body}}}
+
+    {{> footer}}
+
 
 </body>
 </html>

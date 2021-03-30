@@ -14,8 +14,9 @@ const PartialsUtil = {
             }
             var name = matches[1];
             var template = fs.readFileSync(partialsDir + '/' + filename, 'utf8');
-            var name_register=`${prefixoRegister?prefixoRegister+'/':''}${name}`
+            var name_register=`${prefixoRegister?prefixoRegister:''}${name}`
 
+            console.log('##',name_register,template)
             hbs.registerPartial(name_register, template);
         });
 
@@ -61,6 +62,7 @@ const PartialsUtil = {
 
                 var template = fs.readFileSync(filename, 'utf8');
 
+                console.log('#',nameFinalPartial,template)
                 hbs.registerPartial(nameFinalPartial, template);
             });
         }

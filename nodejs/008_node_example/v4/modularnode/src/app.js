@@ -20,12 +20,11 @@ var app = express();
 const folderViews = path.join(__dirname,'..', 'views')
 const folderViewsLayouts = path.join(folderViews, "layouts")
 const folderViewsPartials = path.join(folderViews, "partials")
+const folderViewsPartialsScripts = path.join(folderViewsPartials, "scripts")
 
 
 
-// registrar todos partials recursivamente apartir da pasta partials
-PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsPartials})
-// PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsLayouts})
+
 
 // view engine setup
 app.set('view engine', 'hbs');
@@ -40,7 +39,10 @@ app.engine('hbs', hbs.express4({
 
 app.set('views', folderViews );
 
-
+// registrar todos partials recursivamente apartir da pasta partials
+PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsPartials})
+// PartialsUtil.importAllHBSPartialsRecursiveFromFolder({partialsDir:folderViewsLayouts})
+PartialsUtil.importAllHBSFromDirWithPrefix({prefixoRegister:'script',partialsDir:folderViewsPartialsScripts})
 
 
 
