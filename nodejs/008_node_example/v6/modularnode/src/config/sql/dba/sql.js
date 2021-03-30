@@ -16,13 +16,13 @@ const sql = {
         return lista
     },
 
-    'LISTAR_OBJETOS_INVALIDOS' : ` 
+    'DBA_LISTAR_OBJETOS_INVALIDOS' : ` 
         SELECT  owner,  object_type,  object_name,  status FROM   dba_objects  WHERE  status = 'INVALID'
     `,
 
-    'LISTAR_GRANT_OBJ' : "SELECT * FROM  DBA_TAB_PRIVS where table_name = UPPER('${p_tabela}') AND GRANTEE = UPPER('${p_owner_granted}')  ",
+    'DBA_LISTAR_GRANT_OBJ' : "SELECT * FROM  DBA_TAB_PRIVS where table_name = UPPER('${p_tabela}') AND GRANTEE = UPPER('${p_owner_granted}')  ",
 
-    'LISTAR_DADOS_TABELA':"select col.column_id,\n" +
+    'DBA_LISTAR_DADOS_TABELA':"select col.column_id,\n" +
         "            col.owner as schema_name,\n" +
         "            col.table_name,\n" +
         "            col.column_name,\n" +
