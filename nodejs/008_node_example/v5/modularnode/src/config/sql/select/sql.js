@@ -17,7 +17,19 @@ const sql = {
     },
 
     'T411PASI_FULL' : ` 
-        select cd_key, cd_value, id_sit from autorizador.t411pasi where rownum  <= 5
+        select cd_key, cd_value, id_sit from autorizador.t411pasi
+    `,
+
+    'T411PALO_FULL' : ` 
+        select * from autorizador.t411palo where rownum  <= 5
+    `,
+
+    'T411DEFG_FULL' : ` 
+        select * from autorizador.t411defg
+    `,
+
+    'T411PROC_FULL' : ` 
+        select * from autorizador.t411proc
     `,
 
 

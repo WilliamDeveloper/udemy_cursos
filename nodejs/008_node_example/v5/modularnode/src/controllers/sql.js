@@ -11,13 +11,10 @@ const SqlController ={
 
         let {sql, nomeBaseSelecionado,nomeSqlSelecionado} = req.body
 
-        console.log('load=> ', sqlQuerys.select.T411PASI_FULL)
-        console.log('load=> ', sqlQuerys.select.getAllSql())
 
-        if(!sql) sql = "select 'blau' chave, 'pimba' valor from dual "
         if(!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
-        if(!nomeSqlSelecionado) nomeSqlSelecionado = ""
-
+        if(!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
+        if(!sql) sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
 
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
         let listaAllSql = sqlQuerys.select.getAllSql()
@@ -45,6 +42,7 @@ const SqlController ={
             }
             let dadosPagina={
                 nomeBaseSelecionado,
+                nomeSqlSelecionado,
                 listaNomesBase,
                 listaAllSql,
                 nomeTabela,
