@@ -1,4 +1,4 @@
-const  BrowserIframe={
+class  BrowserIframe {
     constructor(pInstanciaBrowser){
         this.browser = pInstanciaBrowser
     }

@@ -1,3 +1,9 @@
+process.env['PATH'] =`${process.env['CHROME_NAVIGATOR_DRIVER_FOLDER']};${process.env['PATH']}`
+process.env['PATH'] =`${process.env['CHROME_NAVIGATOR_FOLDER']};${process.env['PATH']}`
+
+console.log('# ', process.env['CHROME_NAVIGATOR_DRIVER_FOLDER'])
+console.log('path=> ', process.env['PATH'])
+
 const BrowserBasico = require('./BrowserBasico')
 const BrowserEvento = require('./BrowserEvento')
 const BrowserElemento = require('./BrowserElemento')
@@ -8,18 +14,18 @@ const BrowserIframe = require('./BrowserIframe')
 const BrowserJavascript = require('./BrowserJavascript')
 const BrowserScreenshot = require('./BrowserScreenshot')
 
-const  Browser={
-    constructor(pDriver=None){
+class  Browser {
+    constructor(pDriver=''){
         this.driver = pDriver
-        this.init = BrowserBasico(this)
-        this.evento = BrowserEvento(this)
-        this.elemento = BrowserElemento(this)
-        this.opcao = BrowserOpcao(this)
-        this.mouse = BrowserMouse(this)
-        this.keys = BrowserKeys(this)
-        this.iframe = BrowserIframe(this)
-        this.javascript = BrowserJavascript(this)
-        this.screenshot = BrowserScreenshot(this)
+        this.init = new BrowserBasico(this)
+        this.evento = new BrowserEvento(this)
+        this.elemento = new BrowserElemento(this)
+        this.opcao = new BrowserOpcao(this)
+        this.mouse = new BrowserMouse(this)
+        this.keys = new BrowserKeys(this)
+        this.iframe = new BrowserIframe(this)
+        this.javascript = new BrowserJavascript(this)
+        this.screenshot = new BrowserScreenshot(this)
     }
 }
 

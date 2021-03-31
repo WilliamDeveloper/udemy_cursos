@@ -1,4 +1,4 @@
-const  BrowserMouse={
+class  BrowserMouse {
     constructor(pInstanciaBrowser){
         this.browser = pInstanciaBrowser
     }

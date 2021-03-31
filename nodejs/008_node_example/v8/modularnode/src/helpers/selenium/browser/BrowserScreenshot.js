@@ -1,4 +1,4 @@
-const  BrowserScreenshot={
+class  BrowserScreenshot {
     constructor(pInstanciaBrowser){
         this.browser = pInstanciaBrowser
     }

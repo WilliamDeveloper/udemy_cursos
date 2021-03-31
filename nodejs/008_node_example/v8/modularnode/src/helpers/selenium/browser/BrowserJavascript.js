@@ -1,4 +1,4 @@
-const  BrowserJavascript={
+class  BrowserJavascript {
     constructor(pInstanciaBrowser){
         this.browser = pInstanciaBrowser
     }

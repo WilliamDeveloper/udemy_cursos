@@ -1,4 +1,4 @@
-const  BrowserEvento={
+class  BrowserEvento {
     constructor(pInstanciaBrowser){
         this.browser = pInstanciaBrowser
     }
