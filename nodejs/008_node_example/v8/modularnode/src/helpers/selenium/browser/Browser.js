@@ -15,6 +15,7 @@ const BrowserJavascript = require('./BrowserJavascript')
 const BrowserScreenshot = require('./BrowserScreenshot')
 
 class  Browser {
+
     constructor(pDriver=''){
         this.driver = pDriver
         this.init = new BrowserBasico(this)
@@ -27,6 +28,7 @@ class  Browser {
         this.javascript = new BrowserJavascript(this)
         this.screenshot = new BrowserScreenshot(this)
     }
+
 }
 
 module.exports = Browser
