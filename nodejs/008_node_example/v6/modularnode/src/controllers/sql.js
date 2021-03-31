@@ -102,7 +102,7 @@ const SqlController = {
         let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
         let listaAllSql = sqlQuerys.update.getAllSql()
         let nomeTabela = '<- Update ->'//'T411Pasi'
-        console.log('listaAllSql', listaAllSql)
+        // console.log('listaAllSql', listaAllSql)
 
         if (!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
         if (!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
@@ -191,17 +191,13 @@ const SqlController = {
                             nomeTabela: nomeTabela,
                             sqlResult: []
                         }
-                        // res.json(obj);
+
                         res.render('sql', dadosPagina)
                     }
                     else
                     {
-
                        res.json({error:'update nao costuma vir valor '})
-
-
                     }
-
 
                 } catch (e) {
                     console.log('error:', e)
