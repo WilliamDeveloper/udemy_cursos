@@ -1,0 +1,11 @@
+{{#ifNotNullEmpty alertError}}
+    <div class="alert alert-danger text-center">
+        {{alertError}}
+    </div>
+{{/ifNotNullEmpty}}
+
+{{#ifNotNullEmpty alertSuccess}}
+    <div class="alert alert-success text-center">
+        {{alertSuccess}}
+    </div>
+{{/ifNotNullEmpty}}

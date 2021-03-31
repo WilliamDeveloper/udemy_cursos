@@ -1,0 +1,5 @@
+<select name="nomeBaseSelecionado" id="nomeBaseSelecionado" class="custom-select">
+    {{#each listaNomesBase as |base|}}
+        <option value="{{this}}" {{ifComboOptionSelected ../nomeBaseSelecionado this}}>{{this}}</option>
+    {{/each}}
+</select>

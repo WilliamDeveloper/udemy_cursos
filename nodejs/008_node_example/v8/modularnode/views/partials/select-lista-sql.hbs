@@ -1,0 +1,5 @@
+<select name="nomeSqlSelecionado" id="nomeSqlSelecionado" class="custom-select">
+    {{#each listaAllSql as |sql|}}
+        <option value="{{this}}" {{ifComboOptionSelected ../nomeSqlSelecionado this}}>{{this}}</option>
+    {{/each}}
+</select>
