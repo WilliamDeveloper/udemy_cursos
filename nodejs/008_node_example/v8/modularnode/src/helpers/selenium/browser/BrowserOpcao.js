@@ -12,7 +12,8 @@ class  BrowserOpcao {
     }
 
     doFecharNavegador(){
-
+        let driver = this.browser.driver
+        driver.quit()
     }
 
     doFecharNavegadorAndStopDriver(){

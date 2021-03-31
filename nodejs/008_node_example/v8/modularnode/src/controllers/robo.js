@@ -30,6 +30,18 @@ const RoboController = {
     },
 
     fechar_browser(req, res, next){
+
+
+        try{
+            const url ='http://www.google.com.br'
+            let browser = new Browser()
+            browser.opcao.doFecharNavegador()
+
+            // browser
+        }catch (e) {
+            console.log(e)
+        }
+
         let obj = {
 
         }
