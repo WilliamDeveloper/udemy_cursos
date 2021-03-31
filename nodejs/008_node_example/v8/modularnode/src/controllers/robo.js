@@ -12,10 +12,14 @@ const RoboController = {
 
     abrir_browser(req, res, next){
 
+        try{
+            let browser = new Browser()
+            browser.init.setDriverFirefox()
 
-        let browser = new Browser()
-
-
+            // browser
+        }catch (e) {
+            console.log(e)
+        }
 
         let obj = {
 
