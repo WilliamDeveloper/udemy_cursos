@@ -35,6 +35,9 @@ npm install --save oracledb
 
 npm install --save handlebars-helpers
 
+# selenium
+npm install --save selenium-webdriver
+
 ````
 
 --- ---------------------------------------
