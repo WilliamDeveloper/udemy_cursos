@@ -13,12 +13,32 @@ const SqlController = {
         let endpointForm = '/sql/select'
         let {sql, nomeBaseSelecionado, nomeSqlSelecionado} = req.body
 
+        let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
+        let nomeTabela = '<- Select ->'//'T411Pasi'
+        let listaAllSql = sqlQuerys.select.getAllSql()
+        let listaAllSqlDba = sqlQuerys.dba.getAllSql()
+        listaAllSql = [].concat(listaAllSql, listaAllSqlDba)
 
         if (!nomeBaseSelecionado) nomeBaseSelecionado = "homologa"
         if (!nomeSqlSelecionado) nomeSqlSelecionado = 'T411PASI_FULL'
         if (!sql) sql = 'select 1 chave, 2 valor from dual'
 
-        if (req.method == 'POST') {
+        if (req.method == 'GET') {
+            let dadosPagina = {
+                endpointForm,
+                nomeBaseSelecionado: '',
+                nomeSqlSelecionado: '',
+                listaNomesBase,
+                listaAllSql,
+                nomeTabela: nomeTabela,
+                sqlResult: []
+            }
+            // res.json(obj);
+            res.render('sql', dadosPagina)
+            return
+        }
+        else
+        {
             sql = sqlQuerys.select.getValueFromKey(nomeSqlSelecionado)
             if (!sql) {
                 sql = sqlQuerys.dba.getValueFromKey(nomeSqlSelecionado)
@@ -29,16 +49,6 @@ const SqlController = {
             }
         }
 
-
-        let listaNomesBase = tnsnamesOracle.getListaBasesConfig()
-
-        let listaAllSql = sqlQuerys.select.getAllSql()
-        let listaAllSqlDba = sqlQuerys.dba.getAllSql()
-        listaAllSql = [].concat(listaAllSql, listaAllSqlDba)
-
-        console.log('listaAllSql', listaAllSql)
-
-        let nomeTabela = '<- Select ->'//'T411Pasi'
 
         let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
         let resultSql = conexao.raw(sql)
@@ -52,19 +62,8 @@ const SqlController = {
                 res.json(data)
                 return
             }
+            let lista = data
 
-            let nomeColunas = Object.keys(data[0])
-            let qtdColunas = nomeColunas.length
-            let qtdLinhas = data.length
-
-            console.log(data, qtdColunas, qtdLinhas)
-
-            let sqlResult = {
-                nomeColunas,
-                qtdColunas,
-                qtdLinhas,
-                rows: data
-            }
             let dadosPagina = {
                 endpointForm,
                 nomeBaseSelecionado,
@@ -72,7 +71,12 @@ const SqlController = {
                 listaNomesBase,
                 listaAllSql,
                 nomeTabela,
-                sqlResult
+                sqlResult:{
+                    nomeColunas:Object.keys(lista[0]),
+                    qtdColunas:Object.keys(lista[0]).length,
+                    qtdLinhas:lista.length,
+                    rows: lista
+                }
             }
             // res.json(obj);
             res.render('sql', dadosPagina)
