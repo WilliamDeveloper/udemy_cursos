@@ -16,7 +16,7 @@ const RoboController = {
             const url ='http://www.google.com.br'
             let browser = new Browser()
             browser.init.setDriverFirefox()
-            browser.opcao.doAcessarPagina(url)
+            await browser.opcao.doAcessarPagina(url)
 
             // browser
         }catch (e) {

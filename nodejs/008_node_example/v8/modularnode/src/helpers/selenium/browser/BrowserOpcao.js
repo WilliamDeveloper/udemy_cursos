@@ -4,10 +4,10 @@ class  BrowserOpcao {
         console.log('browser', this.browser)
     }
 
-    doAcessarPagina(url){
+    async doAcessarPagina(url){
         let driver = this.browser.driver
         driver.manage().window().maximize()
-        driver.get(url)
+        await driver.get(url)
 
     }
 
