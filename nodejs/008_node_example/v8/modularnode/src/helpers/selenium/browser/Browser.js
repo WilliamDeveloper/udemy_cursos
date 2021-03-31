@@ -1,8 +1,11 @@
 process.env['PATH'] =`${process.env['CHROME_NAVIGATOR_DRIVER_FOLDER']};${process.env['PATH']}`
 process.env['PATH'] =`${process.env['CHROME_NAVIGATOR_FOLDER']};${process.env['PATH']}`
 
-console.log('# ', process.env['CHROME_NAVIGATOR_DRIVER_FOLDER'])
-console.log('path=> ', process.env['PATH'])
+process.env['PATH'] =`${process.env['FIREFOX_NAVIGATOR_DRIVER_FOLDER']};${process.env['PATH']}`
+process.env['PATH'] =`${process.env['FIREFOX_V66_0_5_NAVIGATOR_FOLDER']};${process.env['PATH']}`
+
+process.env['FIREFOX_BIN']=`${process.env['FIREFOX_V66_0_5_NAVIGATOR_BIN']}`
+
 
 const BrowserBasico = require('./BrowserBasico')
 const BrowserEvento = require('./BrowserEvento')
