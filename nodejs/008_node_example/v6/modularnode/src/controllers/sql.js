@@ -180,19 +180,7 @@ const SqlController = {
                     else
                     {
 
-                        // console.log(resultSql.toQuery())
-                        console.log('c', resultSql)
-                        resultSql.then(data => {
-
-                            console.log('data=>', data)
-                            res.json(data)
-                            return
-
-
-                        }).catch(err => {
-                            console.log(err)
-                            res.send('respond with a resource');
-                        })
+                       res.json({error:'update nao costuma vir valor '})
 
 
                     }
