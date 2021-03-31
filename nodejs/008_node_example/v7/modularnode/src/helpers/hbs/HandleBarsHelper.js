@@ -4,11 +4,6 @@ hbs.registerHelper('isdefined', function (value) {
     return value !== undefined;
 });
 
-// hbs.registerHelper('check', function (value, comparator) {
-//     let valor = ('true'==comparator)
-//     return (value !== undefined && value !== '' && valor == true) ? 'OK' : 'NOK'
-// });
-
 hbs.registerHelper("ifNotNullEmpty", function(value, options) {
     if (value !== undefined && value !== '') {
         return options.fn(this);
