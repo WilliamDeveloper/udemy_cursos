@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var helloRouter = require('./routes/hello');
 var sqlRouter = require('./routes/sql');
+var roboRouter = require('./routes/robo');
 
 var app = express();
 
@@ -59,6 +60,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/hello',helloRouter)
 app.use('/sql',sqlRouter)
+app.use('/robo',roboRouter)
 
 
 
