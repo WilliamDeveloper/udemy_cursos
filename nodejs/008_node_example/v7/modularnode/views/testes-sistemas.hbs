@@ -62,7 +62,7 @@
     </div>
 
 
-    <iframe id="content" src="about:blank" class="container-fluid" style="height: 100%; !important;"></iframe>
+    <iframe id="content" src="about:blank" class="container-fluid" style="height: 1080px; !important;"></iframe>
     <div id="content2"></div>
 
 
@@ -78,6 +78,12 @@
 function abrir_janela(url){
 	window.open(url,"some_name","width=300,height=200,left=10,top=10");
 }
+
+const frame = document.querySelector('iframe')
+function syncHeight() {
+    this.style.height = `${this.contentWindow.document.body.offsetHeight}px`
+}
+frame.addEventListener('load', syncHeight)
 
 // document.getElementsByName('iframe')[0].onload(function () {
 //     console.log('blau')
