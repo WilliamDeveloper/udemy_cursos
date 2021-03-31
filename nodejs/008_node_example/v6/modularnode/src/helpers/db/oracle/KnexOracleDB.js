@@ -13,14 +13,27 @@ const tnsnamesOracle = require('../../../config/tnsnamesOracle')
 const knex = require('knex')
 
 const KnexOracleDB = {
-    async getConexao(nome_base){
+    async getConexao(nomeBase){
         let config = {
             client: 'oracledb',
-            connection: tnsnamesOracle[nome_base],
+            connection: tnsnamesOracle[nomeBase],
             fetchAsString: [ 'number', 'clob' ]
         }
         console.log('config', config)
-        return knex(config);
+        return await knex(config);
+    },
+
+    async runSQL(nomeBaseSelecionado, sql){
+        let retorno = []
+        try{
+            let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
+            let resultSql = await conexao.raw(sql)
+            retorno = resultSql
+        }catch (e) {
+            console.log('error-runSQL: ', e)
+            retorno = undefined
+        }
+        return retorno
     }
 }
 
