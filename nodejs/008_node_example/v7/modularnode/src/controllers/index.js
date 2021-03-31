@@ -5,7 +5,11 @@ const IndexController ={
     },
 
     home(req, res, next){
-        res.render('home', { alertError:'oi' });
+        let obj = {
+            alertSuccess:'mensagem sucesso exemplo na tela home',
+            alertError:'mensagem erro exemplo na tela home'
+        }
+        res.render('home', obj);
     }
 
 }
