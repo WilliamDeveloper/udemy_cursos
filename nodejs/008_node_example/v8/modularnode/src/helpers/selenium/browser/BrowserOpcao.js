@@ -1,10 +1,14 @@
 class  BrowserOpcao {
     constructor(pInstanciaBrowser){
         this.browser = pInstanciaBrowser
+        console.log('browser', this.browser)
     }
 
     doAcessarPagina(url){
-        // this.browser.driver.get(url)
+        let driver = this.browser.driver
+        driver.manage().window().maximize()
+        driver.get(url)
+
     }
 
     doFecharNavegador(){

@@ -8,10 +8,11 @@ class  BrowserBasico {
     }
 
     setDriver(pDriver){
-        this.driver = pDriver
+        console.log('setDriver')
+        this.browser.driver = pDriver
     }
 
-    setDriverFirefox(){
+    setDriverChrome(){
 
     }
 

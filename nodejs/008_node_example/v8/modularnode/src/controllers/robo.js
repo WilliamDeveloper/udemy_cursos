@@ -13,8 +13,10 @@ const RoboController = {
     abrir_browser(req, res, next){
 
         try{
+            const url ='http://www.google.com.br'
             let browser = new Browser()
-            // browser.init.setDriverFirefox()
+            browser.init.setDriverFirefox()
+            browser.opcao.doAcessarPagina(url)
 
             // browser
         }catch (e) {
