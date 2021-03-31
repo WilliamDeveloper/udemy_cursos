@@ -1,0 +1,27 @@
+<div class="col">
+    <div class="table-responsive">
+        <table class="table table-sm small table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+            <tr>
+                {{#with sqlResult}}
+                    {{#each nomeColunas as |coluna|}}
+                        <th scope="col">{{this}}</th>
+                    {{/each}}
+                {{/with}}
+            </tr>
+            </thead>
+            <tbody>
+            {{#with sqlResult}}
+                {{#each rows as |row|}}
+                    <tr>
+                        {{#each row}}
+                            <td scope="row">{{this}}</td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            {{/with}}
+
+            </tbody>
+        </table>
+    </div>
+</div>
