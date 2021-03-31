@@ -149,7 +149,7 @@ const SqlController = {
                 }
                 else
                 {
-                    DbaService.recompileAllInvalid(nomeBaseSelecionado)
+                    await DbaService.recompileAllInvalid(nomeBaseSelecionado)
                     lista = await DbaService.getListObjectInvalid(nomeBaseSelecionado)
 
                     let dadosPagina = {
