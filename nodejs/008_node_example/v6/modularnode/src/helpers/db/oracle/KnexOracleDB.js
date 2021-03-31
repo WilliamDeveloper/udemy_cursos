@@ -24,6 +24,7 @@ const KnexOracleDB = {
     },
 
     async runSQL(nomeBaseSelecionado, sql){
+        console.log('nomeBaseSelecionado', sql )
         let retorno = []
         try{
             let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
