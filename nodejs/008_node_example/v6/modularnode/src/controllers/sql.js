@@ -129,10 +129,10 @@ const SqlController = {
             if (nomeSqlSelecionado === 'COMPILAR_OBJ_OWNER') {
 
                 let lista = await DbaService.getListObjectInvalid(nomeBaseSelecionado)
-                console.log('lista-blau- ', lista)
+                // console.log('lista-blau- ', lista)
 
                 if (lista === undefined || !lista.length) {
-                    console.log('array vazio',lista)
+                    // console.log('array vazio',lista)
 
                     let dadosPagina = {
                         endpointForm,
@@ -150,8 +150,25 @@ const SqlController = {
                 else
                 {
                     DbaService.recompileAllInvalid(nomeBaseSelecionado)
+                    lista = await DbaService.getListObjectInvalid(nomeBaseSelecionado)
 
-                    res.json({lista, sql})
+                    let dadosPagina = {
+                        endpointForm,
+                        nomeBaseSelecionado,
+                        nomeSqlSelecionado,
+                        listaNomesBase,
+                        listaAllSql,
+                        nomeTabela,
+                        sqlResult :{
+                            nomeColunas: Object.keys(lista[0]),
+                            qtdColunas: Object.keys(lista[0]).length,
+                            qtdLinhas: lista.length,
+                            rows: lista
+                        }
+                    }
+
+                    res.render('sql', dadosPagina)
+
                 }
             }
             else
