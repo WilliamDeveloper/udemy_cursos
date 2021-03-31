@@ -51,6 +51,10 @@ bower install --save bootstrap@4.6.0
 bower install --save font-awesome@5.15.3
 ````
 
+
+--- ---------------------------------------------
+--- PARA RODAR APOS FAZER CHECKOUT PARA MAQUINA
+--- ---------------------------------------------
 --- ---------------------------------------
 - resolvendo dependencias do projeto
 --- ---------------------------------------
