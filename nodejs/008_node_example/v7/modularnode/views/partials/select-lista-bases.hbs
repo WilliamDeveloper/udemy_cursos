@@ -1,10 +1,5 @@
-<div class="row">
-    <div class="col">
-        <select name="nomeBaseSelecionado" id="nomeBaseSelecionado" class="form-control">
-            {{#each listaNomesBase as |base|}}
-                <option value="{{this}}" {{ifComboOptionSelected ../nomeBaseSelecionado this}}>{{this}}</option>
-            {{/each}}
-        </select>
-    </div>
-</div>
-
+<select name="nomeBaseSelecionado" id="nomeBaseSelecionado" class="custom-select">
+    {{#each listaNomesBase as |base|}}
+        <option value="{{this}}" {{ifComboOptionSelected ../nomeBaseSelecionado this}}>{{this}}</option>
+    {{/each}}
+</select>
