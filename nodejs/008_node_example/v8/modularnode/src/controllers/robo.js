@@ -14,7 +14,7 @@ const RoboController = {
 
         try{
             let browser = new Browser()
-            browser.init.setDriverFirefox()
+            // browser.init.setDriverFirefox()
 
             // browser
         }catch (e) {
