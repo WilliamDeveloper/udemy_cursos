@@ -5,7 +5,7 @@ const IndexController ={
     },
 
     home(req, res, next){
-        res.render('home', {  });
+        res.render('home', { alertError:'oi' });
     }
 
 }

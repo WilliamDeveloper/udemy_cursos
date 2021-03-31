@@ -4,6 +4,11 @@ hbs.registerHelper('isdefined', function (value) {
     return value !== undefined;
 });
 
+// hbs.registerHelper('check', function (value, comparator) {
+//     let valor = ('true'==comparator)
+//     return (value !== undefined && value !== '' && valor == true) ? 'OK' : 'NOK'
+// });
+
 hbs.registerHelper('nvl2', function (value, valueIfNull='') {
     return (value !== undefined)? value.toString() : valueIfNull;
 });
@@ -11,6 +16,8 @@ hbs.registerHelper('nvl2', function (value, valueIfNull='') {
 hbs.registerHelper('ifNull', function (value, valueIfNull='') {
     return (value !== undefined)? value.toString() : valueIfNull;
 });
+
+
 
 hbs.registerHelper('ifComboOptionSelected', function (value, valueOption='') {
     console.log('ifComboOptionSelected ',value,valueOption)
