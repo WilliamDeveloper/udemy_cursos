@@ -175,15 +175,6 @@ const SqlController = {
                         await KnexOracleDB.runSQL(nomeBaseSelecionado,sql)
                     }
 
-                    try{
-
-                        console.log('p_object_type ', p_object_type,p_owner, p_object_name, p_compile)
-                    }catch (e) {
-                        console.log(e)
-                    }
-
-
-
                     res.json({lista, sql})
                 }
             }
