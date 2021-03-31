@@ -6,8 +6,8 @@ const IndexController ={
 
     home(req, res, next){
         let obj = {
-            alertError:'mensagem erro exemplo na tela home, mensagem erro exemplo na tela home, mensagem erro exemplo na tela home',
-            alertSuccess:'mensagem sucesso exemplo na tela home blau, mensagem sucesso exemplo na tela home blau, mensagem sucesso exemplo na tela home blau'
+            alertError:'mensagem erro exemplo na tela home',
+            alertSuccess:'mensagem sucesso exemplo na tela home blau'
         }
         res.render('home', obj);
     }
