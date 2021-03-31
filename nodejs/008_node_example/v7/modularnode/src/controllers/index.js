@@ -15,6 +15,13 @@ const IndexController ={
 
         }
         res.render('home', obj);
+    },
+
+    testes_sistemas(req, res, next){
+        let obj = {
+
+        }
+        res.render('testes-sistemas', obj);
     }
 
 }
