@@ -50,40 +50,49 @@ const SqlController = {
         }
 
 
-        let conexao = await KnexOracleDB.getConexao(nomeBaseSelecionado)
-        let resultSql = conexao.raw(sql)
+        try {
 
-        console.log(resultSql.toQuery())
+            let lista = await KnexOracleDB.runSQL(nomeBaseSelecionado, sql)
 
-        resultSql.then(data => {
+            if (lista === undefined || !lista.length ) {
 
-            if (req.method == 'POST' && !data.length) {
-                console.log('data=>', data)
-                res.json(data)
-                return
-            }
-            let lista = data
+                console.log('array vazio')
 
-            let dadosPagina = {
-                endpointForm,
-                nomeBaseSelecionado,
-                nomeSqlSelecionado,
-                listaNomesBase,
-                listaAllSql,
-                nomeTabela,
-                sqlResult:{
-                    nomeColunas:Object.keys(lista[0]),
-                    qtdColunas:Object.keys(lista[0]).length,
-                    qtdLinhas:lista.length,
-                    rows: lista
+                let dadosPagina = {
+                    endpointForm,
+                    nomeBaseSelecionado: '',
+                    nomeSqlSelecionado: '',
+                    listaNomesBase,
+                    listaAllSql,
+                    nomeTabela: nomeTabela,
+                    sqlResult: []
                 }
+
+                res.render('sql', dadosPagina)
             }
-            // res.json(obj);
-            res.render('sql', dadosPagina)
-        }).catch(err => {
-            console.log(err)
-            res.send('respond with a resource');
-        })
+            else
+            {
+                let dadosPagina = {
+                    endpointForm,
+                    nomeBaseSelecionado,
+                    nomeSqlSelecionado,
+                    listaNomesBase,
+                    listaAllSql,
+                    nomeTabela,
+                    sqlResult:{
+                        nomeColunas:Object.keys(lista[0]),
+                        qtdColunas:Object.keys(lista[0]).length,
+                        qtdLinhas:lista.length,
+                        rows: lista
+                    }
+                }
+                // res.json(obj);
+                res.render('sql', dadosPagina)
+            }
+
+        } catch (e) {
+            console.log('error:', e)
+        }
 
 
     },
