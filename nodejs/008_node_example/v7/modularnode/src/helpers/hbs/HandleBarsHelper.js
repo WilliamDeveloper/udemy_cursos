@@ -9,6 +9,12 @@ hbs.registerHelper('isdefined', function (value) {
 //     return (value !== undefined && value !== '' && valor == true) ? 'OK' : 'NOK'
 // });
 
+hbs.registerHelper("ifNotNullEmpty", function(value, options) {
+    if (value !== undefined && value !== '') {
+        return options.fn(this);
+    }
+});
+
 hbs.registerHelper('nvl2', function (value, valueIfNull='') {
     return (value !== undefined)? value.toString() : valueIfNull;
 });
