@@ -18,6 +18,12 @@ const RoboController = {
             await browser.init.setDriverFirefox()
             await browser.opcao.doAcessarPagina(url)
 
+            let termo = 'Hellow world'
+            await browser.elemento.clickByName('btnK')
+
+
+// driver.findElement(By.tagName('button')).click()
+
             // browser
         }catch (e) {
             console.log(e)
