@@ -15,11 +15,18 @@ const BatController = {
 
         await fs.ls();
         console.log('#')
-        // await fs.cmdWithDir('ls', '%temp%')
-        // process.chdir('%temp%')
-        let dirAtual = await fs.dirAtual()
-        console.log(dirAtual)
-        console.log('#')
+
+
+
+
+
+
+        let str= '%temp%'
+        let dirCommand = await fs.getPathVariable(str)
+        await fs.cmdWithDir('ls', dirCommand)
+
+
+
         await fs.ls();
 
 
