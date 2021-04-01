@@ -27,6 +27,7 @@ const BatController = {
         if(temp.includes("AppData\\Local\\Temp")){
             let comando_1 = `rm -rf ${temp}/*.*`
             let comando_2 = `rm -rf ${temp}/*`
+            let comando_3 = `rm -rf C:\\Windows\\Temp/*.*`
             let dirCommand = fs.getDirTemp()
 
             try{
@@ -41,7 +42,13 @@ const BatController = {
                 console.log(e)
             }
 
-            console.log('a3')
+            try{
+                await fs.cmdWithDir(comando_3, dirCommand)
+            }catch (e) {
+                console.log(e)
+            }
+
+
         }
 
 
