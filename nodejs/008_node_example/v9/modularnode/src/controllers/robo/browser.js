@@ -1,4 +1,4 @@
-const Browser = require('./../helpers/selenium/browser/Browser')
+const Browser = require('./../../helpers/selenium/browser/Browser')
 
 
 const RoboBrowserController = {

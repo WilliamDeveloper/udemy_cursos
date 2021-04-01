@@ -15,7 +15,7 @@ const RoboController = {
 
     abrir_browser_chrome: RoboBrowserController.abrir_browser_chrome,
     abrir_browser_ff: RoboBrowserController.abrir_browser_ff,
-    abrir_browser_ff: RoboBrowserController.fechar_browser,
+    fechar_browser: RoboBrowserController.fechar_browser,
 
 
 
