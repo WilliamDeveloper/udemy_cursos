@@ -5,12 +5,18 @@ const fs ={
     async dirAtual(){
         return await process.cwd()
     },
-    async getPathVariable(variable){
+
+    getPathVariable(variable){
         let replaced = variable.replace(/%([^%]+)%/g, (original, matched) => {
             const r = process.env[matched]
             return r ? r : ''
         })
-        return await replaced
+        return  replaced
+    },
+
+    getDirTemp(){
+        let dir = "%temp%"
+        return this.getPathVariable(dir)
     },
 
 

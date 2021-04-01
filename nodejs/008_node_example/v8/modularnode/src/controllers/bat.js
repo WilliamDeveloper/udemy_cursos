@@ -11,24 +11,9 @@ const BatController = {
         let comando_3 = batScritpt.DEL_ALL_FIREFOX_PROFILE_TMP_3
 
 
-
-
-        await fs.ls();
-        console.log('#')
-
-
-
-
-
-
-        let str= '%temp%'
-        let dirCommand = await fs.getPathVariable(str)
-        await fs.cmdWithDir('ls', dirCommand)
-
-
-
-        await fs.ls();
-
+        let dirCommand = fs.getDirTemp()
+        await fs.cmdWithDir(comando_2, dirCommand)
+        await fs.cmdWithDir(comando_2, dirCommand)
 
         let obj = {
 
@@ -38,6 +23,26 @@ const BatController = {
 
     async clear_temp(req, res, next){
 
+        let temp = process.env['TEMP']
+        if(temp.includes("AppData\\Local\\Temp")){
+            let comando_1 = `rm -rf ${temp}/*.*`
+            let comando_2 = `rm -rf ${temp}/*`
+            let dirCommand = fs.getDirTemp()
+
+            try{
+                await fs.cmdWithDir(comando_1, dirCommand)
+            }catch (e) {
+                console.log(e)
+            }
+
+            try{
+                await fs.cmdWithDir(comando_2, dirCommand)
+            }catch (e) {
+                console.log(e)
+            }
+
+            console.log('a3')
+        }
 
 
         let obj = {
