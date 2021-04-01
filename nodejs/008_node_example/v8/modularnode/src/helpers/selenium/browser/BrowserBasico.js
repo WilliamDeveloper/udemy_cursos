@@ -7,22 +7,28 @@ class  BrowserBasico {
         this.browser = pInstanciaBrowser
     }
 
-    setDriver(pDriver){
+    async setDriver(pDriver){
         console.log('setDriver')
+        if(this.browser.driver){
+            await this.browser.opcao.doFecharNavegador()
+        }
         this.browser.driver = pDriver
     }
 
-    setDriverChrome(){
-
+    async setDriverChrome(){
+        let driver = new webdriver.Builder()
+            .forBrowser('chrome')
+            .build()
+        await this.setDriver(driver)
     }
 
-    setDriverFirefox(firefoxVersion=36){
+    async setDriverFirefox(firefoxVersion=36){
 
         let driver = new webdriver.Builder()
             .forBrowser('firefox')
             .setFirefoxOptions(new firefox.Options().setBinary(process.env.FIREFOX_V66_0_5_NAVIGATOR_BIN))
             .build();
-        this.setDriver(driver)
+        await this.setDriver(driver)
     }
 }
 
