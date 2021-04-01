@@ -13,13 +13,14 @@ const RoboController = {
     async abrir_browser_ff(req, res, next){
 
         try{
+            let termo = 'Hellow world'
             const url ='http://www.google.com.br'
             let browser = new Browser()
             await browser.init.setDriverFirefox()
-            await browser.opcao.doAcessarPagina(url)
+            await browser.opcao.doAcessarPagina(`${url}/search?q=${termo}`)
 
-            let termo = 'Hellow world'
-            await browser.elemento.clickByName('btnK')
+
+            // await browser.elemento.clickByName('btnK')
 
 
 // driver.findElement(By.tagName('button')).click()
@@ -38,10 +39,11 @@ const RoboController = {
     async abrir_browser_chrome(req, res, next){
 
         try{
+            let termo = 'Hellow world'
             const url ='http://www.google.com.br'
             let browser = new Browser()
             await browser.init.setDriverChrome()
-            await browser.opcao.doAcessarPagina(url)
+            await browser.opcao.doAcessarPagina(`${url}/search?q=${termo}`)
 
             // browser
         }catch (e) {
