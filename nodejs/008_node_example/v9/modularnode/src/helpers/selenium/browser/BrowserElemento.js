@@ -51,42 +51,42 @@ class  BrowserElemento {
         // return self.getBy(By.CLASS_NAME,pClassName)
     }
 
-    getById(self,pElementoId){
+    getById(pElementoId){
         // return self.getBy(By.ID,pElementoId)
     }
 
-    getByName(self,pElementoName){
+    getByName(pElementoName){
         // return self.getBy(By.NAME,pElementoName)
     }
 
-    getByLinkText(self,pLinkText){
+    getByLinkText(pLinkText){
         // return self.getBy(By.LINK_TEXT,pLinkText)
     }
 
-    getByCssSelector(self,pCssSelector){
+    getByCssSelector(pCssSelector){
         // return self.getBy(By.CSS_SELECTOR, pCssSelector)
     }
 
-    getByTagName(self,pTagName){
+    getByTagName(pTagName){
         // return self.getBy(By.TAG_NAME,pTagName)
     }
 
 
-    getByXPath(self,pXPath,pRetry=True){
+    getByXPath(pXPath,pRetry=True){
         // return self.getBy(By.XPATH,pXPath,pRetry)
     }
 
-    getALinkByTextoExato(self,pTexto){
+    getALinkByTextoExato(pTexto){
         // return self.getByXPath(f"//a[text()='{pTexto}']")
     }
 
 
-    getClickableByXPath(self,pXPath,pRetry=True){
+    getClickableByXPath(pXPath,pRetry=True){
         // return self.getClickableBy(By.XPATH,pXPath,pRetry)
     }
 
 
-    getClickableByTextoExato(self,pTexto){
+    getClickableByTextoExato(pTexto){
         // v_elemento = False
         // v_termo_xpath = f"//*[text()='{pTexto}']"
         //
@@ -99,7 +99,7 @@ class  BrowserElemento {
     }
 
 
-    getByTextoExato(self,pTexto){
+    getByTextoExato(pTexto){
         // v_elemento = False
         // v_termo_xpath = f"//*[text()='{pTexto}']"
         //
@@ -113,7 +113,7 @@ class  BrowserElemento {
 
 
 // # .//input[@type='radio' and @value='F']
-    getByRadioByValueExato(self,pTexto){
+    getByRadioByValueExato(pTexto){
         // v_elemento = False
         // v_termo_xpath = f"//input[@type='radio' and @value='{pTexto}']"
         // v_elemento_locator = (By.XPATH, v_termo_xpath)
@@ -130,7 +130,7 @@ class  BrowserElemento {
     }
 
 
-    getByInputButtonByValueExato(self,pTexto){
+    getByInputButtonByValueExato(pTexto){
         // v_elemento = False
         // v_termo_xpath = f"//*[@type='button' and @value='{pTexto}']"
         // v_elemento_locator = (By.XPATH, v_termo_xpath)
@@ -147,7 +147,7 @@ class  BrowserElemento {
     }
 
 
-    getByButtonWithSpanByValueExato(self,pTexto){
+    getByButtonWithSpanByValueExato(pTexto){
         // v_elemento = False
         // v_termo_xpath = f"//button[./span[text()='{pTexto}']]"
         // v_elemento_locator = (By.XPATH, v_termo_xpath)
@@ -164,7 +164,7 @@ class  BrowserElemento {
     }
 
 
-    getByTextoParcial(self,pTexto){
+    getByTextoParcial(pTexto){
         // v_elemento = False
         // try:
         // v_elemento = self.getByXPath(f"//*[contains(text(), '{pTexto}')]")
@@ -174,7 +174,7 @@ class  BrowserElemento {
     }
 
 
-    setValueById(self,pElementoId,pValue){
+    setValueById(pElementoId,pValue){
         // self.browser.log.print(f'#{pElementoId} {pValue}')
         // v_elemento = self.browser.elemento.getById(pElementoId)
         // v_elemento.send_keys(Keys.TAB)
@@ -190,7 +190,7 @@ class  BrowserElemento {
         // v_elemento.send_keys(Keys.TAB)
     }
 
-    setValueByIdWithClear(self,pElementoId,pValue){
+    setValueByIdWithClear(pElementoId,pValue){
         // self.browser.log.print(f'#{pElementoId} {pValue}')
         // v_elemento = self.browser.elemento.getById(pElementoId)
         //
@@ -205,13 +205,13 @@ class  BrowserElemento {
     }
 
 
-    setValueByIdWithHome(self,pElementoId,pValue){
+    setValueByIdWithHome(pElementoId,pValue){
         // self.browser.log.print(f'#{pElementoId} {pValue}')
         // self.browser.elemento.getById(pElementoId).send_keys(Keys.HOME, pValue)
     }
 
 
-    setValueByIdSelectOption(self, pElementoId, pTextoOption){
+    setValueByIdSelectOption(pElementoId, pTextoOption){
         // self.browser.log.print(f'select-#{pElementoId} {pTextoOption}')
         // v_elemento = False
         //
@@ -224,7 +224,7 @@ class  BrowserElemento {
     }
 
 
-    setValueByIdMultipleSelectOption(self, pElementoId, pListaTextoOption){
+    setValueByIdMultipleSelectOption(pElementoId, pListaTextoOption){
         // self.browser.log.print(f'MultipleSelect-#{pElementoId} {pListaTextoOption}')
         //
         // # v_termo_button_open = f"//button[@class='ui-multiselect ui-widget ui-state-default ui-corner-all']//span[text()='{pTextoMultiselect}']"
