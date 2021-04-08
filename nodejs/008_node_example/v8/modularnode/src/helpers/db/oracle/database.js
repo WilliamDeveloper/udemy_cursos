@@ -13,6 +13,7 @@ const oracle_conexao = {
     vdb04: { host : '10.0.1.30', user:'system', password:'', database: 'vdb04' },
     vdb05: { host : '10.0.1.30', user:'system', password:'', database: 'vdb05' },
     vdb06: { host : '10.0.1.30', user:'system', password:'', database: 'vdb06' },
+
 }
 const knex = require('knex')({
     client: 'oracledb',
