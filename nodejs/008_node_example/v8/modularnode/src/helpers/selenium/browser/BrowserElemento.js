@@ -1,6 +1,41 @@
+const webdriver = require('selenium-webdriver')
+const firefox = require('selenium-webdriver/firefox')
+const By = webdriver.By
+
 class  BrowserElemento {
     constructor(pInstanciaBrowser){
         this.browser = pInstanciaBrowser
+    }
+
+    async getByName(name){
+        let driver = this.browser.driver
+        return await driver.findElement(By.name(name))
+    }
+
+    async setByName(name, value){
+        let elemento = await this.getByName(name)
+        await elemento.sendKeys(value)
+    }
+
+    async clickByName(name){
+        let elemento = await this.getByName(name)
+        // console.log('elemento ', elemento)
+        await elemento.click()
+    }
+
+    async getByTagName(tagName){
+        let driver = this.browser.driver
+        await driver.findElement(By.tagName(tagName))
+    }
+
+    async setByTagName(name, value){
+        let elemento = await this.getByTagName(name)
+        await elemento.sendKeys(value)
+    }
+
+    async clickByTagName(name){
+        let elemento = await this.getByTagName(name)
+        await elemento.click()
     }
 
 

@@ -1,14 +1,7 @@
 const Browser = require('./../helpers/selenium/browser/Browser')
 
 
-const RoboController = {
-
-    async robo_acoes(req, res, next){
-        let obj = {
-
-        }
-        res.render('robo-acoes', obj);
-    },
+const RoboBrowserController = {
 
     async abrir_browser_ff(req, res, next){
 
@@ -77,4 +70,4 @@ const RoboController = {
 
 }
 
-module.exports = RoboController
+module.exports = RoboBrowserController

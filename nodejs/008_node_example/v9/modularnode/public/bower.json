@@ -1,0 +1,15 @@
+{
+  "name": "public",
+  "authors": [
+    "William Goulart Pacheco <gtaskwill@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.6.0",
+    "jquery": "3.6.0",
+    "popper.js": "^1.12.9",
+    "font-awesome": "^5.15.3"
+  }
+}
