@@ -26,7 +26,7 @@ const driver = new Builder()
     }))
     .build()
 
-driver.get("https://whatimyipadress.com")
+driver.get("https://whatismyipaddress.com")
 
 
 
