@@ -111,3 +111,30 @@ $c=10;
 $valor=($a ?? $b ?? $c);
 echo "=> $valor";
 echo "<br>";
+
+
+###############################
+#incremento e decremento
+###############################
+
+$a=10;
+
+echo $a++;
+echo "<br>";
+echo $a;
+echo "<br>";
+
+echo ++$a;
+echo "<br>";
+echo $a;
+echo "<br>";
+
+echo $a--;
+echo "<br>";
+echo $a;
+echo "<br>";
+
+echo --$a;
+echo "<br>";
+echo $a;
+echo "<br>";
