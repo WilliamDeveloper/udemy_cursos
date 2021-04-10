@@ -39,3 +39,37 @@ for($i= date('Y'); $i >= date('Y')-100; --$i){
 }
 echo "</select>";
 echo "<br>";
+
+##################################
+# foreach
+##################################
+
+$lista = array("pera","banana", "tomate", "cebola");
+foreach ($lista as $key => $value){
+    echo "$key $value";
+    echo "<br>";
+}
+
+
+##################################
+# while / dowhile
+##################################
+
+$valor=false;
+$cont=0;
+while($valor){
+    if($cont++ == 2){
+        break;
+    }
+}
+echo "$cont <br>";
+
+
+$valor=false;
+$cont=0;
+do{
+    if($cont++ == 2){
+        break;
+    }
+}while($valor);
+echo "$cont <br>";
