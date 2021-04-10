@@ -13,8 +13,22 @@
 ###################################################
 
 define("SERVIDOR","will");
-
 echo SERVIDOR;
+echo "<br>";
+echo "<br>";
+
+define("SERVIDOR_CONFIG",[
+    "pimba",
+    "blau",
+    "picachu"
+]);
+echo SERVIDOR_CONFIG[0];
+echo "<br>";
+
+echo SERVIDOR_CONFIG[1];
+echo "<br>";
+
+echo SERVIDOR_CONFIG[2];
 echo "<br>";
 echo "<br>";
 
