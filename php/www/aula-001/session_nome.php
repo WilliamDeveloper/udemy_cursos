@@ -8,6 +8,10 @@
 
 
 session_start();
-$_SESSION['nome']='william';
+#$_SESSION['nome']='william';
+
+session_unset($_SESSION['nome']);
+session_destroy();
+
 
 echo 'pimba '. $_SESSION['nome'] ;
