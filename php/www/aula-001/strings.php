@@ -31,5 +31,11 @@ echo "$palavra";
 echo "<br>";
 
 $posicaoRei = strpos($palavra,"rei");
+$fraseAntesRei=substr($palavra,0,$posicaoRei);
+$fraseDepoisRei=substr($palavra,$posicaoRei+strlen('rei'), strlen($palavra));
 echo "o rei esta na posicao: $posicaoRei";
+echo "<br>";
+echo "antes: $fraseAntesRei";
+echo "<br>";
+echo "depois: $fraseDepoisRei";
 echo "<br>";
