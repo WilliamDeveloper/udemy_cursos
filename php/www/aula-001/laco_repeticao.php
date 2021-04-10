@@ -31,3 +31,11 @@ for($i= 0; $i < 1000; $i+=5){
 }
 echo "<br>";
 
+
+
+echo "<select>";
+for($i= date('Y'); $i >= date('Y')-100; --$i){
+    echo '<option value="'.$i.'">'.$i.'</option>';
+}
+echo "</select>";
+echo "<br>";
