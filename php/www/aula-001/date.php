@@ -25,3 +25,13 @@ echo "<br>";
 $timestamp=strtotime("+30 day");
 echo date('d/m/Y H:i:s',$timestamp);
 echo "<br>";
+
+
+$dt=new DateTime();
+echo $dt->format('d/m/Y H:i:s');
+echo "<br>";
+
+$periodo= new DateInterval("P15D");
+$dt->add($periodo);
+echo $dt->format('d/m/Y H:i:s');
+echo "<br>";
