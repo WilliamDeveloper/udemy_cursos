@@ -10,8 +10,9 @@
 session_start();
 #$_SESSION['nome']='william';
 
-session_unset($_SESSION['nome']);
-session_destroy();
+//session_unset($_SESSION['nome']);
+//session_destroy();
 
 
 echo 'pimba '. $_SESSION['nome'] ;
+echo 'session_id '. session_id() ;
