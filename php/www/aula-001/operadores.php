@@ -5,7 +5,10 @@
  * Date: 10/04/2021
  * Time: 12:18
  */
+
+###############################
 #atribuicao
+###############################
 $nome = "william";
 echo "$nome";
 echo "<br>";
@@ -35,5 +38,28 @@ echo "$nomeCompleto";
 echo "<br>";
 
 ###############################
+#aritmetico
+###############################
+$a=10;
+$b=2;
+$valor=$a+$b;
+echo "$valor";
+echo "<br>";
 
+$a=10;
+$b=2;
+$valor=$a-$b;
+echo "$valor";
+echo "<br>";
 
+$a=10;
+$b=2;
+$valor=$a*$b;
+echo "$valor";
+echo "<br>";
+
+$a=10;
+$b=2;
+$valor=$a/$b;
+echo "$valor";
+echo "<br>";
