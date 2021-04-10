@@ -80,7 +80,7 @@ $a=30;
 $b=55;
 var_dump($a > $b);
 echo "<br>";
-#spaceship
+#spaceship  - apartir do php7
 $valor=($a <=> $b);
 echo "=> $valor";
 echo "<br>";
@@ -89,7 +89,7 @@ $a=55;
 $b=30;
 var_dump($a > $b);
 echo "<br>";
-#spaceship
+#spaceship - apartir do php7
 $valor=($a <=> $b);
 echo "=> $valor";
 echo "<br>";
@@ -98,7 +98,16 @@ $a=30;
 $b=30;
 var_dump($a > $b);
 echo "<br>";
-#spaceship
+#spaceship  - apartir do php7
 $valor=($a <=> $b);
+echo "=> $valor";
+echo "<br>";
+
+
+$a=null;
+$b=null;
+$c=10;
+#coalesce - apartir do php7
+$valor=($a ?? $b ?? $c);
 echo "=> $valor";
 echo "<br>";
