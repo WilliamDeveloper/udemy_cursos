@@ -24,6 +24,7 @@ class Pessoa
      */
     public function getIdade()
     {
+        echo get_class($this);
         return $this->idade;
     }
 
@@ -46,4 +47,5 @@ $william->nome= "william pacheco";
 $william->setIdade(18);
 echo $william->nome;
 echo $william->getIdade();
+
 
