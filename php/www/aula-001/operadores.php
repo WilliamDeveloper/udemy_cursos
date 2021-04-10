@@ -156,3 +156,7 @@ echo "<br>";
 $a=(10+3)/2 > 5 && 10+5 > 3;
 echo $a ? "true":"false";
 echo "<br>";
+
+$a=(10+3)/2 > 5 || 10+5 < 3;
+echo $a ? "true":"false";
+echo "<br>";
