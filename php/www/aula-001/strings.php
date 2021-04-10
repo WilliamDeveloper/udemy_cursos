@@ -24,3 +24,12 @@ $palavra2=str_replace("o","0",$palavra);
 echo $palavra;
 echo "<br>";
 echo $palavra2;
+
+
+$palavra="o rato roeu a roupa do rei de roma";
+echo "$palavra";
+echo "<br>";
+
+$posicaoRei = strpos($palavra,"rei");
+echo "o rei esta na posicao: $posicaoRei";
+echo "<br>";
