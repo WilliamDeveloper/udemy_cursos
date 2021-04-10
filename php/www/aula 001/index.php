@@ -33,6 +33,9 @@
 
     $arquivo= fopen("index.php","r");
     var_dump($arquivo);
+
+    $pimba= NULL;
+    var_dump($pimba);
     exit;
 
 
