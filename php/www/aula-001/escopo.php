@@ -14,3 +14,5 @@ function teste(){
     global $nome;
     echo "daaijsuhdsaudhasuh $nome";
 }
+
+teste();
