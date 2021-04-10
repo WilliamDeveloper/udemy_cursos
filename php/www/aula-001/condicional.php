@@ -32,5 +32,9 @@ switch($valor){
     case 6 : $valor="seis"; break;
     default: $valor="default"; break;
 }
+$data = date('w');
 echo "$valor";
+echo "<br>";
+
+echo "data $data";
 echo "<br>";
