@@ -1,5 +1,12 @@
 <?php
 
+//comentario de 1 linha
+
+/*
+ *
+ *
+ *  */
+
     $nome="william";
     $sobrenome="pacheco";
     $nomeCompleto=$nome . ' ' . $sobrenome;
@@ -10,12 +17,7 @@
     echo "meu  primeiro codigo php <strong> hello<strong> world";
     echo "";
     echo $nomeCompleto;
-    //comentario de 1 linha
 
-    /*
-     *
-     *
-     *  */
     echo "<br>    $nome $idade $verdade $valor";
     unset($valor);
 
@@ -23,6 +25,15 @@
         echo $valor;
     }
 
+    $lista = array("banana", "laranja");
+    echo $lista[1];
+
+    $nascimento = new DateTime();
+    var_dump($nascimento);
+
+    $arquivo= fopen("index.php","r");
+    var_dump($arquivo);
+    exit;
 
 
 ?>
