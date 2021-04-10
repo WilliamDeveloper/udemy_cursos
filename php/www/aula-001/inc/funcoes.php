@@ -9,3 +9,7 @@
 function somar($a,$b){
     return $a+$b;
 }
+
+function ola($texto="mundo"){
+    return "ola $texto";
+}

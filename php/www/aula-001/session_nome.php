@@ -20,3 +20,5 @@ echo 'session_id '. session_id() ;
 echo "<br>";
 session_regenerate_id();
 echo 'session_id '. session_id() ;
+
+var_dump($_SESSION);
