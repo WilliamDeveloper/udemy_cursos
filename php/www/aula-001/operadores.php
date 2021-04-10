@@ -72,6 +72,33 @@ $a=30;
 $b=55;
 var_dump($a > $b);
 echo "<br>";
-$valor=($a > $b)?true:false;
+$valor=($a > $b)?"true":"false";
+echo "=> $valor";
+echo "<br>";
+
+$a=30;
+$b=55;
+var_dump($a > $b);
+echo "<br>";
+#spaceship
+$valor=($a <=> $b);
+echo "=> $valor";
+echo "<br>";
+
+$a=55;
+$b=30;
+var_dump($a > $b);
+echo "<br>";
+#spaceship
+$valor=($a <=> $b);
+echo "=> $valor";
+echo "<br>";
+
+$a=30;
+$b=30;
+var_dump($a > $b);
+echo "<br>";
+#spaceship
+$valor=($a <=> $b);
 echo "=> $valor";
 echo "<br>";
