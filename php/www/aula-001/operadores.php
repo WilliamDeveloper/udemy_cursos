@@ -63,3 +63,15 @@ $b=2;
 $valor=$a/$b;
 echo "$valor";
 echo "<br>";
+
+
+###############################
+#comparacao
+###############################
+$a=30;
+$b=55;
+var_dump($a > $b);
+echo "<br>";
+$valor=($a > $b)?true:false;
+echo "=> $valor";
+echo "<br>";
