@@ -17,3 +17,10 @@ $sobreNome="pacheco";
 $nomeCompleto= "$nome $sobreNome";
 echo '$nomeCompleto';
 echo "<br>";
+
+
+$palavra="o rato roeu a roupa do rei de roma";
+$palavra2=str_replace("o","0",$palavra);
+echo $palavra;
+echo "<br>";
+echo $palavra2;
