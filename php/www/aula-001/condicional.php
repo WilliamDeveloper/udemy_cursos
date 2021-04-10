@@ -15,3 +15,8 @@ if($valor < 40){
 }else{
     echo "valor acima de 40";
 }
+
+echo "<br>";
+
+$valor= (40 > 50)? "40>50":"40<=50";
+echo "$valor";
