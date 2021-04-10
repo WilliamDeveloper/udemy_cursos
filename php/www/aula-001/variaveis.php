@@ -32,6 +32,18 @@ echo SERVIDOR_CONFIG[2];
 echo "<br>";
 echo "<br>";
 
+
+echo PHP_VERSION;
+echo "<br>";
+echo "<br>";
+
+echo DIRECTORY_SEPARATOR;
+echo "<br>";
+echo "<br>";
+
+print_r(SERVIDOR_CONFIG);
+echo "<br>";
+echo "<br>";
 ###################################################
 # variaveis
 ###################################################
