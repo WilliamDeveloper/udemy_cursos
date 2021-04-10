@@ -9,6 +9,8 @@
 
     $nome="william";
     $sobrenome="pacheco";
+
+    # concatenando
     $nomeCompleto=$nome . ' ' . $sobrenome;
     $idade=18;
     $verdade=true;
