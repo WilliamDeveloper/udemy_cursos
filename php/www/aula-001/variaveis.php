@@ -15,27 +15,35 @@
     $valor=45.33;
 
     echo "meu  primeiro codigo php <strong> hello<strong> world";
-    echo "";
-    echo $nomeCompleto;
+    echo "<br>";
 
+    echo $nomeCompleto;
     echo "<br>    $nome $idade $verdade $valor";
+
     unset($valor);
 
     if ( isset($valor) ){
         echo $valor;
+        echo "<br>";
     }
 
+    echo "<br>";
     $lista = array("banana", "laranja");
     echo $lista[1];
+    echo "<br>";
 
     $nascimento = new DateTime();
     var_dump($nascimento);
+    echo "<br>";
 
-    $arquivo= fopen("index.php","r");
+    $arquivo= fopen("variaveis.php","r");
     var_dump($arquivo);
+    echo "<br>";
 
     $pimba= NULL;
     var_dump($pimba);
+    echo "<br>";
+
     exit;
 
 
