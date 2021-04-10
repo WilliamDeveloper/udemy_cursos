@@ -20,3 +20,17 @@ echo "<br>";
 
 $valor= (40 > 50)? "40>50":"40<=50";
 echo "$valor";
+echo "<br>";
+
+#######################################
+# switch
+$valor=5;
+
+switch($valor){
+    case 0 : $valor="zero"; break;
+    case 5 : $valor="cinco"; break;
+    case 6 : $valor="seis"; break;
+    default: $valor="default"; break;
+}
+echo "$valor";
+echo "<br>";
