@@ -44,6 +44,10 @@
 
     <br>
 
+    {{contatos}}
+
+    <br>
+
     <div class="jumbotron">
         <h4 ng-bind="app"></h4>
         <h4> {{app + 'teste blau'}}</h4>
@@ -63,7 +67,14 @@
             </tr>
         </table>
 
-        {{contatos}}
+        <hr>
+        <input type="text" ng-model="nome">
+        <input type="text" ng-model="telefone">
+        <br>
+        {{nome}}
+        <br>
+        {{telefone}}
+
     </div>
 
 </body>
