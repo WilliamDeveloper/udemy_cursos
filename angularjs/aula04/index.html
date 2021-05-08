@@ -72,7 +72,7 @@
             <tr ng-repeat="contato in contatos">
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
-                <td>{{contato.operadora.nome}}</td>
+                <td>{{contato.operadora}}</td>
                 <!--<td ng-repeat="(key, value) in contato">-->
                     <!--{{key + ' - ' + value}}-->
                 <!--</td>-->
@@ -82,7 +82,8 @@
         <hr>
         <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome">
         <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone">
-        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">
+        <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">
             <option value="">Selecione uma Operadora</option>
         </select>
 
