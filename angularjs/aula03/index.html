@@ -35,6 +35,11 @@
                 {nome: 'William2', telefone:'999999999'},
                 {nome: 'William3', telefone:'999999999'},
             ]
+            $scope.adicionarContato = function (contato) {
+                // para nao ficar vinculado com databinding no array
+                var copy_contato = angular.copy(contato)
+                $scope.contatos.push(copy_contato)
+            }
         })
 
     </script>
@@ -68,8 +73,9 @@
         </table>
 
         <hr>
-        <input class="form-control" type="text" ng-model="nome">
-        <input class="form-control" type="text" ng-model="telefone">
+        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome">
+        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone">
+        <button class="btn btn-success btn-block" ng-click="adicionarContato(contato)">adicionar</button>
         <br>
         {{nome}}
         <br>
