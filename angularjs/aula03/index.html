@@ -1,33 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="helloWorld">
+<html lang="en" ng-app="listaTelefonica">
 <head>
     <meta charset="UTF-8">
-    <title>hello world!</title>
+    <title>Lista telefonica</title>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .jumbotron{
+            width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+    </style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.js"></script>
     <!--<script src="angular.js"></script>-->
     <script>
         //criando um modulo
-        var app = angular.module("helloWorld",[])
+        var app = angular.module("listaTelefonica",[])
 
         //recuperando um modulo
-        app = angular.module("helloWorld")
+        app = angular.module("listaTelefonica")
 
         //definindo um controller
-        app.controller("helloWorldCtrl", function ($scope) {
-            $scope.message = "Hello World!"
+        app.controller("listaTelefonicaCtrl", function ($scope) {
+            $scope.message = "Arranhando o ANGULARJS";
+            $scope.app = "Lista Telefonica";
         })
 
     </script>
 </head>
-<body>
+<body ng-controller="listaTelefonicaCtrl">
+    {{message}}
 
-    <div ng-controller="helloWorldCtrl">
-        {{message}}
-    </div>
+    <br>
 
-    <div>
-        <!--esse trecho nao sera exibido porque nao pertence ao controller que foi declarado a variavel-->
-        {{message}}
+    <div class="jumbotron">
+        <h4 ng-bind="app"></h4>
     </div>
 
 </body>
