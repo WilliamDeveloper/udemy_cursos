@@ -34,6 +34,11 @@
                 {nome: 'William1', telefone:'999999999'},
                 {nome: 'William2', telefone:'999999999'},
                 {nome: 'William3', telefone:'999999999'},
+            ];
+            $scope.operadoras = [
+                {nome:"Oi", codigo:14},
+                {nome:"Vivo", codigo:15},
+                {nome:"Tim", codigo:41},
             ]
             $scope.adicionarContato = function (contato) {
                 // para nao ficar vinculado com databinding no array
@@ -62,19 +67,24 @@
             <tr>
                 <th>Nome</th>
                 <th>Telefone</th>
+                <th>Operadora</th>
             </tr>
             <tr ng-repeat="contato in contatos">
-                <!--<td>{{contato.nome}}</td>-->
-                <!--<td>{{contato.telefone}}</td>-->
-                <td ng-repeat="(key, value) in contato">
-                    {{key + ' - ' + value}}
-                </td>
+                <td>{{contato.nome}}</td>
+                <td>{{contato.telefone}}</td>
+                <td>{{contato.operadora.nome}}</td>
+                <!--<td ng-repeat="(key, value) in contato">-->
+                    <!--{{key + ' - ' + value}}-->
+                <!--</td>-->
             </tr>
         </table>
 
         <hr>
         <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome">
         <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone">
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">
+            <option value="">Selecione uma Operadora</option>
+        </select>
 
         <button
                 class="btn btn-success btn-block"
@@ -84,6 +94,8 @@
         {{nome}}
         <br>
         {{telefone}}
+        <br>
+        {{operadoras}}
 
     </div>
 
