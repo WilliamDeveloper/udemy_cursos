@@ -36,9 +36,11 @@
                 {nome: 'William3', telefone:'999999999'},
             ];
             $scope.operadoras = [
-                {nome:"Oi", codigo:14},
-                {nome:"Vivo", codigo:15},
-                {nome:"Tim", codigo:41},
+                {nome:"Oi", codigo:14, categoria:"Celular"},
+                {nome:"Vivo", codigo:15, categoria:"Celular"},
+                {nome:"Tim", codigo:41, categoria:"Celular"},
+                {nome:"GVT", codigo:25, categoria:"Fixo"},
+                {nome:"Embratel", codigo:21, categoria:"Fixo"},
             ]
             $scope.adicionarContato = function (contato) {
                 // para nao ficar vinculado com databinding no array
@@ -85,7 +87,7 @@
 
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">-->
-        <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome as operadora.nome for operadora in operadoras">
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora as operadora.nome group by operadora.categoria for operadora in operadoras">
             <option value="">Selecione uma Operadora</option>
         </select>
 
