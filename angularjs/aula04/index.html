@@ -69,6 +69,16 @@
 
             };
 
+            $scope.isContatoSelecionado = function (contatos) {
+                console.log(contatos)
+
+                //se algum for true o resultado sera true
+                return contatos.some(function (contato) {
+                    return contato.selecionado
+                })
+
+            };
+
         })
 
     </script>
@@ -127,6 +137,7 @@
         <button
                 class="btn btn-danger btn-block"
                 ng-click="apagarContatos(contatos)"
+                ng-disabled="!isContatoSelecionado(contatos)"
                 >Apagar Contatos</button>
         <br>
         {{nome}}
