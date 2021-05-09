@@ -144,7 +144,7 @@
         <button
                 class="btn btn-success btn-block"
                 ng-click="adicionarContato(contato)"
-                ng-disabled="!contato.nome || !contato.telefone">adicionar</button>
+                ng-disabled="contatoForm.$invalid">adicionar</button>
         <br>
         <!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contatos</button>-->
         <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-show="isContatoSelecionado(contatos)">Apagar Contatos</button>
