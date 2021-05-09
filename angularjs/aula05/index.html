@@ -130,8 +130,8 @@
         <form name="contatoForm">
 
 
-        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" ng-required="true">
-        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone"  ng-required="true">
+        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" nome="nome" ng-required="true">
+        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone" name="telefone"  ng-required="true">
 
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">-->
@@ -140,6 +140,13 @@
         </select>
 
         </form>
+
+        <div ng-show="contatoForm.nome.$invalid" class="alert alert-danger">
+            por favor preencha
+        </div>
+        <div ng-show="contatoForm.telefone.$invalid" class="alert alert-danger">
+            por favor preencha
+        </div>
 
         <button
                 class="btn btn-success btn-block"
