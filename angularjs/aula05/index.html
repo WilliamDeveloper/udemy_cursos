@@ -132,7 +132,7 @@
 
 
         <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" name="nome" ng-required="true">
-        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone" name="telefone"  ng-required="true" ng-minlength="10">
+        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone" name="telefone"  ng-required="true" ng-minlength="10" ng-pattern="/^\d{4,5}-\d{4}$/">
 
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">-->
@@ -151,6 +151,9 @@
             por favor preencha
         </div>
         <div ng-show="contatoForm.telefone.$error.minLength && contatoForm.telefone.$dirty" class="alert alert-danger">
+            por favor preencha
+        </div>
+        <div ng-show="contatoForm.telefone.$error.pattern && contatoForm.telefone.$dirty" class="alert alert-danger">
             por favor preencha
         </div>
 
