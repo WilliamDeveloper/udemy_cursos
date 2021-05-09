@@ -116,7 +116,7 @@
             <tr ng-repeat="contato in contatos"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
 
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
-                <td>{{contato.nome}}</td>
+                <td>{{contato.nome | uppercase }}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora}}</td>
                 <!--<td ng-repeat="(key, value) in contato">-->
