@@ -39,11 +39,13 @@
         app = angular.module("listaTelefonica")
 
         //definindo um controller
-        app.controller("listaTelefonicaCtrl", function ($scope) {
+        // app.controller("listaTelefonicaCtrl", function ($scope, $filter) {
+        app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter) {
             $scope.message = "Arranhando o ANGULARJS";
             $scope.app = "Lista Telefonica";
             $scope.contatos =[
-                {nome: 'William2', data: new Date(), telefone:'999999999', cor: 'yellow'},
+                // {nome: $filter('uppercase')('William2'), data: new Date(), telefone:'999999999', cor: 'yellow'},
+                {nome: uppercaseFilter('William2'), data: new Date(), telefone:'999999999', cor: 'yellow'},
                 {nome: 'William1', data: new Date(), telefone:'999999999', cor: 'blue'},
                 {nome: 'William3', data: new Date(), telefone:'999999999', cor: 'pink'},
             ];
