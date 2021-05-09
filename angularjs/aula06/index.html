@@ -82,6 +82,11 @@
                 })
 
             };
+            
+            $scope.ordenarPor=function (campo) {
+                $scope.criterioDeOrdenacao = campo;
+                $scope.direcaoDaOrdenacao =!$scope.direcaoDaOrdenacao
+            }
 
         })
 
@@ -106,10 +111,10 @@
         <table class="table table-striped" ng-show="contatos.length > 0">
             <tr>
                 <th></th>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>Operadora</th>
-                <th>Data</th>
+                <th ><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+                <th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
+                <th><a href="" ng-click="ordenarPor('operadora')">Operadora</a></th>
+                <th><a href="" ng-click="ordenarPor('data')">Data</a></th>
                 <th></th>
             </tr>
 
@@ -118,7 +123,7 @@
             <!--<tr ng-repeat="contato in contatos"  ng-class="{ selecionado: contato.selecionado, negrito: contato.selecionado}" >-->
             <!--<tr ng-repeat="contato in contatos | filter:criterioDeBusca"  ng-class="{ 'selecionado negrito': contato.selecionado}" >-->
             <!--<tr ng-repeat="contato in contatos | filter:{nome: criterioDeBusca} | orderBy:'nome' : true"  ng-class="{ 'selecionado negrito': contato.selecionado}" >-->
-            <tr ng-repeat="contato in contatos | filter:{nome: criterioDeBusca} | orderBy:'nome' : false"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
+            <tr ng-repeat="contato in contatos | filter:{nome: criterioDeBusca} | orderBy:criterioDeOrdenacao : direcaoDaOrdenacao"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
 
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome | uppercase }}</td>
