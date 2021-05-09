@@ -55,6 +55,7 @@
                 var copy_contato = angular.copy(contato)
                 $scope.contatos.push(copy_contato)
                 delete $scope.contato;
+                $scope.contatoForm.$setPristine()
             }
 
             $scope.classe1 = "selecionado"
