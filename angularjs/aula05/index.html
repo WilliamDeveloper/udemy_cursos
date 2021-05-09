@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listaTelefonica">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista telefonica</title>
+
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .jumbotron{
+            width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        .selecionado{
+            background-color: yellow;
+        }
+
+        .negrito{
+            font-weight: bold;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.js"></script>
+    <!--<script src="angular.js"></script>-->
+    <script>
+        //criando um modulo
+        var app = angular.module("listaTelefonica",[])
+
+        //recuperando um modulo
+        app = angular.module("listaTelefonica")
+
+        //definindo um controller
+        app.controller("listaTelefonicaCtrl", function ($scope) {
+            $scope.message = "Arranhando o ANGULARJS";
+            $scope.app = "Lista Telefonica";
+            $scope.contatos =[
+                {nome: 'William1', telefone:'999999999', cor: 'yellow'},
+                {nome: 'William2', telefone:'999999999', cor: 'blue'},
+                {nome: 'William3', telefone:'999999999', cor: 'pink'},
+            ];
+            $scope.operadoras = [
+                {nome:"Oi", codigo:14, categoria:"Celular"},
+                {nome:"Vivo", codigo:15, categoria:"Celular"},
+                {nome:"Tim", codigo:41, categoria:"Celular"},
+                {nome:"GVT", codigo:25, categoria:"Fixo"},
+                {nome:"Embratel", codigo:21, categoria:"Fixo"},
+            ]
+            $scope.adicionarContato = function (contato) {
+                // para nao ficar vinculado com databinding no array
+                var copy_contato = angular.copy(contato)
+                $scope.contatos.push(copy_contato)
+                delete $scope.contato;
+            }
+
+            $scope.classe1 = "selecionado"
+            $scope.classe2 = "negrito"
+            
+            $scope.apagarContatos = function (contatos) {
+                console.log(contatos)
+                $scope.contatos = contatos.filter(function (contato) {
+                    if(!contato.selecionado) return contato;
+                });
+
+
+            };
+
+            $scope.isContatoSelecionado = function (contatos) {
+                console.log(contatos)
+
+                //se algum for true o resultado sera true
+                return contatos.some(function (contato) {
+                    return contato.selecionado
+                })
+
+            };
+
+        })
+
+    </script>
+</head>
+<body ng-controller="listaTelefonicaCtrl">
+    {{message}}
+
+    <br>
+
+    {{contatos}}
+
+    <br>
+
+    <div class="jumbotron">
+        <h4 ng-bind="app"></h4>
+        <h4> {{app + 'teste blau'}}</h4>
+        <h4> {{10 * 2 }}</h4>
+
+        <table class="table table-striped" ng-show="contatos.length > 0">
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Operadora</th>
+                <th></th>
+            </tr>
+
+            <!--<tr ng-repeat="contato in contatos"  ng-class="selecionado" >-->
+            <!--<tr ng-repeat="contato in contatos"  ng-class="[classe1, classe2]" >-->
+            <!--<tr ng-repeat="contato in contatos"  ng-class="{ selecionado: contato.selecionado, negrito: contato.selecionado}" >-->
+            <tr ng-repeat="contato in contatos"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
+
+                <td><input type="checkbox" ng-model="contato.selecionado"></td>
+                <td>{{contato.nome}}</td>
+                <td>{{contato.telefone}}</td>
+                <td>{{contato.operadora}}</td>
+                <!--<td ng-repeat="(key, value) in contato">-->
+                    <!--{{key + ' - ' + value}}-->
+                <!--</td>-->
+                <td><div style="width: 50px; height: 50px; " ng-style="{'background-color': contato.cor}"></div></td>
+            </tr>
+        </table>
+
+        <hr>
+        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome">
+        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone">
+
+        <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
+        <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">-->
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora as operadora.nome group by operadora.categoria for operadora in operadoras">
+            <option value="">Selecione uma Operadora</option>
+        </select>
+
+        <button
+                class="btn btn-success btn-block"
+                ng-click="adicionarContato(contato)"
+                ng-disabled="!contato.nome || !contato.telefone">adicionar</button>
+        <br>
+        <!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contatos</button>-->
+        <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-show="isContatoSelecionado(contatos)">Apagar Contatos</button>
+        <!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contatos</button>-->
+        <!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-hide="!isContatoSelecionado(contatos)">Apagar Contatos</button>-->
+        <br>
+        {{nome}}
+        <br>
+        {{telefone}}
+        <br>
+        {{operadoras}}
+
+    </div>
+
+    <div ng-include="'footer.html'"></div>
+
+</body>
+</html>
