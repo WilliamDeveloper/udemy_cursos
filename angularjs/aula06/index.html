@@ -101,6 +101,8 @@
         <h4> {{app + 'teste blau'}}</h4>
         <h4> {{10 * 2 }}</h4>
 
+        <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="o q esta buscando?">
+
         <table class="table table-striped" ng-show="contatos.length > 0">
             <tr>
                 <th></th>
@@ -114,7 +116,7 @@
             <!--<tr ng-repeat="contato in contatos"  ng-class="selecionado" >-->
             <!--<tr ng-repeat="contato in contatos"  ng-class="[classe1, classe2]" >-->
             <!--<tr ng-repeat="contato in contatos"  ng-class="{ selecionado: contato.selecionado, negrito: contato.selecionado}" >-->
-            <tr ng-repeat="contato in contatos"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
+            <tr ng-repeat="contato in contatos | filter:criterioDeBusca"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
 
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome | uppercase }}</td>
