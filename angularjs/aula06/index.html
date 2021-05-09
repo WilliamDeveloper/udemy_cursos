@@ -42,9 +42,9 @@
             $scope.message = "Arranhando o ANGULARJS";
             $scope.app = "Lista Telefonica";
             $scope.contatos =[
-                {nome: 'William1', telefone:'999999999', cor: 'yellow'},
-                {nome: 'William2', telefone:'999999999', cor: 'blue'},
-                {nome: 'William3', telefone:'999999999', cor: 'pink'},
+                {nome: 'William1', data: new Date(), telefone:'999999999', cor: 'yellow'},
+                {nome: 'William2', data: new Date(), telefone:'999999999', cor: 'blue'},
+                {nome: 'William3', data: new Date(), telefone:'999999999', cor: 'pink'},
             ];
             $scope.operadoras = [
                 {nome:"Oi", codigo:14, categoria:"Celular"},
@@ -107,6 +107,7 @@
                 <th>Nome</th>
                 <th>Telefone</th>
                 <th>Operadora</th>
+                <th>Data</th>
                 <th></th>
             </tr>
 
@@ -118,7 +119,8 @@
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome | uppercase }}</td>
                 <td>{{contato.telefone}}</td>
-                <td>{{contato.operadora}}</td>
+                <td>{{contato.operadora | lowercase}}</td>
+                <td>{{contato.data  | date:'dd/mm/yyyy HH:mm'}}</td>
                 <!--<td ng-repeat="(key, value) in contato">-->
                     <!--{{key + ' - ' + value}}-->
                 <!--</td>-->
