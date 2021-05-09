@@ -97,7 +97,7 @@
         <h4> {{app + 'teste blau'}}</h4>
         <h4> {{10 * 2 }}</h4>
 
-        <table class="table table-striped">
+        <table class="table table-striped" ng-show="contatos.length > 0">
             <tr>
                 <th></th>
                 <th>Nome</th>
@@ -137,11 +137,8 @@
                 ng-click="adicionarContato(contato)"
                 ng-disabled="!contato.nome || !contato.telefone">adicionar</button>
         <br>
-        <button
-                class="btn btn-danger btn-block"
-                ng-click="apagarContatos(contatos)"
-                ng-disabled="!isContatoSelecionado(contatos)"
-                >Apagar Contatos</button>
+        <!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contatos</button>-->
+        <button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-show="isContatoSelecionado(contatos)">Apagar Contatos</button>
         <br>
         {{nome}}
         <br>
