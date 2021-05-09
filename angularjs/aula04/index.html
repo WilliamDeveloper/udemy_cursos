@@ -59,6 +59,11 @@
 
             $scope.classe1 = "selecionado"
             $scope.classe2 = "negrito"
+            
+            $scope.apagarContatos = function (contatos) {
+                console.log(contatos)
+            };
+
         })
 
     </script>
@@ -86,7 +91,8 @@
 
             <!--<tr ng-repeat="contato in contatos"  ng-class="selecionado" >-->
             <!--<tr ng-repeat="contato in contatos"  ng-class="[classe1, classe2]" >-->
-            <tr ng-repeat="contato in contatos"  ng-class="{ selecionado: contato.selecionado, negrito: contato.selecionado}" >
+            <!--<tr ng-repeat="contato in contatos"  ng-class="{ selecionado: contato.selecionado, negrito: contato.selecionado}" >-->
+            <tr ng-repeat="contato in contatos"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
 
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome}}</td>
@@ -112,6 +118,11 @@
                 class="btn btn-success btn-block"
                 ng-click="adicionarContato(contato)"
                 ng-disabled="!contato.nome || !contato.telefone">adicionar</button>
+        <br>
+        <button
+                class="btn btn-danger btn-block"
+                ng-click="apagarContatos(contatos)"
+                >Apagar Contatos</button>
         <br>
         {{nome}}
         <br>
