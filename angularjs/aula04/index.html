@@ -15,6 +15,14 @@
             margin-right: auto;
             margin-top: 20px;
         }
+
+        .selecionado{
+            background-color: yellow;
+        }
+
+        .negrito{
+            font-weight: bold;
+        }
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.js"></script>
@@ -46,7 +54,11 @@
                 // para nao ficar vinculado com databinding no array
                 var copy_contato = angular.copy(contato)
                 $scope.contatos.push(copy_contato)
+                delete $scope.contato;
             }
+
+            $scope.classe1 = "selecionado"
+            $scope.classe2 = "negrito"
         })
 
     </script>
@@ -71,7 +83,12 @@
                 <th>Telefone</th>
                 <th>Operadora</th>
             </tr>
-            <tr ng-repeat="contato in contatos">
+
+            <!--<tr ng-repeat="contato in contatos"  ng-class="selecionado" >-->
+            <!--<tr ng-repeat="contato in contatos"  ng-class="[classe1, classe2]" >-->
+            <tr ng-repeat="contato in contatos"  ng-class="{ selecionado: contato.selecionado, negrito: contato.selecionado}" >
+
+                <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.nome}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora}}</td>
