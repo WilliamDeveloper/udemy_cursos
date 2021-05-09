@@ -130,7 +130,7 @@
         <form name="contatoForm">
 
 
-        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" nome="nome" ng-required="true">
+        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" name="nome" ng-required="true">
         <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone" name="telefone"  ng-required="true">
 
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
@@ -140,11 +140,13 @@
         </select>
 
         </form>
-
-        <div ng-show="contatoForm.nome.$invalid" class="alert alert-danger">
+        <br>
+        ja foi tocado{{contatoForm.nome.$dirty}} <br>
+        nunca foi tocado {{''+contatoForm.nome.$pristine}} <br>
+        <div ng-show="contatoForm.nome.$invalid && contatoForm.nome.$dirty" class="alert alert-danger">
             por favor preencha
         </div>
-        <div ng-show="contatoForm.telefone.$invalid" class="alert alert-danger">
+        <div ng-show="contatoForm.telefone.$invalid && contatoForm.telefone.$dirty" class="alert alert-danger">
             por favor preencha
         </div>
 
