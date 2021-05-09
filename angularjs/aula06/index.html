@@ -150,7 +150,7 @@
 
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">-->
-        <select class="form-control" ng-model="contato.operadora" ng-options="operadora as operadora.nome group by operadora.categoria for operadora in operadoras"  ng-required="true">
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora as operadora.nome group by operadora.categoria for operadora in operadoras | orderBy:'nome'"  ng-required="true">
             <option value="">Selecione uma Operadora</option>
         </select>
 
