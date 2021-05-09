@@ -123,14 +123,23 @@
         </table>
 
         <hr>
-        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome">
-        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone">
+        <br>
+        valido ? {{contatoForm.$valid}}<br>
+        invalido ? {{contatoForm.$invalid}} <br>
+
+        <form name="contatoForm">
+
+
+        <input class="form-control" type="text" ng-model="contato.nome" placeholder="Nome" ng-required="true">
+        <input class="form-control" type="text" ng-model="contato.telefone" placeholder="Telefone"  ng-required="true">
 
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome for operadora in operadoras">-->
         <!--<select class="form-control" ng-model="contato.operadora" ng-options="operadora.codigo as operadora.nome for operadora in operadoras">-->
-        <select class="form-control" ng-model="contato.operadora" ng-options="operadora as operadora.nome group by operadora.categoria for operadora in operadoras">
+        <select class="form-control" ng-model="contato.operadora" ng-options="operadora as operadora.nome group by operadora.categoria for operadora in operadoras"  ng-required="true">
             <option value="">Selecione uma Operadora</option>
         </select>
+
+        </form>
 
         <button
                 class="btn btn-success btn-block"
