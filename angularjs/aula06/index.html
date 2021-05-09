@@ -129,7 +129,7 @@
             <tr ng-repeat="contato in contatos | filter:{nome: criterioDeBusca} | orderBy:criterioDeOrdenacao : direcaoDaOrdenacao"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
 
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
-                <td>{{contato.nome | uppercase }}</td>
+                <td>{{contato.nome | uppercase  | limitTo:9}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora | lowercase}}</td>
                 <td>{{contato.data  | date:'dd/mm/yyyy HH:mm'}}</td>
