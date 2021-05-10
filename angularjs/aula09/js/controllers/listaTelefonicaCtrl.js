@@ -4,7 +4,7 @@ app = angular.module("listaTelefonica")
 
 //definindo um controller
 // app.controller("listaTelefonicaCtrl", function ($scope, $filter) {
-app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http, contatosAPI) {
+app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http, contatosAPI, serialGenerator) {
     $scope.message = "Arranhando o ANGULARJS";
     $scope.app = "Lista Telefonica";
     $scope.contatos =[
@@ -56,6 +56,7 @@ app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http, 
     }
 
     var carregarCep = function () {
+        console.log('serialGenerator ', serialGenerator.generate())
         var url = 'https://viacep.com.br/ws/01001000/json/'
         console.log('url ',url)
         // $http.get(url)
