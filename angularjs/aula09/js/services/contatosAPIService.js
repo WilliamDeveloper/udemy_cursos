@@ -1,8 +1,8 @@
 //recuperando um modulo
-app = angular.module("listaTelefonica").factory("contatosAPI", function ($http) {
+app = angular.module("listaTelefonica").factory("contatosAPI", function ($http, config) {
 
     var _getCep = function () {
-        var url = 'https://viacep.com.br/ws/01001000/json/'
+        var url = config.baseUrlCep + ''
         return $http.get(url)
     }
 
