@@ -4,7 +4,7 @@ app = angular.module("listaTelefonica")
 
 //definindo um controller
 // app.controller("listaTelefonicaCtrl", function ($scope, $filter) {
-app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http) {
+app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http, contatosAPI) {
     $scope.message = "Arranhando o ANGULARJS";
     $scope.app = "Lista Telefonica";
     $scope.contatos =[
@@ -58,7 +58,8 @@ app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http) 
     var carregarCep = function () {
         var url = 'https://viacep.com.br/ws/01001000/json/'
         console.log('url ',url)
-        $http.get(url)
+        // $http.get(url)
+        contatosAPI.getCep()
         // .success(function (data, status) {
             .then(function (response) {
                 console.log('status ', response.status)
