@@ -19,7 +19,8 @@ app = angular.module("listaTelefonica").directive("uiAlert", function () {
             title: "@",
             message:"@"
             // message:"=" // cria vinculo two way databinding se usar variavel
-        }
+        },
+        transclude:true// sobrescrever o conteudo da tag
 
     }
 
