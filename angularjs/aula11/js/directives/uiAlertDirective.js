@@ -16,7 +16,8 @@ app = angular.module("listaTelefonica").directive("uiAlert", function () {
         restrict:"AE",
         scope:{
             // topic: "@title"
-            title: "@"
+            title: "@",
+            message:"@"
         }
 
     }
