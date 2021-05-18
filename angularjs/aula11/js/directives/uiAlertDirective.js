@@ -11,6 +11,8 @@ app = angular.module("listaTelefonica").directive("uiAlert", function () {
         // e-diretiva restrita ao elemento
         // c-diretiva restrita a classe do elemento
         // m-diretiva restrita ao comentario do elemento
+
+
     }
 
 })
