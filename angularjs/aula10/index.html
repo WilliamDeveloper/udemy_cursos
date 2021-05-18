@@ -20,6 +20,7 @@
     <script src="js/services/contatosAPIService.js"></script>
     <script src="js/services/serialGeneratorService.js"></script>
     <script src="js/config/serialGeneratorConfig.js"></script>
+    <script src="js/filters/nameFilter.js"></script>
 
     <script src="js/value/config.js"></script>
 </head>
@@ -59,9 +60,9 @@
             <tr ng-repeat="contato in contatos | filter:{nome: criterioDeBusca} | orderBy:criterioDeOrdenacao : direcaoDaOrdenacao"  ng-class="{ 'selecionado negrito': contato.selecionado}" >
 
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
-                <td>{{contato.nome | uppercase  | limitTo:9}}</td>
+                <td>{{contato.nome | uppercase  | limitTo:9 | name}}</td>
                 <td>{{contato.telefone}}</td>
-                <td>{{contato.operadora | lowercase}}</td>
+                <td>{{contato.operadora | lowercase }}</td>
                 <td>{{contato.data  | date:'dd/mm/yyyy HH:mm'}}</td>
                 <!--<td ng-repeat="(key, value) in contato">-->
                     <!--{{key + ' - ' + value}}-->
@@ -127,7 +128,7 @@
         <!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contatos</button>-->
         <!--<button class="btn btn-danger btn-block" ng-click="apagarContatos(contatos)" ng-hide="!isContatoSelecionado(contatos)">Apagar Contatos</button>-->
         <br>
-        {{nome}}
+        {{nome }}
         <br>
         {{telefone}}
         <br>
