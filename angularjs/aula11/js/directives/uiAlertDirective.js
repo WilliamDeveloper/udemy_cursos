@@ -18,7 +18,7 @@ app = angular.module("listaTelefonica").directive("uiAlert", function () {
             // topic: "@title"
             title: "@",
             message:"@"
-            // message:"=" // cria vinculo two way databinding
+            // message:"=" // cria vinculo two way databinding se usar variavel
         }
 
     }
