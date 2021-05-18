@@ -13,8 +13,11 @@ app = angular.module("listaTelefonica").directive("uiAlert", function () {
         // m-diretiva restrita ao comentario do elemento
         // restrict:"A"
         // restrict:"E"
-        restrict:"AE"
-
+        restrict:"AE",
+        scope:{
+            // topic: "@title"
+            title: "@"
+        }
 
     }
 
