@@ -3,8 +3,18 @@
 app = angular.module("listaTelefonica").directive("uiAccordions", function () {
     return{
         controller: function ($scope, $element, $attrs) {
-            this.helloWorld = function () {
-                console.log("hello world")
+            // this.helloWorld = function () {
+            //     console.log("hello world")
+            // }
+            var accordions = []
+            this.registerAccordion = function (accordion) {
+                console.log(accordion.$id)
+                accordions.push(accordion)
+            }
+            this.closeAll = function () {
+                accordions.forEach(function (accordion) {
+                    accordion.isOpened = false
+                })
             }
         },
     }
@@ -20,8 +30,10 @@ app = angular.module("listaTelefonica").directive("uiAccordion", function () {
         },
         require:"^uiAccordions",
         link: function (scope, element, attrs, ctrl) {
-            ctrl.helloWorld()
+            // ctrl.helloWorld()
+            ctrl.registerAccordion(scope)
             scope.open = function () {
+                ctrl.closeAll()
                 scope.isOpened = ! scope.isOpened
             }
         },
