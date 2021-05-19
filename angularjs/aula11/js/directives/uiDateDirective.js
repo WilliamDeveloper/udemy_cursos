@@ -22,6 +22,20 @@ app = angular.module("listaTelefonica").directive("uiDate", function () {
                 ctrl.$render()
                 console.log(ctrl.$viewValue)
             })
+            
+            ctrl.$parsers.push(function (value) {
+                console.log(value)
+                if(value.length === 10){
+                    var dateArray = value.split("/")
+                    var dia = dateArray[0]
+                    var mes = dateArray[1]-1
+                    var ano = dateArray[2]
+                    var data = new Date(ano,mes,dia)
+                    console.log(data,data.getTime())
+                    return data
+                }
+
+            })
 
             console.log(scope.$id)
 
