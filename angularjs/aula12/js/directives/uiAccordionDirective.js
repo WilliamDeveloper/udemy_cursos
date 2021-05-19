@@ -2,6 +2,7 @@
 app = angular.module("listaTelefonica").directive("uiAccordion", function ($filter) {
 
     return {
+        templateUrl: "view/accordion.html",
         // require:"ngModel",
         // link: function(scope, element, attrs, ctrl){
         //
