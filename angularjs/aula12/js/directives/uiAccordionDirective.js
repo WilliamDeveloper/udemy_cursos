@@ -3,6 +3,10 @@ app = angular.module("listaTelefonica").directive("uiAccordion", function ($filt
 
     return {
         templateUrl: "view/accordion.html",
+        transclude: true,
+        scope:{
+            title: "@"
+        }
         // require:"ngModel",
         // link: function(scope, element, attrs, ctrl){
         //
