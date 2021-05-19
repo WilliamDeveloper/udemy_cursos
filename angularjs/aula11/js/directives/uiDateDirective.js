@@ -1,5 +1,5 @@
 //recuperando um modulo
-app = angular.module("listaTelefonica").directive("uiDate", function () {
+app = angular.module("listaTelefonica").directive("uiDate", function ($filter) {
 
     return {
         require:"ngModel",
@@ -32,9 +32,13 @@ app = angular.module("listaTelefonica").directive("uiDate", function () {
                     var ano = dateArray[2]
                     var data = new Date(ano,mes,dia)
                     console.log(data,data.getTime())
-                    return data
+                    return data.getTime()
                 }
+            })
 
+            ctrl.$formatters.push(function (value) {
+                console.log("scope.$id")
+                return $filter("date")(value,"dd/MM/yyyy")
             })
 
             console.log(scope.$id)
@@ -51,14 +55,14 @@ app = angular.module("listaTelefonica").directive("uiDate", function () {
         // m-diretiva restrita ao comentario do elemento
         // restrict:"A"
         // restrict:"E"
-        restrict:"AE",
-        scope:{
-            // topic: "@title"
-            title: "@",
-            message:"@"
-            // message:"=" // cria vinculo two way databinding se usar variavel
-        },
-        transclude:true// sobrescrever o conteudo da tag
+        // restrict:"AE",
+        // scope:{
+        //     // topic: "@title"
+        //     title: "@",
+        //     message:"@"
+        //     // message:"=" // cria vinculo two way databinding se usar variavel
+        // },
+        // transclude:true// sobrescrever o conteudo da tag
 
     }
 

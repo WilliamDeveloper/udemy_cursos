@@ -20,6 +20,10 @@ app.controller("listaTelefonicaCtrl", function ($scope, uppercaseFilter, $http, 
         {nome:"GVT", codigo:25, categoria:"Fixo", preco: 1},
         {nome:"Embratel", codigo:21, categoria:"Fixo", preco: 2},
     ]
+    $scope.contato ={
+        data: 1034218800000
+    }
+
     $scope.adicionarContato = function (contato) {
         // para nao ficar vinculado com databinding no array
         var copy_contato = angular.copy(contato)
