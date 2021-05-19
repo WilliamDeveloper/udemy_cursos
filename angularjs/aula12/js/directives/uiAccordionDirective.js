@@ -1,6 +1,6 @@
 //recuperando um modulo
 
-app = angular.module("listaTelefonica").directive("uiAccordions", function ($filter) {
+app = angular.module("listaTelefonica").directive("uiAccordions", function () {
     return{
         controller: function ($scope, $element, $attrs) {
             this.helloWorld = function () {
@@ -10,7 +10,7 @@ app = angular.module("listaTelefonica").directive("uiAccordions", function ($fil
     }
 });
 
-app = angular.module("listaTelefonica").directive("uiAccordion", function ($filter) {
+app = angular.module("listaTelefonica").directive("uiAccordion", function () {
 
     return {
         templateUrl: "view/accordion.html",
