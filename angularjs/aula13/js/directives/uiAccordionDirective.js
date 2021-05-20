@@ -1,5 +1,14 @@
 //recuperando um modulo
 
+angular.module("listaTelefonica").run(function ($templateCache) {
+    console.log('run---')
+    var template = `
+        <div class="ui-accordion-title" ng-click="open()">{{title}}</div>
+        <div class="ui-accordion-content" ng-transclude></div>
+    `
+    $templateCache.put("view/accordion.html", template)
+})
+
 app = angular.module("listaTelefonica").directive("uiAccordions", function () {
     return{
         controller: function ($scope, $element, $attrs) {
