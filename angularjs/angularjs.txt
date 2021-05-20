@@ -11,3 +11,9 @@ ng-model-options
 ---
 track by contato.id
 ng-repeat ng-options
+
+- cuidados com filtros em lista
+tendem a degradar performance
+sempre que possivel usar no controller
+
+ng-if ng-show
