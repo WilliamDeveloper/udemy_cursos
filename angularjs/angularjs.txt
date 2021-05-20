@@ -1,0 +1,9 @@
+olhar se uma funcao nao ta sendo invocada desnecessariamente
+
+one-time bind (reduz a quantidade de whatchers)
+{{:: contato.nome }}
+
+ng-model-options
+{updateOn = 'default'}
+{updateOn = 'blur'}
+{updateOn = 'default blur', debounce: {default: 500, blur: 0} }
