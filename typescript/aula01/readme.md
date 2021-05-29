@@ -17,3 +17,6 @@
 
 
 */
+
+
+tsc PessoaClass.ts
