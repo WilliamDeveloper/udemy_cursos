@@ -25,3 +25,6 @@ ng serve
 
 ng build
 ng build --prod
+
+
+api.use(body.parser({limit: '20mb', extended:true}))
