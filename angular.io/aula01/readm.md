@@ -8,7 +8,7 @@ nvm use 12.14
 
 #instalando cliente angular
 npm install -g @angular/cli
-ng -v
+ng --version
 
 ng new my-dream-app
 cd my-dream-app
