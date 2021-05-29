@@ -21,3 +21,7 @@ ng new my-dream-app
 cd my-dream-app
 
 ng serve
+
+
+ng build
+ng build --prod
