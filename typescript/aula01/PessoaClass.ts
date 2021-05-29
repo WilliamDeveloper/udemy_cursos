@@ -10,5 +10,5 @@ class Pessoa{
     }
 }
 
-let objPessoa = new Pessoa("William");
-console.log(objPessoa.exibirNome)
+// let objPessoa = new Pessoa("William");
+// console.log(objPessoa.exibirNome)
