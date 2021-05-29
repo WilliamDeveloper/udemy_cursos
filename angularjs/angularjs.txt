@@ -17,3 +17,10 @@ tendem a degradar performance
 sempre que possivel usar no controller
 
 ng-if ng-show
+
+/*versao 1.xxxx*/
+https://angularjs.org/
+
+/*apartir da versao 2.xxxx*/
+https://angular.io/
+https://angular.io/cli
