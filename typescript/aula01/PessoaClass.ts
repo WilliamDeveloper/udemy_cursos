@@ -6,7 +6,7 @@ class Pessoa{
     }
 
     exibirNome(){
-        return `ola meu nome é ${this.nome}`;
+        return `ola meu nome eh ${this.nome}`;
     }
 }
 

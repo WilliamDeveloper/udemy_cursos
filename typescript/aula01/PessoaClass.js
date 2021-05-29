@@ -3,7 +3,7 @@ var Pessoa = /** @class */ (function () {
         this.nome = pessoa;
     }
     Pessoa.prototype.exibirNome = function () {
-        return "ola meu nome \u00E9 " + this.nome;
+        return "ola meu nome eh " + this.nome;
     };
     return Pessoa;
 }());
