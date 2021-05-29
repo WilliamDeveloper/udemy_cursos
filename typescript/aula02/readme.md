@@ -10,3 +10,5 @@ tsc typescript/aula02/curso-typescript/introducao/basico.ts
 
 cd typescript/aula02/curso-typescript
 npm init -y
+
+npm install --save live-server
