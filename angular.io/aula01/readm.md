@@ -2,6 +2,11 @@
 https://angular.io/
 https://angular.io/cli
 
+#instalando versao especifica de node via nvm
+nvm install 12.14
+nvm use 12.14
+
+#instalando cliente angular
 npm install -g @angular/cli
 ng -v
 
