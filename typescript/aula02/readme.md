@@ -12,3 +12,14 @@ cd typescript/aula02/curso-typescript
 npm init -y
 
 npm install --save live-server
+
+cd typescript/aula02/curso-typescript
+
+npm start 
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "live-server"
+},
+
+cd typescript/aula02/curso-typescript
+tsc -w
