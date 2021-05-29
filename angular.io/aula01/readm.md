@@ -3,6 +3,8 @@ https://angular.io/
 https://angular.io/cli
 
 npm install -g @angular/cli
+ng -v
+
 ng new my-dream-app
 cd my-dream-app
 
