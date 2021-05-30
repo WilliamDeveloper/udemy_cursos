@@ -95,7 +95,7 @@ console.log(funcionario.baterponto(9))
 
 // type alias
 type Funcionario={
-    supervisores: string[],
+    supervisores: string[] | null,
     baterponto:(horas:number) => string
 }
 
