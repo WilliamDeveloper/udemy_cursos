@@ -56,3 +56,29 @@ var usuario = {
     idade: 18
 };
 console.log(usuario);
+var funcionario = {
+    supervisores: ['william', 'luciane'],
+    baterponto: function (horario) {
+        if (horario <= 8) {
+            return 'Ponto normal';
+        }
+        else {
+            return 'fora do horario';
+        }
+    }
+};
+console.log(funcionario.baterponto(7));
+console.log(funcionario.baterponto(9));
+var funcionario2 = {
+    supervisores: ['william', 'luciane'],
+    baterponto: function (horario) {
+        if (horario <= 8) {
+            return 'Ponto normal';
+        }
+        else {
+            return 'fora do horario';
+        }
+    }
+};
+console.log(funcionario2.baterponto(7));
+console.log(funcionario2.baterponto(9));

@@ -74,3 +74,43 @@ let usuario : {nome:string, idade:number} ={
     idade: 18
 }
 console.log(usuario)
+
+let funcionario:{
+    supervisores: string[],
+    baterponto:(horas:number) => string
+}= {
+    supervisores : ['william', 'luciane'],
+    baterponto(horario:number): string {
+        if(horario <= 8){
+            return 'Ponto normal'
+        }else{
+            return 'fora do horario'
+        }
+
+    }
+}
+
+console.log(funcionario.baterponto(7))
+console.log(funcionario.baterponto(9))
+
+// type
+type Funcionario={
+    supervisores: string[],
+    baterponto:(horas:number) => string
+}
+
+let funcionario2: Funcionario= {
+    supervisores : ['william', 'luciane'],
+    baterponto(horario:number): string {
+        if(horario <= 8){
+            return 'Ponto normal'
+        }else{
+            return 'fora do horario'
+        }
+
+    }
+}
+
+
+console.log(funcionario2.baterponto(7))
+console.log(funcionario2.baterponto(9))
