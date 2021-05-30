@@ -119,6 +119,10 @@ console.log(funcionario2.baterponto(9))
 let nota : number | string = 10
 console.log(`minha nota eh ${nota}`)
 
+let nota2 : number | null = 10
+nota2 = null
+console.log(`minha nota eh ${nota2}`)
+
 
 //checando tipos
 let valor =30
