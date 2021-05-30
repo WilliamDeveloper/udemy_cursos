@@ -93,7 +93,7 @@ let funcionario:{
 console.log(funcionario.baterponto(7))
 console.log(funcionario.baterponto(9))
 
-// type
+// type alias
 type Funcionario={
     supervisores: string[],
     baterponto:(horas:number) => string
@@ -114,3 +114,7 @@ let funcionario2: Funcionario= {
 
 console.log(funcionario2.baterponto(7))
 console.log(funcionario2.baterponto(9))
+
+//union types
+let nota : number | string = 10
+console.log(`minha nota eh ${nota}`)

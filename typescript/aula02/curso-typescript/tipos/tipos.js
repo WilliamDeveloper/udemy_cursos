@@ -82,3 +82,6 @@ var funcionario2 = {
 };
 console.log(funcionario2.baterponto(7));
 console.log(funcionario2.baterponto(9));
+//union types
+var nota = 10;
+console.log("minha nota eh " + nota);
