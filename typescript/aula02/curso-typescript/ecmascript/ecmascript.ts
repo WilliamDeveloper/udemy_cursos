@@ -18,3 +18,5 @@ const arrowComThis = () => console.log(this)
 arrowComThis()
 
 //rest spread
+const numbers =[2,55,6,8,9]
+console.log(Math.max(...numbers))
