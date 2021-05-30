@@ -118,3 +118,18 @@ console.log(funcionario2.baterponto(9))
 //union types
 let nota : number | string = 10
 console.log(`minha nota eh ${nota}`)
+
+
+//checando tipos
+let valor =30
+if(typeof valor === 'number'){
+    console.log('eh um numbnner')
+}else{
+    console.log(typeof valor)
+}
+let valor2 ='30'
+if(typeof valor2 === 'number'){
+    console.log('eh um numbnner')
+}else{
+    console.log(typeof valor2)
+}
