@@ -50,3 +50,9 @@ console.log(multiplicar(3, 4));
 // tipo funcao
 var calculo;
 calculo = multiplicar;
+// tipos objeto
+var usuario = {
+    nome: 'will',
+    idade: 18
+};
+console.log(usuario);

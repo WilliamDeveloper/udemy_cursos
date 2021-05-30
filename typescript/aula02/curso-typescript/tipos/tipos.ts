@@ -66,3 +66,11 @@ console.log(multiplicar(3,4))
 // tipo funcao
 let calculo : (a: number, b: number) => number
 calculo= multiplicar
+
+
+// tipos objeto
+let usuario : {nome:string, idade:number} ={
+    nome:'will',
+    idade: 18
+}
+console.log(usuario)
