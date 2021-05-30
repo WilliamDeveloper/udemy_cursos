@@ -17,6 +17,20 @@ normalComThisEspecial()
 const arrowComThis = () => console.log(this)
 arrowComThis()
 
-//rest spread
+// spread
 const numbers =[2,55,6,8,9]
 console.log(Math.max(...numbers))
+
+//rest
+function ff(...args: number[]) : number[] {
+    return args
+}
+
+const numeros=ff(1,2,3,5,6,86,8,9)
+console.log(numeros)
+
+//tupla rest spread
+const tupla: [number, string, boolean] = [1,'abc',true]
+function ft(a:number,b:string,c:boolean) : void {
+
+}
