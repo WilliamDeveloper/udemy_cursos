@@ -16,3 +16,5 @@ normalComThisEspecial()
 // o this definido em uma funcao arrow nunca muda
 const arrowComThis = () => console.log(this)
 arrowComThis()
+
+//rest spread
