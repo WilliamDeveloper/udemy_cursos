@@ -32,5 +32,29 @@ console.log(numeros)
 //tupla rest spread
 const tupla: [number, string, boolean] = [1,'abc',true]
 function ft(a:number,b:string,c:boolean) : void {
+    console.log(a,b,c)
+}
 
+ft(...tupla)
+
+function ft2(...params: [number,string,boolean]) : void {
+    console.log(params[0],params[1],params[2])
+}
+ft2(...tupla)
+
+//destructuring
+const item = {"ai":6}
+const {ai: blauu} = item
+const [r,t] =[7,9]
+
+class Class {
+    private a: number =0;
+
+    constructor(){
+
+    }
+
+    public aa(){
+        return a
+    }
 }
