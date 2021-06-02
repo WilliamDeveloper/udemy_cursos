@@ -85,6 +85,9 @@ console.log(funcionario2.baterponto(9));
 //union types
 var nota = 10;
 console.log("minha nota eh " + nota);
+var nota2 = 10;
+nota2 = null;
+console.log("minha nota eh " + nota2);
 //checando tipos
 var valor = 30;
 if (typeof valor === 'number') {
@@ -100,3 +103,22 @@ if (typeof valor2 === 'number') {
 else {
     console.log(typeof valor2);
 }
+//never
+function falha(msg) {
+    throw new Error(msg);
+}
+function f11(msg) {
+    while (true) { }
+}
+var produto = {
+    nome: 'sabao',
+    preco: -1,
+    validarProduto: function () {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('nome invalido');
+        }
+        if (this.preco <= 0) {
+            falha('preco invalido');
+        }
+    }
+};
