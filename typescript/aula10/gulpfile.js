@@ -11,8 +11,8 @@ function limparDist() {
 }
 
 function copiarHTML(cb) {
-    return src('public/**/*')
-        .pipe(dest('dist'))
+    return src('public/**/*')//seleciona os arquivos
+        .pipe(dest('dist')) //manda para pasta destino
 }
 
 function gerarJS(cb) {
@@ -20,10 +20,10 @@ function gerarJS(cb) {
         basedir: '.',
         entries: ['src/main.ts']
     })
-        .plugin(tsify)
+        .plugin(tsify)// plugin para interpretar o tyscript e gerar o javascript
         .bundle()
-        .pipe(source('app.js'))
-        .pipe(dest('dist'))
+        .pipe(source('app.js'))///arquivo gerado
+        .pipe(dest('dist')) // salva na pasta de destino
 }
 
 function gerarJSProducao() {
