@@ -13,6 +13,9 @@ npm install --save-dev tsify
 npm install --save-dev vinyl-source-stream
 npm install --save-dev del
 
+npm install --save-dev gulp-uglify
+npm install --save-dev gulp-rename
+
 
 npm install --save-dev jquery
 npm install --save-dev @types/jquery
