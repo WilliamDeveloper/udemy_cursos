@@ -6,16 +6,10 @@ tsc --init
 npm init -y
 
 
-npm install --save-dev gulp
+npm install --save-dev webpack
+npm install --save-dev webpack-cli
 npm install --save-dev typescript
-npm install --save-dev browserify
-npm install --save-dev tsify
-npm install --save-dev vinyl-source-stream
-npm install --save-dev del
-
-npm install --save-dev gulp-uglify
-npm install --save-dev gulp-rename
-
+npm install --save-dev ts-loader
 
 npm install --save-dev jquery
 npm install --save-dev @types/jquery
