@@ -1,7 +1,7 @@
-mkdir -p ./integracao-gulp/src/modelo
+mkdir -p ./integracao-webpack/src/modelo
 
-mkdir -p ./integracao-gulp
-cd integracao-gulp
+mkdir -p ./integracao-webpack
+cd integracao-webpack
 tsc --init
 npm init -y
 
@@ -10,6 +10,8 @@ npm install --save-dev webpack
 npm install --save-dev webpack-cli
 npm install --save-dev typescript
 npm install --save-dev ts-loader
+
+npm install --save-dev copy-webpack-plugin
 
 npm install --save-dev jquery
 npm install --save-dev @types/jquery
