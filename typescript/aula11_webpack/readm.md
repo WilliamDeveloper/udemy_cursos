@@ -8,6 +8,7 @@ npm init -y
 
 npm install --save-dev webpack
 npm install --save-dev webpack-cli
+npm install --save-dev webpack-dev-server
 npm install --save-dev typescript
 npm install --save-dev ts-loader
 
