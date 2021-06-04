@@ -13,3 +13,6 @@ https://git-scm.com/downloads
 https://gist.github.com/luizomf/88af1fde8d28b103540b74ec05224279
 https://nodejs.org/en/download/
 https://code.visualstudio.com/
+
+https://git-scm.com/downloads
+https://pt-br.reactjs.org/docs/create-a-new-react-app.html
