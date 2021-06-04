@@ -16,3 +16,11 @@ https://code.visualstudio.com/
 
 https://git-scm.com/downloads
 https://pt-br.reactjs.org/docs/create-a-new-react-app.html
+
+nvm install 14.17.0
+nvm use 14.17.0
+
+mkdir aula01
+cd aula01
+npx create-react-app projeto
+npx create-react-app .
