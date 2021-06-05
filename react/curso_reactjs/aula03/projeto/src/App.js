@@ -33,6 +33,8 @@ class App extends React.Component{
       })
   }
 
+  timeoutUpdate = null
+
   componentDidUpdate(prevProps, prevState, snapshot) {
       console.log('oi2')
       // this.handleTimeout()
@@ -40,7 +42,7 @@ class App extends React.Component{
 
   handleTimeout = ()=>{
     const {count} = this.state
-    setTimeout( ()=>{
+    this.timeoutUpdate = setTimeout( ()=>{
         this.setState({count: count +1})
     },1000)
   }
