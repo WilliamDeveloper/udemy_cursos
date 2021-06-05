@@ -24,3 +24,6 @@ mkdir aula01
 cd aula01
 npx create-react-app projeto
 npx create-react-app .
+
+
+https://jsonplaceholder.typicode.com/
