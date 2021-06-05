@@ -1,104 +1,72 @@
-import logo from './logo.svg';
 import './App.css';
-import  {Component} from 'react'
+import  React from 'react'
 
-class App extends Component{
+class App extends React.Component{
 
 
   state = {
     name: 'William',
-    count : 0
+    count : 0,
+    posts:[]
   }
 
-  // constructor(props){
-  //   super(props);
-  //
-  //   this.state = {
-  //     name: 'William',
-  //     count : 0
-  //   }
-  //
-  //
-  //   this.handlePClick = this.handlePClick.bind(this)
-  //
-  // }
-
-  handlePClick =(event)=>{
-    console.log("<p> clicado ")
-
-    this.setState({name : 'will_IAM'})
+  componentDidMount() {
+      console.log("oi")
+      this.setState({
+          posts:[
+              {
+                  id:1,
+                  title: 'o titulo é blau1',
+                  body: 'o corpo1'
+              },
+              {
+                  id:2,
+                  title: 'o titulo é blau2',
+                  body: 'o corpo2'
+              },
+              {
+                  id:3,
+                  title: 'o titulo é blau3',
+                  body: 'o corpo3'
+              },
+          ]
+      })
   }
 
-  // handlePClick(){
-  //   console.log("<p> clicado ")
-  //
-  //   this.setState({name : 'will_IAM'})
-  // }
-
-  handleAClick = (event) =>{
-    event.preventDefault()
-    let {count} = this.state
-    this.setState({count : count + 1})
+  componentDidUpdate(prevProps, prevState, snapshot) {
+      console.log('oi2')
+      // this.handleTimeout()
   }
 
-  render() {
-    const {name, count} = this.state
+  handleTimeout = ()=>{
+    const {count} = this.state
+    setTimeout( ()=>{
+        this.setState({count: count +1})
+    },1000)
+  }
+
+    render() {
+    const {posts, count} = this.state
     return (
-        <>
-                 <div className="App">
-                   <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                     <p onClick={this.handlePClick}>
-                       {1+2} <br/>
-                       {'1+2'} <br/>
-                       Edit <code>src/App.js</code> and save to reload.
-                       <br/>{name} {count}
-                     </p>
-                     <a
-                       className="App-link"
-                       href="https://reactjs.org"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       onClick={this.handleAClick}
-                     >
-                       <br/>
-                       Learn React
-                     </a>
-                   </header>
-                 </div>
-                 <p>irmao do app usando o fragment</p>
-        </>
+        <div className="App">
+            <h1>{count}</h1>
+            {
+                posts.map( (post)=>{
+                    return (
+                        <div key={post.id}>
+                            <h1>{post.title}</h1>
+                            <p>{post.body}</p>
+                        </div>
+
+                    )
+                })
+            }
+        </div>
     )
   }
 
 
 }
 
-
-// function App() {
-//   return (
-//     <>
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <p>
-//             {1+2} <br/>
-//             {'1+2'} <br/>
-//             Edit <code>src/App.js</code> and save to reload.
-//           </p>
-//           <a
-//             className="App-link"
-//             href="https://reactjs.org"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             Learn React
-//           </a>
-//         </header>
-//       </div>
-//       <p>irmao do app usando o fragment</p>
-//     </>
-//   );
-// }
 
 export default App;
