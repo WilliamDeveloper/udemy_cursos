@@ -3,13 +3,15 @@ import  React from 'react'
 
 class App extends React.Component{
 
-
   state = {
     name: 'William',
     count : 0,
     posts:[]
   }
 
+  timeoutUpdate = null
+
+  //quando o componente vai ser montado
   componentDidMount() {
       console.log("oi")
       this.setState({
@@ -33,11 +35,18 @@ class App extends React.Component{
       })
   }
 
-  timeoutUpdate = null
 
+
+    //quando o componente vai ser atualizado
   componentDidUpdate(prevProps, prevState, snapshot) {
       console.log('oi2')
+      clearTimeout(this.timeoutUpdate)
       // this.handleTimeout()
+  }
+
+  //quando o componente vai ser desmontado
+  componentWillMount() {
+      clearTimeout(this.timeoutUpdate)
   }
 
   handleTimeout = ()=>{
@@ -47,7 +56,7 @@ class App extends React.Component{
     },1000)
   }
 
-    render() {
+  render() {
     const {posts, count} = this.state
     return (
         <div className="App">
