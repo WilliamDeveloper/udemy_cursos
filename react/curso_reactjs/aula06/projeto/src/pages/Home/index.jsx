@@ -2,6 +2,7 @@ import  React from 'react'
 import './styles.css';
 import {loadPosts} from "./../../utils/load-posts";
 import {Posts} from "./../../components/Posts";
+import {Button} from "../../components/Button";
 
 
 export class Home extends React.Component{
@@ -9,7 +10,10 @@ export class Home extends React.Component{
   state = {
     name: 'William',
     count : 0,
-    posts:[]
+    posts:[],
+    allPosts:[],
+    page : 0,
+    postsPerPage:2
   }
 
 
@@ -21,10 +25,38 @@ export class Home extends React.Component{
   }
 
   loadPosts= async ()=>{
+    const {page, postsPerPage} = this.state
+
     const postsAndPhotos = await loadPosts()
-    this.setState({posts: postsAndPhotos})
+    this.setState({
+      posts: postsAndPhotos.slice(page,postsPerPage),
+      allPosts : postsAndPhotos
+    })
   }
 
+  loadMorePosts =  ()=>{
+    console.log('load more posts')
+
+    const {
+      page,
+      postsPerPage,
+      allPosts,
+      posts
+    } = this.state
+
+    const nextPage = page + postsPerPage
+    const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage)
+    posts.push( ... nextPosts)
+
+    this.setState({
+      posts,
+      page: nextPage
+    })
+
+
+
+
+  }
 
 
 
@@ -43,6 +75,7 @@ export class Home extends React.Component{
     return (
         <section className="container">
           <Posts posts={posts}/>
+          <Button text={"Load More Posts"} onClick={this.loadMorePosts}/>
         </section>
     )
   }
