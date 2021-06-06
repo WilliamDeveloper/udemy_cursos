@@ -71,7 +71,9 @@ export class Home extends React.Component{
 
 
   render() {
-    const {posts} = this.state
+    const {posts, page, postsPerPage, allPosts} = this.state
+    const noMorePosts = page + postsPerPage >= allPosts.length
+
     return (
         <section className="container">
           <Posts posts={posts}/>
@@ -80,7 +82,7 @@ export class Home extends React.Component{
             <Button
                 text={"Load More Posts"}
                 onClick={this.loadMorePosts}
-                disabled={false}
+                disabled={noMorePosts}
             />
           </div>
 
