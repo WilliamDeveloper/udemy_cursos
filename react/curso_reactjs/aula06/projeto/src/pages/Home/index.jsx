@@ -75,7 +75,15 @@ export class Home extends React.Component{
     return (
         <section className="container">
           <Posts posts={posts}/>
-          <Button text={"Load More Posts"} onClick={this.loadMorePosts}/>
+
+          <div className="button-container">
+            <Button
+                text={"Load More Posts"}
+                onClick={this.loadMorePosts}
+                disabled={false}
+            />
+          </div>
+
         </section>
     )
   }
