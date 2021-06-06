@@ -19,9 +19,20 @@ class App extends React.Component{
 
   loadPosts = async () =>{
     const postsResponse = fetch('https://jsonplaceholder.typicode.com/posts');
-    const [posts] = await Promise.all([postsResponse]);
+    const photosResponse = fetch('https://jsonplaceholder.typicode.com/photos');
+    const [posts,photos] = await Promise.all([postsResponse,photosResponse]);
     const postsJSON = await posts.json();
-    this.setState({posts : postsJSON});
+    const photosJSON = await photos.json();
+
+    const postsAndPhotos = postsJSON.map((post, index)=>{
+      return {
+        ...post,
+          cover : photosJSON[index].url
+      }
+
+    })
+
+    this.setState({posts : postsAndPhotos});
   }
 
 
@@ -46,6 +57,7 @@ class App extends React.Component{
                   posts.map( (post)=>{
                       return (
                           <div className="post" key={post.id}>
+                            <img src={post.cover} title={post.title}></img>
                             <div  className="post-content">
                               <h1>{post.title}</h1>
                               <p>{post.body}</p>
