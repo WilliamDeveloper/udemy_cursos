@@ -1,9 +1,10 @@
-import './App.css';
 import  React from 'react'
-import {loadPosts} from "./utils/load-posts";
-import {Posts} from "./components/Posts";
+import './styles.css';
+import {loadPosts} from "./../../utils/load-posts";
+import {Posts} from "./../../components/Posts";
 
-class App extends React.Component{
+
+export class Home extends React.Component{
 
   state = {
     name: 'William',
@@ -50,4 +51,4 @@ class App extends React.Component{
 }
 
 
-export default App;
+
