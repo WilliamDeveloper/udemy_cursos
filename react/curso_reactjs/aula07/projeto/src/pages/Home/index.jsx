@@ -13,7 +13,8 @@ export class Home extends React.Component{
     posts:[],
     allPosts:[],
     page : 0,
-    postsPerPage:53
+    postsPerPage:53,
+    searchValue : ''
   }
 
 
@@ -69,6 +70,12 @@ export class Home extends React.Component{
   // }
 
 
+  handleChange = (event)=>{
+    const {value} = event.target;
+
+  }
+
+
 
   render() {
     const {posts, page, postsPerPage, allPosts} = this.state
@@ -76,6 +83,9 @@ export class Home extends React.Component{
 
     return (
         <section className="container">
+
+          <input type="search" onChange={this.handleChange}/> <br/><br/>
+
           <Posts posts={posts}/>
 
           <div className="button-container">
