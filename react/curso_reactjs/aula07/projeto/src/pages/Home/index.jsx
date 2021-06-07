@@ -103,7 +103,15 @@ export class Home extends React.Component{
               value={searchValue}
           /> <br/><br/>
 
-          <Posts posts={filteredPosts}/>
+          {filteredPosts.length > 0 && (
+              <Posts posts={filteredPosts}/>
+          )}
+
+          {filteredPosts.length === 0 && (
+              <p>Nao existem post =(</p>
+          )}
+
+
 
           <div className="button-container">
             {!searchValue &&(
