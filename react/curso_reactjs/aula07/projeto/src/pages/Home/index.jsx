@@ -3,6 +3,7 @@ import './styles.css';
 import {loadPosts} from "./../../utils/load-posts";
 import {Posts} from "./../../components/Posts";
 import {Button} from "../../components/Button";
+import {TextInput} from "../../components/TextInput/TextInput";
 
 
 export class Home extends React.Component{
@@ -90,18 +91,18 @@ export class Home extends React.Component{
 
     return (
         <section className="container">
-          {!!searchValue &&(
-              <>
-                <h1>Search value: {searchValue} </h1><br/><br/>
-              </>
-          )}
 
+          <div className="container-search">
 
-          <input
-              type="search"
-              onChange={this.handleChange}
-              value={searchValue}
-          /> <br/><br/>
+            {!!searchValue &&(
+                <>
+                  <h1>Search value: {searchValue} </h1><br/><br/>
+                </>
+            )}
+
+            <TextInput searchValue={searchValue} handleChange={this.handleChange}/>
+
+          </div>
 
           {filteredPosts.length > 0 && (
               <Posts posts={filteredPosts}/>
