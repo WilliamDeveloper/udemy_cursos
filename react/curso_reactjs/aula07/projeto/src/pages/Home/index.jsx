@@ -72,28 +72,42 @@ export class Home extends React.Component{
 
   handleChange = (event)=>{
     const {value} = event.target;
+    this.setState({ searchValue : value })
 
   }
 
 
 
   render() {
-    const {posts, page, postsPerPage, allPosts} = this.state
+    const {posts, page, postsPerPage, allPosts, searchValue} = this.state
     const noMorePosts = page + postsPerPage >= allPosts.length
 
     return (
         <section className="container">
+          {!!searchValue &&(
+              <>
+                <h1>Search value: {searchValue} </h1><br/><br/>
+              </>
+          )}
 
-          <input type="search" onChange={this.handleChange}/> <br/><br/>
+
+          <input
+              type="search"
+              onChange={this.handleChange}
+              value={searchValue}
+          /> <br/><br/>
 
           <Posts posts={posts}/>
 
           <div className="button-container">
-            <Button
-                text={"Load More Posts"}
-                onClick={this.loadMorePosts}
-                disabled={noMorePosts}
-            />
+            {!searchValue &&(
+                <Button
+                    text={"Load More Posts"}
+                    onClick={this.loadMorePosts}
+                    disabled={noMorePosts}
+                />
+            )}
+
           </div>
 
         </section>
