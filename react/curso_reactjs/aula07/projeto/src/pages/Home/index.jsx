@@ -80,7 +80,13 @@ export class Home extends React.Component{
 
   render() {
     const {posts, page, postsPerPage, allPosts, searchValue} = this.state
-    const noMorePosts = page + postsPerPage >= allPosts.length
+    const noMorePosts = page + postsPerPage >= allPosts.length ;
+
+    const filteredPosts = !!searchValue ?
+        posts.filter((post)=>{
+          return post.title.toLowerCase().includes(searchValue.toLowerCase())
+        })
+        : posts;
 
     return (
         <section className="container">
@@ -97,7 +103,7 @@ export class Home extends React.Component{
               value={searchValue}
           /> <br/><br/>
 
-          <Posts posts={posts}/>
+          <Posts posts={filteredPosts}/>
 
           <div className="button-container">
             {!searchValue &&(
