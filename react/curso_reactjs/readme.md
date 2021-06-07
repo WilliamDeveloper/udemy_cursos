@@ -28,6 +28,11 @@ npx create-react-app .
 
 https://jsonplaceholder.typicode.com/
 
+https://docs.github.com/pt/github/authenticating-to-github/connecting-to-github-with-ssh
+
+https://docs.github.com/pt/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+https://docs.github.com/pt/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
 # Criar chaves ssh
 ssh-keygen -t rsa -f "/c/Users/seu-usuario/.ssh/nome-chave" -C 'seu-email@email.com'
