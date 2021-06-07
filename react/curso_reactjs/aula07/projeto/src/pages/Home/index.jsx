@@ -92,11 +92,11 @@ export class Home extends React.Component{
     return (
         <section className="container">
 
-          <div className="container-search">
+          <div className="search-container">
 
             {!!searchValue &&(
                 <>
-                  <h1>Search value: {searchValue} </h1><br/><br/>
+                  <h1>Search value: {searchValue} </h1>
                 </>
             )}
 
