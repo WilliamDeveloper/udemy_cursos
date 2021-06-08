@@ -56,3 +56,4 @@ git push origin master
 npm install
 npm run start
 npm run test
+npm run test -- --coverage
