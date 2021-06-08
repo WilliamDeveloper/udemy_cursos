@@ -51,3 +51,8 @@ git remote add origin git@github.com:CAMINHO-COPIADO-DO-GITHUB-SSH
 git add .
 git commit -m 'MENSAGEM'
 git push origin master
+
+
+npm install
+npm run start
+npm run test
