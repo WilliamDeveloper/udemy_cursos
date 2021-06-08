@@ -1,6 +1,6 @@
 describe('<home />',()=>{
 
-  test('dummy one1',()=>{
+  test('dummy oness',()=>{
     expect(1).toBe(1)
   })
   it('dummy two',()=>{
