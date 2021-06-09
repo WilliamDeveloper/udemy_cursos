@@ -12,11 +12,15 @@ describe('<Posts />',()=>{
         // @ts-ignore
         render(<Posts {...props} />)
         expect(screen.getAllByRole('heading',{name: /title/i})).toHaveLength(3)
-        // debug()
-        //
-        // expect(screen.getByRole('img', {name: props.title})).toHaveAttribute("src",props.cover)
-        // expect(screen.getByRole('heading', {name: props.title+"-"+props.id})).toBeInTheDocument()
-        // expect(screen.getByText(props.body)).toBeInTheDocument()
+        expect(screen.getAllByRole('img',{name: /title/i})).toHaveLength(3)
+        expect(screen.getAllByText(/body/i)).toHaveLength(3)
+
+    })
+
+    it('should match snapshot ',()=>{
+        const {container} = render(<Posts {...props} />)
+        expect(container.firstChild).toMatchSnapshot()
+
     })
 
 })
