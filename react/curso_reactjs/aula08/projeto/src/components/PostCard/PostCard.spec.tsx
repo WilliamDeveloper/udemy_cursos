@@ -8,6 +8,7 @@ describe('<PostCard />',()=>{
 
     it('should be render PostCard correctly',()=>{
 
+        // @ts-ignore
         const {debug} = render(<PostCard {...props} />)
         debug()
 
