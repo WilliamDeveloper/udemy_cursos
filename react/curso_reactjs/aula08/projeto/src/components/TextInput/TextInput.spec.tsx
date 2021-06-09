@@ -16,6 +16,7 @@ describe('<TextInput />',()=>{
         const {debug} = render(<TextInput handleChange={fn} searchValue={'testando'} />)
         const input = screen.getByPlaceholderText(/type your search/i)
         expect(input).toBeInTheDocument()
+        // @ts-ignore
         expect(input.value).toBe('testando')
     })
     it('should call handleChange function on each key pressed',()=>{
@@ -28,6 +29,7 @@ describe('<TextInput />',()=>{
         const value = "o valor"
 
         userEvent.type(input, value)
+        // @ts-ignore
         expect(input.value).toBe(value)
         expect(fn).toBeCalledTimes(value.length)
 
