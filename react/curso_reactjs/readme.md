@@ -57,5 +57,6 @@ npm install
 npm run start
 npm run test
 npm run test -- --coverage
+npm run test -- --watchAll="false" --coverage
 
 npm install prop-types
