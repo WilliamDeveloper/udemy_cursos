@@ -1,5 +1,6 @@
 import {render, screen} from "@testing-library/react";
 import {TextInput} from ".";
+import userEvent from "@testing-library/user-event";
 
 // import postsPropsMock from './mock'
 
@@ -22,15 +23,24 @@ describe('<TextInput />',()=>{
         const fn = jest.fn()
 
         // @ts-ignore
-        const {debug} = render(<TextInput handleChange={fn} searchValue={'testando'} />)
+        const {debug} = render(<TextInput handleChange={fn} />)
+        const input = screen.getByPlaceholderText(/type your search/i)
+        const value = "o valor"
+
+        userEvent.type(input, value)
+        expect(input.value).toBe(value)
+        expect(fn).toBeCalledTimes(value.length)
+
+
 
         debug()
     })
 
-    // it('should match snapshot ',()=>{
-    //     const {container} = render(<TextInput {...props} />)
-    //     expect(container.firstChild).toMatchSnapshot()
-    //
-    // })
+    it('should match snapshot ',()=>{
+        const fn = jest.fn()
+        const {container} = render(<TextInput handleChange={fn}  searchValue={'testando'} />)
+        expect(container.firstChild).toMatchSnapshot()
+
+    })
 
 })
