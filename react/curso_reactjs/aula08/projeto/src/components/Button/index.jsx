@@ -1,3 +1,4 @@
+import P from 'prop-types';
 import React from "react";
 import './styles.css'
 
@@ -12,4 +13,14 @@ export class Button extends React.Component{
            >{text}</button>
        )
     }
+}
+
+Button.defaultProps={
+    disabled: false
+}
+
+Button.propTypes = {
+    text : P.string.isRequired,
+    onClick: P.func.isRequired,
+    disabled : P.bool
 }
