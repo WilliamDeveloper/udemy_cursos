@@ -29,7 +29,7 @@ Posts.defaultProps = {
 
 Posts.propTypes ={
     // posts: P.array
-    posts: P.arrayOf(p.shape({
+    posts: P.arrayOf(P.shape({
         title:P.string.isRequired,
         cover:P.string.isRequired,
         body: P.string.isRequired,
