@@ -2,9 +2,10 @@ import {rest} from 'msw'
 import {setupServer} from 'msw/node'
 import {render, screen, waitForElementToBeRemoved} from "@testing-library/react";
 import {Home} from ".";
+import userEvent from "@testing-library/user-event";
 
 const handlers=[
-  rest.get("https://jsonplaceholder.typicode.com/photos", async (req,res,ctx)=> {
+  rest.get("https://jsonplaceholder.typicode.com/posts", async (req,res,ctx)=> {
     res(ctx.json(
         [
           {
@@ -52,8 +53,14 @@ describe('<Home />',()=>{
   test('should be render search',async ()=>{
     render(<Home />)
     const noMorePosts = screen.getByText('Nao existem post =(')
-    await waitForElementToBeRemoved(noMorePosts)
-    screen.debug()
+    await waitForElementToBeRemoved(noMorePosts);
+
+    const search = screen.getByPlaceholderText(/type your search/i)
+    expect(screen.getByRole('heading', {name: 'title1-1'})).toBeInTheDocument();
+    //screen.debug()
+
+    userEvent.type(search,'title1')
+    userEvent.clear(search)
   })
   it('dummy two',()=>{
     expect(1).toBe(1)
