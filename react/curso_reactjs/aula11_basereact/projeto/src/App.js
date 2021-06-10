@@ -19,11 +19,24 @@ import {Component} from 'react'
 // }
 
 class App extends Component{
+
+  constructor(props){
+    super(props)
+
+    this.state={
+      reverse: false,
+    }
+  }
+
   render() {
+
+      const {reverse} = this.state
+      const reverseClass = reverse ? 'App-logo-spin-reverse':''
+
       return (
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} className={`App-logo ${reverseClass}`} alt="logo" />
             <p>
               Edit <code>src/App.js</code> and save to reload.
             </p>
