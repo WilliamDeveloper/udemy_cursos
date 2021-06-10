@@ -60,3 +60,8 @@ npm run test -- --coverage
 npm run test -- --watchAll="false" --coverage
 
 npm install prop-types
+
+https://mswjs.io/
+https://mswjs.io/docs/getting-started/install
+
+npm install msw --save-dev
