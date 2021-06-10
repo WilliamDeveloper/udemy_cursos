@@ -65,3 +65,10 @@ https://mswjs.io/
 https://mswjs.io/docs/getting-started/install
 
 npm install msw --save-dev
+
+
+npx create-react-app .
+
+npm install --save-dev prettier 
+npm install --save-dev eslint-config-prettier
+npm install --save-dev eslint-plugin-prettier
