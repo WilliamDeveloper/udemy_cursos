@@ -72,3 +72,6 @@ npx create-react-app .
 npm install --save-dev prettier 
 npm install --save-dev eslint-config-prettier
 npm install --save-dev eslint-plugin-prettier
+
+npx eslint src/**/*.js --fix
+npx eslint src/**/*.jsx --fix
