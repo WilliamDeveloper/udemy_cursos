@@ -4,10 +4,14 @@ import { useState } from 'react';
 
 function App() {
   const [reverse, setReverse] = useState(false);
+  const [counter, setCounter] = useState(0);
   const reverseClass = reverse ? 'App-logo-reverse' : '';
 
   const handleReverse = () => {
     setReverse(!reverse);
+  };
+  const handleIncrement = () => {
+    setCounter(counter + 1);
   };
 
   return (
@@ -20,9 +24,17 @@ function App() {
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
-        <button type="button" onClick={handleReverse}>
-          Reverse {reverseClass}
-        </button>
+        <h1>Contador : {counter}</h1>
+        <p>
+          <button type="button" onClick={handleReverse}>
+            Reverse {reverseClass}
+          </button>
+        </p>
+        <p>
+          <button type="button" onClick={handleIncrement}>
+            increment
+          </button>
+        </p>
       </header>
     </div>
   );
