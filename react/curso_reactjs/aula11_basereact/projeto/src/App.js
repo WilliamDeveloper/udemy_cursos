@@ -1,11 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+const eventFn = () => {
+  console.log('h1 clicado');
+};
 
 function App() {
   const [reverse, setReverse] = useState(false);
   const [counter, setCounter] = useState(0);
   const reverseClass = reverse ? 'App-logo-reverse' : '';
+
+  //componentDidUpdate - excecuta toda vez q o componente atualiza
+  useEffect(() => {
+    console.log('componentDidUpdate');
+  });
+
+  //componentDidmount - excecuta 1x
+  useEffect(() => {
+    console.log('componentDidmount');
+  }, []);
+
+  //com dependencia - excecuta toda vez q a depedencia mudar
+  useEffect(() => {
+    console.log('contador mudou para ', counter);
+  }, [counter]);
+
+  //componentDidmount
+  useEffect(() => {
+    document.querySelector('h1')?.addEventListener('click', eventFn);
+
+    //componentWillAmount
+    return () => {
+      console.log('componentWillAmount');
+      document.querySelector('h1')?.removeEventListener('click', eventFn);
+    };
+  }, [counter]);
 
   const handleReverse = () => {
     setReverse((reverseA) => !reverseA);
