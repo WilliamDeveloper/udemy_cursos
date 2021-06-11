@@ -8,10 +8,10 @@ function App() {
   const reverseClass = reverse ? 'App-logo-reverse' : '';
 
   const handleReverse = () => {
-    setReverse((reverse) => !reverse);
+    setReverse((reverseA) => !reverseA);
   };
   const handleIncrement = () => {
-    setCounter((counter) => counter + 1);
+    setCounter((counterA) => counterA + 1);
   };
 
   return (
