@@ -41,6 +41,14 @@ class App extends Component {
           <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             Learn React
           </a>
+          <button
+            type="button"
+            onClick={() => {
+              this.setState({ reverse: !reverse });
+            }}
+          >
+            Reverse {reverseClass}
+          </button>
         </header>
       </div>
     );
