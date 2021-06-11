@@ -4,11 +4,10 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const [reverse,setReverse] = useState(false);
+  const [reverse, setReverse] = useState(false);
   const reverseClass = reverse ? 'App-logo-reverse' : '';
 
-
-  const handleReverse =()=> {
+  const handleReverse = () => {
     setReverse(!reverse);
   };
 
@@ -22,8 +21,8 @@ function App() {
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
-        <button type="button" onClick={this.handleReverse}>
-           Reverse {reverseClass}
+        <button type="button" onClick={handleReverse}>
+          Reverse {reverseClass}
         </button>
       </header>
     </div>
