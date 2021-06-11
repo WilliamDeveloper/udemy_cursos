@@ -22,9 +22,16 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.handleReverse = this.handleReverse.bind(this);
+
     this.state = {
       reverse: true,
     };
+  }
+
+  handleReverse() {
+    const { reverse } = this.state;
+    this.setState({ reverse: !reverse });
   }
 
   render() {
@@ -41,12 +48,7 @@ class App extends Component {
           <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
             Learn React
           </a>
-          <button
-            type="button"
-            onClick={() => {
-              this.setState({ reverse: !reverse });
-            }}
-          >
+          <button type="button" onClick={this.handleReverse}>
             Reverse {reverseClass}
           </button>
         </header>
