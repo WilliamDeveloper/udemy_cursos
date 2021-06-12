@@ -20,6 +20,7 @@ Post.propTypes = {
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [value, setValue] = useState('');
   console.log('pai renderizou!');
 
   //component did mount
@@ -34,11 +35,14 @@ function App() {
   return (
     <div className="App">
       <h1>Oi</h1>
+      <p>
+        <input type="search" value={value} onChange={(e) => setValue(e.target.value)} />
+      </p>
       {posts.length > 0 &&
         posts.map((post) => {
-          <Post key={post.id} post={post} />;
+          console.log(post);
+          return <Post key={post.id} post={post} />;
         })}
-
       {posts.length <= 0 && <p>Ainda nao existem posts. </p>}
     </div>
   );
