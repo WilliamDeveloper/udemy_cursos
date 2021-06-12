@@ -1,5 +1,22 @@
+import P from 'prop-types';
+import { useState, useEffect } from 'react';
 import './App.css';
-import React, { useState, useEffect } from 'react';
+
+const Post = (post) => {
+  return (
+    <div key={post.id} className="post">
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  );
+};
+Post.propTypes = {
+  post: P.shape({
+    id: P.number,
+    title: P.string,
+    body: P.string,
+  }),
+};
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -16,8 +33,10 @@ function App() {
     <div className="App">
       <h1>Oi</h1>
       {posts.map((post) => {
-        div.
+        <Post post={post} />;
       })}
+
+      {posts.length <= 0 && <p>Ainda nao existem posts. </p>}
     </div>
   );
 }
