@@ -32,9 +32,10 @@ function App() {
   return (
     <div className="App">
       <h1>Oi</h1>
-      {posts.map((post) => {
-        <Post post={post} />;
-      })}
+      {posts.length > 0 &&
+        posts.map((post) => {
+          <Post post={post} />;
+        })}
 
       {posts.length <= 0 && <p>Ainda nao existem posts. </p>}
     </div>
