@@ -1,7 +1,7 @@
 import P from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const eventFn = () => {
   console.log('h1 clicado');
@@ -53,9 +53,9 @@ function App() {
   const handleReverse = () => {
     setReverse((reverseA) => !reverseA);
   };
-  const handleIncrement = () => {
+  const handleIncrement = useCallback(() => {
     setCounter((counterA) => counterA + 1);
-  };
+  }, []);
 
   return (
     <div className="App">
