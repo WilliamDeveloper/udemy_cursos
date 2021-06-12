@@ -34,7 +34,7 @@ function App() {
       <h1>Oi</h1>
       {posts.length > 0 &&
         posts.map((post) => {
-          <Post post={post} />;
+          <Post key={post.id} post={post} />;
         })}
 
       {posts.length <= 0 && <p>Ainda nao existem posts. </p>}
