@@ -1,19 +1,19 @@
 import P from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const eventFn = () => {
   console.log('h1 clicado');
 };
 
-const Button = (handleIncrement) => {
+const Button = React.memo(function Button({ handleIncrement }) {
   return (
     <button type="button" onClick={handleIncrement}>
       +
     </button>
   );
-};
+});
 
 Button.propTypes = {
   handleIncrement: P.func,
