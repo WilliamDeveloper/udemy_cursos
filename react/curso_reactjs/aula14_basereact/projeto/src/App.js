@@ -2,11 +2,11 @@ import P from 'prop-types';
 import { useState, useEffect, useMemo } from 'react';
 import './App.css';
 
-const Post = ({ post }) => {
+const Post = ({ post, onClick }) => {
   console.log('filho renderizou');
   return (
     <div key={post.id} className="post">
-      <h1>{post.title}</h1>
+      <h1 onClick={() => onClick(post.title)}>{post.title}</h1>
       <p>{post.body}</p>
     </div>
   );
@@ -17,6 +17,7 @@ Post.propTypes = {
     title: P.string,
     body: P.string,
   }),
+  onClick: P.func,
 };
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
     }, 5000);
   }, []);
 
+  const handleClick = (value) => {
+    setValue(value);
+  };
+
   return (
     <div className="App">
       <h1>Oi</h1>
@@ -44,7 +49,7 @@ function App() {
           posts.length > 0 &&
           posts.map((post) => {
             console.log(post);
-            return <Post key={post.id} post={post} />;
+            return <Post key={post.id} post={post} onClick={handleClick} />;
           })
         );
       }, [posts])}
