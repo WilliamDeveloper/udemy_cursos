@@ -23,8 +23,12 @@ Post.propTypes = {
 function App() {
   const [posts, setPosts] = useState([]);
   const [value, setValue] = useState('');
-  const input = useRef();
+  const input = useRef(null);
   console.log('pai renderizou!');
+
+  useEffect(() => {
+    console.log(input.current);
+  }, [value]);
 
   //component did mount
   useEffect(() => {
@@ -43,7 +47,7 @@ function App() {
     <div className="App">
       <h1>Oi</h1>
       <p>
-        <input type="search" value={value} onChange={(e) => setValue(e.target.value)} />
+        <input ref={input} type="search" value={value} onChange={(e) => setValue(e.target.value)} />
       </p>
       {useMemo(() => {
         return (
