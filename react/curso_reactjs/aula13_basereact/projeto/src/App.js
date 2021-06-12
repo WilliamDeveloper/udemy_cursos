@@ -1,19 +1,19 @@
 import P from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 const eventFn = () => {
   console.log('h1 clicado');
 };
 
-const Button = React.memo(function Button({ handleIncrement }) {
+const Button = ({ handleIncrement }) => {
   return (
     <button type="button" onClick={handleIncrement}>
       +
     </button>
   );
-});
+};
 
 Button.propTypes = {
   handleIncrement: P.func,
@@ -56,6 +56,9 @@ function App() {
   const handleIncrement = useCallback(() => {
     setCounter((counterA) => counterA + 1);
   }, []);
+  const btn = useMemo(() => {
+    return <Button handleIncrement={handleIncrement} />;
+  }, [handleIncrement]);
 
   return (
     <div className="App">
@@ -73,9 +76,7 @@ function App() {
             Reverse {reverseClass}
           </button>
         </p>
-        <p>
-          <Button handleIncrement={handleIncrement} />
-        </p>
+        <p>{btn}</p>
       </header>
     </div>
   );
