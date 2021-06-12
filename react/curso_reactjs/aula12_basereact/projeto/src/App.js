@@ -1,9 +1,22 @@
+import P from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
 
 const eventFn = () => {
   console.log('h1 clicado');
+};
+
+const Button = (handleIncrement) => {
+  return (
+    <button type="button" onClick={handleIncrement}>
+      +
+    </button>
+  );
+};
+
+Button.propTypes = {
+  handleIncrement: P.func,
 };
 
 function App() {
@@ -61,9 +74,7 @@ function App() {
           </button>
         </p>
         <p>
-          <button type="button" onClick={handleIncrement}>
-            increment
-          </button>
+          <Button handleIncrement={handleIncrement} />
         </p>
       </header>
     </div>
