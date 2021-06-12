@@ -28,6 +28,7 @@ function App() {
 
   useEffect(() => {
     console.log(input.current);
+    input.current.focus();
   }, [value]);
 
   //component did mount
