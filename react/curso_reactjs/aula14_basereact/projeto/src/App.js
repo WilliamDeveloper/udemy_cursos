@@ -1,5 +1,5 @@
 import P from 'prop-types';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import './App.css';
 
 const Post = ({ post, onClick }) => {
@@ -23,6 +23,7 @@ Post.propTypes = {
 function App() {
   const [posts, setPosts] = useState([]);
   const [value, setValue] = useState('');
+  const input = useRef();
   console.log('pai renderizou!');
 
   //component did mount
