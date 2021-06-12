@@ -1,8 +1,9 @@
 import P from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import './App.css';
 
-const Post = (post) => {
+const Post = ({ post }) => {
+  console.log('filho renderizou');
   return (
     <div key={post.id} className="post">
       <h1>{post.title}</h1>
@@ -38,11 +39,16 @@ function App() {
       <p>
         <input type="search" value={value} onChange={(e) => setValue(e.target.value)} />
       </p>
-      {posts.length > 0 &&
-        posts.map((post) => {
-          console.log(post);
-          return <Post key={post.id} post={post} />;
-        })}
+      {useMemo(() => {
+        return (
+          posts.length > 0 &&
+          posts.map((post) => {
+            console.log(post);
+            return <Post key={post.id} post={post} />;
+          })
+        );
+      }, [posts])}
+
       {posts.length <= 0 && <p>Ainda nao existem posts. </p>}
     </div>
   );
