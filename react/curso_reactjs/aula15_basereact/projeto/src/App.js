@@ -26,18 +26,18 @@ const H1 = () => {
   const theContext = useContext(GlobalContext);
   console.log(theContext);
   const { contextState } = theContext;
-  return <h1>{contextState.title}</h1>;
+  return (
+    <h1>
+      {contextState.title} {contextState.counter}
+    </h1>
+  );
 };
 // eslint-disable-next-line
 const P = () => {
   const theContext = useContext(GlobalContext);
   console.log(theContext);
   const { contextState, setContextState } = theContext;
-  return (
-    <p onClick={() => setContextState((s) => ({ ...s, counter: s.counter + 1 }))}>
-      {contextState.body} {contextState.counter}
-    </p>
-  );
+  return <p onClick={() => setContextState((s) => ({ ...s, counter: s.counter + 1 }))}>{contextState.body}</p>;
 };
 
 function App() {
