@@ -20,3 +20,4 @@ https://pt-br.reactjs.org/docs/hooks-rules.html
 https://pt-br.reactjs.org/docs/hooks-reference.html#usecallback
 https://pt-br.reactjs.org/docs/hooks-reference.html#usememo
 https://pt-br.reactjs.org/docs/hooks-reference.html#useref
+https://pt-br.reactjs.org/docs/hooks-reference.html#usecontext
