@@ -34,7 +34,7 @@ const P = () => {
   console.log(theContext);
   const { contextState, setContextState } = theContext;
   return (
-    <p onClick={() => setContextState((s) => ({ ...contextState, counter: s.contextState + 1 }))}>
+    <p onClick={() => setContextState((s) => ({ ...s, counter: s.contextState + 1 }))}>
       {contextState.body}
     </p>
   );
