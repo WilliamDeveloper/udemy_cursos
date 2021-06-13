@@ -32,8 +32,8 @@ const H1 = () => {
 const P = () => {
   const theContext = useContext(GlobalContext);
   console.log(theContext);
-  const { contextState } = theContext;
-  return <p>{contextState.body}</p>;
+  const { contextState, setContextState } = theContext;
+  return <p onClick={() => setContextState({ ...contextState, counter: 1 })}>{contextState.body}</p>;
 };
 
 function App() {
