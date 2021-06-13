@@ -24,13 +24,16 @@ const Div = ({childen}) => {
 // eslint-disable-next-line
 const H1 = () => {
   const theContext = useContext(GlobalContext);
-  return <h1>{theContext.title}</h1>;
+  console.log(theContext);
+  const { contextState } = theContext;
+  return <h1>{contextState.title}</h1>;
 };
 // eslint-disable-next-line
 const P = () => {
   const theContext = useContext(GlobalContext);
   console.log(theContext);
-  return <p>{theContext.body}</p>;
+  const { contextState } = theContext;
+  return <p>{contextState.body}</p>;
 };
 
 function App() {
