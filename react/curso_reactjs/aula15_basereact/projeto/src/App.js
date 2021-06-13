@@ -33,11 +33,7 @@ const P = () => {
   const theContext = useContext(GlobalContext);
   console.log(theContext);
   const { contextState, setContextState } = theContext;
-  return (
-    <p onClick={() => setContextState((s) => ({ ...s, counter: s.contextState + 1 }))}>
-      {contextState.body}
-    </p>
-  );
+  return <p onClick={() => setContextState((s) => ({ ...s, counter: s.counter + 1 }))}>{contextState.body}</p>;
 };
 
 function App() {
