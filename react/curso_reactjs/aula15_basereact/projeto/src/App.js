@@ -1,6 +1,6 @@
 // import P from 'prop-types';
 import './App.css';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 // import { useState, useEffect, useMemo, useRef } from 'react';
 
 const globalState = {
@@ -29,12 +29,15 @@ const H1 = () => {
 // eslint-disable-next-line
 const P = () => {
   const theContext = useContext(GlobalContext);
+  console.log(theContext);
   return <p>{theContext.body}</p>;
 };
 
 function App() {
+  const [contextState, setContextState] = useState(globalState);
+
   return (
-    <GlobalContext.Provider value={globalState}>
+    <GlobalContext.Provider value={{ contextState, setContextState }}>
       <Div />
     </GlobalContext.Provider>
   );
