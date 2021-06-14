@@ -2,18 +2,18 @@
 import './App.css';
 import React, { useEffect, useState, useRef } from 'react';
 
-const useMyHook = (cb) => {
+const useMyHook = (cb, delay = 1000) => {
   const saveCb = useRef();
   useEffect(() => {
     saveCb.current = cb;
   }, [cb]);
   useEffect(() => {
     const interval = setInterval(() => {
-      cb();
-    }, 2 * 1000);
+      saveCb.current();
+    }, delay);
     // console.log('interval ', interval);
     return () => clearInterval(interval);
-  }, [cb]);
+  }, []);
 };
 
 function App() {
