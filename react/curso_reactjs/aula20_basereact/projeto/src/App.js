@@ -1,70 +1,32 @@
-import P from 'prop-types';
+// import P from 'prop-types';
 import './App.css';
-import React, { useReducer, createContext, useContext, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
-//actions.js
-export const actions = {
-  CHANGE_TITLE: 'CHANGE_TITLE',
+const useMyHook = (cb) => {
+  const saveCb = useRef();
+  useEffect(() => {
+    saveCb.current = cb;
+  }, [cb]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      cb();
+    }, 2 * 1000);
+    // console.log('interval ', interval);
+    return () => clearInterval(interval);
+  }, [cb]);
 };
 
-//data.js
-export const globalState = {
-  title: 'o titulo do contexto',
-  body: 'o body do contexto',
-  counter: 0,
-};
-
-//reducer.js
-export const reducer = (state, action) => {
-  console.log(state, action);
-  switch (action.type) {
-    case action.CHANGE_TITLE: {
-      console.log('blau');
-      return { ...state, title: action.payload };
-    }
-  }
-  return { ...state };
-};
-
-//appcontext.jsx
-export const Context = createContext();
-export const AppContext = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, globalState);
-  console.log(state, dispatch);
-
-  const changeTitle = (payload) => {
-    dispatch({ type: actions.CHANGE_TITLE, payload });
-  };
-  return <Context.Provider value={{ state, changeTitle }}>{children}</Context.Provider>;
-};
-AppContext.propTypes = {
-  children: P.node,
-};
-
-//h1/index.jsx
-export const H1 = () => {
-  const context = useContext(Context);
-  const inputRef = useRef();
-  return (
-    <>
-      <h1 onClick={() => context.changeTitle(inputRef.current.value)}>{context.state.title}</h1>
-      <input type="text" ref={inputRef} />
-    </>
-  );
-};
-
-//app.jsx
 function App() {
-  // const [state, dispatch] = useReducer(reducer, globalState);
-  // console.log(dispatch);
-  // const { counter, title, body } = state;
+  const [counter, setCounter] = useState(0);
+
+  useMyHook(() => {
+    setCounter((c) => c + 1);
+  });
 
   return (
-    <AppContext>
-      <div>
-        <H1 />
-      </div>
-    </AppContext>
+    <div>
+      <h1>oi {counter}</h1>
+    </div>
   );
 }
 
