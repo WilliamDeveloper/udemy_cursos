@@ -2,6 +2,11 @@ import P from 'prop-types';
 import './App.css';
 import React, { useReducer, createContext, useContext } from 'react';
 
+//actions.js
+export const actions = {
+  CHANGE_TITLE: 'CHANGE_TITLE',
+};
+
 //data.js
 export const globalState = {
   title: 'o titulo do contexto',
@@ -20,7 +25,11 @@ export const Context = createContext();
 export const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, globalState);
   console.log(state, dispatch);
-  return <Context.Provider value={{ state }}>{children}</Context.Provider>;
+
+  const changeTitle = () => {
+    dispatch({ type: actions.CHANGE_TITLE });
+  };
+  return <Context.Provider value={{ state, changeTitle }}>{children}</Context.Provider>;
 };
 AppContext.propTypes = {
   children: P.node,
@@ -29,7 +38,7 @@ AppContext.propTypes = {
 //h1/index.jsx
 export const H1 = () => {
   const context = useContext(Context);
-  return <h1>{context.state.title}</h1>;
+  return <h1 onClick={() => context.changeTitle()}>{context.state.title}</h1>;
 };
 
 //app.jsx
@@ -41,7 +50,7 @@ function App() {
   return (
     <AppContext>
       <div>
-        <h1>oi</h1>
+        <H1 />
       </div>
     </AppContext>
   );
