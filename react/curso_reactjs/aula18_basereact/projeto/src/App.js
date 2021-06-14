@@ -9,9 +9,13 @@ const globalState = {
 
 const reducer = (state, action) => {
   console.log(action);
+  const { title } = state;
+  const reverse = title.split('').reverse().join();
   switch (action.type) {
     case 'muda':
       return { ...state, title: 'mudou' };
+    case 'inverter':
+      return { ...state, title: reverse };
   }
   return { ...state };
 };
