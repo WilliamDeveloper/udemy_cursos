@@ -1,14 +1,17 @@
 // import P from 'prop-types';
 import './styles.css';
+import { PostsProvider } from '../../contexts/PostsProvider';
 // import React, { useEffect, useState, useRef } from 'react';
 
 function Index() {
   // console.log('setdelay ', setDelay, incrementor, setIncrementor);
 
   return (
-    <div>
-      <h1>oi</h1>
-    </div>
+    <PostsProvider>
+      <div>
+        <h1>oi</h1>
+      </div>
+    </PostsProvider>
   );
 }
 

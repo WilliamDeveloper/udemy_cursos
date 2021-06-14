@@ -1,3 +1,3 @@
 export const data = {
-  posts : [],
-}
+  posts: [],
+};
