@@ -10,7 +10,7 @@ const globalState = {
 const reducer = (state, action) => {
   console.log(action);
   const { title } = state;
-  const reverse = title.split('').reverse().join();
+  const reverse = title.split('').reverse().join('');
   switch (action.type) {
     case 'muda':
       return { ...state, title: 'mudou' };
@@ -31,7 +31,8 @@ function App() {
         {title} {counter}
       </h1>
       <p>{body}</p>
-      <button onClick={() => dispatch({ type: 'muda' })}>click</button>
+      <button onClick={() => dispatch({ type: 'muda' })}>muda</button>
+      <button onClick={() => dispatch({ type: 'inverter' })}>inverter</button>
     </div>
   );
 }
