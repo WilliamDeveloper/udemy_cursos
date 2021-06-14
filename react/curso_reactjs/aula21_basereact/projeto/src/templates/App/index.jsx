@@ -1,6 +1,7 @@
 // import P from 'prop-types';
 import './styles.css';
 import { PostsProvider } from '../../contexts/PostsProvider';
+import { Posts } from './../../components/Posts';
 // import React, { useEffect, useState, useRef } from 'react';
 
 function Index() {
@@ -10,6 +11,7 @@ function Index() {
     <PostsProvider>
       <div>
         <h1>oi</h1>
+        <Posts />
       </div>
     </PostsProvider>
   );
