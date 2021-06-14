@@ -13,7 +13,7 @@ const reducer = (state, action) => {
   const reverse = title.split('').reverse().join('');
   switch (action.type) {
     case 'muda':
-      return { ...state, title: 'mudou' };
+      return { ...state, title: 'mudou' + action.payload };
     case 'inverter':
       return { ...state, title: reverse };
   }
@@ -31,7 +31,7 @@ function App() {
         {title} {counter}
       </h1>
       <p>{body}</p>
-      <button onClick={() => dispatch({ type: 'muda' })}>muda</button>
+      <button onClick={() => dispatch({ type: 'muda', payload: new Date() })}>muda</button>
       <button onClick={() => dispatch({ type: 'inverter' })}>inverter</button>
     </div>
   );
