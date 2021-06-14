@@ -1,6 +1,6 @@
 import P from 'prop-types';
 import './App.css';
-import React, { useReducer, createContext, useContext } from 'react';
+import React, { useReducer, createContext, useContext, useRef } from 'react';
 
 //actions.js
 export const actions = {
@@ -19,7 +19,8 @@ export const reducer = (state, action) => {
   console.log(state, action);
   switch (action.type) {
     case action.CHANGE_TITLE: {
-      return { ...state, title: 'qualquer coisa' };
+      console.log('blau');
+      return { ...state, title: action.payload };
     }
   }
   return { ...state };
@@ -31,8 +32,8 @@ export const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, globalState);
   console.log(state, dispatch);
 
-  const changeTitle = () => {
-    dispatch({ type: actions.CHANGE_TITLE });
+  const changeTitle = (payload) => {
+    dispatch({ type: actions.CHANGE_TITLE, payload });
   };
   return <Context.Provider value={{ state, changeTitle }}>{children}</Context.Provider>;
 };
@@ -43,7 +44,13 @@ AppContext.propTypes = {
 //h1/index.jsx
 export const H1 = () => {
   const context = useContext(Context);
-  return <h1 onClick={() => context.changeTitle()}>{context.state.title}</h1>;
+  const inputRef = useRef();
+  return (
+    <>
+      <h1 onClick={() => context.changeTitle(inputRef.current.value)}>{context.state.title}</h1>
+      <input type="text" ref={inputRef} />
+    </>
+  );
 };
 
 //app.jsx
