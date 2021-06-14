@@ -1,39 +1,49 @@
+import P from 'prop-types';
 import './App.css';
-import React, { useReducer } from 'react';
+import React, { useReducer, createContext, useContext } from 'react';
 
-const globalState = {
+//data.js
+export const globalState = {
   title: 'o titulo do contexto',
   body: 'o body do contexto',
   counter: 0,
 };
 
-const reducer = (state, action) => {
+//reducer.js
+export const reducer = (state, action) => {
   console.log(action);
-  const { title } = state;
-  const reverse = title.split('').reverse().join('');
-  switch (action.type) {
-    case 'muda':
-      return { ...state, title: 'mudou' + action.payload };
-    case 'inverter':
-      return { ...state, title: reverse };
-  }
   return { ...state };
 };
 
-function App() {
+//appcontext.jsx
+export const Context = createContext();
+export const AppContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, globalState);
-  console.log(dispatch);
-  const { counter, title, body } = state;
+  console.log(state, dispatch);
+  return <Context.Provider value={{ state }}>{children}</Context.Provider>;
+};
+AppContext.propTypes = {
+  children: P.node,
+};
+
+//h1/index.jsx
+export const H1 = () => {
+  const context = useContext(Context);
+  return <h1>{context.state.title}</h1>;
+};
+
+//app.jsx
+function App() {
+  // const [state, dispatch] = useReducer(reducer, globalState);
+  // console.log(dispatch);
+  // const { counter, title, body } = state;
 
   return (
-    <div>
-      <h1>
-        {title} {counter}
-      </h1>
-      <p>{body}</p>
-      <button onClick={() => dispatch({ type: 'muda', payload: new Date() })}>muda</button>
-      <button onClick={() => dispatch({ type: 'inverter' })}>inverter</button>
-    </div>
+    <AppContext>
+      <div>
+        <h1>oi</h1>
+      </div>
+    </AppContext>
   );
 }
 
