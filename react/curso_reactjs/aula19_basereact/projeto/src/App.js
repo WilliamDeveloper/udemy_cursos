@@ -16,7 +16,12 @@ export const globalState = {
 
 //reducer.js
 export const reducer = (state, action) => {
-  console.log(action);
+  console.log(state, action);
+  switch (action.type) {
+    case action.CHANGE_TITLE: {
+      return { ...state, title: 'qualquer coisa' };
+    }
+  }
   return { ...state };
 };
 
