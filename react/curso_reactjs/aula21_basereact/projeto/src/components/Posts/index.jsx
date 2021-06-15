@@ -12,6 +12,13 @@ export const Posts = () => {
   return (
     <div>
       <h1>hola</h1>
+
+      {postsState.loading && (
+        <p>
+          <strong>Carregando posts ...</strong>
+        </p>
+      )}
+
       {postsState.posts.map((p) => (
         <p key={p.id}>{p.title}</p>
       ))}
