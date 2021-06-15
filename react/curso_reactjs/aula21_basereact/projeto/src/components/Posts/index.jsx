@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from 'react';
 import { PostsContext } from '../../contexts/PostsProvider/context';
 import { loadPosts } from '../../contexts/PostsProvider/actions';
 import { CounterContext } from '../../contexts/CounterProvider/context';
-import { decrementCounter, incrementCounter } from '../../contexts/CounterProvider/actions' ;
+import { decrementCounter, incrementCounter } from '../../contexts/CounterProvider/actions';
 export const Posts = () => {
   const isMounted = useRef(true);
 
