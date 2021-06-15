@@ -33,7 +33,7 @@ const useFetch = (url, options) => {
   }, [url, options]);
 
   useEffect(() => {
-    // let wait = false;
+    let wait = false;
 
     console.log('effect', new Date().toLocaleString());
     console.log(optionsRef.current.headers);
@@ -44,14 +44,22 @@ const useFetch = (url, options) => {
       try {
         const response = await fetch(urlRef.current, optionsRef.current);
         const jsonResult = await response.json();
-        setResult(jsonResult);
-        setLoading(false);
+        if (!wait) {
+          setResult(jsonResult);
+          setLoading(false);
+        }
       } catch (e) {
-        setLoading(false);
+        if (!wait) {
+          setLoading(false);
+        }
         throw e;
       }
     };
     fetchData();
+
+    return () => {
+      wait = true;
+    };
     // console.log('fetchData ', fetchData);
   }, [shouldLoad]);
 
