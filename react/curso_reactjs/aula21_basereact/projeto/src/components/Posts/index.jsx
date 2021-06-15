@@ -1,13 +1,24 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { PostsContext } from '../../contexts/PostsProvider/context';
 import { loadPosts } from '../../contexts/PostsProvider/actions';
 export const Posts = () => {
+  const isMounted = useRef(true);
   const postsContext = useContext(PostsContext);
   const { postsState, postsDispatch } = postsContext;
   console.log(postsContext, postsState, postsDispatch);
+
   useEffect(() => {
-    console.log('carregue os posts');
-    loadPosts(postsDispatch);
+    console.log('carregue os posts', isMounted.current);
+    loadPosts(postsDispatch).then((dispatch) => {
+      if (isMounted.current) {
+        dispatch();
+      }
+    });
+
+    return () => {
+      isMounted.current = false;
+      console.log('carregue os posts', isMounted.current);
+    };
   }, [postsDispatch]);
   return (
     <div>
