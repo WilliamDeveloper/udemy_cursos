@@ -6,9 +6,18 @@ const useFetch = (url, options) => {
   console.log('funcionou ', url, options);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
   const urlRef = useRef(url);
   const optionsRef = useRef(options);
-  console.log(setResult, setLoading, result, loading, urlRef, optionsRef);
+  console.log(setResult, setLoading, result, loading, urlRef, optionsRef, setShouldLoad);
+
+  useEffect(() => {
+    if (url !== urlRef.current) {
+      console.log('urlRef.current ', url);
+      urlRef.current = url;
+      setShouldLoad((s) => !s);
+    }
+  }, [url, options]);
 
   useEffect(() => {
     // let wait = false;
@@ -31,36 +40,50 @@ const useFetch = (url, options) => {
     };
     fetchData();
     console.log('fetchData ', fetchData);
-  }, []);
+  }, [shouldLoad]);
 
   return [result, loading];
 };
 
 export const App = () => {
   // console.log('setdelay ', setDelay, incrementor, setIncrementor);
-  const [result, loading] = useFetch('https://jsonplaceholder.typicode.com/posts', {
+  const [postId, setPostId] = useState('');
+  const [result, loading] = useFetch('https://jsonplaceholder.typicode.com/posts' + `/${postId}`, {
     headers: {
       abc: 1234,
     },
   });
-  console.log(useFetch, result, loading);
+  console.log(useFetch, result, loading, setPostId);
+
+  useEffect(() => {
+    console.log('handleClick ', postId);
+  }, [postId]);
 
   if (loading) {
     return <p>LOADING ....</p>;
   }
 
+  const handleClick = (id) => {
+    setPostId(id);
+  };
+
   if (!loading && result) {
     console.log(result);
     return (
       <div>
-        {result &&
+        {result?.length > 0 ? (
           result.map((p) => {
             return (
-              <div key={`post-{p.id}`}>
+              <div key={`post-${p.id}`} onClick={() => handleClick(p.id)}>
                 <p>{p.title}</p>
               </div>
             );
-          })}
+          })
+        ) : (
+          <div onClick={() => handleClick('')}>
+            <p>{result.title}</p>
+          </div>
+        )}
       </div>
     );
   }
