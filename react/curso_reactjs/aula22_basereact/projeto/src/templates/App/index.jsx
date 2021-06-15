@@ -2,6 +2,10 @@
 import './styles.css';
 import React, { useState, useEffect, useRef } from 'react';
 
+const isObjectEqual = (objA, objB) => {
+  return JSON.stringify(objA) === JSON.stringify(objB);
+};
+
 const useFetch = (url, options) => {
   console.log('funcionou ', url, options);
   const [result, setResult] = useState(null);
@@ -9,12 +13,21 @@ const useFetch = (url, options) => {
   const [shouldLoad, setShouldLoad] = useState(false);
   const urlRef = useRef(url);
   const optionsRef = useRef(options);
-  console.log(setResult, setLoading, result, loading, urlRef, optionsRef, setShouldLoad);
+  // console.log(setResult, setLoading, result, loading, urlRef, optionsRef, setShouldLoad);
 
   useEffect(() => {
-    if (url !== urlRef.current) {
+    let changed = false;
+    if (!isObjectEqual(url, urlRef.current)) {
+      //if (url !== urlRef.current) {
       console.log('urlRef.current ', url);
       urlRef.current = url;
+    }
+    if (!isObjectEqual(options, optionsRef.current)) {
+      //if (url !== urlRef.current) {
+      console.log('\noptionsRef.current ', url);
+      optionsRef.current = options;
+    }
+    if (changed) {
       setShouldLoad((s) => !s);
     }
   }, [url, options]);
@@ -39,7 +52,7 @@ const useFetch = (url, options) => {
       }
     };
     fetchData();
-    console.log('fetchData ', fetchData);
+    // console.log('fetchData ', fetchData);
   }, [shouldLoad]);
 
   return [result, loading];
@@ -53,7 +66,7 @@ export const App = () => {
       abc: 1234,
     },
   });
-  console.log(useFetch, result, loading, setPostId);
+  // console.log(useFetch, result, loading, setPostId);
 
   useEffect(() => {
     console.log('handleClick ', postId);
@@ -68,7 +81,7 @@ export const App = () => {
   };
 
   if (!loading && result) {
-    console.log(result);
+    // console.log(result);
     return (
       <div>
         {result?.length > 0 ? (
