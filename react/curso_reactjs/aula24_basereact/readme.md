@@ -25,3 +25,5 @@ https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 https://github.com/donavon/hook-flow/blob/master/hook-flow.png
 https://pt-br.reactjs.org/docs/error-boundaries.html
 https://pt-br.reactjs.org/docs/code-splitting.html
+
+npm-check -u
