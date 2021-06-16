@@ -1,24 +1,39 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const useAsync = (asyncFunction, shouldRun) => {
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState(null);
-  const [status, setStatus] = useState('idle');
+  // const [result, setResult] = useState(null);
+  // const [error, setError] = useState(null);
+  // const [status, setStatus] = useState('idle');
+  const [state, setState] = useState({
+    result: null,
+    error: null,
+    status: 'idle',
+  });
 
-  const run = useCallback(() => {
+  const run = useCallback(async () => {
     console.log('pending ', new Date().toLocaleString());
-    setResult(null);
-    setError(null);
-    setStatus('pending');
+    await new Promise((r) => setTimeout(r, 2 * 1000));
+    setState({
+      result: null,
+      error: null,
+      status: 'pending',
+    });
+    await new Promise((r) => setTimeout(r, 2 * 1000));
 
-    asyncFunction()
+    return asyncFunction()
       .then((response) => {
-        setStatus('settled');
-        setResult(response);
+        setState({
+          result: response,
+          error: null,
+          status: 'settled',
+        });
       })
       .catch((error) => {
-        setStatus('error');
-        setError(error);
+        setState({
+          result: null,
+          error: error,
+          status: 'error',
+        });
       });
   }, [asyncFunction]);
 
@@ -27,7 +42,7 @@ const useAsync = (asyncFunction, shouldRun) => {
       run();
     }
   }, [run, shouldRun]);
-  return [run, result, error, status];
+  return [run, state.result, state.error, state.status];
 };
 
 const fetchData = async () => {
@@ -56,7 +71,7 @@ export const Home = () => {
     return <pre>loading ...</pre>;
   }
   if (status === 'error') {
-    return <pre>oi {JSON.stringify(result, null, 2)}</pre>;
+    return <pre>oi error</pre>;
   }
   if (status === 'settled') {
     return <pre>oi {JSON.stringify(result, null, 2)}</pre>;
