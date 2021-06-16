@@ -31,6 +31,7 @@ const useAsync = (asyncFunction, shouldRun) => {
 };
 
 const fetchData = async () => {
+  await new Promise((r) => setTimeout(r, 2 * 1000));
   const data = await fetch('https://jsonplaceholder.typicode.com/posts');
   const json = await data.json();
   // setPosts(json);
@@ -47,5 +48,19 @@ export const Home = () => {
     // const url = 'https://jsonplaceholder.typicode.com/posts';
     reFetchData();
   }, [reFetchData]);
-  return <pre>oi {JSON.stringify(result, null, 2)}</pre>;
+  // return <pre>oi {JSON.stringify(result, null, 2)}</pre>;
+  if (status === 'idle') {
+    return <pre>nada executando</pre>;
+  }
+  if (status === 'pending') {
+    return <pre>loading ...</pre>;
+  }
+  if (status === 'error') {
+    return <pre>oi {JSON.stringify(result, null, 2)}</pre>;
+  }
+  if (status === 'settled') {
+    return <pre>oi {JSON.stringify(result, null, 2)}</pre>;
+  }
+
+  return <pre>ixi</pre>;
 };
