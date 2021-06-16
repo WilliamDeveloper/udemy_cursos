@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const useAsync = (asyncFunction) => {
+const useAsync = (asyncFunction, shouldRun) => {
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
   const [status, setStatus] = useState('idle');
@@ -21,6 +21,12 @@ const useAsync = (asyncFunction) => {
         setError(error);
       });
   }, [asyncFunction]);
+
+  useEffect(() => {
+    if (shouldRun) {
+      run();
+    }
+  }, [run, shouldRun]);
   return [run, result, error, status];
 };
 
