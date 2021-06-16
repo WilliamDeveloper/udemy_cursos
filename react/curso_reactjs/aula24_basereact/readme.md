@@ -23,3 +23,4 @@ https://pt-br.reactjs.org/docs/hooks-reference.html#useref
 https://pt-br.reactjs.org/docs/hooks-reference.html#usecontext
 https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 https://github.com/donavon/hook-flow/blob/master/hook-flow.png
+https://pt-br.reactjs.org/docs/error-boundaries.html
