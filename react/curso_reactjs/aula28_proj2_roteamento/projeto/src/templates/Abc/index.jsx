@@ -7,13 +7,13 @@ export const Abc = () => {
   const location = useLocation();
   console.log(' location ', location);
 
-  const history = useHistory();
-  console.log(' history ', history);
-  useEffect(() => {
-    setTimeout(() => {
-      history.push('/');
-    }, 5 * 1000);
-  }, [history]);
+  // const history = useHistory();
+  // console.log(' history ', history);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     history.push('/');
+  //   }, 5 * 1000);
+  // }, [history]);
 
   return (
     <div>
