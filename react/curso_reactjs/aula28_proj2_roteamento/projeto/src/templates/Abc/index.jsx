@@ -13,7 +13,7 @@ export const Abc = () => {
     setTimeout(() => {
       history.push('/');
     }, 5 * 1000);
-  });
+  }, [history]);
 
   return (
     <div>
