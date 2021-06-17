@@ -26,3 +26,7 @@ https://github.com/donavon/hook-flow/blob/master/hook-flow.png
 https://pt-br.reactjs.org/docs/error-boundaries.html
 https://pt-br.reactjs.org/docs/code-splitting.html
 https://reactrouter.com/web/example/basic
+
+https://strapi.io
+https://www.mongodb.com
+https://www.heroku.com
