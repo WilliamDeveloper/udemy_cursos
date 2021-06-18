@@ -18,6 +18,8 @@ import { Loading } from '../Loading';
 
 import config from '../../config';
 
+import pagesFakeData from './../../api/dados.json';
+
 function Home() {
   const [data, setData] = useState([]);
   const location = useLocation();
@@ -28,8 +30,9 @@ function Home() {
 
     const load = async () => {
       try {
-        const data = await fetch(config.url + slug);
-        const json = await data.json();
+        // const data = await fetch(config.url + slug);
+        // const json = await data.json();
+        const json = pagesFakeData;
         const pageData = mapData(json);
         setData(pageData[0]);
       } catch (e) {
