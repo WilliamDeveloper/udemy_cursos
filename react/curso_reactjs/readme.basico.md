@@ -32,3 +32,4 @@ https://www.mongodb.com
 https://www.heroku.com
 
 npx create-strapi-app my-project --quickstart
+npm run develop
