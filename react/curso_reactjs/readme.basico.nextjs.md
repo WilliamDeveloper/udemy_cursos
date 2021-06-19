@@ -5,3 +5,5 @@ npx create-next-app .
 npm run dev
 
 npm install styled-components
+
+npm install -D babel-plugin-styled-components
