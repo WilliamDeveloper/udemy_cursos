@@ -35,3 +35,6 @@ npx create-strapi-app my-project --quickstart
 npm run develop
 
 https://www.heroku.com/
+https://nextjs.org/docs/api-reference/create-next-app
+
+npx create-next-app .
