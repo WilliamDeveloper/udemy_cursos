@@ -16,3 +16,4 @@ npm install -D eslint-plugin-prettier
 npm install -D eslint-plugin-react-hooks
 
 npx eslint --init
+npx sb --init
