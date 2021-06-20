@@ -1,5 +1,4 @@
 import P from 'prop-types';
-import { Link } from 'react-router-dom';
 import * as Styled from './styles';
 
 export const MenuLink = ({ children, link, newTab = false }) => {
