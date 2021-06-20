@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "install": "npm install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -11,10 +12,11 @@
     "dev3": "npx eslint src/**/*.jsx --fix && next dev",
     "fixjs": "npx eslint src/**/*.js --fix",
     "fixjsx": "npx eslint src/**/*.jsx --fix",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@styled-icons/material-outlined": "^10.28.0",
     "next": "11.0.0",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
