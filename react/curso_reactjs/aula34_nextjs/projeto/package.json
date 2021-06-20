@@ -9,6 +9,8 @@
     "lint": "next lint",
     "dev2": "npx eslint src/**/*.js --fix && next dev",
     "dev3": "npx eslint src/**/*.jsx --fix && next dev",
+    "fixjs": "npx eslint src/**/*.js --fix",
+    "fixjsx": "npx eslint src/**/*.jsx --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

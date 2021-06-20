@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          <meta name="description" content="e colocar o que eu quiser"/>
+          <meta name="description" content="e colocar o que eu quiser" />
         </Head>
         <body className="bop">
           <Main />
