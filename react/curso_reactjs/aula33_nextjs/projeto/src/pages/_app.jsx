@@ -1,4 +1,4 @@
-import P from 'prop-types';
+// import P from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import { AppProps } from 'next/app';
