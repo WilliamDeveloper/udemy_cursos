@@ -31,7 +31,9 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head />
+        <Head>
+          <meta name="description" content="e colocar o que eu quiser"/>
+        </Head>
         <body>
           <Main />
           <NextScript />
