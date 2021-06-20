@@ -1,4 +1,5 @@
 https://nextjs.org/docs/api-reference/create-next-app
+https://nextjs.org/docs/basic-features/pages
 
 npx create-next-app .
 
