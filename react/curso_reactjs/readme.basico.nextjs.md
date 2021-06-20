@@ -17,5 +17,6 @@ npm install -D eslint-plugin-react-hooks
 npx eslint --init
 
 npx sb init
+https://storybook.js.org/docs/riot/get-started/install
 
 npm install @styled-icons/material-outlined
