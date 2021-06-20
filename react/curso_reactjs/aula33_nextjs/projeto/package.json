@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev2": "npx eslint src/**/*.js --fix && next dev",
+    "dev3": "npx eslint src/**/*.jsx --fix && next dev"
   },
   "dependencies": {
     "next": "11.0.0",
