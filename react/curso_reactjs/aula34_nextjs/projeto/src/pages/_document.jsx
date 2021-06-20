@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="description" content="e colocar o que eu quiser"/>
         </Head>
-        <body>
+        <body className="bop">
           <Main />
           <NextScript />
         </body>
