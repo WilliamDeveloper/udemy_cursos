@@ -7,6 +7,8 @@ npm run dev
 
 npm install styled-components
 
+npm install prop-types
+
 npm install -D babel-plugin-styled-components
 npm install -D prettier
 npm install -D eslint-config-prettier
