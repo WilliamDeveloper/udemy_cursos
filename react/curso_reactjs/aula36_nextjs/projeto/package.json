@@ -9,7 +9,7 @@
     "lint": "next lint",
     "fix-js": "npx eslint src/**/*.js --fix",
     "fix-jsx": "npx eslint src/**/*.jsx --fix",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
