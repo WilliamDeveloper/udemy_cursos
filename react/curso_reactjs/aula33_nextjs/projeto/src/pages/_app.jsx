@@ -14,3 +14,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 
 MyApp.propTypes = AppProps;
+// MyApp.propTypes = {
+//   Component: P.elementType.isRequired,
+//   pageProps: P.any,
+// };
