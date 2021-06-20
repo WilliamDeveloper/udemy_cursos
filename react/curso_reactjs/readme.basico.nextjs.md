@@ -17,3 +17,5 @@ npm install -D eslint-plugin-react-hooks
 
 npx eslint --init
 npx sb init
+
+npm install @styled-icons/material-outlined
