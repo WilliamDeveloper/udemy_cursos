@@ -14,6 +14,7 @@ export default function Index({ data = null }) {
   console.log(data);
   // return <Heading>OI</Heading>;
   return <Home data={data} />;
+  // return <h1>oi</h1>;
 }
 
 export const getStaticProps = async () => {
