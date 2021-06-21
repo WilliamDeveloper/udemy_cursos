@@ -33,3 +33,6 @@ npm install -D @testing-library/react
 npm test -- --u
 npm test -- --watch
 npm test -- --coverage
+
+
+https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
