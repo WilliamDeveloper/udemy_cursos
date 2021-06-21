@@ -95,7 +95,7 @@ exports[`<GridTwoColumns /> should render two column grid 1`] = `
           </div>
         </div>
         <div
-          class="styles__ImageContainer-sc-1pzwudh-2"
+          class=""
         >
           <img
             alt="Grid two columns"
