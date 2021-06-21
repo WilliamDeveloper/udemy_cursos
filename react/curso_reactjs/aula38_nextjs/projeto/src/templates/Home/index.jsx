@@ -22,50 +22,10 @@ import P from 'prop-types';
 import pagesFakeData from './../../api/dados.json';
 
 function Home({ data }) {
-  console.log('PIMBA')
-  // const [data, setData] = useState([]);
-  // // const location = useLocation();
-  //
-  // useEffect(() => {
-  //   const pathname = location.pathname.replace(/[^a-z0-9-_]/gi, '');
-  //   const slug = pathname ? pathname : config.defaultSlug;
-  //
-  //   const load = async () => {
-  //     try {
-  //       // const data = await fetch(config.url + slug);
-  //       // const json = await data.json();
-  //       const json = pagesFakeData;
-  //       const pageData = mapData(json);
-  //       setData(pageData[0]);
-  //     } catch (e) {
-  //       setData(undefined);
-  //     }
-  //   };
-  //
-  //   load();
-  // }, [location]);
 
-  // useEffect(() => {
-  //   if (data === undefined) {
-  //     document.title = `Página não encontrada | ${config.siteName}`;
-  //   }
-  //
-  //   if (data && !data.slug) {
-  //     document.title = `Carregando... | ${config.siteName}`;
-  //   }
-  //
-  //   if (data && data.title) {
-  //     document.title = `${data.title} | ${config.siteName}`;
-  //   }
-  // }, [data]);
-
-  if (!data) {
+  if (!data || !data.length) {
     return <PageNotFound />;
   }
-
-  // if (data && !data.slug) {
-  //   return <Loading />;
-  // }
 
   const { menu, sections, footerHtml, slug } = data;
   const { links, text, link, srcImg } = menu;
