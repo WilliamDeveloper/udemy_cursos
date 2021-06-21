@@ -28,3 +28,8 @@ npm install -D jest
 npm install -D jest-styled-components
 npm install -D @testing-library/jest-dom
 npm install -D @testing-library/react
+
+
+npm test -- --u
+npm test -- --watch
+npm test -- --coverage
