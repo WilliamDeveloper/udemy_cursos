@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import config from '../config';
 import pagesFakeData from './../api/dados.json';
+import {mapData} from './../api/map-data';
 
 // const Heading = styled.h1`
 //   background: ${({ theme }) => theme.colors.secondaryColor};
