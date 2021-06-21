@@ -22,6 +22,7 @@ import P from 'prop-types';
 import pagesFakeData from './../../api/dados.json';
 
 function Home({ data }) {
+  console.log('PIMBA')
   // const [data, setData] = useState([]);
   // // const location = useLocation();
   //

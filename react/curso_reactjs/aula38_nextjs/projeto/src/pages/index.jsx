@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import config from '../config';
 import pagesFakeData from './../api/dados.json';
 import { mapData } from './../api/map-data';
-import { Home } from './../templates/Home';
+import Home from './../templates/Home';
 
 // const Heading = styled.h1`
 //   background: ${({ theme }) => theme.colors.secondaryColor};
 // `;
 
 export default function Index({ data = null }) {
-  console.log(data);
+  // console.log(data);
   // return <Heading>OI</Heading>;
   return <Home data={data} />;
   // return <h1>oi</h1>;
@@ -24,6 +24,8 @@ export const getStaticProps = async () => {
 
   const json = pagesFakeData;
   const data = mapData(json)[0];
+
+  // console.log('###', data);
 
   return {
     props: {
