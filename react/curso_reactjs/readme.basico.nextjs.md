@@ -22,5 +22,7 @@ https://storybook.js.org/docs/riot/get-started/install
 npm install @styled-icons/material-outlined
 npm run storybook
 
+
+npm test
 npm install -D jest
 npm install -D jest-styled-components
