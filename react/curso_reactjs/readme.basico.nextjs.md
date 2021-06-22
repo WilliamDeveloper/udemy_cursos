@@ -36,3 +36,8 @@ npm test -- --coverage
 
 
 https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
+
+
+npm run build
+npm run export
+
