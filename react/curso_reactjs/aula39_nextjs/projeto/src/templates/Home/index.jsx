@@ -22,7 +22,6 @@ import P from 'prop-types';
 import pagesFakeData from './../../api/dados.json';
 
 function Home({ data }) {
-
   if (!data || !data.length) {
     return <PageNotFound />;
   }
@@ -60,10 +59,8 @@ function Home({ data }) {
   );
 }
 
-
 export default Home;
 
 Home.propTypes = {
   data: P.array,
 };
-
