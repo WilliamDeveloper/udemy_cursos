@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
   // const data = mapData(json)[0];
 
   const json = pagesFakeData;
-  const data = mapData(json)[0];
+  const data = mapData(json);
 
   // console.log('###', data);
 
@@ -35,5 +35,5 @@ export const getStaticProps = async () => {
 };
 
 Index.propTypes = {
-  data: P.object,
+  data: P.array,
 };

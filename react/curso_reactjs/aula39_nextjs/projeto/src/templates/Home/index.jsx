@@ -27,7 +27,7 @@ function Home({ data }) {
     return <PageNotFound />;
   }
 
-  const { menu, sections, footerHtml, slug } = data;
+  const { menu, sections, footerHtml, slug } = data[0];
   const { links, text, link, srcImg } = menu;
 
   return (
@@ -64,6 +64,6 @@ function Home({ data }) {
 export default Home;
 
 Home.propTypes = {
-  data: P.object,
+  data: P.array,
 };
 
