@@ -9,7 +9,7 @@ export const MenuLink = ({ children, link, newTab = false }) => {
     return (
         <Link href={link} passHref>
           <Styled.Container target={target}>
-            {children}
+            {children} (NL)
           </Styled.Container>
         </Link>
     );
@@ -17,7 +17,7 @@ export const MenuLink = ({ children, link, newTab = false }) => {
 
   return (
     <Styled.Container href={link} target={target}>
-      {children}
+      {children} (A)
     </Styled.Container>
   );
 };
