@@ -5,27 +5,20 @@ import config from '../config';
 import pagesFakeData from './../api/dados.json';
 import { mapData } from './../api/map-data';
 import Home from './../templates/Home';
+import {GetStaticProps} from "next";
 
-// const Heading = styled.h1`
-//   background: ${({ theme }) => theme.colors.secondaryColor};
-// `;
+export type IndexProps = {
+  data: [],
+};
 
-export default function Index({ data = null }) {
-  // console.log(data);
-  // return <Heading>OI</Heading>;
+export default function Index({ data = null } : IndexProps) {
   return <Home data={data} />;
-  // return <h1>oi</h1>;
 }
 
-export const getStaticProps = async () => {
-  // const raw = await fetch(config.url + config.defaultSlug);
-  // const json = await raw.json();
-  // const data = mapData(json)[0];
+export const getStaticProps  = async () => {
 
   const json = pagesFakeData;
   const data = mapData(json);
-
-  // console.log('###', data);
 
   return {
     props: {
@@ -34,6 +27,3 @@ export const getStaticProps = async () => {
   };
 };
 
-Index.propTypes = {
-  data: P.array,
-};
