@@ -41,3 +41,11 @@ https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-gener
 npm run build
 npm run export
 
+npm install -D typescript
+npm install -D @types/react
+npm install -D @types/node
+
+
+
+
+
