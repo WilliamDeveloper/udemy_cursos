@@ -45,6 +45,9 @@ npm install -D typescript
 npm install -D @types/react
 npm install -D @types/node
 
+npm install -D @typescript-eslint/parser
+npm install -D @typescript-eslint/eslint-plugin
+
 
 
 
