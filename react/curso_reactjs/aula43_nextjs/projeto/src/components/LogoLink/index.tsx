@@ -1,9 +1,14 @@
-import P from 'prop-types';
 import * as Styled from './styles';
 import { Heading } from '../Heading';
 import Link from "next/Link";
 
-export const LogoLink = ({ text, srcImg = '', link }) => {
+export type LogoLinkProps = {
+  text: string,
+  srcImg?: string,
+  link: string,
+};
+
+export const LogoLink = ({ text, srcImg = '', link }:LogoLinkProps) => {
   const nextLink =  link.match(/^\//) ? true : false;
   if(nextLink){
     return (
@@ -28,8 +33,3 @@ export const LogoLink = ({ text, srcImg = '', link }) => {
   );
 };
 
-LogoLink.propTypes = {
-  text: P.string.isRequired,
-  srcImg: P.string,
-  link: P.string.isRequired,
-};
