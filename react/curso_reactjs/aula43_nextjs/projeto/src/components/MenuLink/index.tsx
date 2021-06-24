@@ -4,7 +4,7 @@ import Link from "next/Link";
 export type MenuLinkProps = {
   children: React.ReactNode,
   link: string,
-  newTab: boolean,
+  newTab?: boolean,
 };
 
 
