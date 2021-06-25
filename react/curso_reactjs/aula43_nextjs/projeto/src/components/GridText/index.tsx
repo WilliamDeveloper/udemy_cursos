@@ -14,7 +14,7 @@ export type GridTextProps = {
   title: string,
   description: string,
   grid: GridTextElementProps[],
-  sectionId: string,
+  sectionId?: string,
 };
 
 export const GridText = ({
