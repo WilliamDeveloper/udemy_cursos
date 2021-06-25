@@ -4,14 +4,11 @@ import styled from 'styled-components';
 import config from '../config';
 import pagesFakeData from './../api/dados.json';
 import { mapData } from './../api/map-data';
-import Home from './../templates/Home';
+import Home, {HomeProps} from './../templates/Home';
 import {GetStaticProps} from "next";
 
-export type IndexProps = {
-  data: [],
-};
 
-export default function Index({ data = null } : IndexProps) {
+export default function Index({ data = null } : HomeProps) {
   return <Home data={data} />;
 }
 
