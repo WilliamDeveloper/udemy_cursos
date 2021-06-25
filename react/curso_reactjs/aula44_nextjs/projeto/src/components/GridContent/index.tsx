@@ -5,10 +5,11 @@ import { TextComponent } from '../TextComponent';
 import * as Styled from './styles';
 
 export type GridContentProps = {
-  title: string,
+  title?: string,
   html: string,
   background?: boolean,
   sectionId?: string,
+  key?: any,
 };
 
 export const GridContent = ({
