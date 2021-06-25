@@ -24,7 +24,7 @@ import {MenuProps} from "../../components/Menu";
 import {LogoLinkProps} from "../../components/LogoLink";
 import {MenuLinkProps} from "../../components/MenuLink";
 
-type PageData = {
+export type PageData = {
   title: string,
   slug: string,
   footerHtml: string,
