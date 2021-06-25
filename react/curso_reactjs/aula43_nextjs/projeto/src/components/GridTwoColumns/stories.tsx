@@ -1,3 +1,4 @@
+import { Meta, Story } from '@storybook/react/types-6-0';
 import { GridTwoColumns } from '.';
 
 import mock from './mock';
