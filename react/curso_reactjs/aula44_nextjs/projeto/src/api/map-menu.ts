@@ -20,7 +20,7 @@ export const mapMenu = (menu = {} as any): PageData['menu'] => {
   };
 };
 
-export const mapMenuLinks = (links = []): MenuLinkProps[] => {
+export const mapMenuLinks = (links = []) => {
   return links.map((item) => {
     const {
       open_in_new_tab: newTab = false,
