@@ -1,29 +1,29 @@
 import P from 'prop-types';
-import * as Styled from './styles';
-import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
+import { SectionBackground } from '../SectionBackground';
 import { TextComponent } from '../TextComponent';
+import * as Styled from './styles';
 
-export type GridTextElementProps = {
-    title: string,
-    description: string,
+export type GridImageElementProps = {
+  altText: string,
+  srcImg: string,
 };
 
-export type GridTextProps = {
+export type GridImageProps = {
   background?: boolean,
   title: string,
   description: string,
-  grid: GridTextElementProps[],
+  grid?: GridImageElementProps[],
   sectionId?: string,
 };
 
-export const GridText = ({
+export const GridImage = ({
   title,
   description,
   grid,
   background = false,
   sectionId = '',
-}: GridTextProps) => {
+}:GridImageProps) => {
   return (
     <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
@@ -33,11 +33,8 @@ export const GridText = ({
         <TextComponent>{description}</TextComponent>
         <Styled.Grid>
           {grid.map((el) => (
-            <Styled.GridElement key={el.title}>
-              <Heading size="medium" colorDark={!background} as="h3">
-                {el.title}
-              </Heading>
-              <TextComponent>{el.description}</TextComponent>
+            <Styled.GridElement key={`${el.srcImg}${el.altText}`}>
+              <Styled.Image src={el.srcImg} alt={el.altText} />
             </Styled.GridElement>
           ))}
         </Styled.Grid>
