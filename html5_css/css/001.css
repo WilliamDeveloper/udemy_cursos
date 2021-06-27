@@ -1,0 +1,21 @@
+[meu-atributo^="iniciacom"]{
+    color: #ff0000;
+}
+[meu-atributo$="terminacom"]{
+    color: #ff0000;
+}
+[meu-atributo*="ou out"]{
+    color: #ff0000;
+}
+
+input [type="checkboox"]{
+    color: #ff0000;
+}
+
+.pai .filho1 + .filho2{
+    color: #ff0000;
+}
+.pai .filho1~.filho2{
+    color: #ff0000;
+}
+
