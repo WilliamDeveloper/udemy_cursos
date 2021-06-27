@@ -1,0 +1,6 @@
+.heading {
+    transition: all 1s ease-in-out;
+}
+.heading:hover {
+    background: red;
+}
