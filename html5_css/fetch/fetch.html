@@ -26,23 +26,23 @@
     ;
 
     function carregarElementosNaPagina(json) {
-        const table = document.createElement('table');
+        var table = document.createElement('table');
 
-        for(let pessoa of json){
-            const tr = document.createElement('tr');
+        for(var pessoa of json){
+            var tr = document.createElement('tr');
 
-            let td1 = document.createElement('td');
+            var td1 = document.createElement('td');
             td1.innerHTML = pessoa.nome;
             tr.appendChild(td1);
 
-            let td2 = document.createElement('td');
+            var td2 = document.createElement('td');
             td2.innerHTML = pessoa.idade;
             tr.appendChild(td2);
 
             table.appendChild(tr);
         }
 
-        const resultado = document.querySelector(".resultado")
+        var resultado = document.querySelector(".resultado")
         resultado.appendChild(table);
 
     }
