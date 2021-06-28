@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 </head>
 <body>
 
@@ -15,9 +16,13 @@
 
 
 <script>
-    fetch('dados.json')
-        .then(resposta => resposta.json())
-        .then(json => carregarElementosNaPagina(json))
+    // fetch('dados.json')
+    //     .then(resposta => resposta.json())
+    //     .then(json => carregarElementosNaPagina(json))
+    // ;
+
+    axios('dados.json')
+        .then(json => carregarElementosNaPagina(json.data))
     ;
 
     function carregarElementosNaPagina(json) {
