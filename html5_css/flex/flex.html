@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*
+        https://flexbox.help/
+        */
+
+        body{
+            font-size: 24px;
+        }
+
+        .two-columns{
+            display: flex;
+        }
+
+        p{
+            margin: 5px;
+        }
+
+        .two-columns .col{
+            display: flex;
+            flex-direction: column;
+
+            background: yellow;
+            margin: 15px;
+            padding: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="two-columns">
+    <div class="col"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, alias animi aut doloremque error ex id laborum libero nihil rerum similique tenetur. Commodi enim maiores molestiae natus quae quibusdam ut.</p></div>
+    <div class="col"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, alias animi aut doloremque error ex id laborum libero nihil rerum similique tenetur. Commodi enim maiores molestiae natus quae quibusdam ut.</p></div>
+
+
+
+</div>
+
+</body>
+</html>
