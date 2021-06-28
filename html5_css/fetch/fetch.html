@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.2.8/es6-promise.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
 </head>
 <body>
 
@@ -22,13 +24,17 @@
     // ;
 
     axios('dados.json')
-        .then(json => carregarElementosNaPagina(json.data))
+        .then(function (json) {
+            carregarElementosNaPagina(json.data)
+        })
     ;
 
     function carregarElementosNaPagina(json) {
         var table = document.createElement('table');
 
-        for(var pessoa of json){
+        for(var i =0 ; i < json.length; i ++){
+            var pessoa = json[i];
+
             var tr = document.createElement('tr');
 
             var td1 = document.createElement('td');
