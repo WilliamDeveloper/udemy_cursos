@@ -7,3 +7,5 @@ cd nest-api
 npm run start
 
 http://localhost:3000
+
+npm run start:dev
