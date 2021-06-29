@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.2.8/es6-promise.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+</head>
+<body>
+
+
+
+<section class="container">
+    <h1>Pessoas</h1>
+    <div class="resultado"></div>
+</section>
+
+
+<script>
+    // fetch('dados.json')
+    //     .then(resposta => resposta.json())
+    //     .then(json => carregarElementosNaPagina(json))
+    // ;
+
+    axios('dados.json')
+        .then(function (json) {
+            carregarElementosNaPagina(json.data)
+        })
+    ;
+
+    function carregarElementosNaPagina(json) {
+        var table = document.createElement('table');
+
+        for(var i =0 ; i < json.length; i ++){
+            var pessoa = json[i];
+
+            var tr = document.createElement('tr');
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = pessoa.nome;
+            tr.appendChild(td1);
+
+            var td2 = document.createElement('td');
+            td2.innerHTML = pessoa.idade;
+            tr.appendChild(td2);
+
+            table.appendChild(tr);
+        }
+
+        var resultado = document.querySelector(".resultado")
+        resultado.appendChild(table);
+
+    }
+</script>
+
+</body>
+</html>

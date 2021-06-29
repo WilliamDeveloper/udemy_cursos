@@ -1,0 +1,23 @@
+.flex-container{
+    display: flex;
+
+    /*torna o eixo primario Y*/
+    /*flex-direction: column;*/
+
+    /*torna o eixo primario X*/
+    flex-direction: row;
+
+    /* alinha o eixo primario */
+    justify-content: flex-start;
+
+    /*alinha o eixo secundario*/
+    align-items: stretch;
+
+    background: yellow;
+    height: 500px;
+
+}
+
+.flex-item{
+    background: red;
+}
