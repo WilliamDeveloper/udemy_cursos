@@ -14,3 +14,5 @@ npm run start:dev
 #docker build
 #docker run
 docker-compose up
+
+docker-compose exec app node -v
