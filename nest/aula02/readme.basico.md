@@ -9,3 +9,7 @@ npm run start
 http://localhost:3000
 
 npm run start:dev
+
+
+docker build
+docker run
