@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p> HELLO</p>
+
+<script>
+    const url = 'http://viacep.com.br/ws/01001000/json/';
+
+    fetch(url)
+        .then(response =>  response.json())
+        .then(json =>  {
+            const obj = json
+
+            var table = document.createElement('table');
+            var tr = document.createElement('tr');
+            var td;
+
+            td = document.createElement('td')
+            td.innerHTML = obj.cep;
+            tr.appendChild(td)
+
+            td = document.createElement('td')
+            td.innerHTML = obj.logradouro;
+            tr.appendChild(td)
+
+            td = document.createElement('td')
+            td.innerHTML = obj.bairro;
+            tr.appendChild(td)
+
+            td = document.createElement('td')
+            td.innerHTML = obj.localidade;
+            tr.appendChild(td)
+
+            table.appendChild(tr)
+
+            const body = document.querySelector('body')
+            body.appendChild(table)
+
+        })
+
+</script>
+
+
+</body>
+</html>
