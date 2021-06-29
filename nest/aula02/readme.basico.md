@@ -11,5 +11,6 @@ http://localhost:3000
 npm run start:dev
 
 
-docker build
-docker run
+#docker build
+#docker run
+docker-compose up
