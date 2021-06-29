@@ -1,0 +1,52 @@
+
+####
+GET http://localhost:3000/
+####
+
+####
+GET http://localhost:3000/users
+####
+
+####
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "_name" : "william2888",
+  "_email": "a7@a.com.br",
+  "_password" : "123456"
+}
+####
+
+####
+GET http://localhost:3000/users/Cithx2MN1v4MQjHP
+####
+
+####
+PUT http://localhost:3000/users/Cithx2MN1v4MQjHP
+Content-Type: application/json
+
+{
+  "_name" : "william3333355",
+  "_email": "a3333@a.com.br",
+  "_password" : "M123456"
+}
+####
+
+####
+DELETE http://localhost:3000/users/cFvJ9Im8m1oE6SER
+####
+
+
+
+
+####
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name" : "",
+  "email": "dsadsadsa",
+  "password" : "123456"
+}
+####
