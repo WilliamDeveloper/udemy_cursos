@@ -4,11 +4,11 @@ GET http://localhost:8080/
 ####
 
 ####
-GET http://localhost:3000/users
+GET http://localhost:8080/jogadores
 ####
 
 ####
-POST http://localhost:3000/users
+POST http://localhost:8080/jogadores
 Content-Type: application/json
 
 {
@@ -18,11 +18,6 @@ Content-Type: application/json
 }
 ####
 
-####
-GET http://localhost:3000/users/Cithx2MN1v4MQjHP
-####
-
-####
 PUT http://localhost:3000/users/Cithx2MN1v4MQjHP
 Content-Type: application/json
 
@@ -35,18 +30,4 @@ Content-Type: application/json
 
 ####
 DELETE http://localhost:3000/users/cFvJ9Im8m1oE6SER
-####
-
-
-
-
-####
-POST http://localhost:3000/users
-Content-Type: application/json
-
-{
-  "name" : "",
-  "email": "dsadsadsa",
-  "password" : "123456"
-}
 ####
