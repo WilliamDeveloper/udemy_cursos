@@ -9,11 +9,11 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
-#    depends_on:
-#      - db
+    depends_on:
+      - db
 #    extra_hosts:
 #      - 'host.docker.internal:172.17.0.1'
-#
+
   db:
     build: .docker/postgres
     container_name: imersao-fullcycle-3-api-db
