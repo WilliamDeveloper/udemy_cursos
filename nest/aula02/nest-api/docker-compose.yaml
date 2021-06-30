@@ -23,6 +23,8 @@ services:
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=store
+    volumes:
+      - .docker/dbdata:/var/lib/postgresql/data
 
 #  pgadmin:
 #    image: dpage/pgadmin4
