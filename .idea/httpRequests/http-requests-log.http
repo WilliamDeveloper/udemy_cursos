@@ -1,3 +1,13 @@
+GET http://localhost:8080
+
+<> 2021-06-30T124652.404.json
+
+###
+
+GET http://localhost:3000
+
+###
+
 GET http://localhost:3000
 
 <> 2021-06-29T030150.200.html
