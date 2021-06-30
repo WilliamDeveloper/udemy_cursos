@@ -20,3 +20,4 @@ docker-compose exec app bash
 
 nest generate controller product
 nest generate service product
+nest generate resource
