@@ -23,3 +23,7 @@ nest generate service product
 nest generate resource
 
 npm install typeorm --save
+
+
+
+https://github.com/argentinaluiz/imersao-fullcycle-3/blob/main/store-api/.env
