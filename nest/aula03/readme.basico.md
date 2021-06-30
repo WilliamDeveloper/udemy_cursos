@@ -25,6 +25,7 @@ nest generate resource
 npm install typeorm --save
 npm install pg --save
 npm install @nestjs/typeorm --save
+npm install @nestjs/config --save
 
 
 
