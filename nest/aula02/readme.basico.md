@@ -19,3 +19,4 @@ docker-compose exec app node -v
 docker-compose exec app bash
 
 nest generate controller product
+nest generate service product
