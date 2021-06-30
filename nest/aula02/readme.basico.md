@@ -28,3 +28,4 @@ npm install typeorm --save
 
 https://github.com/argentinaluiz/imersao-fullcycle-3/blob/main/store-api/.env
 npm run typeorm
+npm run typeorm migrations:create -- -n create-products-table
