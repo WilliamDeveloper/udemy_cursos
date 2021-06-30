@@ -17,3 +17,5 @@ docker-compose up
 
 docker-compose exec app node -v
 docker-compose exec app bash
+
+nest generate controller product
