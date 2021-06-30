@@ -23,6 +23,7 @@ nest generate service product
 nest generate resource
 
 npm install typeorm --save
+npm install pg --save
 
 
 
