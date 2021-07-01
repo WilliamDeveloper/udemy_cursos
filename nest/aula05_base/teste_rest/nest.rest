@@ -23,6 +23,18 @@ GET http://localhost:8080/api/v1/jogadores/2a57173e-1a54-4fc0-b6ea-57acb5b5acbb
 ####
 
 
+#### CRUD - UPDATE
+PUT http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william288898",
+  "email": "a7@a1.com.br",
+  "telefoneCelular" : "123456"
+}
+####
+
+
 
 PUT http://localhost:3000/users/Cithx2MN1v4MQjHP
 Content-Type: application/json
