@@ -3,11 +3,7 @@
 GET http://localhost:8080/
 ####
 
-####
-GET http://localhost:8080/api/v1/jogadores
-####
-
-####
+#### CRUD - CREATE
 POST http://localhost:8080/api/v1/jogadores
 Content-Type: application/json
 
@@ -17,6 +13,12 @@ Content-Type: application/json
   "telefoneCelular" : "123456"
 }
 ####
+
+#### CRUD - READ-all
+GET http://localhost:8080/api/v1/jogadores
+####
+
+
 
 PUT http://localhost:3000/users/Cithx2MN1v4MQjHP
 Content-Type: application/json
