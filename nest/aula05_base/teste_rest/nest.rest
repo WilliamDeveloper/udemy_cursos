@@ -12,9 +12,9 @@ POST http://localhost:8080/jogadores
 Content-Type: application/json
 
 {
-  "_name" : "william2888",
-  "_email": "a7@a.com.br",
-  "_password" : "123456"
+  "nome" : "william2888",
+  "email": "a7@a.com.br",
+  "telefoneCelular" : "123456"
 }
 ####
 

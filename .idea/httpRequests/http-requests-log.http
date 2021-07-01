@@ -2,6 +2,51 @@ POST http://localhost:8080/jogadores
 Content-Type: application/json
 
 {
+  "nome" : "william2888",
+  "email": "a7@a.com.br",
+  "telefoneCelular" : "123456"
+}
+
+<> 2021-07-01T120622.201.html
+
+###
+
+POST http://localhost:8080/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william2888",
+  "_email": "a7@a.com.br",
+  "_password" : "123456"
+}
+
+<> 2021-07-01T120558.201.html
+
+###
+
+GET http://localhost:8080/jogadores
+
+<> 2021-07-01T120544.404.json
+
+###
+
+POST http://localhost:8080/jogadores
+Content-Type: application/json
+
+{
+  "_name" : "william2888",
+  "_email": "a7@a.com.br",
+  "_password" : "123456"
+}
+
+<> 2021-07-01T120535.201.html
+
+###
+
+POST http://localhost:8080/jogadores
+Content-Type: application/json
+
+{
   "_name" : "william2888",
   "_email": "a7@a.com.br",
   "_password" : "123456"
