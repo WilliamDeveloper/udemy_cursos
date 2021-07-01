@@ -1,5 +1,7 @@
 npm install -g @nestjs/cli
 npm install --save uuid
+npm install --save mongoose
+npm install --save @nestjs/mongoose
 
 nest generate module jogadores
 nest generate controller jogadores
