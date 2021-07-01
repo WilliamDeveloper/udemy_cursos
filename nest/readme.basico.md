@@ -5,6 +5,7 @@ npm install --save @nestjs/mongoose
 npm install --save class-validator
 npm install --save class-transformer
 
+
 npm install --save-dev @types/mongoose
 
 nest generate module jogadores
@@ -33,3 +34,4 @@ mongodb+srv://admin_mongo:BNnz295Wk3gDLhU@cluster0.dwwu8.mongodb.net/myFirstData
 
         
 
+https://docs.nestjs.com/techniques/validation#learn-more
