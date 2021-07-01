@@ -13,7 +13,7 @@ const schemaOption ={
   collection: 'jogadores',
 };
 
-export const jogadorSchema = new mongoose.Schema(
+export const JogadorSchema = new mongoose.Schema(
   schemaDefinition,
   schemaOption,
 );
