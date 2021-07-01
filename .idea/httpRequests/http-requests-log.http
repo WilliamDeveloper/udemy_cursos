@@ -1,3 +1,37 @@
+GET http://localhost:8080/api/v1/jogadores
+
+<> 2021-07-01T045719.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william288898777",
+  "email": "a7@a21.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
+GET http://localhost:8080/api/v1/jogadores
+
+<> 2021-07-01T045657.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william288898777",
+  "email": "a7@a1.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
 GET http://localhost:8080/api/v1/jogadores/?email=a7@a21.com.br
 
 <> 2021-07-01T045628.200.json
@@ -349,35 +383,6 @@ GET http://localhost:8080/api/v1
 GET http://localhost:8080/api/v1
 
 <> 2021-07-01T115442.404.json
-
-###
-
-GET http://localhost:8080
-
-<> 2021-07-01T115319.404.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T114448.200.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T114322.200.json
-
-###
-
-POST http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "william2888",
-  "email": "a7@a.com.br",
-  "telefoneCelular" : "123456"
-}
 
 ###
 
