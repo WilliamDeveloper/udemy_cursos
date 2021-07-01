@@ -3,7 +3,7 @@
 GET http://localhost:8080/api/v1
 ####
 
-#### CRUD - CREATE
+#### CRUD - CREATE [1/5]
 POST http://localhost:8080/api/v1/jogadores
 Content-Type: application/json
 
@@ -14,16 +14,15 @@ Content-Type: application/json
 }
 ####
 
-#### CRUD - READ-all
+#### CRUD - READ-all  [2/5]
 GET http://localhost:8080/api/v1/jogadores
 ####
 
-#### CRUD - READ-one
+#### CRUD - READ-one [3/5]
 GET http://localhost:8080/api/v1/jogadores/2a57173e-1a54-4fc0-b6ea-57acb5b5acbb
 ####
 
-
-#### CRUD - UPDATE
+#### CRUD - UPDATE [4/5]
 PUT http://localhost:8080/api/v1/jogadores
 Content-Type: application/json
 
@@ -34,7 +33,6 @@ Content-Type: application/json
 }
 ####
 
-
-####
+####  CRUD - UPDATE  [4/5]
 DELETE http://localhost:8080/api/v1/jogadores/2a57173e-1a54-4fc0-b6ea-57acb5b5acbb
 ####
