@@ -2,6 +2,8 @@ npm install -g @nestjs/cli
 npm install --save uuid
 npm install --save mongoose
 npm install --save @nestjs/mongoose
+npm install --save class-validator
+npm install --save class-transformer
 
 npm install --save-dev @types/mongoose
 
