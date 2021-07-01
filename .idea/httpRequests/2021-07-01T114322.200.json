@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "c700c732-950f-4833-aa43-02e3e938ebcc",
+    "nome": "william2888",
+    "email": "a7@a.com.br",
+    "telefoneCelular": "123456",
+    "ranking": "A",
+    "posicaoRanking": 1,
+    "urlFotoJogador": "www.google.com.br/foto123.jpg"
+  },
+  {
+    "_id": "c8fed550-fd6c-4e55-9a5c-f076dcfd0d2d",
+    "nome": "william2888",
+    "email": "a7@a.com.br",
+    "telefoneCelular": "123456",
+    "ranking": "A",
+    "posicaoRanking": 1,
+    "urlFotoJogador": "www.google.com.br/foto123.jpg"
+  }
+]

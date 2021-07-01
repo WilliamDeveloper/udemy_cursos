@@ -36,4 +36,8 @@ export class JogadoresService {
 
   }
 
+  async consultarTodosJogadores() : Promise<Jogador[]>{
+    return await this.jogadores
+  }
+
 }
