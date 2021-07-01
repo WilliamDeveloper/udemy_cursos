@@ -1,6 +1,6 @@
 
 ####
-GET http://localhost:8080/
+GET http://localhost:8080/api/v1
 ####
 
 #### CRUD - CREATE
@@ -12,6 +12,10 @@ Content-Type: application/json
   "email": "a7@a.com.br",
   "telefoneCelular" : "123456"
 }
+####
+
+#### CRUD - READ-all
+GET http://localhost:8080/api/v1/jogadores
 ####
 
 #### CRUD - READ-all
