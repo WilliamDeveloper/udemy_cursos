@@ -1,4 +1,12 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
+import { CriarJogadorDto } from './dtos/criar-jogador.dto';
 
 @Injectable()
-export class JogadoresService {}
+export class JogadoresService {
+  private readonly logger = new Logger(JogadoresService.name);
+
+  async criarAtualizarJogador(criarJogadorDto: CriarJogadorDto){
+
+  }
+
+}
