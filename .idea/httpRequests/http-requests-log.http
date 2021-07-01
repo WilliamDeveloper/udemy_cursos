@@ -1,5 +1,39 @@
 GET http://localhost:8080/api/v1/jogadores
 
+<> 2021-07-01T122918.200.json
+
+###
+
+POST http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william2888",
+  "email": "a7@a1.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
+POST http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william2888",
+  "email": "a7@a.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
+GET http://localhost:8080/api/v1/jogadores
+
+<> 2021-07-01T122847.200.json
+
+###
+
+GET http://localhost:8080/api/v1/jogadores
+
 <> 2021-07-01T115943.200.json
 
 ###
