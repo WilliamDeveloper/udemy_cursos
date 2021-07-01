@@ -56,10 +56,16 @@ export class JogadoresService {
 
   async consultarTodosJogadoresByEmail(email: string) : Promise<Jogador>{
     const jogadorEncontrado =  await this.jogadores.find(jogador => jogador.email === email)
+
     if(!jogadorEncontrado){
       throw new NotFoundException(`Jogado com email ${email} nao encontrado`);
     }
     return jogadorEncontrado;
+
+  }
+  async deletarJogadorByEmail(email: string) : Promise<void>{
+    const jogadorEncontrado =  await this.jogadores.find(jogador => jogador.email === email)
+    this.jogadores = this.jogadores.filter( jogador => jogador.email !== email)
 
   }
 

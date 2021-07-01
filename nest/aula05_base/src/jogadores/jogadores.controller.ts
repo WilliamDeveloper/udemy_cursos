@@ -41,11 +41,9 @@ export class JogadoresController {
   @Delete()
   async deletarJogarByEmail(
     @Query('email') email: string
-  ) : Promise<Jogador[] | Jogador>{
-    if(email){
-      return await this.jogadoresService.consultarTodosJogadoresByEmail(email);
-    }else{
-      return await this.jogadoresService.consultarTodosJogadores();
-    }
+  ) : Promise<void>{
+
+      await this.jogadoresService.deletarJogadorByEmail(email);
+
   }
 }
