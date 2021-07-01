@@ -3,6 +3,8 @@ npm install --save uuid
 npm install --save mongoose
 npm install --save @nestjs/mongoose
 
+npm install --save-dev @types/mongoose
+
 nest generate module jogadores
 nest generate controller jogadores
 nest generate service jogadores
