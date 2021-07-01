@@ -19,6 +19,6 @@ export class JogadoresController {
     //
     //
     // return JSON.stringify({email, nome, telefoneCelular})
-    // await this.jogadoresService.criarAtualizarJogador(criarJogadorDto);
+    await this.jogadoresService.criarAtualizarJogador(criarJogadorDto);
   }
 }
