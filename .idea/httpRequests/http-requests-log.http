@@ -1,3 +1,25 @@
+POST http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william2888",
+  "email": "a7@a.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
+POST http://localhost:8080/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william2888",
+  "email": "a7@a.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
 POST http://localhost:8080/jogadores
 Content-Type: application/json
 
