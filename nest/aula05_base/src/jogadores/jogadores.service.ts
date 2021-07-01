@@ -14,7 +14,7 @@ export class JogadoresService {
 
   async criarAtualizarJogador(criarJogadorDto: CriarJogadorDto): Promise<void>{
     this.logger.log(`criaJogadorDto: ${criarJogadorDto}`)
-
+    this.criar(criarJogadorDto);
   }
 
   private criar(criarJogadorDto: CriarJogadorDto) : void{
@@ -29,6 +29,8 @@ export class JogadoresService {
       posicaoRanking: 1,
       urlFotoJogador: "www.google.com.br/foto123.jpg"
     };
+
+    this.jogadores.push(jogador);
 
 
   }
