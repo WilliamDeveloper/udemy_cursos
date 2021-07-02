@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Post, Put, Query, UsePipes, ValidationPipe } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UsePipes, ValidationPipe } from '@nestjs/common';
 import { CriarJogadorDto } from './dtos/criar-jogador.dto';
 import { JogadoresService } from './jogadores.service';
 import { Jogador } from './interfaces/jogador.interface';
@@ -16,37 +16,38 @@ export class JogadoresController {
 
   @Post()
   @UsePipes(ValidationPipe)
-  async criarAtualizarJogador(
+  async criarJogador(
     @Body() criarJogadorDto: CriarJogadorDto
   ){
-    await this.jogadoresService.criarAtualizarJogador(criarJogadorDto);
+    await this.jogadoresService.criarJogador(criarJogadorDto);
   }
 
   @Get()
-  async consultarJogadores(
-    @Query('email') email: string
-  ) : Promise<Jogador[] | Jogador>{
-    if(email){
-      return await this.jogadoresService.consultarTodosJogadoresByEmail(email);
-    }else{
+  async consultarJogadores() : Promise<Jogador[]>{
       return await this.jogadoresService.consultarTodosJogadores();
-    }
-
   }
 
-  @Put()
+  @Get('/:_id')
+  async consultarJogadorById(
+    @Param('_id',JogadoresValidacaoParametrosPipe) _id: string
+  ) : Promise<Jogador>{
+        return await this.jogadoresService.consultarJogadorById(_id);
+  }
+
+  @Put('/:_id')
   async AtualizarJogador(
-    @Body() criarJogadorDto: CriarJogadorDto
+    @Body() criarJogadorDto: CriarJogadorDto,
+    @Param('_id',JogadoresValidacaoParametrosPipe) _id: string
   ){
-    await this.jogadoresService.criarAtualizarJogador(criarJogadorDto);
+    await this.jogadoresService.atualizarJogador(_id, criarJogadorDto);
   }
 
-  @Delete()
+  @Delete('/:_id')
   async deletarJogarByEmail(
-    @Query('email',JogadoresValidacaoParametrosPipe) email: string
+    @Query('_id',JogadoresValidacaoParametrosPipe) _id: string
   ) : Promise<void>{
 
-      await this.jogadoresService.deletarJogadorByEmail(email);
+      await this.jogadoresService.deletarJogadorByEmail(_id);
 
   }
 }

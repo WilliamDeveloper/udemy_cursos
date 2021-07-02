@@ -1,0 +1,5 @@
+{
+  "statusCode": 400,
+  "message": "o valor do parametro email nao pode ser vazio",
+  "error": "Bad Request"
+}

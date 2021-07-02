@@ -1,5 +1,34 @@
 DELETE http://localhost:8080/api/v1/jogadores/?email=
 
+<> 2021-07-01T095345.400.json
+
+###
+
+GET http://localhost:8080/api/v1/jogadores/?email=a7@a21.com.br
+
+<> 2021-07-01T095333.200.json
+
+###
+
+GET http://localhost:8080/api/v1/jogadores
+
+<> 2021-07-01T095326.200.json
+
+###
+
+POST http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "will3",
+  "email": "a7@a21.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/jogadores/?email=
+
 <> 2021-07-01T090101.400.json
 
 ###
@@ -349,40 +378,6 @@ Content-Type: application/json
 GET http://localhost:8080/api/v1/jogadores
 
 <> 2021-07-01T123539.200.json
-
-###
-
-POST http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "william28889",
-  "email": "a7@a1.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-GET http://localhost:8080/api/v1
-
-<> 2021-07-01T123529.200.html
-
-###
-
-PUT http://localhost:3000/users/Cithx2MN1v4MQjHP
-Content-Type: application/json
-
-{
-  "_name" : "william3333355",
-  "_email": "a3333@a.com.br",
-  "_password" : "M123456"
-}
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T123451.200.json
 
 ###
 
