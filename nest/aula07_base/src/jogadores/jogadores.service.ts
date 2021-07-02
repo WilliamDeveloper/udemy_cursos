@@ -39,9 +39,9 @@ export class JogadoresService {
     }
 
     const { email } = criarJogadorDto;
-    const updateFilter = {email: email};
+    const updateFilter = {_id: _id};
     const updateObject = {$set: criarJogadorDto}
-    return await this.jogadorModel.findOneAndUpdate(
+    await this.jogadorModel.findOneAndUpdate(
       updateFilter,
       updateObject
     ).exec()
@@ -51,17 +51,22 @@ export class JogadoresService {
     return await this.jogadorModel.find().exec();
   }
 
-  async consultarTodosJogadoresByEmail(email: string) : Promise<Jogador>{
-    const jogadorEncontrado =  await this.jogadorModel.findOne({email: email}).exec();
+  async consultarJogadorById(_id: string) : Promise<Jogador>{
+    const jogadorEncontrado =  await this.jogadorModel.findOne({_id}).exec();
 
     if(!jogadorEncontrado){
-      throw new NotFoundException(`Jogado com email ${email} nao encontrado`);
+      throw new NotFoundException(`Jogado com _id ${_id} nao encontrado`);
     }
     return jogadorEncontrado;
   }
 
-  async deletarJogadorByEmail(email: string) : Promise<any>{
-    return await this.jogadorModel.deleteOne({email:email}).exec()
+  async deletarJogadorByEmail(_id: string) : Promise<any>{
+    const jogadorEncontrado =  await this.jogadorModel.findOne({_id}).exec();
+
+    if(!jogadorEncontrado){
+      throw new NotFoundException(`Jogado com _id ${_id} nao encontrado`);
+    }
+    return await this.jogadorModel.deleteOne({_id}).exec()
   }
 
 }
