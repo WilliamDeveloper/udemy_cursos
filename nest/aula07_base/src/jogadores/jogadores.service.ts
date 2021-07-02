@@ -1,5 +1,6 @@
 import { BadRequestException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { CriarJogadorDto } from './dtos/criar-jogador.dto';
+import { AtualizarJogadorDto } from './dtos/atualizar-jogador.dto';
 import { Jogador } from './interfaces/jogador.interface';
 // import { v4 as uuidv4 } from 'uuid';
 import { v4 as uuid } from 'uuid';
@@ -30,7 +31,7 @@ export class JogadoresService {
     return await jogadorCriado.save();
   }
 
-  async atualizarJogador(_id: string, criarJogadorDto: CriarJogadorDto): Promise<void>{
+  async atualizarJogador(_id: string, atualizarJogadorDto: AtualizarJogadorDto): Promise<void>{
     // const jogadorEncontrado = await this.jogadores.find( jogador => jogador.email === email);
     const jogadorEncontrado = await this.jogadorModel.findOne({_id: _id}).exec();
 
@@ -38,9 +39,8 @@ export class JogadoresService {
       throw new NotFoundException(`jogador con id ${_id} nao encontrado`)
     }
 
-    const { email } = criarJogadorDto;
     const updateFilter = {_id: _id};
-    const updateObject = {$set: criarJogadorDto}
+    const updateObject = {$set: atualizarJogadorDto}
     await this.jogadorModel.findOneAndUpdate(
       updateFilter,
       updateObject
