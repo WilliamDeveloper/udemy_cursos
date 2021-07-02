@@ -18,8 +18,8 @@ export class JogadoresController {
   @UsePipes(ValidationPipe)
   async criarJogador(
     @Body() criarJogadorDto: CriarJogadorDto
-  ){
-    await this.jogadoresService.criarJogador(criarJogadorDto);
+  ): Promise<Jogador>{
+    return await this.jogadoresService.criarJogador(criarJogadorDto);
   }
 
   @Get()

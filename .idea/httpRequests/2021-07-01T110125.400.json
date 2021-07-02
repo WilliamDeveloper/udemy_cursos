@@ -1,0 +1,5 @@
+{
+  "statusCode": 400,
+  "message": "jogador com email ja cadastrado",
+  "error": "Bad Request"
+}

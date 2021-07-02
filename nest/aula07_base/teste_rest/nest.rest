@@ -9,7 +9,7 @@ Content-Type: application/json
 {
   "nome" : "will3c",
   "email": "a7@a21h.com.br",
-  "telefoneCelular" : "123456"
+  "telefoneCelular" : "123456q"
 }
 ####
 
