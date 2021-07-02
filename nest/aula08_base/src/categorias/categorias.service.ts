@@ -19,7 +19,7 @@ export class CategoriasService {
         throw new BadRequestException(`categoria ${categoria} ja cadastrada`)
       }
       const categoriaCriada = new this.categoriaModel(criarCategoriaDto)
-      return await categoriaEncontrada.save();
+      return await categoriaCriada.save();
   }
 
   async  consultarTodasCategorias () : Promise<Array<Categoria>>{
