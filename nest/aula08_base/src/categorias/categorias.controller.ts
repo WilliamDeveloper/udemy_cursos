@@ -7,7 +7,7 @@ import { CategoriasService } from './categorias.service';
 export class CategoriasController {
   constructor(
     private readonly categoriaService: CategoriasService
-  ){
+  ) {
 
   }
 
@@ -16,8 +16,11 @@ export class CategoriasController {
   @UsePipes(ValidationPipe)
   async criarCategoria(
     @Body() criarCategoriaDto: CriarCategoriaDto
-  ) : Promise<Categoria> {
+  ): Promise<Categoria> {
     return await this.categoriaService.criarCategoria(criarCategoriaDto);
   }
 
+  async consultarCategorias(): Promise<Categoria[]>{
+    return await this.categoriaService.consultarTodasCategorias();
+  }
 }

@@ -22,4 +22,8 @@ export class CategoriasService {
       return await categoriaEncontrada.save();
   }
 
+  async  consultarTodasCategorias () : Promise<Array<Categoria>>{
+    return await this.categoriaModel.find().exec();
+  }
+
 }
