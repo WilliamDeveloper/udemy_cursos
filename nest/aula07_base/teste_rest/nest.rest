@@ -7,8 +7,8 @@ POST http://localhost:8080/api/v1/jogadores
 Content-Type: application/json
 
 {
-  "nome" : "will3",
-  "email": "a7@a21.com.br",
+  "nome" : "will3c",
+  "email": "a7@a21h.com.br",
   "telefoneCelular" : "123456"
 }
 ####
