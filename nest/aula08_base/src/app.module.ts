@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { JogadoresModule } from './jogadores/jogadores.module';
 import { AppController } from './app.controller';
+import { CategoriasModule } from './categorias/categorias.module';
 
 // const mongoDB_url = 'mongodb+srv://admin_mongo:BNnz295Wk3gDLhU@cluster0.dwwu8.mongodb.net/test?retryWrites=true&w=majority';
 const db_user = 'admin_mongo';
@@ -18,7 +19,8 @@ const mongoDB_params = {
 @Module({
   imports: [
     MongooseModule.forRoot(mongoDB_url, mongoDB_params),
-    JogadoresModule
+    JogadoresModule,
+    CategoriasModule
   ],
   controllers: [AppController],
   providers: [],

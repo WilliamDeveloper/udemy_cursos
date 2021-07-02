@@ -36,3 +36,9 @@ mongodb+srv://admin_mongo:BNnz295Wk3gDLhU@cluster0.dwwu8.mongodb.net/myFirstData
 https://docs.nestjs.com/techniques/validation#learn-more
 npm install --save class-validator
 npm install --save class-transformer
+
+
+
+nest generate module categorias
+nest generate controller categorias
+nest generate service categorias
