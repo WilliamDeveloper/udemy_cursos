@@ -1,0 +1,68 @@
+#### TESTE API - bem vindo
+GET http://localhost:8080/api/v1
+####
+
+#### CRUD - CREATE [1/5]
+POST http://localhost:8080/api/v1/categorias
+Content-Type: application/json
+
+{
+  "categoria": "laranja",
+  "descricao": "a laranja eh masssa",
+  "eventos": [
+    {
+      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
+    }
+  ],
+  "jogadores" : []
+}
+####
+
+#### CRUD - READ-all  [2/5]
+GET http://localhost:8080/api/v1/categorias
+####
+
+#### CRUD - READ-one [3/5]
+#GET http://localhost:8080/api/v1/categorias/2a57173e-1a54-4fc0-b6ea-57acb5b5acbb
+GET http://localhost:8080/api/v1/categorias/laranja
+####
+
+#### CRUD - UPDATE [4/5]
+PUT http://localhost:8080/api/v1/categorias/laranja
+Content-Type: application/json
+
+{
+  "descricao" : "laranjal",
+  "eventos": [
+    {
+      "nome": "evento supremo2",
+      "operacao": "evento blau",
+      "valor": 10
+    }
+  ]
+}
+####
+
+####  CRUD - UPDATE  [4/5]
+#DELETE http://localhost:8080/api/v1/categorias/2a57173e-1a54-4fc0-b6ea-57acb5b5acbb
+#DELETE http://localhost:8080/api/v1/categorias/?email=a7@a1.com.br
+DELETE http://localhost:8080/api/v1/categorias/?email=
+####
+
+
+
+####
+POST http://localhost:8080/api/v1/categorias/laranja/jogador/60de1dab23324b10641fb439
+Content-Type: application/json
+
+{
+  "categoria": "laranja",
+  "descricao": "a laranja eh masssa",
+  "eventos": [
+    {
+      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
+    }
+  ],
+  "jogadores" : []
+}
+####
