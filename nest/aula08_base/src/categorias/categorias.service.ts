@@ -11,6 +11,7 @@ export class CategoriasService {
 
   constructor(
     @InjectModel('Categoria') private readonly categoriaModel: Model<Categoria>
+    // @InjectModel('Jogador') private readonly jogadorModel: Model<Categoria>
   ){}
 
   async criarCategoria( criarCategoriaDto : CriarCategoriaDto): Promise<Categoria>{
@@ -40,6 +41,25 @@ export class CategoriasService {
       throw new NotFoundException(`categoria ${categoria} nao encontrada`);
     }
     await this.categoriaModel.findOneAndUpdate({categoria},{$set: atualizarCategoriaDto})
+  }
+
+  async atribuirCategoriaJogador(params: string[]) : Promise<void>{
+    const categoria = params['categoria']
+    const idJogador = params['idJogador']
+
+    const categoriaEncontrada = await this.categoriaModel.findOne({categoria}).exec()
+    if(!categoriaEncontrada){
+      throw new NotFoundException(`categoria ${categoria} nao encontrada`);
+    }
+
+    // const jogadorEncontrado = await this.jogadorModel.findOne({email: email}).exec();
+    // if(!jogadorEncontrado){
+    //   throw new BadRequestException(`jogador com email ja cadastrado`) ;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }else{
+    // }
+
+    categoriaEncontrada.jogadores.push(idJogador);
+    await this.categoriaModel.findOneAndUpdate({categoria},{$set: categoriaEncontrada})
+
   }
 
 }

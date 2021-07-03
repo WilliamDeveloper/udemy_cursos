@@ -1,0 +1,21 @@
+[
+  {
+    "jogadores": [
+      "60de1dab23324b10641fb439"
+    ],
+    "_id": "60df64c8f8b00187588da1e7",
+    "categoria": "laranja",
+    "descricao": "laranjal",
+    "eventos": [
+      {
+        "_id": "60dfd8c3947df32c2c4600fa",
+        "nome": "evento supremo2",
+        "operacao": "evento blau",
+        "valor": 10
+      }
+    ],
+    "createdAt": "2021-07-02T19:11:04.098Z",
+    "updatedAt": "2021-07-03T04:06:35.606Z",
+    "__v": 0
+  }
+]
