@@ -3,7 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { JogadoresModule } from './jogadores/jogadores.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { DesafiosModule } from './desafios/desafios.module';
-// import { AppController } from '../../aula08_base/src/app.controller';
+import { AppController } from './app.controller';
+
 
 // const mongoDB_url = 'mongodb+srv://admin_mongo:BNnz295Wk3gDLhU@cluster0.dwwu8.mongodb.net/test?retryWrites=true&w=majority';
 const db_user = 'admin_mongo';
@@ -24,7 +25,7 @@ const mongoDB_params = {
     JogadoresModule,
     CategoriasModule,
     DesafiosModule],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
