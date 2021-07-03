@@ -1,3 +1,67 @@
+GET http://localhost:8080/api/v1/categorias/laranja
+
+<> 2021-07-02T115331.200.json
+
+###
+
+GET http://localhost:8080/api/v1/categorias/laranjas
+
+<> 2021-07-02T115321.404.json
+
+###
+
+GET http://localhost:8080/api/v1/categorias/laranjas
+
+###
+
+GET http://localhost:8080/api/v1/categorias/laranja
+
+<> 2021-07-02T115229.404.json
+
+###
+
+GET http://localhost:8080/api/v1/categorias/laranjas
+
+###
+
+GET http://localhost:8080/api/v1/jogadores/laranja
+
+<> 2021-07-02T114920.500.json
+
+###
+
+GET http://localhost:8080/api/v1/jogadores/laranjas
+
+<> 2021-07-02T114909.500.json
+
+###
+
+GET http://localhost:8080/api/v1/categorias
+
+<> 2021-07-02T113511.200.json
+
+###
+
+POST http://localhost:8080/api/v1/categorias
+Content-Type: application/json
+
+{
+  "categoria": "laranja",
+  "descricao": "a laranja eh masssa",
+  "eventos": [
+    {
+      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
+    }
+  ],
+  "jogadores" : []
+}
+
+###
+
+GET http://localhost:8080/api/v1/categorias
+
+###
+
 GET http://localhost:8080/api/v1/categorias
 
 <> 2021-07-02T041200.200.json
@@ -376,86 +440,6 @@ Content-Type: application/json
 GET http://localhost:8080/api/v1/jogadores
 
 <> 2021-07-01T070006.200.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T065953.200.json
-
-###
-
-POST http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "will",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-POST http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T065927.200.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T045719.200.json
-
-###
-
-PUT http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "william288898777",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T045657.200.json
-
-###
-
-PUT http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "william288898777",
-  "email": "a7@a1.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-GET http://localhost:8080/api/v1/jogadores/?email=a7@a21.com.br
-
-<> 2021-07-01T045628.200.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores/?email=a7@a1.com.br
-
-<> 2021-07-01T045612.404.json
 
 ###
 

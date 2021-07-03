@@ -1,0 +1,17 @@
+{
+  "jogadores": [],
+  "_id": "60df64c8f8b00187588da1e7",
+  "categoria": "laranja",
+  "descricao": "a laranja eh masssa",
+  "eventos": [
+    {
+      "_id": "60df64c8f8b00187588da1e8",
+      "nome": "evento supremo",
+      "operacao": "evento blau",
+      "valor": 10
+    }
+  ],
+  "createdAt": "2021-07-02T19:11:04.098Z",
+  "updatedAt": "2021-07-02T19:11:04.098Z",
+  "__v": 0
+}
