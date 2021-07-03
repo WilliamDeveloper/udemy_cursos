@@ -4,13 +4,15 @@ import { CriarCategoriaDto } from './dtos/criar-categoria.dto';
 import { Categoria } from './interfaces/categoria.interface';
 import { Model } from 'mongoose';
 import { AtualizarCategoriaDto } from './dtos/atualizar-categoria.dto';
+import { JogadoresService } from '../jogadores/jogadores.service';
 
 @Injectable()
 export class CategoriasService {
 
 
   constructor(
-    @InjectModel('Categoria') private readonly categoriaModel: Model<Categoria>
+    @InjectModel('Categoria') private readonly categoriaModel: Model<Categoria>,
+    private readonly jogadoresService: JogadoresService
     // @InjectModel('Jogador') private readonly jogadorModel: Model<Categoria>
   ){}
 
@@ -52,10 +54,16 @@ export class CategoriasService {
       throw new NotFoundException(`categoria ${categoria} nao encontrada`);
     }
 
-    // const jogadorEncontrado = await this.jogadorModel.findOne({email: email}).exec();
-    // if(!jogadorEncontrado){
-    //   throw new BadRequestException(`jogador com email ja cadastrado`) ;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }else{
-    // }
+    const jogadorEncontrado = await this.jogadoresService.consultarJogadorById(idJogador);
+    const jogadorJaCadastradoNaCategoria = await this.categoriaModel.find({categoria}).where('jogadores').in(idJogador).exec()
+
+    if(jogadorJaCadastradoNaCategoria){
+      throw new BadRequestException(`jogador ja cadastrado na categoria`)
+    }
+
+    if(!jogadorEncontrado){
+      throw new BadRequestException(`jogador nao encontrado`) ;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }else{
+    }
 
     categoriaEncontrada.jogadores.push(idJogador);
     await this.categoriaModel.findOneAndUpdate({categoria},{$set: categoriaEncontrada})
