@@ -48,3 +48,21 @@ Content-Type: application/json
 #DELETE http://localhost:8080/api/v1/categorias/?email=a7@a1.com.br
 DELETE http://localhost:8080/api/v1/categorias/?email=
 ####
+
+
+
+####
+POST http://localhost:8080/api/v1/categorias/laranja/jogador/60de1dab23324b10641fb439
+Content-Type: application/json
+
+{
+  "categoria": "laranja",
+  "descricao": "a laranja eh masssa",
+  "eventos": [
+    {
+      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
+    }
+  ],
+  "jogadores" : []
+}
+####
