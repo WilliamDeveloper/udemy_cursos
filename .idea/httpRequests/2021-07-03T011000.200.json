@@ -1,0 +1,29 @@
+[
+  {
+    "jogadores": [
+      {
+        "_id": "60de1dab23324b10641fb439",
+        "nome": "will3",
+        "email": "a7@a21.com.br",
+        "telefoneCelular": "123456",
+        "createdAt": "2021-07-01T19:55:23.811Z",
+        "updatedAt": "2021-07-02T00:53:23.082Z",
+        "__v": 0
+      }
+    ],
+    "_id": "60df64c8f8b00187588da1e7",
+    "categoria": "laranja",
+    "descricao": "laranjal",
+    "eventos": [
+      {
+        "_id": "60dfd8c3947df32c2c4600fa",
+        "nome": "evento supremo2",
+        "operacao": "evento blau",
+        "valor": 10
+      }
+    ],
+    "createdAt": "2021-07-02T19:11:04.098Z",
+    "updatedAt": "2021-07-03T04:06:35.606Z",
+    "__v": 0
+  }
+]

@@ -25,7 +25,7 @@ export class CategoriasService {
   }
 
   async  consultarTodasCategorias () : Promise<Array<Categoria>>{
-    return await this.categoriaModel.find().exec();
+    return await this.categoriaModel.find().populate("jogadores").exec();
   }
   async  consultarCategoriaById (categoria: string) : Promise<Categoria>{
     const categoriaEncontrada =  await this.categoriaModel.findOne({categoria}).exec();
