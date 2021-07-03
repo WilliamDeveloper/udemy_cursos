@@ -35,7 +35,7 @@ Content-Type: application/json
   "descricao" : "laranjal",
   "eventos": [
     {
-      "nome": "evento supremo",
+      "nome": "evento supremo2",
       "operacao": "evento blau",
       "valor": 10
     }

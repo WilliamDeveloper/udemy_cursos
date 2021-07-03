@@ -38,7 +38,7 @@ export class CategoriasController {
     @Body() atualizarCategoriaDto : AtualizarCategoriaDto,
     @Param('categoria') categoria: string
   ) : Promise<void>{
-
+      this.categoriaService.atualizarCategoria(categoria, atualizarCategoriaDto)
   }
 
 }
