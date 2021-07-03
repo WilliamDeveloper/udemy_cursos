@@ -3,11 +3,24 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { JogadoresModule } from './jogadores/jogadores.module';
 import { CategoriasModule } from './categorias/categorias.module';
 import { DesafiosModule } from './desafios/desafios.module';
+// import { AppController } from '../../aula08_base/src/app.controller';
+
+// const mongoDB_url = 'mongodb+srv://admin_mongo:BNnz295Wk3gDLhU@cluster0.dwwu8.mongodb.net/test?retryWrites=true&w=majority';
+const db_user = 'admin_mongo';
+const db_pass = 'BNnz295Wk3gDLhU';
+const db_database = 'smartranking';
+const mongoDB_url = `mongodb+srv://${db_user}:${db_pass}@cluster0.dwwu8.mongodb.net/${db_database}?retryWrites=true&w=majority`;
+const mongoDB_params = {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+};
+
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://admin_sr:7Fo50X1WDaCtasB6@clustermogodb-79l5n.mongodb.net/smartranking?retryWrites=true&w=majority',
-    { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false }),
+    MongooseModule.forRoot(mongoDB_url, mongoDB_params),
     JogadoresModule,
     CategoriasModule,
     DesafiosModule],
