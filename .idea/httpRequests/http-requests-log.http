@@ -1,3 +1,114 @@
+PUT http://localhost:8080/api/v1/categorias/laranja
+Content-Type: application/json
+
+{
+  "descricao" : "laranjal",
+  "eventos": [
+    {
+      "nome": "evento supremo",
+      "operacao": "evento blau",
+      "valor": 10
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8080/api/v1/categorias
+
+<> 2021-07-03T121108.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/categorias/laranja
+Content-Type: application/json
+
+{
+  "descricao" : "laranjal",
+  "eventos": [
+    {
+      "nome": "evento supremo",
+      "operacao": "evento blau",
+      "valor": 10
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8080/api/v1/categorias
+
+<> 2021-07-03T120935.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/categorias/laranjas
+Content-Type: application/json
+
+{
+  "nome" : "william288898777",
+  "email": "a7@a21.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/categorias/laranja
+Content-Type: application/json
+
+{
+  "nome" : "william288898777",
+  "email": "a7@a21.com.br",
+  "telefoneCelular" : "123456"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/categorias
+Content-Type: application/json
+
+{
+  "nome" : "william288898777",
+  "email": "a7@a21.com.br",
+  "telefoneCelular" : "123456"
+}
+
+<> 2021-07-03T120837.404.json
+
+###
+
+GET http://localhost:8080/api/v1/categorias/laranja
+
+<> 2021-07-03T120833.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/categorias
+Content-Type: application/json
+
+{
+  "nome" : "william288898777",
+  "email": "a7@a21.com.br",
+  "telefoneCelular" : "123456"
+}
+
+<> 2021-07-03T120724.404.json
+
+###
+
+PUT http://localhost:8080/api/v1/jogadores
+Content-Type: application/json
+
+{
+  "nome" : "william288898777",
+  "email": "a7@a21.com.br",
+  "telefoneCelular" : "123456"
+}
+
+<> 2021-07-03T120706.404.json
+
+###
+
 GET http://localhost:8080/api/v1/categorias/laranja
 
 <> 2021-07-02T115331.200.json
@@ -365,81 +476,6 @@ Content-Type: application/json
   "email": "a7@a21.com.br",
   "telefoneCelular" : "123456"
 }
-
-###
-
-DELETE http://localhost:8080/api/v1/jogadores/?email=
-
-<> 2021-07-01T090101.400.json
-
-###
-
-DELETE http://localhost:8080/api/v1/jogadores/?email=
-
-<> 2021-07-01T085945.400.json
-
-###
-
-DELETE http://localhost:8080/api/v1/jogadores/?email=
-
-###
-
-POST http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "will3",
-  "email": "",
-  "telefoneCelular" : "123456"
-}
-
-<> 2021-07-01T071509.400.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T070103.200.json
-
-###
-
-POST http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "will3",
-  "email": "a7@a213.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T070040.200.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T070029.200.json
-
-###
-
-POST http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "will",
-  "email": "a7@a213.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-GET http://localhost:8080/api/v1/jogadores
-
-<> 2021-07-01T070006.200.json
 
 ###
 

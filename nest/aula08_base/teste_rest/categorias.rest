@@ -28,13 +28,18 @@ GET http://localhost:8080/api/v1/categorias/laranja
 ####
 
 #### CRUD - UPDATE [4/5]
-PUT http://localhost:8080/api/v1/jogadores
+PUT http://localhost:8080/api/v1/categorias/laranja
 Content-Type: application/json
 
 {
-  "nome" : "william288898777",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
+  "descricao" : "laranjal",
+  "eventos": [
+    {
+      "nome": "evento supremo",
+      "operacao": "evento blau",
+      "valor": 10
+    }
+  ]
 }
 ####
 
