@@ -3,6 +3,9 @@ botfather
     /newbot
         modular bot
         ModularNodeBot
+     /mybots
+        api token
+            revoke renova a api token
     
 ----
 help
