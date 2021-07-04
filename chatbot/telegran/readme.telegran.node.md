@@ -7,4 +7,6 @@ npm install --save axios@0.17.1 -E
 
 npm install --save-dev nodemon
 
+npm install --save moment
+
 /start - comecar a conversa
