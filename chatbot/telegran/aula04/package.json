@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "0.17.1",
     "dotenv": "^10.0.0",
     "telegraf": "^3.17.3"
   },
