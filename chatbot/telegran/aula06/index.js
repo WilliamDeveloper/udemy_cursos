@@ -9,29 +9,32 @@ console.log('token ',token)
 
 const moment = require('moment')
 
+const Markup = require('telegraf/markup')
+const tecladoCarne = Markup.keyboard([
+  ['porco1', 'vaca1', 'macaco1'],
+  ['porco2', 'vaca2', 'macaco2'],
+  ['porco3', 'vaca3', 'macaco3'],
+  ['sou vegetariano']
+]).resize().extra()
+
 const Telegraf = require('telegraf')
 const bot = new Telegraf(token)
 
+bot.start(async(ctx, next) => {
+  await ctx.reply(`bem vindo`)
+  await ctx.reply(`voce ta com fome?`,
+    Markup.keyboard(['Coca', 'Pepsi']).resize().oneTime().extra()
+  )
+})
 
-bot.hears('Pizza',(ctx, next) => {
-  ctx.reply(`voce ta com fome?`)
-})
-bot.hears(['Cafe', 'Cha'],(ctx, next) => {
-  ctx.reply(`bi .. bi ... (chapolin)`)
-})
-bot.hears([/tela/i],(ctx, next) => {
-  ctx.reply(`tela com 4 turno cada`)
+bot.hears(['Coca','Pepsi'], async (ctx, next) => {
+  await ctx.reply(`nossa eu tambem gosto de ${ctx.match}`)
+  await ctx.reply(`qual sua carne predileta ? `, tecladoCarne)
   next()
 })
-bot.hears([/campo/i],(ctx, next) => {
-  ctx.reply(`campo sao 2 ponto cada`)
-  next()
-})
-bot.hears(/(\d{2}\/\d{2}\/\d{4})/,
-  (ctx, next) => {
-  moment.locale('pt-BR')
-  const data = moment(ctx.match[1], 'DD/MM/YYYY')
-  ctx.reply(`${ctx.match[1]} cai em ${data.format('dddd')}`)
+
+bot.hears('vaca1', async (ctx, next) => {
+  await ctx.reply(`a minha tambem ? `)
   next()
 })
 
