@@ -10,20 +10,17 @@ const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
 let lista = []
 
-const botoes =  () => {
-  return Extra.markup(
+const botoes = () => Extra.markup(
     Markup.inlineKeyboard(
-      lista.map( (item) => {
-          return `delete ${item}`
-      }),
+      lista.map( (item) => Markup.callbackButton(item, `delete ${item}`)),
       {columns:3}
     )
-  )
-}
+)
+
 
 const Telegraf = require('telegraf')
 const bot = new Telegraf(token)
-let contagem = 0
+
 
 bot.start(async(ctx, next) => {
   await ctx.reply(`bem vindo`)
@@ -31,17 +28,18 @@ bot.start(async(ctx, next) => {
   //   Markup.keyboard(['Coca', 'Pepsi']).resize().oneTime().extra()
   // )
   await ctx.reply(`escreva os item q deseja adicionar..`)
-
+  next()
 })
 
 bot.on('text', async (ctx, next) => {
-  await lista.push(ctx.update.message.text)
+  lista.push(ctx.update.message.text)
   await ctx.reply(`item foi adicionado ${ctx.update.message.text}`, botoes())
+  next()
 });
 
 bot.action(/delete (.+)/gi, async (ctx, next)=>{
- lista = lista.filter(item => item !== ctx.match[1])
-  await ctx.reply(`item foi deletado ${ctx.update.message.text}`, botoes())
+  lista = lista.filter(item => item !== ctx.match[1])
+  await ctx.reply(`item foi deletado ${ctx.match[1]}`, botoes())
   next()
 })
 
