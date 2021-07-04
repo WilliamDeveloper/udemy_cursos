@@ -12,6 +12,11 @@ const bot = new Telegraf(token)
 bot.start((ctx) => {
   const from = ctx.update.message.from
   console.log(from)
+  if(from.id === 123){
+    console.log('usuario permitido')
+  }else{
+    console.log('usuario nao permitido')
+  }
   ctx.reply(`Seja bem vindo, ${from.first_name}!`)
 })
 
