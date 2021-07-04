@@ -34,12 +34,18 @@ bot.on('text',async (ctx,next) =>{
       <i>de varios</i> <code> formas </code> <pre>possiveis</pre>
       <a href="https://google.com.br">Google</a>
     `)
-  }else{
+  }else if(1 == 3){
     await ctx.replyWithMarkdown(
       'destacando mensagem *Markdown* '
       +' _de varias_ `formas`  ```possiveis``` '
       +'  [google](http://www.google.com) '
     )
+  }else if(1 == 4){
+    await ctx.replyWithPhoto({
+      source: `${__dirname}/product.jpg`
+    })
+  }else{
+    await ctx.replyWithPhoto( 'https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2019/04/d5c9a79-dia-das-maes-imagem-1024x575.jpg')
   }
   next()
 })
