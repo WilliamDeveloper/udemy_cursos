@@ -7,4 +7,12 @@ const token = process.env.TELEGRAN_TOKEN_BOT;
 console.log('token ',token)
 
 const Telegraf = require('telegraf')
-const bot = new Telegraf()
+const bot = new Telegraf(token)
+
+bot.start(ctx => {
+  const from = ctx.update.message.from
+  console.log(from)
+  ctx.reply(`Seja bem vindo, ${from.first_name}!`)
+})
+
+bot.startPolling()
