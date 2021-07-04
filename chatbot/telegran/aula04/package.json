@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "telegraf": "^3.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
   }
 }

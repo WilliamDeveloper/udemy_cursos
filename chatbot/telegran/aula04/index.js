@@ -6,6 +6,12 @@ require('dotenv').config({ path:  caminhoEnv})
 const token = `${process.env.TELEGRAN_TOKEN_BOT}`;
 console.log('token ',token)
 
+const urlApiBot = `${process.env.TELEGRAN_API_URL_BASE_BOT}${token}`;
+console.log('urlApiBot ',urlApiBot)
+
+const urlApiFileBot = `${process.env.TELEGRAN_API_URL_BASE_FILEBOT}${token}`;
+console.log('urlApiFileBot ',urlApiFileBot)
+
 const Telegraf = require('telegraf')
 const bot = new Telegraf(token)
 

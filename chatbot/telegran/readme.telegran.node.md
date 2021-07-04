@@ -5,4 +5,6 @@ npm install --save dotenv
 
 npm install --save axios
 
+npm install --save-dev nodemon
+
 /start - comecar a conversa
