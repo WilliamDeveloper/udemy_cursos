@@ -44,8 +44,18 @@ bot.on('text',async (ctx,next) =>{
     await ctx.replyWithPhoto({
       source: `${__dirname}/product.jpg`
     })
+  }else if(1==5){
+    await ctx.replyWithPhoto(
+      'https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2019/04/d5c9a79-dia-das-maes-imagem-1024x575.jpg',
+      {caption:'olha a photo'}
+    )
   }else{
-    await ctx.replyWithPhoto( 'https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2019/04/d5c9a79-dia-das-maes-imagem-1024x575.jpg')
+    await ctx.replyWithPhoto( {
+      url: 'https://studiosol-a.akamaihd.net/tb/letras-blog/wp-content/uploads/2019/04/d5c9a79-dia-das-maes-imagem-1024x575.jpg',
+    })
+
+    await ctx.replyWithLocation(29.9773008,31.1303068)
+    await ctx.replyWithVideo('http://files.cod3r.com.br/curso-bot/cod3r-end.m4v')
   }
   next()
 })
