@@ -15,4 +15,14 @@ bot.start((ctx) => {
   ctx.reply(`Seja bem vindo, ${from.first_name}!`)
 })
 
+bot.on('text',async (ctx,next) =>{
+  await ctx.reply('mid 1')
+  next()
+})
+
+bot.on('text',async (ctx,next) =>{
+  await ctx.reply('mid 2')
+
+})
+
 bot.startPolling()
