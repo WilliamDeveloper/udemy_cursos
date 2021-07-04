@@ -14,5 +14,16 @@ const bot = new Telegraf(token)
 bot.hears('Pizza',(ctx, next) => {
   ctx.reply(`voce ta com fome?`)
 })
+bot.hears(['Cafe', 'Cha'],(ctx, next) => {
+  ctx.reply(`bi .. bi ... (chapolin)`)
+})
+bot.hears([/ba/i],(ctx, next) => {
+  ctx.reply(`ta loco`)
+})
+bot.hears([/cu/i],(ctx, next) => {
+  ctx.reply(`é tu`)
+})
+
+
 
 bot.startPolling()
