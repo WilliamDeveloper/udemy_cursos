@@ -38,6 +38,20 @@ bot.hears('vaca1', async (ctx, next) => {
   next()
 })
 
+bot.command('ajuda', async (ctx, next) =>{
+  await ctx.reply(`/ajudar : vou mostrar as opcoes
+    - asdsadas
+    - asdsadas
+    - asdsadas
+    - asdsadas
+  `)
+  next()
+})
+
+bot.hears(/\/op(2|3)/i, async (ctx, next) => {
+  await ctx.reply(`opcao 2 ou 3`)
+  next()
+})
 
 
 bot.startPolling()
