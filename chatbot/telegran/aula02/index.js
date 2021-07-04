@@ -30,12 +30,10 @@ bot.on('text',async (ctx,next) =>{
 })
 
 bot.on('location',async (ctx,next) =>{
-  // console.log(' ctx ', ctx)
   const message = ctx.update.message
   const location = ctx.update.message.location
   console.log(' message ', message)
   console.log(' location ', location)
-  // const {location} = ctx.update.location
 
   await ctx.reply(`voce esta em
     lat: ${location.latitude},
@@ -45,17 +43,56 @@ bot.on('location',async (ctx,next) =>{
 })
 
 bot.on('contact',async (ctx,next) =>{
-  // console.log(' ctx ', ctx)
   const message = ctx.update.message
   const contact = ctx.update.message.contact
   console.log(' message ', message)
   console.log(' contact ', contact)
-  // const {location} = ctx.update.location
 
   await ctx.reply(`ok vou lembrar
     first_name: ${contact.first_name},
     phone_number: ${contact.phone_number},    
   `)
+
+})
+
+bot.on('voice',async (ctx,next) =>{
+  const message = ctx.update.message
+  const voice = ctx.update.message.voice
+  console.log(' message ', message)
+  console.log(' voice ', voice)
+
+  await ctx.reply(`audio recebido
+    ele possui ${voice.duration} segundos    
+  `)
+})
+
+bot.on('photo',async (ctx,next) =>{
+  const message = ctx.update.message
+  const photo = ctx.update.message.photo
+  console.log(' message ', message)
+  console.log(' photo ', photo)
+
+  photo.forEach( async (ph, i)=>{
+    await ctx.reply(`
+        photo
+         ele possui ${i} tem resolucao de ${ph.width} X ${ph.height}    
+    `)
+  })
+
+
+})
+
+bot.on('sticker',async (ctx,next) =>{
+  const message = ctx.update.message
+  const sticker = ctx.update.message.sticker
+  console.log(' message ', message)
+  console.log(' sticker ', sticker)
+
+  await ctx.reply(`
+        sticker
+         vc enviou ${sticker.emoji}    do conjunto ${sticker.set_name}
+  `)
+
 
 })
 
