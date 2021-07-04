@@ -8,18 +8,20 @@ console.log('token ',token)
 
 const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
-let lista = []
-
-const botoes = () => Extra.markup(
-    Markup.inlineKeyboard(
-      lista.map( (item) => Markup.callbackButton(item, `delete ${item}`)),
-      {columns:3}
-    )
-)
-
+const session = require('telegraf/session')
 
 const Telegraf = require('telegraf')
 const bot = new Telegraf(token)
+
+
+let lista = []
+
+const botoes = () => Extra.markup(
+  Markup.inlineKeyboard(
+    lista.map( (item) => Markup.callbackButton(item, `delete ${item}`)),
+    {columns:3}
+  )
+)
 
 
 bot.start(async(ctx, next) => {
