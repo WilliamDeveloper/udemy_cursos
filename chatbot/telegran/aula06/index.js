@@ -9,6 +9,7 @@ console.log('token ',token)
 
 const moment = require('moment')
 
+const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
 const tecladoCarne = Markup.keyboard([
   ['porco1', 'vaca1', 'macaco1'],
@@ -17,14 +18,35 @@ const tecladoCarne = Markup.keyboard([
   ['sou vegetariano']
 ]).resize().extra()
 
+const botoes = Extra.markup(Markup.inlineKeyboard([
+    Markup.callbackButton('+1','add 1'),
+    Markup.callbackButton('+10','add 10'),
+    Markup.callbackButton('+100','add 100'),
+    Markup.callbackButton('-1','sub 1'),
+    Markup.callbackButton('-10','sub 10'),
+    Markup.callbackButton('-100','sub 100'),
+    Markup.callbackButton('Zerar','reset'),
+    Markup.callbackButton('Resultado','result'),
+  ],
+  {columns: 3}
+))
+
 const Telegraf = require('telegraf')
 const bot = new Telegraf(token)
+let contagem = 0
 
 bot.start(async(ctx, next) => {
   await ctx.reply(`bem vindo`)
-  await ctx.reply(`voce ta com fome?`,
-    Markup.keyboard(['Coca', 'Pepsi']).resize().oneTime().extra()
-  )
+  // await ctx.reply(`voce ta com fome?`,
+  //   Markup.keyboard(['Coca', 'Pepsi']).resize().oneTime().extra()
+  // )
+  await ctx.reply(`A contagem atual esta em ${contagem}`, botoes)
+})
+
+bot.action(/add (\d+)/gi, async (ctx, next)=>{
+  contagem += parseInt(ctx.match[1])
+  await ctx.reply(`A contagem atual esta em ${contagem}`, botoes)
+  next()
 })
 
 bot.hears(['Coca','Pepsi'], async (ctx, next) => {
