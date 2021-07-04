@@ -9,4 +9,6 @@ npm install --save-dev nodemon
 
 npm install --save moment
 
+npm install --save node-schedule@1.3.0 -E
+
 /start - comecar a conversa
