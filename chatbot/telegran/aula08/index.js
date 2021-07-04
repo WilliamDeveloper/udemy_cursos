@@ -13,9 +13,6 @@ const session = require('telegraf/session')
 const Telegraf = require('telegraf')
 const bot = new Telegraf(token)
 
-
-let lista = []
-
 const gerarBotoes = (lista) => Extra.markup(
   Markup.inlineKeyboard(
     lista.map( (item) => Markup.callbackButton(item, `delete ${item}`)),
@@ -34,13 +31,15 @@ bot.start(async(ctx, next) => {
 })
 
 bot.on('text', async (ctx, next) => {
-  lista.push(ctx.update.message.text)
+  let msg = ctx.update.message.text
+  if(!ctx.session.lista) ctx.session.lista = []
+  ctx.session.lista.push(msg);
   await ctx.reply(`item foi adicionado ${ctx.update.message.text}`, gerarBotoes(ctx.session.lista))
   next()
 });
 
 bot.action(/delete (.+)/gi, async (ctx, next)=>{
-  lista = lista.filter(item => item !== ctx.match[1])
+  ctx.session.lista = ctx.session.lista.filter(item => item !== ctx.match[1])
   await ctx.reply(`item foi deletado ${ctx.match[1]}`, gerarBotoes(ctx.session.lista))
   next()
 })
