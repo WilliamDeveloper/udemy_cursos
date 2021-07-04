@@ -16,12 +16,12 @@ bot.start((ctx) => {
 })
 
 bot.on('text',async (ctx,next) =>{
-  await ctx.reply('mid 1')
+  await ctx.reply('joedes 1')
   next()
 })
 
 bot.on('text',async (ctx,next) =>{
-  await ctx.reply('mid 2')
+  await ctx.reply('joedes 2')
 
 })
 
