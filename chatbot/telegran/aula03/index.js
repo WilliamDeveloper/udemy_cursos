@@ -28,12 +28,18 @@ bot.on('text',async (ctx,next) =>{
 
   if(from.first_name === 'Luciane'){
     await ctx.reply('luciane 1')
-  }else {
+  }else if(1 == 2){
     await ctx.replyWithHTML(`
       destacando com <b>HTML</b>
       <i>de varios</i> <code> formas </code> <pre>possiveis</pre>
       <a href="https://google.com.br">Google</a>
     `)
+  }else{
+    await ctx.replyWithMarkdown(
+      'destacando mensagem *Markdown* '
+      +' _de varias_ `formas`  ```possiveis``` '
+      +'  [google](http://www.google.com) '
+    )
   }
   next()
 })
