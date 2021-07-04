@@ -24,8 +24,17 @@ bot.start((ctx) => {
 })
 
 bot.on('text',async (ctx,next) =>{
-  await ctx.reply('luciane 1')
+  const from = ctx.update.message.from
 
+  if(from.first_name === 'Luciane'){
+    await ctx.reply('luciane 1')
+  }else {
+    await ctx.replyWithHTML(`
+      destacando com <b>HTML</b>
+      <i>de varios</i> <code> formas </code> <pre>possiveis</pre>
+      <a href="https://google.com.br">Google</a>
+    `)
+  }
   next()
 })
 
