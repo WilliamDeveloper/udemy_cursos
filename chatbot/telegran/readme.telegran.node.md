@@ -11,4 +11,6 @@ npm install --save moment
 
 npm install --save node-schedule@1.3.0 -E
 
+npm install --save json-server@0.12.2 -E
+
 /start - comecar a conversa
