@@ -1,5 +1,38 @@
 GET http://localhost:3001/tarefas
 
+<> 2021-07-04T101006.200.json
+
+###
+
+DELETE http://localhost:3001/tarefas/3
+
+<> 2021-07-04T101000.200.json
+
+###
+
+GET http://localhost:3001/tarefas
+
+<> 2021-07-04T100950.200.json
+
+###
+
+POST http://localhost:3001/tarefas
+Content-Type: application/json
+
+{
+  "id": 3,
+  "descricao": "gravar as aulas do curso de bot3",
+  "dt_previsao": "2018-05-14",
+  "dt_conclusao": null,
+  "observacao": "lembrar de verificar as baterias dos blaus"
+}
+
+<> 2021-07-04T100941.500.html
+
+###
+
+GET http://localhost:3001/tarefas
+
 <> 2021-07-04T094930.200.json
 
 ###
@@ -468,51 +501,6 @@ Content-Type: application/json
 }
 
 <> 2021-07-02T040332.500.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "categoria" : "laranja",
-  "descricao": "a laranja eh masssa",
-  "telefoneCelular" : "123456q"
-}
-
-<> 2021-07-02T040301.400.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "categoria" : "laranja",
-  "email": "a7@a21h.com.br",
-  "telefoneCelular" : "123456q"
-}
-
-<> 2021-07-02T040241.400.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "nome" : "will3c",
-  "email": "a7@a21h.com.br",
-  "telefoneCelular" : "123456q"
-}
-
-<> 2021-07-02T040224.400.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-02T040219.200.json
 
 ###
 
