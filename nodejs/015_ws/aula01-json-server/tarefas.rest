@@ -1,0 +1,42 @@
+#### TESTE API - bem vindo
+GET http://localhost:3001/tarefas
+####
+
+#### CRUD - CREATE [1/5]
+POST http://localhost:3001/tarefas
+Content-Type: application/json
+
+{
+  "id": 3,
+  "descricao": "gravar as aulas do curso de bot3",
+  "dt_previsao": "2018-05-14",
+  "dt_conclusao": null,
+  "observacao": "lembrar de verificar as baterias dos blaus"
+}
+####
+
+#### CRUD - READ-all  [2/5]
+GET http://localhost:3001/tarefas
+####
+
+#### CRUD - READ-one [3/5]
+GET http://localhost:3001/tarefas/1
+####
+
+#### CRUD - UPDATE [4/5]
+PUT http://localhost:3001/tarefas/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "descricao": "gravar as aulas do curso de bot2",
+  "dt_previsao": "2018-05-14",
+  "dt_conclusao": null,
+  "observacao": "lembrar de verificar as baterias dos blaus"
+}
+####
+
+####  CRUD - UPDATE  [4/5]
+DELETE http://localhost:3001/tarefas/3
+####
+
