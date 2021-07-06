@@ -1,0 +1,6 @@
+docker build -t phpmessages
+docker run -d -p 8080:80 --name  phpmessages_container phpmessages
+docker ps 
+
+http://localhost:8080/index.php
+http://localhost:8080/messages/msg-1.txt
