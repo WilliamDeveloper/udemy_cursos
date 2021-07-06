@@ -1,6 +1,7 @@
 docker build -t phpmessages
 docker run -d -p 8080:80 --name  phpmessages_container phpmessages
 docker run -d -p 8080:80 --name phpmessages_container --rm -v /data phpmessages
+docker run -d -p 8080:80 --name phpmessages_container --rm -v phpvolume:/var/www/html/ phpmessages
 docker ps 
 
 http://localhost:8080/index.php
