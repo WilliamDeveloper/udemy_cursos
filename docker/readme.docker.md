@@ -10,4 +10,6 @@ plugin docker
 
 https://cmder.net/
 
+https://github.com/matheusbattisti/curso_docker
+
 docker run docker/whalesay cowsay Hello_World
