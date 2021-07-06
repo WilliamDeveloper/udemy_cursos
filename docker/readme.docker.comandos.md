@@ -27,3 +27,4 @@ docker container start silly_germain
 
 # LOGS 
 docker container logs nginx_app
+docker container logs -f nginx_app
