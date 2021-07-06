@@ -8,4 +8,4 @@ docker version
 https://code.visualstudio.com/download
 https://cmder.net/
 
-docker run docker/whalesay
+docker run docker/whalesay cowsay Hello_World
