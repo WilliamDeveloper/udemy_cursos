@@ -30,4 +30,5 @@ docker container logs nginx_app
 docker container logs -f nginx_app
 
 # DELETANDO CONTAINER
-docker container rm blau
+docker container rm silly_germain
+docker container rm silly_germain -f
