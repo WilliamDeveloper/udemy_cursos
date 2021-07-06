@@ -9,6 +9,7 @@ docker run -it node
 docker run nginx
 docker run -d nginx (roda container em background detached)
 docker run -d -p 8080:80 nginx
+docker run -d -p 8080:80 nginx --name nginx_app
 
 # LISTAR - verificar se tem container docker rodando ou que ja rodaram
 docker ps
