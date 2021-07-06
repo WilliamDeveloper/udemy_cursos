@@ -10,6 +10,8 @@ const Extra = require('telegraf/extra')
 const Markup = require('telegraf/markup')
 const session = require('telegraf/session')
 
+const schedule = require('node-schedule')
+
 const Telegraf = require('telegraf')
 const bot = new Telegraf(token)
 
@@ -43,6 +45,15 @@ bot.action(/delete (.+)/gi, async (ctx, next)=>{
   await ctx.reply(`item foi deletado ${ctx.match[1]}`, gerarBotoes(ctx.session.lista))
   next()
 })
+
+// //notificar como se fosse cron do linux
+// let contador =0
+// const notificar = () => {
+//   contador = contador +1
+//   console.log('notificando...', contador)
+// }
+// const notificacao = new schedule.scheduleJob('*/5 *****', notificar)
+// notificacao.cancel()
 
 
 
