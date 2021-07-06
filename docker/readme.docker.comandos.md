@@ -2,7 +2,7 @@
 https://hub.docker.com
 
 
-# RUN - cria um novo container e roda
+# RUN - CRIAR e RODA um novo container
 docker run ubuntu
 docker run -it ubuntu (modo interativo)
 docker run -it node
