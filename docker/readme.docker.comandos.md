@@ -33,3 +33,5 @@ docker container logs -f nginx_app
 # DELETANDO CONTAINER
 docker container rm silly_germain
 docker container rm silly_germain -f
+
+
