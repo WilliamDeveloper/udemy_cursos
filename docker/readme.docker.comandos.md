@@ -8,3 +8,4 @@ docker run -it ubuntu
 
 # verificar se tem container docker rodando
 docker ps
+docker container ps
