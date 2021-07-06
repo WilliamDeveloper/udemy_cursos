@@ -5,6 +5,7 @@ https://hub.docker.com
 # rodar container docker
 docker run ubuntu
 docker run -it ubuntu
+docker run -it node
 
 # verificar se tem container docker rodando ou que ja rodaram
 docker ps
