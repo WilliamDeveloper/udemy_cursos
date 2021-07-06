@@ -24,3 +24,6 @@ docker container stop silly_germain
 
 # START - container <id ou nome>
 docker container start silly_germain
+
+# LOGS 
+docker container logs nginx_app
