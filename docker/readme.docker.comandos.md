@@ -18,5 +18,5 @@ docker container ls
 docker container ps -a
 docker container ls -a
 
-# parar container 
+# parar container <id ou nome>
 docker container stop silly_germain
