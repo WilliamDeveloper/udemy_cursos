@@ -7,3 +7,5 @@ docker version
 
 https://code.visualstudio.com/download
 https://cmder.net/
+
+docker run docker/whalesay
