@@ -6,6 +6,8 @@ docker ps
 docker version 
 
 https://code.visualstudio.com/download
+plugin docker
+
 https://cmder.net/
 
 docker run docker/whalesay cowsay Hello_World
