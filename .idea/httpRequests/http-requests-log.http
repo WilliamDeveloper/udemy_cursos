@@ -5,6 +5,67 @@ Content-Type: application/json
 
 }
 
+<> 2021-07-07T070032.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070030.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070027.200.html
+
+###
+
+GET http://localhost:5000
+
+<> 2021-07-07T070025.200.json
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070021.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070018.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
 <> 2021-07-07T121203.200.html
 
 ###
@@ -455,63 +516,6 @@ Content-Type: application/json
   "email": "a7@a21.com.br",
   "telefoneCelular" : "123456"
 }
-
-###
-
-PUT http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "nome" : "william288898777",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
-}
-
-<> 2021-07-03T120837.404.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias/laranja
-
-<> 2021-07-03T120833.200.json
-
-###
-
-PUT http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "nome" : "william288898777",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
-}
-
-<> 2021-07-03T120724.404.json
-
-###
-
-PUT http://localhost:8080/api/v1/jogadores
-Content-Type: application/json
-
-{
-  "nome" : "william288898777",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
-}
-
-<> 2021-07-03T120706.404.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias/laranja
-
-<> 2021-07-02T115331.200.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias/laranjas
-
-<> 2021-07-02T115321.404.json
 
 ###
 

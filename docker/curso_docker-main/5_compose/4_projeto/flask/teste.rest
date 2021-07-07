@@ -1,0 +1,12 @@
+####
+GET http://localhost:5000/
+####
+
+#### CRUD - CREATE [1/5]
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+####
