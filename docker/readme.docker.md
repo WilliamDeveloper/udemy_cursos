@@ -26,3 +26,7 @@ https://github.com/matheusbattisti/curso_docker
 https://hub.docker.com
 
 
+"cmd.exe" /k ""%CMDER_ROOT%\vendor\init.bat"" 
+"cmd.exe" /k ""D:\_dev_\bin\cmder\vendor\init.bat"" 
+
+
