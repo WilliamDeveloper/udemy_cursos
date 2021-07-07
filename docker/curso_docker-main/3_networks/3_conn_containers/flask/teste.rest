@@ -1,0 +1,19 @@
+####
+GET http://localhost:5000/
+####
+
+#### CRUD - CREATE [1/5]
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+  "categoria": "laranja",
+  "descricao": "a laranja eh masssa",
+  "eventos": [
+    {
+      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
+    }
+  ],
+  "jogadores" : []
+}
+####
