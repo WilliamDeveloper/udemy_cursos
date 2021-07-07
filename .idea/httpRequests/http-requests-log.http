@@ -5,6 +5,17 @@ Content-Type: application/json
 
 }
 
+<> 2021-07-07T072756.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
 <> 2021-07-07T071103.200.html
 
 ###
@@ -496,24 +507,6 @@ Content-Type: application/json
   ],
   "jogadores" : []
 }
-
-###
-
-POST http://localhost:8080/api/v1/categorias/laranja/jogador/60de1dab23324b10641fb439
-Content-Type: application/json
-
-{
-  "categoria": "laranja",
-  "descricao": "a laranja eh masssa",
-  "eventos": [
-    {
-      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
-    }
-  ],
-  "jogadores" : []
-}
-
-<> 2021-07-03T125006.404.json
 
 ###
 
