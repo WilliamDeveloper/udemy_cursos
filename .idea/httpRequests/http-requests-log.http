@@ -5,6 +5,65 @@ Content-Type: application/json
 
 }
 
+<> 2021-07-07T121122.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T121120.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T121115.200.html
+
+###
+
+GET http://localhost:5000
+
+<> 2021-07-07T121105.200.json
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T121021.500.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
 ###
 
 POST http://localhost:5000/inserthost
@@ -424,74 +483,6 @@ GET http://localhost:8080/api/v1/jogadores/laranja
 GET http://localhost:8080/api/v1/jogadores/laranjas
 
 <> 2021-07-02T114909.500.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-02T113511.200.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "categoria": "laranja",
-  "descricao": "a laranja eh masssa",
-  "eventos": [
-    {
-      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
-    }
-  ],
-  "jogadores" : []
-}
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-02T041200.200.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "categoria": "laranja",
-  "descricao": "a laranja eh masssa",
-  "eventos": [
-    {
-      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
-    }
-  ],
-  "jogadores" : []
-}
-
-<> 2021-07-02T041104.201.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "categoria": "laranja",
-  "descricao": "a laranja eh masssa",
-  "eventos": [
-    {
-      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
-    }
-  ],
-  "jogadores" : []
-}
-
-<> 2021-07-02T040751.500.json
 
 ###
 
