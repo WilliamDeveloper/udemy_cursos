@@ -2,6 +2,17 @@ POST http://localhost:5000/inserthost
 Content-Type: application/json
 
 {
+
+}
+
+<> 2021-07-07T115144.500.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
   "categoria": "laranja",
   "descricao": "a laranja eh masssa",
   "eventos": [
@@ -489,12 +500,6 @@ Content-Type: application/json
 }
 
 <> 2021-07-02T040547.500.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-02T040544.200.json
 
 ###
 
