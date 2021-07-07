@@ -5,6 +5,61 @@ Content-Type: application/json
 
 }
 
+<> 2021-07-07T121203.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T121201.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T121200.500.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T121159.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T121157.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
 <> 2021-07-07T121122.200.html
 
 ###
@@ -457,32 +512,6 @@ GET http://localhost:8080/api/v1/categorias/laranja
 GET http://localhost:8080/api/v1/categorias/laranjas
 
 <> 2021-07-02T115321.404.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias/laranjas
-
-###
-
-GET http://localhost:8080/api/v1/categorias/laranja
-
-<> 2021-07-02T115229.404.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias/laranjas
-
-###
-
-GET http://localhost:8080/api/v1/jogadores/laranja
-
-<> 2021-07-02T114920.500.json
-
-###
-
-GET http://localhost:8080/api/v1/jogadores/laranjas
-
-<> 2021-07-02T114909.500.json
 
 ###
 
