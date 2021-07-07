@@ -5,6 +5,72 @@ Content-Type: application/json
 
 }
 
+<> 2021-07-07T070110.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070108.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070106.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070104.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070103.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-07T070102.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
 <> 2021-07-07T070032.200.html
 
 ###
@@ -449,72 +515,6 @@ Content-Type: application/json
       "valor": 10
     }
   ]
-}
-
-###
-
-PUT http://localhost:8080/api/v1/categorias/laranja
-Content-Type: application/json
-
-{
-  "descricao" : "laranjal",
-  "eventos": [
-    {
-      "nome": "evento supremo",
-      "operacao": "evento blau",
-      "valor": 10
-    }
-  ]
-}
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-03T121108.200.json
-
-###
-
-PUT http://localhost:8080/api/v1/categorias/laranja
-Content-Type: application/json
-
-{
-  "descricao" : "laranjal",
-  "eventos": [
-    {
-      "nome": "evento supremo",
-      "operacao": "evento blau",
-      "valor": 10
-    }
-  ]
-}
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-03T120935.200.json
-
-###
-
-PUT http://localhost:8080/api/v1/categorias/laranjas
-Content-Type: application/json
-
-{
-  "nome" : "william288898777",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
-}
-
-###
-
-PUT http://localhost:8080/api/v1/categorias/laranja
-Content-Type: application/json
-
-{
-  "nome" : "william288898777",
-  "email": "a7@a21.com.br",
-  "telefoneCelular" : "123456"
 }
 
 ###
