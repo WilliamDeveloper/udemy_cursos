@@ -21,7 +21,7 @@ services:
       - "5000:5000"
     restart: always
     volumes:
-      - "H:\\20_DOCKER\\arquivos\\5_compose\\6_bind_mount_compose\\flask:/app"
+      - "C:\\_dev_\\work\\github\\udemy_cursos\\docker\\curso_docker-main\\5_compose\\6_bind_mount_compose\\flask:/app"
     networks: 
       - dockercompose
 
