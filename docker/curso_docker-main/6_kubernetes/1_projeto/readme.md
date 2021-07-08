@@ -11,10 +11,11 @@ kubectl create deployment flask-deployment --image=williampacheco/flask-kub-proj
 kubectl get deployments
 kubectl describe deployments
 
+# onde o container ta rodando(todo deployment gera pod)
 kubectl get pods
 kubectl describe pods
 
-# criando servico
+# criando servico (expor container para mundo externo)
 kubectl expose deployment flask-deployment --type=LoadBalancer --port=5000
 kubectl get services
 kubectl describe services/flask-deployment
