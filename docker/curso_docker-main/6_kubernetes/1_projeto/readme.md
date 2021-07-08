@@ -8,5 +8,6 @@ kubectl create deployment flask-deployment --image=williampacheco/flask-kub-proj
 
 kubectl get deployments
 kubectl describe deployments
+
 kubectl get pods
 kubectl describe pods
