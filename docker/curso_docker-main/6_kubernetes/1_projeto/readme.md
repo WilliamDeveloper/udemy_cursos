@@ -5,3 +5,6 @@ docker push williampacheco/flask-kub-projeto
 
 
 kubectl create deployment flask-deployment --image=williampacheco/flask-kub-projeto
+
+kubectl get deployments
+kubectl describe deployments
