@@ -4,4 +4,4 @@ docker login
 docker push williampacheco/flask-kub-projeto
 
 
-kubectl create deployment
+kubectl create deployment flask-deployment --image=williampacheco/flask-kub-projeto
