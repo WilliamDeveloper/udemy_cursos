@@ -15,3 +15,5 @@ kubectl describe pods
 kubectl config view
 
 kubectl expose deployment flask-deployment --type=LoadBalancer --port=5000
+
+minikube service flask-deployment
