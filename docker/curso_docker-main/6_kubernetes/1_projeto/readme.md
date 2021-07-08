@@ -3,9 +3,8 @@ docker run -d -p 5000:5000 --name flask-kub --rm  williampacheco/flask-kub-proje
 docker login
 docker push williampacheco/flask-kub-projeto
 
-
+# criando um deploymennnt
 kubectl create deployment flask-deployment --image=williampacheco/flask-kub-projeto
-
 kubectl get deployments
 kubectl describe deployments
 
@@ -14,8 +13,8 @@ kubectl describe pods
 
 kubectl config view
 
+# criando servico
 kubectl expose deployment flask-deployment --type=LoadBalancer --port=5000
-
 kubectl get services
 kubectl describe services/flask-deployment
 
