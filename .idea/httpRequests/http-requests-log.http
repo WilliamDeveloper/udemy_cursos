@@ -5,6 +5,105 @@ Content-Type: application/json
 
 }
 
+<> 2021-07-09T102425.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102417.500.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102416.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102415.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102339.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102219.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102216.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102211.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
+<> 2021-07-09T102053.200.html
+
+###
+
+POST http://localhost:5000/inserthost
+Content-Type: application/json
+
+{
+
+}
+
 <> 2021-07-07T072756.200.html
 
 ###
@@ -417,96 +516,6 @@ Content-Type: application/json
 GET http://localhost:3001/tarefas
 
 <> 2021-07-04T094905.200.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias
-Content-Type: application/json
-
-{
-  "id": 3,
-  "descricao": "gravar as aulas do curso de bot3",
-  "dt_previsao": "2018-05-14",
-  "dt_conclusao": null,
-  "observacao": "lembrar de verificar as baterias dos blaus"
-}
-
-###
-
-GET http://localhost:3001/tarefas/1
-
-<> 2021-07-04T094737.200.json
-
-###
-
-PUT http://localhost:3001/tarefas/1
-Content-Type: application/json
-
-{
-  "id": 1,
-  "descricao": "gravar as aulas do curso de bot2",
-  "dt_previsao": "2018-05-14",
-  "dt_conclusao": null,
-  "observacao": "lembrar de verificar as baterias dos blaus"
-}
-
-<> 2021-07-04T094732.200.json
-
-###
-
-GET http://localhost:3001/tarefas/1
-
-<> 2021-07-04T094651.200.json
-
-###
-
-GET http://localhost:3001/tarefas
-
-<> 2021-07-04T094555.200.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-03T011000.200.json
-
-###
-
-GET http://localhost:8080/api/v1/categorias
-
-<> 2021-07-03T010655.200.json
-
-###
-
-POST http://localhost:8080/api/v1/categorias/laranja/jogador/60de1dab23324b10641fb439
-Content-Type: application/json
-
-{
-  "categoria": "laranja",
-  "descricao": "a laranja eh masssa",
-  "eventos": [
-    {
-      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
-    }
-  ],
-  "jogadores" : []
-}
-
-###
-
-POST http://localhost:8080/api/v1/categorias/laranja/jogador/60de1dab23324b10641fb439
-Content-Type: application/json
-
-{
-  "categoria": "laranja",
-  "descricao": "a laranja eh masssa",
-  "eventos": [
-    {
-      "nome": "evento supremo", "operacao": "evento blau", "valor": 10
-    }
-  ],
-  "jogadores" : []
-}
 
 ###
 
