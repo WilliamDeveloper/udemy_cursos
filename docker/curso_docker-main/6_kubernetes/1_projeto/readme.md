@@ -20,4 +20,5 @@ kubectl expose deployment flask-deployment --type=LoadBalancer --port=5000
 kubectl get services
 kubectl describe services/flask-deployment
 
+# gerando ip de acesso
 minikube service flask-deployment
